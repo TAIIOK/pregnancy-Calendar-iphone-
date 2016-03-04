@@ -14,5 +14,6 @@ class ContentCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentLabel.textColor = .blackColor()
+        self.contentLabel.font = .boldSystemFontOfSize(7)
     }
 }

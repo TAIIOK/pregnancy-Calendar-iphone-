@@ -84,10 +84,13 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     func doneButtonTouched() {
         self.cancelButtonTouched()
         self.growth = self.getGrowthFromPickerView()
-        self.navigationItem.rightBarButtonItem?.title = "\(self.growth) см"
+        self.navigationItem.rightBarButtonItem?.title = self.growth == 0 ? "Ваш рост" : "\(self.growth) см"
         self.saveGrowthToPlist(self.growth)
         self.setupPickerViewValues()
-        self.alertToNotes()
+        
+        if self.growth != 0 {
+            self.alertToNotes()
+        }
     }
     
     func cancelButtonTouched() {
@@ -96,7 +99,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     private func alertToNotes() {
         let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
-        alert.view.tintColor = StrawBerryColor
         let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
         let notesAction = UIAlertAction(title: "В заметки", style: .Default, handler: { (alert) in self.actionToNotes() } )
         alert.addAction(cancelAction)
