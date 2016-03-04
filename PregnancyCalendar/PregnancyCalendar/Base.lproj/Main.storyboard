@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mMz-OW-v3s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uhh-ab-Xpv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="F1z-on-BXr" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="DRK-GP-7WS"/>
+                        <segue destination="eu6-n0-d57" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="kg5-63-u2H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="282.99999999999994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1d0-oH-xTX">
+            <objects>
+                <navigationController storyboardIdentifier="BirthdateNavigationController" id="eu6-n0-d57" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tgS-Cy-c43"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqS-Yl-eEL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Pj3-YC-st5" kind="relationship" relationship="rootViewController" id="eJZ-w1-fo3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjW-dm-kDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="282.99999999999994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GLt-ed-Gp5">
+            <objects>
+                <navigationController storyboardIdentifier="WeightGraphNavigationController" id="2j1-yT-Lgc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rqp-Iy-ijq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cmq-xt-7I8" kind="relationship" relationship="rootViewController" id="oJ6-o4-zpm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoR-m4-RXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="2630.9999999999995"/>
+        </scene>
+        <!--График набора веса-->
+        <scene sceneID="nxk-ab-7xr">
+            <objects>
+                <viewController id="cmq-xt-7I8" customClass="WeightGraphViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pRB-iV-baZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="kHb-19-q5l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tr5-VT-MEm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="График набора веса" id="ipx-ux-nVb">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="8d6-EQ-UiL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ваш рост" id="v4F-wP-z21">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="growthButtonPress:" destination="cmq-xt-7I8" id="2Uv-HA-Btm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="growthButton" destination="v4F-wP-z21" id="mfO-0e-EbN"/>
+                        <outlet property="menuButton" destination="8d6-EQ-UiL" id="tw8-wU-22P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JS6-2E-mOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768" y="2630.9999999999995"/>
+        </scene>
+        <!--Фотоальбом-->
+        <scene sceneID="fXD-cu-R4B">
+            <objects>
+                <tableViewController id="bjf-Bd-BbB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rhO-Jc-hQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="106" id="nUK-3x-yHL">
+                                <rect key="frame" x="0.0" y="28" width="600" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nUK-3x-yHL" id="WAR-Mk-DD4">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="106"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-V4-NGI">
+                                            <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="104" id="odh-G1-121"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz3-0H-1Q1">
+                                            <rect key="frame" x="112" y="18" width="455" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="455" id="oxY-zB-KXw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-Kn-cRO">
+                                            <rect key="frame" x="112" y="61" width="455" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="ZE4-N3-LT1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bdd-Kn-cRO" secondAttribute="bottom" constant="14" id="3Nw-03-KDq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="T2h-V4-NGI" secondAttribute="bottom" constant="-6" id="9Vd-OP-88A"/>
+                                        <constraint firstItem="T2h-V4-NGI" firstAttribute="leading" secondItem="WAR-Mk-DD4" secondAttribute="leading" id="A8K-Aw-14m"/>
+                                        <constraint firstItem="oz3-0H-1Q1" firstAttribute="leading" secondItem="T2h-V4-NGI" secondAttribute="trailing" constant="8" symbolic="YES" id="RpH-Xm-epX"/>
+                                        <constraint firstItem="T2h-V4-NGI" firstAttribute="top" secondItem="WAR-Mk-DD4" secondAttribute="top" id="WgJ-Q8-90R"/>
+                                        <constraint firstItem="oz3-0H-1Q1" firstAttribute="leading" secondItem="bdd-Kn-cRO" secondAttribute="leading" id="YE3-il-Ps8"/>
+                                        <constraint firstItem="oz3-0H-1Q1" firstAttribute="top" secondItem="WAR-Mk-DD4" secondAttribute="topMargin" constant="10" id="Zqf-vg-r08"/>
+                                        <constraint firstItem="bdd-Kn-cRO" firstAttribute="top" secondItem="oz3-0H-1Q1" secondAttribute="bottom" constant="8" symbolic="YES" id="hfy-WT-jef"/>
+                                        <constraint firstItem="bdd-Kn-cRO" firstAttribute="trailing" secondItem="oz3-0H-1Q1" secondAttribute="trailing" id="tVa-cS-Nyj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bjf-Bd-BbB" id="3JI-3l-Kzn"/>
+                            <outlet property="delegate" destination="bjf-Bd-BbB" id="ciE-xj-Hv9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Фотоальбом" id="j36-Jv-Y5p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RI6-Fe-8iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="3362.9999999999995"/>
+        </scene>
+        <!--Album Title-->
+        <scene sceneID="62I-q3-mwv">
+            <objects>
+                <viewController id="s63-gN-06f" customClass="PhotoViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YPq-7m-lA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uve-37-2u0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FdP-lt-kKM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="woN-qY-QW9">
+                                <rect key="frame" x="0.0" y="0.0" width="676" height="800"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="800" id="hw5-ES-XAx"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="bLg-eH-aZz">
+                                    <size key="itemSize" width="105" height="105"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="photoCell" id="cME-LB-84I" customClass="PhotoThumbnailCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZr-RC-4Y3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="AZr-RC-4Y3" firstAttribute="leading" secondItem="cME-LB-84I" secondAttribute="leading" id="36l-hQ-wcU"/>
+                                            <constraint firstAttribute="bottom" secondItem="AZr-RC-4Y3" secondAttribute="bottom" id="ht2-If-Bqz"/>
+                                            <constraint firstAttribute="trailing" secondItem="AZr-RC-4Y3" secondAttribute="trailing" id="jVX-2z-WA5"/>
+                                            <constraint firstItem="AZr-RC-4Y3" firstAttribute="top" secondItem="cME-LB-84I" secondAttribute="top" id="lXB-4b-Hyy"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="AZr-RC-4Y3" id="Rvb-sq-AoI"/>
+                                            <segue destination="3M2-n6-AeC" kind="show" identifier="viewLargePhoto" id="VqP-Fk-rwF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="s63-gN-06f" id="Kef-IL-GjN"/>
+                                    <outlet property="delegate" destination="s63-gN-06f" id="axu-N3-KgZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="woN-qY-QW9" secondAttribute="trailing" constant="-96" id="EV5-qx-zGM"/>
+                            <constraint firstItem="woN-qY-QW9" firstAttribute="leading" secondItem="FdP-lt-kKM" secondAttribute="leading" id="l7L-qk-Qfq"/>
+                            <constraint firstItem="woN-qY-QW9" firstAttribute="top" secondItem="FdP-lt-kKM" secondAttribute="top" id="u0e-0e-RrT"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Album Title" id="4wu-4e-6tr">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="gPu-wo-ZEM">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ahC-Cj-FbE">
+                            <connections>
+                                <action selector="buttonPlus:" destination="s63-gN-06f" id="qT7-a3-jNP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="woN-qY-QW9" id="Y6K-zs-Jv8"/>
+                        <outlet property="menuButton" destination="gPu-wo-ZEM" id="IFR-eZ-tZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXc-o5-je8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2417" y="3362.9999999999995"/>
+        </scene>
+        <!--Фото-->
+        <scene sceneID="OVq-tz-z0G">
+            <objects>
+                <viewController storyboardIdentifier="CurrentPhotoViewControlle" id="3M2-n6-AeC" customClass="CurrentPhotoViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Phu-jt-DkJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdU-K1-tvZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CLi-ZA-Y6t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-V5-P0m">
+                                <rect key="frame" x="0.0" y="0.0" width="676" height="800"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="800" id="yO3-ht-KzF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dbu-V5-P0m" firstAttribute="leading" secondItem="CLi-ZA-Y6t" secondAttribute="leading" id="DVV-NF-Wg6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dbu-V5-P0m" secondAttribute="trailing" constant="-96" id="Pe1-8V-s5G"/>
+                            <constraint firstItem="Dbu-V5-P0m" firstAttribute="top" secondItem="CLi-ZA-Y6t" secondAttribute="top" id="rD0-wC-U8M"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Фото" id="oVq-zF-Pu5">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="xZO-OD-Oma">
+                                <connections>
+                                    <action selector="buttonTrash:" destination="3M2-n6-AeC" id="2na-rs-t8B"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="ZKO-d3-UD0">
+                                <connections>
+                                    <action selector="buttonAction:" destination="3M2-n6-AeC" id="7bL-Pu-eWj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Dbu-V5-P0m" id="4Ng-db-uR7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2GH-WU-Cbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3097" y="3362.9999999999995"/>
+        </scene>
+        <!--Видеотека-->
+        <scene sceneID="WTl-QE-PDz">
+            <objects>
+                <viewController id="m6A-Gx-Ddh" customClass="VideoViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SEr-aZ-RA7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b9y-kN-gv3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S0Z-HM-cNx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Видеотека" id="qf9-SH-xg0">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="QQb-dk-HQG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="QQb-dk-HQG" id="yxF-mU-GLX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zz-Be-V7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768" y="4102.9999999999991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="huf-9i-Q3e">
+            <objects>
+                <navigationController storyboardIdentifier="PhotoNavigationController" id="POd-v1-r1S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BIU-fx-88L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3al-Jf-Ovd">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="s63-gN-06f" kind="relationship" relationship="rootViewController" id="EQo-EP-8GD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hek-1R-s2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="3362.9999999999995"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="POS-rg-NZ6">
+            <objects>
+                <navigationController storyboardIdentifier="VideoNavigationController" id="aVm-qW-ep7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFe-wO-FYx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="m6A-Gx-Ddh" kind="relationship" relationship="rootViewController" id="rRS-Lj-XJX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSx-b2-Qhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="4102.9999999999991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6g2-vH-lmC">
+            <objects>
+                <navigationController storyboardIdentifier="NotesNavigationController" id="RaU-TU-q2S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ie-Yu-SBl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AX8-aG-BOE" kind="relationship" relationship="rootViewController" id="eLS-oY-PqN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-rZ-K0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="4819"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fse-Zy-Xkt">
+            <objects>
+                <navigationController storyboardIdentifier="ForumNavigationController" id="DhL-Ht-g9L" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tQy-IF-y2X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oG3-Yb-QgX" kind="relationship" relationship="rootViewController" id="7y0-tg-Qo5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VId-C5-ega" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="5501"/>
+        </scene>
+        <!--Заметки-->
+        <scene sceneID="O0E-FF-j7L">
+            <objects>
+                <viewController id="AX8-aG-BOE" customClass="NotesViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FKy-ox-Z0Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="pK8-Ys-7Fw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="31s-gz-NbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Заметки" id="bFo-d1-n7e">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="EM1-v0-bXA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="MuN-MB-kZi">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionButton" destination="MuN-MB-kZi" id="wpG-Qq-sOt"/>
+                        <outlet property="menuButton" destination="EM1-v0-bXA" id="2Yp-Yx-P9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0c-Hr-Wel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768" y="4819"/>
+        </scene>
+        <!--Форум-->
+        <scene sceneID="agB-5J-Rcl">
+            <objects>
+                <tableViewController id="oG3-Yb-QgX" customClass="ForumTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="5M1-fx-Spz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="forumCell" rowHeight="55" id="AEy-MZ-G4M">
+                                <rect key="frame" x="0.0" y="92" width="600" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEy-MZ-G4M" id="v7Q-SZ-IsI">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oG3-Yb-QgX" id="zlo-Fj-Npu"/>
+                            <outlet property="delegate" destination="oG3-Yb-QgX" id="LyP-W3-mFy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Форум" id="nIy-Tw-uUU">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="3gP-DA-Icl">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="3gP-DA-Icl" id="KAg-Fp-LGf"/>
+                        <segue destination="pgk-F9-k5U" kind="custom" id="RVE-4Y-cE3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3s-MW-FdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759.5" y="5500.5"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ggL-re-XAp">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="pgk-F9-k5U" customClass="WebViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JSq-HE-olF"/>
+                        <viewControllerLayoutGuide type="bottom" id="OS4-15-nwC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DQY-tx-N5F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94H-Og-ZwD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="94H-Og-ZwD" secondAttribute="trailing" id="E7b-Ww-vwd"/>
+                            <constraint firstItem="94H-Og-ZwD" firstAttribute="bottom" secondItem="OS4-15-nwC" secondAttribute="top" id="Gj7-x8-zjO"/>
+                            <constraint firstItem="94H-Og-ZwD" firstAttribute="leading" secondItem="DQY-tx-N5F" secondAttribute="leading" id="WM5-Dw-nUx"/>
+                            <constraint firstItem="94H-Og-ZwD" firstAttribute="top" secondItem="DQY-tx-N5F" secondAttribute="top" id="gaK-sq-qW1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="94H-Og-ZwD" id="enQ-AT-QdB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MT0-8E-rCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2542.5" y="5500.3521126760561"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2T3-PV-l4x">
+            <objects>
+                <navigationController storyboardIdentifier="SpasmsNavigationController" id="i1P-gq-8ya" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7A-Ay-iHL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N9y-xQ-xuE" kind="relationship" relationship="rootViewController" id="oTE-D4-uzH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyr-90-JtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="1862"/>
+        </scene>
+        <!--Справочник имен-->
+        <scene sceneID="glp-0q-6Lx">
+            <objects>
+                <tableViewController id="6fG-tu-2eH" customClass="ListTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u7M-AD-qSW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="iKP-Te-o9o">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKP-Te-o9o" id="ZpZ-bn-4GX">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6fG-tu-2eH" id="Ej7-KN-71G"/>
+                            <outlet property="delegate" destination="6fG-tu-2eH" id="4Dq-F5-IiW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Справочник имен" id="sdx-xt-jyy">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="xwW-mw-8lq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="xwW-mw-8lq" id="zAr-bB-b04"/>
+                        <segue destination="cP4-PH-KjY" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="cjy-jK-b8A"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOb-c0-LSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768" y="1089.9999999999998"/>
+        </scene>
+        <!--Счетчик схваток-->
+        <scene sceneID="N44-Wj-vjJ">
+            <objects>
+                <viewController id="N9y-xQ-xuE" customClass="SpasmsViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zTb-vV-TIa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nka-69-wPP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fj0-DT-9Ld">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-CJ-kbh">
+                                <rect key="frame" x="112" y="322" width="377" height="105"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-mz-XaG">
+                                <rect key="frame" x="20" y="475" width="560" height="42"/>
+                                <color key="backgroundColor" red="0.35155320167541504" green="0.69836688041687012" blue="0.46706324815750122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="OYd-Bs-NwB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ОЙ, СХВАТКА">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSpasms:" destination="N9y-xQ-xuE" eventType="touchUpInside" id="vO2-en-jB6"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Gr-OOA">
+                                <rect key="frame" x="0.0" y="72" width="600" height="242"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="aiY-0s-bnX" customClass="CustomCollectionViewLayout" customModule="PregnancyCalendar" customModuleProvider="target"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="N9y-xQ-xuE" id="2LS-T9-XGU"/>
+                                    <outlet property="delegate" destination="N9y-xQ-xuE" id="VtJ-aK-Wv9"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itZ-dQ-5sf">
+                                <rect key="frame" x="112" y="322" width="377" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="9t4-hu-CJT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="bottom" secondItem="xc2-CJ-kbh" secondAttribute="bottom" id="7hi-95-9Vd"/>
+                            <constraint firstAttribute="trailing" secondItem="1hk-Gr-OOA" secondAttribute="trailing" id="FuH-bE-ddQ"/>
+                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="centerX" secondItem="ogh-mz-XaG" secondAttribute="centerX" id="G9K-Y9-P0L"/>
+                            <constraint firstItem="1hk-Gr-OOA" firstAttribute="leading" secondItem="Fj0-DT-9Ld" secondAttribute="leading" id="PEV-dy-UFl"/>
+                            <constraint firstItem="xc2-CJ-kbh" firstAttribute="leading" secondItem="itZ-dQ-5sf" secondAttribute="leading" id="QB4-Bj-HOq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="128"/>
+                            </constraint>
+                            <constraint firstItem="1hk-Gr-OOA" firstAttribute="top" secondItem="zTb-vV-TIa" secondAttribute="bottom" constant="10" id="SxY-k5-4kc"/>
+                            <constraint firstItem="xc2-CJ-kbh" firstAttribute="leading" secondItem="Fj0-DT-9Ld" secondAttribute="leadingMargin" constant="92" id="UTv-qe-NIW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="128"/>
+                            </constraint>
+                            <constraint firstItem="xc2-CJ-kbh" firstAttribute="top" secondItem="itZ-dQ-5sf" secondAttribute="top" id="anH-qd-skM"/>
+                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="centerX" secondItem="1hk-Gr-OOA" secondAttribute="centerX" id="cqI-UQ-FWG"/>
+                            <constraint firstItem="ogh-mz-XaG" firstAttribute="leading" secondItem="Fj0-DT-9Ld" secondAttribute="leadingMargin" id="eb3-BU-kDl"/>
+                            <constraint firstItem="ogh-mz-XaG" firstAttribute="top" secondItem="itZ-dQ-5sf" secondAttribute="bottom" constant="18" id="hnq-cq-F6O"/>
+                            <constraint firstItem="xc2-CJ-kbh" firstAttribute="trailing" secondItem="itZ-dQ-5sf" secondAttribute="trailing" id="lXk-Xz-0u8">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-128"/>
+                            </constraint>
+                            <constraint firstItem="Nka-69-wPP" firstAttribute="top" secondItem="ogh-mz-XaG" secondAttribute="bottom" constant="83" id="qQE-on-sUJ"/>
+                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="top" secondItem="1hk-Gr-OOA" secondAttribute="bottom" constant="48" id="zM3-7O-acZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Счетчик схваток" id="vZG-or-307">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="tnY-fA-tlV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Lqb-O0-Vmn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonSpasm" destination="ogh-mz-XaG" id="hqM-uX-8UD"/>
+                        <outlet property="collectionView" destination="1hk-Gr-OOA" id="AKf-T6-nR0"/>
+                        <outlet property="label" destination="itZ-dQ-5sf" id="hnE-4Q-v0q"/>
+                        <outlet property="menuButton" destination="tnY-fA-tlV" id="Cjy-hi-emg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYY-4J-tR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765.5" y="1860"/>
+        </scene>
+        <!--Name View Controller-->
+        <scene sceneID="AFv-Ef-0nT">
+            <objects>
+                <viewController storyboardIdentifier="NameViewController" id="cP4-PH-KjY" customClass="NameViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8gK-ag-His"/>
+                        <viewControllerLayoutGuide type="bottom" id="gM8-zh-yUp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="shp-bh-gc2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nBI-xM-PIq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nBI-xM-PIq" secondAttribute="trailing" id="cUp-Et-SKA"/>
+                            <constraint firstItem="nBI-xM-PIq" firstAttribute="bottom" secondItem="gM8-zh-yUp" secondAttribute="top" id="k2S-vi-ftZ"/>
+                            <constraint firstItem="nBI-xM-PIq" firstAttribute="top" secondItem="shp-bh-gc2" secondAttribute="top" id="lpc-0p-cEg"/>
+                            <constraint firstItem="nBI-xM-PIq" firstAttribute="leading" secondItem="shp-bh-gc2" secondAttribute="leading" id="lxG-dI-ZVC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zm2-g3-7OS">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LqJ-7w-Dpr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="nBI-xM-PIq" id="pvI-SC-xWw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jaq-rv-zdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2542.5" y="1089.0845070422533"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gc0-nx-U25">
+            <objects>
+                <navigationController storyboardIdentifier="ListNavigationController" id="3vf-EO-2Ja" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O6W-KQ-wsW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6fG-tu-2eH" kind="relationship" relationship="rootViewController" id="aL1-J9-VC9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3b-9m-LfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="1098"/>
+        </scene>
+        <!--Дата родов-->
+        <scene sceneID="JaI-4t-SDB">
+            <objects>
+                <viewController id="Pj3-YC-st5" customClass="BirthDateViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w1m-CF-F3w"/>
+                        <viewControllerLayoutGuide type="bottom" id="IW9-Lh-6jL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YMx-QD-leI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Дата родов" id="VAf-F5-aOn">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="kb9-I9-HnS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menuButton" destination="kb9-I9-HnS" id="WS7-p3-lZo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ME-am-xrn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="282.75"/>
+        </scene>
+        <!--Menu Table View Controller-->
+        <scene sceneID="Eri-qI-RJM">
+            <objects>
+                <tableViewController id="F1z-on-BXr" customClass="MenuTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qa-Mg-GBC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="I3O-YH-5yS">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3O-YH-5yS" id="hyl-Ms-oul">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-sD-pUb">
+                                            <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="sZc-n4-HVm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYR-qy-2ys">
+                                            <rect key="frame" x="60" y="0.0" width="532" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="532" id="jMj-li-rTX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4uu-sD-pUb" firstAttribute="top" secondItem="WYR-qy-2ys" secondAttribute="top" id="3X9-ti-6mj"/>
+                                        <constraint firstItem="WYR-qy-2ys" firstAttribute="leading" secondItem="4uu-sD-pUb" secondAttribute="trailing" constant="8" symbolic="YES" id="LV2-e4-dLE"/>
+                                        <constraint firstItem="4uu-sD-pUb" firstAttribute="leading" secondItem="hyl-Ms-oul" secondAttribute="leadingMargin" id="SRD-Gw-J41"/>
+                                        <constraint firstItem="WYR-qy-2ys" firstAttribute="bottom" secondItem="4uu-sD-pUb" secondAttribute="bottom" id="fPa-dp-SMS"/>
+                                        <constraint firstItem="4uu-sD-pUb" firstAttribute="top" secondItem="hyl-Ms-oul" secondAttribute="top" id="i7H-jF-pOa"/>
+                                        <constraint firstAttribute="bottom" secondItem="4uu-sD-pUb" secondAttribute="bottom" id="u2F-tL-NHc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="F1z-on-BXr" id="jqg-wT-mzA"/>
+                            <outlet property="delegate" destination="F1z-on-BXr" id="CH0-P2-TTZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Evr-rl-KEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="1098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
+</document>

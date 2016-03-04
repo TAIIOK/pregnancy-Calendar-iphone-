@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		022994221C80956900E3B816 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994211C80956900E3B816 /* VideoViewController.swift */; };
+		022994241C80969F00E3B816 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994231C80969F00E3B816 /* NotesViewController.swift */; };
+		022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994251C8098AD00E3B816 /* ForumTableViewController.swift */; };
+		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
+		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
+		022994301C8479A300E3B816 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229942F1C8479A300E3B816 /* WebViewController.swift */; };
+		023A52641C85840600DBFF76 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A52631C85840600DBFF76 /* DLRadioButton.m */; };
+		023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */; };
+		023A526A1C86F84300DBFF76 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A52691C86F84300DBFF76 /* Photos.framework */; };
+		023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */; };
+		023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */; };
+		023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */; };
+		023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */; };
+		023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */; };
+		023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */; };
+		02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D271C7EFBA40088F21B /* AppDelegate.swift */; };
+		02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D291C7EFBA40088F21B /* ViewController.swift */; };
+		02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D2B1C7EFBA40088F21B /* Main.storyboard */; };
+		02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */; };
+		02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02682D311C7EFBA40088F21B /* Assets.xcassets */; };
+		02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */; };
+		02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02682D401C7EFC420088F21B /* SWRevealViewController.m */; };
+		02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D441C7EFFA00088F21B /* BirthDateViewController.swift */; };
+		02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D461C7F013D0088F21B /* ListTableViewController.swift */; };
+		02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D481C7F0CEB0088F21B /* NameViewController.swift */; };
+		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
+		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
+		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
+		02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D521C7F50B20088F21B /* PhotoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		022994211C80956900E3B816 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		022994231C80969F00E3B816 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		022994251C8098AD00E3B816 /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
+		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
+		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
+		0229942F1C8479A300E3B816 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		023A52621C85840600DBFF76 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		023A52631C85840600DBFF76 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPhotoViewController.swift; sourceTree = "<group>"; };
+		023A52691C86F84300DBFF76 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
+		023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
+		023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		02682D241C7EFBA40088F21B /* PregnancyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PregnancyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02682D271C7EFBA40088F21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02682D291C7EFBA40088F21B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02682D2C1C7EFBA40088F21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PregnancyCalendar.xcdatamodel; sourceTree = "<group>"; };
+		02682D311C7EFBA40088F21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02682D341C7EFBA40088F21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02682D361C7EFBA40088F21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PregnancyCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
+		02682D3F1C7EFC420088F21B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		02682D401C7EFC420088F21B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		02682D441C7EFFA00088F21B /* BirthDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
+		02682D461C7F013D0088F21B /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		02682D481C7F0CEB0088F21B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
+		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
+		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		02682D521C7F50B20088F21B /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02682D211C7EFBA40088F21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023A526A1C86F84300DBFF76 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		023A52611C8583B900DBFF76 /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				023A52621C85840600DBFF76 /* DLRadioButton.h */,
+				023A52631C85840600DBFF76 /* DLRadioButton.m */,
+			);
+			name = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		023A52731C88238200DBFF76 /* Custom Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */,
+				023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */,
+				023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */,
+				023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */,
+				023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */,
+			);
+			name = "Custom Layouts";
+			sourceTree = "<group>";
+		};
+		02682D1B1C7EFBA40088F21B = {
+			isa = PBXGroup;
+			children = (
+				023A52691C86F84300DBFF76 /* Photos.framework */,
+				02682D261C7EFBA40088F21B /* PregnancyCalendar */,
+				02682D251C7EFBA40088F21B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02682D251C7EFBA40088F21B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02682D241C7EFBA40088F21B /* PregnancyCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				023A52731C88238200DBFF76 /* Custom Layouts */,
+				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				02682D361C7EFBA40088F21B /* Info.plist */,
+				022994271C8459A400E3B816 /* userInfo.plist */,
+				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
+				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
+				023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */,
+				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
+				02682D461C7F013D0088F21B /* ListTableViewController.swift */,
+				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
+				02682D481C7F0CEB0088F21B /* NameViewController.swift */,
+				022994231C80969F00E3B816 /* NotesViewController.swift */,
+				023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */,
+				02682D521C7F50B20088F21B /* PhotoViewController.swift */,
+				022994291C845B4D00E3B816 /* Plist.swift */,
+				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
+				022994211C80956900E3B816 /* VideoViewController.swift */,
+				02682D291C7EFBA40088F21B /* ViewController.swift */,
+				0229942F1C8479A300E3B816 /* WebViewController.swift */,
+				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
+				02682D311C7EFBA40088F21B /* Assets.xcassets */,
+				023A52611C8583B900DBFF76 /* DLRadioButton */,
+				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
+				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
+				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
+				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
+			);
+			path = PregnancyCalendar;
+			sourceTree = "<group>";
+		};
+		02682D3D1C7EFC050088F21B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02682D3F1C7EFC420088F21B /* SWRevealViewController.h */,
+				02682D401C7EFC420088F21B /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02682D231C7EFBA40088F21B /* PregnancyCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */;
+			buildPhases = (
+				02682D201C7EFBA40088F21B /* Sources */,
+				02682D211C7EFBA40088F21B /* Frameworks */,
+				02682D221C7EFBA40088F21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PregnancyCalendar;
+			productName = PregnancyCalendar;
+			productReference = 02682D241C7EFBA40088F21B /* PregnancyCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02682D1C1C7EFBA40088F21B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = farestz;
+				TargetAttributes = {
+					02682D231C7EFBA40088F21B = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Y6XF9JEXKG;
+					};
+				};
+			};
+			buildConfigurationList = 02682D1F1C7EFBA40088F21B /* Build configuration list for PBXProject "PregnancyCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02682D1B1C7EFBA40088F21B;
+			productRefGroup = 02682D251C7EFBA40088F21B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02682D231C7EFBA40088F21B /* PregnancyCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02682D221C7EFBA40088F21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */,
+				02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */,
+				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */,
+				023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */,
+				022994281C8459A400E3B816 /* userInfo.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02682D201C7EFBA40088F21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
+				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
+				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
+				02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */,
+				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
+				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
+				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
+				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
+				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
+				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
+				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
+				023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
+				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
+				023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */,
+				022994301C8479A300E3B816 /* WebViewController.swift in Sources */,
+				023A52641C85840600DBFF76 /* DLRadioButton.m in Sources */,
+				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
+				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
+				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
+				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
+				02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		02682D2B1C7EFBA40088F21B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02682D2C1C7EFBA40088F21B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02682D341C7EFBA40088F21B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02682D371C7EFBA40088F21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02682D381C7EFBA40088F21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02682D3A1C7EFBA40088F21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02682D3B1C7EFBA40088F21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02682D1F1C7EFBA40088F21B /* Build configuration list for PBXProject "PregnancyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02682D371C7EFBA40088F21B /* Debug */,
+				02682D381C7EFBA40088F21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02682D3A1C7EFBA40088F21B /* Debug */,
+				02682D3B1C7EFBA40088F21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */,
+			);
+			currentVersion = 02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */;
+			path = PregnancyCalendar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02682D1C1C7EFBA40088F21B /* Project object */;
+}
