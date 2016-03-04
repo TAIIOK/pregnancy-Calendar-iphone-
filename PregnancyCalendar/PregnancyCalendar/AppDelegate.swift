@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UINavigationBar.appearance().barTintColor = StrawBerryColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        //UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().tintColor = .whiteColor()
-        UINavigationBar.appearance().barStyle = UIBarStyle.BlackOpaque
+        UINavigationBar.appearance().barStyle = .BlackOpaque
         UIToolbar.appearance().barTintColor = StrawBerryColor
         UIToolbar.appearance().translucent = false
         UIToolbar.appearance().tintColor = .whiteColor()
-        UIToolbar.appearance().barStyle = UIBarStyle.BlackOpaque
+        UIToolbar.appearance().barStyle = .BlackOpaque
         return true
     }
 

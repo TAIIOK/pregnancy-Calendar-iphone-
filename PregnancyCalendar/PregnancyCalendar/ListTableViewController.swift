@@ -9,7 +9,6 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
-    let alphabet = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
     let boyNames = ["Александр", "Алексей", "Тимофей", "Юрий"]
     let girlNames = ["Дарья", "Света", "Софья"]
     var choosedName = 0 // index of name

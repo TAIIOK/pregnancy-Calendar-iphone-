@@ -619,6 +619,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Lqb-O0-Vmn">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="buttonTrash:" destination="N9y-xQ-xuE" id="by2-jr-ETq"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

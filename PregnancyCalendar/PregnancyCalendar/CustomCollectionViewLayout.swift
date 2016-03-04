@@ -99,7 +99,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             if (self.itemAttributes == nil) {
                 self.itemAttributes = NSMutableArray(capacity: self.collectionView!.numberOfSections())
             }
-            self.itemAttributes .addObject(sectionAttributes)
+            self.itemAttributes.addObject(sectionAttributes)
         }
         
         let attributes : UICollectionViewLayoutAttributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
@@ -144,9 +144,9 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         var text : String = ""
         switch (columnIndex) {
         case 0:
-            text = "№"
+            text = ""
         case 1:
-            text = "НАЧАЛАСЬ"
+            text = " НАЧАЛАСЬ  "
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
