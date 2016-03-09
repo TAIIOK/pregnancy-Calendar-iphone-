@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomCollectionViewLayout: UICollectionViewLayout {
-
     let numberOfColumns = 5
     var itemAttributes : NSMutableArray!
     var itemsSize : NSMutableArray!
@@ -20,10 +19,10 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             return
         }
         
+        self.itemAttributes = nil
         if (self.itemAttributes != nil && self.itemAttributes.count > 0) {
             for section in 0..<self.collectionView!.numberOfSections() {
-                let numberOfItems = self.collectionView!.numberOfItemsInSection(section)
-                for index in 0..<numberOfItems {
+                for index in 0..<self.collectionView!.numberOfItemsInSection(section) {
                     if section != 0 && index != 0 {
                         continue
                     }
@@ -42,11 +41,11 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     }
                 }
             }
-            
+        
             return
         }
         
-        if (self.itemsSize == nil || self.itemsSize.count != numberOfColumns) {
+        if (self.itemsSize == nil || self.itemsSize.count != self.numberOfColumns) {
             self.calculateItemsSize()
         }
         
@@ -59,7 +58,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         for section in 0..<self.collectionView!.numberOfSections() {
             let sectionAttributes = NSMutableArray()
             
-            for index in 0..<numberOfColumns {
+            for index in 0..<self.numberOfColumns {
                 let itemSize = self.itemsSize[index].CGSizeValue()
                 let indexPath = NSIndexPath(forItem: index, inSection: section)
                 let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
@@ -88,7 +87,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                 xOffset += itemSize.width
                 column++
                 
-                if column == numberOfColumns {
+                if column == self.numberOfColumns {
                     if xOffset > contentWidth {
                         contentWidth = xOffset
                     }
@@ -124,15 +123,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         if self.itemAttributes != nil {
             for section in self.itemAttributes {
                 
-                let filteredArray  =  section.filteredArrayUsingPredicate(
-                    NSPredicate(block: { (evaluatedObject, bindings) -> Bool in
-                        return CGRectIntersectsRect(rect, evaluatedObject.frame)
-                    })
-                    ) as! [UICollectionViewLayoutAttributes]
-                
-                
+                let filteredArray = section.filteredArrayUsingPredicate(NSPredicate(block: { (evaluatedObject, bindings) -> Bool in return CGRectIntersectsRect(rect, evaluatedObject.frame) })) as! [UICollectionViewLayoutAttributes]
                 attributes.appendContentsOf(filteredArray)
-                
             }
         }
         
@@ -144,12 +136,12 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
     }
     
     func sizeForItemWithColumnIndex(columnIndex: Int) -> CGSize {
-        var text : String = ""
+        var text = ""
         switch (columnIndex) {
         case 0:
-            text = "№ "
+            text = ""
         case 1:
-            text = "НАЧАЛАСЬ"
+            text = " НАЧАЛАСЬ "
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
@@ -160,14 +152,14 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             text = ""
         }
         
-        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(7.0)])
-        let width : CGFloat = size.width + 19
+        let size = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(7.0)])
+        let width = size.width + 20
         return CGSizeMake(width, 30)
     }
     
     func calculateItemsSize() {
-        self.itemsSize = NSMutableArray(capacity: numberOfColumns)
-        for index in 0..<numberOfColumns {
+        self.itemsSize = NSMutableArray(capacity: self.numberOfColumns)
+        for index in 0..<self.numberOfColumns {
             self.itemsSize.addObject(NSValue(CGSize: self.sizeForItemWithColumnIndex(index)))
         }
     }

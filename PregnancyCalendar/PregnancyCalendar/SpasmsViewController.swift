@@ -17,10 +17,17 @@ extension NSDate {
     func toFormattedTimeString() -> String {
         let today = NSDate()
         let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        
         let hour = gregorian.component(.Hour, fromDate: today)
+        let hourStr = (hour < 10 ? "0" : "") + String(hour)
+        
         let minute = gregorian.component(.Minute, fromDate: today)
+        let minuteStr = (minute < 10 ? "0" : "") + String(minute)
+        
         let second = gregorian.component(.Second, fromDate: today)
-        return "\(hour):\(minute):\(second)"
+        let secondStr = (second < 10 ? "0" : "") + String(second)
+        
+        return hourStr + ":" + minuteStr + ":" + secondStr
     }
 }
 
@@ -59,7 +66,6 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBAction func buttonTrash(sender: AnyObject) {
         self.dict.removeAll()
         self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override func viewDidLoad() {
@@ -80,7 +86,6 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.spasm.duration = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
         self.dict.append(spasm)
         self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout.invalidateLayout()
         self.timer.invalidate()
         self.label.text = ""
     }
@@ -116,27 +121,27 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.text = "№"
-                numberCell.layoutIfNeeded()
+                numberCell.numberLabel.font = .boldSystemFontOfSize(7)
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "НАЧАЛАСЬ"
-                contentCell.layoutIfNeeded()
+                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ДЛИТЕЛЬНОСТЬ"
-                contentCell.layoutIfNeeded()
+                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ЗАКОНЧИЛАСЬ"
-                contentCell.layoutIfNeeded()
+                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ПРОМЕЖУТОК"
-                contentCell.layoutIfNeeded()
+                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
                 return contentCell
             }
         } else {
@@ -144,31 +149,26 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.font = .systemFontOfSize(12)
                 numberCell.numberLabel.text = String(indexPath.section)
-                numberCell.layoutIfNeeded()
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].start
-                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = String(format: "%.0f", self.dict[indexPath.section - 1].duration) + " сек."
-                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].stop
-                contentCell.layoutIfNeeded()
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = "-"
-                contentCell.layoutIfNeeded()
                 return contentCell
             }
         }
