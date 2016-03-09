@@ -16,18 +16,18 @@ enum State {
 extension NSDate {
     func toFormattedTimeString() -> String {
         let today = NSDate()
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let gregorian = NSCalendar.currentCalendar()
         
         let hour = gregorian.component(.Hour, fromDate: today)
-        let hourStr = (hour < 10 ? "0" : "") + String(hour)
+        let hourStr = (hour < 10 ? "0" : "") + String(hour) + ":"
         
         let minute = gregorian.component(.Minute, fromDate: today)
-        let minuteStr = (minute < 10 ? "0" : "") + String(minute)
+        let minuteStr = (minute < 10 ? "0" : "") + String(minute) + ":"
         
         let second = gregorian.component(.Second, fromDate: today)
         let secondStr = (second < 10 ? "0" : "") + String(second)
         
-        return hourStr + ":" + minuteStr + ":" + secondStr
+        return hourStr + minuteStr + secondStr
     }
 }
 
@@ -66,6 +66,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBAction func buttonTrash(sender: AnyObject) {
         self.dict.removeAll()
         self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override func viewDidLoad() {
@@ -76,6 +77,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     private func spasmStart() {
+        self.label.text = "0"
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerUpdate", userInfo: NSDate(), repeats: true)
         self.spasm = tmpSpasm()
         self.spasm.start = NSDate().toFormattedTimeString()
@@ -86,6 +88,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.spasm.duration = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
         self.dict.append(spasm)
         self.collectionView.reloadData()
+        self.scrollToBottom()
         self.timer.invalidate()
         self.label.text = ""
     }
@@ -106,6 +109,20 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
+    }
+    
+    func scrollToBottom() {
+        // don't look there
+        let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
+        let lastItemIndex = NSIndexPath(forItem: item, inSection: self.dict.count)
+        self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
+    }
+    
+    func scrollToTop() {
+        // don't look there
+        let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
+        let lastItemIndex = NSIndexPath(forItem: item, inSection: 0)
+        self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Top, animated: true)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -168,7 +185,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
-                contentCell.contentLabel.text = "-"
+                contentCell.contentLabel.text = "_"
                 return contentCell
             }
         }

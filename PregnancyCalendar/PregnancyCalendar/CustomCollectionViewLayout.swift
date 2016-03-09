@@ -141,7 +141,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         case 0:
             text = ""
         case 1:
-            text = " НАЧАЛАСЬ "
+            text = " НАЧАЛАСЬ  "
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
