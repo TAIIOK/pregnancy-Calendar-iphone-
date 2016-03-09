@@ -22,26 +22,27 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         
         if (self.itemAttributes != nil && self.itemAttributes.count > 0) {
             for section in 0..<self.collectionView!.numberOfSections() {
-                var numberOfItems : Int = self.collectionView!.numberOfItemsInSection(section)
+                let numberOfItems = self.collectionView!.numberOfItemsInSection(section)
                 for index in 0..<numberOfItems {
                     if section != 0 && index != 0 {
                         continue
                     }
                     
-                    var attributes : UICollectionViewLayoutAttributes = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: index, inSection: section))
+                    let attributes = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: index, inSection: section))
                     if section == 0 {
-                        var frame = attributes.frame
+                        var frame = attributes!.frame
                         frame.origin.y = self.collectionView!.contentOffset.y
-                        attributes.frame = frame
+                        attributes!.frame = frame
                     }
                     
                     if index == 0 {
-                        var frame = attributes.frame
+                        var frame = attributes!.frame
                         frame.origin.x = self.collectionView!.contentOffset.x
-                        attributes.frame = frame
+                        attributes!.frame = frame
                     }
                 }
             }
+            
             return
         }
         
@@ -50,18 +51,18 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         }
         
         var column = 0
-        var xOffset : CGFloat = 0
-        var yOffset : CGFloat = 0
-        var contentWidth : CGFloat = 0
-        var contentHeight : CGFloat = 0
+        var xOffset: CGFloat = 0
+        var yOffset: CGFloat = 0
+        var contentWidth: CGFloat = 0
+        var contentHeight: CGFloat = 0
         
         for section in 0..<self.collectionView!.numberOfSections() {
-            var sectionAttributes = NSMutableArray()
+            let sectionAttributes = NSMutableArray()
             
             for index in 0..<numberOfColumns {
-                var itemSize = self.itemsSize[index].CGSizeValue()
-                var indexPath = NSIndexPath(forItem: index, inSection: section)
-                var attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                let itemSize = self.itemsSize[index].CGSizeValue()
+                let indexPath = NSIndexPath(forItem: index, inSection: section)
+                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
                 attributes.frame = CGRectIntegral(CGRectMake(xOffset, yOffset, itemSize.width, itemSize.height))
                 
                 if section == 0 && index == 0 {
@@ -75,6 +76,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     frame.origin.y = self.collectionView!.contentOffset.y
                     attributes.frame = frame
                 }
+                
                 if index == 0 {
                     var frame = attributes.frame
                     frame.origin.x = self.collectionView!.contentOffset.x
@@ -96,13 +98,15 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     yOffset += itemSize.height
                 }
             }
+            
             if (self.itemAttributes == nil) {
                 self.itemAttributes = NSMutableArray(capacity: self.collectionView!.numberOfSections())
             }
-            self.itemAttributes .addObject(sectionAttributes)
+            
+            self.itemAttributes.addObject(sectionAttributes)
         }
         
-        var attributes : UICollectionViewLayoutAttributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
+        let attributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
         contentHeight = attributes.frame.origin.y + attributes.frame.size.height
         self.contentSize = CGSizeMake(contentWidth, contentHeight)
     }
@@ -111,8 +115,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         return self.contentSize
     }
     
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
-        return self.itemAttributes[indexPath.section][indexPath.row] as! UICollectionViewLayoutAttributes
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        return self.itemAttributes[indexPath.section][indexPath.row] as? UICollectionViewLayoutAttributes
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -121,7 +125,6 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             for section in self.itemAttributes {
                 
                 let filteredArray  =  section.filteredArrayUsingPredicate(
-                    
                     NSPredicate(block: { (evaluatedObject, bindings) -> Bool in
                         return CGRectIntersectsRect(rect, evaluatedObject.frame)
                     })
@@ -144,25 +147,21 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         var text : String = ""
         switch (columnIndex) {
         case 0:
-            text = "Col 0"
+            text = "№ "
         case 1:
-            text = "Col 1"
+            text = "НАЧАЛАСЬ"
         case 2:
-            text = "Col 2"
+            text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
-            text = "Col 3"
+            text = "ЗАКОНЧИЛСАЬ"
         case 4:
-            text = "Col 4"
-        case 5:
-            text = "Col 5"
-        case 6:
-            text = "Col 6"
+            text = "ПРОМЕЖУТОК"
         default:
-            text = "Col 7"
+            text = ""
         }
         
-        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
-        let width : CGFloat = size.width + 25
+        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(7.0)])
+        let width : CGFloat = size.width + 19
         return CGSizeMake(width, 30)
     }
     

@@ -116,22 +116,27 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.text = "№"
+                numberCell.layoutIfNeeded()
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "НАЧАЛАСЬ"
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ДЛИТЕЛЬНОСТЬ"
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ЗАКОНЧИЛАСЬ"
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ПРОМЕЖУТОК"
+                contentCell.layoutIfNeeded()
                 return contentCell
             }
         } else {
@@ -139,26 +144,31 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.font = .systemFontOfSize(12)
                 numberCell.numberLabel.text = String(indexPath.section)
+                numberCell.layoutIfNeeded()
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].start
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = String(format: "%.0f", self.dict[indexPath.section - 1].duration) + " сек."
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].stop
+                contentCell.layoutIfNeeded()
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = .systemFontOfSize(12)
                 contentCell.contentLabel.text = "-"
+                contentCell.layoutIfNeeded()
                 return contentCell
             }
         }
