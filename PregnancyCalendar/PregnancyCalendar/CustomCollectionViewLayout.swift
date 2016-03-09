@@ -1,14 +1,15 @@
 //
 //  CustomCollectionViewLayout.swift
-//  PregnancyCalendar
+//  CustomCollectionLayout
 //
-//  Created by farestz on 03.03.16.
-//  Copyright © 2016 farestz. All rights reserved.
+//  Created by JOSE MARTINEZ on 15/12/2014.
+//  Copyright (c) 2014 brightec. All rights reserved.
 //
 
 import UIKit
 
 class CustomCollectionViewLayout: UICollectionViewLayout {
+
     let numberOfColumns = 5
     var itemAttributes : NSMutableArray!
     var itemsSize : NSMutableArray!
@@ -21,27 +22,26 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         
         if (self.itemAttributes != nil && self.itemAttributes.count > 0) {
             for section in 0..<self.collectionView!.numberOfSections() {
-                let numberOfItems = self.collectionView!.numberOfItemsInSection(section)
+                var numberOfItems : Int = self.collectionView!.numberOfItemsInSection(section)
                 for index in 0..<numberOfItems {
                     if section != 0 && index != 0 {
                         continue
                     }
                     
-                    let attributes = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: index, inSection: section))
+                    var attributes : UICollectionViewLayoutAttributes = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: index, inSection: section))
                     if section == 0 {
-                        var frame = attributes!.frame
+                        var frame = attributes.frame
                         frame.origin.y = self.collectionView!.contentOffset.y
-                        attributes!.frame = frame
+                        attributes.frame = frame
                     }
                     
                     if index == 0 {
-                        var frame = attributes!.frame
+                        var frame = attributes.frame
                         frame.origin.x = self.collectionView!.contentOffset.x
-                        attributes!.frame = frame
+                        attributes.frame = frame
                     }
                 }
             }
-            
             return
         }
         
@@ -56,12 +56,12 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         var contentHeight : CGFloat = 0
         
         for section in 0..<self.collectionView!.numberOfSections() {
-            let sectionAttributes = NSMutableArray()
+            var sectionAttributes = NSMutableArray()
             
             for index in 0..<numberOfColumns {
-                let itemSize = self.itemsSize[index].CGSizeValue()
-                let indexPath = NSIndexPath(forItem: index, inSection: section)
-                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                var itemSize = self.itemsSize[index].CGSizeValue()
+                var indexPath = NSIndexPath(forItem: index, inSection: section)
+                var attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
                 attributes.frame = CGRectIntegral(CGRectMake(xOffset, yOffset, itemSize.width, itemSize.height))
                 
                 if section == 0 && index == 0 {
@@ -99,10 +99,10 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             if (self.itemAttributes == nil) {
                 self.itemAttributes = NSMutableArray(capacity: self.collectionView!.numberOfSections())
             }
-            self.itemAttributes.addObject(sectionAttributes)
+            self.itemAttributes .addObject(sectionAttributes)
         }
         
-        let attributes : UICollectionViewLayoutAttributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
+        var attributes : UICollectionViewLayoutAttributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
         contentHeight = attributes.frame.origin.y + attributes.frame.size.height
         self.contentSize = CGSizeMake(contentWidth, contentHeight)
     }
@@ -111,8 +111,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         return self.contentSize
     }
     
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return self.itemAttributes[indexPath.section][indexPath.row] as? UICollectionViewLayoutAttributes
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
+        return self.itemAttributes[indexPath.section][indexPath.row] as! UICollectionViewLayoutAttributes
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -144,21 +144,25 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         var text : String = ""
         switch (columnIndex) {
         case 0:
-            text = ""
+            text = "Col 0"
         case 1:
-            text = " НАЧАЛАСЬ  "
+            text = "Col 1"
         case 2:
-            text = "ДЛИТЕЛЬНОСТЬ"
+            text = "Col 2"
         case 3:
-            text = "ЗАКОНЧИЛАСЬ"
+            text = "Col 3"
         case 4:
-            text = "ПРОМЕЖУТОК"
+            text = "Col 4"
+        case 5:
+            text = "Col 5"
+        case 6:
+            text = "Col 6"
         default:
-            text = "Col 70"
+            text = "Col 7"
         }
         
-        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(7.0)])
-        let width : CGFloat = size.width + 20
+        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
+        let width : CGFloat = size.width + 25
         return CGSizeMake(width, 30)
     }
     
@@ -168,5 +172,4 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             self.itemsSize.addObject(NSValue(CGSize: self.sizeForItemWithColumnIndex(index)))
         }
     }
-
 }
