@@ -186,7 +186,7 @@
 				TargetAttributes = {
 					02682D231C7EFBA40088F21B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Y6XF9JEXKG;
+						DevelopmentTeam = JQ2V9L3K2H;
 					};
 				};
 			};
@@ -364,9 +364,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -382,9 +382,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";

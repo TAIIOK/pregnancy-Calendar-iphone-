@@ -138,53 +138,53 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.text = "№"
-                numberCell.numberLabel.font = .boldSystemFontOfSize(7)
+                numberCell.numberLabel.font = .boldSystemFontOfSize(13)
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "НАЧАЛАСЬ"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ДЛИТЕЛЬНОСТЬ"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ЗАКОНЧИЛАСЬ"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ПРОМЕЖУТОК"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(7)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             }
         } else {
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
-                numberCell.numberLabel.font = .systemFontOfSize(12)
+                numberCell.numberLabel.font = .systemFontOfSize(14)
                 numberCell.numberLabel.text = String(indexPath.section)
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.contentLabel.font = .systemFontOfSize(12)
+                contentCell.contentLabel.font = .systemFontOfSize(14)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].start
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.contentLabel.font = .systemFontOfSize(12)
+                contentCell.contentLabel.font = .systemFontOfSize(14)
                 contentCell.contentLabel.text = String(format: "%.0f", self.dict[indexPath.section - 1].duration) + " сек."
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.contentLabel.font = .systemFontOfSize(12)
+                contentCell.contentLabel.font = .systemFontOfSize(14)
                 contentCell.contentLabel.text = self.dict[indexPath.section - 1].stop
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.contentLabel.font = .systemFontOfSize(12)
+                contentCell.contentLabel.font = .systemFontOfSize(14)
                 contentCell.contentLabel.text = "_"
                 return contentCell
             }
