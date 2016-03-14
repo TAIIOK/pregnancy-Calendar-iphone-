@@ -97,13 +97,39 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.pickerViewTextField.resignFirstResponder()
     }
     
+    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        
+        switch buttonIndex {
+            
+        default:
+            print("alertView \(buttonIndex) clicked")
+            
+        }
+    }
+    
     private func alertToNotes() {
-        let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
-        let notesAction = UIAlertAction(title: "В заметки", style: .Default, handler: { (alert) in self.actionToNotes() } )
-        alert.addAction(cancelAction)
-        alert.addAction(notesAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        if #available(iOS 8.0, *) {
+            let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
+            let notesAction = UIAlertAction(title: "В заметки", style: .Default, handler: { (alert) in self.actionToNotes() } )
+            alert.addAction(cancelAction)
+            alert.addAction(notesAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        else {
+            
+            let alert: UIAlertView = UIAlertView()
+            alert.delegate = self
+            alert.title = ""
+            alert.message = "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения"
+            alert.addButtonWithTitle("Отмена")
+            alert.addButtonWithTitle("В заметки")
+            
+            alert.show()
+            
+        }
+
     }
     
     func actionToNotes() {

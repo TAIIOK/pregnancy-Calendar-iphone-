@@ -36,6 +36,14 @@
 		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
 		02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D521C7F50B20088F21B /* PhotoViewController.swift */; };
+		A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD741C96EC3400B6A036 /* Black_dot.png */; };
+		A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */; };
+		A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */; };
+		A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */; };
+		A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */; };
+		A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */; };
+		A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */; };
+		A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +81,14 @@
 		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		02682D521C7F50B20088F21B /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		A0E9CD741C96EC3400B6A036 /* Black_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_dot.png; path = EPCalendarPicker/Black_dot.png; sourceTree = "<group>"; };
+		A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarCell1.swift; path = EPCalendarPicker/EPCalendarCell1.swift; sourceTree = "<group>"; };
+		A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarCell1.xib; path = EPCalendarPicker/EPCalendarCell1.xib; sourceTree = "<group>"; };
+		A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarConstants.swift; path = EPCalendarPicker/EPCalendarConstants.swift; sourceTree = "<group>"; };
+		A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarHeaderView.swift; path = EPCalendarPicker/EPCalendarHeaderView.swift; sourceTree = "<group>"; };
+		A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarHeaderView.xib; path = EPCalendarPicker/EPCalendarHeaderView.xib; sourceTree = "<group>"; };
+		A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarPicker.swift; path = EPCalendarPicker/EPCalendarPicker.swift; sourceTree = "<group>"; };
+		A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPExtensions.swift; path = EPCalendarPicker/EPExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +144,7 @@
 		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
@@ -165,6 +182,21 @@
 				02682D401C7EFC420088F21B /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A0E9CD741C96EC3400B6A036 /* Black_dot.png */,
+				A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */,
+				A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */,
+				A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */,
+				A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */,
+				A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */,
+				A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */,
+				A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */,
+			);
+			name = EpCalendarPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +261,12 @@
 				02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */,
 				02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */,
 				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */,
+				A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */,
 				023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */,
 				023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */,
 				022994281C8459A400E3B816 /* userInfo.plist in Resources */,
+				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,18 +284,23 @@
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
 				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
 				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
+				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
 				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
+				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
 				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
 				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
 				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
 				023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
 				023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */,
 				022994301C8479A300E3B816 /* WebViewController.swift in Sources */,
 				023A52641C85840600DBFF76 /* DLRadioButton.m in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
+				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
 				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
+				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
 				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
 				02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */,
@@ -378,7 +418,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -396,7 +436,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
