@@ -13,6 +13,7 @@ class NumberCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .whiteColor()
         self.numberLabel.textColor = .blackColor()
         self.numberLabel.font = .boldSystemFontOfSize(7)
     }

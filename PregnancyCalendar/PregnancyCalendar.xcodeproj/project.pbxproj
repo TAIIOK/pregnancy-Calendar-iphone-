@@ -13,7 +13,6 @@
 		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
 		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
 		022994301C8479A300E3B816 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229942F1C8479A300E3B816 /* WebViewController.swift */; };
-		023A52641C85840600DBFF76 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A52631C85840600DBFF76 /* DLRadioButton.m */; };
 		023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */; };
 		023A526A1C86F84300DBFF76 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A52691C86F84300DBFF76 /* Photos.framework */; };
 		023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */; };
@@ -53,8 +52,6 @@
 		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		0229942F1C8479A300E3B816 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		023A52621C85840600DBFF76 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
-		023A52631C85840600DBFF76 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPhotoViewController.swift; sourceTree = "<group>"; };
 		023A52691C86F84300DBFF76 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -103,15 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		023A52611C8583B900DBFF76 /* DLRadioButton */ = {
-			isa = PBXGroup;
-			children = (
-				023A52621C85840600DBFF76 /* DLRadioButton.h */,
-				023A52631C85840600DBFF76 /* DLRadioButton.m */,
-			);
-			name = DLRadioButton;
-			sourceTree = "<group>";
-		};
 		023A52731C88238200DBFF76 /* Custom Layouts */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +154,6 @@
 				0229942F1C8479A300E3B816 /* WebViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
-				023A52611C8583B900DBFF76 /* DLRadioButton */,
 				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
 				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
 				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
@@ -231,7 +218,7 @@
 				TargetAttributes = {
 					02682D231C7EFBA40088F21B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Y6XF9JEXKG;
+						DevelopmentTeam = JQ2V9L3K2H;
 					};
 				};
 			};
@@ -296,7 +283,6 @@
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
 				023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */,
 				022994301C8479A300E3B816 /* WebViewController.swift in Sources */,
-				023A52641C85840600DBFF76 /* DLRadioButton.m in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
 				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
@@ -420,7 +406,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -438,7 +424,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";

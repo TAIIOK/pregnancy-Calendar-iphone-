@@ -1,9 +1,9 @@
 //
 //  CustomCollectionViewLayout.swift
-//  PregnancyCalendar
+//  CustomCollectionLayout
 //
-//  Created by farestz on 03.03.16.
-//  Copyright © 2016 farestz. All rights reserved.
+//  Created by JOSE MARTINEZ on 15/12/2014.
+//  Copyright (c) 2014 brightec. All rights reserved.
 //
 
 import UIKit
@@ -19,10 +19,10 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             return
         }
         
+        self.itemAttributes = nil
         if (self.itemAttributes != nil && self.itemAttributes.count > 0) {
             for section in 0..<self.collectionView!.numberOfSections() {
-                let numberOfItems = self.collectionView!.numberOfItemsInSection(section)
-                for index in 0..<numberOfItems {
+                for index in 0..<self.collectionView!.numberOfItemsInSection(section) {
                     if section != 0 && index != 0 {
                         continue
                     }
@@ -41,24 +41,24 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     }
                 }
             }
-            
+        
             return
         }
         
-        if (self.itemsSize == nil || self.itemsSize.count != numberOfColumns) {
+        if (self.itemsSize == nil || self.itemsSize.count != self.numberOfColumns) {
             self.calculateItemsSize()
         }
         
         var column = 0
-        var xOffset : CGFloat = 0
-        var yOffset : CGFloat = 0
-        var contentWidth : CGFloat = 0
-        var contentHeight : CGFloat = 0
+        var xOffset: CGFloat = 0
+        var yOffset: CGFloat = 0
+        var contentWidth: CGFloat = 0
+        var contentHeight: CGFloat = 0
         
         for section in 0..<self.collectionView!.numberOfSections() {
             let sectionAttributes = NSMutableArray()
             
-            for index in 0..<numberOfColumns {
+            for index in 0..<self.numberOfColumns {
                 let itemSize = self.itemsSize[index].CGSizeValue()
                 let indexPath = NSIndexPath(forItem: index, inSection: section)
                 let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
@@ -75,6 +75,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     frame.origin.y = self.collectionView!.contentOffset.y
                     attributes.frame = frame
                 }
+                
                 if index == 0 {
                     var frame = attributes.frame
                     frame.origin.x = self.collectionView!.contentOffset.x
@@ -86,7 +87,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                 xOffset += itemSize.width
                 column++
                 
-                if column == numberOfColumns {
+                if column == self.numberOfColumns {
                     if xOffset > contentWidth {
                         contentWidth = xOffset
                     }
@@ -96,13 +97,15 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                     yOffset += itemSize.height
                 }
             }
+            
             if (self.itemAttributes == nil) {
                 self.itemAttributes = NSMutableArray(capacity: self.collectionView!.numberOfSections())
             }
-            self.itemAttributes .addObject(sectionAttributes)
+            
+            self.itemAttributes.addObject(sectionAttributes)
         }
         
-        let attributes : UICollectionViewLayoutAttributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
+        let attributes = self.itemAttributes.lastObject?.lastObject as! UICollectionViewLayoutAttributes
         contentHeight = attributes.frame.origin.y + attributes.frame.size.height
         self.contentSize = CGSizeMake(contentWidth, contentHeight)
     }
@@ -120,16 +123,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         if self.itemAttributes != nil {
             for section in self.itemAttributes {
                 
-                let filteredArray  =  section.filteredArrayUsingPredicate(
-                    
-                    NSPredicate(block: { (evaluatedObject, bindings) -> Bool in
-                        return CGRectIntersectsRect(rect, evaluatedObject.frame)
-                    })
-                    ) as! [UICollectionViewLayoutAttributes]
-                
-                
+                let filteredArray = section.filteredArrayUsingPredicate(NSPredicate(block: { (evaluatedObject, bindings) -> Bool in return CGRectIntersectsRect(rect, evaluatedObject.frame) })) as! [UICollectionViewLayoutAttributes]
                 attributes.appendContentsOf(filteredArray)
-                
             }
         }
         
@@ -141,32 +136,31 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
     }
     
     func sizeForItemWithColumnIndex(columnIndex: Int) -> CGSize {
-        var text : String = ""
+        var text = ""
         switch (columnIndex) {
         case 0:
-            text = "№"
+            text = ""
         case 1:
-            text = "НАЧАЛАСЬ"
+            text = " НАЧАЛАСЬ  "
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
-            text = "ЗАКОНЧИЛАСЬ"
+            text = "ЗАКОНЧИЛСАЬ"
         case 4:
             text = "ПРОМЕЖУТОК"
         default:
-            text = "Col 70"
+            text = ""
         }
         
-        let size : CGSize = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(7.0)])
-        let width : CGFloat = size.width + 20
+        let size = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(13.0)])
+        let width = size.width + 25
         return CGSizeMake(width, 30)
     }
     
     func calculateItemsSize() {
-        self.itemsSize = NSMutableArray(capacity: numberOfColumns)
-        for index in 0..<numberOfColumns {
+        self.itemsSize = NSMutableArray(capacity: self.numberOfColumns)
+        for index in 0..<self.numberOfColumns {
             self.itemsSize.addObject(NSValue(CGSize: self.sizeForItemWithColumnIndex(index)))
         }
     }
-
 }

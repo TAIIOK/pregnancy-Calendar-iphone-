@@ -62,7 +62,7 @@ class ForumTableViewController: UITableViewController {
         cell.textLabel?.text = self.themes[indexPath.row]
         cell.textLabel?.textColor = StrawBerryColor
         cell.textLabel?.highlightedTextColor = .whiteColor()
-        cell.selectedBackgroundView = getCustomieBackgroundView()
+        cell.selectedBackgroundView = self.getCustomieBackgroundView()
         return cell
     }
 }

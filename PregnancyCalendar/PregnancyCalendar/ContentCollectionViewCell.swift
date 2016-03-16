@@ -13,6 +13,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .whiteColor()
         self.contentLabel.textColor = .blackColor()
         self.contentLabel.font = .boldSystemFontOfSize(7)
     }

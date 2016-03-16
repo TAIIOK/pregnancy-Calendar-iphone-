@@ -16,36 +16,36 @@ enum State {
 extension NSDate {
     func toFormattedTimeString() -> String {
         let today = NSDate()
-        let gregorian = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+        let gregorian = NSCalendar.currentCalendar()
+        
         let hour = gregorian.component(.Hour, fromDate: today)
+        let hourStr = (hour < 10 ? "0" : "") + String(hour) + ":"
+        
         let minute = gregorian.component(.Minute, fromDate: today)
+        let minuteStr = (minute < 10 ? "0" : "") + String(minute) + ":"
+        
         let second = gregorian.component(.Second, fromDate: today)
-        return "\(hour):\(minute):\(second)"
+        let secondStr = (second < 10 ? "0" : "") + String(second)
+        
+        return hourStr + minuteStr + secondStr
     }
 }
 
 class tmpSpasm {
-    var start = NSDate()
+    var start = ""
     var duration = NSTimeInterval()
-    var stop = NSDate()
-    
-    init() {
-        
-    }
-    init(start: NSDate, duration: NSTimeInterval, stop: NSDate) {
-        self.start = start
-        self.duration = duration
-        self.stop = stop
-    }
+    var stop = ""
 }
 
 class SpasmsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     let numberCellIdentifier = "NumberCellIdentifier"
     let contentCellIdentifier = "ContentCellIdentifier"
-    var state: State = .Stop
+    
+    
     var timer = NSTimer()
-    var dict = [tmpSpasm()]
     var spasm = tmpSpasm()
+    var state = State.Stop
+    var dict: [tmpSpasm] = []
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var buttonSpasm: UIButton!
@@ -63,6 +63,11 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.spasmStop()
         }
     }
+    @IBAction func buttonTrash(sender: AnyObject) {
+        self.dict.removeAll()
+        self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,25 +75,22 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.collectionView.registerNib(UINib(nibName: "NumberCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: numberCellIdentifier)
         self.collectionView.registerNib(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: contentCellIdentifier)
     }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-    }
     
     private func spasmStart() {
+        self.label.text = "0"
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerUpdate", userInfo: NSDate(), repeats: true)
         self.spasm = tmpSpasm()
-        self.spasm.start = NSDate()
+        self.spasm.start = NSDate().toFormattedTimeString()
     }
     
     private func spasmStop() {
+        self.spasm.stop = NSDate().toFormattedTimeString()
         self.spasm.duration = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
-        self.spasm.stop = NSDate()
         self.dict.append(spasm)
+        self.collectionView.reloadData()
+        self.scrollToBottom()
         self.timer.invalidate()
         self.label.text = ""
-        self.collectionView.reloadData()
     }
     
     func timerUpdate() {
@@ -109,8 +111,22 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
     
+    func scrollToBottom() {
+        // don't look there
+        let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
+        let lastItemIndex = NSIndexPath(forItem: item, inSection: self.dict.count)
+        self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
+    }
+    
+    func scrollToTop() {
+        // don't look there
+        let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
+        let lastItemIndex = NSIndexPath(forItem: item, inSection: 0)
+        self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Top, animated: true)
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1 + self.dict.count
+        return self.dict.count + 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,63 +137,62 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
-                numberCell.backgroundColor = .whiteColor()
                 numberCell.numberLabel.text = "№"
+                numberCell.numberLabel.font = .boldSystemFontOfSize(13)
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
                 contentCell.contentLabel.text = "НАЧАЛАСЬ"
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
                 contentCell.contentLabel.text = "ДЛИТЕЛЬНОСТЬ"
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
                 contentCell.contentLabel.text = "ЗАКОНЧИЛАСЬ"
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
                 contentCell.contentLabel.text = "ПРОМЕЖУТОК"
+                contentCell.contentLabel.font = .boldSystemFontOfSize(13)
                 return contentCell
             }
         } else {
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
-                numberCell.backgroundColor = .whiteColor()
-                numberCell.numberLabel.font = .systemFontOfSize(10)
+                numberCell.numberLabel.font = .systemFontOfSize(14)
                 numberCell.numberLabel.text = String(indexPath.section)
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
-                contentCell.contentLabel.font = .systemFontOfSize(10)
-                contentCell.contentLabel.text = "\(self.dict[indexPath.section - 1].start.toFormattedTimeString())"
+                contentCell.contentLabel.font = .systemFontOfSize(14)
+                contentCell.contentLabel.text = self.dict[indexPath.section - 1].start
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
-                contentCell.contentLabel.font = .systemFontOfSize(10)
+                contentCell.contentLabel.font = .systemFontOfSize(14)
                 contentCell.contentLabel.text = String(format: "%.0f", self.dict[indexPath.section - 1].duration) + " сек."
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
-                contentCell.contentLabel.font = .systemFontOfSize(10)
-                contentCell.contentLabel.text = "\(self.dict[indexPath.section - 1].stop.toFormattedTimeString())"
+                contentCell.contentLabel.font = .systemFontOfSize(14)
+                contentCell.contentLabel.text = self.dict[indexPath.section - 1].stop
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-                contentCell.backgroundColor = .whiteColor()
-                contentCell.contentLabel.font = .systemFontOfSize(10)
-                contentCell.contentLabel.text = "-"
+                contentCell.contentLabel.font = .systemFontOfSize(14)
+                contentCell.contentLabel.text = "_"
                 return contentCell
             }
         }
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        self.collectionView.collectionViewLayout.prepareLayout()
     }
     
     override func didReceiveMemoryWarning() {
