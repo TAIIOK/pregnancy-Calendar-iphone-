@@ -8,17 +8,26 @@
 
 import UIKit
 
-class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, LineChartDelegate {
+    
+    let IMT0: [CGFloat] = [0.5,0.9,1.4,1.6,1.8,2.0,2.7,3.2,4.5,5.4,6.8,7.7,8.6,9.8,10.2,11.3,12.5,13.6,14.5,15.2]
+    let IMT1: [CGFloat] = [0.5,0.7,1.0,1.2,1.3,1.5,1.9,2.3,3.6,4.8,5.7,6.4,7.7,8.2,9.1,10.0,10.9,11.9,12.7,13.6]
+    let IMT2: [CGFloat] = [0.5,0.5,0.6,0.7,0.8,0.9,1.0,1.4,2.3,2.9,3.4,3.9,5.0,5.4,5.9,6.4,7.3,7.9,8.6,9.1]
+    
     var growth = 0
     var firstComponent = [0, 1, 2]
     var secondComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     var thirdComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     
+    var lineChart: LineChart!
+    var views: [String: AnyObject] = [:]
+    
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var pickerViewTextField: UITextField!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var growthButton: UIBarButtonItem!
-
+    @IBOutlet weak var label: UILabel!
+    
     @IBAction func growthButtonPress(sender: UIBarButtonItem) {
         self.pickerViewTextField.becomeFirstResponder()
     }
@@ -30,6 +39,16 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.setupSidebarMenu()
         self.setupGrowthPickerView()
         self.setupGrowthPickerViewToolbar()
+        self.setupGraph()
+    }
+    
+    private func setupGraph() {
+        if self.growth > 0 {
+            self.drawGraph()
+            self.label.hidden = true
+        } else {
+            self.label.hidden = false
+        }
     }
     
     private func setupSidebarMenu() {
@@ -81,6 +100,20 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         return self.firstComponent[self.pickerView.selectedRowInComponent(0)]*100 + self.secondComponent[self.pickerView.selectedRowInComponent(1)]*10 + self.thirdComponent[self.pickerView.selectedRowInComponent(2)]
     }
     
+    func didSelectDataPoint(x: CGFloat, yValues: [CGFloat]) {
+        
+    }
+    
+    func drawGraph() {
+        
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        if let chart = self.lineChart {
+            chart.setNeedsDisplay()
+        }
+    }
+    
     func doneButtonTouched() {
         self.cancelButtonTouched()
         self.growth = self.getGrowthFromPickerView()
@@ -90,21 +123,14 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         if self.growth != 0 {
             self.alertToNotes()
+            self.label.hidden = true
+        } else {
+            self.label.hidden = false
         }
     }
     
     func cancelButtonTouched() {
         self.pickerViewTextField.resignFirstResponder()
-    }
-    
-    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
-        
-        switch buttonIndex {
-            
-        default:
-            print("alertView \(buttonIndex) clicked")
-            
-        }
     }
     
     private func alertToNotes() {
@@ -118,7 +144,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         
         else {
-            
             let alert: UIAlertView = UIAlertView()
             alert.delegate = self
             alert.title = ""

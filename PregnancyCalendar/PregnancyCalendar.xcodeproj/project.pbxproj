@@ -13,9 +13,6 @@
 		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
 		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
 		022994301C8479A300E3B816 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229942F1C8479A300E3B816 /* WebViewController.swift */; };
-		023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */; };
-		023A526A1C86F84300DBFF76 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023A52691C86F84300DBFF76 /* Photos.framework */; };
-		023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */; };
 		023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */; };
 		023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */; };
 		023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */; };
@@ -34,7 +31,10 @@
 		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
 		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
-		02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D521C7F50B20088F21B /* PhotoViewController.swift */; };
+		027A28DF1C998EC3000792E8 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28DE1C998EC3000792E8 /* LineChart.swift */; };
+		027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E01C99A06F000792E8 /* AssetsLibrary.framework */; };
+		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
+		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
 		A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD741C96EC3400B6A036 /* Black_dot.png */; };
 		A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */; };
 		A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */; };
@@ -52,9 +52,6 @@
 		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		0229942F1C8479A300E3B816 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPhotoViewController.swift; sourceTree = "<group>"; };
-		023A52691C86F84300DBFF76 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 		023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -77,7 +74,10 @@
 		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
 		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		02682D521C7F50B20088F21B /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		027A28DE1C998EC3000792E8 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		027A28E01C99A06F000792E8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		A0E9CD741C96EC3400B6A036 /* Black_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_dot.png; path = EPCalendarPicker/Black_dot.png; sourceTree = "<group>"; };
 		A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarCell1.swift; path = EPCalendarPicker/EPCalendarCell1.swift; sourceTree = "<group>"; };
 		A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarCell1.xib; path = EPCalendarPicker/EPCalendarCell1.xib; sourceTree = "<group>"; };
@@ -93,7 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023A526A1C86F84300DBFF76 /* Photos.framework in Frameworks */,
+				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
+				027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +116,8 @@
 		02682D1B1C7EFBA40088F21B = {
 			isa = PBXGroup;
 			children = (
-				023A52691C86F84300DBFF76 /* Photos.framework */,
+				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
+				027A28E01C99A06F000792E8 /* AssetsLibrary.framework */,
 				02682D261C7EFBA40088F21B /* PregnancyCalendar */,
 				02682D251C7EFBA40088F21B /* Products */,
 			);
@@ -132,29 +134,28 @@
 		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
-				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
 				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
-				023A52671C86EF9900DBFF76 /* CurrentPhotoViewController.swift */,
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
 				02682D461C7F013D0088F21B /* ListTableViewController.swift */,
 				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
 				02682D481C7F0CEB0088F21B /* NameViewController.swift */,
 				022994231C80969F00E3B816 /* NotesViewController.swift */,
-				023A526B1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift */,
-				02682D521C7F50B20088F21B /* PhotoViewController.swift */,
+				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
-				022994211C80956900E3B816 /* VideoViewController.swift */,
 				02682D291C7EFBA40088F21B /* ViewController.swift */,
+				022994211C80956900E3B816 /* VideoViewController.swift */,
 				0229942F1C8479A300E3B816 /* WebViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
+				023A52731C88238200DBFF76 /* Custom Layouts */,
+				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
 				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
+				027A28DD1C998EB4000792E8 /* LineChart */,
 				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
 				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
 				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
@@ -169,6 +170,14 @@
 				02682D401C7EFC420088F21B /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		027A28DD1C998EB4000792E8 /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				027A28DE1C998EC3000792E8 /* LineChart.swift */,
+			);
+			name = LineChart;
 			sourceTree = "<group>";
 		};
 		A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */ = {
@@ -266,6 +275,7 @@
 			files = (
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
+				027A28DF1C998EC3000792E8 /* LineChart.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
@@ -275,13 +285,12 @@
 				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
 				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
 				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
+				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
 				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
 				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
-				023A526C1C86FFAD00DBFF76 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
-				023A52681C86EF9900DBFF76 /* CurrentPhotoViewController.swift in Sources */,
 				022994301C8479A300E3B816 /* WebViewController.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
@@ -289,7 +298,6 @@
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
 				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
-				02682D531C7F50B20088F21B /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

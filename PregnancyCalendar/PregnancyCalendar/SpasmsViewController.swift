@@ -64,9 +64,9 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
     @IBAction func buttonTrash(sender: AnyObject) {
+        self.collectionView.setContentOffset(CGPointZero, animated: false)
         self.dict.removeAll()
         self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override func viewDidLoad() {
@@ -112,17 +112,9 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func scrollToBottom() {
-        // don't look there
         let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
         let lastItemIndex = NSIndexPath(forItem: item, inSection: self.dict.count)
         self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
-    }
-    
-    func scrollToTop() {
-        // don't look there
-        let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
-        let lastItemIndex = NSIndexPath(forItem: item, inSection: 0)
-        self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Top, animated: true)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
