@@ -63,6 +63,7 @@ class MenuTableViewController: UITableViewController {
         case 8:
             break
         case 9:
+            self.pushFrontViewController("CalendarViewController")
             break
         case 10:
             break
