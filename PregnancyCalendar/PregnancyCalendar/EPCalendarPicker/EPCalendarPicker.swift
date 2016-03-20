@@ -271,34 +271,24 @@ public class EPCalendarPicker: UICollectionViewController {
         let startDate = NSDate(year: startYear, month: 1, day: 1)
         let firstDayOfMonth = startDate.dateByAddingMonths(section)
         
-
         let addingPrefixDaysWithMonthDays = ( firstDayOfMonth.numberOfDaysInMonth() + firstDayOfMonth.weekday() - NSCalendar.currentCalendar().firstWeekday )
         
 
         let addingSuffixDays = (addingPrefixDaysWithMonthDays)%7
         var totalNumber  = addingPrefixDaysWithMonthDays
         
-        if(NSCalendar.currentCalendar().firstWeekday == 2){
-         totalNumber  = addingPrefixDaysWithMonthDays+7
-        }
 
-        
-
-        print(totalNumber)
-
-        print(totalNumber ,"days in month" , addingSuffixDays , "AddingSuffix")
-
-
-        if addingSuffixDays != 0 {
-            totalNumber = totalNumber + (7 - addingSuffixDays)
+        if(addingSuffixDays != 0)
+        {
+            totalNumber = totalNumber + ( 7 - addingSuffixDays)
         }
         
-
+        if(firstDayOfMonth.weekday() == 1){
+        totalNumber += 7
+        }
+        
         
 
-        
-        print(totalNumber)
-        
         return totalNumber
         
     }
@@ -313,16 +303,14 @@ public class EPCalendarPicker: UICollectionViewController {
        
         
         
-        var prefixDays = ( firstDayOfThisMonth.weekday() -  NSCalendar.currentCalendar().firstWeekday)
-        
-        
-        if(NSCalendar.currentCalendar().firstWeekday == 2){
+     
+        var prefixDays = ( firstDayOfThisMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
+       
         if(prefixDays == -1)
         {
+         
             prefixDays += 7
         }
-        }
-
 
         if indexPath.row >= prefixDays {
             cell.isCellSelectable = true
