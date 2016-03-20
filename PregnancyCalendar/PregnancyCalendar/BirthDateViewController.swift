@@ -33,8 +33,8 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     //функция одиночных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
        
-        arrSelectedDates[0] = date
-        
+        arrSelectedDates.removeAll()
+        arrSelectedDates.append(date)
         switch currentButton{
     
            case  0: conceptionDateLabel.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))";
@@ -60,15 +60,15 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         arrSelectedDates = dates
         switch currentButton{
             
-        case  0: conceptionDateLabel.text = "\(addDaystoGivenDate(dates[0],NumberOfDaysToAdd: +1))";
+        case  0: conceptionDateLabel.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
         lastMenstrualPeriod.text = "не выбрано";
         setManually.text = "не выбрано";
             break
-        case  1: lastMenstrualPeriod.text = "\(addDaystoGivenDate(dates[0],NumberOfDaysToAdd: +1))";
+        case  1: lastMenstrualPeriod.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
         setManually.text = "не выбрано";
         conceptionDateLabel.text = "не выбрано";
             break
-        case 2: setManually.text = "\(addDaystoGivenDate(dates[0],NumberOfDaysToAdd: +1))";
+        case 2: setManually.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
         conceptionDateLabel.text = "не выбрано";
         lastMenstrualPeriod.text = "не выбрано";
             break
@@ -160,6 +160,25 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
         return newDate!
     }
+    
+    func addDaystoGivenDates(baseDate: [NSDate] ,NumberOfDaysToAdd:Int)-> [NSDate]
+    {
+        var newDates = baseDate
+        newDates.removeAll()
+        let dateComponents = NSDateComponents()
+        let CurrentCalendar = NSCalendar.currentCalendar()
+        let CalendarOption = NSCalendarOptions()
+        for (var i = 0; i<baseDate.count ; i += 1)
+        {
+        dateComponents.day = NumberOfDaysToAdd
+        
+        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate[i], options: CalendarOption)
+        newDates.insert(newDate!, atIndex: i)
+        }
+        return newDates
+    }
+    
+
     
     /*
     // MARK: - Navigation

@@ -75,7 +75,7 @@ public class EPCalendarPicker: UICollectionViewController {
         self.collectionView?.delegate = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
         self.collectionView?.showsHorizontalScrollIndicator = false
-        self.collectionView?.showsVerticalScrollIndicator = true
+        self.collectionView?.showsVerticalScrollIndicator = false
         self.collectionView?.dataSource = self
         
 
@@ -255,7 +255,6 @@ public class EPCalendarPicker: UICollectionViewController {
         totalNumber += 7
         }
         
-        
 
         return totalNumber
         
@@ -289,11 +288,10 @@ public class EPCalendarPicker: UICollectionViewController {
             }).count > 0 {
 
                     cell.selectedForLabelColor(dateSelectionColor)
-               
-                
+        
                 
                     arrSelectedIndexPath.updateValue(indexPath,forKey: cell.currentDate)
-                print(arrSelectedIndexPath)
+            
             }
             else{
                 cell.deSelectedForLabelColor(weekdayTintColor)
@@ -484,8 +482,14 @@ public class EPCalendarPicker: UICollectionViewController {
     internal func onTouchDoneButton() {
         //gathers all the selected dates and pass it to the delegate
 
+        
+            calendarDelegate?.epCalendarPicker!(self, didSelectDate: arrSelectedDates[0])
+            dismissViewControllerAnimated(true, completion: nil)
+        
+        if multiSelectEnabled {
         calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelectedDates)
         dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 
