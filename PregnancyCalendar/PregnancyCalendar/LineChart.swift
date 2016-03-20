@@ -545,6 +545,7 @@ public class LineChart: UIView {
     private func drawYLabels() {
         var yValue: CGFloat
         let (start, stop, step) = self.y.ticks
+
         for var i: CGFloat = start; i <= stop; i += step {
             yValue = self.bounds.height - self.y.scale(i) - (y.axis.inset * 1.5)
             let label = UILabel(frame: CGRect(x: 0, y: yValue, width: y.axis.inset+5, height: y.axis.inset))

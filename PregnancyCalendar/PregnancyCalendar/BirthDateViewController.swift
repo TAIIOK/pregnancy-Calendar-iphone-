@@ -80,7 +80,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     //Кнопки
     @IBAction func setManually(sender: AnyObject) {
        currentButton = 2
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [])
+        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [],window:false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -97,7 +97,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     }
     @IBAction func lastMenstrualPeriod(sender: AnyObject) {
         currentButton = 1
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [])
+        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [],window:false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -114,7 +114,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     }
     @IBAction func Conceptiondate(sender: AnyObject) {
         currentButton = 0
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [])
+        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [],window:false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true

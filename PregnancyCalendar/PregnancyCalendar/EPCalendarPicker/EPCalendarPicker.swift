@@ -49,27 +49,34 @@ public class EPCalendarPicker: UICollectionViewController {
     public var hideDaysFromOtherMonth: Bool = false
     public var backgroundImage: UIImage?
     public var backgroundColor: UIColor?
-    
+
     
     private(set) public var startYear: Int
     private(set) public var endYear: Int
-    
+    private(set) public var window: Bool
     private(set) public var width: Int
     private(set) public var height: Int
     
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        /*
         // setup Navigationbar
+         if (window){
         self.navigationController?.navigationBar.tintColor = self.tintColor
         self.navigationController?.navigationBar.barTintColor = self.barTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:self.tintColor]
-        
+        }
+         */
+        if(!window){
+        inititlizeBarButtons()
+        }
         // setup collectionview
         self.collectionView?.delegate = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
         self.collectionView?.showsHorizontalScrollIndicator = false
         self.collectionView?.showsVerticalScrollIndicator = false
+        self.collectionView?.dataSource = self
         
 
 
@@ -78,7 +85,7 @@ public class EPCalendarPicker: UICollectionViewController {
         
         self.collectionView!.registerNib(UINib(nibName: "EPCalendarHeaderView", bundle: NSBundle(forClass: EPCalendarPicker.self )), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
         
-        inititlizeBarButtons()
+        
 
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.scrollToToday()
@@ -137,19 +144,19 @@ public class EPCalendarPicker: UICollectionViewController {
 
     //инициализаторы для базового календаря
     public convenience init(){
-        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: EPDefaults.multiSelection, selectedDates: nil);
+        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: EPDefaults.multiSelection, selectedDates: nil , window:false);
     }
     
-    public convenience init(startYear: Int, endYear: Int) {
-        self.init(startYear:startYear, endYear:endYear, multiSelection: EPDefaults.multiSelection, selectedDates: nil)
+    public convenience init(startYear: Int, endYear: Int, window: Bool) {
+        self.init(startYear:startYear, endYear:endYear, multiSelection: EPDefaults.multiSelection, selectedDates: nil, window: window)
     }
     
-    public convenience init(multiSelection: Bool) {
-        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil)
+    public convenience init(multiSelection: Bool,window:Bool) {
+        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil,window :window)
     }
     
-    public convenience init(startYear: Int, endYear: Int, multiSelection: Bool) {
-        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil)
+    public convenience init(startYear: Int, endYear: Int, multiSelection: Bool,window: Bool) {
+        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil,window :window)
     }
     //тестовый инициализатор для кастомного календаря
   /*
@@ -188,7 +195,7 @@ public class EPCalendarPicker: UICollectionViewController {
  */
     
     //базовая инициализация
-    public init(startYear: Int, endYear: Int, multiSelection: Bool, selectedDates: [NSDate]?) {
+    public init(startYear: Int, endYear: Int, multiSelection: Bool, selectedDates: [NSDate]?, window: Bool) {
         
         self.startYear = startYear
         self.endYear = endYear
@@ -208,6 +215,7 @@ public class EPCalendarPicker: UICollectionViewController {
         self.width = 0
         self.height = 0
         
+        self.window = window
         //Layout creation
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 1

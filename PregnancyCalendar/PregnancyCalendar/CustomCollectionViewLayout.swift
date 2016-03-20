@@ -85,7 +85,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                 sectionAttributes.addObject(attributes)
                 
                 xOffset += itemSize.width
-                column++
+                column += 1
                 
                 if column == self.numberOfColumns {
                     if xOffset > contentWidth {
