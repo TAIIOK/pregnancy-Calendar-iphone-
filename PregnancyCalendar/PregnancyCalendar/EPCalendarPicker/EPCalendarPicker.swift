@@ -472,7 +472,7 @@ public class EPCalendarPicker: UICollectionViewController {
             }).count == 0
             {
              
-                 cell.currentDate=addDaystoGivenDate(cell.currentDate, NumberOfDaysToAdd: 1)
+                
                 
                 arrSelectedDates.append(cell.currentDate)
                 arrSelectedIndexPath.updateValue(indexPath,forKey: cell.currentDate)
@@ -517,7 +517,12 @@ public class EPCalendarPicker: UICollectionViewController {
     
     internal func onTouchDoneButton() {
         //gathers all the selected dates and pass it to the delegate
-        calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelectedDates)
+        var arrSelected = [NSDate]()
+        
+        for date in arrSelectedDates{
+            arrSelected.append(addDaystoGivenDate(date,NumberOfDaysToAdd:1))
+        }
+        calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelected)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

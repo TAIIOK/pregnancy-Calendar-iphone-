@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Fabric
+import Crashlytics
 
 let StrawBerryColor = UIColor(red: 255/255.0, green: 34/255.0, blue: 89/255.0, alpha: 1.0)
 let userGrowth = "userGrowth"
@@ -27,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().translucent = false
         UIToolbar.appearance().tintColor = .whiteColor()
         UIToolbar.appearance().barStyle = .BlackOpaque
+        Fabric.with([Crashlytics.self])
         return true
     }
 
