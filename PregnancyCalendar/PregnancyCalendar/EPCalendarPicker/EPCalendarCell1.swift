@@ -35,13 +35,13 @@ class EPCalendarCell1: UICollectionViewCell {
     func selectedForLabelColor(color: UIColor) {
        
         self.lblDay.layer.cornerRadius = self.lblDay.frame.size.width/2
-        self.lblDay.layer.backgroundColor = color.CGColor
+        self.lblDay.layer.backgroundColor =  color.CGColor
         
         self.lblDay.textColor = UIColor.whiteColor()
     }
     
     func deSelectedForLabelColor(color: UIColor) {
-        self.lblDay.layer.backgroundColor = UIColor.whiteColor().CGColor
+        self.lblDay.layer.backgroundColor =  UIColor.whiteColor().CGColor
         self.lblDay.textColor = color
     }
     

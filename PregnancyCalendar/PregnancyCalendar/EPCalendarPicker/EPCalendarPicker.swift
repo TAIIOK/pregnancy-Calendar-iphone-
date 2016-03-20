@@ -54,9 +54,9 @@ public class EPCalendarPicker: UICollectionViewController {
     private(set) public var startYear: Int
     private(set) public var endYear: Int
     private(set) public var window: Bool
-    private(set) public var width: Int
-    private(set) public var height: Int
+
     
+   
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,10 +75,11 @@ public class EPCalendarPicker: UICollectionViewController {
         self.collectionView?.delegate = self
         self.collectionView?.backgroundColor = UIColor.clearColor()
         self.collectionView?.showsHorizontalScrollIndicator = false
-        self.collectionView?.showsVerticalScrollIndicator = false
+        self.collectionView?.showsVerticalScrollIndicator = true
         self.collectionView?.dataSource = self
         
 
+        
 
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "EPCalendarCell1", bundle: NSBundle(forClass: EPCalendarPicker.self )), forCellWithReuseIdentifier: reuseIdentifier)
@@ -86,7 +87,6 @@ public class EPCalendarPicker: UICollectionViewController {
         self.collectionView!.registerNib(UINib(nibName: "EPCalendarHeaderView", bundle: NSBundle(forClass: EPCalendarPicker.self )), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
         
         
-
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.scrollToToday()
         }
@@ -158,42 +158,7 @@ public class EPCalendarPicker: UICollectionViewController {
     public convenience init(startYear: Int, endYear: Int, multiSelection: Bool,window: Bool) {
         self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil,window :window)
     }
-    //тестовый инициализатор для кастомного календаря
-  /*
-    public convenience init(startYear: Int, endYear: Int, multiSelection: Bool, width: Int ,height: Int, customSize:Bool) {
-        self.init(startYear: EPDefaults.startYear, endYear: EPDefaults.endYear, multiSelection: multiSelection, selectedDates: nil , width:width,height:height ,customSize: customSize)
-    }
-    
-    
-    public init(startYear: Int, endYear: Int, multiSelection: Bool, selectedDates: [NSDate]?, width: Int ,height: Int , customSize : Bool) {
-        
-        self.startYear = startYear
-        self.endYear = endYear
-        
-        self.multiSelectEnabled = multiSelection
-        
-        //Text color initializations
-        self.tintColor = EPDefaults.tintColor
-        self.weekdayTintColor = EPDefaults.weekdayTintColor
-        self.weekendTintColor = EPDefaults.weekendTintColor
-        self.dateSelectionColor = EPDefaults.dateSelectionColor
-        self.monthTitleColor = EPDefaults.monthTitleColor
-        self.todayTintColor = EPDefaults.todayTintColor
-        
-        
-        //Layout creation
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
-        layout.headerReferenceSize = EPDefaults.headerSize
-        if let _ = selectedDates  {
-            self.arrSelectedDates.appendContentsOf(selectedDates!)
-        }
-        super.init(collectionViewLayout: layout)
-        
-    }
- */
-    
+
     //базовая инициализация
     public init(startYear: Int, endYear: Int, multiSelection: Bool, selectedDates: [NSDate]?, window: Bool) {
         
@@ -212,18 +177,19 @@ public class EPCalendarPicker: UICollectionViewController {
         self.dateSelectionColor = EPDefaults.dateSelectionColor
         self.monthTitleColor = EPDefaults.monthTitleColor
         self.todayTintColor = EPDefaults.todayTintColor
-        self.width = 0
-        self.height = 0
+
         
         self.window = window
         //Layout creation
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         layout.headerReferenceSize = EPDefaults.headerSize
         if let _ = selectedDates  {
             self.arrSelectedDates.appendContentsOf(selectedDates!)
         }
+
+        
         super.init(collectionViewLayout: layout)
         
     }
@@ -236,6 +202,8 @@ public class EPCalendarPicker: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
+
+    
     //длина календаря
     override public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -301,14 +269,11 @@ public class EPCalendarPicker: UICollectionViewController {
         let calendarStartDate = NSDate(year:startYear, month: 1, day: 1)
         let firstDayOfThisMonth = calendarStartDate.dateByAddingMonths(indexPath.section)
        
-        
-        
      
         var prefixDays = ( firstDayOfThisMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
        
         if(prefixDays == -1)
         {
-         
             prefixDays += 7
         }
 
@@ -323,8 +288,12 @@ public class EPCalendarPicker: UICollectionViewController {
             if arrSelectedDates.filter({ $0.isDateSameDay(currentDate)
             }).count > 0 {
 
-
                     cell.selectedForLabelColor(dateSelectionColor)
+               
+                
+                
+                    arrSelectedIndexPath.updateValue(indexPath,forKey: cell.currentDate)
+                print(arrSelectedIndexPath)
             }
             else{
                 cell.deSelectedForLabelColor(weekdayTintColor)
@@ -398,6 +367,7 @@ public class EPCalendarPicker: UICollectionViewController {
         return UIEdgeInsetsMake(5, 0, 5, 0); //top,left,bottom,right
     }
     
+
     //вставка названия месяца
     override public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
 
@@ -413,7 +383,7 @@ public class EPCalendarPicker: UICollectionViewController {
             header.updateWeekendLabelColor(weekendTintColor)
             return header;
         }
-
+       
         return UICollectionReusableView()
         
     }
@@ -513,12 +483,8 @@ public class EPCalendarPicker: UICollectionViewController {
     
     internal func onTouchDoneButton() {
         //gathers all the selected dates and pass it to the delegate
-        var arrSelected = [NSDate]()
-        
-        for date in arrSelectedDates{
-            arrSelected.append(addDaystoGivenDate(date,NumberOfDaysToAdd:1))
-        }
-        calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelected)
+
+        calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelectedDates)
         dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -582,17 +548,7 @@ public class EPCalendarPicker: UICollectionViewController {
         self.collectionView?.scrollToIndexpathByShowingHeader(indexPath)
     }
     
-    func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
-    {
-        let dateComponents = NSDateComponents()
-        let CurrentCalendar = NSCalendar.currentCalendar()
-        let CalendarOption = NSCalendarOptions()
-        
-        dateComponents.day = NumberOfDaysToAdd
-        
-        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
-        return newDate!
-    }
+
     
     
 }
