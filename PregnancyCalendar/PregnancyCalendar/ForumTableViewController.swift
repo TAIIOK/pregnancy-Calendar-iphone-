@@ -51,10 +51,11 @@ class ForumTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let url = NSURL(string: self.links[indexPath.row]) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as? WebViewController
-        controller?.url = self.links[indexPath.row]
-        self.navigationController?.pushViewController(controller!, animated: true)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

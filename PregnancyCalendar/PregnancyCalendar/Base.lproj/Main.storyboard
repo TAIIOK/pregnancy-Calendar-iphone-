@@ -376,45 +376,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="3gP-DA-Icl" id="KAg-Fp-LGf"/>
-                        <segue destination="pgk-F9-k5U" kind="custom" id="RVE-4Y-cE3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3s-MW-FdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1759.5" y="5500.5"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="ggL-re-XAp">
-            <objects>
-                <viewController storyboardIdentifier="WebViewController" id="pgk-F9-k5U" customClass="WebViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JSq-HE-olF"/>
-                        <viewControllerLayoutGuide type="bottom" id="OS4-15-nwC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DQY-tx-N5F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94H-Og-ZwD">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="94H-Og-ZwD" secondAttribute="trailing" id="E7b-Ww-vwd"/>
-                            <constraint firstItem="94H-Og-ZwD" firstAttribute="bottom" secondItem="OS4-15-nwC" secondAttribute="top" id="Gj7-x8-zjO"/>
-                            <constraint firstItem="94H-Og-ZwD" firstAttribute="leading" secondItem="DQY-tx-N5F" secondAttribute="leading" id="WM5-Dw-nUx"/>
-                            <constraint firstItem="94H-Og-ZwD" firstAttribute="top" secondItem="DQY-tx-N5F" secondAttribute="top" id="gaK-sq-qW1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="94H-Og-ZwD" id="enQ-AT-QdB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MT0-8E-rCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2542.5" y="5500.3521126760561"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2T3-PV-l4x">

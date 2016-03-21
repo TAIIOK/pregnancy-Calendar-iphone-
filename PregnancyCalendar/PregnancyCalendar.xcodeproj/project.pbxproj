@@ -12,7 +12,6 @@
 		022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994251C8098AD00E3B816 /* ForumTableViewController.swift */; };
 		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
 		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
-		022994301C8479A300E3B816 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229942F1C8479A300E3B816 /* WebViewController.swift */; };
 		023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */; };
 		023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */; };
 		023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */; };
@@ -54,7 +53,6 @@
 		022994251C8098AD00E3B816 /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
 		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
-		0229942F1C8479A300E3B816 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 		023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
 				02682D291C7EFBA40088F21B /* ViewController.swift */,
-				0229942F1C8479A300E3B816 /* WebViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
@@ -320,7 +317,6 @@
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
-				022994301C8479A300E3B816 /* WebViewController.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
 				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,

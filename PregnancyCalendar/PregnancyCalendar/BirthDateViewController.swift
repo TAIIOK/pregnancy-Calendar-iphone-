@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -19,65 +18,66 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     var currentButton = 0
     var arrSelectedDates = [NSDate]()
     
-    // функции календаря
-    //функция отмены
+    // КАЛЕНДАРЬ
     func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
         
         
     }
-    
-    //функция одиночных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
-       
-        arrSelectedDates.removeAll()
-        arrSelectedDates.append(date)
-        switch currentButton{
-    
-           case  0: conceptionDateLabel.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))";
-           lastMenstrualPeriod.text = "не выбрано";
-           setManually.text = "не выбрано";
-            break
-            case  1: lastMenstrualPeriod.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))";
-             setManually.text = "не выбрано";
-            conceptionDateLabel.text = "не выбрано";
-            break
-           case 2: setManually.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))";
-           conceptionDateLabel.text = "не выбрано";
-           lastMenstrualPeriod.text = "не выбрано";
-            break
-        default: break
+        self.arrSelectedDates.removeAll()
+        self.arrSelectedDates.append(date)
         
+        switch self.currentButton {
+        case 0:
+            self.conceptionDateLabel.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
+            self.lastMenstrualPeriod.text = "не выбрано"
+            self.setManually.text = "не выбрано"
+            break
+        case 1:
+            self.lastMenstrualPeriod.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
+            self.setManually.text = "не выбрано"
+            self.conceptionDateLabel.text = "не выбрано"
+            break
+        case 2:
+            self.setManually.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
+            self.conceptionDateLabel.text = "не выбрано"
+            self.lastMenstrualPeriod.text = "не выбрано"
+            break
+        default:
+            break
         }
         
         //txtViewDetail.text = "User selected date: \n\(date)"
     }
-    
-    //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
-        arrSelectedDates = dates
-        switch currentButton{
-            
-        case  0: conceptionDateLabel.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-        lastMenstrualPeriod.text = "не выбрано";
-        setManually.text = "не выбрано";
+        self.arrSelectedDates = dates
+        
+        switch self.currentButton {
+        case 0:
+            self.conceptionDateLabel.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
+            self.lastMenstrualPeriod.text = "не выбрано"
+            self.setManually.text = "не выбрано"
             break
-        case  1: lastMenstrualPeriod.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-        setManually.text = "не выбрано";
-        conceptionDateLabel.text = "не выбрано";
+        case 1:
+            self.lastMenstrualPeriod.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
+            self.setManually.text = "не выбрано";
+            self.conceptionDateLabel.text = "не выбрано";
             break
-        case 2: setManually.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-        conceptionDateLabel.text = "не выбрано";
-        lastMenstrualPeriod.text = "не выбрано";
+        case 2:
+            self.setManually.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
+            self.conceptionDateLabel.text = "не выбрано";
+            self.lastMenstrualPeriod.text = "не выбрано";
             break
-        default: break
-            
+        default:
+            break
         }
     }
     
-    //Кнопки
+    // ДАТЫ
     @IBAction func setManually(sender: AnyObject) {
-       currentButton = 2
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: arrSelectedDates,window:false)
+        self.currentButton = 2
+        
+        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -91,8 +91,9 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         
     }
     @IBAction func lastMenstrualPeriod(sender: AnyObject) {
-        currentButton = 1
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: arrSelectedDates,window:false)
+        self.currentButton = 1
+        
+        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -106,8 +107,9 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         
     }
     @IBAction func Conceptiondate(sender: AnyObject) {
-        currentButton = 0
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: arrSelectedDates, window:false)
+        self.currentButton = 0
+        
+        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -139,7 +141,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     }
 
     
-    func addDaystoGivenDate(baseDate: NSDate,NumberOfDaysToAdd: Int) -> NSDate
+    func addDaystoGivenDate(baseDate: NSDate, NumberOfDaysToAdd: Int) -> NSDate
     {
         let dateComponents = NSDateComponents()
         let CurrentCalendar = NSCalendar.currentCalendar()

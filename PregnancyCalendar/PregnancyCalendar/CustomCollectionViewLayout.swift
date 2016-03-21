@@ -66,7 +66,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                 
                 if section == 0 && index == 0 {
                     attributes.zIndex = 1024;
-                } else  if section == 0 || index == 0 {
+                } else if section == 0 || index == 0 {
                     attributes.zIndex = 1023
                 }
                 
@@ -143,11 +143,11 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         case 0:
             text = ""
         case 1:
-            text = "НАЧАЛО"
+            text = "НАЧАЛО "
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
-            text = "КОНЕЦ"
+            text = "КОНЕЦ  "
         case 4:
             text = "ПРОМЕЖУТОК"
         default:
