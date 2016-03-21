@@ -11,12 +11,7 @@ import UIKit
 
 class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     
-    
-    
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
-    //Лабели
     @IBOutlet weak var conceptionDateLabel: UILabel!
     @IBOutlet weak var lastMenstrualPeriod: UILabel!
     @IBOutlet weak var setManually: UILabel!
@@ -30,6 +25,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         
         
     }
+    
     //функция одиночных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
        
@@ -52,9 +48,10 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         default: break
         
         }
-        //txtViewDetail.text = "User selected date: \n\(date)"
         
+        //txtViewDetail.text = "User selected date: \n\(date)"
     }
+    
     //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
         arrSelectedDates = dates
@@ -77,7 +74,6 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         }
     }
     
-    
     //Кнопки
     @IBAction func setManually(sender: AnyObject) {
        currentButton = 2
@@ -88,10 +84,8 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
         calendarPicker.tintColor = UIColor.orangeColor()
-        
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
-        
-        
+        calendarPicker.backgroundColor = StrawBerryColor
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
@@ -105,31 +99,27 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
         calendarPicker.tintColor = UIColor.orangeColor()
-        
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
-        
-        
+        calendarPicker.backgroundColor = StrawBerryColor
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
     }
     @IBAction func Conceptiondate(sender: AnyObject) {
         currentButton = 0
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: arrSelectedDates,window:false)
+        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: arrSelectedDates, window:false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
         calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
         calendarPicker.tintColor = UIColor.orangeColor()
-        
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
-        
-        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
@@ -149,7 +139,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     }
 
     
-    func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
+    func addDaystoGivenDate(baseDate: NSDate,NumberOfDaysToAdd: Int) -> NSDate
     {
         let dateComponents = NSDateComponents()
         let CurrentCalendar = NSCalendar.currentCalendar()
@@ -161,7 +151,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         return newDate!
     }
     
-    func addDaystoGivenDates(baseDate: [NSDate] ,NumberOfDaysToAdd:Int)-> [NSDate]
+    func addDaystoGivenDates(baseDate: [NSDate], NumberOfDaysToAdd: Int) -> [NSDate]
     {
         var newDates = baseDate
         newDates.removeAll()

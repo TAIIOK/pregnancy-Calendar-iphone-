@@ -158,8 +158,8 @@
 				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
-				02682D291C7EFBA40088F21B /* ViewController.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
+				02682D291C7EFBA40088F21B /* ViewController.swift */,
 				0229942F1C8479A300E3B816 /* WebViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
@@ -239,7 +239,7 @@
 				TargetAttributes = {
 					02682D231C7EFBA40088F21B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Y6XF9JEXKG;
+						DevelopmentTeam = JQ2V9L3K2H;
 					};
 				};
 			};
@@ -447,7 +447,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = center.holywar.mymusicsaver;
+				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -469,7 +469,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = center.holywar.mymusicsaver;
+				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";

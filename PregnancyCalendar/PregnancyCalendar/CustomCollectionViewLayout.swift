@@ -143,18 +143,18 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         case 0:
             text = ""
         case 1:
-            text = " НАЧАЛАСЬ  "
+            text = "НАЧАЛО"
         case 2:
             text = "ДЛИТЕЛЬНОСТЬ"
         case 3:
-            text = "ЗАКОНЧИЛСАЬ"
+            text = "КОНЕЦ"
         case 4:
             text = "ПРОМЕЖУТОК"
         default:
             text = ""
         }
         
-        let size = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(13.0)])
+        let size = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(12.0)])
         let width = size.width + 25
         return CGSizeMake(width, 30)
     }
