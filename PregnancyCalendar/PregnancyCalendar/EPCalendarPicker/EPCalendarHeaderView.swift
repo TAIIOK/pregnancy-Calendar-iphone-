@@ -18,12 +18,25 @@ class EPCalendarHeaderView: UICollectionReusableView {
     @IBOutlet weak var lblFriday: UILabel!
     @IBOutlet weak var lblSaturday: UILabel!
     @IBOutlet weak var lblSunday: UILabel!
+    @IBOutlet weak var daysrow: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let calendar = NSCalendar.currentCalendar()
         let weeksDayList = calendar.shortWeekdaySymbols
+        
+        self.backgroundColor = StrawBerryColor
+        
+        
+        daysrow.backgroundColor = StrawBerryColor
+        lblMonday.backgroundColor =  StrawBerryColor
+        lblTuesday.backgroundColor =  StrawBerryColor
+        lblWednesday.backgroundColor =  StrawBerryColor
+        lblThursday.backgroundColor =  StrawBerryColor
+        lblFriday.backgroundColor =  StrawBerryColor
+        lblSaturday.backgroundColor =  StrawBerryColor
+        lblSunday.backgroundColor =  StrawBerryColor
         
         if NSCalendar.currentCalendar().firstWeekday == 2 {
             lblMonday.text = weeksDayList[1]

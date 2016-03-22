@@ -374,7 +374,7 @@ public class EPCalendarPicker: UICollectionViewController {
             
             let startDate = NSDate(year: startYear, month: 1, day: 1)
             let firstDayOfMonth = startDate.dateByAddingMonths(indexPath.section)
-            
+            header.backgroundColor = StrawBerryColor
             header.lblTitle.text = firstDayOfMonth.monthNameFull()
             header.lblTitle.textColor = monthTitleColor
             header.updateWeekdaysLabelColor(weekdayTintColor)
