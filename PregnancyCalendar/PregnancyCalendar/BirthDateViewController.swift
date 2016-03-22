@@ -80,12 +80,16 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
-        calendarPicker.hightlightsToday = true
-        calendarPicker.showsTodaysButton = true
+        //calendarPicker.hightlightsToday = true
+        //calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
-        calendarPicker.tintColor = UIColor.orangeColor()
-        calendarPicker.dayDisabledTintColor = UIColor.grayColor()
+        
         calendarPicker.backgroundColor = StrawBerryColor
+        calendarPicker.dayDisabledTintColor = StrawBerryColor
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
+        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
@@ -96,12 +100,16 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
-        calendarPicker.hightlightsToday = true
-        calendarPicker.showsTodaysButton = true
+        //calendarPicker.hightlightsToday = true
+        //calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
-        calendarPicker.tintColor = UIColor.orangeColor()
-        calendarPicker.dayDisabledTintColor = UIColor.grayColor()
+        
         calendarPicker.backgroundColor = StrawBerryColor
+        calendarPicker.dayDisabledTintColor = StrawBerryColor
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
+        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
@@ -112,12 +120,16 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
-        calendarPicker.hightlightsToday = true
-        calendarPicker.showsTodaysButton = true
+        //calendarPicker.hightlightsToday = true
+        //calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
-        calendarPicker.tintColor = UIColor.orangeColor()
-        calendarPicker.dayDisabledTintColor = UIColor.grayColor()
+        
         calendarPicker.backgroundColor = StrawBerryColor
+        calendarPicker.dayDisabledTintColor = StrawBerryColor
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
+        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
