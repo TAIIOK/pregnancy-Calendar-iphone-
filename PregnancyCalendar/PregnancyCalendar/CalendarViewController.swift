@@ -49,7 +49,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.showsTodaysButton = true
         calendarPicker.hideDaysFromOtherMonth = false
         calendarPicker.tintColor = UIColor.orangeColor()
-        
+         calendarPicker.backgroundColor = StrawBerryColor
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
         
         
