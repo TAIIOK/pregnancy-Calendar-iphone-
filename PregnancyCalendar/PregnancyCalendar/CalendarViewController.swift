@@ -42,7 +42,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     
     private func setupCalendar() {
     
-        let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [],window: true)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -51,7 +51,9 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.tintColor = UIColor.orangeColor()
          calendarPicker.backgroundColor = StrawBerryColor
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
-        
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
         
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         

@@ -424,7 +424,6 @@ public class EPCalendarPicker: UICollectionViewController {
             let startDate = NSDate(year: startYear, month: 1, day: 1)
             let firstDayOfMonth = startDate.dateByAddingMonths(indexPath.section)
             
-            print( currentMonth, "текущий ",firstDayOfMonth.monthNameFull() , firstDayOfMonth.month() , "  следующий месяц")
             
             if(firstDayOfMonth.month() > currentMonth ){
                 

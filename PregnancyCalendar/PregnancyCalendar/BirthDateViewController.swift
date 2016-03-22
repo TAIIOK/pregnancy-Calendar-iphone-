@@ -77,7 +77,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     @IBAction func setManually(sender: AnyObject) {
         self.currentButton = 2
         
-        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear-1, endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
@@ -97,7 +97,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     @IBAction func lastMenstrualPeriod(sender: AnyObject) {
         self.currentButton = 1
         
-        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear-1, endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
@@ -117,7 +117,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     @IBAction func Conceptiondate(sender: AnyObject) {
         self.currentButton = 0
         
-        let calendarPicker = EPCalendarPicker(startYear: 2016, endYear: 2020, multiSelection: false, selectedDates: arrSelectedDates, window: false)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear-1, endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates, window: false)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
