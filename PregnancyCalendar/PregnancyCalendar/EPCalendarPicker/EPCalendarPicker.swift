@@ -27,6 +27,7 @@ public class EPCalendarPicker: UICollectionViewController {
     public  var arrEvents = [NSDate]()
     public var aboutEvents = [NSDate:String]()
     
+    public var currentMonth :Int
     public var arrSelectedDates = [NSDate]()
     public var arrSelectedIndexPath = [NSDate:NSIndexPath]()
     
@@ -178,7 +179,7 @@ public class EPCalendarPicker: UICollectionViewController {
         self.monthTitleColor = EPDefaults.monthTitleColor
         self.todayTintColor = EPDefaults.todayTintColor
 
-        
+        self.currentMonth = -1
         self.window = window
         //Layout creation
         let layout = UICollectionViewFlowLayout()
@@ -311,6 +312,7 @@ public class EPCalendarPicker: UICollectionViewController {
                     
                 }
                 if currentDate.isToday() {
+                    currentMonth = currentDate.month()
                     cell.setTodayCellColor(todayTintColor)
                 }
                 
@@ -365,15 +367,76 @@ public class EPCalendarPicker: UICollectionViewController {
         return UIEdgeInsetsMake(5, 0, 5, 0); //top,left,bottom,right
     }
     
-
+    
+    func checkTitleName(){
+        
+        switch currentMonth {
+        case 1:
+            self.title = "Январь"
+            break
+        case 2:
+            self.title = "Февраль"
+            break
+        case 3:
+            self.title = "Март"
+            break
+        case 4:
+            self.title = "Апрель"
+            break
+        case 5:
+            self.title = "Май"
+            break
+        case 6:
+            self.title = "Июнь"
+            break
+        case 7:
+            self.title = "Июль"
+            break
+        case 8:
+            self.title = "Август"
+            break
+        case 9:
+            self.title = "Сентябрь"
+            break
+        case 10:
+            self.title = "Октябрь"
+            break
+        case 11:
+            self.title = "Ноябрь"
+            break
+        case 12:
+            self.title = "Декабрь"
+            break
+        default:
+            break
+        }
+        
+        
+    }
     //вставка названия месяца
     override public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-
+        
+        
         if kind == UICollectionElementKindSectionHeader {
+            
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! EPCalendarHeaderView
             
             let startDate = NSDate(year: startYear, month: 1, day: 1)
             let firstDayOfMonth = startDate.dateByAddingMonths(indexPath.section)
+            
+            print( currentMonth, "текущий ",firstDayOfMonth.monthNameFull() , firstDayOfMonth.month() , "  следующий месяц")
+            
+            if(firstDayOfMonth.month() > currentMonth ){
+                currentMonth = firstDayOfMonth.month() - 1
+            }
+            else {
+                currentMonth = firstDayOfMonth.month()
+            }
+            
+            
+            
+            checkTitleName()
+            
             header.backgroundColor = StrawBerryColor
             header.lblTitle.text = firstDayOfMonth.monthNameFull()
             header.lblTitle.textColor = monthTitleColor
