@@ -117,6 +117,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.hideDaysFromOtherMonth = false
         calendarPicker.tintColor = UIColor.orangeColor()
         calendarPicker.dayDisabledTintColor = UIColor.grayColor()
+        calendarPicker.backgroundColor = StrawBerryColor
         let navigationController = UINavigationController(rootViewController: calendarPicker)
         self.presentViewController(navigationController, animated: true, completion: nil)
         
