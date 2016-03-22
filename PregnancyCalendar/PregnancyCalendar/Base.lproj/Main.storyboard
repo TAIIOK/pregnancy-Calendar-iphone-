@@ -462,11 +462,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itZ-dQ-5sf">
-                                <rect key="frame" x="112" y="362" width="377" height="105"/>
+                                <rect key="frame" x="112" y="362" width="377" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="9t4-hu-CJT"/>
+                                    <constraint firstAttribute="height" constant="72" id="9t4-hu-CJT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-CJ-kbh">
@@ -482,10 +482,18 @@
                                     <outlet property="delegate" destination="N9y-xQ-xuE" id="VtJ-aK-Wv9"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-9h-gvO">
+                                <rect key="frame" x="20" y="411" width="560" height="31"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="bottom" secondItem="xc2-CJ-kbh" secondAttribute="bottom" id="7hi-95-9Vd"/>
+                            <constraint firstItem="K3O-9h-gvO" firstAttribute="leading" secondItem="ogh-mz-XaG" secondAttribute="leading" id="0XT-0d-GwD"/>
+                            <constraint firstItem="itZ-dQ-5sf" firstAttribute="bottom" secondItem="xc2-CJ-kbh" secondAttribute="bottom" constant="-33" id="7hi-95-9Vd"/>
+                            <constraint firstItem="K3O-9h-gvO" firstAttribute="top" secondItem="1hk-Gr-OOA" secondAttribute="bottom" constant="77" id="ECx-O6-DTi"/>
                             <constraint firstAttribute="trailing" secondItem="1hk-Gr-OOA" secondAttribute="trailing" id="FuH-bE-ddQ"/>
                             <constraint firstItem="itZ-dQ-5sf" firstAttribute="centerX" secondItem="ogh-mz-XaG" secondAttribute="centerX" id="G9K-Y9-P0L"/>
                             <constraint firstItem="1hk-Gr-OOA" firstAttribute="leading" secondItem="Fj0-DT-9Ld" secondAttribute="leading" id="PEV-dy-UFl"/>
@@ -499,11 +507,13 @@
                             <constraint firstItem="xc2-CJ-kbh" firstAttribute="top" secondItem="itZ-dQ-5sf" secondAttribute="top" id="anH-qd-skM"/>
                             <constraint firstItem="itZ-dQ-5sf" firstAttribute="centerX" secondItem="1hk-Gr-OOA" secondAttribute="centerX" id="cqI-UQ-FWG"/>
                             <constraint firstItem="ogh-mz-XaG" firstAttribute="leading" secondItem="Fj0-DT-9Ld" secondAttribute="leadingMargin" id="eb3-BU-kDl"/>
-                            <constraint firstItem="ogh-mz-XaG" firstAttribute="top" secondItem="itZ-dQ-5sf" secondAttribute="bottom" constant="8" id="hnq-cq-F6O"/>
+                            <constraint firstItem="ogh-mz-XaG" firstAttribute="top" secondItem="itZ-dQ-5sf" secondAttribute="bottom" constant="41" id="hnq-cq-F6O"/>
                             <constraint firstItem="xc2-CJ-kbh" firstAttribute="trailing" secondItem="itZ-dQ-5sf" secondAttribute="trailing" constant="-136" id="lXk-Xz-0u8">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-128"/>
                             </constraint>
                             <constraint firstItem="Nka-69-wPP" firstAttribute="top" secondItem="ogh-mz-XaG" secondAttribute="bottom" constant="83" id="qQE-on-sUJ"/>
+                            <constraint firstItem="ogh-mz-XaG" firstAttribute="top" secondItem="K3O-9h-gvO" secondAttribute="bottom" constant="33" id="rzG-yh-dUc"/>
+                            <constraint firstItem="K3O-9h-gvO" firstAttribute="trailing" secondItem="ogh-mz-XaG" secondAttribute="trailing" id="yJf-DZ-pYZ"/>
                             <constraint firstItem="itZ-dQ-5sf" firstAttribute="top" secondItem="1hk-Gr-OOA" secondAttribute="bottom" constant="28" id="zM3-7O-acZ"/>
                         </constraints>
                     </view>
@@ -522,12 +532,13 @@
                         <outlet property="buttonSpasm" destination="ogh-mz-XaG" id="hqM-uX-8UD"/>
                         <outlet property="collectionView" destination="1hk-Gr-OOA" id="AKf-T6-nR0"/>
                         <outlet property="label" destination="itZ-dQ-5sf" id="hnE-4Q-v0q"/>
+                        <outlet property="labelSeconds" destination="K3O-9h-gvO" id="Zef-gN-UhQ"/>
                         <outlet property="menuButton" destination="tnY-fA-tlV" id="Cjy-hi-emg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYY-4J-tR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5" y="1860"/>
+            <point key="canvasLocation" x="1765" y="1860"/>
         </scene>
         <!--Name View Controller-->
         <scene sceneID="AFv-Ef-0nT">

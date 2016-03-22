@@ -12,15 +12,9 @@ import UIKit
 
 class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     
-  
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
-
-    
     @IBOutlet weak var testview: UIView!
 
-    
-    
     // функции календаря
     //функция отмены
     func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
@@ -40,14 +34,13 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
 
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
         self.setupCalendar()
     }
     
-    private func setupCalendar(){
+    private func setupCalendar() {
     
         let calendarPicker = EPCalendarPicker(startYear: 2015, endYear: 2017, multiSelection: false, selectedDates: [],window: true)
         calendarPicker.calendarDelegate = self

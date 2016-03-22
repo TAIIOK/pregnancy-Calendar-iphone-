@@ -14,17 +14,16 @@ enum StopWatchState {
     case Stop
 }
 
+// НЕ РАБОТАЕТ НА СТАРЫХ ВЕРСИЯХ < 8.0
 extension NSDate {
-    func toFormattedTimeString() -> String {
+    internal func toFormattedTimeString() -> String {
         let today = NSDate()
         let gregorian = NSCalendar.currentCalendar()
         
         let hour = gregorian.component(.Hour, fromDate: today)
         let hourStr = (hour < 10 ? "0" : "") + String(hour) + ":"
-        
         let minute = gregorian.component(.Minute, fromDate: today)
         let minuteStr = (minute < 10 ? "0" : "") + String(minute) + ":"
-        
         let second = gregorian.component(.Second, fromDate: today)
         let secondStr = (second < 10 ? "0" : "") + String(second)
         
@@ -32,52 +31,49 @@ extension NSDate {
     }
 }
 
+// данные о схватке
 class Spasm {
+    var stop = ""
     var start = ""
     var duration = NSTimeInterval()
-    var stop = ""
 }
 
 class SpasmsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let numberCellIdentifier = "NumberCellIdentifier"
     let contentCellIdentifier = "ContentCellIdentifier"
+    let numberCollectionViewCell = "NumberCollectionViewCell"
+    let contentCollectionViewCell = "ContentCollectionViewCell"
     
-    var timer = NSTimer()
     var spasm = Spasm()
-    var state = StopWatchState.Stop
+    var timer = NSTimer()
     var dict: [Spasm] = []
+    var state = StopWatchState.Stop
     
     // OUTLETS
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelSeconds: UILabel!
     @IBOutlet weak var buttonSpasm: UIButton!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // ACTIONS
     @IBAction func buttonSpasms(sender: AnyObject) {
-        if self.state == .Stop {
-            self.buttonSpasm.setTitle("УФ, ЗАКОНЧИЛАСЬ", forState: .Normal)
-            self.state = .Watching
-            self.spasmStart()
-        } else {
-            self.buttonSpasm.setTitle("ОЙ, СХВАТКА", forState: .Normal)
-            self.state = .Stop
-            self.spasmStop()
-        }
+        self.state == .Stop ? self.spasmStart() : self.spasmStop()
     }
     @IBAction func buttonTrash(sender: AnyObject) {
-        if dict.count > 0 {
+        if self.dict.count > 0 {
             let alert = UIAlertController(title: "", message: "Вы действительно хотите очистить счетчик схваток?", preferredStyle: .ActionSheet)
             let cancelAction = UIAlertAction(title: "Отменить", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
             let confirmAction = UIAlertAction(title: "Очистить", style: .Destructive, handler: { (alert) in self.confirmDelete() } )
+            
             alert.addAction(confirmAction)
             alert.addAction(cancelAction)
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     func confirmDelete() {
-        self.collectionView.setContentOffset(CGPointZero, animated: false)
+        self.collectionView.setContentOffset(CGPointZero, animated: false) // для нормального очищения collectionview
         self.dict.removeAll()
         self.clearData()
         self.collectionView.reloadData()
@@ -87,8 +83,8 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        self.collectionView.registerNib(UINib(nibName: "NumberCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: numberCellIdentifier)
-        self.collectionView.registerNib(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: contentCellIdentifier)
+        self.collectionView.registerNib(UINib(nibName: self.numberCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: self.numberCellIdentifier)
+        self.collectionView.registerNib(UINib(nibName: self.contentCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: self.contentCellIdentifier)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -137,9 +133,9 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         let entityDescription = NSEntityDescription.entityForName("Spasms", inManagedObjectContext: managedContext)
         let Spasms = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: managedContext)
         
-        Spasms.setValue(spasm.start, forKey: "start")
-        Spasms.setValue(spasm.stop, forKey: "stop")
-        Spasms.setValue(spasm.duration, forKey: "duration")
+        Spasms.setValue(self.spasm.stop, forKey: "stop")
+        Spasms.setValue(self.spasm.start, forKey: "start")
+        Spasms.setValue(self.spasm.duration, forKey: "duration")
         
         do {
             try Spasms.managedObjectContext?.save()
@@ -163,7 +159,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
                     newSpasm.start = Spasms.valueForKey("start") as! String
                     newSpasm.stop = Spasms.valueForKey("stop") as! String
                     newSpasm.duration = Spasms.valueForKey("duration") as! NSTimeInterval
-                    dict.append(newSpasm)
+                    self.dict.append(newSpasm)
                 }
             }
         } catch {
@@ -173,29 +169,71 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     // SPASMS WATCH
     private func spasmStart() {
-        self.label.text = "0"
+        self.spasm = Spasm() // создать новый объект
+        self.state = .Watching // установить состояние работы секундомера
+        self.buttonSpasm.setTitle("УФ, ЗАКОНЧИЛАСЬ", forState: .Normal) // поменять текст на кнопке
+        
+        self.label.text = "0" // начальное значение секундомера
+        self.labelSeconds.text = "секунд"
+        self.spasm.start = NSDate().toFormattedTimeString() // записать дату начала
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerUpdate", userInfo: NSDate(), repeats: true)
-        self.spasm = Spasm()
-        self.spasm.start = NSDate().toFormattedTimeString()
     }
     private func spasmStop() {
-        self.spasm.stop = NSDate().toFormattedTimeString()
-        self.spasm.duration = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
-        self.dict.append(spasm)
+        self.state = .Stop // состояние ожидания работы
+        self.spasm.stop = NSDate().toFormattedTimeString() // записать дату конца
+        self.spasm.duration = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow // записать продолжительность
+        
+        // сохранить данные о схватке
+        self.dict.append(self.spasm)
+        self.saveData(self.spasm)
         self.collectionView.reloadData()
         self.scrollToBottom()
+        
+        // остановить таймер
         self.timer.invalidate()
         self.label.text = ""
-        self.saveData(self.spasm)
+        self.labelSeconds.text = ""
+        
+        // поменять текст на кнопке
+        self.buttonSpasm.setTitle("ОЙ, СХВАТКА", forState: .Normal)
     }
     func timerUpdate() {
         let elapsed = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
-        self.label.text = String(format: "%.0f", elapsed) + "\nсекунд"
+        let isStopTime = Int(elapsed + 0.1)
+        self.label.text = String(format: "%.0f", elapsed)
+        self.labelSeconds.text = self.getSecondsWord(isStopTime)
+        
+        // остановка таймера в случае, если его забыли -_-
+        if isStopTime == 119 {
+            self.state = .Stop
+            self.timer.invalidate()
+            self.label.text = ""
+            self.labelSeconds.text = ""
+            self.buttonSpasm.setTitle("ОЙ, СХВАТКА", forState: .Normal)
+            
+            let alert = UIAlertController(title: "Таймер был остановлен", message: "", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "ОК", style: .Default, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     func scrollToBottom() {
         let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1
         let lastItemIndex = NSIndexPath(forItem: item, inSection: self.dict.count)
         self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
+    }
+    func getSecondsWord(elapsed: Int) -> String {
+        if elapsed == 111 {
+            return "секунд"
+        } else if elapsed > 10 && elapsed < 15 {
+            return "секунд"
+        } else if elapsed % 10 == 1 {
+            return "секунда"
+        } else if elapsed % 10 == 2 || elapsed % 10 == 3 || elapsed % 10 == 4 {
+            return "секунды"
+        } else {
+            return "секунд"
+        }
     }
     
     // COLLECTION VIEW
@@ -270,7 +308,9 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
                     let timeStop = dateFormatter.dateFromString(timeStopString)
                     let interval = timeStart?.timeIntervalSinceDate(timeStop!)
                     
-                    if interval < 60 {
+                    if interval < 0 {
+                        contentCell.contentLabel.text = "> 1 дня"
+                    } else if interval < 60 {
                         contentCell.contentLabel.text = String(format: "%.0f", interval!) + " сек."
                     } else if interval < 3600 {
                         contentCell.contentLabel.text = String(format: "%.0f", interval! / 60) + " мин."
