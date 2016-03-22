@@ -24,6 +24,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     //функция одиночных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
         
+        print (date)
 
         //txtViewDetail.text = "User selected date: \n\(date)"
         
@@ -31,7 +32,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
 
-
+        print (dates)
     }
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     
     private func setupCalendar() {
     
-        let calendarPicker = EPCalendarPicker(startYear: currentyear , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
