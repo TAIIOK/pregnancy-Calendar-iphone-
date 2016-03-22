@@ -489,11 +489,11 @@ public class EPCalendarPicker: UICollectionViewController {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EPCalendarCell1
     
         
-        if multiSelectEnabled {
+        if window {
             calendarDelegate?.epCalendarPicker!(self, didSelectDate: cell.currentDate)
             cell.selectedForLabelColor(dateSelectionColor)
-            dismissViewControllerAnimated(true, completion: nil)
-            return
+          //  dismissViewControllerAnimated(true, completion: nil)
+           // return
         }
         
        
