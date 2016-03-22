@@ -427,10 +427,32 @@ public class EPCalendarPicker: UICollectionViewController {
             print( currentMonth, "текущий ",firstDayOfMonth.monthNameFull() , firstDayOfMonth.month() , "  следующий месяц")
             
             if(firstDayOfMonth.month() > currentMonth ){
+                
+
+                if (firstDayOfMonth.month() == 12  && currentMonth == 1){
+                currentMonth = firstDayOfMonth.month()
+                }
+                else{
+                if(firstDayOfMonth.month() - currentMonth == 10)
+                {
+                    currentMonth = 12
+                }
+                else{
                 currentMonth = firstDayOfMonth.month() - 1
+                }
+                }
             }
             else {
+                if (firstDayOfMonth.month() == 1 && currentMonth == 11)
+                {
+                    currentMonth = 12
+                }
+                else if (firstDayOfMonth.month() == 2  && currentMonth == 12){
+                    currentMonth = firstDayOfMonth.month() - 1
+                }
+                else{
                 currentMonth = firstDayOfMonth.month()
+                }
             }
             
             
