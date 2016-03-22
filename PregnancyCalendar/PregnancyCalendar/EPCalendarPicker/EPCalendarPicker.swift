@@ -271,7 +271,7 @@ public class EPCalendarPicker: UICollectionViewController {
      
         var prefixDays = ( firstDayOfThisMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
        
-        if(prefixDays == -1)
+        if(prefixDays == -1) // It can take a value of -1 only when the week starts on Monday
         {
             prefixDays += 7
         }
@@ -336,7 +336,7 @@ public class EPCalendarPicker: UICollectionViewController {
             cell.currentDate = previousDay
             cell.lblDay.text = "\(previousDay.day())"
             cell.lblDay.textColor = EPColors.LightGrayColor
-            cell.lblDay.layer.backgroundColor = UIColor.whiteColor().CGColor
+          //  cell.lblDay.layer.backgroundColor = UIColor.whiteColor().CGColor
             if hideDaysFromOtherMonth {
                 cell.lblDay.textColor = UIColor.clearColor()
             } else {
@@ -346,7 +346,7 @@ public class EPCalendarPicker: UICollectionViewController {
         }
         
      
-        
+    
         return cell
     }
 

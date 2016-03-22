@@ -37,6 +37,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
 
+
     }
     
     

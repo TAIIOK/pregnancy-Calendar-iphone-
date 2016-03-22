@@ -17,7 +17,7 @@ class EPCalendarCell1: UICollectionViewCell {
     var isCellFirstEvent: Bool?
     var isCellSecondEvent: Bool?
     var isCellThirdEvent: Bool?
-    
+    var customCellBackground : Bool?
     @IBOutlet weak var lblDay: UILabel!
     
     @IBOutlet weak var first: UIImageView! = nil
@@ -41,7 +41,10 @@ class EPCalendarCell1: UICollectionViewCell {
     }
     
     func deSelectedForLabelColor(color: UIColor) {
-        self.lblDay.layer.backgroundColor =  UIColor.whiteColor().CGColor
+        
+
+        self.lblDay.layer.backgroundColor =  StrawBerryColor.CGColor
+
         self.lblDay.textColor = color
     }
     
