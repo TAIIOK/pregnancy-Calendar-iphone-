@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -32,6 +33,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet var pickerViewTextField: UITextField!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var growthButton: UIBarButtonItem!
+    @IBOutlet weak var lineChartView: LineChartView!
     
     @IBAction func growthButtonPress(sender: UIBarButtonItem) {
         self.pickerViewTextField.becomeFirstResponder() // открывает пикер роста
@@ -46,17 +48,25 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.setupGrowthPickerView()
         self.setupGrowthPickerViewToolbar()
         self.setupGraph()
+        
+        lineChartView.noDataText = "Для отображения графика"
+        lineChartView.noDataTextDescription = "необходимо указать рост"
     }
     
-    // нарисовать график
+    // установка графика
     private func setupGraph() {
         if self.growth != 0 {
             self.label.hidden = true
+            
+            let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+            let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+            self.setChart(months, values: unitsSold)
         } else {
             self.label.hidden = false
         }
     }
     
+    // выезжающее меню
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
             self.revealViewController().rearViewRevealDisplacement = 0
@@ -70,6 +80,21 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
     }
     
+    // ГРАФИК
+    private func setChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 1..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+    }
+    
+    // ПИКЕР
     private func setupGrowthPickerView()  {
         self.pickerViewTextField = UITextField(frame: CGRectZero)
         self.view.addSubview(self.pickerViewTextField)
@@ -80,16 +105,14 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.pickerView.backgroundColor = .whiteColor()
         self.pickerViewTextField.inputView = self.pickerView
     }
-    
     private func setupPickerViewValues() {
-        var rowIndex = Int(self.growth)
+        var rowIndex = self.growth
         self.pickerView.selectRow(rowIndex % 10, inComponent: 2, animated: true)
         rowIndex /= 10
         self.pickerView.selectRow(rowIndex % 10, inComponent: 1, animated: true)
         rowIndex /= 10
         self.pickerView.selectRow(rowIndex % 10, inComponent: 0, animated: true)
     }
-    
     private func setupGrowthPickerViewToolbar() {
         let toolBar = UIToolbar(frame: CGRectMake(0, 0, 320, 40))
         toolBar.tintColor = StrawBerryColor
@@ -100,11 +123,9 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         toolBar.setItems([cancelButton, flexSpace, doneButton], animated: true)
         self.pickerViewTextField.inputAccessoryView = toolBar
     }
-    
     private func getGrowthFromPickerView() -> Int {
         return self.firstComponent[self.pickerView.selectedRowInComponent(0)]*100 + self.secondComponent[self.pickerView.selectedRowInComponent(1)]*10 + self.thirdComponent[self.pickerView.selectedRowInComponent(2)]
     }
-    
     func doneButtonTouched() {
         self.cancelButtonTouched()
         self.growth = self.getGrowthFromPickerView()
@@ -120,11 +141,9 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
             self.label.hidden = false
         }
     }
-    
     func cancelButtonTouched() {
         self.pickerViewTextField.resignFirstResponder()
     }
-    
     private func alertToNotes() {
         let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
@@ -133,18 +152,13 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         alert.addAction(notesAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
     func actionToNotes() {
         self.dismissViewControllerAnimated(true, completion: nil)
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigationController") as? UINavigationController
         self.revealViewController().setFrontViewController(controller, animated: true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // save to plist
+    // PLIST
     private func saveGrowthToPlist(growth: Int) {
         if let plist = Plist(fileName: "userInfo") {
             let dict = plist.getMutablePlistFile()!
@@ -157,8 +171,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
         }
     }
-    
-    // load from plist
     private func loadGrowthFromPlist() -> Int {
         if let plist = Plist(fileName: "userInfo") {
             let dict = plist.getValuesFromPlistFile()
@@ -189,5 +201,9 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else {
             return "\(self.thirdComponent[row])"
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
