@@ -30,7 +30,6 @@
 		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
 		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
-		027A28DF1C998EC3000792E8 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28DE1C998EC3000792E8 /* LineChart.swift */; };
 		027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E01C99A06F000792E8 /* AssetsLibrary.framework */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
@@ -75,7 +74,6 @@
 		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
 		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		027A28DE1C998EC3000792E8 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		027A28E01C99A06F000792E8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
 				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
-				027A28DD1C998EB4000792E8 /* LineChart */,
 				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
 				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
 				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
@@ -178,14 +175,6 @@
 				02682D401C7EFC420088F21B /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
-			sourceTree = "<group>";
-		};
-		027A28DD1C998EB4000792E8 /* LineChart */ = {
-			isa = PBXGroup;
-			children = (
-				027A28DE1C998EC3000792E8 /* LineChart.swift */,
-			);
-			name = LineChart;
 			sourceTree = "<group>";
 		};
 		A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */ = {
@@ -300,7 +289,6 @@
 			files = (
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
-				027A28DF1C998EC3000792E8 /* LineChart.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
@@ -441,7 +429,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +451,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";

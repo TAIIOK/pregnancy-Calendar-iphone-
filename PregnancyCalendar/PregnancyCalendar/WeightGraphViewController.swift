@@ -8,36 +8,39 @@
 
 import UIKit
 
-class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, LineChartDelegate {
+class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    // инднекс массы тела
-    let IMT0: [CGFloat] = [0.5,0.9,1.4,1.6,1.8,2.0,2.7,3.2,4.5,5.4,6.8,7.7,8.6,9.8,10.2,11.3,12.5,13.6,14.5,15.2]
-    let IMT1: [CGFloat] = [0.5,0.7,1.0,1.2,1.3,1.5,1.9,2.3,3.6,4.8,5.7,6.4,7.7,8.2,9.1,10.0,10.9,11.9,12.7,13.6]
-    let IMT2: [CGFloat] = [0.5,0.5,0.6,0.7,0.8,0.9,1.0,1.4,2.3,2.9,3.4,3.9,5.0,5.4,5.9,6.4,7.3,7.9,8.6,9.1]
+    // ИМТ < 18.5
+    let IMT0: [CGFloat] = [0.5, 0.9, 1.4, 1.6, 1.8, 2.0, 2.7, 3.2, 4.5, 5.4, 6.8, 7.7, 8.6, 9.8, 10.2, 11.3, 12.5, 13.6, 14.5, 15.2]
     
-    var mass = 60
-    var growth = 0
+    // ИМТ = 18.5 < 24.99
+    let IMT1: [CGFloat] = [0.5, 0.7, 1.0, 1.2, 1.3, 1.5, 1.9, 2.3, 3.6, 4.8, 5.7, 6.4, 7.7, 8.2, 9.1, 10.0, 10.9, 11.9, 12.7, 13.6]
+    
+    // ИМТ >= 25
+    let IMT2: [CGFloat] = [0.5, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.4, 2.3, 2.9, 3.4, 3.9, 5.0, 5.4, 5.9, 6.4, 7.3, 7.9, 8.6, 9.1]
+    
+    var mass = 60 // временное значение веса, потом будет браться из заметок
+    var growth = 0 // рост
+    
+    // компоненты пикера
     var firstComponent = [0, 1, 2]
     var secondComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     var thirdComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     
-    var lineChart: LineChart!
-    var views: [String: AnyObject] = [:]
-    
+    @IBOutlet weak var label: UILabel!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var pickerViewTextField: UITextField!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var growthButton: UIBarButtonItem!
-    @IBOutlet weak var label: UILabel!
     
     @IBAction func growthButtonPress(sender: UIBarButtonItem) {
         self.pickerViewTextField.becomeFirstResponder() // открывает пикер роста
-        self.setupPickerViewValues()
+        self.setupPickerViewValues() // установить значения пикера
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.growth = loadGrowthFromCoreData()
+        self.growth = self.loadGrowthFromPlist()
         self.navigationItem.rightBarButtonItem?.title = self.growth == 0 ? "Ваш рост" : "\(self.growth) см"
         self.setupSidebarMenu()
         self.setupGrowthPickerView()
@@ -45,9 +48,9 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.setupGraph()
     }
     
+    // нарисовать график
     private func setupGraph() {
         if self.growth != 0 {
-            self.drawGraph()
             self.label.hidden = true
         } else {
             self.label.hidden = false
@@ -79,7 +82,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     private func setupPickerViewValues() {
-        var rowIndex = self.growth
+        var rowIndex = Int(self.growth)
         self.pickerView.selectRow(rowIndex % 10, inComponent: 2, animated: true)
         rowIndex /= 10
         self.pickerView.selectRow(rowIndex % 10, inComponent: 1, animated: true)
@@ -100,98 +103,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     private func getGrowthFromPickerView() -> Int {
         return self.firstComponent[self.pickerView.selectedRowInComponent(0)]*100 + self.secondComponent[self.pickerView.selectedRowInComponent(1)]*10 + self.thirdComponent[self.pickerView.selectedRowInComponent(2)]
-    }
-    
-    func didSelectDataPoint(x: CGFloat, yValues: [CGFloat]) {
-        
-    }
-    
-    func drawGraph() {
-        let factMass = UILabel()
-        factMass.text = "                  Фактический вес"
-        factMass.translatesAutoresizingMaskIntoConstraints = false
-        factMass.textAlignment = NSTextAlignment.Left
-        factMass.textColor=StrawBerryColor
-        self.view.addSubview(factMass)
-        self.views["factMass"] = factMass
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[factMass]-|", options: [], metrics: nil, views: self.views))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-100-[factMass]", options: [], metrics: nil, views: self.views))
-        
-        let recommend = UILabel()
-        recommend.text = "                 Условно-рекомендуемая норма"
-        recommend.translatesAutoresizingMaskIntoConstraints = false
-        recommend.textAlignment = NSTextAlignment.Center
-        recommend.textColor=UIColor.blueColor()
-        self.view.addSubview(recommend)
-        self.views["recommend"] = recommend
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-100-[recommend]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-100-[recommend]", options: [], metrics: nil, views: views))
-        
-        // simple arrays
-        let ves = Double(mass)
-        let rost = Double(growth)
-        let a = CGFloat(51)
-        
-        var data: [CGFloat] = [51]
-        
-        let b = CGFloat(ves)
-        var data1 : [CGFloat] = [b]
-        
-        var imt=ves*10000.0
-        let x: Double = rost*rost
-        if(x>0){
-            imt = imt/x}
-        else{
-            imt = 0
-        }
-        
-        for (var i=0; i<20;i++){
-            if(mass==0){
-                data1.append(0)
-            }
-            else{
-                if(imt < 18.5){
-                    data1.append(b+IMT0[i])
-                }
-                else if (imt >= 25){
-                    data1.append(b+IMT2[i])
-                }
-                else{
-                    data1.append(b+IMT1[i])
-                }
-            }
-            data.append(a+IMT2[i])
-        }
-        
-        // simple line with custom x axis labels
-        let xLabels: [String] = ["0","2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36", "38", "40"]
-        
-        lineChart = LineChart()
-        lineChart.animation.enabled = true
-        lineChart.area = false
-        lineChart.x.labels.visible = true
-        lineChart.y.labels.visible = true
-        lineChart.x.grid.count = 21
-        lineChart.y.grid.count = 21
-        lineChart.x.labels.values = xLabels
-        lineChart.x.axis.visible = true
-        lineChart.x.axis.color = UIColor.blueColor()
-        lineChart.addLine(data)
-        lineChart.addLine(data1)
-        
-        lineChart.translatesAutoresizingMaskIntoConstraints = false
-        lineChart.delegate = self
-        
-        self.view.addSubview(lineChart)
-        views["chart"] = lineChart
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[chart]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[factMass]-[chart(==500)]", options: [], metrics: nil, views: views))
-    }
-    
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        if let chart = self.lineChart {
-            chart.setNeedsDisplay()
-        }
     }
     
     func doneButtonTouched() {
@@ -215,33 +126,18 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     private func alertToNotes() {
-        if #available(iOS 8.0, *) {
-            let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
-            let notesAction = UIAlertAction(title: "В заметки", style: .Default, handler: { (alert) in self.actionToNotes() } )
-            alert.addAction(cancelAction)
-            alert.addAction(notesAction)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        else {
-            let alert: UIAlertView = UIAlertView()
-            alert.delegate = self
-            alert.title = ""
-            alert.message = "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения"
-            alert.addButtonWithTitle("Отмена")
-            alert.addButtonWithTitle("В заметки")
-            
-            alert.show()
-            
-        }
-
+        let alert = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набор веса и отслеживать отклонения", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
+        let notesAction = UIAlertAction(title: "В заметки", style: .Default, handler: { (alert) in self.actionToNotes() } )
+        alert.addAction(cancelAction)
+        alert.addAction(notesAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func actionToNotes() {
+        self.dismissViewControllerAnimated(true, completion: nil)
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigationController") as? UINavigationController
-        self.revealViewController().pushFrontViewController(controller, animated: true)
-
+        self.revealViewController().setFrontViewController(controller, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -263,7 +159,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     // load from plist
-    private func loadGrowthFromCoreData() -> Int {
+    private func loadGrowthFromPlist() -> Int {
         if let plist = Plist(fileName: "userInfo") {
             let dict = plist.getValuesFromPlistFile()
             return (dict![userGrowth] as? Int)!
@@ -276,7 +172,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 3
     }
-    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
             return self.firstComponent.count
@@ -286,7 +181,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
             return self.thirdComponent.count
         }
     }
-    
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             return "\(self.firstComponent[row])"
