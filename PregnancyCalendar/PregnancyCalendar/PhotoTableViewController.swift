@@ -9,12 +9,46 @@
 import UIKit
 import AssetsLibrary
 
+class IAAssetsLibrary: ALAssetsLibrary {
+    
+    class var defaultInstance : IAAssetsLibrary {
+        struct Static {
+            static let instance : IAAssetsLibrary = IAAssetsLibrary()
+        }
+        return Static.instance
+    }
+    
+}
+
+
 class PhotoTableViewController: UITableViewController {
     
     var assetsLibraty: ALAssetsLibrary!
-    var groups: NSMutableArray!
+    var albums:[ALAssetsGroup] = []
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    func loadAlbums() {
+        let library = IAAssetsLibrary.defaultInstance
+        library.enumerateGroupsWithTypes(ALAssetsGroupAll, usingBlock: { (group, stop) -> Void in
+            //            println("in enumeration")
+            if (group != nil) {
+                //                println("group not nil")
+                //                println(group.valueForProperty(ALAssetsGroupPropertyName))
+                self.albums.append(group)
+            } else {
+                //                println("group is nil")
+                dispatch_async(dispatch_get_main_queue(), {
+                    //                    println("reload data")
+                    self.tableView.reloadData()
+                    
+                })
+            }
+        }) { (error) -> Void in
+            print("problem loading albums: \(error)")
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +56,12 @@ class PhotoTableViewController: UITableViewController {
         
         if self.assetsLibraty == nil {
             self.assetsLibraty = ALAssetsLibrary()
+            loadAlbums()
         }
         
-        if self.groups == nil {
-            self.groups = NSMutableArray()
-        } else {
-            self.groups.removeAllObjects()
-        }
     }
+    
+    
     
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
@@ -51,12 +83,12 @@ class PhotoTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.groups.count
+        return self.albums.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let groupForCell = self.groups[indexPath.row]
+        let groupForCell = self.albums[indexPath.row]
         let poster = UIImage(CGImage: groupForCell.posterImage().takeUnretainedValue())
         cell.imageView?.image = poster
         cell.textLabel?.text = groupForCell.valueForProperty("ALAssetGroupPropertyName") as? String
