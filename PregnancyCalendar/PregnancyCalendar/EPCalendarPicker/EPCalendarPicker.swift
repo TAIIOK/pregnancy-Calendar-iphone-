@@ -578,10 +578,15 @@ public class EPCalendarPicker: UICollectionViewController {
     internal func onTouchDoneButton() {
         //gathers all the selected dates and pass it to the delegate
 
-        
+        if(arrSelectedDates.count == 0){
+            calendarDelegate?.epCalendarPicker!(self, didCancel: NSError(domain: "EPCalendarPickerErrorDomain", code: 2, userInfo: [ NSLocalizedDescriptionKey: "User Canceled Selection"]))
+            dismissViewControllerAnimated(true, completion: nil)
+
+        }
+        else{
             calendarDelegate?.epCalendarPicker!(self, didSelectDate: arrSelectedDates[0])
             dismissViewControllerAnimated(true, completion: nil)
-        
+        }
         if multiSelectEnabled {
         calendarDelegate?.epCalendarPicker!(self, didSelectMultipleDate: arrSelectedDates)
         dismissViewControllerAnimated(true, completion: nil)
