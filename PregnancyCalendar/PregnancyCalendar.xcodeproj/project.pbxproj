@@ -37,6 +37,8 @@
 		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
 		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
 		A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */; };
+		A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
+		A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD741C96EC3400B6A036 /* Black_dot.png */; };
 		A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */; };
 		A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */; };
@@ -76,7 +78,28 @@
 			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
 			remoteInfo = ChartsTests;
 		};
+		A0C56DA51CA2E9A7004C36AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0C56DA71CA2E9A7004C36AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		022994211C80956900E3B816 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +154,7 @@
 				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
 				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
+				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
 				027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */,
 				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
 			);
@@ -249,10 +273,12 @@
 				02682D211C7EFBA40088F21B /* Frameworks */,
 				02682D221C7EFBA40088F21B /* Resources */,
 				A0B0ECBC1C9EBCFB005E44F4 /* ShellScript */,
+				A0C56DA71CA2E9A7004C36AF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */,
 			);
 			name = PregnancyCalendar;
 			productName = PregnancyCalendar;
@@ -399,6 +425,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = A0C56DA51CA2E9A7004C36AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		02682D2B1C7EFBA40088F21B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -507,6 +541,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -529,6 +564,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
