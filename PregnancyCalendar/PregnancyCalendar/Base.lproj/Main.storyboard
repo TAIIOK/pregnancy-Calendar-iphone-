@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-kn-Qvm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-kn-Qvm">
                                 <rect key="frame" x="20" y="72" width="560" height="520"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Для отображения графика необходимо указать рост">
@@ -144,24 +144,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeN-fN-2Mm" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="141" width="600" height="439"/>
+                                <rect key="frame" x="0.0" y="105" width="600" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dd5-kn-Qvm" firstAttribute="bottom" secondItem="kHb-19-q5l" secondAttribute="top" constant="-8" id="5iu-tA-1xf"/>
-                            <constraint firstItem="Dd5-kn-Qvm" firstAttribute="top" secondItem="pRB-iV-baZ" secondAttribute="bottom" constant="8" id="9KM-iN-VUL"/>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="top" secondItem="pRB-iV-baZ" secondAttribute="bottom" constant="77" id="9Vj-LI-7m7"/>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="leading" secondItem="tr5-VT-MEm" secondAttribute="leading" id="BDF-BY-6db"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZeN-fN-2Mm" secondAttribute="trailing" constant="-20" id="OFI-aq-rhC"/>
-                            <constraint firstAttribute="trailing" secondItem="Dd5-kn-Qvm" secondAttribute="trailing" constant="20" id="Vhx-0v-QrJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZeN-fN-2Mm" secondAttribute="trailing" constant="-20" id="aJy-7S-G1p"/>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="top" secondItem="pRB-iV-baZ" secondAttribute="bottom" constant="77" id="cVg-r6-Ot2"/>
-                            <constraint firstItem="Dd5-kn-Qvm" firstAttribute="leading" secondItem="tr5-VT-MEm" secondAttribute="leading" constant="20" id="ltP-GZ-By1"/>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="leading" secondItem="tr5-VT-MEm" secondAttribute="leadingMargin" constant="-20" id="nTt-8v-QMt"/>
-                            <constraint firstAttribute="trailing" secondItem="ZeN-fN-2Mm" secondAttribute="trailing" id="ntU-hR-VpI"/>
-                            <constraint firstItem="kHb-19-q5l" firstAttribute="top" secondItem="ZeN-fN-2Mm" secondAttribute="bottom" constant="20" id="rh2-0J-J1j"/>
+                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="top" secondItem="pRB-iV-baZ" secondAttribute="bottom" constant="41" id="9sk-KP-AKc"/>
+                            <constraint firstAttribute="trailing" secondItem="ZeN-fN-2Mm" secondAttribute="trailing" id="XOI-La-OjW"/>
+                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="leading" secondItem="tr5-VT-MEm" secondAttribute="leading" id="pNx-4R-AsN"/>
+                            <constraint firstItem="kHb-19-q5l" firstAttribute="top" secondItem="ZeN-fN-2Mm" secondAttribute="bottom" constant="40" id="z1q-Kb-h1D"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="График набора веса" id="ipx-ux-nVb">

@@ -11,19 +11,16 @@ import Charts
 
 class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    // ИМТ < 18.5
-    let IMT0: [CGFloat] = [0.5, 0.9, 1.4, 1.6, 1.8, 2.0, 2.7, 3.2, 4.5, 5.4, 6.8, 7.7, 8.6, 9.8, 10.2, 11.3, 12.5, 13.6, 14.5, 15.2]
+    // ИМТ < 18.5; ИМТ = 18.5 < 24.99; ИМТ >= 25
+    let IMT0: [Double] = [0.5, 0.9, 1.4, 1.6, 1.8, 2.0, 2.7, 3.2, 4.5, 5.4, 6.8, 7.7, 8.6, 9.8, 10.2, 11.3, 12.5, 13.6, 14.5, 15.2]
+    let IMT1: [Double] = [0.5, 0.7, 1.0, 1.2, 1.3, 1.5, 1.9, 2.3, 3.6, 4.8, 5.7, 6.4, 7.7, 8.2, 9.1, 10.0, 10.9, 11.9, 12.7, 13.6]
+    let IMT2: [Double] = [0.5, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.4, 2.3, 2.9, 3.4, 3.9, 5.0, 5.4, 5.9, 6.4, 7.3, 7.9, 8.6, 9.1]
     
-    // ИМТ = 18.5 < 24.99
-    let IMT1: [CGFloat] = [0.5, 0.7, 1.0, 1.2, 1.3, 1.5, 1.9, 2.3, 3.6, 4.8, 5.7, 6.4, 7.7, 8.2, 9.1, 10.0, 10.9, 11.9, 12.7, 13.6]
+    // рост и вес (вес потом будет браться из заметок)
+    let mass = [40.0, 40.2, 40.5, 42.0]
+    //let mass = []
+    var growth = 0
     
-    // ИМТ >= 25
-    let IMT2: [CGFloat] = [0.5, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.4, 2.3, 2.9, 3.4, 3.9, 5.0, 5.4, 5.9, 6.4, 7.3, 7.9, 8.6, 9.1]
-    
-    var mass = 60 // временное значение веса, потом будет браться из заметок
-    var growth = 0 // рост
-    
-    // компоненты пикера
     var firstComponent = [0, 1, 2]
     var secondComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     var thirdComponent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -42,28 +39,52 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // загрузить рост
         self.growth = self.loadGrowthFromPlist()
         self.navigationItem.rightBarButtonItem?.title = self.growth == 0 ? "Ваш рост" : "\(self.growth) см"
+        
+        // менюшка и пикер
         self.setupSidebarMenu()
         self.setupGrowthPickerView()
         self.setupGrowthPickerViewToolbar()
-        self.setupGraph()
         
-        lineChartView.noDataText = "Для отображения графика"
-        lineChartView.noDataTextDescription = "необходимо указать рост"
+        // график
+        self.setupGraph()
+        self.setupGraphSettings()
     }
     
     // установка графика
     private func setupGraph() {
         if self.growth != 0 {
             self.label.hidden = true
-            
-            let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-            let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
-            self.setChart(months, values: unitsSold)
+            self.setChart()
         } else {
             self.label.hidden = false
         }
+    }
+    private func setupGraphSettings() {
+        // общие настройки
+        self.lineChartView.noDataText = "Для отображения графика"
+        self.lineChartView.noDataTextDescription = "необходимо указать рост"
+        self.lineChartView.scaleXEnabled = true
+        self.lineChartView.scaleYEnabled = false
+        self.lineChartView.pinchZoomEnabled = true
+        self.lineChartView.rightAxis.enabled = false
+        self.lineChartView.xAxis.labelPosition = .Bottom
+        self.lineChartView.animate(xAxisDuration: 1, yAxisDuration: 0.5)
+        self.lineChartView.legend.form = .Circle
+        self.lineChartView.legend.position = .AboveChartLeft
+        
+        // ось х
+        self.lineChartView.xAxis.drawGridLinesEnabled = false
+        
+        // ось y
+        self.lineChartView.leftAxis.drawAxisLineEnabled = false
+        self.lineChartView.leftAxis.drawGridLinesEnabled = false
+        
+        // анимация
+        self.lineChartView.animate(xAxisDuration: 1)
     }
     
     // выезжающее меню
@@ -81,17 +102,60 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     // ГРАФИК
-    private func setChart(dataPoints: [String], values: [Double]) {
+    private func setChart() {
+        // сначала очистить график
+        self.lineChartView.clear()
+        
+        // нарисовать условно-рекомендуемый график
+        let dataEntries = self.getChartDataEntries(Double(self.growth - 110))
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Условно-рекомендуемая норма")
+        self.setRecommendSetStyle(lineChartDataSet)
+        
+        // нарисовать график фактического веса
+        
+        // подписать недели
+        var dataPoints: [String] = []
+        for i in 1...40 {
+            dataPoints.append("\(i)")
+        }
+        
+        // готово
+        self.lineChartView.data = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+    }
+    private func setRecommendSetStyle(lineChartDataSet: LineChartDataSet) {
+        lineChartDataSet.setColor(.cyanColor())
+        lineChartDataSet.fillColor = .cyanColor()
+        lineChartDataSet.setCircleColor(.cyanColor())
+        lineChartDataSet.circleHoleColor = .cyanColor()
+        lineChartDataSet.lineWidth = 2
+        lineChartDataSet.circleRadius = 6
+        lineChartDataSet.valueFont = .systemFontOfSize(0)
+    }
+    private func setFactSetStyle(lineChartDataSet: LineChartDataSet) {
+        lineChartDataSet.setColor(StrawBerryColor)
+        lineChartDataSet.fillColor = StrawBerryColor
+        lineChartDataSet.setCircleColor(StrawBerryColor)
+        lineChartDataSet.circleHoleColor = StrawBerryColor
+        lineChartDataSet.lineWidth = 2
+        lineChartDataSet.circleRadius = 6
+        lineChartDataSet.valueFont = .systemFontOfSize(0)
+    }
+    private func getChartDataEntries(weight: Double) -> [ChartDataEntry] {
+        var weeks: [Int] = []
         var dataEntries: [ChartDataEntry] = []
         
-        for i in 1..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+        // недели
+        for var i = 2; i <= 40; i += 2 {
+            weeks.append(i)
+        }
+        
+        // точки
+        for i in 0..<weeks.count {
+            let dataEntry = ChartDataEntry(value: weight + self.IMT0[i], xIndex: weeks[i])
             dataEntries.append(dataEntry)
         }
         
-        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
-        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
-        lineChartView.data = lineChartData
+        return dataEntries
     }
     
     // ПИКЕР
@@ -139,6 +203,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
             self.alertToNotes()
         } else {
             self.label.hidden = false
+            self.lineChartView.clear()
         }
     }
     func cancelButtonTouched() {

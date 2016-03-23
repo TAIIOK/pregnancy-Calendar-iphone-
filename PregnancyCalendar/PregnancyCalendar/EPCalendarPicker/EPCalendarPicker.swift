@@ -47,7 +47,7 @@ public class EPCalendarPicker: UICollectionViewController {
     public var hightlightsToday: Bool = true
     public var tintColor: UIColor
     public var barTintColor: UIColor
-    public var hideDaysFromOtherMonth: Bool = false
+    public var hideDaysFromOtherMonth: Bool = true
     public var backgroundImage: UIImage?
     public var backgroundColor: UIColor?
 

@@ -82,10 +82,8 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
         //calendarPicker.showsTodaysButton = true
-        calendarPicker.hideDaysFromOtherMonth = false
         
         calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.dayDisabledTintColor = StrawBerryColor
         calendarPicker.monthTitleColor = UIColor.whiteColor()
         calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
@@ -102,10 +100,8 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
         //calendarPicker.showsTodaysButton = true
-        calendarPicker.hideDaysFromOtherMonth = false
         
         calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.dayDisabledTintColor = StrawBerryColor
         calendarPicker.monthTitleColor = UIColor.whiteColor()
         calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
@@ -122,10 +118,8 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
         //calendarPicker.showsTodaysButton = true
-        calendarPicker.hideDaysFromOtherMonth = false
         
         calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.dayDisabledTintColor = StrawBerryColor
         calendarPicker.monthTitleColor = UIColor.whiteColor()
         calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
