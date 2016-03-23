@@ -12,13 +12,12 @@ import Charts
 class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // ИМТ < 18.5; ИМТ = 18.5 < 24.99; ИМТ >= 25
-    let IMT0: [Double] = [0.5, 0.9, 1.4, 1.6, 1.8, 2.0, 2.7, 3.2, 4.5, 5.4, 6.8, 7.7, 8.6, 9.8, 10.2, 11.3, 12.5, 13.6, 14.5, 15.2]
+    //let IMT0: [Double] = [0.5, 0.9, 1.4, 1.6, 1.8, 2.0, 2.7, 3.2, 4.5, 5.4, 6.8, 7.7, 8.6, 9.8, 10.2, 11.3, 12.5, 13.6, 14.5, 15.2]
     let IMT1: [Double] = [0.5, 0.7, 1.0, 1.2, 1.3, 1.5, 1.9, 2.3, 3.6, 4.8, 5.7, 6.4, 7.7, 8.2, 9.1, 10.0, 10.9, 11.9, 12.7, 13.6]
-    let IMT2: [Double] = [0.5, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.4, 2.3, 2.9, 3.4, 3.9, 5.0, 5.4, 5.9, 6.4, 7.3, 7.9, 8.6, 9.1]
+    //let IMT2: [Double] = [0.5, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.4, 2.3, 2.9, 3.4, 3.9, 5.0, 5.4, 5.9, 6.4, 7.3, 7.9, 8.6, 9.1]
     
     // рост и вес (вес потом будет браться из заметок)
-    let mass = [40.0, 40.2, 40.5, 42.0]
-    //let mass = []
+    let mass: [Double] = []
     var growth = 0
     
     var firstComponent = [0, 1, 2]
@@ -74,7 +73,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.lineChartView.xAxis.labelPosition = .Bottom
         self.lineChartView.animate(xAxisDuration: 1, yAxisDuration: 0.5)
         self.lineChartView.legend.form = .Circle
-        self.lineChartView.legend.position = .AboveChartLeft
+        self.lineChartView.legend.position = .AboveChartRight
         
         // ось х
         self.lineChartView.xAxis.drawGridLinesEnabled = false
@@ -106,12 +105,16 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         // сначала очистить график
         self.lineChartView.clear()
         
+        // графики
         // нарисовать условно-рекомендуемый график
-        let dataEntries = self.getChartDataEntries(Double(self.growth - 110))
+        let dataEntries = self.getChartDataEntriesForRecommend(Double(self.growth - 110))
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Условно-рекомендуемая норма")
         self.setRecommendSetStyle(lineChartDataSet)
         
         // нарисовать график фактического веса
+        let dataEntriesSecond = self.getChartDataEntriesForFact()
+        let lineChartDataSetSecond = LineChartDataSet(yVals: dataEntriesSecond, label: "Фактический вес")
+        self.setFactSetStyle(lineChartDataSetSecond)
         
         // подписать недели
         var dataPoints: [String] = []
@@ -120,14 +123,15 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         
         // готово
-        self.lineChartView.data = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        let dataSets = [lineChartDataSetSecond, lineChartDataSet]
+        self.lineChartView.data = LineChartData(xVals: dataPoints, dataSets: dataSets)
     }
     private func setRecommendSetStyle(lineChartDataSet: LineChartDataSet) {
         lineChartDataSet.setColor(.cyanColor())
         lineChartDataSet.fillColor = .cyanColor()
         lineChartDataSet.setCircleColor(.cyanColor())
         lineChartDataSet.circleHoleColor = .cyanColor()
-        lineChartDataSet.lineWidth = 2
+        lineChartDataSet.lineWidth = 1
         lineChartDataSet.circleRadius = 6
         lineChartDataSet.valueFont = .systemFontOfSize(0)
     }
@@ -140,22 +144,44 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         lineChartDataSet.circleRadius = 6
         lineChartDataSet.valueFont = .systemFontOfSize(0)
     }
-    private func getChartDataEntries(weight: Double) -> [ChartDataEntry] {
-        var weeks: [Int] = []
+    private func getChartDataEntriesForRecommend(weight: Double) -> [ChartDataEntry] {
+        let weeks = self.getWeeks()
         var dataEntries: [ChartDataEntry] = []
         
-        // недели
-        for var i = 2; i <= 40; i += 2 {
-            weeks.append(i)
-        }
-        
-        // точки
         for i in 0..<weeks.count {
-            let dataEntry = ChartDataEntry(value: weight + self.IMT0[i], xIndex: weeks[i])
+            let dataEntry = ChartDataEntry(value: weight + self.IMT1[i], xIndex: weeks[i])
             dataEntries.append(dataEntry)
         }
         
         return dataEntries
+    }
+    private func getChartDataEntriesForFact() -> [ChartDataEntry] {
+        let weeks = self.getWeeks()
+        var dataEntries: [ChartDataEntry] = []
+        
+        // ПРОТОТИП
+        if self.mass.count != 0 {
+            for i in 0..<self.mass.count {
+                let dataEntry = ChartDataEntry(value: mass[i], xIndex: weeks[i])
+                dataEntries.append(dataEntry)
+            }
+        } else {
+            for i in 0..<weeks.count {
+                let dataEntry = ChartDataEntry(value: Double(self.growth - 110), xIndex: weeks[i])
+                dataEntries.append(dataEntry)
+            }
+        }
+        
+        return dataEntries
+    }
+    private func getWeeks() -> [Int] {
+        var weeks: [Int] = []
+        
+        for var i = 2; i <= 40; i += 2 {
+            weeks.append(i)
+        }
+        
+        return weeks
     }
     
     // ПИКЕР
