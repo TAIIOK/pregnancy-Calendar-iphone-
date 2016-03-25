@@ -12,7 +12,8 @@ import UIKit
 
 //MARK: UIViewController Extensions
 
-
+//uncomment if it need it
+/*
 extension UIViewController {
     
     func showAlert(message: String) {
@@ -29,6 +30,7 @@ extension UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 }
+ */
 
 //MARK: UICollectionView Extension
 extension UICollectionView {
