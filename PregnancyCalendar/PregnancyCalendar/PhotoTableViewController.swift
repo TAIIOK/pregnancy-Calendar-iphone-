@@ -89,10 +89,14 @@ class PhotoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let groupForCell = self.albums[indexPath.row]
+        print(groupForCell)
+        
         let poster = UIImage(CGImage: groupForCell.posterImage().takeUnretainedValue())
         cell.imageView?.image = poster
-        cell.textLabel?.text = groupForCell.valueForProperty("ALAssetGroupPropertyName") as? String
+        cell.textLabel?.text =  groupForCell.valueForProperty(ALAssetsGroupPropertyName) as! String
         cell.detailTextLabel?.text = "\(groupForCell.numberOfAssets())"
+        
+       
         return cell
     }
 
