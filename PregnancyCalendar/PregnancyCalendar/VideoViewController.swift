@@ -8,13 +8,16 @@
 
 import UIKit
 
-class VideoViewController: UIViewController {
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+class VideoViewController: UITableViewController{
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
     }
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+
     
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
@@ -33,6 +36,22 @@ class VideoViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+
+       // cell.imageView?.image = poster
+        cell.textLabel?.text =  "Белье для беременных"
+        cell.detailTextLabel?.text = "0"
+        
+        
+        return cell
+    }
+    
+
 
     /*
     // MARK: - Navigation
