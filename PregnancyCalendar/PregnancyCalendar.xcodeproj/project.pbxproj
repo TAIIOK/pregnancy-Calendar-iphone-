@@ -18,7 +18,6 @@
 		023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */; };
 		023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */; };
 		02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D271C7EFBA40088F21B /* AppDelegate.swift */; };
-		02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D291C7EFBA40088F21B /* ViewController.swift */; };
 		02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D2B1C7EFBA40088F21B /* Main.storyboard */; };
 		02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */; };
 		02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02682D311C7EFBA40088F21B /* Assets.xcassets */; };
@@ -33,7 +32,15 @@
 		027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E01C99A06F000792E8 /* AssetsLibrary.framework */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
+		02DA72E01CA92D640011E9DF /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 02DA72DF1CA92D640011E9DF /* points.json */; };
+		02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */; };
+		02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DA72E31CA92F990011E9DF /* MapKit.framework */; };
+		02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */; };
 		02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
+		02FE54671CA9626C0094C055 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54621CA9626C0094C055 /* BubbleView.swift */; };
+		02FE54681CA9626C0094C055 /* CalloutAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54631CA9626C0094C055 /* CalloutAnnotation.swift */; };
+		02FE54691CA9626C0094C055 /* CalloutAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54641CA9626C0094C055 /* CalloutAnnotationView.swift */; };
+		02FE546A1CA9626C0094C055 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54651CA9626C0094C055 /* CustomAnnotation.swift */; };
 		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
 		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
 		A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */; };
@@ -114,7 +121,6 @@
 		023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 		02682D241C7EFBA40088F21B /* PregnancyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PregnancyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02682D271C7EFBA40088F21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02682D291C7EFBA40088F21B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02682D2C1C7EFBA40088F21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PregnancyCalendar.xcdatamodel; sourceTree = "<group>"; };
 		02682D311C7EFBA40088F21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,7 +138,15 @@
 		027A28E01C99A06F000792E8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
+		02DA72DF1CA92D640011E9DF /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
+		02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		02DA72E31CA92F990011E9DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildBerriesTableViewCell.swift; sourceTree = "<group>"; };
 		02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		02FE54621CA9626C0094C055 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		02FE54631CA9626C0094C055 /* CalloutAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotation.swift; sourceTree = "<group>"; };
+		02FE54641CA9626C0094C055 /* CalloutAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotationView.swift; sourceTree = "<group>"; };
+		02FE54651CA9626C0094C055 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */,
 				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
 				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
@@ -178,11 +193,12 @@
 		02682D1B1C7EFBA40088F21B = {
 			isa = PBXGroup;
 			children = (
-				02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */,
+				027A28E01C99A06F000792E8 /* AssetsLibrary.framework */,
+				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
 				A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */,
 				A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */,
-				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
-				027A28E01C99A06F000792E8 /* AssetsLibrary.framework */,
+				02DA72E31CA92F990011E9DF /* MapKit.framework */,
+				02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */,
 				02682D261C7EFBA40088F21B /* PregnancyCalendar */,
 				02682D251C7EFBA40088F21B /* Products */,
 			);
@@ -200,10 +216,12 @@
 			isa = PBXGroup;
 			children = (
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				02DA72DF1CA92D640011E9DF /* points.json */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
 				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
+				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
 				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
 				02682D461C7F013D0088F21B /* ListTableViewController.swift */,
@@ -214,10 +232,11 @@
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
-				02682D291C7EFBA40088F21B /* ViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
+				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
+				02FE54661CA9626C0094C055 /* Custom Pins */,
 				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
 				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
 				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
@@ -245,6 +264,18 @@
 				02E461771CA2A0EB00CC6E77 /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		02FE54661CA9626C0094C055 /* Custom Pins */ = {
+			isa = PBXGroup;
+			children = (
+				02FE54621CA9626C0094C055 /* BubbleView.swift */,
+				02FE54631CA9626C0094C055 /* CalloutAnnotation.swift */,
+				02FE54641CA9626C0094C055 /* CalloutAnnotationView.swift */,
+				02FE54651CA9626C0094C055 /* CustomAnnotation.swift */,
+			);
+			name = "Custom Pins";
+			path = "../../../pregnancy-Calendar-ipad-/rodicalc";
 			sourceTree = "<group>";
 		};
 		A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */ = {
@@ -369,6 +400,7 @@
 				023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */,
 				023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */,
 				022994281C8459A400E3B816 /* userInfo.plist in Resources */,
+				02DA72E01CA92D640011E9DF /* points.json in Resources */,
 				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,21 +430,25 @@
 			files = (
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
+				02FE54681CA9626C0094C055 /* CalloutAnnotation.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
-				02682D2A1C7EFBA40088F21B /* ViewController.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
 				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
 				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
+				02FE54671CA9626C0094C055 /* BubbleView.swift in Sources */,
 				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
 				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
 				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
 				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
+				02FE54691CA9626C0094C055 /* CalloutAnnotationView.swift in Sources */,
 				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
 				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
 				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
 				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
+				02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
@@ -420,6 +456,7 @@
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
 				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
+				02FE546A1CA9626C0094C055 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +584,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,7 +607,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";

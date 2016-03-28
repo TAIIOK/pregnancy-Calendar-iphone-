@@ -66,7 +66,7 @@ class MenuTableViewController: UITableViewController {
             self.pushFrontViewController("CalendarViewController")
             break
         case 10:
-            break
+            self.pushFrontViewController("BuyNavigationController")
         case 11:
             break
         default:

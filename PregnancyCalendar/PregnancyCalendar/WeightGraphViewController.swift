@@ -64,21 +64,21 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     private func setupGraphSettings() {
         // общие настройки
+        self.lineChartView.descriptionText = ""
         self.lineChartView.noDataText = "Для отображения графика"
         self.lineChartView.noDataTextDescription = "необходимо указать рост"
+        
         self.lineChartView.scaleXEnabled = true
         self.lineChartView.scaleYEnabled = false
         self.lineChartView.pinchZoomEnabled = true
         self.lineChartView.rightAxis.enabled = false
-        self.lineChartView.xAxis.labelPosition = .Bottom
-        self.lineChartView.animate(xAxisDuration: 1, yAxisDuration: 0.5)
+        
         self.lineChartView.legend.form = .Circle
+        self.lineChartView.xAxis.labelPosition = .Bottom
         self.lineChartView.legend.position = .AboveChartRight
         
-        // ось х
+        // оси
         self.lineChartView.xAxis.drawGridLinesEnabled = false
-        
-        // ось y
         self.lineChartView.leftAxis.drawAxisLineEnabled = false
         self.lineChartView.leftAxis.drawGridLinesEnabled = false
         
