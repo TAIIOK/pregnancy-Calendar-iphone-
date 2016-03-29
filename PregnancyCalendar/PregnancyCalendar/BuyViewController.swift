@@ -28,8 +28,8 @@ class Point {
     }
     
     internal func getFormattedString() -> NSMutableAttributedString {
-        let myMutableString = NSMutableAttributedString(string: self.tradePoint + "\nАдрес: " + self.address, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 13.0)!])
-        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSRange(location: self.tradePoint.characters.count + 8,length: self.address.characters.count))
+        let myMutableString = NSMutableAttributedString(string: tradePoint + "\nАдрес: " + address, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 13.0)!])
+        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSRange(location: tradePoint.characters.count + 8,length: address.characters.count))
         return myMutableString
     }
 }
@@ -52,46 +52,46 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            self.mapView.hidden = true
-            self.tableView.hidden = false
+            mapView.hidden = true
+            tableView.hidden = false
         } else {
-            self.mapView.hidden = false
-            self.tableView.hidden = true
+            mapView.hidden = false
+            tableView.hidden = true
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSidebarMenu()
-        self.setupModifiedTitle()
-        self.getPointsFromJSON()
+        setupSidebarMenu()
+        setupModifiedTitle()
+        getPointsFromJSON()
         
-        self.mapView.delegate = self
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        mapView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            self.locationManager.delegate = self
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            self.mapView.showsUserLocation = true
-            self.locationManager.startUpdatingLocation()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            mapView.showsUserLocation = true
+            locationManager.startUpdatingLocation()
             
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let region = MKCoordinateRegion(center: self.initialLocation, span: span)
-            self.mapView.setRegion(region, animated: true)
+            let region = MKCoordinateRegion(center: initialLocation, span: span)
+            mapView.setRegion(region, animated: true)
         
         }
         
-        self.addPinToMapView()
+        addPinToMapView()
     }
     
     override func viewDidDisappear(animated: Bool) {
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        self.mapView.removeOverlays(self.mapView.overlays)
-        self.mapView.removeFromSuperview()
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeFromSuperview()
         
         super.viewDidDisappear(animated)
     }
@@ -101,15 +101,15 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     private func setupSidebarMenu() {
-        if self.revealViewController() != nil {
-            self.revealViewController().rearViewRevealDisplacement = 0
-            self.revealViewController().rearViewRevealOverdraw = 0
-            self.revealViewController().rearViewRevealWidth = 275
-            self.revealViewController().frontViewShadowRadius = 0
-            self.menuButton.target = self.revealViewController()
-            self.menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        if revealViewController() != nil {
+            revealViewController().rearViewRevealDisplacement = 0
+            revealViewController().rearViewRevealOverdraw = 0
+            revealViewController().rearViewRevealWidth = 275
+            revealViewController().frontViewShadowRadius = 0
+            menuButton.target = revealViewController()
+            menuButton.action = "revealToggle:"
+            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
         }
     }
     
@@ -119,14 +119,14 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         segmentedControl.autoresizingMask = .FlexibleWidth
         segmentedControl.tintColor = .whiteColor()
         segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
-        self.navigationItem.titleView = segmentedControl
+        navigationItem.titleView = segmentedControl
     }
     
     // json
     private func getPointsFromJSON() {
         // добавить магазин
-        self.points.append(Point(tradePoint: "WILDBERRIES", city: "", address: "", phone: "", latitude: 0, longitude: 0))
-        self.nearPoints.append(self.points.first!)
+        points.append(Point(tradePoint: "WILDBERRIES", city: "", address: "", phone: "", latitude: 0, longitude: 0))
+        nearPoints.append(points.first!)
         
         // торговые точки из файла
         if let path = NSBundle.mainBundle().pathForResource("points", ofType: "json") {
@@ -152,15 +152,15 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // map
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
-        self.locate = locations
-        self.addPinToMapView()
+        locate = locations
+        addPinToMapView()
         
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         
-        self.mapView.setRegion(region, animated: true)
-        self.mapView.showsUserLocation = true
-        self.locationManager.startUpdatingLocation()
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+        locationManager.startUpdatingLocation()
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -213,11 +213,13 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     private func addPinToMapView() {
-        if self.locate.isEmpty {
-            self.nearPoints = self.points
-            self.reloadTable()
-        } else {
-            for point in self.points {
+        if locate.isEmpty {
+            nearPoints = points
+        reloadTable()
+        }
+        
+        else {
+            for point in points {
                 if point.latitude != 0 && point.longitude != 0 {
                     let location = CLLocationCoordinate2DMake(point.latitude, point.longitude)
                     
@@ -225,12 +227,12 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                         let annotation = CustomAnnotation()
                         annotation.coordinate = location
                         annotation.title = point.tradePoint + "\nАдрес: " + point.address
-                        self.mapView.addAnnotation(annotation)
-                        self.nearPoints.append(point)
+                        mapView.addAnnotation(annotation)
+                        nearPoints.append(point)
                     }
                 }
                 
-                self.reloadTable()
+                reloadTable()
             }
         }
     }
@@ -241,19 +243,19 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.nearPoints.count
+        return nearPoints.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if self.nearPoints[indexPath.row].tradePoint == "WILDBERRIES" {
+        if nearPoints[indexPath.row].tradePoint == "WILDBERRIES" {
             let cell = tableView.dequeueReusableCellWithIdentifier("wildBerriesCell", forIndexPath: indexPath) as! WildBerriesTableViewCell
-            cell.textLabel?.text = self.nearPoints[indexPath.row].tradePoint
+            cell.textLabel?.text = nearPoints[indexPath.row].tradePoint
             cell.textLabel?.textColor = cell.button.backgroundColor
             cell.detailTextLabel?.text = "интернет-магазин"
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("pointsCell", forIndexPath: indexPath)
-            cell.textLabel?.attributedText = self.nearPoints[indexPath.row].getFormattedString()
+            cell.textLabel?.attributedText = nearPoints[indexPath.row].getFormattedString()
             return cell
         }
     }
