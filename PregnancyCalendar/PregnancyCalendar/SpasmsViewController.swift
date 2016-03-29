@@ -225,7 +225,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.collectionView.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
     }
     func getSecondsWord(elapsed: Int) -> String {
-        if elapsed == 111 {
+        if elapsed > 111 && elapsed < 115 {
             return "секунд"
         } else if elapsed > 10 && elapsed < 15 {
             return "секунд"

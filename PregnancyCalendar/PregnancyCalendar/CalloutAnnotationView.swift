@@ -62,7 +62,7 @@ class CalloutAnnotationView : MKAnnotationView {
             myMutableString = NSMutableAttributedString(string: string!, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 10.0)!])
             let pos = string?.startIndex.distanceTo((string?.characters.indexOf(":"))!)
 
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: NSRange(location: pos! ,length: (string?.characters.count)!-pos!))
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSRange(location: pos! ,length: (string?.characters.count)!-pos!))
 
             label.attributedText = myMutableString
             size = string!.sizeWithAttributes(attributes)

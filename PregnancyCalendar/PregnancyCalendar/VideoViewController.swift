@@ -10,14 +10,12 @@ import UIKit
 
 class VideoViewController: UITableViewController{
    
-    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
     }
-    
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-
     
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
@@ -42,17 +40,12 @@ class VideoViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
-       // cell.imageView?.image = poster
-        cell.textLabel?.text =  "Белье для беременных"
+        //cell.imageView?.image = poster
+        cell.textLabel?.text =  indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
         cell.detailTextLabel?.text = "0"
-        
-        
         return cell
     }
     
-
-
     /*
     // MARK: - Navigation
 

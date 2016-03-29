@@ -17,6 +17,7 @@ import CoreLocation
 /// This is a simple `MKPointAnnotation` subclass, which updates its `title` using reverse geocoding.
 
 class CustomAnnotation : MKPointAnnotation {
-    }
+    
+}
 
 

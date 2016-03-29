@@ -28,7 +28,7 @@ class Point {
     }
     
     internal func getFormattedString() -> NSMutableAttributedString {
-        let myMutableString = NSMutableAttributedString(string: tradePoint + "\nАдрес: " + address, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 13.0)!])
+        let myMutableString = NSMutableAttributedString(string: tradePoint + "\nАдрес: " + address + "\n", attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 13.0)!])
         myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSRange(location: tradePoint.characters.count + 8,length: address.characters.count))
         return myMutableString
     }
@@ -82,7 +82,6 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region = MKCoordinateRegion(center: initialLocation, span: span)
             mapView.setRegion(region, animated: true)
-        
         }
     }
     
@@ -90,6 +89,10 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         mapView.removeAnnotations(mapView.annotations)
         mapView.removeOverlays(mapView.overlays)
         mapView.removeFromSuperview()
+        
+        points = []
+        locate = []
+        nearPoints = []
         
         super.viewDidDisappear(animated)
     }
@@ -214,23 +217,42 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         if locate.isEmpty {
             nearPoints = points
             reloadTable()
-        }
-        
-        else {
+        } else {
+            if nearPoints.count > 1 {
+                return
+            }
+            
+            var isFind = false
             for point in points {
                 if point.latitude != 0 && point.longitude != 0 {
                     let location = CLLocationCoordinate2DMake(point.latitude, point.longitude)
                     
                     if locate.last?.distanceFromLocation(CLLocation(latitude: point.latitude, longitude: point.longitude)) < 100000 {
                         let annotation = CustomAnnotation()
+                        isFind = true
                         annotation.coordinate = location
                         annotation.title = point.tradePoint + "\nАдрес: " + point.address
                         mapView.addAnnotation(annotation)
                         nearPoints.append(point)
                     }
                 }
-                
+            }
+            
+            reloadTable()
+            
+            if !isFind {
+                nearPoints = points
                 reloadTable()
+                
+                for point in nearPoints {
+                    if point.latitude != 0 && point.longitude != 0 {
+                        let location = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                        let annotation = CustomAnnotation()
+                        annotation.coordinate = location
+                        annotation.title = point.tradePoint + "\nАдрес: " + point.address
+                        mapView.addAnnotation(annotation)
+                    }
+                }
             }
         }
     }
