@@ -84,8 +84,6 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             mapView.setRegion(region, animated: true)
         
         }
-        
-        addPinToMapView()
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -160,7 +158,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
-        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -215,7 +213,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     private func addPinToMapView() {
         if locate.isEmpty {
             nearPoints = points
-        reloadTable()
+            reloadTable()
         }
         
         else {
