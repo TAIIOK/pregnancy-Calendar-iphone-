@@ -81,9 +81,6 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.lineChartView.xAxis.drawGridLinesEnabled = false
         self.lineChartView.leftAxis.drawAxisLineEnabled = false
         self.lineChartView.leftAxis.drawGridLinesEnabled = false
-        
-        // анимация
-        self.lineChartView.animate(xAxisDuration: 1)
     }
     
     // выезжающее меню
@@ -107,7 +104,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         // графики
         // нарисовать условно-рекомендуемый график
-        let dataEntries = self.getChartDataEntriesForRecommend(Double(self.growth - 110))
+        let dataEntries = self.getChartDataEntriesForRecommend(Double(50))
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Условно-рекомендуемая норма")
         self.setRecommendSetStyle(lineChartDataSet)
         
@@ -167,7 +164,7 @@ class WeightGraphViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
         } else {
             for i in 0..<weeks.count {
-                let dataEntry = ChartDataEntry(value: Double(self.growth - 110), xIndex: weeks[i])
+                let dataEntry = ChartDataEntry(value: Double(50), xIndex: weeks[i])
                 dataEntries.append(dataEntry)
             }
         }

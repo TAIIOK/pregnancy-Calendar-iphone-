@@ -261,6 +261,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KZD-lQ-XQZ" kind="show" trigger="accessoryAction" id="qse-dT-Y6E"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -283,6 +286,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1WM-sb-BOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768" y="4030"/>
+        </scene>
+        <!--Video Album Collection View Controller-->
+        <scene sceneID="Pyo-W7-WFy">
+            <objects>
+                <collectionViewController storyboardIdentifier="VideoAlbumController" id="KZD-lQ-XQZ" customClass="VideoAlbumCollectionViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" id="KRf-C7-fj2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4xp-5e-XCH">
+                            <size key="itemSize" width="75" height="75"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9tV-OL-Eay" customClass="VideoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHt-vF-ENz">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <size key="customSize" width="75" height="75"/>
+                                <connections>
+                                    <outlet property="imageView" destination="BHt-vF-ENz" id="COS-5U-P9r"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="KZD-lQ-XQZ" id="R0q-dS-WPW"/>
+                            <outlet property="delegate" destination="KZD-lQ-XQZ" id="q9W-a5-jha"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAH-6L-3o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2440" y="4030"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Apk-2F-MEP">

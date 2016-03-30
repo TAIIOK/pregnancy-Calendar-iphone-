@@ -11,8 +11,15 @@ import UIKit
 class ListTableViewController: UITableViewController {
     let boyNames = ["Александр", "Алексей", "Тимофей", "Юрий"]
     let girlNames = ["Дарья", "Света", "Софья"]
+    
+    var jsonResult: NSDictionary!
+    var manIndexes: [String] = []
+    var womanIndexes: [String] = []
     var choosedName = 0 // index of name
     var choosedSegment = true // true: boys, false: girls
+    
+    let lettersOfManIndexes = "А Б В Г Д Е И К Л М Н О П Р С Т Ю Я"
+    let lettersOfWomanIndexes = "А В Г Д Е Ж З И К Л М Н О П С Т Ю"
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -30,6 +37,25 @@ class ListTableViewController: UITableViewController {
         self.setupSidebarMenu()
         self.setupModifiedTitle()
         self.reloadTable(true)
+        self.getNamesFromJSON()
+        
+        manIndexes = lettersOfManIndexes.componentsSeparatedByString(" ")
+        womanIndexes = lettersOfWomanIndexes.componentsSeparatedByString(" ")
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+    
+    private func getNamesFromJSON() {
+        if let path = NSBundle.mainBundle().pathForResource("names", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+                jsonResult = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers) as! NSDictionary
+                
+                print(jsonResult.valueForKey("man")?.valueForKey("Анатолий"))
+            } catch {
+                print("хуевый файл")
+            }
+        }
     }
     
     private func setupModifiedTitle () {
@@ -53,7 +79,7 @@ class ListTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

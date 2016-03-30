@@ -9,8 +9,8 @@
 import UIKit
 
 class NameViewController: UIViewController {
-    let namesDescription = ["Тимофей": "Имя Тимофей произошло от греческого «тимофеос», в переводе означающего «почитающий Бога». В различных европейских странах это имя будет звучать как Тимоти, Тимотиас в Англии, Тимотео - в Испании, Италии, Тимотеу - в Португалии, Тимотеос - в Греции, Тимотей - в Румынии, Тимотеуш - в Польше, в северных странах (Норвегия, Дания, Швеция) и в Германии - Тимотеус, Тимо, Тими - в Финляндии, Тимод - в Ирландии."]
-    var name = ""
+    var name: String!
+    var desc: String!
     
     @IBOutlet weak var textView: UITextView!
 
@@ -21,12 +21,11 @@ class NameViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.title = self.name
-        self.navigationController?.navigationBar.topItem?.title = ""
         self.fillTheInformation()
     }
 
     private func fillTheInformation() {
-        self.textView.text = self.namesDescription[self.name]
+        self.textView.text = self.desc
     }
     
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,8 @@ class VideoViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     private func setupSidebarMenu() {
@@ -44,6 +46,13 @@ class VideoViewController: UITableViewController{
         cell.textLabel?.text =  indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
         cell.detailTextLabel?.text = "0"
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("VideoAlbumController") as? VideoAlbumCollectionViewController
+        controller?.title = indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
+        controller?.type = indexPath.row == 0 ? VideoTypes.Linen : VideoTypes.Gym
+        navigationController?.showViewController(controller!, sender: self)
     }
     
     /*
