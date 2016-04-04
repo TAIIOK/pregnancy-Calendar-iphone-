@@ -42,11 +42,25 @@ class VideoViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        //cell.imageView?.image = poster
+        cell.imageView?.image = indexPath.row == 0 ? scaleImage(UIImage(named: "3.jpg")!,toSize: CGSize(width: 100,height: 100)) : scaleImage(UIImage(named: "0.png")!,toSize: CGSize(width: 100,height: 100))
         cell.textLabel?.text =  indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
-        cell.detailTextLabel?.text = "0"
+        cell.detailTextLabel?.text = indexPath.row == 0 ? "25" : "5"
         return cell
     }
+    
+    func scaleImage(image: UIImage, toSize newSize: CGSize) -> (UIImage) {
+        let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetInterpolationQuality(context, .High)
+        let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
+        CGContextConcatCTM(context, flipVertical)
+        CGContextDrawImage(context, newRect, image.CGImage)
+        let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context)!)
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = storyboard?.instantiateViewControllerWithIdentifier("VideoAlbumController") as? VideoAlbumCollectionViewController
