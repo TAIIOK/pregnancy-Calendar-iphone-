@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -372,16 +372,16 @@
         <!--Navigation Controller-->
         <scene sceneID="6g2-vH-lmC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-rZ-K0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NotesNavigationController" id="RaU-TU-q2S" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ie-Yu-SBl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="AX8-aG-BOE" kind="relationship" relationship="rootViewController" id="eLS-oY-PqN"/>
+                        <segue destination="zia-6D-Y8n" kind="relationship" relationship="rootViewController" id="iGC-kh-G8q"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-rZ-K0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055" y="4819"/>
         </scene>
@@ -532,36 +532,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWE-dl-pCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1759" y="6213"/>
-        </scene>
-        <!--Заметки-->
-        <scene sceneID="O0E-FF-j7L">
-            <objects>
-                <viewController id="AX8-aG-BOE" customClass="NotesViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FKy-ox-Z0Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="pK8-Ys-7Fw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="31s-gz-NbJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Заметки" id="bFo-d1-n7e">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="EM1-v0-bXA">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="MuN-MB-kZi">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="actionButton" destination="MuN-MB-kZi" id="wpG-Qq-sOt"/>
-                        <outlet property="menuButton" destination="EM1-v0-bXA" id="2Yp-Yx-P9T"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s0c-Hr-Wel" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1768" y="4819"/>
         </scene>
         <!--Форум-->
         <scene sceneID="agB-5J-Rcl">
@@ -891,7 +861,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Дата родов" id="VAf-F5-aOn">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="kb9-I9-HnS">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Sxw-23-iNZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
@@ -899,7 +869,7 @@
                     <connections>
                         <outlet property="conceptionDateLabel" destination="Ego-eu-4Dl" id="Kal-cz-5EE"/>
                         <outlet property="lastMenstrualPeriod" destination="gd7-ta-D92" id="ARt-r0-OVh"/>
-                        <outlet property="menuButton" destination="kb9-I9-HnS" id="WS7-p3-lZo"/>
+                        <outlet property="menuButton" destination="Sxw-23-iNZ" id="gzY-yO-LcE"/>
                         <outlet property="setManually" destination="fMz-IT-o04" id="dm4-Pk-bEz"/>
                     </connections>
                 </viewController>
@@ -959,6 +929,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evr-rl-KEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="238" y="1089"/>
+        </scene>
+        <!--Calendar Appearance Delegate-->
+        <scene sceneID="6H9-Il-mRH">
+            <objects>
+                <viewController id="zia-6D-Y8n" customClass="NotesViewController" customModule="PregnancyCalendar" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2sd-QC-UPa"/>
+                        <viewControllerLayoutGuide type="bottom" id="hwY-MQ-kei"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xdu-99-bfN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="January, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chn-tA-bLH">
+                                <rect key="frame" x="232" y="28" width="136" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-fB-yhe">
+                                <rect key="frame" x="547" y="23" width="33" height="33"/>
+                                <state key="normal" image="menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="todayMonthView" destination="zia-6D-Y8n" eventType="touchUpInside" id="9Ol-EG-L32"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-gg-oNK" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="103" width="560" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Jpq-7e-DkC">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="480"/>
+                                    </constraint>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="zia-6D-Y8n" id="Bj1-DK-MOm"/>
+                                    <outlet property="calendarDelegate" destination="zia-6D-Y8n" id="Pip-g4-MQU"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neb-iX-McV" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="80" width="560" height="24"/>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="zia-6D-Y8n" id="dQb-Sj-hiA"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EWj-fB-yhe" firstAttribute="trailing" secondItem="neb-iX-McV" secondAttribute="trailing" id="1YY-6N-e1f"/>
+                            <constraint firstItem="neb-iX-McV" firstAttribute="top" secondItem="EWj-fB-yhe" secondAttribute="bottom" constant="24" id="1eW-n4-pRP"/>
+                            <constraint firstItem="EWj-fB-yhe" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="3" id="3yJ-du-4bd"/>
+                            <constraint firstItem="yIL-gg-oNK" firstAttribute="top" secondItem="neb-iX-McV" secondAttribute="bottom" constant="-1" id="6U7-Ht-0A8"/>
+                            <constraint firstItem="chn-tA-bLH" firstAttribute="centerX" secondItem="neb-iX-McV" secondAttribute="centerX" id="B3P-Fc-6zz"/>
+                            <constraint firstItem="neb-iX-McV" firstAttribute="trailing" secondItem="xdu-99-bfN" secondAttribute="trailingMargin" id="KOX-iG-lvw"/>
+                            <constraint firstItem="yIL-gg-oNK" firstAttribute="top" secondItem="xdu-99-bfN" secondAttribute="top" constant="103" id="UaP-jv-cqw"/>
+                            <constraint firstItem="yIL-gg-oNK" firstAttribute="trailing" secondItem="neb-iX-McV" secondAttribute="trailing" id="VE7-Vi-NdV"/>
+                            <constraint firstItem="yIL-gg-oNK" firstAttribute="leading" secondItem="xdu-99-bfN" secondAttribute="leadingMargin" id="lcI-Vk-sVb"/>
+                            <constraint firstItem="yIL-gg-oNK" firstAttribute="leading" secondItem="neb-iX-McV" secondAttribute="leading" id="mBf-s4-lnF"/>
+                            <constraint firstItem="chn-tA-bLH" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="8" symbolic="YES" id="wfP-wQ-cdf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Vb-4P-Kz0">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="kb9-I9-HnS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarView" destination="yIL-gg-oNK" id="3mw-fw-iaq"/>
+                        <outlet property="menuButton" destination="kb9-I9-HnS" id="TdC-2a-bWB"/>
+                        <outlet property="menuView" destination="neb-iX-McV" id="vKV-3w-rep"/>
+                        <outlet property="monthLabel" destination="chn-tA-bLH" id="07U-9B-R0t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ym4-Ci-WZU" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="4819"/>
         </scene>
     </scenes>
     <resources>

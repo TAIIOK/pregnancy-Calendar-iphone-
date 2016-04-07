@@ -10,7 +10,7 @@ import UIKit
 
 class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+
     @IBOutlet weak var conceptionDateLabel: UILabel!
     @IBOutlet weak var lastMenstrualPeriod: UILabel!
     @IBOutlet weak var setManually: UILabel!
@@ -23,6 +23,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         
         
     }
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
         self.arrSelectedDates.removeAll()
         self.arrSelectedDates.append(date)
