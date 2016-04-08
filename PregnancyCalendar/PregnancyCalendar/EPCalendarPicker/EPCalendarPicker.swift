@@ -646,7 +646,7 @@ public class EPCalendarPicker: UICollectionViewController {
         }
     }
     
-    
+    /*
     internal func onAddEventTouch() {
         
         let alertView = UIAlertController(title: "You need to print event name", message: "Please enter your event name! ", preferredStyle: .Alert)
@@ -678,6 +678,7 @@ public class EPCalendarPicker: UICollectionViewController {
         
         
     }
+    
     //показ события
     internal func onShowEventTouch() {
         
@@ -690,6 +691,7 @@ public class EPCalendarPicker: UICollectionViewController {
         presentViewController(alertView, animated: true, completion: nil)
         
     }
+ */
     //промотка до текущего дня
     public func scrollToToday () {
         let today = NSDate()

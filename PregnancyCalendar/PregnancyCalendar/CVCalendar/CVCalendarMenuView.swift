@@ -63,11 +63,22 @@ public final class CVCalendarMenuView: UIView {
     }
 
     public func setupWeekdaySymbols() {
-        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
-        calendar.components([NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: NSDate())
-        calendar.firstWeekday = firstWeekday!.rawValue
-
-        symbols = calendar.weekdaySymbols 
+        if #available(iOS 8.0, *) {
+            let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+            calendar.components([NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: NSDate())
+            calendar.firstWeekday = firstWeekday!.rawValue
+            
+            symbols = calendar.weekdaySymbols
+        } else {
+            let calendar = NSCalendar.init(calendarIdentifier: NSGregorianCalendar)
+            calendar!.components([NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: NSDate())
+            calendar!.firstWeekday = firstWeekday!.rawValue
+            
+            symbols = calendar!.weekdaySymbols
+            // Fallback on earlier versions
+        }
+        
+        
     }
     
     public func createDaySymbols() {
