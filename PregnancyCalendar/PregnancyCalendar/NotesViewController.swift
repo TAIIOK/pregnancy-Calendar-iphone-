@@ -8,7 +8,10 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController, EPCalendarPickerDelegate {
+    
+    var arrSelectedDates = [NSDate]()
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet weak var monthLabel: UILabel!
@@ -34,8 +37,8 @@ class NotesViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        calendarView.backgroundColor = UIColor.redColor()
-        menuView.backgroundColor = UIColor.blackColor()
+        calendarView.backgroundColor = StrawBerryColor
+        menuView.backgroundColor = StrawBerryColor
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
        // calendarView.changeMode(.WeekView)
@@ -56,6 +59,30 @@ class NotesViewController: UIViewController {
         }
     }
     
+    
+    // функции календаря
+    //функция отмены
+    func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
+        
+        
+    }
+    //функция одиночных дат
+    func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
+        
+        print (date)
+        
+        //txtViewDetail.text = "User selected date: \n\(date)"
+        
+    }
+    //функция множественных дат
+    func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
+        
+        print (dates)
+    }
+    
+    
+    
+
     /*
     // MARK: - Navigation
 
@@ -94,6 +121,27 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedDay = dayView
+    }
+    
+    func swipedetected(){
+    
+    print("great work")
+        
+        
+        let calendarPicker = EPCalendarPicker(startYear: currentyear-1, endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates, window: false)
+        calendarPicker.calendarDelegate = self
+        calendarPicker.startDate = NSDate()
+        //calendarPicker.hightlightsToday = true
+        //calendarPicker.showsTodaysButton = true
+        
+        calendarPicker.backgroundColor = StrawBerryColor
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
+        
+        let navigationController = UINavigationController(rootViewController: calendarPicker)
+        self.presentViewController(navigationController, animated: true, completion: nil)
+        
     }
     
     func presentedDateUpdated(date: CVDate) {

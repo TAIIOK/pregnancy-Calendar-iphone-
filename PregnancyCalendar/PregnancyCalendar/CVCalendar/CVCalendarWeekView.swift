@@ -11,6 +11,7 @@ import UIKit
 public final class CVCalendarWeekView: UIView {
     // MARK: - Non public properties
     private var interactiveView: UIView!
+   
     
     public override var frame: CGRect {
         didSet {
@@ -100,7 +101,7 @@ public final class CVCalendarWeekView: UIView {
                 
             }
         }
-        
+
         self.createDayViews()
     }
     
@@ -121,9 +122,32 @@ public final class CVCalendarWeekView: UIView {
     }
 }
 
-// MARK: - Interactive view setup & management
+
+
 
 extension CVCalendarWeekView {
+    
+    // MARK: - Interactive view setup & management
+    public func  handleSwipes(sender: UISwipeGestureRecognizer){
+        
+        if sender.direction  == .Down{
+            
+           self.calendarView.swipedetected()
+            
+            
+            print("Swiped Down")
+        }
+        if sender.direction == .Left{
+            print("Swiped Left")
+        }
+        if sender.direction == .Right{
+            print("Swiped Right")
+        }
+        if sender.direction == .Up{
+            print("Swiped Up")
+        }
+    }
+    
     public func updateInteractiveView() {
         safeExecuteBlock({
             
@@ -143,6 +167,18 @@ extension CVCalendarWeekView {
                     
                     self.interactiveView.addGestureRecognizer(pressRecognizer)
                     self.interactiveView.addGestureRecognizer(tapRecognizer)
+// вставка места для свайпа
+
+                   var swipeRecognizer =  UISwipeGestureRecognizer(target: self, action: "handleSwipes:")
+                    
+                   swipeRecognizer.direction = .Down
+                    
+                    /* Just one finger needed */
+                   swipeRecognizer.numberOfTouchesRequired = 1
+                    
+                    /* Add it to the view */
+                 self.interactiveView.addGestureRecognizer(swipeRecognizer)
+
                     
                     self.addSubview(self.interactiveView)
                 }

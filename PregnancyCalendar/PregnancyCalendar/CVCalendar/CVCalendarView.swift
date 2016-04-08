@@ -32,6 +32,17 @@ public typealias SelectionType = CVSelectionType
 
 public final class CVCalendarView: UIView {
     
+    override public func awakeFromNib()
+    {
+        self.userInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+    }
+    
+    func handleTap(gestureRecognizer: UITapGestureRecognizer)
+    {
+        print("Here")
+    }
+    
     // MARK: - Public properties
     public var manager: Manager!
     public var appearance: Appearance!
@@ -261,6 +272,12 @@ extension CVCalendarView {
             controller.performedDayViewSelection(dayView) // TODO: Update to range selection
         }
     }
+    
+    public func swipedetected(){
+    
+           print("its works")
+           delegate?.swipedetected!()
+    }
 }
 
 // MARK: - Convenience API
@@ -273,6 +290,8 @@ extension CVCalendarView {
     public func toggleViewWithDate(date: NSDate) {
         contentController.togglePresentedDate(date)
     }
+    
+    // добавить перемотку с большого календаря 
     
     public func toggleCurrentDayView() {
         contentController.togglePresentedDate(NSDate())

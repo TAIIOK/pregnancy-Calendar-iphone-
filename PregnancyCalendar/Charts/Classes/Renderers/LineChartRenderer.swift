@@ -34,7 +34,7 @@ public class LineChartRenderer: LineRadarChartRenderer
     {
         guard let lineData = dataProvider?.lineData else { return }
         
-        for (var i = 0; i < lineData.dataSetCount; i++)
+        for (var i = 0; i < lineData.dataSetCount; i += 1)
         {
             guard let set = lineData.getDataSetByIndex(i) else { continue }
             
@@ -134,7 +134,7 @@ public class LineChartRenderer: LineRadarChartRenderer
             // let the spline start
             CGPathMoveToPoint(cubicPath, &valueToPixelMatrix, CGFloat(cur.xIndex), CGFloat(cur.value) * phaseY)
             
-            for (var j = minx + 1, count = min(size, entryCount - 1); j < count; j++)
+            for (var j = minx + 1, count = min(size, entryCount - 1); j < count; j += 1)
             {
                 prevPrev = prev
                 prev = cur
@@ -267,7 +267,7 @@ public class LineChartRenderer: LineRadarChartRenderer
                 _lineSegments = [CGPoint](count: pointsPerEntryPair, repeatedValue: CGPoint())
             }
             
-            for (var j = minx, count = Int(ceil(CGFloat(maxx - minx) * phaseX + CGFloat(minx))); j < count; j++)
+            for (var j = minx, count = Int(ceil(CGFloat(maxx - minx) * phaseX + CGFloat(minx))); j < count; j += 1)
             {
                 if (count > 1 && j == count - 1)
                 { // Last point, we have already drawn a line to this point
@@ -343,7 +343,7 @@ public class LineChartRenderer: LineRadarChartRenderer
             {
                 let count = Int(ceil(CGFloat(maxx - minx) * phaseX + CGFloat(minx)))
                 
-                for (var x = count > 1 ? minx + 1 : minx, j = 0; x < count; x++)
+                for (var x = count > 1 ? minx + 1 : minx, j = 0; x < count; x += 1)
                 {
                     e1 = dataSet.entryForIndex(x == 0 ? 0 : (x - 1))
                     e2 = dataSet.entryForIndex(x)
