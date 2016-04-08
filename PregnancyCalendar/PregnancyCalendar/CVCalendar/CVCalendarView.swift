@@ -297,6 +297,8 @@ extension CVCalendarView {
         contentController.togglePresentedDate(NSDate())
     }
     
+
+    
     public func loadNextView() {
         contentController.presentNextView(nil)
     }

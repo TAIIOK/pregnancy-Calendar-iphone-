@@ -43,7 +43,7 @@ class CalendarViewController: UIViewController, EPCalendarPickerDelegate {
     
     private func setupCalendar() {
     
-        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true)
+        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true

@@ -152,9 +152,11 @@ extension CVCalendarDayView {
         let appearance = calendarView.appearance
         
         dayLabel = UILabel()
+        dayLabel!.textColor = UIColor.lightGrayColor()
         dayLabel!.text = String(date.day)
         dayLabel!.textAlignment = NSTextAlignment.Center
         dayLabel!.frame = bounds
+        
         
         var font = appearance.dayLabelWeekdayFont
         var color: UIColor?
@@ -184,6 +186,7 @@ extension CVCalendarDayView {
             dayLabel!.textColor = color!
             dayLabel!.font = font
         }
+        
         
         addSubview(dayLabel!)
     }

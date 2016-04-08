@@ -41,6 +41,7 @@ class NotesViewController: UIViewController, EPCalendarPickerDelegate {
         super.viewDidLayoutSubviews()
         calendarView.backgroundColor = StrawBerryColor
         menuView.backgroundColor = StrawBerryColor
+    
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
        // calendarView.changeMode(.WeekView)
@@ -73,6 +74,7 @@ class NotesViewController: UIViewController, EPCalendarPickerDelegate {
         
         print (date)
         
+        calendarView.toggleViewWithDate(date) 
         //txtViewDetail.text = "User selected date: \n\(date)"
         
     }
@@ -123,14 +125,17 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedDay = dayView
+        
     }
     
     func swipedetected(){
     
     print("great work")
+        arrSelectedDates.removeAll()
+        arrSelectedDates.append(selectedDay.date.convertedDate()!)
         
         
-        let calendarPicker = EPCalendarPicker(startYear: currentyear-1, endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates, window: false)
+               let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: arrSelectedDates,window: false , scroll: true , scrollDate: selectedDay.date.convertedDate()!)
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         //calendarPicker.hightlightsToday = true
@@ -214,7 +219,7 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
         
         let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
         
-        let numberOfDots = Int(arc4random_uniform(3) + 1)
+        let numberOfDots = 0
         switch(numberOfDots) {
         case 2:
             return [color, color]
@@ -298,7 +303,7 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
         if (Int(arc4random_uniform(3)) == 1) {
-            return true
+            return false
         }
         
         return false
