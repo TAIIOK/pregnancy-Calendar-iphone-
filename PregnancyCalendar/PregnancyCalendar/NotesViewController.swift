@@ -10,11 +10,11 @@ import UIKit
 
 class NotesViewController: UIViewController, EPCalendarPickerDelegate {
     
+    
     var arrSelectedDates = [NSDate]()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    @IBOutlet weak var monthLabel: UILabel!
 
     @IBOutlet weak var menuView: CVCalendarMenuView!
     
@@ -28,7 +28,9 @@ class NotesViewController: UIViewController, EPCalendarPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-      monthLabel.text = CVDate(date: NSDate()).globalDescription
+    
+        self.title = CVDate(date: NSDate()).globalDescription
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,46 +141,54 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
         calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
         
+        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
+
         self.presentViewController(navigationController, animated: true, completion: nil)
         
     }
     
     func presentedDateUpdated(date: CVDate) {
-        if monthLabel.text != date.globalDescription && self.animationFinished {
+        
+        if self.title != date.globalDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
-            updatedMonthLabel.textColor = monthLabel.textColor
-            updatedMonthLabel.font = monthLabel.font
+           // updatedMonthLabel.textColor = monthLabel.textColor
+            //updatedMonthLabel.font = monthLabel.font
             updatedMonthLabel.textAlignment = .Center
             updatedMonthLabel.text = date.globalDescription
             updatedMonthLabel.sizeToFit()
             updatedMonthLabel.alpha = 0
-            updatedMonthLabel.center = self.monthLabel.center
-            
+            //updatedMonthLabel.center = self.monthLabel.center
+            self.title = updatedMonthLabel.text
+            /*
             let offset = CGFloat(48)
             updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
             updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
             
             UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.animationFinished = false
-                self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
-                self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-                self.monthLabel.alpha = 0
+                //self.animationFinished = false
+               // self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
+              //  self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
+              //  self.monthLabel.alpha = 0
                 
                 updatedMonthLabel.alpha = 1
                 updatedMonthLabel.transform = CGAffineTransformIdentity
                 
             }) { _ in
                 
-                self.animationFinished = true
-                self.monthLabel.frame = updatedMonthLabel.frame
-                self.monthLabel.text = updatedMonthLabel.text
-                self.monthLabel.transform = CGAffineTransformIdentity
-                self.monthLabel.alpha = 1
+               // self.animationFinished = true
+               // self.monthLabel.frame = updatedMonthLabel.frame
+              //  self.monthLabel.text = updatedMonthLabel.text
+              //  self.monthLabel.transform = CGAffineTransformIdentity
+              //  self.monthLabel.alpha = 1
+                self.title = updatedMonthLabel.text
                 updatedMonthLabel.removeFromSuperview()
             }
             
-            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+            
+            
+           // self.view.insertSubview(updatedMonthLabel, aboveSubview: self.title)
+ */
         }
     }
     

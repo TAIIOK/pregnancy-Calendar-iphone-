@@ -8,7 +8,7 @@
 
 import UIKit
 import AssetsLibrary
-
+/*
 class IAAssetsLibrary: ALAssetsLibrary {
     
     class var defaultInstance : IAAssetsLibrary {
@@ -20,15 +20,16 @@ class IAAssetsLibrary: ALAssetsLibrary {
     
 }
 
-
+*/
 class PhotoTableViewController: UITableViewController {
-    
+    /*
     var assetsLibraty: ALAssetsLibrary!
     var albums:[ALAssetsGroup] = []
-    
+    */
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
+    /*
     func loadAlbums() {
+        
         let library = IAAssetsLibrary.defaultInstance
         library.enumerateGroupsWithTypes(ALAssetsGroupAll, usingBlock: { (group, stop) -> Void in
             //            println("in enumeration")
@@ -48,16 +49,17 @@ class PhotoTableViewController: UITableViewController {
             print("problem loading albums: \(error)")
         }
     }
-
+*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        
+        /*
         if self.assetsLibraty == nil {
             self.assetsLibraty = ALAssetsLibrary()
             loadAlbums()
         }
+ */
         
     }
     
@@ -83,11 +85,12 @@ class PhotoTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.albums.count
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        /*
         let groupForCell = self.albums[indexPath.row]
         print(groupForCell)
         
@@ -95,7 +98,7 @@ class PhotoTableViewController: UITableViewController {
         cell.imageView?.image = poster
         cell.textLabel?.text =  groupForCell.valueForProperty(ALAssetsGroupPropertyName) as! String
         cell.detailTextLabel?.text = "\(groupForCell.numberOfAssets())"
-        
+        */
        
         return cell
     }

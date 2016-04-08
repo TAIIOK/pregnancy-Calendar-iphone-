@@ -29,7 +29,6 @@
 		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
 		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
-		027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E01C99A06F000792E8 /* AssetsLibrary.framework */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
 		02DA72E01CA92D640011E9DF /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 02DA72DF1CA92D640011E9DF /* points.json */; };
@@ -195,7 +194,6 @@
 		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
 		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		027A28E01C99A06F000792E8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		02DA72DF1CA92D640011E9DF /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
 				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
-				027A28E11C99A06F000792E8 /* AssetsLibrary.framework in Frameworks */,
 				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +310,6 @@
 		02682D1B1C7EFBA40088F21B = {
 			isa = PBXGroup;
 			children = (
-				027A28E01C99A06F000792E8 /* AssetsLibrary.framework */,
 				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
 				A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */,
 				A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */,
@@ -849,7 +845,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -872,7 +868,7 @@
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = farestz.app.PregnancyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";

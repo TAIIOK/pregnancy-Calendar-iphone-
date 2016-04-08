@@ -942,12 +942,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="January, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chn-tA-bLH">
-                                <rect key="frame" x="223" y="328" width="155" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-fB-yhe">
                                 <rect key="frame" x="547" y="23" width="33" height="33"/>
                                 <state key="normal" image="menu">
@@ -958,7 +952,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neb-iX-McV" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="601" height="24"/>
+                                <rect key="frame" x="0.0" y="63" width="601" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="CxE-Vb-up7"/>
                                     <constraint firstAttribute="width" constant="601" id="UpD-nB-J7U"/>
@@ -968,7 +962,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-gg-oNK" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
-                                <rect key="frame" x="4" y="88" width="592" height="68"/>
+                                <rect key="frame" x="4" y="87" width="592" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="592" id="SCb-Hr-hu7"/>
                                     <constraint firstAttribute="height" constant="68" id="W2y-7u-4bi"/>
@@ -984,16 +978,13 @@
                             <constraint firstItem="EWj-fB-yhe" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="3" id="3yJ-du-4bd"/>
                             <constraint firstItem="yIL-gg-oNK" firstAttribute="top" secondItem="neb-iX-McV" secondAttribute="bottom" id="53V-n9-2ak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yIL-gg-oNK" secondAttribute="trailing" constant="-16" id="Fkh-3h-3i9"/>
-                            <constraint firstItem="chn-tA-bLH" firstAttribute="top" secondItem="yIL-gg-oNK" secondAttribute="bottom" constant="172" id="Iqf-BX-KjC"/>
                             <constraint firstItem="neb-iX-McV" firstAttribute="leading" secondItem="xdu-99-bfN" secondAttribute="leadingMargin" constant="-20" id="Y7l-Fc-FZa"/>
-                            <constraint firstItem="neb-iX-McV" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" id="a9b-OY-Udd"/>
+                            <constraint firstItem="neb-iX-McV" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="-1" id="a9b-OY-Udd"/>
                             <constraint firstItem="yIL-gg-oNK" firstAttribute="leading" secondItem="xdu-99-bfN" secondAttribute="leadingMargin" constant="-16" id="ppP-WM-gH8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="neb-iX-McV" secondAttribute="trailing" constant="-21" id="tSX-G2-C8R"/>
-                            <constraint firstItem="chn-tA-bLH" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="264" id="wfP-wQ-cdf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Vb-4P-Kz0">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Заметки" id="2Vb-4P-Kz0">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="kb9-I9-HnS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -1002,7 +993,6 @@
                         <outlet property="calendarView" destination="yIL-gg-oNK" id="3mw-fw-iaq"/>
                         <outlet property="menuButton" destination="kb9-I9-HnS" id="TdC-2a-bWB"/>
                         <outlet property="menuView" destination="neb-iX-McV" id="vKV-3w-rep"/>
-                        <outlet property="monthLabel" destination="chn-tA-bLH" id="07U-9B-R0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ym4-Ci-WZU" sceneMemberID="firstResponder"/>
