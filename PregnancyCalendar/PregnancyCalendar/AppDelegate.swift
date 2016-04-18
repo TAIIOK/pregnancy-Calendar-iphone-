@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil))
         }
         
+     //   loadNotifi() // загрузка уведомлений
+        
         
         return true
     }
@@ -118,6 +120,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
 
+    
+    
+    func loadNotifi() {
+    
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 20) // время получения уведомления
+        localNotification.alertBody = "текст сообщения"
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1 // счетчик на  иконке приложения 
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    
+    }
     func saveContext () {
         if managedObjectContext.hasChanges {
             do {
