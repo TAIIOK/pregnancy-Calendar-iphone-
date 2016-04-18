@@ -100,6 +100,7 @@
 		A018A9921CB6733D0044830A /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9771CB6733D0044830A /* CVSet.swift */; };
 		A018A9931CB6733D0044830A /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9781CB6733D0044830A /* CVShape.swift */; };
 		A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */; };
+		A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022904C1CBFC70700C8B3B4 /* NoteCell.swift */; };
 		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
 		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
 		A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */; };
@@ -265,6 +266,7 @@
 		A018A9771CB6733D0044830A /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSet.swift; sourceTree = "<group>"; };
 		A018A9781CB6733D0044830A /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
 		A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
+		A022904C1CBFC70700C8B3B4 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -350,9 +352,9 @@
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */,
-				02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
 				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
+				02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */,
 				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
@@ -364,6 +366,7 @@
 				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
 				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
 				02FE54AC1CAAA2220094C055 /* Yoga */,
+				A022904C1CBFC70700C8B3B4 /* NoteCell.swift */,
 			);
 			path = PregnancyCalendar;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				A018A9801CB6733D0044830A /* CVCalendarMenuViewDelegate.swift in Sources */,
 				A018A9901CB6733D0044830A /* CVScrollDirection.swift in Sources */,
 				A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */,
+				A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */,
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
 				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,

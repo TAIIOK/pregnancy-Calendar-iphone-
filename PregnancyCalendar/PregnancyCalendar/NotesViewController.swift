@@ -8,8 +8,12 @@
 
 import UIKit
 
-class NotesViewController: UIViewController, EPCalendarPickerDelegate {
+class NotesViewController: UIViewController,UITableViewDelegate , UITableViewDataSource  , EPCalendarPickerDelegate{
     
+     let ListNote = ["Мое самочуствие", "Как ведет себя малыш", "Посещения врачей", "Мой вес", "Принимаемые лекарства", "Приятное воспоминание дня", "Важные события", "Моё меню на сегодня", "Мой лист желаний"]
+    
+
+    @IBOutlet weak var tableView: UITableView!
     
     var arrSelectedDates = [NSDate]()
     
@@ -28,10 +32,35 @@ class NotesViewController: UIViewController, EPCalendarPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-    
+        tableView.delegate = self
+        tableView.dataSource = self
         self.title = CVDate(date: NSDate()).globalDescription
         
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ListNote.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+            let cell = tableView.dequeueReusableCellWithIdentifier("NoteTableViewCell", forIndexPath: indexPath) as! NoteTableViewCell
+        
+
+        
+        cell.first.text = ListNote[indexPath.row]
+           cell.second.text = "Some data"
+            return cell
+    
+    }
+    
+    func reloadTable() {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

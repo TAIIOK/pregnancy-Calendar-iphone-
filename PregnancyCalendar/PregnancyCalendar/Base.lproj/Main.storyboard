@@ -963,6 +963,17 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-gg-oNK" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
                                 <rect key="frame" x="4" y="87" width="592" height="68"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IMj-5T-VBw">
+                                        <rect key="frame" x="0.0" y="75" width="592" height="434"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBq-vd-uiX">
+                                                <rect key="frame" x="0.0" y="0.0" width="592" height="434"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="592" id="SCb-Hr-hu7"/>
                                     <constraint firstAttribute="height" constant="68" id="W2y-7u-4bi"/>
@@ -972,16 +983,52 @@
                                     <outlet property="calendarDelegate" destination="zia-6D-Y8n" id="Pip-g4-MQU"/>
                                 </connections>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b48-Xf-3qW">
+                                <rect key="frame" x="0.0" y="163" width="600" height="437"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoteTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteTableViewCell" id="LAG-GJ-6Wo" customClass="NoteTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LAG-GJ-6Wo" id="rFX-lR-7PE">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7v-D9-0cz">
+                                                    <rect key="frame" x="11" y="8" width="312" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTP-YN-eqg">
+                                                    <rect key="frame" x="30" y="22" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="first" destination="t7v-D9-0cz" id="YGw-lF-g4q"/>
+                                            <outlet property="second" destination="cTP-YN-eqg" id="Hdr-gg-T68"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EWj-fB-yhe" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="3" id="3yJ-du-4bd"/>
+                            <constraint firstItem="b48-Xf-3qW" firstAttribute="top" secondItem="yIL-gg-oNK" secondAttribute="bottom" constant="8" symbolic="YES" id="4r8-HH-Z4c"/>
                             <constraint firstItem="yIL-gg-oNK" firstAttribute="top" secondItem="neb-iX-McV" secondAttribute="bottom" id="53V-n9-2ak"/>
+                            <constraint firstItem="b48-Xf-3qW" firstAttribute="leading" secondItem="neb-iX-McV" secondAttribute="leading" id="DNj-LD-qlp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yIL-gg-oNK" secondAttribute="trailing" constant="-16" id="Fkh-3h-3i9"/>
                             <constraint firstItem="neb-iX-McV" firstAttribute="leading" secondItem="xdu-99-bfN" secondAttribute="leadingMargin" constant="-20" id="Y7l-Fc-FZa"/>
                             <constraint firstItem="neb-iX-McV" firstAttribute="top" secondItem="2sd-QC-UPa" secondAttribute="bottom" constant="-1" id="a9b-OY-Udd"/>
+                            <constraint firstItem="b48-Xf-3qW" firstAttribute="centerX" secondItem="yIL-gg-oNK" secondAttribute="centerX" id="fV4-qN-1nX"/>
                             <constraint firstItem="yIL-gg-oNK" firstAttribute="leading" secondItem="xdu-99-bfN" secondAttribute="leadingMargin" constant="-16" id="ppP-WM-gH8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="neb-iX-McV" secondAttribute="trailing" constant="-21" id="tSX-G2-C8R"/>
+                            <constraint firstItem="b48-Xf-3qW" firstAttribute="bottom" secondItem="hwY-MQ-kei" secondAttribute="top" id="ziL-uR-IWd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Заметки" id="2Vb-4P-Kz0">
@@ -993,6 +1040,7 @@
                         <outlet property="calendarView" destination="yIL-gg-oNK" id="3mw-fw-iaq"/>
                         <outlet property="menuButton" destination="kb9-I9-HnS" id="TdC-2a-bWB"/>
                         <outlet property="menuView" destination="neb-iX-McV" id="vKV-3w-rep"/>
+                        <outlet property="tableView" destination="b48-Xf-3qW" id="2oP-M2-2Uk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ym4-Ci-WZU" sceneMemberID="firstResponder"/>

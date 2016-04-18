@@ -31,7 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().tintColor = .whiteColor()
         UIToolbar.appearance().barStyle = .BlackOpaque
         Fabric.with([Crashlytics.self])
+        
+        
+        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil))
+        }
+        
+        
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationWillResignActive(application: UIApplication) {
