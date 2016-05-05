@@ -1,0 +1,919 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		022994221C80956900E3B816 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994211C80956900E3B816 /* VideoViewController.swift */; };
+		022994241C80969F00E3B816 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994231C80969F00E3B816 /* NotesViewController.swift */; };
+		022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994251C8098AD00E3B816 /* ForumTableViewController.swift */; };
+		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
+		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
+		023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */; };
+		023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */; };
+		023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */; };
+		023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */; };
+		023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */; };
+		02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D271C7EFBA40088F21B /* AppDelegate.swift */; };
+		02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D2B1C7EFBA40088F21B /* Main.storyboard */; };
+		02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */; };
+		02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02682D311C7EFBA40088F21B /* Assets.xcassets */; };
+		02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */; };
+		02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02682D401C7EFC420088F21B /* SWRevealViewController.m */; };
+		02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D441C7EFFA00088F21B /* BirthDateViewController.swift */; };
+		02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D461C7F013D0088F21B /* ListTableViewController.swift */; };
+		02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D481C7F0CEB0088F21B /* NameViewController.swift */; };
+		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
+		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
+		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
+		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
+		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
+		02DA72E01CA92D640011E9DF /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 02DA72DF1CA92D640011E9DF /* points.json */; };
+		02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */; };
+		02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DA72E31CA92F990011E9DF /* MapKit.framework */; };
+		02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */; };
+		02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
+		02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE546F1CA96F1E0094C055 /* BubbleView.swift */; };
+		02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54711CA96F230094C055 /* CalloutAnnotation.swift */; };
+		02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54731CA96F270094C055 /* CalloutAnnotationView.swift */; };
+		02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54751CA96F350094C055 /* CustomAnnotation.swift */; };
+		02FE54781CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */; };
+		02FE54931CAAA21B0094C055 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547A1CAAA21B0094C055 /* 0.jpg */; };
+		02FE54941CAAA21B0094C055 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547B1CAAA21B0094C055 /* 1.jpg */; };
+		02FE54951CAAA21B0094C055 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547C1CAAA21B0094C055 /* 10.jpg */; };
+		02FE54961CAAA21B0094C055 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547D1CAAA21B0094C055 /* 11.jpg */; };
+		02FE54971CAAA21B0094C055 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547E1CAAA21B0094C055 /* 12.jpg */; };
+		02FE54981CAAA21B0094C055 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547F1CAAA21B0094C055 /* 13.jpg */; };
+		02FE54991CAAA21B0094C055 /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54801CAAA21B0094C055 /* 14.jpg */; };
+		02FE549A1CAAA21B0094C055 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54811CAAA21B0094C055 /* 15.jpg */; };
+		02FE549B1CAAA21B0094C055 /* 16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54821CAAA21B0094C055 /* 16.jpg */; };
+		02FE549C1CAAA21B0094C055 /* 17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54831CAAA21B0094C055 /* 17.jpg */; };
+		02FE549D1CAAA21B0094C055 /* 18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54841CAAA21B0094C055 /* 18.jpg */; };
+		02FE549E1CAAA21B0094C055 /* 19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54851CAAA21B0094C055 /* 19.jpg */; };
+		02FE549F1CAAA21B0094C055 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54861CAAA21B0094C055 /* 2.jpg */; };
+		02FE54A01CAAA21B0094C055 /* 20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54871CAAA21B0094C055 /* 20.jpg */; };
+		02FE54A11CAAA21B0094C055 /* 21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54881CAAA21B0094C055 /* 21.jpg */; };
+		02FE54A21CAAA21B0094C055 /* 22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54891CAAA21B0094C055 /* 22.jpg */; };
+		02FE54A31CAAA21B0094C055 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548A1CAAA21B0094C055 /* 23.jpg */; };
+		02FE54A41CAAA21B0094C055 /* 24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548B1CAAA21B0094C055 /* 24.jpg */; };
+		02FE54A51CAAA21B0094C055 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548C1CAAA21B0094C055 /* 3.jpg */; };
+		02FE54A61CAAA21B0094C055 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548D1CAAA21B0094C055 /* 4.jpg */; };
+		02FE54A71CAAA21B0094C055 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548E1CAAA21B0094C055 /* 5.jpg */; };
+		02FE54A81CAAA21B0094C055 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE548F1CAAA21B0094C055 /* 6.jpg */; };
+		02FE54A91CAAA21B0094C055 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54901CAAA21B0094C055 /* 7.jpg */; };
+		02FE54AA1CAAA21B0094C055 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54911CAAA21B0094C055 /* 8.jpg */; };
+		02FE54AB1CAAA21B0094C055 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54921CAAA21B0094C055 /* 9.jpg */; };
+		02FE54B21CAAA2220094C055 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54AD1CAAA2220094C055 /* 0.png */; };
+		02FE54B31CAAA2220094C055 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54AE1CAAA2220094C055 /* 1.png */; };
+		02FE54B41CAAA2220094C055 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54AF1CAAA2220094C055 /* 2.png */; };
+		02FE54B51CAAA2220094C055 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B01CAAA2220094C055 /* 3.png */; };
+		02FE54B61CAAA2220094C055 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B11CAAA2220094C055 /* 4.png */; };
+		02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */; };
+		02FE54BD1CAC098C0094C055 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54BC1CAC098C0094C055 /* names.json */; };
+		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
+		A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */; };
+		A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9611CB6733D0044830A /* CVCalendarDayView.swift */; };
+		A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9621CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift */; };
+		A018A97E1CB6733D0044830A /* CVCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9631CB6733D0044830A /* CVCalendarManager.swift */; };
+		A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9641CB6733D0044830A /* CVCalendarMenuView.swift */; };
+		A018A9801CB6733D0044830A /* CVCalendarMenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9651CB6733D0044830A /* CVCalendarMenuViewDelegate.swift */; };
+		A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9661CB6733D0044830A /* CVCalendarMonthContentViewController.swift */; };
+		A018A9821CB6733D0044830A /* CVCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9671CB6733D0044830A /* CVCalendarMonthView.swift */; };
+		A018A9831CB6733D0044830A /* CVCalendarTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9681CB6733D0044830A /* CVCalendarTouchController.swift */; };
+		A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9691CB6733D0044830A /* CVCalendarView.swift */; };
+		A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96A1CB6733D0044830A /* CVCalendarViewAnimator.swift */; };
+		A018A9861CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96B1CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift */; };
+		A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96C1CB6733D0044830A /* CVCalendarViewAppearance.swift */; };
+		A018A9881CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96D1CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift */; };
+		A018A9891CB6733D0044830A /* CVCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96E1CB6733D0044830A /* CVCalendarViewDelegate.swift */; };
+		A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A96F1CB6733D0044830A /* CVCalendarViewPresentationMode.swift */; };
+		A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9701CB6733D0044830A /* CVCalendarWeekContentViewController.swift */; };
+		A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9711CB6733D0044830A /* CVCalendarWeekday.swift */; };
+		A018A98D1CB6733D0044830A /* CVCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9721CB6733D0044830A /* CVCalendarWeekView.swift */; };
+		A018A98E1CB6733D0044830A /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9731CB6733D0044830A /* CVDate.swift */; };
+		A018A98F1CB6733D0044830A /* CVRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9741CB6733D0044830A /* CVRange.swift */; };
+		A018A9901CB6733D0044830A /* CVScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9751CB6733D0044830A /* CVScrollDirection.swift */; };
+		A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9761CB6733D0044830A /* CVSelectionType.swift */; };
+		A018A9921CB6733D0044830A /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9771CB6733D0044830A /* CVSet.swift */; };
+		A018A9931CB6733D0044830A /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9781CB6733D0044830A /* CVShape.swift */; };
+		A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */; };
+		A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022904C1CBFC70700C8B3B4 /* NoteCell.swift */; };
+		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
+		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
+		A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */; };
+		A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
+		A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD741C96EC3400B6A036 /* Black_dot.png */; };
+		A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */; };
+		A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */; };
+		A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */; };
+		A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */; };
+		A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */; };
+		A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */; };
+		A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02E461701CA2A0EB00CC6E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		02E461721CA2A0EB00CC6E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		02E461741CA2A0EB00CC6E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		02E461761CA2A0EB00CC6E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		A0C56DA51CA2E9A7004C36AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0C56DA71CA2E9A7004C36AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		022994211C80956900E3B816 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		022994231C80969F00E3B816 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		022994251C8098AD00E3B816 /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
+		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
+		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
+		023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
+		023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		02682D241C7EFBA40088F21B /* PregnancyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PregnancyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02682D271C7EFBA40088F21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02682D2C1C7EFBA40088F21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PregnancyCalendar.xcdatamodel; sourceTree = "<group>"; };
+		02682D311C7EFBA40088F21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02682D341C7EFBA40088F21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02682D361C7EFBA40088F21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PregnancyCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
+		02682D3F1C7EFC420088F21B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		02682D401C7EFC420088F21B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		02682D441C7EFFA00088F21B /* BirthDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
+		02682D461C7F013D0088F21B /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		02682D481C7F0CEB0088F21B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
+		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
+		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
+		02DA72DF1CA92D640011E9DF /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
+		02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		02DA72E31CA92F990011E9DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildBerriesTableViewCell.swift; sourceTree = "<group>"; };
+		02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		02FE546F1CA96F1E0094C055 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		02FE54711CA96F230094C055 /* CalloutAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotation.swift; sourceTree = "<group>"; };
+		02FE54731CA96F270094C055 /* CalloutAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotationView.swift; sourceTree = "<group>"; };
+		02FE54751CA96F350094C055 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAlbumCollectionViewController.swift; sourceTree = "<group>"; };
+		02FE547A1CAAA21B0094C055 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		02FE547B1CAAA21B0094C055 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		02FE547C1CAAA21B0094C055 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		02FE547D1CAAA21B0094C055 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
+		02FE547E1CAAA21B0094C055 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		02FE547F1CAAA21B0094C055 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = "<group>"; };
+		02FE54801CAAA21B0094C055 /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpg; sourceTree = "<group>"; };
+		02FE54811CAAA21B0094C055 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
+		02FE54821CAAA21B0094C055 /* 16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16.jpg; sourceTree = "<group>"; };
+		02FE54831CAAA21B0094C055 /* 17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 17.jpg; sourceTree = "<group>"; };
+		02FE54841CAAA21B0094C055 /* 18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 18.jpg; sourceTree = "<group>"; };
+		02FE54851CAAA21B0094C055 /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
+		02FE54861CAAA21B0094C055 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		02FE54871CAAA21B0094C055 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
+		02FE54881CAAA21B0094C055 /* 21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21.jpg; sourceTree = "<group>"; };
+		02FE54891CAAA21B0094C055 /* 22.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 22.jpg; sourceTree = "<group>"; };
+		02FE548A1CAAA21B0094C055 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
+		02FE548B1CAAA21B0094C055 /* 24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 24.jpg; sourceTree = "<group>"; };
+		02FE548C1CAAA21B0094C055 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		02FE548D1CAAA21B0094C055 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		02FE548E1CAAA21B0094C055 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		02FE548F1CAAA21B0094C055 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		02FE54901CAAA21B0094C055 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		02FE54911CAAA21B0094C055 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		02FE54921CAAA21B0094C055 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		02FE54AD1CAAA2220094C055 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		02FE54AE1CAAA2220094C055 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		02FE54AF1CAAA2220094C055 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		02FE54B01CAAA2220094C055 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		02FE54B11CAAA2220094C055 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		02FE54BC1CAC098C0094C055 /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
+		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
+		A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
+		A018A9611CB6733D0044830A /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
+		A018A9621CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayViewControlCoordinator.swift; sourceTree = "<group>"; };
+		A018A9631CB6733D0044830A /* CVCalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarManager.swift; sourceTree = "<group>"; };
+		A018A9641CB6733D0044830A /* CVCalendarMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarMenuView.swift; sourceTree = "<group>"; };
+		A018A9651CB6733D0044830A /* CVCalendarMenuViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarMenuViewDelegate.swift; sourceTree = "<group>"; };
+		A018A9661CB6733D0044830A /* CVCalendarMonthContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarMonthContentViewController.swift; sourceTree = "<group>"; };
+		A018A9671CB6733D0044830A /* CVCalendarMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarMonthView.swift; sourceTree = "<group>"; };
+		A018A9681CB6733D0044830A /* CVCalendarTouchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarTouchController.swift; sourceTree = "<group>"; };
+		A018A9691CB6733D0044830A /* CVCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarView.swift; sourceTree = "<group>"; };
+		A018A96A1CB6733D0044830A /* CVCalendarViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewAnimator.swift; sourceTree = "<group>"; };
+		A018A96B1CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewAnimatorDelegate.swift; sourceTree = "<group>"; };
+		A018A96C1CB6733D0044830A /* CVCalendarViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewAppearance.swift; sourceTree = "<group>"; };
+		A018A96D1CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewAppearanceDelegate.swift; sourceTree = "<group>"; };
+		A018A96E1CB6733D0044830A /* CVCalendarViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewDelegate.swift; sourceTree = "<group>"; };
+		A018A96F1CB6733D0044830A /* CVCalendarViewPresentationMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarViewPresentationMode.swift; sourceTree = "<group>"; };
+		A018A9701CB6733D0044830A /* CVCalendarWeekContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarWeekContentViewController.swift; sourceTree = "<group>"; };
+		A018A9711CB6733D0044830A /* CVCalendarWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarWeekday.swift; sourceTree = "<group>"; };
+		A018A9721CB6733D0044830A /* CVCalendarWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarWeekView.swift; sourceTree = "<group>"; };
+		A018A9731CB6733D0044830A /* CVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVDate.swift; sourceTree = "<group>"; };
+		A018A9741CB6733D0044830A /* CVRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVRange.swift; sourceTree = "<group>"; };
+		A018A9751CB6733D0044830A /* CVScrollDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVScrollDirection.swift; sourceTree = "<group>"; };
+		A018A9761CB6733D0044830A /* CVSelectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSelectionType.swift; sourceTree = "<group>"; };
+		A018A9771CB6733D0044830A /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSet.swift; sourceTree = "<group>"; };
+		A018A9781CB6733D0044830A /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
+		A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
+		A022904C1CBFC70700C8B3B4 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A0E9CD741C96EC3400B6A036 /* Black_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_dot.png; path = EPCalendarPicker/Black_dot.png; sourceTree = "<group>"; };
+		A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarCell1.swift; path = EPCalendarPicker/EPCalendarCell1.swift; sourceTree = "<group>"; };
+		A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarCell1.xib; path = EPCalendarPicker/EPCalendarCell1.xib; sourceTree = "<group>"; };
+		A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarConstants.swift; path = EPCalendarPicker/EPCalendarConstants.swift; sourceTree = "<group>"; };
+		A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarHeaderView.swift; path = EPCalendarPicker/EPCalendarHeaderView.swift; sourceTree = "<group>"; };
+		A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarHeaderView.xib; path = EPCalendarPicker/EPCalendarHeaderView.xib; sourceTree = "<group>"; };
+		A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarPicker.swift; path = EPCalendarPicker/EPCalendarPicker.swift; sourceTree = "<group>"; };
+		A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPExtensions.swift; path = EPCalendarPicker/EPExtensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02682D211C7EFBA40088F21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */,
+				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
+				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
+				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
+				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
+				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		023A52731C88238200DBFF76 /* Custom Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */,
+				023A52761C8825BC00DBFF76 /* NumberCollectionViewCell.swift */,
+				023A52781C8825CF00DBFF76 /* ContentCollectionViewCell.swift */,
+				023A527A1C882AD100DBFF76 /* NumberCollectionViewCell.xib */,
+				023A527C1C882AFB00DBFF76 /* ContentCollectionViewCell.xib */,
+			);
+			name = "Custom Layouts";
+			sourceTree = "<group>";
+		};
+		02682D1B1C7EFBA40088F21B = {
+			isa = PBXGroup;
+			children = (
+				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
+				A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */,
+				A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */,
+				02DA72E31CA92F990011E9DF /* MapKit.framework */,
+				02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */,
+				02682D261C7EFBA40088F21B /* PregnancyCalendar */,
+				02682D251C7EFBA40088F21B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02682D251C7EFBA40088F21B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02682D241C7EFBA40088F21B /* PregnancyCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A018A95E1CB6733D0044830A /* CVCalendar */,
+				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				02FE54BC1CAC098C0094C055 /* names.json */,
+				02DA72DF1CA92D640011E9DF /* points.json */,
+				02682D361C7EFBA40088F21B /* Info.plist */,
+				022994271C8459A400E3B816 /* userInfo.plist */,
+				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
+				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
+				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
+				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
+				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
+				02682D461C7F013D0088F21B /* ListTableViewController.swift */,
+				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
+				02682D481C7F0CEB0088F21B /* NameViewController.swift */,
+				022994231C80969F00E3B816 /* NotesViewController.swift */,
+				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
+				022994291C845B4D00E3B816 /* Plist.swift */,
+				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
+				02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */,
+				022994211C80956900E3B816 /* VideoViewController.swift */,
+				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
+				02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */,
+				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
+				02682D311C7EFBA40088F21B /* Assets.xcassets */,
+				023A52731C88238200DBFF76 /* Custom Layouts */,
+				02FE546E1CA96F060094C055 /* Custom pins */,
+				02FE54791CAAA21B0094C055 /* Dress */,
+				A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */,
+				02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */,
+				02682D2B1C7EFBA40088F21B /* Main.storyboard */,
+				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
+				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
+				02FE54AC1CAAA2220094C055 /* Yoga */,
+				A022904C1CBFC70700C8B3B4 /* NoteCell.swift */,
+			);
+			path = PregnancyCalendar;
+			sourceTree = "<group>";
+		};
+		02682D3D1C7EFC050088F21B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02682D3F1C7EFC420088F21B /* SWRevealViewController.h */,
+				02682D401C7EFC420088F21B /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		02E4616A1CA2A0EB00CC6E77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02E461711CA2A0EB00CC6E77 /* Charts.framework */,
+				02E461731CA2A0EB00CC6E77 /* Charts.framework */,
+				02E461751CA2A0EB00CC6E77 /* Charts.framework */,
+				02E461771CA2A0EB00CC6E77 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02FE546E1CA96F060094C055 /* Custom pins */ = {
+			isa = PBXGroup;
+			children = (
+				02FE54751CA96F350094C055 /* CustomAnnotation.swift */,
+				02FE546F1CA96F1E0094C055 /* BubbleView.swift */,
+				02FE54711CA96F230094C055 /* CalloutAnnotation.swift */,
+				02FE54731CA96F270094C055 /* CalloutAnnotationView.swift */,
+			);
+			name = "Custom pins";
+			sourceTree = "<group>";
+		};
+		02FE54791CAAA21B0094C055 /* Dress */ = {
+			isa = PBXGroup;
+			children = (
+				02FE547A1CAAA21B0094C055 /* 0.jpg */,
+				02FE547B1CAAA21B0094C055 /* 1.jpg */,
+				02FE547C1CAAA21B0094C055 /* 10.jpg */,
+				02FE547D1CAAA21B0094C055 /* 11.jpg */,
+				02FE547E1CAAA21B0094C055 /* 12.jpg */,
+				02FE547F1CAAA21B0094C055 /* 13.jpg */,
+				02FE54801CAAA21B0094C055 /* 14.jpg */,
+				02FE54811CAAA21B0094C055 /* 15.jpg */,
+				02FE54821CAAA21B0094C055 /* 16.jpg */,
+				02FE54831CAAA21B0094C055 /* 17.jpg */,
+				02FE54841CAAA21B0094C055 /* 18.jpg */,
+				02FE54851CAAA21B0094C055 /* 19.jpg */,
+				02FE54861CAAA21B0094C055 /* 2.jpg */,
+				02FE54871CAAA21B0094C055 /* 20.jpg */,
+				02FE54881CAAA21B0094C055 /* 21.jpg */,
+				02FE54891CAAA21B0094C055 /* 22.jpg */,
+				02FE548A1CAAA21B0094C055 /* 23.jpg */,
+				02FE548B1CAAA21B0094C055 /* 24.jpg */,
+				02FE548C1CAAA21B0094C055 /* 3.jpg */,
+				02FE548D1CAAA21B0094C055 /* 4.jpg */,
+				02FE548E1CAAA21B0094C055 /* 5.jpg */,
+				02FE548F1CAAA21B0094C055 /* 6.jpg */,
+				02FE54901CAAA21B0094C055 /* 7.jpg */,
+				02FE54911CAAA21B0094C055 /* 8.jpg */,
+				02FE54921CAAA21B0094C055 /* 9.jpg */,
+			);
+			path = Dress;
+			sourceTree = "<group>";
+		};
+		02FE54AC1CAAA2220094C055 /* Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				02FE54AD1CAAA2220094C055 /* 0.png */,
+				02FE54AE1CAAA2220094C055 /* 1.png */,
+				02FE54AF1CAAA2220094C055 /* 2.png */,
+				02FE54B01CAAA2220094C055 /* 3.png */,
+				02FE54B11CAAA2220094C055 /* 4.png */,
+			);
+			path = Yoga;
+			sourceTree = "<group>";
+		};
+		A018A95E1CB6733D0044830A /* CVCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */,
+				A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */,
+				A018A9611CB6733D0044830A /* CVCalendarDayView.swift */,
+				A018A9621CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift */,
+				A018A9631CB6733D0044830A /* CVCalendarManager.swift */,
+				A018A9641CB6733D0044830A /* CVCalendarMenuView.swift */,
+				A018A9651CB6733D0044830A /* CVCalendarMenuViewDelegate.swift */,
+				A018A9661CB6733D0044830A /* CVCalendarMonthContentViewController.swift */,
+				A018A9671CB6733D0044830A /* CVCalendarMonthView.swift */,
+				A018A9681CB6733D0044830A /* CVCalendarTouchController.swift */,
+				A018A9691CB6733D0044830A /* CVCalendarView.swift */,
+				A018A96A1CB6733D0044830A /* CVCalendarViewAnimator.swift */,
+				A018A96B1CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift */,
+				A018A96C1CB6733D0044830A /* CVCalendarViewAppearance.swift */,
+				A018A96D1CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift */,
+				A018A96E1CB6733D0044830A /* CVCalendarViewDelegate.swift */,
+				A018A96F1CB6733D0044830A /* CVCalendarViewPresentationMode.swift */,
+				A018A9701CB6733D0044830A /* CVCalendarWeekContentViewController.swift */,
+				A018A9711CB6733D0044830A /* CVCalendarWeekday.swift */,
+				A018A9721CB6733D0044830A /* CVCalendarWeekView.swift */,
+				A018A9731CB6733D0044830A /* CVDate.swift */,
+				A018A9741CB6733D0044830A /* CVRange.swift */,
+				A018A9751CB6733D0044830A /* CVScrollDirection.swift */,
+				A018A9761CB6733D0044830A /* CVSelectionType.swift */,
+				A018A9771CB6733D0044830A /* CVSet.swift */,
+				A018A9781CB6733D0044830A /* CVShape.swift */,
+				A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */,
+			);
+			path = CVCalendar;
+			sourceTree = "<group>";
+		};
+		A0E9CD731C96EC1B00B6A036 /* EpCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A0E9CD741C96EC3400B6A036 /* Black_dot.png */,
+				A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */,
+				A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */,
+				A0E9CD771C96EC3400B6A036 /* EPCalendarConstants.swift */,
+				A0E9CD781C96EC3400B6A036 /* EPCalendarHeaderView.swift */,
+				A0E9CD791C96EC3400B6A036 /* EPCalendarHeaderView.xib */,
+				A0E9CD7A1C96EC3400B6A036 /* EPCalendarPicker.swift */,
+				A0E9CD7B1C96EC3400B6A036 /* EPExtensions.swift */,
+			);
+			name = EpCalendarPicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02682D231C7EFBA40088F21B /* PregnancyCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */;
+			buildPhases = (
+				02682D201C7EFBA40088F21B /* Sources */,
+				02682D211C7EFBA40088F21B /* Frameworks */,
+				02682D221C7EFBA40088F21B /* Resources */,
+				A0B0ECBC1C9EBCFB005E44F4 /* ShellScript */,
+				A0C56DA71CA2E9A7004C36AF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */,
+			);
+			name = PregnancyCalendar;
+			productName = PregnancyCalendar;
+			productReference = 02682D241C7EFBA40088F21B /* PregnancyCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02682D1C1C7EFBA40088F21B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = farestz;
+				TargetAttributes = {
+					02682D231C7EFBA40088F21B = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Y6XF9JEXKG;
+					};
+				};
+			};
+			buildConfigurationList = 02682D1F1C7EFBA40088F21B /* Build configuration list for PBXProject "PregnancyCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02682D1B1C7EFBA40088F21B;
+			productRefGroup = 02682D251C7EFBA40088F21B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 02E4616A1CA2A0EB00CC6E77 /* Products */;
+					ProjectRef = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				02682D231C7EFBA40088F21B /* PregnancyCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		02E461711CA2A0EB00CC6E77 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 02E461701CA2A0EB00CC6E77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02E461731CA2A0EB00CC6E77 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 02E461721CA2A0EB00CC6E77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02E461751CA2A0EB00CC6E77 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 02E461741CA2A0EB00CC6E77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02E461771CA2A0EB00CC6E77 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 02E461761CA2A0EB00CC6E77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02682D221C7EFBA40088F21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02FE54A91CAAA21B0094C055 /* 7.jpg in Resources */,
+				02FE54951CAAA21B0094C055 /* 10.jpg in Resources */,
+				02FE54A51CAAA21B0094C055 /* 3.jpg in Resources */,
+				02FE54931CAAA21B0094C055 /* 0.jpg in Resources */,
+				02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */,
+				02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */,
+				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				02FE549D1CAAA21B0094C055 /* 18.jpg in Resources */,
+				02FE549C1CAAA21B0094C055 /* 17.jpg in Resources */,
+				02FE54971CAAA21B0094C055 /* 12.jpg in Resources */,
+				02FE54961CAAA21B0094C055 /* 11.jpg in Resources */,
+				02FE54A81CAAA21B0094C055 /* 6.jpg in Resources */,
+				02FE54B21CAAA2220094C055 /* 0.png in Resources */,
+				02FE549E1CAAA21B0094C055 /* 19.jpg in Resources */,
+				A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */,
+				02FE54991CAAA21B0094C055 /* 14.jpg in Resources */,
+				02FE54B41CAAA2220094C055 /* 2.png in Resources */,
+				A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */,
+				02FE54BD1CAC098C0094C055 /* names.json in Resources */,
+				02FE54A21CAAA21B0094C055 /* 22.jpg in Resources */,
+				02FE54981CAAA21B0094C055 /* 13.jpg in Resources */,
+				023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */,
+				02FE54B51CAAA2220094C055 /* 3.png in Resources */,
+				023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */,
+				02FE54A61CAAA21B0094C055 /* 4.jpg in Resources */,
+				022994281C8459A400E3B816 /* userInfo.plist in Resources */,
+				02FE54941CAAA21B0094C055 /* 1.jpg in Resources */,
+				02FE54AB1CAAA21B0094C055 /* 9.jpg in Resources */,
+				02DA72E01CA92D640011E9DF /* points.json in Resources */,
+				02FE54B61CAAA2220094C055 /* 4.png in Resources */,
+				02FE549B1CAAA21B0094C055 /* 16.jpg in Resources */,
+				02FE54A11CAAA21B0094C055 /* 21.jpg in Resources */,
+				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
+				02FE54A41CAAA21B0094C055 /* 24.jpg in Resources */,
+				02FE54AA1CAAA21B0094C055 /* 8.jpg in Resources */,
+				02FE54A31CAAA21B0094C055 /* 23.jpg in Resources */,
+				02FE549F1CAAA21B0094C055 /* 2.jpg in Resources */,
+				02FE549A1CAAA21B0094C055 /* 15.jpg in Resources */,
+				02FE54A71CAAA21B0094C055 /* 5.jpg in Resources */,
+				02FE54A01CAAA21B0094C055 /* 20.jpg in Resources */,
+				02FE54B31CAAA2220094C055 /* 1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0B0ECBC1C9EBCFB005E44F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 7f0d441a445b99ad9be96af08be5f9e0255de5f5 6f1c6d273d9d2d4f5e74dd780c4b86e441f769af139465503ee9d4a245096798";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02682D201C7EFBA40088F21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A018A9801CB6733D0044830A /* CVCalendarMenuViewDelegate.swift in Sources */,
+				A018A9901CB6733D0044830A /* CVScrollDirection.swift in Sources */,
+				A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */,
+				A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */,
+				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
+				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
+				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
+				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
+				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
+				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
+				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
+				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
+				A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */,
+				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
+				A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */,
+				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
+				A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */,
+				02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */,
+				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
+				02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */,
+				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
+				A018A97E1CB6733D0044830A /* CVCalendarManager.swift in Sources */,
+				A018A9821CB6733D0044830A /* CVCalendarMonthView.swift in Sources */,
+				A018A9861CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift in Sources */,
+				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
+				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
+				A018A9881CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */,
+				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
+				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
+				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
+				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
+				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
+				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
+				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
+				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
+				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
+				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
+				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
+				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
+				02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */,
+				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
+				A018A98D1CB6733D0044830A /* CVCalendarWeekView.swift in Sources */,
+				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
+				A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */,
+				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
+				A018A9831CB6733D0044830A /* CVCalendarTouchController.swift in Sources */,
+				A018A9931CB6733D0044830A /* CVShape.swift in Sources */,
+				A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */,
+				02FE54781CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift in Sources */,
+				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
+				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
+				A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */,
+				A018A9891CB6733D0044830A /* CVCalendarViewDelegate.swift in Sources */,
+				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
+				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
+				02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */,
+				A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = A0C56DA51CA2E9A7004C36AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02682D2B1C7EFBA40088F21B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02682D2C1C7EFBA40088F21B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02682D341C7EFBA40088F21B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02682D371C7EFBA40088F21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02682D381C7EFBA40088F21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02682D3A1C7EFBA40088F21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02682D3B1C7EFBA40088F21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02682D1F1C7EFBA40088F21B /* Build configuration list for PBXProject "PregnancyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02682D371C7EFBA40088F21B /* Debug */,
+				02682D381C7EFBA40088F21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02682D3A1C7EFBA40088F21B /* Debug */,
+				02682D3B1C7EFBA40088F21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */,
+			);
+			currentVersion = 02682D2F1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodel */;
+			path = PregnancyCalendar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02682D1C1C7EFBA40088F21B /* Project object */;
+}

@@ -1,0 +1,4244 @@
+﻿{
+    "points": [
+        {
+            "address": "пр. Аль-Фараби, 77/7",
+            "city": "г. Алматы",
+            "coord_first_longitude": 43.219427,
+            "coord_last_latitude": 76.92923,
+            "phone": "(727) 321-06-76",
+            "trade_point": "Аптека \"Цветная\""
+        },
+        {
+            "address": "ул. Фурманова, 91/97",
+            "city": "г. Алматы",
+            "coord_first_longitude": 43.259742,
+            "coord_last_latitude": 76.945923,
+            "phone": "(727) 273-33-03",
+            "trade_point": "Аптека №2"
+        },
+        {
+            "address": "ул. Радищева, 67",
+            "city": "г. Альметьевск",
+            "coord_first_longitude": 54.899806,
+            "coord_last_latitude": 52.30549,
+            "phone": "",
+            "trade_point": "Медсанчасть Оао \"Татнефть\""
+        },
+        {
+            "address": "пр. Азаттык, 30",
+            "city": "г. Атырау",
+            "coord_first_longitude": 47.10159,
+            "coord_last_latitude": 51.924465,
+            "phone": "(7122) 32-87-85",
+            "trade_point": "М-Н \"Уркер\" (Около Поликлиники №2)"
+        },
+        {
+            "address": "ул. Сатпаева, 17а",
+            "city": "г. Атырау",
+            "coord_first_longitude": 47.105699,
+            "coord_last_latitude": 51.895351,
+            "phone": "(7122) 20-31-01",
+            "trade_point": "М-Н \"Мамаляля\" (Тц \"Атырау\")"
+        },
+        {
+            "address": "ул. Ленина,86",
+            "city": "г. Армавир",
+            "coord_first_longitude": 44.998277,
+            "coord_last_latitude": 41.129211,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул.Ч.-Лучинского, 7",
+            "city": "г. Архангельск",
+            "coord_first_longitude": 64.533046,
+            "coord_last_latitude": 40.5343,
+            "phone": "(8182) 47-67-00",
+            "trade_point": "М-Н \"Буду Мамой\", Тц \"Манеж\", 0 Этаж"
+        },
+        {
+            "address": "ул. Бейбитшилик, 23",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.17154,
+            "coord_last_latitude": 71.419482,
+            "phone": "",
+            "trade_point": "Салон \"Соболь\""
+        },
+        {
+            "address": "ул. Валиханова, 15",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.169261,
+            "coord_last_latitude": 71.438809,
+            "phone": "(7172) 21-92-77",
+            "trade_point": "Аптека \"Элитфарм\""
+        },
+        {
+            "address": "ул. Сейфуллина, 17",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.170438,
+            "coord_last_latitude": 71.414047,
+            "phone": "(7172) 32-87-99",
+            "trade_point": "М-Н \"Мама И Малыш\""
+        },
+        {
+            "address": "пр. Кабанбай Батыра, 21",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.128441,
+            "coord_last_latitude": 71.411819,
+            "phone": "",
+            "trade_point": "Аптека \"Цветная\" (Трц \"Азия-Парк\")"
+        },
+        {
+            "address": "ул. Туран, 37",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.132694,
+            "coord_last_latitude": 71.403855,
+            "phone": "(7172) 57-79-38, 57-79-39",
+            "trade_point": "Аптека \"Цветная\" №39 (Трц \"Хан-Шатыр\")"
+        },
+        {
+            "address": "ул. Достык, 9",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.128131,
+            "coord_last_latitude": 71.425265,
+            "phone": "(7172) 79-53-18, 79-53-19",
+            "trade_point": "Аптека \"Цветная\" №49 (Трц \"Керуен\")"
+        },
+        {
+            "address": "ул. Валиханова, 24",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.175034,
+            "coord_last_latitude": 71.439228,
+            "phone": "(7172) 54-97-62, 54-97-60",
+            "trade_point": "Аптека \"Цветная\" №48 (Тд \"Тулпар\")"
+        },
+        {
+            "address": "ул. Биржан Сала, 6",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.192899,
+            "coord_last_latitude": 71.408249,
+            "phone": "(7172) 30-25-73",
+            "trade_point": "Аптека \"Цветная\" №38"
+        },
+        {
+            "address": "ул. Петрова, 18",
+            "city": "г. Астана",
+            "coord_first_longitude": 51.148866,
+            "coord_last_latitude": 71.467807,
+            "phone": "",
+            "trade_point": "Бутик №10 (Тд \"Ak Center\", 3 Этаж)"
+        },
+        {
+            "address": "ул. Победы, 53 Д",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.354839,
+            "coord_last_latitude": 48.056278,
+            "phone": "",
+            "trade_point": "М-Н \"Комфорт\" (Тд \"Айсберг\")"
+        },
+        {
+            "address": "ул. Звездная, дом 17",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.329208,
+            "coord_last_latitude": 48.055689,
+            "phone": "(8512) 49-53-00",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Минусинская, 8",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.359067,
+            "coord_last_latitude": 48.069717,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Бабаевского, 66",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.399422,
+            "coord_last_latitude": 48.096359,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Космонавтов, 8",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.332816,
+            "coord_last_latitude": 48.054019,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Кубанская, 25Б",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.326412,
+            "coord_last_latitude": 48.039764,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Новороссийская, 12",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.383273,
+            "coord_last_latitude": 48.09561,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Ногина, 2",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.347574,
+            "coord_last_latitude": 48.054282,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Савушкина, 24 А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.368694,
+            "coord_last_latitude": 48.048332,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Свердлова, 17",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.353379,
+            "coord_last_latitude": 48.036646,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Хибинская, 45 А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.366227,
+            "coord_last_latitude": 47.989185,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Маркина, 22/44",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.372566,
+            "coord_last_latitude": 48.070711,
+            "phone": "",
+            "trade_point": "Аптека \"Шах\""
+        },
+        {
+            "address": "ул. Б. Хмельницкого, 27/48",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.335273,
+            "coord_last_latitude": 48.0217,
+            "phone": "",
+            "trade_point": "Аптека \"На Здоровье\""
+        },
+        {
+            "address": "пр. Воробьёва, 12",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.32907,
+            "coord_last_latitude": 48.04932,
+            "phone": "",
+            "trade_point": "Аптека \"На Здоровье\""
+        },
+        {
+            "address": "ул. Жилая, 11 А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.404368,
+            "coord_last_latitude": 48.091629,
+            "phone": "",
+            "trade_point": "Аптека \"На Здоровье\""
+        },
+        {
+            "address": "ул. Яблочкова, 36 А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.365468,
+            "coord_last_latitude": 48.069117,
+            "phone": "",
+            "trade_point": "Аптека \"На Здоровье\""
+        },
+        {
+            "address": "ул. Магистральная, 34",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.41015,
+            "coord_last_latitude": 47.986396,
+            "phone": "",
+            "trade_point": "Аптека \"Айболит\""
+        },
+        {
+            "address": "ул. Л. Толстого, 2/10",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.354993,
+            "coord_last_latitude": 48.006326,
+            "phone": "",
+            "trade_point": "Аптека \"Ваша Аптека\""
+        },
+        {
+            "address": "ул. Бабаевского, 35, пом. 38",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.400748,
+            "coord_last_latitude": 48.096172,
+            "phone": "",
+            "trade_point": "Аптека \"Кристина\""
+        },
+        {
+            "address": "ул. Татищева, 61А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.369342,
+            "coord_last_latitude": 48.057092,
+            "phone": "",
+            "trade_point": "Аптека \"Лекарь\""
+        },
+        {
+            "address": "ул. Б.Алексеева, 66/1",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.351565,
+            "coord_last_latitude": 48.07399,
+            "phone": "",
+            "trade_point": "Аптека \"Марина\""
+        },
+        {
+            "address": "ул. Немова, 34",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.279435,
+            "coord_last_latitude": 47.969199,
+            "phone": "",
+            "trade_point": "Аптека \"Эксмофарм\""
+        },
+        {
+            "address": "ул. Н. Островского, 122 А",
+            "city": "г. Астрахань",
+            "coord_first_longitude": 46.334462,
+            "coord_last_latitude": 48.039502,
+            "phone": "",
+            "trade_point": "Аптека \"Архимед\""
+        },
+        {
+            "address": "ул.Спортивная дом 4",
+            "city": "г. Балашиха",
+            "coord_first_longitude": 55.745857,
+            "coord_last_latitude": 38.129231,
+            "phone": "",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "ул. Гоголя, 47",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 0,
+            "coord_last_latitude": 0,
+            "phone": "",
+            "trade_point": "М-Н \"Аистенок\" (Тд \"Ультра\")"
+        },
+        {
+            "address": "пр-кт Ленина, 155б",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 53.372035,
+            "coord_last_latitude": 83.749542,
+            "phone": "",
+            "trade_point": "М-Н \"Аистенок\" (Тц \"Норд-Вест\", Цоколь)"
+        },
+        {
+            "address": "ул. Льва Толстого, 33",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 53.329757,
+            "coord_last_latitude": 83.791572,
+            "phone": "",
+            "trade_point": "М-Н \"Аистенок\" (Тц \"Империал\", 1 Этаж)"
+        },
+        {
+            "address": "ул. Мало-Тобольская, 23",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 53.329312,
+            "coord_last_latitude": 83.794195,
+            "phone": "",
+            "trade_point": "М-Н \"Аистенок\" (Рынок \"Центральный\")"
+        },
+        {
+            "address": "ул. Попова, 114",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 53.358345,
+            "coord_last_latitude": 83.673317,
+            "phone": "",
+            "trade_point": "М-Н \"Аистенок\" (Тц \"Энтузиаст\")"
+        },
+        {
+            "address": "ул. Г. Исакова, 260",
+            "city": "г. Барнаул",
+            "coord_first_longitude": 53.367765,
+            "coord_last_latitude": 83.675397,
+            "phone": "(3852) 20-22-25",
+            "trade_point": "М-Н \"Дочки Сыночки\" (Тц \"Бум\")"
+        },
+        {
+            "address": "пр-т Багдана Хмельницкого, 103",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.601306,
+            "coord_last_latitude": 36.580178,
+            "phone": "",
+            "trade_point": "Аптека \"Аптечный Дом\""
+        },
+        {
+            "address": "пр-т Белгородский, 78",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.60189,
+            "coord_last_latitude": 36.595961,
+            "phone": "",
+            "trade_point": "Аптека \"Оранжевая Аптека\""
+        },
+        {
+            "address": "ул. Губкина, 21",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.56547,
+            "coord_last_latitude": 36.565817,
+            "phone": "",
+            "trade_point": "Аптека \"И.П. Мошнякова Н.М.\""
+        },
+        {
+            "address": "ул. Есенина 12 А",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.555389,
+            "coord_last_latitude": 36.571402,
+            "phone": "",
+            "trade_point": "Аптека \"И.П. Мошнякова Н.М.\""
+        },
+        {
+            "address": "ул. Королёва, 4",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.572632,
+            "coord_last_latitude": 36.579555,
+            "phone": "",
+            "trade_point": "Аптека \"24 Часа\""
+        },
+        {
+            "address": "ул. Победы, 75",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.592903,
+            "coord_last_latitude": 36.587949,
+            "phone": "",
+            "trade_point": "Аптека \"Мир Здоровья\""
+        },
+        {
+            "address": "ул. Попова, 17",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.600326,
+            "coord_last_latitude": 36.589043,
+            "phone": "",
+            "trade_point": "Аптека Ооо \"Белгородский Аптечный Склад\""
+        },
+        {
+            "address": "пр-т Славы, 7",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.595055,
+            "coord_last_latitude": 36.604979,
+            "phone": "",
+            "trade_point": "Аптека \"Таблеточка\""
+        },
+        {
+            "address": "пр-т Славы, 74",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.597983,
+            "coord_last_latitude": 36.586482,
+            "phone": "",
+            "trade_point": "Аптечный Дом Белгород"
+        },
+        {
+            "address": "ул. Шаландина 2В",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.568312,
+            "coord_last_latitude": 36.576482,
+            "phone": "",
+            "trade_point": "Аптека \"И.П. Мошнякова Н.М\""
+        },
+        {
+            "address": "ул. Щорса 21",
+            "city": "г. Белгород",
+            "coord_first_longitude": 50.576882,
+            "coord_last_latitude": 36.569373,
+            "phone": "",
+            "trade_point": "Аптека Ооо \"Технофарм\""
+        },
+        {
+            "address": "ул. Ленина, 47А",
+            "city": "г. Бердск",
+            "coord_first_longitude": 54.760796,
+            "coord_last_latitude": 83.104218,
+            "phone": "",
+            "trade_point": "\"Салон Медтехники\", Тц \"Меркурий\""
+        },
+        {
+            "address": "ул. Октябрьская, 66",
+            "city": "г. Буденновск",
+            "coord_first_longitude": 44.78318,
+            "coord_last_latitude": 44.155683,
+            "phone": "",
+            "trade_point": "Универмаг"
+        },
+        {
+            "address": "ул. Запорожская, 77, пав. №319, 3-й этаж",
+            "city": "г. Владивосток",
+            "coord_first_longitude": 43.10085,
+            "coord_last_latitude": 131.902186,
+            "phone": "(4232) 94-83-05",
+            "trade_point": "Торговый Центр \"Черемушки\""
+        },
+        {
+            "address": "ул. Семеновская, 15, 4-й этаж",
+            "city": "г. Владивосток",
+            "coord_first_longitude": 43.119013,
+            "coord_last_latitude": 131.884235,
+            "phone": "(4232) 46-38-09",
+            "trade_point": "Торговый Центр \"Clever House\""
+        },
+        {
+            "address": "ул. Большая Московская, 86",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.132959,
+            "coord_last_latitude": 40.417739,
+            "phone": "(4922) 42-05-68",
+            "trade_point": "М-Н \"Мой Малыш\""
+        },
+        {
+            "address": "ул. Егорова, 6",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.169013,
+            "coord_last_latitude": 40.479483,
+            "phone": "(4922) 21-56-71",
+            "trade_point": "Аптека №124"
+        },
+        {
+            "address": "ул. Комиссарова, 28",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.167221,
+            "coord_last_latitude": 40.463598,
+            "phone": "(4922) 30-41-55",
+            "trade_point": "Аптека №28"
+        },
+        {
+            "address": "ул. Мира, 41",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.144732,
+            "coord_last_latitude": 40.416846,
+            "phone": "(4922) 42-31-16",
+            "trade_point": "М-Н \"Фармплюс\""
+        },
+        {
+            "address": "Октябрьский пр-т, 10",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.128359,
+            "coord_last_latitude": 40.394515,
+            "phone": "(4922) 37-61-67",
+            "trade_point": "Тц \"Гранд\""
+        },
+        {
+            "address": "ул. Мира, 53",
+            "city": "г. Владимир",
+            "coord_first_longitude": 56.145874,
+            "coord_last_latitude": 40.42336,
+            "phone": "(4922) 53-90-33, 8-910-091-14-94",
+            "trade_point": "М-Н \"Мамабэль\""
+        },
+        {
+            "address": "ул. Коммунистическая, 24",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.713132,
+            "coord_last_latitude": 44.518068,
+            "phone": "8 (903) 316-15-54",
+            "trade_point": "М-Н \"Happy Mama\", Тц \"Царицынский Пассаж\""
+        },
+        {
+            "address": "ул. Краснознаменская, 9",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.70436,
+            "coord_last_latitude": 44.509449,
+            "phone": "",
+            "trade_point": "Трц \"Пирамида\", 2 Этаж"
+        },
+        {
+            "address": "ул. Ленина, 19",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.706817,
+            "coord_last_latitude": 44.510901,
+            "phone": "(8442) 98-06-78",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "ул. М. Еременко, 70",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.76866,
+            "coord_last_latitude": 44.543971,
+            "phone": "",
+            "trade_point": "М-Н \"Арьяна\""
+        },
+        {
+            "address": "ул. Мира, 13",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.711358,
+            "coord_last_latitude": 44.517926,
+            "phone": "(8442) 38-49-67",
+            "trade_point": "М-Н \"Одежда Для Будущих Мам\""
+        },
+        {
+            "address": "ул. Порт Саида, 17",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.71343,
+            "coord_last_latitude": 44.519319,
+            "phone": "8-927-503-33-3636",
+            "trade_point": "М-Н \"Карапузик-Пузик\""
+        },
+        {
+            "address": "ул. Ополченская, 10",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.801254,
+            "coord_last_latitude": 44.598577,
+            "phone": "",
+            "trade_point": "М-Н \"Урюпинский Трикотаж\" (В Помещении М-На Street Market)"
+        },
+        {
+            "address": "ул. Им. Курчатова, 3",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.604993,
+            "coord_last_latitude": 44.425607,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Рабоче-Крестьянская, 9",
+            "city": "г. Волгоград",
+            "coord_first_longitude": 48.69751,
+            "coord_last_latitude": 44.501434,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Карбышева, 47А",
+            "city": "г. Волжский",
+            "coord_first_longitude": 48.777807,
+            "coord_last_latitude": 44.772493,
+            "phone": "",
+            "trade_point": "Тц \"Простор\""
+        },
+        {
+            "address": "ул. Ленинградская, 44",
+            "city": "г. Вологда",
+            "coord_first_longitude": 59.220067,
+            "coord_last_latitude": 39.868128,
+            "phone": "8-911-538-07-79",
+            "trade_point": "М-Н \"Мамабэль\", Тц \"Альмо\""
+        },
+        {
+            "address": "бульвар Победы ,23Б",
+            "city": "г. Воронеж",
+            "coord_first_longitude": 51.711053,
+            "coord_last_latitude": 39.159671,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки-Сыночки\", Трк \"Арена\""
+        },
+        {
+            "address": "ул. 1 мая, 105",
+            "city": "г. Воткинск",
+            "coord_first_longitude": 57.060662,
+            "coord_last_latitude": 53.99819,
+            "phone": "",
+            "trade_point": "Тц \"Радуга\""
+        },
+        {
+            "address": "ул. Первомайская, 1",
+            "city": "г. Глазов",
+            "coord_first_longitude": 58.139299,
+            "coord_last_latitude": 52.678965,
+            "phone": "8-912-440-89-10",
+            "trade_point": "Филиал Слингоцентра"
+        },
+        {
+            "address": "пр-т Циалковского, 15",
+            "city": "г. Дзержинск",
+            "coord_first_longitude": 56.234342,
+            "coord_last_latitude": 43.447696,
+            "phone": "(8313) 26-17-77",
+            "trade_point": "М-Н \"Одежда Для Беременных\""
+        },
+        {
+            "address": "ул. Академика Шварца, 17",
+            "city": "г. Екатеринбург",
+            "coord_first_longitude": 56.797138,
+            "coord_last_latitude": 60.62684,
+            "phone": "",
+            "trade_point": "Тц \"Дирижабль\" 2 Эт.,Пав. 26"
+        },
+        {
+            "address": "пр. Ленина, 50, бутик 401",
+            "city": "г. Екатеринбург",
+            "coord_first_longitude": 56.83967,
+            "coord_last_latitude": 60.621642,
+            "phone": "",
+            "trade_point": "Тц \"Сити-Центр\" 4 Эт."
+        },
+        {
+            "address": "ул. 8 Марта, 149 Б — 114",
+            "city": "г. Екатеринбург",
+            "coord_first_longitude": 56.807212,
+            "coord_last_latitude": 60.611975,
+            "phone": "",
+            "trade_point": "Трц \"Мегаполис\""
+        },
+        {
+            "address": "ул. Ясная, 2",
+            "city": "г. Екатеринбург",
+            "coord_first_longitude": 56.816284,
+            "coord_last_latitude": 60.586317,
+            "phone": "(343) 344-01-99,  доб. 11",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Блюхера, 39, помещение 1",
+            "city": "г. Екатеринбург",
+            "coord_first_longitude": 56.85252,
+            "coord_last_latitude": 60.640581,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Нефтяников, 57",
+            "city": "г. Елабуга",
+            "coord_first_longitude": 55.757438,
+            "coord_last_latitude": 52.031021,
+            "phone": "",
+            "trade_point": "Травмпункт, Црб 2-Ой Этаж"
+        },
+        {
+            "address": "ул. Октябрьская, 341",
+            "city": "г. Ессентуки",
+            "coord_first_longitude": 44.044873,
+            "coord_last_latitude": 42.881821,
+            "phone": "",
+            "trade_point": "М-Н \"Мамочки Мои\""
+        },
+        {
+            "address": "ул. Гагарина, 67",
+            "city": "г. Жуковский",
+            "coord_first_longitude": 55.608331,
+            "coord_last_latitude": 38.090915,
+            "phone": "",
+            "trade_point": "Тц \"Океан\""
+        },
+        {
+            "address": "ул. Багаева, 14",
+            "city": "г. Иваново",
+            "coord_first_longitude": 56.991792,
+            "coord_last_latitude": 40.975776,
+            "phone": "",
+            "trade_point": "Тц \"Полет\", 2 Эт. Пав. 24"
+        },
+        {
+            "address": "Проспект Ленина, 47",
+            "city": "г. Иваново",
+            "coord_first_longitude": 57.013332,
+            "coord_last_latitude": 40.970276,
+            "phone": "(4932) 33-41-21",
+            "trade_point": "М-Н \"Для Будущих Мам\""
+        },
+        {
+            "address": "ул. 8 марта, 27",
+            "city": "г. Иваново",
+            "coord_first_longitude": 57.005645,
+            "coord_last_latitude": 40.98544,
+            "phone": "",
+            "trade_point": "Трц \"Серебряный Город\", 4 Уровень, Пав. \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Палехская, 11",
+            "city": "г. Иваново",
+            "coord_first_longitude": 56.993505,
+            "coord_last_latitude": 40.977251,
+            "phone": "",
+            "trade_point": "М-Н \"Для Будущих Мам\""
+        },
+        {
+            "address": "ул. 8 марта, 23",
+            "city": "г. Иваново",
+            "coord_first_longitude": 57.006549,
+            "coord_last_latitude": 40.983217,
+            "phone": "(4932) 503-506, 8-915-820-35-06",
+            "trade_point": "М-Н \"Мамабэль\" Напротив М-На \"Главмаг\""
+        },
+        {
+            "address": "ул. Лежневская, 119",
+            "city": "г. Иваново",
+            "coord_first_longitude": 56.974135,
+            "coord_last_latitude": 40.975387,
+            "phone": "(4932) 45-83-93, 8-910-667-83-93",
+            "trade_point": "Тц \"Аристократ\""
+        },
+        {
+            "address": "ул. Куконковых, 141",
+            "city": "г. Иваново",
+            "coord_first_longitude": 56.965882,
+            "coord_last_latitude": 41.025359,
+            "phone": "(4932) 92-00-66/67",
+            "trade_point": "Тм \"Евролэнд\""
+        },
+        {
+            "address": "ул. Ленина, 5",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.843919,
+            "coord_last_latitude": 53.205933,
+            "phone": "",
+            "trade_point": "М-Н \"Пятерка\""
+        },
+        {
+            "address": "ул. 10 лет Октября, 53",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.873188,
+            "coord_last_latitude": 53.227048,
+            "phone": "",
+            "trade_point": "Бц \"Эльгрин\""
+        },
+        {
+            "address": "ул. Советская, 22а",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.845996,
+            "coord_last_latitude": 53.220444,
+            "phone": "",
+            "trade_point": "М-Н \"Для Милых Дам\" (Тц \"Мода+\")"
+        },
+        {
+            "address": "Площадь им. 50 лет октября, 7",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.854419,
+            "coord_last_latitude": 53.222748,
+            "phone": "(3412) 56-90-78, 8-800-5555-091",
+            "trade_point": "Ортопедический Салон \"Бальзам\""
+        },
+        {
+            "address": "Воткинское шоссе, 81",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.899042,
+            "coord_last_latitude": 53.258982,
+            "phone": "(912) 462-98-54, 8-800-5555-091",
+            "trade_point": "Ортопедический Салон \"Бальзам\""
+        },
+        {
+            "address": "ул. Пушкинская, 186",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.845284,
+            "coord_last_latitude": 53.214622,
+            "phone": "(3412) 23-45-62",
+            "trade_point": "Слингоцентр"
+        },
+        {
+            "address": "Широкий пер., 53",
+            "city": "г. Ижевск",
+            "coord_first_longitude": 56.857284,
+            "coord_last_latitude": 53.211098,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\" (Трц \"Сигма\")"
+        },
+        {
+            "address": "ул. Партизанская, 107",
+            "city": "г. Иркутск",
+            "coord_first_longitude": 52.27209,
+            "coord_last_latitude": 104.309657,
+            "phone": "",
+            "trade_point": "М-Н \"New Form\""
+        },
+        {
+            "address": "ул. Октябрьской революции, 24а, помещение 311А",
+            "city": "г. Иркутск",
+            "coord_first_longitude": 52.288167,
+            "coord_last_latitude": 104.30864,
+            "phone": "(3952) 28-14-71, (3952) 71-00-15",
+            "trade_point": "М-Н \"Карусель\""
+        },
+        {
+            "address": "ул. К. Либкнехта, 239В",
+            "city": "г. Иркутск",
+            "coord_first_longitude": 52.264961,
+            "coord_last_latitude": 104.319936,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Пролетарская, 40",
+            "city": "г. Йошкар-Ола",
+            "coord_first_longitude": 56.646689,
+            "coord_last_latitude": 47.890138,
+            "phone": "(8362) 39-79-75, 8-800-5555-091",
+            "trade_point": "Ортопедические Аптеки \"Бальзам\""
+        },
+        {
+            "address": "ул. Осипенко, 33",
+            "city": "г. Йошкар-Ола",
+            "coord_first_longitude": 56.649027,
+            "coord_last_latitude": 47.883068,
+            "phone": "(8362) 39-46-54, 8-800-5555-091",
+            "trade_point": "Республиканская Клиническая Больница, Хирургический Корпус №3"
+        },
+        {
+            "address": "ул. Вашская, 7",
+            "city": "г. Йошкар-Ола",
+            "coord_first_longitude": 56.628347,
+            "coord_last_latitude": 47.889407,
+            "phone": "(8362) 39-46-54, 8-800-5555-091",
+            "trade_point": "Поликлиника №5 (Травматологическая Поликлиника)"
+        },
+        {
+            "address": "ул. Аделя Кутуя, 35",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.787304,
+            "coord_last_latitude": 49.17382,
+            "phone": "(843) 237-82-04, 237-82-05",
+            "trade_point": "М-Н \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Петербургская, 9",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.785425,
+            "coord_last_latitude": 49.126475,
+            "phone": "(917) 886-28-08",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Республика\", 1 Этаж, Конец Галереи"
+        },
+        {
+            "address": "ул. Ершова, 35а",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.795865,
+            "coord_last_latitude": 49.173523,
+            "phone": "(843) 272-37-42",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Ямашева, 51б",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.826227,
+            "coord_last_latitude": 49.125518,
+            "phone": "(843) 517-93-53",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Адоратского, 29а",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.839162,
+            "coord_last_latitude": 49.14476,
+            "phone": "(843) 556-53-20",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Декабристов, 154",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.831342,
+            "coord_last_latitude": 49.080926,
+            "phone": "(843) 561-22-50",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Сахарова, 1а",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.778522,
+            "coord_last_latitude": 49.23008,
+            "phone": "(843) 570-48-07",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Зорге, 95",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.746066,
+            "coord_last_latitude": 49.216809,
+            "phone": "(843) 268-35-97",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "ул. Амирхана, 69а",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.834555,
+            "coord_last_latitude": 49.134968,
+            "phone": "(843) 520-20-32",
+            "trade_point": "М-Н \"Детский\""
+        },
+        {
+            "address": "ул. Чуйкова, 53",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.83652,
+            "coord_last_latitude": 49.137489,
+            "phone": "(843) 520-11-98",
+            "trade_point": "Ортопедический Салон \"Статура\""
+        },
+        {
+            "address": "ул. Исаева, 5",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.836178,
+            "coord_last_latitude": 49.066225,
+            "phone": "(843) 520-11-98",
+            "trade_point": "Ортопедический Салон \"Статура\" (Госпиталь Для Ветеранов Войны)"
+        },
+        {
+            "address": "ул. Сибирский тракт, 29",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.813408,
+            "coord_last_latitude": 49.173855,
+            "phone": "(843) 525-73-88",
+            "trade_point": "Ортопедический Салон \"Статура\" (Клинический Онкологический Диспансер, 1 Этаж)"
+        },
+        {
+            "address": "ул. Пушкина, 42",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.79337,
+            "coord_last_latitude": 49.125244,
+            "phone": "(843) 264-27-82",
+            "trade_point": "Ортопедический Салон \"Статура\""
+        },
+        {
+            "address": "ул. Ватутина, 13",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.764179,
+            "coord_last_latitude": 49.121096,
+            "phone": "(919) 682-66-25",
+            "trade_point": "Ортопедический Салон \"Статура\" (Ркб Вл, Поликлиника 2 Этаж)"
+        },
+        {
+            "address": "ул. Шмидта, 8",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.789619,
+            "coord_last_latitude": 49.150058,
+            "phone": "(917) 299-94-77",
+            "trade_point": "Ортопедический Салон \"Бальзам\""
+        },
+        {
+            "address": "Оренбурский тракт, 138",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.730606,
+            "coord_last_latitude": 49.187011,
+            "phone": "(917) 390-04-40",
+            "trade_point": "Ортопедический Салон \"Бальзам\" (Ркб)"
+        },
+        {
+            "address": "пр-кт Ибрагимова, 56",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.821494,
+            "coord_last_latitude": 49.093673,
+            "phone": "(843) 567-25-63",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Тандем\""
+        },
+        {
+            "address": "ул. Петербургская, 9",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.785308,
+            "coord_last_latitude": 49.1264,
+            "phone": "(843) 292-57-89, 293-62-33",
+            "trade_point": "Трк \"Детский Мир\""
+        },
+        {
+            "address": "ул. Маршала Чуйкова, 23",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.836907,
+            "coord_last_latitude": 49.118623,
+            "phone": "(843) 522-39-52",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Ю. Фучика, д. 90",
+            "city": "г. Казань",
+            "coord_first_longitude": 55.763607,
+            "coord_last_latitude": 49.23436,
+            "phone": "(843) 522-39-52",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Ленина, 113",
+            "city": "г. Калуга",
+            "coord_first_longitude": 54.507729,
+            "coord_last_latitude": 36.256219,
+            "phone": "8-910-867-40-61, 8 (4842) 59-93-63",
+            "trade_point": "М-Н \"Мамабэль\""
+        },
+        {
+            "address": "ул. Кропоткина, 4 калуга",
+            "city": "г. Калуга",
+            "coord_first_longitude": 54.508719,
+            "coord_last_latitude": 36.25106,
+            "phone": "(4842) 57-45-66",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул.Гагарина, 1",
+            "city": "г. Калуга",
+            "coord_first_longitude": 54.51577,
+            "coord_last_latitude": 36.242359,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\"  (Тц \"Атак\")"
+        },
+        {
+            "address": "ул. БухарЖырау, 54",
+            "city": "г. Караганда",
+            "coord_first_longitude": 49.803052,
+            "coord_last_latitude": 73.087745,
+            "phone": "(7212) 41-02-21",
+            "trade_point": "Аптека \"Цветная\" №47"
+        },
+        {
+            "address": "ул. К. Маркса, 5/1",
+            "city": "г. Караганда",
+            "coord_first_longitude": 49.852501,
+            "coord_last_latitude": 73.190002,
+            "phone": "(7212) 22-16-32",
+            "trade_point": "Аптека \"Цветная\" №58"
+        },
+        {
+            "address": "ул. Гоголя, 57",
+            "city": "г. Караганда",
+            "coord_first_longitude": 49.807881,
+            "coord_last_latitude": 73.104457,
+            "phone": "(7212) 41-02-21",
+            "trade_point": "Аптека \"Цветная\""
+        },
+        {
+            "address": "пр. БухарЖырау, 55",
+            "city": "г. Караганда",
+            "coord_first_longitude": 49.802276,
+            "coord_last_latitude": 73.088286,
+            "phone": "(7212) 78-10-10, 8-777-133-02-11",
+            "trade_point": "Тд \"Кайнар\", Бутик 17"
+        },
+        {
+            "address": "ул. Строителей, 25",
+            "city": "г. Караганда",
+            "coord_first_longitude": 49.776014,
+            "coord_last_latitude": 73.137852,
+            "phone": "(7212) 78-10-10, 8-777-133-02-11",
+            "trade_point": "Универсам \"Viva\""
+        },
+        {
+            "address": "пр. Октябрьский 34",
+            "city": "г. Кемерово",
+            "coord_first_longitude": 55.350398,
+            "coord_last_latitude": 86.133518,
+            "phone": "",
+            "trade_point": "Трк \"Лапландия\""
+        },
+        {
+            "address": "пр. Ленинградский, 30/1",
+            "city": "г. Кемерово",
+            "coord_first_longitude": 55.341782,
+            "coord_last_latitude": 86.180896,
+            "phone": "",
+            "trade_point": "М-Н \"Мир Мамы\""
+        },
+        {
+            "address": "ул. Воровского, 135",
+            "city": "г. Киров",
+            "coord_first_longitude": 58.59784,
+            "coord_last_latitude": 49.607246,
+            "phone": "(8332) 62-64-32",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Макеева, 1а",
+            "city": "г. Коломна",
+            "coord_first_longitude": 55.084121,
+            "coord_last_latitude": 38.761834,
+            "phone": "",
+            "trade_point": "Тц «Макеевский», Пав. 103"
+        },
+        {
+            "address": "ул. Вавилова, 4",
+            "city": "г. Колпино",
+            "coord_first_longitude": 59.746453,
+            "coord_last_latitude": 30.589628,
+            "phone": "8 921-887-50-81",
+            "trade_point": "Гор. Больница №33"
+        },
+        {
+            "address": "ул. Амангельды, 72",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.228245,
+            "coord_last_latitude": 63.618783,
+            "phone": "(7142) 54-11-91",
+            "trade_point": "Аптека \"Цветная\" №1"
+        },
+        {
+            "address": "ул. Аль-Фараби, 144",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.225282,
+            "coord_last_latitude": 63.605449,
+            "phone": "(7142) 53-66-64, 53-63-03",
+            "trade_point": "Аптека \"Цветная\" №3"
+        },
+        {
+            "address": "ул. Победы, 141",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.228872,
+            "coord_last_latitude": 63.622307,
+            "phone": "(7142) 54-64-63",
+            "trade_point": "Аптека \"Цветная\" №12"
+        },
+        {
+            "address": "ул. Толстого, 53",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.210331,
+            "coord_last_latitude": 63.634925,
+            "phone": "(7142) 54-64-91",
+            "trade_point": "Аптека \"Цветная\" №25"
+        },
+        {
+            "address": "ул. Гоголя, 85",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.211594,
+            "coord_last_latitude": 63.627588,
+            "phone": "(7142) 50-39-07, 50-39-08",
+            "trade_point": "Аптека \"Цветная\" №44"
+        },
+        {
+            "address": "ул. Каирбекова, 383/2",
+            "city": "г. Костанай",
+            "coord_first_longitude": 53.23991,
+            "coord_last_latitude": 63.680413,
+            "phone": "(7142) 56-55-05",
+            "trade_point": "Аптека \"Цветная\" №33"
+        },
+        {
+            "address": "Рабочий пр-т, 7",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.782037,
+            "coord_last_latitude": 40.934839,
+            "phone": "(4942) 35-14-71, 45-28-08",
+            "trade_point": "Фирменный Магазин \"Фэст\""
+        },
+        {
+            "address": "Мучные Ряды, 30",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.767594,
+            "coord_last_latitude": 40.92481,
+            "phone": "(4942) 31-66-92",
+            "trade_point": "Аптечный Пункт \"Фэст\""
+        },
+        {
+            "address": "проспект Мира, 75",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.777156,
+            "coord_last_latitude": 40.945051,
+            "phone": "(4942) 51-68-11",
+            "trade_point": "Аптека \"Панацея\" (\"Мир Здоровья\")"
+        },
+        {
+            "address": "микрорайон Давыдовский-3, 18",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.740301,
+            "coord_last_latitude": 41.00486,
+            "phone": "(4942) 34-55-11",
+            "trade_point": "Аптека \"Панацея\""
+        },
+        {
+            "address": "ул. Свердлова, 4 (Дом Моды)",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.767188,
+            "coord_last_latitude": 40.929606,
+            "phone": "8-964-152-23-81",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Советская, 38",
+            "city": "г. Кострома",
+            "coord_first_longitude": 57.762653,
+            "coord_last_latitude": 40.944363,
+            "phone": "(4942) 31-51-12",
+            "trade_point": "М-Н \"Мамабэль\""
+        },
+        {
+            "address": "ул. Вишнякова, 118/1",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.020242,
+            "coord_last_latitude": 38.999775,
+            "phone": "",
+            "trade_point": "М-Н \"Бельё И Одежда Для Будущих Мам\""
+        },
+        {
+            "address": "ул. Коммунаров, 120",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.029523,
+            "coord_last_latitude": 38.976821,
+            "phone": "",
+            "trade_point": "М-Н \"Бельё И Одежда Для Будущих Мам\""
+        },
+        {
+            "address": "ул. Красная, 68",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.027198,
+            "coord_last_latitude": 38.97161,
+            "phone": "",
+            "trade_point": "М-Н \"Бельё И Одежда Для Будущих Мам\""
+        },
+        {
+            "address": "ул. Стасова, 161",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.019184,
+            "coord_last_latitude": 39.042113,
+            "phone": "",
+            "trade_point": "М-Н \"Бельё И Одежда Для Будущих Мам\""
+        },
+        {
+            "address": "ул. Чекистов, 17",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.031379,
+            "coord_last_latitude": 38.912071,
+            "phone": "",
+            "trade_point": "М-Н \"Буратино\""
+        },
+        {
+            "address": "ул. Уральская, 98/11",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.031227,
+            "coord_last_latitude": 39.049237,
+            "phone": "(961) 853 77 17",
+            "trade_point": "М-Н\"Скоро Мама\", Тц \"Галактика\", 1 Этаж"
+        },
+        {
+            "address": "улица Крылатая, 2",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.012434,
+            "coord_last_latitude": 39.122625,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Уральская, 79/2",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.034102,
+            "coord_last_latitude": 39.050074,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Думенко, 21",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.036686,
+            "coord_last_latitude": 38.917265,
+            "phone": "",
+            "trade_point": "Аптека \"Квантум-Сантис\""
+        },
+        {
+            "address": "ул. Тургенева, 107",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.052036,
+            "coord_last_latitude": 38.958718,
+            "phone": "",
+            "trade_point": "Аптека \"Санфарма\""
+        },
+        {
+            "address": "ул. Седина, 55А",
+            "city": "г. Краснодар",
+            "coord_first_longitude": 45.023814,
+            "coord_last_latitude": 38.976808,
+            "phone": "",
+            "trade_point": "Аптека \"Ара\""
+        },
+        {
+            "address": "ул. Чайковского, д.8",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 56.01438,
+            "coord_last_latitude": 92.971703,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Ленина, 133",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 56.012166,
+            "coord_last_latitude": 92.847645,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Шумяцкого, 2а",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 56.065768,
+            "coord_last_latitude": 92.938485,
+            "phone": "",
+            "trade_point": "М-Н \"40 Недель\", Тк \"Махаон\", 19 Отдел"
+        },
+        {
+            "address": "пр. Металлургов, 8а",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 56.056349,
+            "coord_last_latitude": 92.961656,
+            "phone": "",
+            "trade_point": "Аптека \"Лади\", Тц \"Aquaриум\""
+        },
+        {
+            "address": "ул. Павлова, 44",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 55.995917,
+            "coord_last_latitude": 92.95179,
+            "phone": "(391) 214-69-54",
+            "trade_point": "М-Н \"Счастье\""
+        },
+        {
+            "address": "ул. Мате Залки, 5",
+            "city": "г. Красноярск",
+            "coord_first_longitude": 56.065362,
+            "coord_last_latitude": 92.945473,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Синёва, 24",
+            "city": "г. Крымск",
+            "coord_first_longitude": 44.931192,
+            "coord_last_latitude": 37.982743,
+            "phone": "",
+            "trade_point": "М-Н \"Усатый Нянь\""
+        },
+        {
+            "address": "ул. Карла Либкнехта, 31",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.730305,
+            "coord_last_latitude": 36.17962,
+            "phone": "(4712) 2-00-97",
+            "trade_point": "М-Н \"Счастливый Малыш\""
+        },
+        {
+            "address": "ул. Луговая Верхняя, 13",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.728549,
+            "coord_last_latitude": 36.18442,
+            "phone": "(4712) 35-01-93",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "ул. 50 лет Октября, 4 а",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.723299,
+            "coord_last_latitude": 36.162546,
+            "phone": "(4712) 52-77-88",
+            "trade_point": "М-Н \"Карапуз\""
+        },
+        {
+            "address": "пр. Победы, 10",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.775583,
+            "coord_last_latitude": 36.176198,
+            "phone": "(4712) 54-99-99",
+            "trade_point": "М-Н \"Счастливый Малыш\""
+        },
+        {
+            "address": "ул. Сосновская, 5",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.728845,
+            "coord_last_latitude": 36.185445,
+            "phone": "(4712) 70-00-64",
+            "trade_point": "М-Н \"Бэби Люкс\""
+        },
+        {
+            "address": "ул. Ленина, 30",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.737963,
+            "coord_last_latitude": 36.192222,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Пр-кт Хрущева, 2б",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.73695,
+            "coord_last_latitude": 36.1381,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Пр-кт Кулакова, 20б",
+            "city": "г. Курск",
+            "coord_first_longitude": 51.663402,
+            "coord_last_latitude": 36.136703,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Неделина, 15а",
+            "city": "г. Липецк",
+            "coord_first_longitude": 52.598286,
+            "coord_last_latitude": 39.584343,
+            "phone": "",
+            "trade_point": "М-Н \"Кроха\""
+        },
+        {
+            "address": "Краснополянский пр-д, 2",
+            "city": "г. Лобня",
+            "coord_first_longitude": 56.008466,
+            "coord_last_latitude": 37.440227,
+            "phone": "",
+            "trade_point": "Тц \"Поворот\", 2 Эт."
+        },
+        {
+            "address": "ул. Красная,1",
+            "city": "г. Люберцы",
+            "coord_first_longitude": 55.684589,
+            "coord_last_latitude": 37.891268,
+            "phone": "",
+            "trade_point": "Тц \"Подосинки\""
+        },
+        {
+            "address": "пр. Октябрьский, 146",
+            "city": "г. Люберцы",
+            "coord_first_longitude": 55.679824,
+            "coord_last_latitude": 37.88954,
+            "phone": "",
+            "trade_point": "Тц \"Патерсон\""
+        },
+        {
+            "address": "пр. Карла Маркса, 99",
+            "city": "г. Магнитогорск",
+            "coord_first_longitude": 53.401702,
+            "coord_last_latitude": 58.979228,
+            "phone": "",
+            "trade_point": "Тц \"Весна\""
+        },
+        {
+            "address": "ул. Ленина, 1",
+            "city": "г. Михайловск",
+            "coord_first_longitude": 56.456222,
+            "coord_last_latitude": 59.125404,
+            "phone": "",
+            "trade_point": "М-Н \"Мамуля – Красотуля\""
+        },
+        {
+            "address": "ул. Зелёный пр-т, 79А, 2 этаж, подъезд 3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.75196,
+            "coord_last_latitude": 37.816272,
+            "phone": "8-929-563-73-88",
+            "trade_point": "М-Н \"Радость\", Тц \"Зелёный Проспект\""
+        },
+        {
+            "address": "ул. Адм. Лазарева, 24",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.54686,
+            "coord_last_latitude": 37.532364,
+            "phone": "8-929-563-73-84",
+            "trade_point": "М-Н \"Радость\", Тц \"Успех\""
+        },
+        {
+            "address": "Ленинградское ш. 58, стр.26",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.842365,
+            "coord_last_latitude": 37.48434,
+            "phone": "8-929-563-73-86",
+            "trade_point": "М-Н \"Радость\", Тц \"Персей Для Детей\", Павильон №35 (1 Этаж)"
+        },
+        {
+            "address": "Алтуфьевское шоссе, 27",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.85751,
+            "coord_last_latitude": 37.58304,
+            "phone": "8-929-563-73-87",
+            "trade_point": "М-Н \"Радость\", Тц \"Персей Для Детей\", Павильон №52 (1 Этаж)"
+        },
+        {
+            "address": "Рязанский проспект, 30, корп. 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.718143,
+            "coord_last_latitude": 37.784016,
+            "phone": "8-929-563-73-89",
+            "trade_point": "М-Н \"Радость\", Тц \"Рязанский Проспект\", Павильон 19, 4 Этаж"
+        },
+        {
+            "address": "Алтуфьевское шоссе, 24, корп. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.862945,
+            "coord_last_latitude": 37.585338,
+            "phone": "(495) 780-98-94",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Улей\" (Тц \"Мебель России\")"
+        },
+        {
+            "address": "1-й км Алтуфьевского шоссе от МКАД, влд.3, стр. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.912409,
+            "coord_last_latitude": 37.585397,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Весна\""
+        },
+        {
+            "address": "ул. Авиаконструктора Микояна, 10",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.79204,
+            "coord_last_latitude": 37.527924,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Трц \"Авиапарк\""
+        },
+        {
+            "address": "Северное Бутово, ул. Куликовская, 9",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.567444,
+            "coord_last_latitude": 37.562032,
+            "phone": "(499) 793-65-72 доб. 108",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Апельсин\""
+        },
+        {
+            "address": "пр. Мира, 211, корп. 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.845691,
+            "coord_last_latitude": 37.661034,
+            "phone": "(964) 798-97-08",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Золотой Вавилон\""
+        },
+        {
+            "address": "Головинское шоссе, 5",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.840203,
+            "coord_last_latitude": 37.491426,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Водный\""
+        },
+        {
+            "address": "Ленинградское шоссе, 16",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.82328,
+            "coord_last_latitude": 37.498297,
+            "phone": "(495) 981-45-30",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Метрополис\""
+        },
+        {
+            "address": "Каширское шоссе, 26",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.654979,
+            "coord_last_latitude": 37.648946,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Москворечье\""
+        },
+        {
+            "address": "Театральный пр-д, 5, стр.1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.760166,
+            "coord_last_latitude": 37.624612,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Центральный Детский Магазин"
+        },
+        {
+            "address": "1-й Покровский пр., 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.658789,
+            "coord_last_latitude": 37.84287,
+            "phone": "(495) 642- 08-12",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Mега Белая Дача\""
+        },
+        {
+            "address": "ул. Борисовские пруды, 26",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.640219,
+            "coord_last_latitude": 37.758213,
+            "phone": "(499) 753-02-55",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Ключевой\""
+        },
+        {
+            "address": "Студеный проезд, 7а",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.893459,
+            "coord_last_latitude": 37.662512,
+            "phone": "(499) 472-18-93/16-29/18-05 доб.212",
+            "trade_point": "М-Н \"Скоро Мама\", Детская Ярмарка \"Большая Медведица\""
+        },
+        {
+            "address": "Ангелов переулок, 1, корп. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.852772,
+            "coord_last_latitude": 37.351089,
+            "phone": "(495) 753-19-36",
+            "trade_point": "М-Н \"Скоро Мама\", Торговый Центр \"Куб\""
+        },
+        {
+            "address": "ул. Народного Ополчения, 44",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.791856,
+            "coord_last_latitude": 37.490944,
+            "phone": "(499) 943-78-74",
+            "trade_point": "М-Н \"Скоро Мама\""
+        },
+        {
+            "address": "ул. Октябрьской железной дороги 2, стр. 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.838756,
+            "coord_last_latitude": 37.572065,
+            "phone": "(495) 988-14-60 доб.14-25",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Вега\""
+        },
+        {
+            "address": "Севастопольский пр-т, 28, корп. 2 (рядом с Центром Репродукции)",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.664722,
+            "coord_last_latitude": 37.578669,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Виктория\" (Бывший Тц \"Балко\")"
+        },
+        {
+            "address": "Ленинградское ш., 5 км. от МКАД",
+            "city": "г. Химки",
+            "coord_first_longitude": 55.911221,
+            "coord_last_latitude": 37.395406,
+            "phone": "(495) 777-06-08",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Мега Химки\""
+        },
+        {
+            "address": "Сущевский вал, 5, стр. 9",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.795796,
+            "coord_last_latitude": 37.593509,
+            "phone": "(499) 558-04-69",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Совенок\""
+        },
+        {
+            "address": "ул. М. Семеновская, 28, стр. 10",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.784113,
+            "coord_last_latitude": 37.716707,
+            "phone": "(495) 781-71-97/98 доб.119",
+            "trade_point": "М-Н \"Скоро Мама\", Детский Торговый Центр \"Персей\""
+        },
+        {
+            "address": "Строгинский бульвар, 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.805957,
+            "coord_last_latitude": 37.39543,
+            "phone": "(495) 781-52-36",
+            "trade_point": "М-Н \"Скоро Мама\", Торговый Центр \"Дарья\""
+        },
+        {
+            "address": "ул. Таганская, 3, этаж 3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.741316,
+            "coord_last_latitude": 37.658377,
+            "phone": "(495) 651-09-56",
+            "trade_point": "М-Н \"Скоро Мама\", Торговый Центр \"Таганский Пассаж\""
+        },
+        {
+            "address": "Новоясеневский проспект, 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.619535,
+            "coord_last_latitude": 37.509325,
+            "phone": "(967) 164-54-01",
+            "trade_point": "М-Н \"Скоро Мама\", Торговый Центр \"Спектр\""
+        },
+        {
+            "address": "Ново-Переделкино, Боровское шоссе, 27",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.644977,
+            "coord_last_latitude": 37.365208,
+            "phone": "(967) 290-76-04",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Лидер\" (Супермаркет \"Атак\")"
+        },
+        {
+            "address": "Московская обл., 21 км Калужского шоссе (рядом с Kinostar)",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.603089,
+            "coord_last_latitude": 37.490044,
+            "phone": "(495) 775-13-90",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Мега Теплый Стан\""
+        },
+        {
+            "address": "Шереметьевская улица, вл. 8",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.797049,
+            "coord_last_latitude": 37.61823,
+            "phone": "(968) 954-35-06",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Райкин Плаза\""
+        },
+        {
+            "address": "Варшавское ш., 140",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.61218,
+            "coord_last_latitude": 37.609868,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Columbus\""
+        },
+        {
+            "address": "Коммунальный квартал, 3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.819509,
+            "coord_last_latitude": 37.34821,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Июнь\""
+        },
+        {
+            "address": "Носовихинское ш, 45",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.752254,
+            "coord_last_latitude": 37.894953,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Реутов Парк\""
+        },
+        {
+            "address": "ул. Заводская, 1Б",
+            "city": "г. Зеленоград",
+            "coord_first_longitude": 55.978619,
+            "coord_last_latitude": 37.174829,
+            "phone": "(499)729-25-01; 8(926) 912-41-70",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Арбатский\""
+        },
+        {
+            "address": "ул. Мира, стр. 51",
+            "city": "г. Мытищи",
+            "coord_first_longitude": 55.919852,
+            "coord_last_latitude": 37.708443,
+            "phone": "(964) 798-97-17",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Июнь\""
+        },
+        {
+            "address": "Привокзальная площадь, 1а",
+            "city": "г. Одинцово",
+            "coord_first_longitude": 55.671384,
+            "coord_last_latitude": 37.275943,
+            "phone": "(964) 798-97-15",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Одинцовский Пассаж\""
+        },
+        {
+            "address": "ул. Свердлова, 26",
+            "city": "г. Подольск",
+            "coord_first_longitude": 55.426062,
+            "coord_last_latitude": 37.540628,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", Торговый Центр \"Галерея\""
+        },
+        {
+            "address": "Самаркандский бульвар, 26, корпус 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.699707,
+            "coord_last_latitude": 37.815896,
+            "phone": "(495) 376-00-04",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Керченская, 8",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.65602,
+            "coord_last_latitude": 37.583369,
+            "phone": "8-499-121-92-01 доб.11",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Профсоюзная, 109",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.669603,
+            "coord_last_latitude": 37.553867,
+            "phone": "(495) 429-63-39",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Юрловский пр., 13",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.867844,
+            "coord_last_latitude": 37.622456,
+            "phone": "(499) 203-54-54",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Лобненская, 4а",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.889883,
+            "coord_last_latitude": 37.537707,
+            "phone": "(495) 229-84-35",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Ангелов переулок, 1, корп.1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.852772,
+            "coord_last_latitude": 37.351089,
+            "phone": "(495) 752-96-09",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Елецкая, 15",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.607333,
+            "coord_last_latitude": 37.733829,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Ленинский проспект, 99",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.66882,
+            "coord_last_latitude": 37.519196,
+            "phone": "(495) 935-13-90",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Алтуфьевское шоссе, 70, корп. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.887971,
+            "coord_last_latitude": 37.589043,
+            "phone": "(495) 543-73-18/19",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Уральская, 25",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.823172,
+            "coord_last_latitude": 37.809021,
+            "phone": "8-495-460-83-90",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Свободы, 61 корпус 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.854444,
+            "coord_last_latitude": 37.450316,
+            "phone": "(499) 492-64-15",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Новогиреевская, 11/36, стр. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.759375,
+            "coord_last_latitude": 37.795139,
+            "phone": "(495) 304-65-67, 304-94-93",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Мячковский б-р, 10",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.65568,
+            "coord_last_latitude": 37.752719,
+            "phone": "(495) 654 -89-46",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Новокуркинское шоссе, 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.885201,
+            "coord_last_latitude": 37.40665,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Вильнюсская, 5",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.603706,
+            "coord_last_latitude": 37.522865,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Кастанаевская, 54, корп. 3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.735674,
+            "coord_last_latitude": 37.46785,
+            "phone": "(495) 988-32-82",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Щербаковская, 7а",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.782847,
+            "coord_last_latitude": 37.726517,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Староватутинский проезд, 14",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.874165,
+            "coord_last_latitude": 37.671464,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Раменки, 3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.693511,
+            "coord_last_latitude": 37.496029,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Зеленый пр-т, 62А",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.751011,
+            "coord_last_latitude": 37.8198,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\", Трц \"Шангал\""
+        },
+        {
+            "address": "Ходынский бульвар, 4",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.787427,
+            "coord_last_latitude": 37.537763,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Пролетарский пр-кт, 19, корп.1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.641201,
+            "coord_last_latitude": 37.656273,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Народного ополчения, 21, копр. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.777559,
+            "coord_last_latitude": 37.477196,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Новогиреевская, 29, к. 1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.755042,
+            "coord_last_latitude": 37.798059,
+            "phone": "(985) 260-85-40",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "Свободный проспект, 33А",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.752789,
+            "coord_last_latitude": 37.818198,
+            "phone": "(926) 254-70-73",
+            "trade_point": "М-Н \"40 Недель\", Тк \"Новогиреево\", 2-Й Этаж, Павильон №10"
+        },
+        {
+            "address": "Шоссе Энтузиастов, 80",
+            "city": "г. Балашиха",
+            "coord_first_longitude": 55.797928,
+            "coord_last_latitude": 37.985384,
+            "phone": "(909) 662-86-49",
+            "trade_point": "М-Н \"40 Недель\", Гипермаркет \"Макссити\", Павильон №24"
+        },
+        {
+            "address": "ул. Спортивная, 2",
+            "city": "г. Балашиха",
+            "coord_first_longitude": 55.765805,
+            "coord_last_latitude": 37.941941,
+            "phone": "",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "ул. Ленина, 1",
+            "city": "г. Реутов",
+            "coord_first_longitude": 55.753378,
+            "coord_last_latitude": 37.857832,
+            "phone": "",
+            "trade_point": "М-Н \"40 Недель\", Атц \"Карат\" 2-Ой Этаж, Левое Крыло"
+        },
+        {
+            "address": "р-н Кожухово, ул. Рудневка, 5",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.715549,
+            "coord_last_latitude": 37.881257,
+            "phone": "(916) 030-01-50",
+            "trade_point": "М-Н \"40 Недель\", Тц \"Визит\""
+        },
+        {
+            "address": "ул. Героев-Панфиловцев, 1а",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.851467,
+            "coord_last_latitude": 37.438258,
+            "phone": "(926) 481-22-44",
+            "trade_point": "М-Н \"40 Недель\", Тц \"Оранжевый Мир\""
+        },
+        {
+            "address": "Алтуфьевское шоссе, 95",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.902036,
+            "coord_last_latitude": 37.585828,
+            "phone": "(929) 592-444-2",
+            "trade_point": "М-Н \"40 Недель\", Тц \"Огни Столицы\", 2 Этаж"
+        },
+        {
+            "address": "Новочеркасский бульвар, 41, к.7 (рядом с БИЛЛА)",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.648151,
+            "coord_last_latitude": 37.73717,
+            "phone": "(966) 110-43-30",
+            "trade_point": "М-Н \"40 Недель\""
+        },
+        {
+            "address": "ул. Перерва, 45",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.659977,
+            "coord_last_latitude": 37.748463,
+            "phone": "(968) 520-80-89",
+            "trade_point": "М-Н \"40 Недель\", Тц \"Брайт\", 2 Этаж, Пав. 15"
+        },
+        {
+            "address": "ул. Б. Семеновская, 16",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.782006,
+            "coord_last_latitude": 37.704322,
+            "phone": "(901) 545-98-87",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Серебряный Дом\", 3 Этаж"
+        },
+        {
+            "address": "ул. Митинская, 25",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.844314,
+            "coord_last_latitude": 37.362958,
+            "phone": "(901) 532-48-36",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Соби\""
+        },
+        {
+            "address": "ул. Советская, 5А",
+            "city": "г. Одинцово",
+            "coord_first_longitude": 55.734664,
+            "coord_last_latitude": 37.33717,
+            "phone": "(901) 537-39-48",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Парнас\""
+        },
+        {
+            "address": "Алтуфьевсое шоссе, 80",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.894389,
+            "coord_last_latitude": 37.588207,
+            "phone": "(901) 504-02-08",
+            "trade_point": "М-Н \"Мама Маркет\", Тд \"Арфа\""
+        },
+        {
+            "address": "Рязанский пр-кт, 32-3",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.717859,
+            "coord_last_latitude": 37.785146,
+            "phone": "(901) 518-58-63",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Наска-Плаза\", 1 Этаж, Пав. В Центре Зала"
+        },
+        {
+            "address": "ул. Тушинская, 17",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.826718,
+            "coord_last_latitude": 37.444787,
+            "phone": "(495) 968-36-98",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Празник\", 3 Этаж"
+        },
+        {
+            "address": "ул. профсоюзная, 12",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.669613,
+            "coord_last_latitude": 37.553865,
+            "phone": "(499) 125-64-34",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Олиан\", 2 Этаж"
+        },
+        {
+            "address": "1-й Покровский проезд, 5",
+            "city": "г. Котельники",
+            "coord_first_longitude": 55.654285,
+            "coord_last_latitude": 37.844245,
+            "phone": "(495) 544-27-16",
+            "trade_point": "М-Н \"New Form\", Тц \"Мега\""
+        },
+        {
+            "address": "ул. Адмирала Лазарева, 24",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.546905,
+            "coord_last_latitude": 37.532469,
+            "phone": "(495) 544-27-15",
+            "trade_point": "М-Н \"New Form\", Тц \"Успех\", Пав. 14"
+        },
+        {
+            "address": "Дмитровское шоссе, 163",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.910555,
+            "coord_last_latitude": 37.543585,
+            "phone": "(495) 544-27-14",
+            "trade_point": "М-Н \"New Form\", Тц \"Рио\", 2 Этаж"
+        },
+        {
+            "address": "ул. Менжинского, 38, копр. 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.870962,
+            "coord_last_latitude": 37.660832,
+            "phone": "(499) 643-22-52",
+            "trade_point": "М-Н \"Детский Мир\""
+        },
+        {
+            "address": "пр-т Вернадского, 37",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.678081,
+            "coord_last_latitude": 37.512689,
+            "phone": "(495) 225-00-86",
+            "trade_point": "М-Н \"Детский Мир\""
+        },
+        {
+            "address": "Олимпийский пр-т, 21",
+            "city": "г. Мытищи",
+            "coord_first_longitude": 55.925187,
+            "coord_last_latitude": 37.754144,
+            "phone": "(495) 849-27-23/24/25/26",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Олимп\""
+        },
+        {
+            "address": "24-ый км МКАД",
+            "city": "пос. с-за им. Ленина",
+            "coord_first_longitude": 55.586152,
+            "coord_last_latitude": 37.718708,
+            "phone": "(915) 062-28-53",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Вегас\""
+        },
+        {
+            "address": "Калужское шоссе, 41-ый км МКАД",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.604385,
+            "coord_last_latitude": 37.492183,
+            "phone": "(495) 730-00-31/32/64/65/67",
+            "trade_point": "М-Н \"Детский Мир\", Тк \"Мега\""
+        },
+        {
+            "address": "ул. Дубнинская, 30/1",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.877344,
+            "coord_last_latitude": 37.559021,
+            "phone": "(495) 730-59-58",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Петровский\""
+        },
+        {
+            "address": "ул. Днепропетровская, 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.623174,
+            "coord_last_latitude": 37.603874,
+            "phone": "(495) 987-32-39/40",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Глобал-Сити\""
+        },
+        {
+            "address": "ул. Щукинская, 42",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.809627,
+            "coord_last_latitude": 37.465827,
+            "phone": "(495) 662-82-98/99",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Щука\""
+        },
+        {
+            "address": "пр. Андропова, 8",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.695906,
+            "coord_last_latitude": 37.665688,
+            "phone": "(495) 663-37-72",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Мегаполис\""
+        },
+        {
+            "address": "66 км МКАД",
+            "city": "г. Красногорск",
+            "coord_first_longitude": 55.819617,
+            "coord_last_latitude": 37.387414,
+            "phone": "",
+            "trade_point": "М-Н \"Детский Мир\", Трк \"Vegas Crocus City\", 4 Этаж"
+        },
+        {
+            "address": "ул. Адмирала Лазарева, 2",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.547068,
+            "coord_last_latitude": 37.543381,
+            "phone": "(495) 657-95-47",
+            "trade_point": "М-Н \"Детский Мир\", Трк \"Виктория\""
+        },
+        {
+            "address": "ул. Воздвиженка, 10",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.753232,
+            "coord_last_latitude": 37.606419,
+            "phone": "(495) 221-50-85",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Военторг\""
+        },
+        {
+            "address": "Ходынский бульвар, 4",
+            "city": "г. Москва",
+            "coord_first_longitude": 55.790326,
+            "coord_last_latitude": 37.531161,
+            "phone": "(495) 730-50-87-89",
+            "trade_point": "М-Н \"Детский Мир\", Трк \"Авиапарк\""
+        },
+        {
+            "address": "пр. Сююмбике, 2/19",
+            "city": "г. Набережные челны",
+            "coord_first_longitude": 55.730644,
+            "coord_last_latitude": 52.391467,
+            "phone": "(8552) 78-09-35",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\", Тц \"Омега\", 1 Этаж"
+        },
+        {
+            "address": "ул. Низаметдинова, 25",
+            "city": "пос. ЗЯБ",
+            "coord_first_longitude": 55.702523,
+            "coord_last_latitude": 52.347929,
+            "phone": "(8552) 32-06-89",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\", Тц \"Восток\""
+        },
+        {
+            "address": "пр. Московский, 1/03",
+            "city": "г. Набережные челны",
+            "coord_first_longitude": 55.721122,
+            "coord_last_latitude": 52.392626,
+            "phone": "(8552) 38-72-83",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\""
+        },
+        {
+            "address": "пр-т Кулиева, 16",
+            "city": "г. Нальчик",
+            "coord_first_longitude": 43.476227,
+            "coord_last_latitude": 43.580303,
+            "phone": "",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\", Тц \"Лазурный\""
+        },
+        {
+            "address": "ул. Маршала Жукова, 13б",
+            "city": "г. Наро-Фоминск",
+            "coord_first_longitude": 55.38251,
+            "coord_last_latitude": 36.722044,
+            "phone": "",
+            "trade_point": "М-Н \"Я Мама\", У-М \"Оранжевое Небо\", 2 Эт"
+        },
+        {
+            "address": "ул. Гагарина, 51",
+            "city": "г. Невинномысск",
+            "coord_first_longitude": 44.628437,
+            "coord_last_latitude": 41.946567,
+            "phone": "",
+            "trade_point": "Тк \"Престиж-Центр\", 2 Эт."
+        },
+        {
+            "address": "пр. Строителей, 18а",
+            "city": "г. Нижнекамск",
+            "coord_first_longitude": 55.631618,
+            "coord_last_latitude": 51.816396,
+            "phone": "(8555) 38-24-23",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\""
+        },
+        {
+            "address": "ул. Менделеева, 31а",
+            "city": "г. Нижнекамск",
+            "coord_first_longitude": 55.655317,
+            "coord_last_latitude": 51.82554,
+            "phone": "(8555) 47-54-50, 8-800-5555-091",
+            "trade_point": "Ортопедическая Аптека \"Бальзам\", Тц \"Барс\", 1 Этаж"
+        },
+        {
+            "address": "ул. Белинского, 104/5",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.316211,
+            "coord_last_latitude": 44.015204,
+            "phone": "",
+            "trade_point": "М-Н \"Sweet Mama\""
+        },
+        {
+            "address": "ул. Памирская, 11",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.272111,
+            "coord_last_latitude": 43.941364,
+            "phone": "",
+            "trade_point": "Склад Детских Товаров \"Апельсин\""
+        },
+        {
+            "address": "пр-т Октября, 17",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.251576,
+            "coord_last_latitude": 43.865559,
+            "phone": "8-987-743-41-50, 8 (831) 295-00-49",
+            "trade_point": "М-Н \"Mamabell\""
+        },
+        {
+            "address": "ул. Коминтерна, 47",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.341669,
+            "coord_last_latitude": 43.878705,
+            "phone": "(831)  270-00-14",
+            "trade_point": "М-Н \"Mamabell\""
+        },
+        {
+            "address": "ул. Бекетова, 51",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.293661,
+            "coord_last_latitude": 44.019204,
+            "phone": "(831) 417-07-44, 8-987-539-33-30",
+            "trade_point": "М-Н \"Mamabell\""
+        },
+        {
+            "address": "ул. Белинского, 63",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.316949,
+            "coord_last_latitude": 44.020409,
+            "phone": "(831) 438-69-55",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Этажи\""
+        },
+        {
+            "address": "Площадь Революции, 9",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.320224,
+            "coord_last_latitude": 43.947383,
+            "phone": "(831) 296-38-02",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Республика\""
+        },
+        {
+            "address": "ул. Веденяпина, 2Б",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.239594,
+            "coord_last_latitude": 43.864345,
+            "phone": "(831) 257-75-57",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Парк Авеню\", 2-Й Этаж, Пав. 21"
+        },
+        {
+            "address": "ул. Бетанкура, 1",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.339282,
+            "coord_last_latitude": 43.956186,
+            "phone": "(831) 202-91-27",
+            "trade_point": "М-Н \"Скоро Мама\", Трц \"Седьмое Небо\""
+        },
+        {
+            "address": "ул. Коминтерна, 105",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.347562,
+            "coord_last_latitude": 43.870636,
+            "phone": "(831) 257-84-94",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Золотая Миля\", 4 Этаж"
+        },
+        {
+            "address": "ул. Чкалова, 1в",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.319538,
+            "coord_last_latitude": 43.944803,
+            "phone": "(831) 215-11-22",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Чкалов\""
+        },
+        {
+            "address": "пл. Революции, 9",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.320223,
+            "coord_last_latitude": 43.947366,
+            "phone": "(831) 277-92-02",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Республика\""
+        },
+        {
+            "address": "ул. Белинского, 61",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.316844,
+            "coord_last_latitude": 44.019314,
+            "phone": "(831) 220-79-84",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Коминтерна, 105",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.347753,
+            "coord_last_latitude": 43.871105,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "пл. Советская, 5",
+            "city": "г. Нижний Новгород",
+            "coord_first_longitude": 56.323759,
+            "coord_last_latitude": 43.956789,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Пирогова, 6",
+            "city": "г. Новокуйбышевск",
+            "coord_first_longitude": 53.096672,
+            "coord_last_latitude": 49.954166,
+            "phone": "(84635) 6-90-96",
+            "trade_point": "Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Гоголя, 15",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 55.043312,
+            "coord_last_latitude": 82.92386,
+            "phone": "",
+            "trade_point": "Тц \"Юпитер\", 2 Эт., Пав. 52"
+        },
+        {
+            "address": "ул. Троллейная, 130а",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 54.966438,
+            "coord_last_latitude": 82.852948,
+            "phone": "",
+            "trade_point": "Трц \"Континент\", 2 Эт."
+        },
+        {
+            "address": "пр. Карла Маркса, 2",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 54.98327,
+            "coord_last_latitude": 82.896989,
+            "phone": "8-913-717-70-27",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Галерея Фестиваль\", 3 Этаж"
+        },
+        {
+            "address": "площадь Карла Маркса, стр. 7",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 54.980337,
+            "coord_last_latitude": 82.897895,
+            "phone": "(383) 362-94-21/22/23",
+            "trade_point": "М-Н \"Дочки Сыночки\" , Тц \"Сан Сити\""
+        },
+        {
+            "address": "ул. Гоголя, д. 38, помещение 3",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 55.043535,
+            "coord_last_latitude": 82.935804,
+            "phone": "(383) 209-26-52/54",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Военная, 5",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 55.027772,
+            "coord_last_latitude": 82.942242,
+            "phone": "(383) 230-06-36",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Аура\", 3-Й Этаж, Пав. 16"
+        },
+        {
+            "address": "ул. Ватутина, 107, помещение 3020",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 54.964302,
+            "coord_last_latitude": 82.936591,
+            "phone": "(383) 230-13-39",
+            "trade_point": "М-Н \"Скоро Мама\", Стц \"Мега\""
+        },
+        {
+            "address": "ул. Мичурина, 16",
+            "city": "г. Новосибирск",
+            "coord_first_longitude": 55.043766,
+            "coord_last_latitude": 82.921675,
+            "phone": "(383)347-91-55",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Галерея\", 3-Й Этаж"
+        },
+        {
+            "address": "пр-т Комсомольский, 4",
+            "city": "г. Новотроицк",
+            "coord_first_longitude": 51.190423,
+            "coord_last_latitude": 58.288905,
+            "phone": "8-905-986-25-24",
+            "trade_point": "М-Н \"Аист\""
+        },
+        {
+            "address": "ул. Советская, 5",
+            "city": "г. Новотроицк",
+            "coord_first_longitude": 51.201721,
+            "coord_last_latitude": 58.342599,
+            "phone": "",
+            "trade_point": "М-Н \"Маугли\""
+        },
+        {
+            "address": "ул. Крылова, 13",
+            "city": "г. Новочеркасск",
+            "coord_first_longitude": 47.423369,
+            "coord_last_latitude": 40.08151,
+            "phone": "",
+            "trade_point": "М-Н \"Скоро Мама\", 1 Этаж"
+        },
+        {
+            "address": "пр-т Маркса, 45",
+            "city": "г. Обнинск",
+            "coord_first_longitude": 55.117128,
+            "coord_last_latitude": 36.593524,
+            "phone": "(48439) 258-61",
+            "trade_point": "Трк \"Триумф Плаза\", 3 Этаж"
+        },
+        {
+            "address": "ул. Правобережная, 1Б",
+            "city": "г. Одинцово",
+            "coord_first_longitude": 55.671962,
+            "coord_last_latitude": 37.278164,
+            "phone": "",
+            "trade_point": "Тц \"Капитолий Сити\", 1 Эт."
+        },
+        {
+            "address": "ул. 70 лет Октября, 19",
+            "city": "г. Омск",
+            "coord_first_longitude": 54.981131,
+            "coord_last_latitude": 73.321287,
+            "phone": "(3812) 927-910",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "пр-т Мира, 42, корпус 1, помещение 1П",
+            "city": "г. Омск",
+            "coord_first_longitude": 55.028649,
+            "coord_last_latitude": 73.288485,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. 70 лет Октября, 25, корпус 1",
+            "city": "г. Омск",
+            "coord_first_longitude": 54.976461,
+            "coord_last_latitude": 73.326898,
+            "phone": "(3812) 33-10-96",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Континент-2\", 1 Улица, 1 Этаж, Бутик 111"
+        },
+        {
+            "address": "пр-кт Комарова, 14",
+            "city": "г. Омск",
+            "coord_first_longitude": 54.989148,
+            "coord_last_latitude": 73.297188,
+            "phone": "(3812) 999-700, 8-960-999-33-99",
+            "trade_point": "М-Н Для Настоящих И Будущих Мам \"Supermama\""
+        },
+        {
+            "address": "ул. Заозерная 11/1",
+            "city": "г. Омск",
+            "coord_first_longitude": 55.047306,
+            "coord_last_latitude": 73.316865,
+            "phone": "",
+            "trade_point": "М-Н Для Настоящих И Будущих Мам \"Supermama\", Тк \"Первомайский\", 2 Этаж Бутик 3-252"
+        },
+        {
+            "address": "п-д Коммунаров, 24",
+            "city": "г. Оренбург",
+            "coord_first_longitude": 51.767063,
+            "coord_last_latitude": 55.094319,
+            "phone": "",
+            "trade_point": "Аптека \"Провизор\""
+        },
+        {
+            "address": "пр-кт Дзержинского, 23, 3 эт., пом. 1",
+            "city": "г. Оренбург",
+            "coord_first_longitude": 51.833514,
+            "coord_last_latitude": 55.128945,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Проспект Ленина, 45",
+            "city": "г. Орск",
+            "coord_first_longitude": 51.235605,
+            "coord_last_latitude": 58.471583,
+            "phone": "8-905-896-99-10",
+            "trade_point": "М-Н \"Маугли\""
+        },
+        {
+            "address": "ул. Краснодонская, 1",
+            "city": "г. Орск",
+            "coord_first_longitude": 51.22777,
+            "coord_last_latitude": 58.522885,
+            "phone": "",
+            "trade_point": "М-Н \"Детство\""
+        },
+        {
+            "address": "Проспект Ленина, 36а",
+            "city": "г. Орск",
+            "coord_first_longitude": 51.203865,
+            "coord_last_latitude": 58.566203,
+            "phone": "",
+            "trade_point": "Тц \"Добрыня\""
+        },
+        {
+            "address": "ул. Лермонтова, 82",
+            "city": "г. Павлодар",
+            "coord_first_longitude": 52.291159,
+            "coord_last_latitude": 76.950656,
+            "phone": "(7182) 50-92-14",
+            "trade_point": "Аптека Тоо \"Арт-Плюс\""
+        },
+        {
+            "address": "ул. Московская, 83",
+            "city": "г. Пенза",
+            "coord_first_longitude": 53.197279,
+            "coord_last_latitude": 45.018886,
+            "phone": "(8412) 20-80-22",
+            "trade_point": "Тц «Пассаж», 2 Этаж"
+        },
+        {
+            "address": "ул. Суворова, 43",
+            "city": "г. Пенза",
+            "coord_first_longitude": 53.200177,
+            "coord_last_latitude": 45.020286,
+            "phone": "(8412) 56-42-90",
+            "trade_point": "М-Н \"Три Солнышка\""
+        },
+        {
+            "address": "пр-кт Парковый, 13",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.998416,
+            "coord_last_latitude": 56.149157,
+            "phone": "8-982-458-16-85, 8-902-833-27-64",
+            "trade_point": "М-Н \"Мамочка\""
+        },
+        {
+            "address": "ул. М. Рыбалко, 30",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.004031,
+            "coord_last_latitude": 55.950183,
+            "phone": "8-982-458-16-85, 8-902-833-27-64",
+            "trade_point": "М-Н \"Мамочка\""
+        },
+        {
+            "address": "ул. Леонова, 47",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.965291,
+            "coord_last_latitude": 56.177896,
+            "phone": "",
+            "trade_point": "М-Н \"Смарт Мама\""
+        },
+        {
+            "address": "ул. Борчанинова, 13",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.004883,
+            "coord_last_latitude": 56.220805,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", Ун-Г \"Семья\""
+        },
+        {
+            "address": "ул. Вильямса, 8а",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.105451,
+            "coord_last_latitude": 56.300647,
+            "phone": "(342) 285-09-07",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Дружбы, 30",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.014968,
+            "coord_last_latitude": 56.282277,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Калинина, 68",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.035428,
+            "coord_last_latitude": 56.022125,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", М-Н \"Ляля\""
+        },
+        {
+            "address": "ул. Карпинского, 36",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.985267,
+            "coord_last_latitude": 56.216404,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", Тц \"Старт\""
+        },
+        {
+            "address": "пр-т Комсомольский, 47",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.002206,
+            "coord_last_latitude": 56.246869,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Куйбышева, 16",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.008727,
+            "coord_last_latitude": 56.235421,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", Тц \"Колизей\""
+        },
+        {
+            "address": "ул. Мира, 68",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.979644,
+            "coord_last_latitude": 56.189755,
+            "phone": "(342) 221-64-14",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Муромской, 16а",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.971328,
+            "coord_last_latitude": 56.225898,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Попова, 16",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.008352,
+            "coord_last_latitude": 56.22794,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", Тц \"Айсберг\""
+        },
+        {
+            "address": "ул. П. Осипенко, 53",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.997491,
+            "coord_last_latitude": 56.253508,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", М-Н \"Малыш И Мама\""
+        },
+        {
+            "address": "ул. Тургенева, 16",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.016434,
+            "coord_last_latitude": 56.292626,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\", М-Н \"Я Мама\""
+        },
+        {
+            "address": "ул. Революции, 5",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.006373,
+            "coord_last_latitude": 56.272496,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. М. Рыбалко, 45",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.007302,
+            "coord_last_latitude": 55.952419,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Чкалова, 18",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.986279,
+            "coord_last_latitude": 56.261588,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Шоссе Космонавтов, 115б",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.990385,
+            "coord_last_latitude": 56.195389,
+            "phone": "",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "пр. Комсомольский, 47",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.002351,
+            "coord_last_latitude": 56.246845,
+            "phone": "(342) 240-17-61",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "пр. Комсомольский, 1",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.016093,
+            "coord_last_latitude": 56.233522,
+            "phone": "(342) 215-44-88",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Дружбы, 30",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.015098,
+            "coord_last_latitude": 56.282318,
+            "phone": "(342) 281-94-76",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Солдатова, 34",
+            "city": "г. Пермь",
+            "coord_first_longitude": 57.973649,
+            "coord_last_latitude": 56.235969,
+            "phone": "(342) 207-88-21 34",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Веденеева, 84",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.104285,
+            "coord_last_latitude": 56.384909,
+            "phone": "(342) 284-41-49",
+            "trade_point": "Аптека \"Сандра\""
+        },
+        {
+            "address": "ул. Куйбышева, 37",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.00749,
+            "coord_last_latitude": 56.235651,
+            "phone": "(342) 220-94-36",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Юрша, 84",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.006243,
+            "coord_last_latitude": 56.305028,
+            "phone": "(342) 200-99-54",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Светлогорская, 20а",
+            "city": "г. Пермь",
+            "coord_first_longitude": 58.039397,
+            "coord_last_latitude": 56.026958,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Пятилетки, 40",
+            "city": "г. Березники",
+            "coord_first_longitude": 59.406135,
+            "coord_last_latitude": 56.801411,
+            "phone": "(8-34-242) 3-36-11",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Ленина, 35",
+            "city": "г. Губаха",
+            "coord_first_longitude": 58.837327,
+            "coord_last_latitude": 57.553583,
+            "phone": "",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Ленина, 43",
+            "city": "г. Губаха",
+            "coord_first_longitude": 58.834251,
+            "coord_last_latitude": 57.555505,
+            "phone": "",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Герцена, 43",
+            "city": "г. Добрянка",
+            "coord_first_longitude": 58.468696,
+            "coord_last_latitude": 56.401099,
+            "phone": "(8-34-265) 2-58-88",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "Комсомольский пр-кт, 13",
+            "city": "г. Краснокамск",
+            "coord_first_longitude": 58.081404,
+            "coord_last_latitude": 55.753882,
+            "phone": "(8-34-273) 4-78-70",
+            "trade_point": "Аптека \"Планета Здоровья\""
+        },
+        {
+            "address": "ул. 50 лет Октября, 32",
+            "city": "г. Кудымкар",
+            "coord_first_longitude": 59.010806,
+            "coord_last_latitude": 54.665373,
+            "phone": "(8-34-260) 4-26-57",
+            "trade_point": "Аптека \"Планета Здоровья\""
+        },
+        {
+            "address": "ул. Горького, 18а",
+            "city": "г. Кудымкар",
+            "coord_first_longitude": 59.01074,
+            "coord_last_latitude": 54.665341,
+            "phone": "(8-34-260) 4-79-06",
+            "trade_point": "Аптека \"Планета Здоровья\""
+        },
+        {
+            "address": "ул. Ленина, 52б",
+            "city": "г. Кунгур",
+            "coord_first_longitude": 57.43537,
+            "coord_last_latitude": 56.935705,
+            "phone": "(8-34-271) 3-11-23",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Свободы, 49",
+            "city": "г. Кунгур",
+            "coord_first_longitude": 57.427801,
+            "coord_last_latitude": 56.963972,
+            "phone": "(8-34-271) 2-13-22",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "К. Маркса, 60",
+            "city": "г. Нытва",
+            "coord_first_longitude": 57.939205,
+            "coord_last_latitude": 55.329134,
+            "phone": "(8-34-272) 3-06-00",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Горького, 67а",
+            "city": "г. Оса",
+            "coord_first_longitude": 57.289315,
+            "coord_last_latitude": 55.473823,
+            "phone": "(8-34-291) 4-58-57",
+            "trade_point": "Аптека \"Ортимед\""
+        },
+        {
+            "address": "ул. Горького, 79",
+            "city": "г. Оса",
+            "coord_first_longitude": 57.288858,
+            "coord_last_latitude": 55.474832,
+            "phone": "(8-34-291) 4-38-55",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Ленина, 50",
+            "city": "г. Очер",
+            "coord_first_longitude": 57.883366,
+            "coord_last_latitude": 54.716674,
+            "phone": "(8-34-278) 3-05-43",
+            "trade_point": "Аптека \"1-Я Семейная\""
+        },
+        {
+            "address": "ул. К. Маркса, 50",
+            "city": "г. Чайковский",
+            "coord_first_longitude": 56.77422,
+            "coord_last_latitude": 54.140854,
+            "phone": "(8-34-241) 3-44-11",
+            "trade_point": "Аптека"
+        },
+        {
+            "address": "ул. Ленина, 50",
+            "city": "г. Черкесск",
+            "coord_first_longitude": 44.225086,
+            "coord_last_latitude": 42.046443,
+            "phone": "",
+            "trade_point": "М-Н \"Кенгуру\""
+        },
+        {
+            "address": "ул. Грибоедова, 120",
+            "city": "г. Черкесск",
+            "coord_first_longitude": 44.214325,
+            "coord_last_latitude": 42.060763,
+            "phone": "",
+            "trade_point": "М-Н \"Кенгуру\""
+        },
+        {
+            "address": "ул. Коммунистическая, 29",
+            "city": "г. Чернушка",
+            "coord_first_longitude": 56.521309,
+            "coord_last_latitude": 56.074835,
+            "phone": "(8-34-261) 4-64-74",
+            "trade_point": "Аптека \"Планета Здоровья\""
+        },
+        {
+            "address": "ул. Ж.Жабаева, 190а",
+            "city": "г. Петропавловск",
+            "coord_first_longitude": 54.870232,
+            "coord_last_latitude": 69.144112,
+            "phone": "(7152) 50-20-03",
+            "trade_point": "Тд \"Айсберг\", Бутик №13"
+        },
+        {
+            "address": "ул. Абая, 96",
+            "city": "г. Петропавловск",
+            "coord_first_longitude": 54.867066,
+            "coord_last_latitude": 69.152551,
+            "phone": "(7152) 33-82-96",
+            "trade_point": "Фарммаркет \"Биосфера\""
+        },
+        {
+            "address": "ул. К. Казахстана, 16",
+            "city": "г. Петропавловск",
+            "coord_first_longitude": 54.870237,
+            "coord_last_latitude": 69.128557,
+            "phone": "(7152) 46-92-58",
+            "trade_point": "Аптека \"Ника\""
+        },
+        {
+            "address": "ул. Ленинградская, 7",
+            "city": "г. Подольск",
+            "coord_first_longitude": 55.426684,
+            "coord_last_latitude": 37.501521,
+            "phone": "",
+            "trade_point": "Тк \"Остров Сокровищ\", Бутик 135"
+        },
+        {
+            "address": "пр-кт 40 лет октября, 30",
+            "city": "г. Пятигорск",
+            "coord_first_longitude": 44.048224,
+            "coord_last_latitude": 43.063102,
+            "phone": "",
+            "trade_point": "М-Н \"Мамочки Мои\""
+        },
+        {
+            "address": "2-ой км Георгиевского шоссе",
+            "city": "г. Пятигорск",
+            "coord_first_longitude": 44.032376,
+            "coord_last_latitude": 43.143081,
+            "phone": "",
+            "trade_point": "Тц \"Привокзальный\""
+        },
+        {
+            "address": "ул. Октября, владение 10",
+            "city": "г. Реутов",
+            "coord_first_longitude": 55.751834,
+            "coord_last_latitude": 37.859309,
+            "phone": "",
+            "trade_point": "Тц \"Экватор\", М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Большая Садовая, 46",
+            "city": "г. Ростов-на-Дону",
+            "coord_first_longitude": 47.219432,
+            "coord_last_latitude": 39.708306,
+            "phone": "",
+            "trade_point": "Цум, 4Эт., М-Н \"Super Mama\""
+        },
+        {
+            "address": "пр. Космонавтов, 6/13",
+            "city": "г. Ростов-на-Дону",
+            "coord_first_longitude": 47.284168,
+            "coord_last_latitude": 39.717155,
+            "phone": "",
+            "trade_point": "Тц \"Форум\", 1Эт."
+        },
+        {
+            "address": "ул. Пойменная 1",
+            "city": "г. Ростов-на-Дону",
+            "coord_first_longitude": 47.205435,
+            "coord_last_latitude": 39.728734,
+            "phone": "",
+            "trade_point": "М-Н \"Happy Moms\", Трк Мегамаг"
+        },
+        {
+            "address": "ул. Малиновского, 25",
+            "city": "г. Ростов-на-Дону",
+            "coord_first_longitude": 47.230622,
+            "coord_last_latitude": 39.610512,
+            "phone": "(863) 204-01-39",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "проспект Михаила Нагибина, 34",
+            "city": "г. Ростов-на-Дону",
+            "coord_first_longitude": 47.261979,
+            "coord_last_latitude": 39.719492,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Комсомольская, 49а",
+            "city": "г. Рудный",
+            "coord_first_longitude": 52.969751,
+            "coord_last_latitude": 63.102446,
+            "phone": "(71431) 5-08-07",
+            "trade_point": "Аптека \"Цветная\" №17"
+        },
+        {
+            "address": "ул. Горняков, 66",
+            "city": "г. Рудный",
+            "coord_first_longitude": 52.962617,
+            "coord_last_latitude": 63.128208,
+            "phone": "(71431) 4-47-94",
+            "trade_point": "Аптека \"Цветная\""
+        },
+        {
+            "address": "ул. Крестовая, 81",
+            "city": "г. Рыбинск",
+            "coord_first_longitude": 58.050723,
+            "coord_last_latitude": 38.842418,
+            "phone": "(4855) 25-08-06",
+            "trade_point": "М-Н \"Мама И Малыш\""
+        },
+        {
+            "address": "ул. Гагарина, 42",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.616728,
+            "coord_last_latitude": 39.727847,
+            "phone": "8-906-648-59-89",
+            "trade_point": "М-Н \"Малышок\""
+        },
+        {
+            "address": "ул. Костычева, 14",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.631617,
+            "coord_last_latitude": 39.65358,
+            "phone": "(4912) 37-74-72",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Новоселов, 17",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.611702,
+            "coord_last_latitude": 39.79646,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\" , Тц \"21 Век\""
+        },
+        {
+            "address": "ул. Есенина, 53/13",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.619504,
+            "coord_last_latitude": 39.752512,
+            "phone": "(900) 607-01-08",
+            "trade_point": "М-Н \"Мамабэль\""
+        },
+        {
+            "address": "ул. Советской Армии, 5",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.61399,
+            "coord_last_latitude": 39.795146,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Московское шоссе, 5а",
+            "city": "г. Рязань",
+            "coord_first_longitude": 54.631794,
+            "coord_last_latitude": 39.698125,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\" , Тц \"Барс\""
+        },
+        {
+            "address": "ул. Мяги, 22",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.197699,
+            "coord_last_latitude": 50.170678,
+            "phone": "(846) 266-38-82, 266-38-88",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Полевая, 86",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.201396,
+            "coord_last_latitude": 50.129007,
+            "phone": "(846) 263-76-72",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Стара-Загоры, 161а",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.239021,
+            "coord_last_latitude": 50.22864,
+            "phone": "(846) 953-60-77",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Физкультурная, 117",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.218156,
+            "coord_last_latitude": 50.266076,
+            "phone": "(846) 995-20-90",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Ново-Садовая, 381 к. 1, сек. 113",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.197672,
+            "coord_last_latitude": 50.170665,
+            "phone": "(846) 201-33-15",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Ленинградская, 73",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.185301,
+            "coord_last_latitude": 50.099771,
+            "phone": "(846) 340-12-21",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Ташкенская, 196а",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.259745,
+            "coord_last_latitude": 50.240013,
+            "phone": "(846) 925-05-03",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Бакинская, 38",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.119172,
+            "coord_last_latitude": 50.083984,
+            "phone": "(846) 330-10-03",
+            "trade_point": "М-Н-Салон \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Елизарова, 58",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.232065,
+            "coord_last_latitude": 50.27624,
+            "phone": "",
+            "trade_point": "Аптека \"Вита\""
+        },
+        {
+            "address": "пр. Ленина,12а",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.208828,
+            "coord_last_latitude": 50.137201,
+            "phone": "",
+            "trade_point": "Аптека \"Вита\", Тц \"Мелодия\", 3 Этаж"
+        },
+        {
+            "address": "ул. Молодогвардейская, 86",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.187427,
+            "coord_last_latitude": 50.096569,
+            "phone": "",
+            "trade_point": "Аптека \"Вита\""
+        },
+        {
+            "address": "ул. Стара-Загора, 167г",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.243344,
+            "coord_last_latitude": 50.230277,
+            "phone": "",
+            "trade_point": "Тц \"Старо-Загорский На Кольцевой\", 2 Этаж"
+        },
+        {
+            "address": "ул. Дыбенко, 30",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.207653,
+            "coord_last_latitude": 50.198325,
+            "phone": "(846) 373-89-50",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Космопорт\""
+        },
+        {
+            "address": "ул. Аэродромная, 47а",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.191213,
+            "coord_last_latitude": 50.188831,
+            "phone": "(846) 201-00-91",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Аврора\""
+        },
+        {
+            "address": "Московское шоссе, 163б",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.246927,
+            "coord_last_latitude": 50.217752,
+            "phone": "8-846-2406-205",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Аэродромная, 47а",
+            "city": "г. Самара",
+            "coord_first_longitude": 53.191211,
+            "coord_last_latitude": 50.188824,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Полежаева, 99",
+            "city": "г. Саранск",
+            "coord_first_longitude": 54.18967,
+            "coord_last_latitude": 45.181102,
+            "phone": "",
+            "trade_point": "М-Н \"Newform\""
+        },
+        {
+            "address": "ул. Чехова, 10",
+            "city": "г. Саратов",
+            "coord_first_longitude": 51.607876,
+            "coord_last_latitude": 46.002798,
+            "phone": "",
+            "trade_point": "М-Н \"Мама & Plus\""
+        },
+        {
+            "address": "ул. Верхняя, 17",
+            "city": "г. Саратов",
+            "coord_first_longitude": 51.510669,
+            "coord_last_latitude": 45.981087,
+            "phone": "(8452 )650-153, (8452) 744-035/36",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Астраханская, 103а",
+            "city": "г. Саратов",
+            "coord_first_longitude": 51.543231,
+            "coord_last_latitude": 46.012256,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "пр. Энгельса, 120а",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.037536,
+            "coord_last_latitude": 30.322824,
+            "phone": "(981) 875-27-32",
+            "trade_point": "М-Н \"Мама И Мода\", Тц \"Озерки\", 2 Этаж, Секция 234"
+        },
+        {
+            "address": "ул. Одоевского, 27",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.948109,
+            "coord_last_latitude": 30.236723,
+            "phone": "(962) 699-12-18",
+            "trade_point": "Тц \"Платформа\", 4-Й Этаж, Секция 408"
+        },
+        {
+            "address": "Николаевский проезд, 35",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.932417,
+            "coord_last_latitude": 30.29282,
+            "phone": "",
+            "trade_point": "М-Н \"Антошка Спб\""
+        },
+        {
+            "address": "пр. Обуховской обороны, 120б",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.866653,
+            "coord_last_latitude": 30.472001,
+            "phone": "",
+            "trade_point": "М-Н \"Антошка Спб\", Тц \"On\""
+        },
+        {
+            "address": "ул. Маршала Казакова, 15а",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.859547,
+            "coord_last_latitude": 30.235608,
+            "phone": "",
+            "trade_point": "М-Н \"Антошка Спб\""
+        },
+        {
+            "address": "пр. Богатырский, 42а",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.002699,
+            "coord_last_latitude": 30.228587,
+            "phone": "",
+            "trade_point": "М-Н \"Антошка Спб\", Тц \"Окей\""
+        },
+        {
+            "address": "ул. Аккуратова, 13",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.016148,
+            "coord_last_latitude": 30.310826,
+            "phone": "",
+            "trade_point": "М-Н \"Антошка Спб\", Тц \"Долина Роз\""
+        },
+        {
+            "address": "пр. Солидарности, 6",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.925347,
+            "coord_last_latitude": 30.490909,
+            "phone": "8-921-887-50-86",
+            "trade_point": "М-Н При Роддоме №18"
+        },
+        {
+            "address": "ул. Вавиловых,12",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.022828,
+            "coord_last_latitude": 30.389499,
+            "phone": "8-921-887-50-85",
+            "trade_point": "М-Н При Роддоме №17"
+        },
+        {
+            "address": "ул. Орджоникидзе, 47",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.841562,
+            "coord_last_latitude": 30.352691,
+            "phone": "8-921-887-50-83",
+            "trade_point": "М-Н При Роддоме №9"
+        },
+        {
+            "address": "ул. Тамбасова, 21",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.831156,
+            "coord_last_latitude": 30.154729,
+            "phone": "8-921-887-50-80",
+            "trade_point": "М-Н При Роддоме №10"
+        },
+        {
+            "address": "ул. Костромская, 4",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.942295,
+            "coord_last_latitude": 30.389623,
+            "phone": "8-921-887-50-84",
+            "trade_point": "М-Н При Роддоме №13"
+        },
+        {
+            "address": "ул. М.Балканская, 54",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.828835,
+            "coord_last_latitude": 30.419368,
+            "phone": "",
+            "trade_point": "М-Н При Роддоме №16"
+        },
+        {
+            "address": "ул.Вавилова, 3",
+            "city": "г.Колпино",
+            "coord_first_longitude": 59.746476,
+            "coord_last_latitude": 30.588513,
+            "phone": "",
+            "trade_point": "Роддом Г.Колпино При Гб№33"
+        },
+        {
+            "address": "наб. Обводного канала, 199",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.910138,
+            "coord_last_latitude": 30.285484,
+            "phone": "8 (812) 972-1063, 8 (812) 448-4984",
+            "trade_point": "М-Н \"Бэбилон\""
+        },
+        {
+            "address": "Лиговский проспект, 30а",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.927773,
+            "coord_last_latitude": 30.359427,
+            "phone": "(812) 449-22-05/06",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Галерея\", 4 Этаж"
+        },
+        {
+            "address": "Петергофское шоссе, 51",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.84927,
+            "coord_last_latitude": 30.143954,
+            "phone": "(812) 449-17-69/70",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Жемчужная Плаза\""
+        },
+        {
+            "address": "пр. Полюстровский, 84 А",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.987633,
+            "coord_last_latitude": 30.353895,
+            "phone": "(812) 677-51-45/49",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Европолис\", 3 Этаж"
+        },
+        {
+            "address": "Коломяжский пр., 17, корп. 2А",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.005247,
+            "coord_last_latitude": 30.297292,
+            "phone": "(812) 677-24-95/96",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Сити Молл\""
+        },
+        {
+            "address": "Стачек пр-т., 99, лит. А",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.858705,
+            "coord_last_latitude": 30.248706,
+            "phone": "(812) 677-55-64/65",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Континент\""
+        },
+        {
+            "address": "Индустриальный пр-т, 24",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.946218,
+            "coord_last_latitude": 30.474256,
+            "phone": "(812) 677-66-18/19",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Июнь\""
+        },
+        {
+            "address": "Комендантский пр-т, 9, к. 2",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 60.005265,
+            "coord_last_latitude": 30.263428,
+            "phone": "(812) 677-32-98/99",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Променад\""
+        },
+        {
+            "address": "Новаторов б-р, 11, к. 2",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.850052,
+            "coord_last_latitude": 30.268299,
+            "phone": "(812) 677-24-40/41",
+            "trade_point": "М-Н \"Детский Мир\", Кк \"Французский Бульвар\""
+        },
+        {
+            "address": "Ефимова ул., 2",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.925625,
+            "coord_last_latitude": 30.320117,
+            "phone": "(812) 449-24-28/36",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Пик\""
+        },
+        {
+            "address": "Мурманское шоссе, 12 км",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.893888,
+            "coord_last_latitude": 30.515301,
+            "phone": "(812) 448-72-78",
+            "trade_point": "М-Н \"\"Скоро Мама\"\", Трц \"Мега Дыбенко\""
+        },
+        {
+            "address": "Мурманское шоссе, 12 км",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.893888,
+            "coord_last_latitude": 30.515301,
+            "phone": "",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Мега Дыбенко\""
+        },
+        {
+            "address": "Большевиков пр-т, 18, к. 2, лит. А",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.908421,
+            "coord_last_latitude": 30.482481,
+            "phone": "(812) 677-55-86/87",
+            "trade_point": "М-Н \"Детский Мир\", Трц \"Невский-2\""
+        },
+        {
+            "address": "ул. Гатчинская, 19-21",
+            "city": "г. Санкт-Петербург",
+            "coord_first_longitude": 59.962565,
+            "coord_last_latitude": 30.298778,
+            "phone": "8-800-775-34-32",
+            "trade_point": "М-Н \"Мама-Джейн\""
+        },
+        {
+            "address": "ул. Пушкина, 25",
+            "city": "г. Симферополь",
+            "coord_first_longitude": 44.947081,
+            "coord_last_latitude": 34.093758,
+            "phone": "8-978-742-90-62,  8-978-886-01-25",
+            "trade_point": "М-Н \"Mammi\""
+        },
+        {
+            "address": "ул. Б. Хмельницкого, 18/5",
+            "city": "г. Симферополь",
+            "coord_first_longitude": 44.957932,
+            "coord_last_latitude": 34.106194,
+            "phone": "8 (978) 706-10-08",
+            "trade_point": "М-Н \"For Mamas\""
+        },
+        {
+            "address": "Евпаторийское ш., 8",
+            "city": "г. Симферополь",
+            "coord_first_longitude": 44.969295,
+            "coord_last_latitude": 34.078953,
+            "phone": "8 (978) 706-10-07",
+            "trade_point": "М-Н \"For Mamas\", Трк \"Меганом\", 2 Этаж, Лот. 425"
+        },
+        {
+            "address": "пр-кт Кирова, 25",
+            "city": "г. Симферополь",
+            "coord_first_longitude": 44.951001,
+            "coord_last_latitude": 34.102052,
+            "phone": "8 (978) 706-10-07",
+            "trade_point": "М-Н \"Мамуля\", Тц \"Виалаки\", 2 Этаж"
+        },
+        {
+            "address": "ул. Ген. Попова, 5/18",
+            "city": "г. Симферополь",
+            "coord_first_longitude": 44.957933,
+            "coord_last_latitude": 34.104506,
+            "phone": "8 (978) 733-62-72",
+            "trade_point": "М-Н \"For Mamas – Baby\""
+        },
+        {
+            "address": "ул. Ново-Московская, д.2/8",
+            "city": "г. Смоленск",
+            "coord_first_longitude": 54.793285,
+            "coord_last_latitude": 32.053298,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки-Сыночки\""
+        },
+        {
+            "address": "ул. Тухачевского, 14/2",
+            "city": "г. Смоленск",
+            "coord_first_longitude": 54.780665,
+            "coord_last_latitude": 32.058341,
+            "phone": "",
+            "trade_point": "М-Н \"\"Supermama\"\", Трц \"Москва\""
+        },
+        {
+            "address": "Нефтеюганское шоссе 22/1",
+            "city": "г. Сургут",
+            "coord_first_longitude": 61.26853,
+            "coord_last_latitude": 73.410175,
+            "phone": "",
+            "trade_point": "М-Н \"Карапуз\""
+        },
+        {
+            "address": "ул. Аэрофлотская, 8/2-1",
+            "city": "г. Сургут",
+            "coord_first_longitude": 61.279651,
+            "coord_last_latitude": 73.377449,
+            "phone": "(3462) 52-36-36, 52-35-35",
+            "trade_point": "М-Н \"\"Маугли\"\", Тц \"Пятый Квадрат\""
+        },
+        {
+            "address": "ул. Базовая, 15",
+            "city": "г. Сургут",
+            "coord_first_longitude": 61.248555,
+            "coord_last_latitude": 73.489492,
+            "phone": "(3462) 23-65-29, 22-88-00",
+            "trade_point": "М-Н \"\"Маугли\"\", База \"Братья\""
+        },
+        {
+            "address": "ул. Профсоюзов, 11",
+            "city": "г. Сургут",
+            "coord_first_longitude": 61.269347,
+            "coord_last_latitude": 73.382168,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Нефтеюганское шоссе, 1",
+            "city": "г. Сургут",
+            "coord_first_longitude": 61.277552,
+            "coord_last_latitude": 73.364992,
+            "phone": "(3462) 31-04-06",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Аура\", 2 Этаж"
+        },
+        {
+            "address": "пер. Гоголевский, 10",
+            "city": "г. Таганрог",
+            "coord_first_longitude": 47.216084,
+            "coord_last_latitude": 38.917763,
+            "phone": "",
+            "trade_point": "Тд \"Мультицентр\""
+        },
+        {
+            "address": "ул. Петровская, 94",
+            "city": "г. Таганрог",
+            "coord_first_longitude": 47.216489,
+            "coord_last_latitude": 38.927807,
+            "phone": "",
+            "trade_point": "М-Н \"Буду Мамой\""
+        },
+        {
+            "address": "пл. Мира 7",
+            "city": "г. Таганрог",
+            "coord_first_longitude": 47.217511,
+            "coord_last_latitude": 38.898596,
+            "phone": "",
+            "trade_point": "М-Н \"Happy Moms\", Трк \"Мармелад\""
+        },
+        {
+            "address": "ул. Карла Маркса, 165б",
+            "city": "г. Тамбов",
+            "coord_first_longitude": 52.727523,
+            "coord_last_latitude": 41.451929,
+            "phone": "(4752) 47-18-08",
+            "trade_point": "Тц \"Детский Мир\""
+        },
+        {
+            "address": "ул. Трехсвятская, 10, офис 408",
+            "city": "г. Тверь",
+            "coord_first_longitude": 56.853647,
+            "coord_last_latitude": 35.908851,
+            "phone": "8-920-150-88-88",
+            "trade_point": "Ооо \"Комир\""
+        },
+        {
+            "address": "ул. Автостроителей, 50А",
+            "city": "г. Тольятти",
+            "coord_first_longitude": 53.537061,
+            "coord_last_latitude": 49.327444,
+            "phone": "(8482) 77-57-77",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\", Тц \"Сириус\""
+        },
+        {
+            "address": "ул. Ленинградская, 55",
+            "city": "г. Тольятти",
+            "coord_first_longitude": 53.50565,
+            "coord_last_latitude": 49.418596,
+            "phone": "(8482) 48-28-26",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Матросова, 8 (павильон)",
+            "city": "г. Тольятти",
+            "coord_first_longitude": 53.477353,
+            "coord_last_latitude": 49.474795,
+            "phone": "(8482) 41-37-17",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Фрунзе, 10Б",
+            "city": "г. Тольятти",
+            "coord_first_longitude": 53.51428,
+            "coord_last_latitude": 49.290363,
+            "phone": "(8482) 31-49-49",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Автозаводское шоссе, 6",
+            "city": "г. Тольятти",
+            "coord_first_longitude": 53.540904,
+            "coord_last_latitude": 49.39178,
+            "phone": "(8482) 42-19-97/98/99",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Красноармейская, 44",
+            "city": "г. Томск",
+            "coord_first_longitude": 56.47559,
+            "coord_last_latitude": 84.966844,
+            "phone": "",
+            "trade_point": "Тц \"Центральный\""
+        },
+        {
+            "address": "ул. Пузакова, 13",
+            "city": "г. Тула",
+            "coord_first_longitude": 54.220935,
+            "coord_last_latitude": 37.618289,
+            "phone": "",
+            "trade_point": "Ооо \"Радуга\""
+        },
+        {
+            "address": "ул. Пролетарская, 26",
+            "city": "г. Тула",
+            "coord_first_longitude": 54.202142,
+            "coord_last_latitude": 37.638944,
+            "phone": "(4872) 40-53-65",
+            "trade_point": "М-Н \"Мамабэль\""
+        },
+        {
+            "address": "Зареченский р-н, ул. Пузакова, 13",
+            "city": "г. Тутаев",
+            "coord_first_longitude": 54.219942,
+            "coord_last_latitude": 37.615296,
+            "phone": "(4872) 34-37-80",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Ленина, 38/1",
+            "city": "г. Тюмень",
+            "coord_first_longitude": 57.154607,
+            "coord_last_latitude": 65.532846,
+            "phone": "",
+            "trade_point": "Модный Дом \"Корона\""
+        },
+        {
+            "address": "ул. Ленина, 39",
+            "city": "г. Тюмень",
+            "coord_first_longitude": 57.156143,
+            "coord_last_latitude": 65.53054,
+            "phone": "",
+            "trade_point": "Тц \"Океан\""
+        },
+        {
+            "address": "ул. Герцена, 94",
+            "city": "г. Тюмень",
+            "coord_first_longitude": 57.146572,
+            "coord_last_latitude": 65.543414,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Пермякова, 50Б",
+            "city": "г. Тюмень",
+            "coord_first_longitude": 57.118667,
+            "coord_last_latitude": 65.577274,
+            "phone": "(3452) 54-29-26",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Дмитрия Менделеева, 1а",
+            "city": "г. Тюмень",
+            "coord_first_longitude": 57.117473,
+            "coord_last_latitude": 65.549312,
+            "phone": "(3452) 44-15-86",
+            "trade_point": "М-Н \"Скоро Мама\" , Тц \"Кристалл\""
+        },
+        {
+            "address": "ул. Терешковой, 11",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.808979,
+            "coord_last_latitude": 107.613109,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Балтахинова, 17",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.827551,
+            "coord_last_latitude": 107.588505,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\", Тд \"Солнечный\""
+        },
+        {
+            "address": "ул. Камова, 25а",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.868222,
+            "coord_last_latitude": 107.734449,
+            "phone": "",
+            "trade_point": "М-Н \"9 Месяцев\""
+        },
+        {
+            "address": "ул. Павлова, 59а",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.806658,
+            "coord_last_latitude": 107.62802,
+            "phone": "",
+            "trade_point": "Детский Супермаркет \"Наследник\""
+        },
+        {
+            "address": "ул. Гагарина, 25",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.837558,
+            "coord_last_latitude": 107.594186,
+            "phone": "",
+            "trade_point": "Тц \"Сагаан Морин\", Бутик 383"
+        },
+        {
+            "address": "ул. Корабельная 32",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.830773,
+            "coord_last_latitude": 107.577761,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\" , Тц \"Пионер\""
+        },
+        {
+            "address": "ул. Намжилова, 6, помещение 14",
+            "city": "г. Улан-Удэ",
+            "coord_first_longitude": 51.814081,
+            "coord_last_latitude": 107.676968,
+            "phone": "(3012)41-90-73, 41-90-74, 41-90-41",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Минаева, 40/1",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.306948,
+            "coord_last_latitude": 48.384987,
+            "phone": "(8422) 32-32-01, 32-78-72",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "пр. Ленинского Комсомола, 37",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.376079,
+            "coord_last_latitude": 48.584794,
+            "phone": "(8422) 22-04-25",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Рябикова, 21Б",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.285252,
+            "coord_last_latitude": 48.303214,
+            "phone": "(8422) 58-19-20",
+            "trade_point": "Салон-Магазин \"Домашний Доктор\""
+        },
+        {
+            "address": "ул. Суворова, 4",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.298035,
+            "coord_last_latitude": 48.366069,
+            "phone": "8-937-457-44-48, 8-937-457-44-49",
+            "trade_point": "М-Н \"Привет, Я Родился!\""
+        },
+        {
+            "address": "Ульяновский пр-т, 5а",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.371992,
+            "coord_last_latitude": 48.584048,
+            "phone": "",
+            "trade_point": "М-Н \"40 Недель\", Тц \"Да\", 2 Этаж"
+        },
+        {
+            "address": "ул. Радищева, 39",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.32725,
+            "coord_last_latitude": 48.401414,
+            "phone": "(8422) 73 - 01 - 33, 722 – 755",
+            "trade_point": "Одежда Для Беременных \"Юниостар\", Тк \" Энтерра \", 3 Этаж, 31 Бутик"
+        },
+        {
+            "address": "пр-т Ульяновский, 17а",
+            "city": "г. Ульяновск",
+            "coord_first_longitude": 54.30899,
+            "coord_last_latitude": 48.371392,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Кирова, 47б",
+            "city": "г. Усть-Каменогорск",
+            "coord_first_longitude": 49.948792,
+            "coord_last_latitude": 82.62017,
+            "phone": "8-701-879-32-67",
+            "trade_point": "Салон \"Маме На Радость\", Тц \"Саттi\""
+        },
+        {
+            "address": "ул. Кирова, 72а",
+            "city": "г. Усть-Каменогорск",
+            "coord_first_longitude": 49.95323,
+            "coord_last_latitude": 82.624907,
+            "phone": "8-702-776-61-20",
+            "trade_point": "Салон \"Маме На Радость\", Тц \"Дети\""
+        },
+        {
+            "address": "ул. Карбышева, 24",
+            "city": "г. Усть-Каменогорск",
+            "coord_first_longitude": 49.959595,
+            "coord_last_latitude": 82.582628,
+            "phone": "(7232) 23-88-64",
+            "trade_point": "\"Центр Здоровья\""
+        },
+        {
+            "address": "пр. Ленина, 67",
+            "city": "г. Ухта",
+            "coord_first_longitude": 63.573081,
+            "coord_last_latitude": 53.642583,
+            "phone": "",
+            "trade_point": "Тд \"Печора\", 1 Этаж"
+        },
+        {
+            "address": "ул. Батырская, 6",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.708364,
+            "coord_last_latitude": 56.00188,
+            "phone": "(347) 256-39-09, 294-20-77",
+            "trade_point": "Салон \"Источник Здоровья\""
+        },
+        {
+            "address": "ул. Достоевского, 107/ Пархоменко, 82",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.731931,
+            "coord_last_latitude": 55.963348,
+            "phone": "(347) 272-77-71",
+            "trade_point": "Ортопедический Салон \"Валеро\""
+        },
+        {
+            "address": "ул. Максима Рыльского, 12",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.768271,
+            "coord_last_latitude": 56.066919,
+            "phone": "(347) 246-46-03 (8-015)",
+            "trade_point": "Аптека \"Флория\""
+        },
+        {
+            "address": "ул. Максима Рыльского, 17",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.768305,
+            "coord_last_latitude": 56.073756,
+            "phone": "(347) 246-46-03 (8-022)",
+            "trade_point": "Аптека \"Флория\""
+        },
+        {
+            "address": "ул. Маршала Жукова, 29",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.771337,
+            "coord_last_latitude": 56.058676,
+            "phone": "(347) 299-05-89",
+            "trade_point": "М-Н \"Красивая Мама\", Цтио \"Простор\", 4 Этаж, А Блок"
+        },
+        {
+            "address": "ул. Октябрьский проспект, 8",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.723685,
+            "coord_last_latitude": 55.949588,
+            "phone": "(347) 277-67-06",
+            "trade_point": "Магазин Для Беременных"
+        },
+        {
+            "address": "ул. Российская, 15",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.787875,
+            "coord_last_latitude": 56.041285,
+            "phone": "(347) 279-83-43, 298-08-04",
+            "trade_point": "Центр Диагностики \"Фармлэнд\""
+        },
+        {
+            "address": "ул. Софьи Перовской, 13",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.701538,
+            "coord_last_latitude": 55.988686,
+            "phone": "(347)254-08-66",
+            "trade_point": "М-Н \"Мама+\""
+        },
+        {
+            "address": "ул. Софьи Перовской, 19/1",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.696979,
+            "coord_last_latitude": 55.996396,
+            "phone": "(347) 246-03-60",
+            "trade_point": "Оптовая Компания \"Маяк\""
+        },
+        {
+            "address": "ул. Менделеева, 175б",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.719678,
+            "coord_last_latitude": 56.007796,
+            "phone": "(347) 248-14-21",
+            "trade_point": "Аптека \"Ваше Здоровье\""
+        },
+        {
+            "address": "ул. Правды, 20",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.703228,
+            "coord_last_latitude": 55.832129,
+            "phone": "(347) 281?65?28",
+            "trade_point": "Аптека \"Ваше Здоровье\""
+        },
+        {
+            "address": "ул. Рихарда Зорге, 46",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.760369,
+            "coord_last_latitude": 55.999381,
+            "phone": "(347) 278?76?29",
+            "trade_point": "Аптека \"Ваше Здоровье\""
+        },
+        {
+            "address": "ул. Центральная, 20/1",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.700454,
+            "coord_last_latitude": 55.834905,
+            "phone": "(347) 281?93?11, 281-93-17, факс: 8 (347) 281?46?14",
+            "trade_point": "Аптека \"Ваше Здоровье\""
+        },
+        {
+            "address": "ул. Шафиева, 48",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.75654,
+            "coord_last_latitude": 56.019783,
+            "phone": "(347) 278?75?99",
+            "trade_point": "Аптека \"Ваше Здоровье\""
+        },
+        {
+            "address": "ул. Рубежная, 174",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.674159,
+            "coord_last_latitude": 55.928072,
+            "phone": "(347) 292-33-97/96",
+            "trade_point": "М-Н \"Детский Мир\", Тц \"Мега\""
+        },
+        {
+            "address": "ул. Минигали Губайдуллина, 6, помещение 33",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.718959,
+            "coord_last_latitude": 56.002989,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Рубежная улица, 174",
+            "city": "г. Уфа",
+            "coord_first_longitude": 54.675035,
+            "coord_last_latitude": 55.929188,
+            "phone": "(347) 292-06-88",
+            "trade_point": "М-Н \"Скоро Мама\", Тц \"Мега\""
+        },
+        {
+            "address": "ул. Молдавская, 16",
+            "city": "г. Челябинск",
+            "coord_first_longitude": 55.191051,
+            "coord_last_latitude": 61.303233,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Кирова, 27",
+            "city": "г. Челябинск",
+            "coord_first_longitude": 55.171501,
+            "coord_last_latitude": 61.401861,
+            "phone": "(351) 270-75-69",
+            "trade_point": "Тк \"Набережный\""
+        },
+        {
+            "address": "ул. Калинская, 64",
+            "city": "г. Челябинск",
+            "coord_first_longitude": 55.173081,
+            "coord_last_latitude": 61.392978,
+            "phone": "(351) 267-11-56",
+            "trade_point": "Тц, 2 Этаж"
+        },
+        {
+            "address": "ул. Молдавская, 16",
+            "city": "г. Челябинск",
+            "coord_first_longitude": 55.19105,
+            "coord_last_latitude": 61.303233,
+            "phone": "(351) 799-22-30",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Цвиллинга, 25",
+            "city": "г. Челябинск",
+            "coord_first_longitude": 55.164718,
+            "coord_last_latitude": 61.405611,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Богомягкова, 50",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.048363,
+            "coord_last_latitude": 113.503296,
+            "phone": "(3022) 28-24-28, (3022) 35-58-63",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Красноярская, 32а",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.027512,
+            "coord_last_latitude": 113.520611,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Бабушкина, 153",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.0297,
+            "coord_last_latitude": 113.524603,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Промышленная, 56, помещение 6",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.002086,
+            "coord_last_latitude": 113.48318,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Весенняя 14",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.07581,
+            "coord_last_latitude": 113.377091,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул.1-я Шубзаводская, 47",
+            "city": "г. Чита",
+            "coord_first_longitude": 52.018124,
+            "coord_last_latitude": 113.505147,
+            "phone": "",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Едомского, 36",
+            "city": "г. Щучинск",
+            "coord_first_longitude": 52.938165,
+            "coord_last_latitude": 70.203636,
+            "phone": "8-701-412-56-12",
+            "trade_point": "\"9 Месяцев\", Тц \"Архей\", 3 Этаж"
+        },
+        {
+            "address": "ул. Ф. Попова, 15 ? 306",
+            "city": "г. Якутск",
+            "coord_first_longitude": 62.044591,
+            "coord_last_latitude": 129.75168,
+            "phone": "",
+            "trade_point": "М-Н \"Модерн\", Тц \"Гранд Сити\""
+        },
+        {
+            "address": "ул. Республиканская, 7",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.636729,
+            "coord_last_latitude": 39.882635,
+            "phone": "(905) 645-52-04, (4852) 58-25-36",
+            "trade_point": "М-Н \"Мама Маркет\", Тц \"Флагман\", 2 Этаж"
+        },
+        {
+            "address": "ул. Свободы, 54",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.626723,
+            "coord_last_latitude": 39.858384,
+            "phone": "(4852) 45-84-00",
+            "trade_point": "М-Н \"Мама И Малыш\""
+        },
+        {
+            "address": "Ленинградский пр-т, 61",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.68189,
+            "coord_last_latitude": 39.789729,
+            "phone": "(4852) 56-90-76",
+            "trade_point": "М-Н \"Мама И Малыш\""
+        },
+        {
+            "address": "Московский проспект, 108, помещение 88",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.576587,
+            "coord_last_latitude": 39.843087,
+            "phone": "(4852) 41-30-64, 41-30-65",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "Ленинградский пр-т., 123",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.697885,
+            "coord_last_latitude": 39.758829,
+            "phone": "(4852) 58-14-77, 58-14-86",
+            "trade_point": "М-Н \"Дочки Сыночки\""
+        },
+        {
+            "address": "ул. Толбухина, 8/75",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.620757,
+            "coord_last_latitude": 39.859283,
+            "phone": "(4852) 58-99-01",
+            "trade_point": "Тц \"Петровский Пассаж\", Салон \"Здоровье+\""
+        },
+        {
+            "address": "пр. Ленина, 8",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.641679,
+            "coord_last_latitude": 39.878022,
+            "phone": "(4852) 72-86-12",
+            "trade_point": "Аптека №1"
+        },
+        {
+            "address": "ул. Гагарина, 49",
+            "city": "г. Ярославль",
+            "coord_first_longitude": 57.582201,
+            "coord_last_latitude": 39.837485,
+            "phone": "(4852) 47-18-76",
+            "trade_point": "Аптека На Гагарина"
+        }
+    ]
+}
