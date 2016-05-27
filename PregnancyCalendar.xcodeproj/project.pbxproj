@@ -24,8 +24,6 @@
 		02682D351C7EFBA40088F21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02682D331C7EFBA40088F21B /* LaunchScreen.storyboard */; };
 		02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02682D401C7EFC420088F21B /* SWRevealViewController.m */; };
 		02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D441C7EFFA00088F21B /* BirthDateViewController.swift */; };
-		02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D461C7F013D0088F21B /* ListTableViewController.swift */; };
-		02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D481C7F0CEB0088F21B /* NameViewController.swift */; };
 		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
 		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
@@ -72,7 +70,6 @@
 		02FE54B51CAAA2220094C055 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B01CAAA2220094C055 /* 3.png */; };
 		02FE54B61CAAA2220094C055 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B11CAAA2220094C055 /* 4.png */; };
 		02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */; };
-		02FE54BD1CAC098C0094C055 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54BC1CAC098C0094C055 /* names.json */; };
 		8E4C43831CF84F8300003AAB /* notifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43821CF84F8300003AAB /* notifi.json */; };
 		8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43841CF84F8C00003AAB /* zodiacs.json */; };
 		8E4C43931CF8506200003AAB /* 0z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43871CF8506200003AAB /* 0z.jpg */; };
@@ -88,6 +85,9 @@
 		8E4C439D1CF8506200003AAB /* 10z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43911CF8506200003AAB /* 10z.jpg */; };
 		8E4C439E1CF8506200003AAB /* 11z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43921CF8506200003AAB /* 11z.jpg */; };
 		8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */; };
+		8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A11CF871B200003AAB /* NamesViewController.swift */; };
+		8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A21CF871B200003AAB /* NameViewController.swift */; };
+		8E4C43A61CF874E400003AAB /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43A51CF874E400003AAB /* names.json */; };
 		8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
@@ -207,8 +207,6 @@
 		02682D3F1C7EFC420088F21B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		02682D401C7EFC420088F21B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		02682D441C7EFFA00088F21B /* BirthDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
-		02682D461C7F013D0088F21B /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-		02682D481C7F0CEB0088F21B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
 		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 		02FE54B01CAAA2220094C055 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		02FE54B11CAAA2220094C055 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
-		02FE54BC1CAC098C0094C055 /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		8E4C43821CF84F8300003AAB /* notifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notifi.json; sourceTree = "<group>"; };
 		8E4C43841CF84F8C00003AAB /* zodiacs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zodiacs.json; sourceTree = "<group>"; };
 		8E4C43871CF8506200003AAB /* 0z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0z.jpg; sourceTree = "<group>"; };
@@ -271,6 +268,9 @@
 		8E4C43911CF8506200003AAB /* 10z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10z.jpg; sourceTree = "<group>"; };
 		8E4C43921CF8506200003AAB /* 11z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11z.jpg; sourceTree = "<group>"; };
 		8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		8E4C43A11CF871B200003AAB /* NamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
+		8E4C43A21CF871B200003AAB /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		8E4C43A51CF874E400003AAB /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
@@ -379,8 +379,8 @@
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
 				8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */,
 				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
-				02682D461C7F013D0088F21B /* ListTableViewController.swift */,
-				02682D481C7F0CEB0088F21B /* NameViewController.swift */,
+				8E4C43A11CF871B200003AAB /* NamesViewController.swift */,
+				8E4C43A21CF871B200003AAB /* NameViewController.swift */,
 				022994231C80969F00E3B816 /* NotesViewController.swift */,
 				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
 				022994291C845B4D00E3B816 /* Plist.swift */,
@@ -486,7 +486,7 @@
 		8E4C437E1CF84F4900003AAB /* json files */ = {
 			isa = PBXGroup;
 			children = (
-				02FE54BC1CAC098C0094C055 /* names.json */,
+				8E4C43A51CF874E400003AAB /* names.json */,
 				02DA72DF1CA92D640011E9DF /* points.json */,
 				8E4C43821CF84F8300003AAB /* notifi.json */,
 				8E4C43841CF84F8C00003AAB /* zodiacs.json */,
@@ -682,10 +682,10 @@
 				02FE549E1CAAA21B0094C055 /* 19.jpg in Resources */,
 				A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */,
 				8E4C439E1CF8506200003AAB /* 11z.jpg in Resources */,
+				8E4C43A61CF874E400003AAB /* names.json in Resources */,
 				02FE54991CAAA21B0094C055 /* 14.jpg in Resources */,
 				02FE54B41CAAA2220094C055 /* 2.png in Resources */,
 				A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */,
-				02FE54BD1CAC098C0094C055 /* names.json in Resources */,
 				8E4C43941CF8506200003AAB /* 1z.jpg in Resources */,
 				02FE54A21CAAA21B0094C055 /* 22.jpg in Resources */,
 				02FE54981CAAA21B0094C055 /* 13.jpg in Resources */,
@@ -761,6 +761,7 @@
 				A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */,
 				02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */,
 				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
+				8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */,
 				02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */,
 				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
 				A018A97E1CB6733D0044830A /* CVCalendarManager.swift in Sources */,
@@ -773,7 +774,6 @@
 				02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */,
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
 				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
-				02682D491C7F0CEB0088F21B /* NameViewController.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
 				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
 				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
@@ -781,6 +781,7 @@
 				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
 				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */,
 				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
 				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
@@ -800,7 +801,6 @@
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
 				A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */,
 				A018A9891CB6733D0044830A /* CVCalendarViewDelegate.swift in Sources */,
-				02682D471C7F013D0088F21B /* ListTableViewController.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
 				02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */,
 				A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */,

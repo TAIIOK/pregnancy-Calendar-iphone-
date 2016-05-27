@@ -585,43 +585,6 @@
             </objects>
             <point key="canvasLocation" x="1055" y="1862"/>
         </scene>
-        <!--Справочник имен-->
-        <scene sceneID="glp-0q-6Lx">
-            <objects>
-                <tableViewController id="6fG-tu-2eH" customClass="ListTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u7M-AD-qSW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="iKP-Te-o9o">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKP-Te-o9o" id="ZpZ-bn-4GX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6fG-tu-2eH" id="Ej7-KN-71G"/>
-                            <outlet property="delegate" destination="6fG-tu-2eH" id="4Dq-F5-IiW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Справочник имен" id="sdx-xt-jyy">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="xwW-mw-8lq">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="xwW-mw-8lq" id="zAr-bB-b04"/>
-                        <segue destination="cP4-PH-KjY" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="cjy-jK-b8A"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nOb-c0-LSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1768" y="1089.9999999999998"/>
-        </scene>
         <!--Счетчик схваток-->
         <scene sceneID="N44-Wj-vjJ">
             <objects>
@@ -726,63 +689,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYY-4J-tR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765" y="1860"/>
-        </scene>
-        <!--Name View Controller-->
-        <scene sceneID="AFv-Ef-0nT">
-            <objects>
-                <viewController storyboardIdentifier="NameViewController" id="cP4-PH-KjY" customClass="NameViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8gK-ag-His"/>
-                        <viewControllerLayoutGuide type="bottom" id="gM8-zh-yUp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="shp-bh-gc2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nBI-xM-PIq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nBI-xM-PIq" secondAttribute="trailing" id="cUp-Et-SKA"/>
-                            <constraint firstItem="nBI-xM-PIq" firstAttribute="bottom" secondItem="gM8-zh-yUp" secondAttribute="top" id="k2S-vi-ftZ"/>
-                            <constraint firstItem="nBI-xM-PIq" firstAttribute="top" secondItem="shp-bh-gc2" secondAttribute="top" id="lpc-0p-cEg"/>
-                            <constraint firstItem="nBI-xM-PIq" firstAttribute="leading" secondItem="shp-bh-gc2" secondAttribute="leading" id="lxG-dI-ZVC"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Zm2-g3-7OS">
-                        <barButtonItem key="backBarButtonItem" title=" " id="LqJ-7w-Dpr">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textView" destination="nBI-xM-PIq" id="pvI-SC-xWw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jaq-rv-zdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2542.5" y="1089.0845070422533"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gc0-nx-U25">
-            <objects>
-                <navigationController storyboardIdentifier="ListNavigationController" id="3vf-EO-2Ja" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O6W-KQ-wsW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="6fG-tu-2eH" kind="relationship" relationship="rootViewController" id="aL1-J9-VC9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E3b-9m-LfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="1098"/>
         </scene>
         <!--Дата родов-->
         <scene sceneID="JaI-4t-SDB">
@@ -1218,6 +1124,133 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXG-gK-rRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2537" y="-425"/>
+        </scene>
+        <!--Names Table View Controller-->
+        <scene sceneID="IPK-2c-JLh">
+            <objects>
+                <tableViewController storyboardIdentifier="NamesViewController" id="rbm-Yl-LM6" customClass="NamesTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jsP-rH-tHi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="RJx-Tg-nit">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RJx-Tg-nit" id="61c-JA-Qp0">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2Ab-XK-DIW" kind="showDetail" action="showViewController:sender:" id="aBc-Y3-h1Q"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rbm-Yl-LM6" id="tp9-Ct-Xjv"/>
+                            <outlet property="delegate" destination="rbm-Yl-LM6" id="vOf-rD-gZK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="78H-OE-5Jg">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="VKk-Za-FkG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="hir-Eb-fub">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Мальчики"/>
+                                <segment title="Девочки"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="segmentChanged:" destination="rbm-Yl-LM6" eventType="valueChanged" id="gOs-sa-E8u"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="changer" destination="hir-Eb-fub" id="QGX-6v-6D4"/>
+                        <outlet property="menuButton" destination="VKk-Za-FkG" id="UDc-Gk-Mjz"/>
+                        <outlet property="table" destination="jsP-rH-tHi" id="Saj-Wc-D12"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gug-al-pOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="969"/>
+        </scene>
+        <!--Name View Controller-->
+        <scene sceneID="mvh-Ai-NZM">
+            <objects>
+                <viewController storyboardIdentifier="NameViewController" id="2Ab-XK-DIW" customClass="NameViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlf-QP-Gfa"/>
+                        <viewControllerLayoutGuide type="bottom" id="iCo-AG-csV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C3N-gt-Sfq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-Aa-j1X">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-2F-mDI">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="bottom" secondItem="iCo-AG-csV" secondAttribute="top" id="3FJ-Fh-9O9"/>
+                            <constraint firstAttribute="trailing" secondItem="1aJ-2F-mDI" secondAttribute="trailing" constant="20" id="Hq7-eG-3nw"/>
+                            <constraint firstItem="1aJ-2F-mDI" firstAttribute="top" secondItem="jlf-QP-Gfa" secondAttribute="bottom" constant="8" id="HyG-zu-eU0"/>
+                            <constraint firstItem="1aJ-2F-mDI" firstAttribute="bottom" secondItem="iCo-AG-csV" secondAttribute="top" constant="-20" id="k21-GS-38G"/>
+                            <constraint firstItem="1aJ-2F-mDI" firstAttribute="leading" secondItem="h0o-Aa-j1X" secondAttribute="leading" constant="20" id="q1t-7e-blO"/>
+                            <constraint firstItem="1aJ-2F-mDI" firstAttribute="leading" secondItem="C3N-gt-Sfq" secondAttribute="leading" constant="20" id="sSI-TV-2eo"/>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="trailing" secondItem="1aJ-2F-mDI" secondAttribute="trailing" constant="20" id="wpf-KA-Opg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dGJ-fg-SqY">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="info" destination="1aJ-2F-mDI" id="4Pq-8d-Aku"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6c5-Ps-60h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2627" y="969"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bcq-mt-kof">
+            <objects>
+                <navigationController storyboardIdentifier="NamesNavController" id="lrt-6S-w37" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sgR-sr-By0"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ezm-xj-j8J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rbm-Yl-LM6" kind="relationship" relationship="rootViewController" id="dEu-zA-Jix"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oq-tY-X1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="993"/>
         </scene>
     </scenes>
     <resources>

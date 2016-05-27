@@ -50,11 +50,10 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         if !Back && DateisLoaded{
             Cancel()
         }else{
-            print(Back, DateisLoaded)
             self.setupSidebarMenu()
-            let img  = UIImage(contentsOfFile: "menu")
-            //let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
-            //self.navigationItem.leftBarButtonItem = btn
+            let img  = UIImage(named: "menu")
+            let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
+            self.navigationItem.leftBarButtonItem = btn
         }
     }
     

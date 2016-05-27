@@ -45,7 +45,7 @@ class MenuTableViewController: UITableViewController {
             self.pushFrontViewController("BirthdateNavigationController")
             break
         case 2:
-            self.pushFrontViewController("ListNavigationController")
+            self.pushFrontViewController("NamesNavController")
             break
         case 3:
             self.pushFrontViewController("SpasmsNavigationController")
