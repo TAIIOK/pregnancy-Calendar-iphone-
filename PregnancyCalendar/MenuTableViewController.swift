@@ -9,10 +9,15 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-    let menus = ["ДАТА РОДОВ", "СПРАВОЧНИК ИМЕН", "СЧЕТЧИК СХВАТОК", "ГРАФИК НАБОРА ВЕСА", "ФОТОАЛЬБОМ", "ВИДЕОТЕКА", "ЗАМЕТКИ", "ФОРУМ", "ПОЛЕЗНЫЙ ОПЫТ", "КАЛЕНДАРЬ", "КУПИТЬ БЕЛЬЕ ФЭСТ", "ЭКСПОРТ"]
+    let menus = ["","ДАТА РОДОВ", "СПРАВОЧНИК ИМЕН", "СЧЕТЧИК СХВАТОК", "ГРАФИК НАБОРА ВЕСА", "ФОТОАЛЬБОМ", "ВИДЕОТЕКА", "ЗАМЕТКИ", "ФОРУМ", "ПОЛЕЗНЫЙ ОПЫТ", "КАЛЕНДАРЬ", "КУПИТЬ БЕЛЬЕ ФЭСТ", "ЭКСПОРТ"]
+    let imgs = ["","Gantt Chart-50", "Resume-50", "Alarm Clock-50", "Line Chart-50", "Compact Camera-50", "Video Call-50", "Note-Memo-01-256", "Chat-64", "Diamond-50", "Calendar-50", "Shopping Bag-50", "Share-50"]
+    
+    @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
+        table.backgroundColor = .clearColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,51 +41,69 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.row) {
-        case 0:
+        case 1:
             self.pushFrontViewController("BirthdateNavigationController")
             break
-        case 1:
+        case 2:
             self.pushFrontViewController("ListNavigationController")
             break
-        case 2:
+        case 3:
             self.pushFrontViewController("SpasmsNavigationController")
             break
-        case 3:
+        case 4:
             self.pushFrontViewController("WeightGraphNavigationController")
             break
-        case 4:
+        case 5:
             self.pushFrontViewController("PhotoNavigationController")
             break
-        case 5:
+        case 6:
             self.pushFrontViewController("VideoNavigationController")
             break
-        case 6:
+        case 7:
             self.pushFrontViewController("NotesNavigationController")
             break
-        case 7:
+        case 8:
             self.pushFrontViewController("ForumNavigationController")
             break
-        case 8:
-            break
         case 9:
-            self.pushFrontViewController("CalendarViewController")
             break
         case 10:
-            self.pushFrontViewController("BuyNavigationController")
+            self.pushFrontViewController("CalendarViewController")
+            break
         case 11:
+            self.pushFrontViewController("BuyNavigationController")
+        case 12:
             break
         default:
             break
         }
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 80
+        }else{
+            return 40
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath)
-        cell.textLabel?.text = self.menus[indexPath.row]
-        cell.textLabel?.textColor = StrawBerryColor
-        cell.textLabel?.highlightedTextColor = .whiteColor()
-        //cell.imageView?.image = UIImage(named: "menu")
-        cell.selectedBackgroundView = self.getCustomizeBackgroundView()
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("menuLogoCell", forIndexPath: indexPath)
+            cell.backgroundView?.backgroundColor = .clearColor()
+            cell.selectedBackgroundView?.backgroundColor = .clearColor()
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath) as! MenuTableViewCell
+            cell.label?.text = self.menus[indexPath.row]
+            cell.label?.textColor = StrawBerryColor
+            cell.label?.highlightedTextColor = .whiteColor()
+            cell.label?.backgroundColor = .clearColor()
+            cell.img?.image = UIImage(named: "\(imgs[indexPath.row]) (1)")
+            cell.img?.highlightedImage = UIImage(named: "\(imgs[indexPath.row])")
+            cell.backgroundView?.backgroundColor = .clearColor()
+            cell.selectedBackgroundView = self.getCustomizeBackgroundView()
+            return cell
+        }
     }
 }

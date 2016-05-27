@@ -11,8 +11,10 @@ import CoreData
 import Fabric
 import Crashlytics
 
-let StrawBerryColor = UIColor(red: 255/255.0, green: 34/255.0, blue: 89/255.0, alpha: 1.0)
+let StrawBerryColor = UIColor(red: 206/255.0, green: 15/255.0, blue: 105/255.0, alpha: 1.0)
+let BiruzaColor = UIColor(red: 0/255.0, green: 189/255.0, blue: 255/255.0, alpha: 1.0)
 let userGrowth = "userGrowth"
+//var db = try! Connection()
 var currentyear = NSDate().year();
 
 @UIApplicationMain

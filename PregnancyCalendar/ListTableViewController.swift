@@ -8,6 +8,27 @@
 
 import UIKit
 
+var man = [Names]()
+var woman = [Names]()
+
+var choosedName = NSIndexPath() // index of name
+var choosedSegmentNames = true // true: boys, false: girls
+
+class Names: NSObject {
+    var name: String
+    var value: String
+    var about: String
+    init(name: String, value: String, about: String) {
+        self.name = name
+        self.value = value
+        self.about = about
+        super.init()
+    }
+}
+
+var sections : [(index: Int, length :Int, title: String)] = Array()
+var sectionsGirl : [(index: Int, length :Int, title: String)] = Array()
+
 class ListTableViewController: UITableViewController {
     let boyNames = ["Александр", "Алексей", "Тимофей", "Юрий"]
     let girlNames = ["Дарья", "Света", "Софья"]

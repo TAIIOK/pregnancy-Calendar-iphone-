@@ -7,132 +7,134 @@
 //
 
 import UIKit
+import CoreData
 
-class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
-    
+var BirthDate = NSDate()
+var dateType = 0
+var Back = false
+
+class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var conceptionDateLabel: UILabel!
     @IBOutlet weak var lastMenstrualPeriod: UILabel!
     @IBOutlet weak var setManually: UILabel!
     
-    var currentButton = 0
-    var arrSelectedDates = [NSDate]()
+    @IBOutlet weak var tbl: UITableView!
     
+    var DateisLoaded = false
+
+    let txt = ["По дате зачатия","По дате последней менструации","По дате, указанной врачем"]
+ 
+
     // КАЛЕНДАРЬ
     func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
         
         
     }
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
-        self.arrSelectedDates.removeAll()
-        self.arrSelectedDates.append(date)
-        
-        switch self.currentButton {
-        case 0:
-            self.conceptionDateLabel.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
-            self.lastMenstrualPeriod.text = "не выбрано"
-            self.setManually.text = "не выбрано"
-            break
-        case 1:
-            self.lastMenstrualPeriod.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
-            self.setManually.text = "не выбрано"
-            self.conceptionDateLabel.text = "не выбрано"
-            break
-        case 2:
-            self.setManually.text = "\(addDaystoGivenDate(date,NumberOfDaysToAdd: +1))"
-            self.conceptionDateLabel.text = "не выбрано"
-            self.lastMenstrualPeriod.text = "не выбрано"
-            break
-        default:
-            break
-        }
-        
-        //txtViewDetail.text = "User selected date: \n\(date)"
-    }
-    func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
-        self.arrSelectedDates = dates
-        
-        switch self.currentButton {
-        case 0:
-            self.conceptionDateLabel.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-            self.lastMenstrualPeriod.text = "не выбрано"
-            self.setManually.text = "не выбрано"
-            break
-        case 1:
-            self.lastMenstrualPeriod.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-            self.setManually.text = "не выбрано";
-            self.conceptionDateLabel.text = "не выбрано";
-            break
-        case 2:
-            self.setManually.text = "\(addDaystoGivenDates(dates,NumberOfDaysToAdd: +1))";
-            self.conceptionDateLabel.text = "не выбрано";
-            self.lastMenstrualPeriod.text = "не выбрано";
-            break
-        default:
-            break
-        }
+
+        BirthDate = date
+        tbl.reloadData()
     }
     
-    // ДАТЫ
-    @IBAction func setManually(sender: AnyObject) {
-        self.currentButton = 2
-        
-               let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
-        calendarPicker.calendarDelegate = self
-        calendarPicker.startDate = NSDate()
-        //calendarPicker.hightlightsToday = true
-        //calendarPicker.showsTodaysButton = true
-        
-        calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.monthTitleColor = UIColor.whiteColor()
-        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
-        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
-        
-        let navigationController = UINavigationController(rootViewController: calendarPicker)
-        self.presentViewController(navigationController, animated: true, completion: nil)
-        
-    }
-    @IBAction func lastMenstrualPeriod(sender: AnyObject) {
-        self.currentButton = 1
-        
-                let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
-        calendarPicker.calendarDelegate = self
-        calendarPicker.startDate = NSDate()
-        //calendarPicker.hightlightsToday = true
-        //calendarPicker.showsTodaysButton = true
-        
-        calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.monthTitleColor = UIColor.whiteColor()
-        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
-        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
-        
-        let navigationController = UINavigationController(rootViewController: calendarPicker)
-        self.presentViewController(navigationController, animated: true, completion: nil)
-        
-    }
-    @IBAction func Conceptiondate(sender: AnyObject) {
-        self.currentButton = 0
-        
-               let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
-        calendarPicker.calendarDelegate = self
-        calendarPicker.startDate = NSDate()
-        //calendarPicker.hightlightsToday = true
-        //calendarPicker.showsTodaysButton = true
-        
-        calendarPicker.backgroundColor = StrawBerryColor
-        calendarPicker.monthTitleColor = UIColor.whiteColor()
-        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
-        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
-        
-        let navigationController = UINavigationController(rootViewController: calendarPicker)
-        self.presentViewController(navigationController, animated: true, completion: nil)
-        
-    }
+    func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSidebarMenu()
+        tbl.delegate = self
+        tbl.dataSource = self
+        tbl.backgroundColor = .clearColor()
+        loadDate()
+        
+        if !Back && DateisLoaded{
+            Cancel()
+        }else{
+            print(Back, DateisLoaded)
+            self.setupSidebarMenu()
+            let img  = UIImage(contentsOfFile: "menu")
+            //let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
+            //self.navigationItem.leftBarButtonItem = btn
+        }
+    }
+    
+    func Cancel(){
+        let zodiac = self.storyboard?.instantiateViewControllerWithIdentifier("ShowZodiac")
+        self.revealViewController().pushFrontViewController(zodiac, animated: true)
+    }
+    
+    @IBAction func OK(sender: UIButton) {
+        saveDate(BirthDate, type: dateType)
+    }
+    
+    // MARK: - Table view data source
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return txt.count
+    }
+    
+    func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("DateCell", forIndexPath: indexPath) as! DateTableViewCell
+        cell.textLabel?.text = txt[indexPath.row]
+        
+        if indexPath.row == dateType {
+            var date = BirthDate
+            if dateType == 0{
+                date = addDaystoGivenDate(date, NumberOfDaysToAdd: 7*38)
+            }
+            else if dateType == 1{
+                date = addDaystoGivenDate(date, NumberOfDaysToAdd: 7*40)
+            }
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+            cell.detailTextLabel?.text = "\(components.day).\(components.month).\(components.year)"
+            //cell.detailTextLabel?.text = "\(selectedDay.date.day).\(selectedDay.date.month).\(selectedDay.date.year)"
+            cell.setHighlighted(true, animated: false)
+            tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
+        }
+        else{
+            cell.detailTextLabel?.text = "не выбрано"
+        }
+        cell.backgroundColor = .clearColor()
+        cell.tintColor = UIColor.lightGrayColor()
+        cell.detailTextLabel?.tintColor = UIColor.lightGrayColor()
+        return cell
+    }
+    
+    private func getCustomBackgroundView() -> UIView{
+        let BackgroundView = UIView()
+        BackgroundView.backgroundColor = UIColor.whiteColor()
+        return BackgroundView
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dateType = indexPath.row
+        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
+        calendarPicker.calendarDelegate = self
+        calendarPicker.startDate = NSDate()
+        //calendarPicker.hightlightsToday = true
+        //calendarPicker.showsTodaysButton = true
+        
+        calendarPicker.backgroundColor = StrawBerryColor
+        calendarPicker.monthTitleColor = UIColor.whiteColor()
+        calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
+        calendarPicker.weekendTintColor = UIColor.lightGrayColor()
+        
+        let navigationController = UINavigationController(rootViewController: calendarPicker)
+        self.presentViewController(navigationController, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! DateTableViewCell
+        cell.selectedBackgroundView=getCustomBackgroundView()
+        cell.textLabel?.highlightedTextColor = StrawBerryColor
+        cell.detailTextLabel?.highlightedTextColor = StrawBerryColor
+        return indexPath
     }
     
     private func setupSidebarMenu() {
@@ -141,8 +143,6 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
             self.revealViewController().rearViewRevealOverdraw = 0
             self.revealViewController().rearViewRevealWidth = 275
             self.revealViewController().frontViewShadowRadius = 0
-            self.menuButton.target = self.revealViewController()
-            self.menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
@@ -178,8 +178,60 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate {
         return newDates
     }
     
-
     
+    func saveDate(date: NSDate, type: Int){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity =  NSEntityDescription.entityForName("BirthDate", inManagedObjectContext: managedContext)
+        
+        let BD = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        
+        BD.setValue(date, forKey: "date")
+        BD.setValue(type, forKey: "type")
+        do {
+            try BD.managedObjectContext?.save()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadDate(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Initialize Fetch Request
+        let fetchRequest = NSFetchRequest()
+        
+        // Create Entity Description
+        let entityDescription = NSEntityDescription.entityForName("BirthDate", inManagedObjectContext:managedContext)
+        
+        fetchRequest.entity = entityDescription
+        do {
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            
+            if (result.count > 0) {
+                for i in result {
+                    let date = i as! NSManagedObject
+                    let dte = date.valueForKey("date") as! NSDate
+                    dateType = date.valueForKey("type") as! Int
+                    BirthDate = dte
+                    DateisLoaded = true
+                }
+            }
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        Back = false
+    }
     /*
     // MARK: - Navigation
 
