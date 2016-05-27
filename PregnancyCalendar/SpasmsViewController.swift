@@ -49,6 +49,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     var timer = NSTimer()
     var dict: [Spasm] = []
     var state = StopWatchState.Stop
+    let progressLine = CAShapeLayer()
     
     // OUTLETS
     @IBOutlet weak var label: UILabel!
@@ -56,6 +57,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var buttonSpasm: UIButton!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var watch: UIImageView!
     
     // ACTIONS
     @IBAction func buttonSpasms(sender: AnyObject) {
@@ -104,7 +106,40 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
-    
+    func animWatch(){
+        // set up some values to use in the curve
+        let ovalStartAngle = CGFloat(270.001 * M_PI/180)
+        let ovalEndAngle = CGFloat(270.0009 * M_PI/180)
+        let ovalRect = CGRectMake(20, 25, 100, 100)//(110, 605, 100, 100)
+        
+        // create the bezier path
+        let ovalPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(ovalRect), CGRectGetMidY(ovalRect)),
+                                    radius: CGRectGetWidth(ovalRect) / 2,
+                                    startAngle: ovalStartAngle,
+                                    endAngle: ovalEndAngle, clockwise: true)
+        
+
+        progressLine.path = ovalPath.CGPath
+        progressLine.strokeColor = StrawBerryColor.CGColor
+        progressLine.fillColor = UIColor.clearColor().CGColor
+        progressLine.lineWidth = 15.0
+        
+
+        progressLine.lineDashPattern = [4,20,4,20,4,20,4,20,4,20,4,20,4,20,4,20,4,20,4,20,4,25]
+        
+        // add the curve to the screen
+        self.watch.layer.addSublayer(progressLine)
+        
+        // create a basic animation that animates the value 'strokeEnd'
+        // from 0.0 to 1.0 over 3.0 seconds
+        let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+        animateStrokeEnd.duration = 3.0
+        animateStrokeEnd.fromValue = 0.0
+        animateStrokeEnd.toValue = 1.0
+        animateStrokeEnd.repeatCount = 2
+        // add the animation
+        progressLine.addAnimation(animateStrokeEnd, forKey: "animate stroke end animation")
+    }
     // COREDATA
     private func clearData() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -179,6 +214,8 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.labelSeconds.text = "секунд"
         self.spasm.start = NSDate().toFormattedTimeString() // записать дату начала
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerUpdate", userInfo: NSDate(), repeats: true)
+        animWatch()
+        watch.highlighted = true
     }
     private func spasmStop() {
         self.state = .Stop // состояние ожидания работы
@@ -198,6 +235,8 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         // поменять текст на кнопке
         self.buttonSpasm.setTitle("ОЙ, СХВАТКА", forState: .Normal)
+        progressLine.removeFromSuperlayer()
+        watch.highlighted = false
     }
     func timerUpdate() {
         let elapsed = -(self.timer.userInfo as! NSDate).timeIntervalSinceNow
