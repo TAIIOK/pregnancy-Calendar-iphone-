@@ -133,7 +133,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         // create a basic animation that animates the value 'strokeEnd'
         // from 0.0 to 1.0 over 3.0 seconds
         let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
-        animateStrokeEnd.duration = 3.0
+        animateStrokeEnd.duration = 60.0
         animateStrokeEnd.fromValue = 0.0
         animateStrokeEnd.toValue = 1.0
         animateStrokeEnd.repeatCount = 2
