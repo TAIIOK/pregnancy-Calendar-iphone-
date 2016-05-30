@@ -14,7 +14,7 @@ import Crashlytics
 let StrawBerryColor = UIColor(red: 206/255.0, green: 15/255.0, blue: 105/255.0, alpha: 1.0)
 let BiruzaColor = UIColor(red: 0/255.0, green: 189/255.0, blue: 255/255.0, alpha: 1.0)
 let userGrowth = "userGrowth"
-//var db = try! Connection()
+var db = try! Connection()
 var currentyear = NSDate().year();
 
 @UIApplicationMain
@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().translucent = false
         UIToolbar.appearance().tintColor = .whiteColor()
         UIToolbar.appearance().barStyle = .BlackOpaque
+        //createEditableCopyOfDatabaseIfNeeded()
         Fabric.with([Crashlytics.self])
         
         
@@ -47,6 +48,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         application.applicationIconBadgeNumber = 0
+    }
+    
+    private func createEditableCopyOfDatabaseIfNeeded() -> Void
+    {
+        // First, test for existence.
+        // Override point for customization after application launch.
+        var sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
+        var doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
+        let destinationPath = (doumentDirectoryPath as NSString).stringByAppendingPathComponent("db.sqlite")
+        //print(destinationPath)
+        do {
+            try NSFileManager().copyItemAtPath(sourcePath!, toPath: destinationPath)
+        } catch _ {
+        }
+        db = try! Connection(destinationPath)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -149,5 +165,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension NSDate {
+    func yearsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: self, options: []).year
+    }
+    func monthsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Month, fromDate: date, toDate: self, options: []).month
+    }
+    func weeksFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.WeekOfYear, fromDate: date, toDate: self, options: []).weekOfYear
+    }
+    func daysFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Day, fromDate: date, toDate: self, options: []).day
+    }
+    func hoursFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Hour, fromDate: date, toDate: self, options: []).hour
+    }
+    func minutesFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Minute, fromDate: date, toDate: self, options: []).minute
+    }
+    func secondsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Second, fromDate: date, toDate: self, options: []).second
+    }
+    func offsetFrom(date:NSDate) -> String {
+        if yearsFrom(date)   > 0 { return "\(yearsFrom(date))y"   }
+        if monthsFrom(date)  > 0 { return "\(monthsFrom(date))M"  }
+        if weeksFrom(date)   > 0 { return "\(weeksFrom(date))w"   }
+        if daysFrom(date)    > 0 { return "\(daysFrom(date))d"    }
+        if hoursFrom(date)   > 0 { return "\(hoursFrom(date))h"   }
+        if minutesFrom(date) > 0 { return "\(minutesFrom(date))m" }
+        if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
+        return ""
+    }
 }
 

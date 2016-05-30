@@ -25,7 +25,6 @@
 		02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02682D401C7EFC420088F21B /* SWRevealViewController.m */; };
 		02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D441C7EFFA00088F21B /* BirthDateViewController.swift */; };
 		02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */; };
-		02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */; };
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
@@ -88,6 +87,27 @@
 		8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A11CF871B200003AAB /* NamesViewController.swift */; };
 		8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A21CF871B200003AAB /* NameViewController.swift */; };
 		8E4C43A61CF874E400003AAB /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43A51CF874E400003AAB /* names.json */; };
+		8E4C43C11CFC523000003AAB /* WeightDiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */; };
+		8E4C43DF1CFC52E300003AAB /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C71CFC52E300003AAB /* Blob.swift */; };
+		8E4C43E01CFC52E300003AAB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C81CFC52E300003AAB /* Connection.swift */; };
+		8E4C43E11CFC52E300003AAB /* SQLite-Bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43CB1CFC52E300003AAB /* SQLite-Bridging.m */; };
+		8E4C43E21CFC52E300003AAB /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43CC1CFC52E300003AAB /* Statement.swift */; };
+		8E4C43E31CFC52E300003AAB /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43CD1CFC52E300003AAB /* Value.swift */; };
+		8E4C43E41CFC52E300003AAB /* FTS4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43CF1CFC52E300003AAB /* FTS4.swift */; };
+		8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D01CFC52E300003AAB /* R*Tree.swift */; };
+		8E4C43E61CFC52E300003AAB /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D11CFC52E300003AAB /* Foundation.swift */; };
+		8E4C43E71CFC52E300003AAB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D21CFC52E300003AAB /* Helpers.swift */; };
+		8E4C43E81CFC52E300003AAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43D31CFC52E300003AAB /* Info.plist */; };
+		8E4C43E91CFC52E300003AAB /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D61CFC52E300003AAB /* AggregateFunctions.swift */; };
+		8E4C43EA1CFC52E300003AAB /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D71CFC52E300003AAB /* Collation.swift */; };
+		8E4C43EB1CFC52E300003AAB /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D81CFC52E300003AAB /* CoreFunctions.swift */; };
+		8E4C43EC1CFC52E300003AAB /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43D91CFC52E300003AAB /* CustomFunctions.swift */; };
+		8E4C43ED1CFC52E300003AAB /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DA1CFC52E300003AAB /* Expression.swift */; };
+		8E4C43EE1CFC52E300003AAB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DB1CFC52E300003AAB /* Operators.swift */; };
+		8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DC1CFC52E300003AAB /* Query.swift */; };
+		8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DD1CFC52E300003AAB /* Schema.swift */; };
+		8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DE1CFC52E300003AAB /* Setter.swift */; };
+		8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
 		8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
@@ -208,7 +228,6 @@
 		02682D401C7EFC420088F21B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		02682D441C7EFFA00088F21B /* BirthDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
 		02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpasmsViewController.swift; sourceTree = "<group>"; };
-		02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphViewController.swift; sourceTree = "<group>"; };
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +290,31 @@
 		8E4C43A11CF871B200003AAB /* NamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		8E4C43A21CF871B200003AAB /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		8E4C43A51CF874E400003AAB /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
+		8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDiagramViewController.swift; sourceTree = "<group>"; };
+		8E4C43C71CFC52E300003AAB /* Blob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
+		8E4C43C81CFC52E300003AAB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		8E4C43C91CFC52E300003AAB /* fts3_tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		8E4C43CA1CFC52E300003AAB /* SQLite-Bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SQLite-Bridging.h"; sourceTree = "<group>"; };
+		8E4C43CB1CFC52E300003AAB /* SQLite-Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SQLite-Bridging.m"; sourceTree = "<group>"; };
+		8E4C43CC1CFC52E300003AAB /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		8E4C43CD1CFC52E300003AAB /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		8E4C43CF1CFC52E300003AAB /* FTS4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTS4.swift; sourceTree = "<group>"; };
+		8E4C43D01CFC52E300003AAB /* R*Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "R*Tree.swift"; sourceTree = "<group>"; };
+		8E4C43D11CFC52E300003AAB /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		8E4C43D21CFC52E300003AAB /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8E4C43D31CFC52E300003AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E4C43D41CFC52E300003AAB /* SQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite.h; sourceTree = "<group>"; };
+		8E4C43D61CFC52E300003AAB /* AggregateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AggregateFunctions.swift; sourceTree = "<group>"; };
+		8E4C43D71CFC52E300003AAB /* Collation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collation.swift; sourceTree = "<group>"; };
+		8E4C43D81CFC52E300003AAB /* CoreFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreFunctions.swift; sourceTree = "<group>"; };
+		8E4C43D91CFC52E300003AAB /* CustomFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFunctions.swift; sourceTree = "<group>"; };
+		8E4C43DA1CFC52E300003AAB /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		8E4C43DB1CFC52E300003AAB /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		8E4C43DC1CFC52E300003AAB /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		8E4C43DD1CFC52E300003AAB /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		8E4C43DE1CFC52E300003AAB /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
+		8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.dylib; sourceTree = "<group>"; };
+		8E4C43FD1CFC60B800003AAB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
@@ -324,6 +368,7 @@
 				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
 				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
+				8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */,
 				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +391,7 @@
 		02682D1B1C7EFBA40088F21B = {
 			isa = PBXGroup;
 			children = (
+				8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */,
 				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
 				A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */,
 				A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */,
@@ -370,7 +416,9 @@
 				8E4C43861CF8504300003AAB /* zodiacs */,
 				8E4C437E1CF84F4900003AAB /* json files */,
 				A018A95E1CB6733D0044830A /* CVCalendar */,
+				8E4C43C51CFC52E300003AAB /* SQLite */,
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
 				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
@@ -378,10 +426,11 @@
 				8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */,
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
 				8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */,
-				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
+				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				8E4C43A11CF871B200003AAB /* NamesViewController.swift */,
 				8E4C43A21CF871B200003AAB /* NameViewController.swift */,
-				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
+				8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */,
+				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
 				022994231C80969F00E3B816 /* NotesViewController.swift */,
 				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
 				022994291C845B4D00E3B816 /* Plist.swift */,
@@ -389,7 +438,6 @@
 				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
 				02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
-				02682D4C1C7F18BA0088F21B /* WeightGraphViewController.swift */,
 				02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */,
 				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
 				8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */,
@@ -511,6 +559,59 @@
 				8E4C43921CF8506200003AAB /* 11z.jpg */,
 			);
 			name = zodiacs;
+			sourceTree = "<group>";
+		};
+		8E4C43C51CFC52E300003AAB /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C43C61CFC52E300003AAB /* Core */,
+				8E4C43CE1CFC52E300003AAB /* Extensions */,
+				8E4C43D11CFC52E300003AAB /* Foundation.swift */,
+				8E4C43D21CFC52E300003AAB /* Helpers.swift */,
+				8E4C43D31CFC52E300003AAB /* Info.plist */,
+				8E4C43D41CFC52E300003AAB /* SQLite.h */,
+				8E4C43D51CFC52E300003AAB /* Typed */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		8E4C43C61CFC52E300003AAB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C43C71CFC52E300003AAB /* Blob.swift */,
+				8E4C43C81CFC52E300003AAB /* Connection.swift */,
+				8E4C43C91CFC52E300003AAB /* fts3_tokenizer.h */,
+				8E4C43CA1CFC52E300003AAB /* SQLite-Bridging.h */,
+				8E4C43CB1CFC52E300003AAB /* SQLite-Bridging.m */,
+				8E4C43CC1CFC52E300003AAB /* Statement.swift */,
+				8E4C43CD1CFC52E300003AAB /* Value.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8E4C43CE1CFC52E300003AAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C43CF1CFC52E300003AAB /* FTS4.swift */,
+				8E4C43D01CFC52E300003AAB /* R*Tree.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E4C43D51CFC52E300003AAB /* Typed */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C43D61CFC52E300003AAB /* AggregateFunctions.swift */,
+				8E4C43D71CFC52E300003AAB /* Collation.swift */,
+				8E4C43D81CFC52E300003AAB /* CoreFunctions.swift */,
+				8E4C43D91CFC52E300003AAB /* CustomFunctions.swift */,
+				8E4C43DA1CFC52E300003AAB /* Expression.swift */,
+				8E4C43DB1CFC52E300003AAB /* Operators.swift */,
+				8E4C43DC1CFC52E300003AAB /* Query.swift */,
+				8E4C43DD1CFC52E300003AAB /* Schema.swift */,
+				8E4C43DE1CFC52E300003AAB /* Setter.swift */,
+			);
+			path = Typed;
 			sourceTree = "<group>";
 		};
 		A018A95E1CB6733D0044830A /* CVCalendar */ = {
@@ -709,6 +810,7 @@
 				02FE54AA1CAAA21B0094C055 /* 8.jpg in Resources */,
 				8E4C43981CF8506200003AAB /* 5z.jpg in Resources */,
 				8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */,
+				8E4C43E81CFC52E300003AAB /* Info.plist in Resources */,
 				02FE54A31CAAA21B0094C055 /* 23.jpg in Resources */,
 				02FE549F1CAAA21B0094C055 /* 2.jpg in Resources */,
 				02FE549A1CAAA21B0094C055 /* 15.jpg in Resources */,
@@ -747,8 +849,10 @@
 				A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */,
 				A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */,
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
+				8E4C43ED1CFC52E300003AAB /* Expression.swift in Sources */,
 				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
+				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
@@ -757,41 +861,56 @@
 				A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */,
 				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
 				A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */,
+				8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */,
 				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
+				8E4C43EA1CFC52E300003AAB /* Collation.swift in Sources */,
 				A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */,
 				02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */,
 				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
 				8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */,
 				02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */,
+				8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */,
 				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
 				A018A97E1CB6733D0044830A /* CVCalendarManager.swift in Sources */,
 				A018A9821CB6733D0044830A /* CVCalendarMonthView.swift in Sources */,
 				A018A9861CB6733D0044830A /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */,
-				02682D4D1C7F18BA0088F21B /* WeightGraphViewController.swift in Sources */,
+				8E4C43E61CFC52E300003AAB /* Foundation.swift in Sources */,
+				8E4C43E21CFC52E300003AAB /* Statement.swift in Sources */,
 				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
 				A018A9881CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */,
+				8E4C43EE1CFC52E300003AAB /* Operators.swift in Sources */,
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
 				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
+				8E4C43EB1CFC52E300003AAB /* CoreFunctions.swift in Sources */,
+				8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
 				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
 				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
 				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
+				8E4C43DF1CFC52E300003AAB /* Blob.swift in Sources */,
 				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
+				8E4C43E31CFC52E300003AAB /* Value.swift in Sources */,
 				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
 				8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */,
 				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
+				8E4C43C11CFC523000003AAB /* WeightDiagramViewController.swift in Sources */,
 				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
 				02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */,
+				8E4C43EC1CFC52E300003AAB /* CustomFunctions.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
 				A018A98D1CB6733D0044830A /* CVCalendarWeekView.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
+				8E4C43E41CFC52E300003AAB /* FTS4.swift in Sources */,
 				A018A9831CB6733D0044830A /* CVCalendarTouchController.swift in Sources */,
+				8E4C43E01CFC52E300003AAB /* Connection.swift in Sources */,
+				8E4C43E91CFC52E300003AAB /* AggregateFunctions.swift in Sources */,
+				8E4C43E11CFC52E300003AAB /* SQLite-Bridging.m in Sources */,
 				A018A9931CB6733D0044830A /* CVShape.swift in Sources */,
 				8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */,
 				A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */,
@@ -800,6 +919,7 @@
 				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
 				A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */,
+				8E4C43E71CFC52E300003AAB /* Helpers.swift in Sources */,
 				A018A9891CB6733D0044830A /* CVCalendarViewDelegate.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
 				02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */,
@@ -931,13 +1051,18 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -954,12 +1079,17 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -102,82 +102,6 @@
             </objects>
             <point key="canvasLocation" x="1060" y="282.99999999999994"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GLt-ed-Gp5">
-            <objects>
-                <navigationController storyboardIdentifier="WeightGraphNavigationController" id="2j1-yT-Lgc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rqp-Iy-ijq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cmq-xt-7I8" kind="relationship" relationship="rootViewController" id="oJ6-o4-zpm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xoR-m4-RXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="2630.9999999999995"/>
-        </scene>
-        <!--График набора веса-->
-        <scene sceneID="nxk-ab-7xr">
-            <objects>
-                <viewController id="cmq-xt-7I8" customClass="WeightGraphViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pRB-iV-baZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="kHb-19-q5l"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tr5-VT-MEm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-kn-Qvm">
-                                <rect key="frame" x="20" y="72" width="560" height="520"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Для отображения графика необходимо указать рост">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="25" name="Helvetica-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeN-fN-2Mm" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="105" width="600" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="top" secondItem="pRB-iV-baZ" secondAttribute="bottom" constant="41" id="9sk-KP-AKc"/>
-                            <constraint firstAttribute="trailing" secondItem="ZeN-fN-2Mm" secondAttribute="trailing" id="XOI-La-OjW"/>
-                            <constraint firstItem="ZeN-fN-2Mm" firstAttribute="leading" secondItem="tr5-VT-MEm" secondAttribute="leading" id="pNx-4R-AsN"/>
-                            <constraint firstItem="kHb-19-q5l" firstAttribute="top" secondItem="ZeN-fN-2Mm" secondAttribute="bottom" constant="40" id="z1q-Kb-h1D"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="График набора веса" id="ipx-ux-nVb">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="8d6-EQ-UiL">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Ваш рост" id="v4F-wP-z21">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="growthButtonPress:" destination="cmq-xt-7I8" id="2Uv-HA-Btm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="growthButton" destination="v4F-wP-z21" id="mfO-0e-EbN"/>
-                        <outlet property="label" destination="Dd5-kn-Qvm" id="Sil-KH-Ssd"/>
-                        <outlet property="lineChartView" destination="ZeN-fN-2Mm" id="XsD-1O-fG8"/>
-                        <outlet property="menuButton" destination="8d6-EQ-UiL" id="tw8-wU-22P"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JS6-2E-mOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1768" y="2630"/>
-        </scene>
         <!--Фотоальбом-->
         <scene sceneID="sx7-hZ-rwg">
             <objects>
@@ -1250,11 +1174,130 @@
             </objects>
             <point key="canvasLocation" x="1090" y="993"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zsT-dn-qrd">
+            <objects>
+                <navigationController storyboardIdentifier="WeightGraphNavigationController" id="8nz-bS-IVu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4eU-1M-rFA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cT9-wb-cJe" kind="relationship" relationship="rootViewController" id="pU5-JD-aKn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qem-G4-z0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="2719"/>
+        </scene>
+        <!--График набора веса-->
+        <scene sceneID="wG8-m0-P9T">
+            <objects>
+                <viewController id="cT9-wb-cJe" customClass="WeightDiagramViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vyE-qa-R4O"/>
+                        <viewControllerLayoutGuide type="bottom" id="UFt-3i-Kf8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AGM-Ut-wfj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-sc-6e2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8Q-r6-OFZ">
+                                <rect key="frame" x="176" y="167" width="248" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="l82-Lz-Y2D"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Для отображения графика необходимо указать рост">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csp-6A-dAW" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="73" width="600" height="424"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowUP" translatesAutoresizingMaskIntoConstraints="NO" id="5Us-ku-l8K">
+                                        <rect key="frame" x="473" y="0.0" width="110" height="155"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="UpE-Dd-ZuR"/>
+                                            <constraint firstAttribute="height" constant="155" id="oPt-pC-kdN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Us-ku-l8K" secondAttribute="trailing" constant="17" id="bw0-f5-C09"/>
+                                    <constraint firstItem="5Us-ku-l8K" firstAttribute="top" secondItem="Csp-6A-dAW" secondAttribute="top" id="dig-3N-Aa3"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="недели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INK-3E-Fyb">
+                                <rect key="frame" x="40" y="493" width="42" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Wwh-Mj-t4T"/>
+                                    <constraint firstAttribute="height" constant="20" id="xT1-DA-Qc0"/>
+                                    <constraint firstAttribute="width" constant="42" id="zts-3Z-XoY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Csp-6A-dAW" firstAttribute="leading" secondItem="ydx-sc-6e2" secondAttribute="leading" id="Anv-Wn-X3d"/>
+                            <constraint firstItem="ydx-sc-6e2" firstAttribute="top" secondItem="AGM-Ut-wfj" secondAttribute="top" id="Bm1-nq-waf"/>
+                            <constraint firstItem="Csp-6A-dAW" firstAttribute="top" secondItem="vyE-qa-R4O" secondAttribute="bottom" constant="9" id="DTy-M7-Uks"/>
+                            <constraint firstItem="INK-3E-Fyb" firstAttribute="leading" secondItem="AGM-Ut-wfj" secondAttribute="leadingMargin" constant="20" id="Pcj-e0-0eS"/>
+                            <constraint firstItem="ydx-sc-6e2" firstAttribute="centerY" secondItem="v8Q-r6-OFZ" secondAttribute="centerY" id="PfF-o7-IVp"/>
+                            <constraint firstItem="ydx-sc-6e2" firstAttribute="trailing" secondItem="Csp-6A-dAW" secondAttribute="trailing" id="R45-Ky-L2g"/>
+                            <constraint firstItem="v8Q-r6-OFZ" firstAttribute="top" secondItem="vyE-qa-R4O" secondAttribute="bottom" constant="103" id="Ufr-OT-GuW"/>
+                            <constraint firstItem="UFt-3i-Kf8" firstAttribute="top" secondItem="INK-3E-Fyb" secondAttribute="bottom" constant="87" id="Wib-hc-WUF"/>
+                            <constraint firstItem="UFt-3i-Kf8" firstAttribute="top" secondItem="Csp-6A-dAW" secondAttribute="bottom" constant="103" id="Xyl-2A-SkL"/>
+                            <constraint firstItem="Csp-6A-dAW" firstAttribute="centerX" secondItem="v8Q-r6-OFZ" secondAttribute="centerX" id="cgf-nT-RRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ydx-sc-6e2" secondAttribute="trailing" id="hv8-Te-AoQ"/>
+                            <constraint firstItem="ydx-sc-6e2" firstAttribute="leading" secondItem="AGM-Ut-wfj" secondAttribute="leading" id="l3C-un-M5G"/>
+                            <constraint firstItem="ydx-sc-6e2" firstAttribute="bottom" secondItem="UFt-3i-Kf8" secondAttribute="top" id="w6q-ka-OS5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="График набора веса" id="Xd7-RR-aFx">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="nOc-1G-5Fj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ваш рост" id="f5O-UH-G4L">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="setHeight:" destination="cT9-wb-cJe" id="9Aw-f6-p2t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="arrow" destination="5Us-ku-l8K" id="Bk0-jf-UUc"/>
+                        <outlet property="growthButton" destination="f5O-UH-G4L" id="xb7-JC-9Ma"/>
+                        <outlet property="lbl" destination="v8Q-r6-OFZ" id="DBE-Wm-jMV"/>
+                        <outlet property="lineChartView" destination="Csp-6A-dAW" id="pbe-Hu-GCg"/>
+                        <outlet property="menuButton" destination="nOc-1G-5Fj" id="UUy-Ee-fFy"/>
+                        <outlet property="weekDescription" destination="INK-3E-Fyb" id="j7B-5l-g88"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-YC-tZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="2742"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Checked-50" width="50" height="50"/>
         <image name="Circle Thin-48" width="48" height="48"/>
         <image name="Pencil-48" width="48" height="48"/>
+        <image name="arrowUP" width="92" height="298"/>
         <image name="background" width="500" height="664"/>
         <image name="logo" width="345" height="182"/>
         <image name="menu" width="22" height="22"/>
