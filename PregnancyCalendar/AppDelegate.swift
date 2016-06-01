@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().translucent = false
         UIToolbar.appearance().tintColor = .whiteColor()
         UIToolbar.appearance().barStyle = .BlackOpaque
-        //createEditableCopyOfDatabaseIfNeeded()
+        createEditableCopyOfDatabaseIfNeeded()
         Fabric.with([Crashlytics.self])
         
         
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // First, test for existence.
         // Override point for customization after application launch.
-        var sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
+        /*var sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
         var doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
         let destinationPath = (doumentDirectoryPath as NSString).stringByAppendingPathComponent("db.sqlite")
         //print(destinationPath)
@@ -62,7 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try NSFileManager().copyItemAtPath(sourcePath!, toPath: destinationPath)
         } catch _ {
         }
-        db = try! Connection(destinationPath)
+        db = try! Connection(destinationPath)*/
+        let path = NSSearchPathForDirectoriesInDomains(
+            .DocumentDirectory, .UserDomainMask, true
+            ).first!
+        
+        db = try! Connection("\(path)/db.sqlite")
     }
 
     func applicationWillResignActive(application: UIApplication) {

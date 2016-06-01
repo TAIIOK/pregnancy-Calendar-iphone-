@@ -124,13 +124,11 @@ class NamesTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        print(choosedSegmentNames ? sections.count : sectionsGirl.count)
         return choosedSegmentNames ? sections.count : sectionsGirl.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(choosedSegmentNames ? sections[section].length : sectionsGirl[section].length)
         return choosedSegmentNames ? sections[section].length : sectionsGirl[section].length
     }
     

@@ -69,6 +69,7 @@
 		02FE54B51CAAA2220094C055 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B01CAAA2220094C055 /* 3.png */; };
 		02FE54B61CAAA2220094C055 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B11CAAA2220094C055 /* 4.png */; };
 		02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */; };
+		8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */; };
 		8E4C43831CF84F8300003AAB /* notifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43821CF84F8300003AAB /* notifi.json */; };
 		8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43841CF84F8C00003AAB /* zodiacs.json */; };
 		8E4C43931CF8506200003AAB /* 0z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43871CF8506200003AAB /* 0z.jpg */; };
@@ -108,6 +109,18 @@
 		8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DD1CFC52E300003AAB /* Schema.swift */; };
 		8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DE1CFC52E300003AAB /* Setter.swift */; };
 		8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
+		8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */; };
+		8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A41CFC78900028CC3C /* PhotosViewController.swift */; };
+		8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */; };
+		8E5787AD1CFC79BC0028CC3C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787AB1CFC79BC0028CC3C /* ShareViewController.swift */; };
+		8E5787AF1CFC79CE0028CC3C /* OnePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787AE1CFC79CE0028CC3C /* OnePhotoViewController.swift */; };
+		8E5787B61CFC7A650028CC3C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B01CFC7A650028CC3C /* FBSDKCoreKit.framework */; };
+		8E5787B71CFC7A650028CC3C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B11CFC7A650028CC3C /* FBSDKLoginKit.framework */; };
+		8E5787B81CFC7A650028CC3C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B21CFC7A650028CC3C /* FBSDKShareKit.framework */; };
+		8E5787B91CFC7A650028CC3C /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787B31CFC7A650028CC3C /* InternetConnection.swift */; };
+		8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787B51CFC7A650028CC3C /* OKSDK.m */; };
+		8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; };
+		8E5787CC1CFC7B8E0028CC3C /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
@@ -182,6 +195,41 @@
 			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
 			remoteInfo = ChartsTests;
 		};
+		8E5787C31CFC7B810028CC3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2EB6EA81BD180E9008E7D86;
+			remoteInfo = "SwiftyVK-OSX";
+		};
+		8E5787C51CFC7B810028CC3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2EB6E9B1BD180DD008E7D86;
+			remoteInfo = "SwiftyVK-iOS";
+		};
+		8E5787C71CFC7B810028CC3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2527D4B1BD1130D00F65412;
+			remoteInfo = "SwiftyVKResources-OSX";
+		};
+		8E5787C91CFC7B810028CC3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2527D551BD1134500F65412;
+			remoteInfo = "SwiftyVKResources-iOS";
+		};
+		8E5787CD1CFC7B8F0028CC3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A2EB6E9A1BD180DD008E7D86;
+			remoteInfo = "SwiftyVK-iOS";
+		};
 		A0C56DA51CA2E9A7004C36AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
@@ -199,6 +247,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */,
+				8E5787CC1CFC7B8E0028CC3C /* SwiftyVK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +321,7 @@
 		02FE54B01CAAA2220094C055 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		02FE54B11CAAA2220094C055 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppendCell.swift; sourceTree = "<group>"; };
 		8E4C43821CF84F8300003AAB /* notifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notifi.json; sourceTree = "<group>"; };
 		8E4C43841CF84F8C00003AAB /* zodiacs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zodiacs.json; sourceTree = "<group>"; };
 		8E4C43871CF8506200003AAB /* 0z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0z.jpg; sourceTree = "<group>"; };
@@ -315,6 +365,18 @@
 		8E4C43DE1CFC52E300003AAB /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.dylib; sourceTree = "<group>"; };
 		8E4C43FD1CFC60B800003AAB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E5787A41CFC78900028CC3C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotosViewController.swift; sourceTree = "<group>"; };
+		8E5787AB1CFC79BC0028CC3C /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		8E5787AE1CFC79CE0028CC3C /* OnePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePhotoViewController.swift; sourceTree = "<group>"; };
+		8E5787B01CFC7A650028CC3C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		8E5787B11CFC7A650028CC3C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8E5787B21CFC7A650028CC3C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8E5787B31CFC7A650028CC3C /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		8E5787B41CFC7A650028CC3C /* OKSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKSDK.h; sourceTree = "<group>"; };
+		8E5787B51CFC7A650028CC3C /* OKSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKSDK.m; sourceTree = "<group>"; };
+		8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyVK.xcodeproj; path = "SwiftyVK-master/SwiftyVK.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
@@ -365,9 +427,13 @@
 			files = (
 				02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */,
 				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
+				8E5787B81CFC7A650028CC3C /* FBSDKShareKit.framework in Frameworks */,
+				8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */,
+				8E5787B71CFC7A650028CC3C /* FBSDKLoginKit.framework in Frameworks */,
 				027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */,
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
 				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
+				8E5787B61CFC7A650028CC3C /* FBSDKCoreKit.framework in Frameworks */,
 				8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */,
 				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
 			);
@@ -413,6 +479,7 @@
 		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				8E5787BB1CFC7A9C0028CC3C /* socialNetwork */,
 				8E4C43861CF8504300003AAB /* zodiacs */,
 				8E4C437E1CF84F4900003AAB /* json files */,
 				A018A95E1CB6733D0044830A /* CVCalendar */,
@@ -421,6 +488,7 @@
 				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
+				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
 				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
 				8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */,
@@ -433,8 +501,14 @@
 				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
 				022994231C80969F00E3B816 /* NotesViewController.swift */,
 				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
-				022994291C845B4D00E3B816 /* Plist.swift */,
+				8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */,
+				8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */,
+				8E5787A41CFC78900028CC3C /* PhotosViewController.swift */,
+				8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */,
+				8E5787AE1CFC79CE0028CC3C /* OnePhotoViewController.swift */,
+				8E5787AB1CFC79BC0028CC3C /* ShareViewController.swift */,
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
+				8E5787B31CFC7A650028CC3C /* InternetConnection.swift */,
 				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
 				02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */,
 				022994211C80956900E3B816 /* VideoViewController.swift */,
@@ -614,6 +688,30 @@
 			path = Typed;
 			sourceTree = "<group>";
 		};
+		8E5787BB1CFC7A9C0028CC3C /* socialNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */,
+				8E5787B41CFC7A650028CC3C /* OKSDK.h */,
+				8E5787B51CFC7A650028CC3C /* OKSDK.m */,
+				8E5787B01CFC7A650028CC3C /* FBSDKCoreKit.framework */,
+				8E5787B11CFC7A650028CC3C /* FBSDKLoginKit.framework */,
+				8E5787B21CFC7A650028CC3C /* FBSDKShareKit.framework */,
+			);
+			name = socialNetwork;
+			sourceTree = "<group>";
+		};
+		8E5787BD1CFC7B810028CC3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E5787C41CFC7B810028CC3C /* SwiftyVK.framework */,
+				8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */,
+				8E5787C81CFC7B810028CC3C /* SwiftyVKResources-OSX.bundle */,
+				8E5787CA1CFC7B810028CC3C /* SwiftyVKResources-iOS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A018A95E1CB6733D0044830A /* CVCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,6 +778,7 @@
 			);
 			dependencies = (
 				A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */,
+				8E5787CE1CFC7B8F0028CC3C /* PBXTargetDependency */,
 			);
 			name = PregnancyCalendar;
 			productName = PregnancyCalendar;
@@ -718,6 +817,10 @@
 					ProductGroup = 02E4616A1CA2A0EB00CC6E77 /* Products */;
 					ProjectRef = 02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = 8E5787BD1CFC7B810028CC3C /* Products */;
+					ProjectRef = 8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -753,6 +856,34 @@
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
 			remoteRef = 02E461761CA2A0EB00CC6E77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E5787C41CFC7B810028CC3C /* SwiftyVK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyVK.framework;
+			remoteRef = 8E5787C31CFC7B810028CC3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyVK.framework;
+			remoteRef = 8E5787C51CFC7B810028CC3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E5787C81CFC7B810028CC3C /* SwiftyVKResources-OSX.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftyVKResources-OSX.bundle";
+			remoteRef = 8E5787C71CFC7B810028CC3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E5787CA1CFC7B810028CC3C /* SwiftyVKResources-iOS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftyVKResources-iOS.bundle";
+			remoteRef = 8E5787C91CFC7B810028CC3C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -853,11 +984,13 @@
 				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
 				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
+				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
+				8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */,
 				A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */,
 				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
 				A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */,
@@ -866,6 +999,7 @@
 				8E4C43EA1CFC52E300003AAB /* Collation.swift in Sources */,
 				A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */,
 				02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */,
+				8E5787AF1CFC79CE0028CC3C /* OnePhotoViewController.swift in Sources */,
 				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
 				8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */,
 				02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */,
@@ -884,6 +1018,7 @@
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
 				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
 				8E4C43EB1CFC52E300003AAB /* CoreFunctions.swift in Sources */,
+				8E5787AD1CFC79BC0028CC3C /* ShareViewController.swift in Sources */,
 				8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
 				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
@@ -900,10 +1035,13 @@
 				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
 				02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */,
+				8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */,
 				8E4C43EC1CFC52E300003AAB /* CustomFunctions.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
+				8E5787B91CFC7A650028CC3C /* InternetConnection.swift in Sources */,
 				A018A98D1CB6733D0044830A /* CVCalendarWeekView.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
+				8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */,
 				A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
 				8E4C43E41CFC52E300003AAB /* FTS4.swift in Sources */,
@@ -913,6 +1051,7 @@
 				8E4C43E11CFC52E300003AAB /* SQLite-Bridging.m in Sources */,
 				A018A9931CB6733D0044830A /* CVShape.swift in Sources */,
 				8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */,
+				8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */,
 				A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */,
 				02FE54781CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift in Sources */,
 				8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */,
@@ -930,6 +1069,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8E5787CE1CFC7B8F0028CC3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyVK-iOS";
+			targetProxy = 8E5787CD1CFC7B8F0028CC3C /* PBXContainerItemProxy */;
+		};
 		A0C56DA61CA2E9A7004C36AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Charts-iOS";
@@ -1049,6 +1193,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PregnancyCalendar",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -1077,6 +1222,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PregnancyCalendar",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
