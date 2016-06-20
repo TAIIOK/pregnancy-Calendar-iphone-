@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 var BirthDate = NSDate()
-var dateType = 0
+var dateType = -1
+var dateTypeTemp = -1
 var Back = false
 
 class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -63,7 +64,13 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     }
     
     @IBAction func OK(sender: UIButton) {
+        dateType = dateTypeTemp
         saveDate(BirthDate, type: dateType)
+        let   alert =  UIAlertController(title: "", message: "Внимание! Обратите внимание, что рассчитанная дата родов является лишь приблизительной, так как течение беременности индивидуально для каждой женщины. По статистике, менее 10% детей рождаются точно в срок, остальные появляются на свет на несколько дней раньше или позже предполагаемой даты родов. Более точную информацию сможет дать наблюдающий Вас врач.", preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
+        
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
@@ -81,18 +88,31 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         let cell = tableView.dequeueReusableCellWithIdentifier("DateCell", forIndexPath: indexPath) as! DateTableViewCell
         cell.textLabel?.text = txt[indexPath.row]
         
-        if indexPath.row == dateType {
-            var date = BirthDate
-            if dateType == 0{
-                date = addDaystoGivenDate(date, NumberOfDaysToAdd: 7*38)
-            }
-            else if dateType == 1{
-                date = addDaystoGivenDate(date, NumberOfDaysToAdd: 7*40)
-            }
+        if indexPath.row == dateTypeTemp {
+            let date = BirthDate
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components([.Day , .Month , .Year], fromDate: date)
-            cell.detailTextLabel?.text = "\(components.day).\(components.month).\(components.year)"
-            //cell.detailTextLabel?.text = "\(selectedDay.date.day).\(selectedDay.date.month).\(selectedDay.date.year)"
+            var string = ""
+            if(components.month<10)
+            {
+                string = "0\(components.month)"
+            }
+            else
+            {
+                string = "\(components.month)"
+            }
+            
+            var stringday = ""
+            if(components.day<10)
+            {
+                stringday = "0\(components.day)"
+            }
+            else
+            {
+                stringday = "\(components.day)"
+            }
+            
+            cell.detailTextLabel?.text = "\(stringday).\(string).\(components.year)"
             cell.setHighlighted(true, animated: false)
             tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
         }
@@ -112,7 +132,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dateType = indexPath.row
+        dateTypeTemp = indexPath.row
         let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
@@ -218,6 +238,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
                     let date = i as! NSManagedObject
                     let dte = date.valueForKey("date") as! NSDate
                     dateType = date.valueForKey("type") as! Int
+                    dateTypeTemp = dateType
                     BirthDate = dte
                     DateisLoaded = true
                 }

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		022994221C80956900E3B816 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994211C80956900E3B816 /* VideoViewController.swift */; };
-		022994241C80969F00E3B816 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994231C80969F00E3B816 /* NotesViewController.swift */; };
 		022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994251C8098AD00E3B816 /* ForumTableViewController.swift */; };
 		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
 		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
@@ -37,7 +35,6 @@
 		02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54711CA96F230094C055 /* CalloutAnnotation.swift */; };
 		02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54731CA96F270094C055 /* CalloutAnnotationView.swift */; };
 		02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54751CA96F350094C055 /* CustomAnnotation.swift */; };
-		02FE54781CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */; };
 		02FE54931CAAA21B0094C055 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547A1CAAA21B0094C055 /* 0.jpg */; };
 		02FE54941CAAA21B0094C055 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547B1CAAA21B0094C055 /* 1.jpg */; };
 		02FE54951CAAA21B0094C055 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FE547C1CAAA21B0094C055 /* 10.jpg */; };
@@ -68,7 +65,6 @@
 		02FE54B41CAAA2220094C055 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54AF1CAAA2220094C055 /* 2.png */; };
 		02FE54B51CAAA2220094C055 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B01CAAA2220094C055 /* 3.png */; };
 		02FE54B61CAAA2220094C055 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B11CAAA2220094C055 /* 4.png */; };
-		02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */; };
 		8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */; };
 		8E4C43831CF84F8300003AAB /* notifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43821CF84F8300003AAB /* notifi.json */; };
 		8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43841CF84F8C00003AAB /* zodiacs.json */; };
@@ -109,6 +105,10 @@
 		8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DD1CFC52E300003AAB /* Schema.swift */; };
 		8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DE1CFC52E300003AAB /* Setter.swift */; };
 		8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
+		8E5298251D1827A600AD06E2 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */; };
+		8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E5298241D1827A600AD06E2 /* YTPlayer.html */; };
+		8E5298281D1827C200AD06E2 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298271D1827C200AD06E2 /* InternetConnection.swift */; };
+		8E52982C1D182C0B00AD06E2 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52982B1D182C0B00AD06E2 /* VideoViewController.swift */; };
 		8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */; };
 		8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A41CFC78900028CC3C /* PhotosViewController.swift */; };
 		8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */; };
@@ -117,12 +117,14 @@
 		8E5787B61CFC7A650028CC3C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B01CFC7A650028CC3C /* FBSDKCoreKit.framework */; };
 		8E5787B71CFC7A650028CC3C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B11CFC7A650028CC3C /* FBSDKLoginKit.framework */; };
 		8E5787B81CFC7A650028CC3C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787B21CFC7A650028CC3C /* FBSDKShareKit.framework */; };
-		8E5787B91CFC7A650028CC3C /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787B31CFC7A650028CC3C /* InternetConnection.swift */; };
 		8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787B51CFC7A650028CC3C /* OKSDK.m */; };
 		8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; };
 		8E5787CC1CFC7B8E0028CC3C /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
+		8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */; };
+		8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */; };
+		8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32861D18252300EA58A9 /* VideosViewController.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
 		A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */; };
 		A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9611CB6733D0044830A /* CVCalendarDayView.swift */; };
@@ -255,8 +257,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		022994211C80956900E3B816 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		022994231C80969F00E3B816 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		022994251C8098AD00E3B816 /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
 		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
@@ -289,7 +289,6 @@
 		02FE54711CA96F230094C055 /* CalloutAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotation.swift; sourceTree = "<group>"; };
 		02FE54731CA96F270094C055 /* CalloutAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotationView.swift; sourceTree = "<group>"; };
 		02FE54751CA96F350094C055 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
-		02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAlbumCollectionViewController.swift; sourceTree = "<group>"; };
 		02FE547A1CAAA21B0094C055 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		02FE547B1CAAA21B0094C055 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		02FE547C1CAAA21B0094C055 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -320,7 +319,6 @@
 		02FE54AF1CAAA2220094C055 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		02FE54B01CAAA2220094C055 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		02FE54B11CAAA2220094C055 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppendCell.swift; sourceTree = "<group>"; };
 		8E4C43821CF84F8300003AAB /* notifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notifi.json; sourceTree = "<group>"; };
 		8E4C43841CF84F8C00003AAB /* zodiacs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zodiacs.json; sourceTree = "<group>"; };
@@ -365,6 +363,10 @@
 		8E4C43DE1CFC52E300003AAB /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.dylib; sourceTree = "<group>"; };
 		8E4C43FD1CFC60B800003AAB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		8E5298241D1827A600AD06E2 /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
+		8E5298271D1827C200AD06E2 /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		8E52982B1D182C0B00AD06E2 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E5787A41CFC78900028CC3C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotosViewController.swift; sourceTree = "<group>"; };
@@ -373,12 +375,14 @@
 		8E5787B01CFC7A650028CC3C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8E5787B11CFC7A650028CC3C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8E5787B21CFC7A650028CC3C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		8E5787B31CFC7A650028CC3C /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		8E5787B41CFC7A650028CC3C /* OKSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKSDK.h; sourceTree = "<group>"; };
 		8E5787B51CFC7A650028CC3C /* OKSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKSDK.m; sourceTree = "<group>"; };
 		8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyVK.xcodeproj; path = "SwiftyVK-master/SwiftyVK.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		8EDA32861D18252300EA58A9 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		A018A9611CB6733D0044830A /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 				A018A95E1CB6733D0044830A /* CVCalendar */,
 				8E4C43C51CFC52E300003AAB /* SQLite */,
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				8EDA32831D18251500EA58A9 /* Video */,
+				8E52982D1D182E6B00AD06E2 /* Photo */,
 				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
@@ -499,22 +505,12 @@
 				8E4C43A21CF871B200003AAB /* NameViewController.swift */,
 				8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */,
 				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
-				022994231C80969F00E3B816 /* NotesViewController.swift */,
-				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
-				8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */,
-				8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */,
-				8E5787A41CFC78900028CC3C /* PhotosViewController.swift */,
-				8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */,
-				8E5787AE1CFC79CE0028CC3C /* OnePhotoViewController.swift */,
 				8E5787AB1CFC79BC0028CC3C /* ShareViewController.swift */,
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
-				8E5787B31CFC7A650028CC3C /* InternetConnection.swift */,
 				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
-				02FE54771CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift */,
-				022994211C80956900E3B816 /* VideoViewController.swift */,
-				02FE54B71CAAA2BF0094C055 /* VideoCollectionViewCell.swift */,
 				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
 				8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */,
+				8E5298271D1827C200AD06E2 /* InternetConnection.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02FE546E1CA96F060094C055 /* Custom pins */,
@@ -638,6 +634,7 @@
 		8E4C43C51CFC52E300003AAB /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				8E52981C1D18279900AD06E2 /* Youtube */,
 				8E4C43C61CFC52E300003AAB /* Core */,
 				8E4C43CE1CFC52E300003AAB /* Extensions */,
 				8E4C43D11CFC52E300003AAB /* Foundation.swift */,
@@ -688,6 +685,28 @@
 			path = Typed;
 			sourceTree = "<group>";
 		};
+		8E52981C1D18279900AD06E2 /* Youtube */ = {
+			isa = PBXGroup;
+			children = (
+				8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */,
+				8E5298241D1827A600AD06E2 /* YTPlayer.html */,
+			);
+			name = Youtube;
+			sourceTree = "<group>";
+		};
+		8E52982D1D182E6B00AD06E2 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
+				8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */,
+				8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */,
+				8E5787A41CFC78900028CC3C /* PhotosViewController.swift */,
+				8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */,
+				8E5787AE1CFC79CE0028CC3C /* OnePhotoViewController.swift */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
 		8E5787BB1CFC7A9C0028CC3C /* socialNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +729,17 @@
 				8E5787CA1CFC7B810028CC3C /* SwiftyVKResources-iOS.bundle */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8EDA32831D18251500EA58A9 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8E52982B1D182C0B00AD06E2 /* VideoViewController.swift */,
+				8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */,
+				8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */,
+				8EDA32861D18252300EA58A9 /* VideosViewController.swift */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		A018A95E1CB6733D0044830A /* CVCalendar */ = {
@@ -904,6 +934,7 @@
 				8E4C43831CF84F8300003AAB /* notifi.json in Resources */,
 				8E4C439D1CF8506200003AAB /* 10z.jpg in Resources */,
 				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */,
 				02FE549D1CAAA21B0094C055 /* 18.jpg in Resources */,
 				02FE549C1CAAA21B0094C055 /* 17.jpg in Resources */,
 				02FE54971CAAA21B0094C055 /* 12.jpg in Resources */,
@@ -984,6 +1015,7 @@
 				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
 				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
+				8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */,
 				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
@@ -992,7 +1024,6 @@
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
 				8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */,
 				A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */,
-				022994221C80956900E3B816 /* VideoViewController.swift in Sources */,
 				A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */,
 				8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */,
 				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
@@ -1002,7 +1033,6 @@
 				8E5787AF1CFC79CE0028CC3C /* OnePhotoViewController.swift in Sources */,
 				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
 				8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */,
-				02FE54B81CAAA2BF0094C055 /* VideoCollectionViewCell.swift in Sources */,
 				8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */,
 				A0E9CD831C96EC3400B6A036 /* EPExtensions.swift in Sources */,
 				A018A97E1CB6733D0044830A /* CVCalendarManager.swift in Sources */,
@@ -1013,6 +1043,7 @@
 				8E4C43E21CFC52E300003AAB /* Statement.swift in Sources */,
 				A0E9CD7F1C96EC3400B6A036 /* EPCalendarConstants.swift in Sources */,
 				A018A9881CB6733D0044830A /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				8E52982C1D182C0B00AD06E2 /* VideoViewController.swift in Sources */,
 				02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */,
 				8E4C43EE1CFC52E300003AAB /* Operators.swift in Sources */,
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
@@ -1022,10 +1053,13 @@
 				8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
 				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
+				8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */,
 				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
+				8E5298251D1827A600AD06E2 /* YouTubePlayer.swift in Sources */,
+				8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */,
+				8E5298281D1827C200AD06E2 /* InternetConnection.swift in Sources */,
 				02682D281C7EFBA40088F21B /* AppDelegate.swift in Sources */,
 				8E4C43DF1CFC52E300003AAB /* Blob.swift in Sources */,
-				022994241C80969F00E3B816 /* NotesViewController.swift in Sources */,
 				8E4C43E31CFC52E300003AAB /* Value.swift in Sources */,
 				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
@@ -1038,7 +1072,6 @@
 				8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */,
 				8E4C43EC1CFC52E300003AAB /* CustomFunctions.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
-				8E5787B91CFC7A650028CC3C /* InternetConnection.swift in Sources */,
 				A018A98D1CB6733D0044830A /* CVCalendarWeekView.swift in Sources */,
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */,
@@ -1053,7 +1086,6 @@
 				8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */,
 				8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */,
 				A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */,
-				02FE54781CAA9F2E0094C055 /* VideoAlbumCollectionViewController.swift in Sources */,
 				8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */,
 				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
@@ -1196,7 +1228,7 @@
 					"$(PROJECT_DIR)/PregnancyCalendar",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1225,7 +1257,7 @@
 					"$(PROJECT_DIR)/PregnancyCalendar",
 				);
 				INFOPLIST_FILE = PregnancyCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

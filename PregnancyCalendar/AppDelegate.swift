@@ -10,12 +10,101 @@ import UIKit
 import CoreData
 import Fabric
 import Crashlytics
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FBSDKShareKit
 
 let StrawBerryColor = UIColor(red: 206/255.0, green: 15/255.0, blue: 105/255.0, alpha: 1.0)
 let BiruzaColor = UIColor(red: 0/255.0, green: 189/255.0, blue: 255/255.0, alpha: 1.0)
 let userGrowth = "userGrowth"
 var db = try! Connection()
 var currentyear = NSDate().year();
+extension String {
+    
+    func contains(find: String) -> Bool{
+        return self.rangeOfString(find) != nil
+    }
+}
+
+
+func getVideoDetails() {
+    for (var i = 0 ; i < videosDress.count ; i += 1 ) {
+        
+        let urlPath: String =  "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=\(videosDress[i])&format=json"
+        
+        let url: NSURL = NSURL(string: urlPath)!
+        let request1: NSURLRequest = NSURLRequest(URL: url)
+        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+        
+        do{
+            
+            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
+            
+            // print(response)
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
+                    
+                    let url = NSURL(string:  (jsonResult.valueForKey("thumbnail_url") as? String)! )!
+                    let imageData = NSData(contentsOfURL: url)
+                    let Image: UIImage! = UIImage(data:imageData!)
+                    imagesfirst.insert(Image, atIndex: imagesfirst.count)
+                    let name = jsonResult.valueForKey("title") as! String
+                    videoTitlefirst.insert(name, atIndex: videoTitlefirst.count)
+                    //print(imagesfirst.count)
+                    //print(videoTitlefirst.count)
+                    
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            
+        }catch let error as NSError
+        {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
+    for (var i = 0 ; i < videosGym.count ; i += 1 ) {
+        
+        let urlPath: String =  "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=\(videosGym[i])&format=json"
+        
+        
+        let url: NSURL = NSURL(string: urlPath)!
+        let request1: NSURLRequest = NSURLRequest(URL: url)
+        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+        
+        do{
+            
+            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
+            
+            //print(response)
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
+                    
+                    let url = NSURL(string:  (jsonResult.valueForKey("thumbnail_url") as? String)! )!
+                    let imageData = NSData(contentsOfURL: url)
+                    let Image: UIImage! = UIImage(data:imageData!)
+                    imagessecond.insert(Image, atIndex: i)
+                    let name = jsonResult.valueForKey("title") as! String
+                    videoTitlesecond.insert(name, atIndex: i)
+                    //print(imagessecond.count)
+                    //print(videoTitlesecond.count)
+                    
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        }catch let error as NSError
+        {
+            print(error.localizedDescription)
+        }
+        
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,6 +138,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         application.applicationIconBadgeNumber = 0
     }
+    /*private func createEditableCopyOfDatabaseIfNeeded() -> Void
+    {
+        // First, test for existence.
+        // Override point for customization after application launch.
+        let sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
+        print(sourcePath)
+        let doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
+        let destinationPath = (doumentDirectoryPath as NSString).stringByAppendingPathComponent("db1.sqlite")
+        //print(destinationPath)
+        do {
+            try NSFileManager().copyItemAtPath(sourcePath!, toPath: destinationPath)
+            //dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {loadNotifi()}
+        } catch _ {
+            
+        }
+        db = try! Connection(destinationPath)
+    }*/
     
     private func createEditableCopyOfDatabaseIfNeeded() -> Void
     {
