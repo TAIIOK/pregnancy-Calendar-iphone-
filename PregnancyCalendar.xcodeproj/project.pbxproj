@@ -26,7 +26,6 @@
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
-		02DA72E01CA92D640011E9DF /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 02DA72DF1CA92D640011E9DF /* points.json */; };
 		02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */; };
 		02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DA72E31CA92F990011E9DF /* MapKit.framework */; };
 		02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */; };
@@ -65,9 +64,27 @@
 		02FE54B41CAAA2220094C055 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54AF1CAAA2220094C055 /* 2.png */; };
 		02FE54B51CAAA2220094C055 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B01CAAA2220094C055 /* 3.png */; };
 		02FE54B61CAAA2220094C055 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 02FE54B11CAAA2220094C055 /* 4.png */; };
+		8E1450551D1971FC00D234B2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450541D1971FC00D234B2 /* Notifications.swift */; };
+		8E14505C1D19724100D234B2 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450581D19724100D234B2 /* names.json */; };
+		8E14505D1D19724100D234B2 /* notifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450591D19724100D234B2 /* notifi.json */; };
+		8E14505E1D19724100D234B2 /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E14505A1D19724100D234B2 /* points.json */; };
+		8E14505F1D19724100D234B2 /* zodiacs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E14505B1D19724100D234B2 /* zodiacs.json */; };
+		8E1450681D1972F900D234B2 /* DoctorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450601D1972F900D234B2 /* DoctorHeader.swift */; };
+		8E1450691D1972F900D234B2 /* DoctorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450611D1972F900D234B2 /* DoctorViewCell.swift */; };
+		8E14506A1D1972F900D234B2 /* DoctorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450621D1972F900D234B2 /* DoctorViewCell.xib */; };
+		8E14506B1D1972F900D234B2 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450631D1972F900D234B2 /* DoctorViewController.swift */; };
+		8E14506C1D1972F900D234B2 /* DrugsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450641D1972F900D234B2 /* DrugsListTableViewController.swift */; };
+		8E14506D1D1972F900D234B2 /* DrugsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450651D1972F900D234B2 /* DrugsTableViewCell.swift */; };
+		8E14506E1D1972F900D234B2 /* DrugsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450661D1972F900D234B2 /* DrugsViewCell.xib */; };
+		8E14506F1D1972F900D234B2 /* DrugsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450671D1972F900D234B2 /* DrugsViewController.swift */; };
+		8E1450711D19730500D234B2 /* TimeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450701D19730500D234B2 /* TimeListController.swift */; };
+		8E1450731D19731000D234B2 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450721D19731000D234B2 /* NotifiCell.swift */; };
+		8E1450771D19734E00D234B2 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450761D19734E00D234B2 /* ExperienceViewController.swift */; };
+		8E1450791D1973A900D234B2 /* AdvertisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */; };
+		8E14507D1D19757A00D234B2 /* addCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E14507C1D19757A00D234B2 /* addCell.xib */; };
+		8E1450821D197BFD00D234B2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */; };
+		8E1450841D197C2200D234B2 /* NotifiListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450831D197C2200D234B2 /* NotifiListTableViewController.swift */; };
 		8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */; };
-		8E4C43831CF84F8300003AAB /* notifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43821CF84F8300003AAB /* notifi.json */; };
-		8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43841CF84F8C00003AAB /* zodiacs.json */; };
 		8E4C43931CF8506200003AAB /* 0z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43871CF8506200003AAB /* 0z.jpg */; };
 		8E4C43941CF8506200003AAB /* 1z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43881CF8506200003AAB /* 1z.jpg */; };
 		8E4C43951CF8506200003AAB /* 2z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43891CF8506200003AAB /* 2z.jpg */; };
@@ -83,7 +100,6 @@
 		8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */; };
 		8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A11CF871B200003AAB /* NamesViewController.swift */; };
 		8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A21CF871B200003AAB /* NameViewController.swift */; };
-		8E4C43A61CF874E400003AAB /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43A51CF874E400003AAB /* names.json */; };
 		8E4C43C11CFC523000003AAB /* WeightDiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */; };
 		8E4C43DF1CFC52E300003AAB /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C71CFC52E300003AAB /* Blob.swift */; };
 		8E4C43E01CFC52E300003AAB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43C81CFC52E300003AAB /* Connection.swift */; };
@@ -290,7 +306,6 @@
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
-		02DA72DF1CA92D640011E9DF /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
 		02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		02DA72E31CA92F990011E9DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildBerriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -329,9 +344,27 @@
 		02FE54AF1CAAA2220094C055 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		02FE54B01CAAA2220094C055 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		02FE54B11CAAA2220094C055 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		8E1450541D1971FC00D234B2 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		8E1450581D19724100D234B2 /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
+		8E1450591D19724100D234B2 /* notifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notifi.json; sourceTree = "<group>"; };
+		8E14505A1D19724100D234B2 /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
+		8E14505B1D19724100D234B2 /* zodiacs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zodiacs.json; sourceTree = "<group>"; };
+		8E1450601D1972F900D234B2 /* DoctorHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorHeader.swift; sourceTree = "<group>"; };
+		8E1450611D1972F900D234B2 /* DoctorViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewCell.swift; sourceTree = "<group>"; };
+		8E1450621D1972F900D234B2 /* DoctorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorViewCell.xib; sourceTree = "<group>"; };
+		8E1450631D1972F900D234B2 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		8E1450641D1972F900D234B2 /* DrugsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListTableViewController.swift; sourceTree = "<group>"; };
+		8E1450651D1972F900D234B2 /* DrugsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsTableViewCell.swift; sourceTree = "<group>"; };
+		8E1450661D1972F900D234B2 /* DrugsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugsViewCell.xib; sourceTree = "<group>"; };
+		8E1450671D1972F900D234B2 /* DrugsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsViewController.swift; sourceTree = "<group>"; };
+		8E1450701D19730500D234B2 /* TimeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeListController.swift; sourceTree = "<group>"; };
+		8E1450721D19731000D234B2 /* NotifiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiCell.swift; sourceTree = "<group>"; };
+		8E1450761D19734E00D234B2 /* ExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
+		8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingViewController.swift; sourceTree = "<group>"; };
+		8E14507C1D19757A00D234B2 /* addCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addCell.xib; sourceTree = "<group>"; };
+		8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		8E1450831D197C2200D234B2 /* NotifiListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiListTableViewController.swift; sourceTree = "<group>"; };
 		8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppendCell.swift; sourceTree = "<group>"; };
-		8E4C43821CF84F8300003AAB /* notifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notifi.json; sourceTree = "<group>"; };
-		8E4C43841CF84F8C00003AAB /* zodiacs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zodiacs.json; sourceTree = "<group>"; };
 		8E4C43871CF8506200003AAB /* 0z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0z.jpg; sourceTree = "<group>"; };
 		8E4C43881CF8506200003AAB /* 1z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1z.jpg; sourceTree = "<group>"; };
 		8E4C43891CF8506200003AAB /* 2z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2z.jpg; sourceTree = "<group>"; };
@@ -347,7 +380,6 @@
 		8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		8E4C43A11CF871B200003AAB /* NamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		8E4C43A21CF871B200003AAB /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		8E4C43A51CF874E400003AAB /* names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDiagramViewController.swift; sourceTree = "<group>"; };
 		8E4C43C71CFC52E300003AAB /* Blob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
 		8E4C43C81CFC52E300003AAB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -508,31 +540,25 @@
 				8E4C437E1CF84F4900003AAB /* json files */,
 				A018A95E1CB6733D0044830A /* CVCalendar */,
 				8E4C43C51CFC52E300003AAB /* SQLite */,
-				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
 				8EDA32831D18251500EA58A9 /* Video */,
 				8E52982D1D182E6B00AD06E2 /* Photo */,
 				8E5298301D1940D400AD06E2 /* Note */,
-				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
-				02682D361C7EFBA40088F21B /* Info.plist */,
-				022994271C8459A400E3B816 /* userInfo.plist */,
-				022994291C845B4D00E3B816 /* Plist.swift */,
+				8E14507E1D19759600D234B2 /* Name list */,
+				8E14507F1D1975C900D234B2 /* other */,
 				02682D271C7EFBA40088F21B /* AppDelegate.swift */,
 				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
 				8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */,
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
 				8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
-				8E4C43A11CF871B200003AAB /* NamesViewController.swift */,
-				8E4C43A21CF871B200003AAB /* NameViewController.swift */,
 				8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */,
 				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
 				8E5787AB1CFC79BC0028CC3C /* ShareViewController.swift */,
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
+				8E1450761D19734E00D234B2 /* ExperienceViewController.swift */,
+				8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */,
 				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
 				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
-				8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */,
-				8E5298271D1827C200AD06E2 /* InternetConnection.swift */,
-				8E5298311D19427300AD06E2 /* ImageFromCalendar.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02FE546E1CA96F060094C055 /* Custom pins */,
@@ -543,7 +569,6 @@
 				02682D2E1C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld */,
 				02682D3D1C7EFC050088F21B /* SWRevealViewController */,
 				02FE54AC1CAAA2220094C055 /* Yoga */,
-				A022904C1CBFC70700C8B3B4 /* NoteCell.swift */,
 			);
 			path = PregnancyCalendar;
 			sourceTree = "<group>";
@@ -623,13 +648,40 @@
 			path = Yoga;
 			sourceTree = "<group>";
 		};
+		8E14507E1D19759600D234B2 /* Name list */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C43A11CF871B200003AAB /* NamesViewController.swift */,
+				8E4C43A21CF871B200003AAB /* NameViewController.swift */,
+			);
+			name = "Name list";
+			sourceTree = "<group>";
+		};
+		8E14507F1D1975C900D234B2 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */,
+				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
+				8E1450541D1971FC00D234B2 /* Notifications.swift */,
+				8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */,
+				8E5298271D1827C200AD06E2 /* InternetConnection.swift */,
+				8E5298311D19427300AD06E2 /* ImageFromCalendar.swift */,
+				A022904C1CBFC70700C8B3B4 /* NoteCell.swift */,
+				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
+				022994291C845B4D00E3B816 /* Plist.swift */,
+				02682D361C7EFBA40088F21B /* Info.plist */,
+				022994271C8459A400E3B816 /* userInfo.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		8E4C437E1CF84F4900003AAB /* json files */ = {
 			isa = PBXGroup;
 			children = (
-				8E4C43A51CF874E400003AAB /* names.json */,
-				02DA72DF1CA92D640011E9DF /* points.json */,
-				8E4C43821CF84F8300003AAB /* notifi.json */,
-				8E4C43841CF84F8C00003AAB /* zodiacs.json */,
+				8E1450581D19724100D234B2 /* names.json */,
+				8E1450591D19724100D234B2 /* notifi.json */,
+				8E14505A1D19724100D234B2 /* points.json */,
+				8E14505B1D19724100D234B2 /* zodiacs.json */,
 			);
 			name = "json files";
 			sourceTree = "<group>";
@@ -741,6 +793,18 @@
 				8E52983C1D195CF000AD06E2 /* FoodViewController.swift */,
 				8E52983F1D1962D600AD06E2 /* DesireListViewController.swift */,
 				8E5298411D19634C00AD06E2 /* DesireTableViewCell.swift */,
+				8E1450601D1972F900D234B2 /* DoctorHeader.swift */,
+				8E1450611D1972F900D234B2 /* DoctorViewCell.swift */,
+				8E1450621D1972F900D234B2 /* DoctorViewCell.xib */,
+				8E1450631D1972F900D234B2 /* DoctorViewController.swift */,
+				8E1450641D1972F900D234B2 /* DrugsListTableViewController.swift */,
+				8E1450651D1972F900D234B2 /* DrugsTableViewCell.swift */,
+				8E1450661D1972F900D234B2 /* DrugsViewCell.xib */,
+				8E1450671D1972F900D234B2 /* DrugsViewController.swift */,
+				8E1450701D19730500D234B2 /* TimeListController.swift */,
+				8E1450721D19731000D234B2 /* NotifiCell.swift */,
+				8E14507C1D19757A00D234B2 /* addCell.xib */,
+				8E1450831D197C2200D234B2 /* NotifiListTableViewController.swift */,
 			);
 			name = Note;
 			sourceTree = "<group>";
@@ -961,6 +1025,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E14505D1D19724100D234B2 /* notifi.json in Resources */,
 				02FE54A91CAAA21B0094C055 /* 7.jpg in Resources */,
 				02FE54951CAAA21B0094C055 /* 10.jpg in Resources */,
 				02FE54A51CAAA21B0094C055 /* 3.jpg in Resources */,
@@ -969,10 +1034,11 @@
 				8E4C43961CF8506200003AAB /* 3z.jpg in Resources */,
 				8E4C439C1CF8506200003AAB /* 9z.jpg in Resources */,
 				02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */,
-				8E4C43831CF84F8300003AAB /* notifi.json in Resources */,
 				8E4C439D1CF8506200003AAB /* 10z.jpg in Resources */,
 				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				8E14506A1D1972F900D234B2 /* DoctorViewCell.xib in Resources */,
 				8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */,
+				8E14505F1D19724100D234B2 /* zodiacs.json in Resources */,
 				02FE549D1CAAA21B0094C055 /* 18.jpg in Resources */,
 				02FE549C1CAAA21B0094C055 /* 17.jpg in Resources */,
 				02FE54971CAAA21B0094C055 /* 12.jpg in Resources */,
@@ -983,7 +1049,6 @@
 				02FE549E1CAAA21B0094C055 /* 19.jpg in Resources */,
 				A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */,
 				8E4C439E1CF8506200003AAB /* 11z.jpg in Resources */,
-				8E4C43A61CF874E400003AAB /* names.json in Resources */,
 				02FE54991CAAA21B0094C055 /* 14.jpg in Resources */,
 				02FE54B41CAAA2220094C055 /* 2.png in Resources */,
 				A0E9CD811C96EC3400B6A036 /* EPCalendarHeaderView.xib in Resources */,
@@ -993,23 +1058,25 @@
 				023A527B1C882AD100DBFF76 /* NumberCollectionViewCell.xib in Resources */,
 				02FE54B51CAAA2220094C055 /* 3.png in Resources */,
 				023A527D1C882AFB00DBFF76 /* ContentCollectionViewCell.xib in Resources */,
+				8E14505E1D19724100D234B2 /* points.json in Resources */,
 				02FE54A61CAAA21B0094C055 /* 4.jpg in Resources */,
 				022994281C8459A400E3B816 /* userInfo.plist in Resources */,
 				02FE54941CAAA21B0094C055 /* 1.jpg in Resources */,
+				8E14507D1D19757A00D234B2 /* addCell.xib in Resources */,
 				02FE54AB1CAAA21B0094C055 /* 9.jpg in Resources */,
-				02DA72E01CA92D640011E9DF /* points.json in Resources */,
 				02FE54B61CAAA2220094C055 /* 4.png in Resources */,
 				02FE549B1CAAA21B0094C055 /* 16.jpg in Resources */,
 				8E4C43991CF8506200003AAB /* 6z.jpg in Resources */,
+				8E14505C1D19724100D234B2 /* names.json in Resources */,
 				8E4C43971CF8506200003AAB /* 4z.jpg in Resources */,
 				02FE54A11CAAA21B0094C055 /* 21.jpg in Resources */,
+				8E14506E1D1972F900D234B2 /* DrugsViewCell.xib in Resources */,
 				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
 				8E4C439B1CF8506200003AAB /* 8z.jpg in Resources */,
 				02FE54A41CAAA21B0094C055 /* 24.jpg in Resources */,
 				8E4C43931CF8506200003AAB /* 0z.jpg in Resources */,
 				02FE54AA1CAAA21B0094C055 /* 8.jpg in Resources */,
 				8E4C43981CF8506200003AAB /* 5z.jpg in Resources */,
-				8E4C43851CF84F8C00003AAB /* zodiacs.json in Resources */,
 				8E4C43E81CFC52E300003AAB /* Info.plist in Resources */,
 				02FE54A31CAAA21B0094C055 /* 23.jpg in Resources */,
 				02FE549F1CAAA21B0094C055 /* 2.jpg in Resources */,
@@ -1048,6 +1115,7 @@
 				A018A9901CB6733D0044830A /* CVScrollDirection.swift in Sources */,
 				A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */,
 				A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */,
+				8E1450731D19731000D234B2 /* NotifiCell.swift in Sources */,
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
 				8E4C43ED1CFC52E300003AAB /* Expression.swift in Sources */,
 				A018A9851CB6733D0044830A /* CVCalendarViewAnimator.swift in Sources */,
@@ -1055,15 +1123,20 @@
 				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
 				8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */,
 				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
+				8E1450681D1972F900D234B2 /* DoctorHeader.swift in Sources */,
+				8E14506B1D1972F900D234B2 /* DoctorViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
 				8E5298341D194AC200AD06E2 /* TextNoteViewController.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
+				8E1450711D19730500D234B2 /* TimeListController.swift in Sources */,
 				8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */,
 				A018A9911CB6733D0044830A /* CVSelectionType.swift in Sources */,
+				8E1450821D197BFD00D234B2 /* DatePickerViewController.swift in Sources */,
 				A018A98C1CB6733D0044830A /* CVCalendarWeekday.swift in Sources */,
+				8E1450551D1971FC00D234B2 /* Notifications.swift in Sources */,
 				8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */,
 				02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */,
 				8E4C43EA1CFC52E300003AAB /* Collation.swift in Sources */,
@@ -1087,13 +1160,16 @@
 				8E5298421D19634C00AD06E2 /* DesireTableViewCell.swift in Sources */,
 				02FE54741CA96F270094C055 /* CalloutAnnotationView.swift in Sources */,
 				8E4C43EE1CFC52E300003AAB /* Operators.swift in Sources */,
+				8E1450691D1972F900D234B2 /* DoctorViewCell.swift in Sources */,
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
 				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
+				8E1450791D1973A900D234B2 /* AdvertisingViewController.swift in Sources */,
 				8E4C43EB1CFC52E300003AAB /* CoreFunctions.swift in Sources */,
 				8E5787AD1CFC79BC0028CC3C /* ShareViewController.swift in Sources */,
 				8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
 				A018A98F1CB6733D0044830A /* CVRange.swift in Sources */,
+				8E1450841D197C2200D234B2 /* NotifiListTableViewController.swift in Sources */,
 				8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */,
 				027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */,
 				8E5298251D1827A600AD06E2 /* YouTubePlayer.swift in Sources */,
@@ -1104,7 +1180,9 @@
 				8E4C43DF1CFC52E300003AAB /* Blob.swift in Sources */,
 				8E4C43E31CFC52E300003AAB /* Value.swift in Sources */,
 				8E5298361D19599900AD06E2 /* WeightNoteViewController.swift in Sources */,
+				8E1450771D19734E00D234B2 /* ExperienceViewController.swift in Sources */,
 				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
+				8E14506C1D1972F900D234B2 /* DrugsListTableViewController.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
 				8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */,
 				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
@@ -1121,7 +1199,9 @@
 				8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */,
 				A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
+				8E14506F1D1972F900D234B2 /* DrugsViewController.swift in Sources */,
 				8E4C43E41CFC52E300003AAB /* FTS4.swift in Sources */,
+				8E14506D1D1972F900D234B2 /* DrugsTableViewCell.swift in Sources */,
 				A018A9831CB6733D0044830A /* CVCalendarTouchController.swift in Sources */,
 				8E4C43E01CFC52E300003AAB /* Connection.swift in Sources */,
 				8E4C43E91CFC52E300003AAB /* AggregateFunctions.swift in Sources */,

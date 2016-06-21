@@ -63,10 +63,13 @@ class VideoViewController: UITableViewController{
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("VideoAlbumController") as? VideoAlbumCollectionViewController
-        controller?.title = indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
-        controller?.type = indexPath.row == 0 ? VideoTypes.Linen : VideoTypes.Gym
-        navigationController?.showViewController(controller!, sender: self)
+        if indexPath.row == 0{
+            choosedVideoSegment = true
+        }else{
+            choosedVideoSegment = false
+        }
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("VideoAlbumController") as? UINavigationController
+        self.revealViewController().pushFrontViewController(controller, animated: true)
     }
     
     /*
