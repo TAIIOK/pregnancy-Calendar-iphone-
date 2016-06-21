@@ -84,6 +84,9 @@
 		8E14507D1D19757A00D234B2 /* addCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E14507C1D19757A00D234B2 /* addCell.xib */; };
 		8E1450821D197BFD00D234B2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */; };
 		8E1450841D197C2200D234B2 /* NotifiListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450831D197C2200D234B2 /* NotifiListTableViewController.swift */; };
+		8E1450861D19839900D234B2 /* webArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450851D19839900D234B2 /* webArticleViewController.swift */; };
+		8E1450891D1983A600D234B2 /* bondage.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450871D1983A600D234B2 /* bondage.html */; };
+		8E14508A1D1983A600D234B2 /* bra.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E1450881D1983A600D234B2 /* bra.html */; };
 		8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */; };
 		8E4C43931CF8506200003AAB /* 0z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43871CF8506200003AAB /* 0z.jpg */; };
 		8E4C43941CF8506200003AAB /* 1z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43881CF8506200003AAB /* 1z.jpg */; };
@@ -364,6 +367,9 @@
 		8E14507C1D19757A00D234B2 /* addCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addCell.xib; sourceTree = "<group>"; };
 		8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		8E1450831D197C2200D234B2 /* NotifiListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiListTableViewController.swift; sourceTree = "<group>"; };
+		8E1450851D19839900D234B2 /* webArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webArticleViewController.swift; sourceTree = "<group>"; };
+		8E1450871D1983A600D234B2 /* bondage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bondage.html; sourceTree = "<group>"; };
+		8E1450881D1983A600D234B2 /* bra.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bra.html; sourceTree = "<group>"; };
 		8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppendCell.swift; sourceTree = "<group>"; };
 		8E4C43871CF8506200003AAB /* 0z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0z.jpg; sourceTree = "<group>"; };
 		8E4C43881CF8506200003AAB /* 1z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1z.jpg; sourceTree = "<group>"; };
@@ -557,6 +563,7 @@
 				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
 				8E1450761D19734E00D234B2 /* ExperienceViewController.swift */,
 				8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */,
+				8E1450851D19839900D234B2 /* webArticleViewController.swift */,
 				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
 				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
@@ -660,6 +667,8 @@
 		8E14507F1D1975C900D234B2 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				8E1450871D1983A600D234B2 /* bondage.html */,
+				8E1450881D1983A600D234B2 /* bra.html */,
 				8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */,
 				02682D3E1C7EFC420088F21B /* PregnancyCalendar-Bridging-Header.h */,
 				8E1450541D1971FC00D234B2 /* Notifications.swift */,
@@ -1065,6 +1074,7 @@
 				8E14507D1D19757A00D234B2 /* addCell.xib in Resources */,
 				02FE54AB1CAAA21B0094C055 /* 9.jpg in Resources */,
 				02FE54B61CAAA2220094C055 /* 4.png in Resources */,
+				8E1450891D1983A600D234B2 /* bondage.html in Resources */,
 				02FE549B1CAAA21B0094C055 /* 16.jpg in Resources */,
 				8E4C43991CF8506200003AAB /* 6z.jpg in Resources */,
 				8E14505C1D19724100D234B2 /* names.json in Resources */,
@@ -1074,6 +1084,7 @@
 				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
 				8E4C439B1CF8506200003AAB /* 8z.jpg in Resources */,
 				02FE54A41CAAA21B0094C055 /* 24.jpg in Resources */,
+				8E14508A1D1983A600D234B2 /* bra.html in Resources */,
 				8E4C43931CF8506200003AAB /* 0z.jpg in Resources */,
 				02FE54AA1CAAA21B0094C055 /* 8.jpg in Resources */,
 				8E4C43981CF8506200003AAB /* 5z.jpg in Resources */,
@@ -1123,6 +1134,7 @@
 				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
 				8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */,
 				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
+				8E1450861D19839900D234B2 /* webArticleViewController.swift in Sources */,
 				8E1450681D1972F900D234B2 /* DoctorHeader.swift in Sources */,
 				8E14506B1D1972F900D234B2 /* DoctorViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,

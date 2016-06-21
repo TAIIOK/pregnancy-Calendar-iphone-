@@ -66,6 +66,7 @@ class MenuTableViewController: UITableViewController {
             self.pushFrontViewController("ForumNavigationController")
             break
         case 9:
+            self.pushFrontViewController("ExperienceNavigationController")
             break
         case 10:
             self.pushFrontViewController("CalendarViewController")

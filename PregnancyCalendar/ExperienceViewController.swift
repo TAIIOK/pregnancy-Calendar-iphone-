@@ -90,9 +90,18 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         //self.tbl.scrollToRowAtIndexPath(choosedNote, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
     
-        
+    private func setupSidebarMenu() {
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealDisplacement = 0
+            self.revealViewController().rearViewRevealOverdraw = 0
+            self.revealViewController().rearViewRevealWidth = 275
+            self.revealViewController().frontViewShadowRadius = 0
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        }
+    }
     
-    func setupNavigation(date : CVDate){
+    /*func setupNavigation(date : CVDate){
     
     
         let customView = UIView(frame: CGRectMake(0, 0, 100, 44))
@@ -150,7 +159,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let leftButton = UIBarButtonItem(customView: customView)
         self.navigationItem.leftBarButtonItem = leftButton
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,10 +168,14 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         self.navigationItem.backBarButtonItem = btnBack
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadNotification:", name:"loadNotification", object: nil)
-        setupNavigation(CVDate(date: NSDate()))
+        //setupNavigation(CVDate(date: NSDate()))
         tbl.delegate = self
         tbl.dataSource = self
-
+        self.title = "Полезный опыт"
+        self.setupSidebarMenu()
+        let img  = UIImage(named: "menu")
+        let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
+        self.navigationItem.leftBarButtonItem = btn
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             self.loadDate()
         }
@@ -434,8 +447,8 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             date = selectedExperienceDay.date
         }
         
-        let controller = calendarView.contentController as! CVCalendarMonthContentViewController
-        controller.selectDayViewWithDay(date.day, inMonthView: controller.presentedMonthView)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -448,7 +461,7 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
-        return .MonthView
+        return .WeekView
     }
     
     /// Required method to implement!
@@ -491,7 +504,7 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
             updatedMonthLabel.sizeToFit()
             updatedMonthLabel.alpha = 0
             
-            setupNavigation(date)
+            //setupNavigation(date)
             
             
             //updatedMonthLabel.center = self.monthLabel.center
