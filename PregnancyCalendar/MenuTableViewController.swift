@@ -74,6 +74,7 @@ class MenuTableViewController: UITableViewController {
         case 11:
             self.pushFrontViewController("BuyNavigationController")
         case 12:
+            self.pushFrontViewController("ExportNav")
             break
         default:
             break
