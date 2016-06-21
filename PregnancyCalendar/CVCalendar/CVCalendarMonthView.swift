@@ -140,8 +140,8 @@ extension CVCalendarMonthView {
                     self.interactiveView = UIView(frame: self.bounds)
                     self.interactiveView.backgroundColor = .clearColor()
                     
-                    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(CVCalendarMonthView.didTouchInteractiveView(_:)))
-                    let pressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(CVCalendarMonthView.didPressInteractiveView(_:)))
+                    let tapRecognizer = UITapGestureRecognizer(target: self, action: "didTouchInteractiveView:")
+                    let pressRecognizer = UILongPressGestureRecognizer(target: self, action: "didPressInteractiveView:")
                     pressRecognizer.minimumPressDuration = 0.3
                     
                     self.interactiveView.addGestureRecognizer(pressRecognizer)

@@ -12,7 +12,7 @@ public final class CVCalendarViewAnimator {
     private unowned let calendarView: CalendarView
     
     // MARK: - Public properties
-    public weak var delegate: CVCalendarViewAnimatorDelegate!
+    public var delegate: CVCalendarViewAnimatorDelegate!
     public var coordinator: CVCalendarDayViewControlCoordinator {
         get {
             return calendarView.coordinator
@@ -30,11 +30,13 @@ public final class CVCalendarViewAnimator {
 
 extension CVCalendarViewAnimator {
     public func animateSelectionOnDayView(dayView: DayView) {
+        
         let selectionAnimation = delegate.selectionAnimation()
         dayView.setSelectedWithType(.Single)
-        selectionAnimation(dayView) { [unowned dayView] _ in
-            let _ = dayView
-            // Something...
+        selectionAnimation(dayView) { [unowned dayView] completion in
+            if !self.coordinator.selection {
+                dayView.calendarView.delegate?.didSelectDayView?(dayView, animationDidFinish: completion)
+            }
         }
     }
     

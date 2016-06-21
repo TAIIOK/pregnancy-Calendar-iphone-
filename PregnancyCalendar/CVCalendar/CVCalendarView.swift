@@ -31,18 +31,6 @@ public typealias TouchController = CVCalendarTouchController
 public typealias SelectionType = CVSelectionType
 
 public final class CVCalendarView: UIView {
-    
-    override public func awakeFromNib()
-    {
-        self.userInteractionEnabled = true
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
-    }
-    
-    func handleTap(gestureRecognizer: UITapGestureRecognizer)
-    {
-        print("Here")
-    }
-    
     // MARK: - Public properties
     public var manager: Manager!
     public var appearance: Appearance!
@@ -67,6 +55,7 @@ public final class CVCalendarView: UIView {
     }
     
     public var shouldShowWeekdaysOut: Bool! {
+        
         if let delegate = delegate, let shouldShow = delegate.shouldShowWeekdaysOut?() {
             return shouldShow
         } else {
@@ -98,24 +87,29 @@ public final class CVCalendarView: UIView {
                 return should
             }
             return true
+
         }
     }
     
     public var shouldAutoSelectDayOnWeekChange: Bool{
         get {
+
             if let delegate = delegate, should = delegate.shouldAutoSelectDayOnWeekChange?() {
                 return should
             }
             return true
+
         }
     }
     
     public var shouldScrollOnOutDayViewSelection: Bool{
         get {
+
             if let delegate = delegate, should = delegate.shouldScrollOnOutDayViewSelection?() {
                 return should
             }
             return true
+
         }
     }
     
@@ -133,7 +127,7 @@ public final class CVCalendarView: UIView {
         }
     }
     
-    public weak var delegate: CVCalendarViewDelegate? {
+    public var delegate: CVCalendarViewDelegate? {
         didSet {
             if manager == nil {
                 manager = Manager(calendarView: self)
@@ -148,7 +142,7 @@ public final class CVCalendarView: UIView {
             }
             
             if coordinator == nil {
-                coordinator = Coordinator(calendarView: self)
+                coordinator = Coordinator(calendarView: self )
             }
             
             if animator == nil {
@@ -254,7 +248,7 @@ extension CVCalendarView {
                     weekViewSize = CGSizeMake(width, height)
                     dayViewSize = CGSizeMake((width / 7.0) - hSpace, height)
                     validated = true
-                
+                    
                     contentController.updateFrames(selfSize != contentViewSize ? bounds : CGRectZero)
                 }
             }
@@ -272,12 +266,6 @@ extension CVCalendarView {
             controller.performedDayViewSelection(dayView) // TODO: Update to range selection
         }
     }
-    
-    public func swipedetected(){
-    
-           print("its works")
-           delegate?.swipedetected!()
-    }
 }
 
 // MARK: - Convenience API
@@ -291,13 +279,11 @@ extension CVCalendarView {
         contentController.togglePresentedDate(date)
     }
     
-    // добавить перемотку с большого календаря 
-    
     public func toggleCurrentDayView() {
         contentController.togglePresentedDate(NSDate())
+        
+        
     }
-    
-
     
     public func loadNextView() {
         contentController.presentNextView(nil)

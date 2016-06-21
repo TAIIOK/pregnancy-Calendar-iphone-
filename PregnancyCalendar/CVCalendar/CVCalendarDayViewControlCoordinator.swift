@@ -10,9 +10,9 @@ import UIKit
 
 public final class CVCalendarDayViewControlCoordinator {
     // MARK: - Non public properties
-    private var selectionSet = Set<DayView>()
+    public var selectionSet = Set<DayView>()
     private unowned let calendarView: CalendarView
-    
+    public var selection = false
     // MARK: - Public properties
     public weak var selectedDayView: CVCalendarDayView?
     public var animator: CVCalendarViewAnimator! {
@@ -22,7 +22,8 @@ public final class CVCalendarDayViewControlCoordinator {
     }
 
     // MARK: - initialization
-    public init(calendarView: CalendarView) {
+    public init(calendarView: CalendarView  )
+    {
         self.calendarView = calendarView
     }
 }
@@ -46,8 +47,10 @@ extension CVCalendarDayViewControlCoordinator {
     }
     
     public func flush() {
+  
         selectedDayView = nil
         selectionSet.removeAll()
+        
     }
 }
 
@@ -68,15 +71,41 @@ private extension CVCalendarDayViewControlCoordinator {
 // MARK: - Coordinator's control actions
 
 extension CVCalendarDayViewControlCoordinator {
+    
+    
+    public func setSelection(select:Bool)
+    {
+        selection = select
+    }
+    
+    public func deselect(days: [DayView])
+    {
+        for i in days{
+            presentDeselectionOnDayView(i)
+            selectionSet.remove(i)
+        }
+    }
+    
     public func performDayViewSingleSelection(dayView: DayView) {
+        
+        if (selectionSet.contains(dayView) && selection)
+        {
+        presentDeselectionOnDayView(dayView)
+        selectionSet.remove(dayView)
+        }
+            
+        else{
         selectionSet.insert(dayView)
         
         if selectionSet.count > 1 {
-//            let count = selectionSet.count-1
             for dayViewInQueue in selectionSet {
                 if dayView != dayViewInQueue {
                     if dayView.calendarView != nil {
+                        if(!selection){
                         presentDeselectionOnDayView(dayViewInQueue)
+                        }
+                       
+                        
                     }
                     
                 }
@@ -89,7 +118,8 @@ extension CVCalendarDayViewControlCoordinator {
                 selectedDayView = dayView
                 presentSelectionOnDayView(dayView)
             }
-        } 
+        }
+        }
     }
     
     public func performDayViewRangeSelection(dayView: DayView) {

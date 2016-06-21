@@ -111,6 +111,7 @@
 		8E52982C1D182C0B00AD06E2 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52982B1D182C0B00AD06E2 /* VideoViewController.swift */; };
 		8E52982F1D1940D000AD06E2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52982E1D1940D000AD06E2 /* NotesViewController.swift */; };
 		8E5298321D19427300AD06E2 /* ImageFromCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298311D19427300AD06E2 /* ImageFromCalendar.swift */; };
+		8E5298341D194AC200AD06E2 /* TextNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298331D194AC200AD06E2 /* TextNoteViewController.swift */; };
 		8E5787A51CFC78900028CC3C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */; };
 		8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787A41CFC78900028CC3C /* PhotosViewController.swift */; };
 		8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */; };
@@ -371,6 +372,7 @@
 		8E52982B1D182C0B00AD06E2 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		8E52982E1D1940D000AD06E2 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		8E5298311D19427300AD06E2 /* ImageFromCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFromCalendar.swift; sourceTree = "<group>"; };
+		8E5298331D194AC200AD06E2 /* TextNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNoteViewController.swift; sourceTree = "<group>"; };
 		8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E5787A41CFC78900028CC3C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8E5787AA1CFC79BC0028CC3C /* SelectPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotosViewController.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 			isa = PBXGroup;
 			children = (
 				8E52982E1D1940D000AD06E2 /* NotesViewController.swift */,
+				8E5298331D194AC200AD06E2 /* TextNoteViewController.swift */,
 			);
 			name = Note;
 			sourceTree = "<group>";
@@ -1033,6 +1036,7 @@
 				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
+				8E5298341D194AC200AD06E2 /* TextNoteViewController.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,

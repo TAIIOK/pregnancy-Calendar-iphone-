@@ -32,7 +32,10 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
-        print(DayForView)
+        self.setupSidebarMenu()
+        let img  = UIImage(named: "menu")
+        let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
+        self.navigationItem.leftBarButtonItem = btn
         self.presentedDateUpdated(CVDate(date: NSDate()))
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
@@ -40,6 +43,18 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.loadNotes()})
         tbl.reloadData()
     }
+    
+    private func setupSidebarMenu() {
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealDisplacement = 0
+            self.revealViewController().rearViewRevealOverdraw = 0
+            self.revealViewController().rearViewRevealWidth = 275
+            self.revealViewController().frontViewShadowRadius = 0
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        }
+    }
+
     
     @IBAction func UpdateSectionTable(segue:UIStoryboardSegue) {
         print("update notes table")
@@ -360,17 +375,12 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        var  date = CVDate(date: NSDate())
         if(selectedNoteDay != nil){
-            let  date = selectedNoteDay.date
-            let controller = calendarView.contentController as! CVCalendarMonthContentViewController
-            controller.selectDayViewWithDay(date.day, inMonthView: controller.presentedMonthView)
-        }else{
-            let  date = CVDate(date: NSDate())
-            let controller = calendarView.contentController as! CVCalendarMonthContentViewController
-            controller.selectDayViewWithDay(date.day, inMonthView: controller.presentedMonthView)
+            date = selectedNoteDay.date
         }
-
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -415,7 +425,7 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
-        return .MonthView
+        return .WeekView
     }
     
     /// Required method to implement!

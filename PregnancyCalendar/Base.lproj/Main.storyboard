@@ -1789,7 +1789,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="zhY-Q0-Wrd">
             <objects>
-                <viewController storyboardIdentifier="NotesTable" id="WCW-d1-pp9" customClass="NotesViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesTable" id="WCW-d1-pp9" customClass="NotesViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="APE-d8-Z0s"/>
                         <viewControllerLayoutGuide type="bottom" id="oaD-Ni-2mz"/>
@@ -1801,25 +1801,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Y6-zRd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Al-PXQ" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Al-PXQ" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="aJJ-ia-1qt"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="menuViewDelegate" destination="WCW-d1-pp9" id="dPB-aQ-3uq"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Kq-kpL" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="600" height="170"/>
-                                <connections>
-                                    <outlet property="calendarAppearanceDelegate" destination="WCW-d1-pp9" id="lUW-M8-d3X"/>
-                                    <outlet property="calendarDelegate" destination="WCW-d1-pp9" id="otd-vr-UW1"/>
-                                </connections>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-Vp-zYW">
-                                <rect key="frame" x="20" y="266" width="560" height="314"/>
+                                <rect key="frame" x="20" y="166" width="560" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="314" id="ZWa-oa-PMi"/>
+                                    <constraint firstAttribute="height" constant="414" id="XEO-ct-hRt"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1855,24 +1851,34 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Kq-kpL" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="600" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="TEk-ss-Ye7"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="WCW-d1-pp9" id="lUW-M8-d3X"/>
+                                    <outlet property="calendarDelegate" destination="WCW-d1-pp9" id="otd-vr-UW1"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="leading" secondItem="9Du-Kq-kpL" secondAttribute="leading" id="3yu-HM-jzU"/>
-                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="bottom" secondItem="oaD-Ni-2mz" secondAttribute="top" id="49N-57-XL9"/>
-                            <constraint firstItem="9Du-Kq-kpL" firstAttribute="top" secondItem="0s6-8n-oCc" secondAttribute="top" constant="88" id="Abv-DJ-Tfm"/>
-                            <constraint firstAttribute="trailing" secondItem="VPG-Al-PXQ" secondAttribute="trailing" id="MMJ-Rh-Xfy"/>
-                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="trailing" secondItem="9Du-Kq-kpL" secondAttribute="trailing" id="NU6-Qw-MUu"/>
-                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="trailing" secondItem="9Du-Kq-kpL" secondAttribute="trailing" id="Ov0-ak-94m"/>
-                            <constraint firstAttribute="bottom" secondItem="9Du-Kq-kpL" secondAttribute="bottom" constant="342" id="P7M-mq-dat"/>
-                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="leading" secondItem="0s6-8n-oCc" secondAttribute="leading" id="SUU-Sh-Kd4"/>
-                            <constraint firstItem="9Du-Kq-kpL" firstAttribute="centerX" secondItem="4Xm-Vp-zYW" secondAttribute="centerX" id="VlU-Hc-5Zp"/>
-                            <constraint firstItem="9Du-Kq-kpL" firstAttribute="top" secondItem="VPG-Al-PXQ" secondAttribute="bottom" id="ZqZ-nC-QaO"/>
-                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="top" secondItem="0s6-8n-oCc" secondAttribute="top" id="dh0-i1-i9B"/>
-                            <constraint firstItem="4Xm-Vp-zYW" firstAttribute="leading" secondItem="0s6-8n-oCc" secondAttribute="leadingMargin" id="f9f-8d-YWH"/>
-                            <constraint firstAttribute="bottom" secondItem="4Xm-Vp-zYW" secondAttribute="bottom" constant="20" id="g1j-t6-LIS"/>
-                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="top" secondItem="APE-d8-Z0s" secondAttribute="bottom" id="iNY-0f-leS"/>
-                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="leading" secondItem="9Du-Kq-kpL" secondAttribute="leading" id="ppl-x5-8eZ"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="trailing" secondItem="WBg-Y6-zRd" secondAttribute="trailing" id="7eu-Hf-N3R"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="leading" secondItem="9Du-Kq-kpL" secondAttribute="leading" id="7ya-Ur-XYN"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="leading" secondItem="WBg-Y6-zRd" secondAttribute="leading" id="9Vl-M9-kOo"/>
+                            <constraint firstItem="4Xm-Vp-zYW" firstAttribute="top" secondItem="9Du-Kq-kpL" secondAttribute="bottom" constant="16" id="C7i-OD-KFC"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="top" secondItem="9Du-Kq-kpL" secondAttribute="top" constant="-24" id="EUe-1X-gfm"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="trailing" secondItem="9Du-Kq-kpL" secondAttribute="trailing" id="KuX-RR-AoB"/>
+                            <constraint firstItem="9Du-Kq-kpL" firstAttribute="top" secondItem="VPG-Al-PXQ" secondAttribute="bottom" id="XL0-mi-AaE"/>
+                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="leading" secondItem="0s6-8n-oCc" secondAttribute="leading" id="XUk-Eb-OcS"/>
+                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="top" secondItem="0s6-8n-oCc" secondAttribute="top" id="Xo9-ke-ZC2"/>
+                            <constraint firstItem="9Du-Kq-kpL" firstAttribute="centerX" secondItem="4Xm-Vp-zYW" secondAttribute="centerX" id="YrT-F7-Jfc"/>
+                            <constraint firstItem="VPG-Al-PXQ" firstAttribute="top" secondItem="APE-d8-Z0s" secondAttribute="bottom" id="ZNX-BV-9vN"/>
+                            <constraint firstItem="4Xm-Vp-zYW" firstAttribute="leading" secondItem="0s6-8n-oCc" secondAttribute="leadingMargin" id="bfX-dI-5kB"/>
+                            <constraint firstItem="WBg-Y6-zRd" firstAttribute="bottom" secondItem="oaD-Ni-2mz" secondAttribute="top" id="g5B-IN-NxJ"/>
+                            <constraint firstAttribute="bottom" secondItem="4Xm-Vp-zYW" secondAttribute="bottom" constant="20" symbolic="YES" id="jPh-P6-l3L"/>
+                            <constraint firstAttribute="trailing" secondItem="WBg-Y6-zRd" secondAttribute="trailing" id="tU9-IR-Y4N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aRz-Cl-iKe"/>
@@ -1885,6 +1891,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEY-sX-dUZ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765" y="4765"/>
+        </scene>
+        <!--Calendar Appearance Delegate-->
+        <scene sceneID="o9N-qr-zW2">
+            <objects>
+                <viewController storyboardIdentifier="textNote" id="fBy-Ui-fNa" customClass="TextNoteViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Agj-li-Oa2"/>
+                        <viewControllerLayoutGuide type="bottom" id="fAA-Hv-8BE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KJ9-pm-HIN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-lt-qch">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REs-YI-SV7" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="f5J-H3-Zgj"/>
+                                    <constraint firstAttribute="height" constant="24" id="wBM-f7-alt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="fBy-Ui-fNa" id="DMt-uQ-Oh3"/>
+                                </connections>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uPa-lW-gm8">
+                                <rect key="frame" x="20" y="148" width="560" height="427"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label="tt"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="427" id="va5-ah-lM2"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-BZ-x6B">
+                                <rect key="frame" x="20" y="114" width="560" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qGF-nn-Rpi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-zu-Rqm" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="36" width="600" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="awc-6H-dje"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="fBy-Ui-fNa" id="9P7-ZP-JkW"/>
+                                    <outlet property="calendarDelegate" destination="fBy-Ui-fNa" id="K09-Zi-aQo"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jZo-lt-qch" firstAttribute="bottom" secondItem="fAA-Hv-8BE" secondAttribute="top" id="1VN-EL-8w2"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="top" secondItem="Agj-li-Oa2" secondAttribute="bottom" id="9dj-kL-J83"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="leading" secondItem="mPw-zu-Rqm" secondAttribute="leading" id="Abs-mM-GFT"/>
+                            <constraint firstItem="fAA-Hv-8BE" firstAttribute="top" secondItem="uPa-lW-gm8" secondAttribute="bottom" constant="25" id="Bgd-EO-ftB"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="top" secondItem="mPw-zu-Rqm" secondAttribute="bottom" constant="8" symbolic="YES" id="DOm-tp-dr4"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="top" secondItem="Agj-li-Oa2" secondAttribute="bottom" id="Hhi-da-0Fj"/>
+                            <constraint firstItem="uPa-lW-gm8" firstAttribute="top" secondItem="Eh9-BZ-x6B" secondAttribute="bottom" constant="-1" id="Mlc-b1-XMD"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="top" secondItem="REs-YI-SV7" secondAttribute="bottom" constant="70" id="UHv-9k-9mZ"/>
+                            <constraint firstItem="jZo-lt-qch" firstAttribute="top" secondItem="KJ9-pm-HIN" secondAttribute="top" id="X7K-yO-S0l"/>
+                            <constraint firstItem="mPw-zu-Rqm" firstAttribute="top" secondItem="Agj-li-Oa2" secondAttribute="bottom" constant="16" id="Xgo-gN-jzi"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="leading" secondItem="uPa-lW-gm8" secondAttribute="leading" id="fiv-oC-cJL"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="trailing" secondItem="mPw-zu-Rqm" secondAttribute="trailing" id="ftH-KW-ei7"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="top" secondItem="REs-YI-SV7" secondAttribute="bottom" constant="70" id="h8F-h9-3GH"/>
+                            <constraint firstAttribute="trailing" secondItem="jZo-lt-qch" secondAttribute="trailing" id="nUZ-Ew-Wrf"/>
+                            <constraint firstItem="jZo-lt-qch" firstAttribute="leading" secondItem="KJ9-pm-HIN" secondAttribute="leading" id="pAe-tS-grb"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="trailing" secondItem="uPa-lW-gm8" secondAttribute="trailing" id="w0w-eJ-qva"/>
+                            <constraint firstItem="mPw-zu-Rqm" firstAttribute="centerX" secondItem="Eh9-BZ-x6B" secondAttribute="centerX" id="wai-EL-X51"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="top" secondItem="Agj-li-Oa2" secondAttribute="bottom" id="woO-mp-pc9"/>
+                            <constraint firstItem="REs-YI-SV7" firstAttribute="trailing" secondItem="jZo-lt-qch" secondAttribute="trailing" id="xFh-xL-FsS"/>
+                            <constraint firstItem="jZo-lt-qch" firstAttribute="leading" secondItem="REs-YI-SV7" secondAttribute="leading" id="y05-5G-mD1"/>
+                            <constraint firstItem="Eh9-BZ-x6B" firstAttribute="leading" secondItem="KJ9-pm-HIN" secondAttribute="leadingMargin" id="zCA-ef-WjT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5O9-Cb-j6Y"/>
+                    <connections>
+                        <outlet property="NoteText" destination="uPa-lW-gm8" id="Kgm-Ai-jEd"/>
+                        <outlet property="NoteTitle" destination="Eh9-BZ-x6B" id="c6d-De-TRi"/>
+                        <outlet property="calendarView" destination="mPw-zu-Rqm" id="fHp-8o-YVF"/>
+                        <outlet property="menuView" destination="REs-YI-SV7" id="eJe-S4-gHf"/>
+                        <segue destination="bRo-Kt-z34" kind="unwind" identifier="UpdateSectionTable" unwindAction="UpdateSectionTable:" id="PtL-tN-0Mj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBI-dS-7bX" sceneMemberID="firstResponder"/>
+                <exit id="bRo-Kt-z34" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="4765"/>
         </scene>
     </scenes>
     <resources>

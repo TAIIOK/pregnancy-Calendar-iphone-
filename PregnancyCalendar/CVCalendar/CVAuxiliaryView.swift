@@ -26,6 +26,11 @@ public final class CVAuxiliaryView: UIView {
     
     private var radius: CGFloat {
         get {
+            /*if frame.height < frame.width{
+                return (frame.height - 10) / 2
+            }else{
+                return (frame.width - 10) / 2
+            }*/
             return (min(frame.height, frame.width) - 10) / 2
         }
     }

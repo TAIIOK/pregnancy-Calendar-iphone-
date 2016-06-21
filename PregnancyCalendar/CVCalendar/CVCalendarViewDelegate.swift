@@ -42,6 +42,4 @@ public protocol CVCalendarViewDelegate {
     
     optional func didShowNextMonthView(date: NSDate)
     optional func didShowPreviousMonthView(date: NSDate)
-    
-    optional func swipedetected() 
 }

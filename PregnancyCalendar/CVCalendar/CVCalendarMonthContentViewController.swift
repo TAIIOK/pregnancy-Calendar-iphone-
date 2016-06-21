@@ -209,6 +209,7 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
     }
     
     private var togglingBlocked = false
+    
     public override func togglePresentedDate(date: NSDate) {
         let presentedDate = Date(date: date)
         if let presented = monthViews[Presented], let selectedDate = calendarView.coordinator.selectedDayView?.date {
@@ -288,7 +289,7 @@ extension CVCalendarMonthContentViewController {
 extension CVCalendarMonthContentViewController {
     public func prepareTopMarkersOnMonthView(monthView: MonthView, hidden: Bool) {
         monthView.mapDayViews { dayView in
-            dayView.topMarker?.hidden = hidden
+            dayView.topMarker?.hidden = false
         }
     }
     
@@ -364,7 +365,33 @@ extension CVCalendarMonthContentViewController {
             }
         }
     }
+    
+    
+    public func getSelectedDates() -> Set<DayView>
+    {
+        
+        let coordinator = calendarView.coordinator
+    
+        var dates =   coordinator.selectionSet
+        
+        
+        
+        return dates
+   
+    }
+    
+    public func deselectDayViews(days: [DayView]){
+        
+        let coordinator = calendarView.coordinator
+        coordinator.deselect(days)
+    }
+    
+    
+
+    
 }
+
+
 
 // MARK: - UIScrollViewDelegate
 
