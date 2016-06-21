@@ -3772,9 +3772,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="12B-3Y-3O4" kind="relationship" relationship="rootViewController" id="giY-hE-1Vm"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYd-yA-vYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3783,7 +3780,7 @@
         <!--Show Export View Controller-->
         <scene sceneID="xGu-ER-1jY">
             <objects>
-                <viewController id="12B-3Y-3O4" customClass="ShowExportViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowExport" id="12B-3Y-3O4" customClass="ShowExportViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyW-QJ-eoK"/>
                         <viewControllerLayoutGuide type="bottom" id="QQs-Xi-J5M"/>
@@ -3795,7 +3792,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6oE-Yv-0s7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GT-qt-I36">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GT-qt-I36">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </scrollView>
                         </subviews>

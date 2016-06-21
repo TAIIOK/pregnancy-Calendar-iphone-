@@ -122,6 +122,8 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         let img  = UIImage(named: "menu")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
         self.navigationItem.leftBarButtonItem = btn
+        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = btnBack
         if selectionDateType == 1{
             WeekToDays()
         }
@@ -193,8 +195,8 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                 print("\tNotifi: \(n)")
             }
         }*/
-        let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("ShowingExport")
-        self.navigationController?.showDetailViewController(vc1!, sender: self)
+        let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("ShowExport")
+        self.navigationController?.pushViewController(vc1!, animated: true)
     }
     
     func SelectedNoteFromDate(date: NSDate){
