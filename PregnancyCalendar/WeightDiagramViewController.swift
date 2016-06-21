@@ -57,7 +57,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         super.viewDidLoad()
         growth = loadGrowthFromCoreData()
         loadDate()
-        //loadWeight()
+        loadWeight()
         self.navigationItem.rightBarButtonItem?.title = growth == 0 ? "Ваш рост" : "\(growth) см"
         setupGrowthPickerView()
         setupGrowthPickerViewToolbar()
