@@ -442,12 +442,12 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             selectionDateType = indexPath.row
             selectedExportDays.removeAll()
             if selectionDateType == 0 {
-                let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarNav")
-                self.navigationController?.showDetailViewController(vc1!, sender: self)
+                let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarExport")
+                self.navigationController?.pushViewController(vc1!, animated: true)
             }else{
                 if dateType != -1 {
-                let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarNav")
-                self.navigationController?.showDetailViewController(vc1!, sender: self)
+                let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarExport")
+                self.navigationController?.pushViewController(vc1!, animated: true)
                 }
             }
         }else if tableView == NotesTable{
