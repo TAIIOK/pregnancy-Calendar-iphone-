@@ -1,50 +1,205 @@
 //
-//  AdvertisingViewController.swift
+//  PhotoFromCalendarViewController.swift
 //  Календарь беременности
 //
-//  Created by deck on 16.05.16.
+//  Created by deck on 03.06.16.
 //  Copyright © 2016 deck. All rights reserved.
 //
 
 import UIKit
 
-var isAdvertitsing = false
-var noteText = ["",""]
-var selectedDay:DayView!
-class AdvertisingViewController: UIViewController {
-    
+class PhotoWithType: NSObject {
+    var image: UIImage
+    var date: NSDate
+    var text: String
+    var isMyPhoto: Bool
+    var id: Int
+    init(image: UIImage, date: NSDate, text: String, isMyPhoto: Bool, id: Int) {
+        self.image = image
+        self.date = date
+        self.text = text
+        self.isMyPhoto = isMyPhoto
+        self.id = id
+        super.init()
+    }
+}
 
+var selectedCalendarDayPhoto:DayView!
+var photoFromDate = [PhotoWithType]()
+
+class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
+    
+    var picker = UIImagePickerController()
+    
+    
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var photoCollectionView: UICollectionView!
     
     var shouldShowDaysOut = true
     var animationFinished = true
-    //var db = try! Connection()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if !isAdvertitsing{
-            textView.text = noteText[1]
-            textView.textColor = BiruzaColor
-            textView.font = .systemFontOfSize(16)
-            label.text = noteText[0]
-            label.textColor = StrawBerryColor
-            label.font = .systemFontOfSize(16)
-        }
+        let date = selectedCalendarDayPhoto.date.convertedDate()
+        self.presentedDateUpdated(CVDate(date: date!))
 
-        if selectedDay != nil {
-            self.calendarView.toggleViewWithDate(selectedDay.date.convertedDate()!)
-        }else{
-            let date = NSDate()
-            self.calendarView.toggleViewWithDate(date)
-        }
-        self.presentedDateUpdated(CVDate(date: NSDate()))        //WorkWithDB()
+        picker.delegate=self
+        let a = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(PhotoFromCalendarViewController.openCamera))
+        let b = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(PhotoFromCalendarViewController.addPhoto))
+        a.tintColor = UIColor.whiteColor()
+        b.tintColor = UIColor.whiteColor()
+        self.navigationItem.setRightBarButtonItems([a,b], animated: true)
+        loadPhoto(date!)
     }
     
+    func openCamera(){
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            picker.modalPresentationStyle = .FormSheet
+            
+            presentViewController(picker, animated: true, completion: nil)
+        }else{
+            if #available(iOS 8.0, *) {
+                let alert = UIAlertController(title: "Camera Not Found", message: "This device has no Camera", preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style:.Default, handler: nil)
+                alert.addAction(ok)
+                presentViewController(alert, animated: true, completion: nil)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+    
+    func addPhoto(){
+        picker.allowsEditing = false
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        picker.modalPresentationStyle = .FormSheet
+        //picker?.interfaceOrientation
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var type = 0
+        
+        if (picker.sourceType == UIImagePickerControllerSourceType.Camera)
+        {
+            UIImageWriteToSavedPhotosAlbum(chosenImage, nil, nil, nil)
+        }
+        dismissViewControllerAnimated(true, completion: nil)
+        let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Выберите в какую папку вы хотите добавить фотографию!", preferredStyle: .Alert)
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Мои фото", style: .Default) { action -> Void in
+            //Do some stuff
+            type = 0
+            self.JustDoIT(chosenImage, type: type)
+        }
+        actionSheetController.addAction(cancelAction)
+        //Create and an option action
+        let nextAction: UIAlertAction = UIAlertAction(title: "Узи", style: .Default) { action -> Void in
+            //Do some other stuff
+            type = 1
+            self.JustDoIT(chosenImage, type: type)
+        }
+        actionSheetController.addAction(nextAction)
+        
+        //Present the AlertController
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+
+    }
+    
+    func JustDoIT(chosenImage: UIImage, type: Int){
+        
+        var isMyPhoto = true
+        if type == 1{
+            isMyPhoto = false
+        }
+        photoFromDate.append(PhotoWithType(image: chosenImage, date: selectedCalendarDayPhoto.date.convertedDate()!, text: "", isMyPhoto: isMyPhoto, id: 0))
+        photoCollectionView.reloadData()
+        
+        savePhotos(chosenImage,Type: type)
+    }
+    
+    func savePhotos(img: UIImage, Type: Int){
+        let date = Expression<String>("Date")
+        let image = Expression<Blob>("Image")
+        let text = Expression<String>("Text")
+        let imageData = NSData(data: UIImageJPEGRepresentation(img, 1.0)!)
+
+        if(Type == 0){
+            let table = Table("Photo")
+            try! db.run(table.insert(date <- "\(selectedCalendarDayPhoto.date.convertedDate()!)", image <- Blob(bytes: imageData.datatypeValue.bytes), text <- ""))
+        }else{
+            let table = Table("Uzi")
+            try! db.run(table.insert(date <- "\(selectedCalendarDayPhoto.date.convertedDate()!)", image <- Blob(bytes: imageData.datatypeValue.bytes), text <- ""))
+        }
+    }
+    
+    func loadPhoto(Date: NSDate){
+        photoFromDate.removeAll()
+        var table = Table("Photo")
+        let date = Expression<String>("Date")
+        let image = Expression<Blob>("Image")
+        let type = Expression<Int64>("Type")
+        let id = Expression<Int64>("_id")
+        let text = Expression<String>("Text")
+        
+        for i in try! db.prepare(table.select(date,image,type,text, id).filter(date == "\(Date)")) {
+            let a = i[image] 
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            photoFromDate.append(PhotoWithType(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text], isMyPhoto: true, id: Int(i[id])))
+        }
+        
+        table = Table("Uzi")
+        for i in try! db.prepare(table.select(date,image,type,text, id).filter(date == "\(Date)")) {
+            let a = i[image] 
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            photoFromDate.append(PhotoWithType(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text], isMyPhoto: false, id: Int(i[id])))
+        }
+    }
+    
+    //collectionView
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  photoFromDate.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCalendarCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
+        PhotoCell.photo.image = photoFromDate[indexPath.row].image
+        return PhotoCell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        currentPhoto = indexPath.row
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let date = CVDate(date: selectedCalendarDate)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+    }
+
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         calendarView.backgroundColor = StrawBerryColor
@@ -53,26 +208,20 @@ class AdvertisingViewController: UIViewController {
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
         // calendarView.changeMode(.WeekView)
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        var date = CVDate(date: NSDate())
-        if selectedExperienceDay != nil{
-            date = selectedExperienceDay.date
-        }
-        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+    override func viewWillDisappear(animated: Bool) {
+        self.performSegueWithIdentifier("UpdateCalendarTable", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    }
+}
 
-extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
+extension PhotoFromCalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
@@ -96,15 +245,11 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        selectedNoteDay = dayView
-
-        
+        selectedCalendarDayPhoto = dayView
+        loadPhoto(selectedCalendarDayPhoto.date.convertedDate()!)
+        photoCollectionView.reloadData()
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
-    {
-        return false
-    }
     
     func swipedetected(){
         
@@ -180,6 +325,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
         }
     }
     
+    
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
         return true
     }
@@ -226,7 +372,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
         return false
     }
-
+    
     
     func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
         return 13
@@ -307,7 +453,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
 
 // MARK: - CVCalendarViewAppearanceDelegate
 
-extension AdvertisingViewController: CVCalendarViewAppearanceDelegate {
+extension PhotoFromCalendarViewController: CVCalendarViewAppearanceDelegate {
     func dayLabelPresentWeekdayInitallyBold() -> Bool {
         return false
     }
@@ -319,7 +465,7 @@ extension AdvertisingViewController: CVCalendarViewAppearanceDelegate {
 
 // MARK: - IB Actions
 
-extension AdvertisingViewController {
+extension PhotoFromCalendarViewController {
     @IBAction func switchChanged(sender: UISwitch) {
         if sender.on {
             calendarView.changeDaysOutShowingState(false)
@@ -356,7 +502,7 @@ extension AdvertisingViewController {
 
 // MARK: - Convenience API Demo
 
-extension AdvertisingViewController {
+extension PhotoFromCalendarViewController {
     func toggleMonthViewWithMonthOffset(offset: Int) {
         let calendar = NSCalendar.currentCalendar()
         //        let calendarManager = calendarView.manager

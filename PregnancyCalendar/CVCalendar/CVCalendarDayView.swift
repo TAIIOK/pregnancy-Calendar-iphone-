@@ -261,18 +261,6 @@ extension CVCalendarDayView {
         }
     }
     
-    func addDaystoGivenDate(baseDate: NSDate, NumberOfDaysToAdd: Int) -> NSDate
-    {
-        let dateComponents = NSDateComponents()
-        let CurrentCalendar = NSCalendar.currentCalendar()
-        let CalendarOption = NSCalendarOptions()
-        
-        dateComponents.day = NumberOfDaysToAdd
-        
-        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
-        return newDate!
-    }
-    
     // TODO: Make this widget customizable
     public func topMarkerSetup() {
         safeExecuteBlock({
@@ -292,10 +280,10 @@ extension CVCalendarDayView {
                     let components = calendar.components([.Day , .Month , .Year], fromDate: BirthDate)
                     var newBirthDate = BirthDate
                     if dateType == 0{
-                        newBirthDate = self.addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*38)
+                        newBirthDate = addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*38)
                     }
                     else if dateType == 1{
-                        newBirthDate  = self.addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*40)
+                        newBirthDate  = addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*40)
                     }
                     if(newBirthDate.daysFrom(self.date.convertedDate()!) % 7 == 0 ){
                         let height = CGFloat(0.5)
@@ -308,7 +296,7 @@ extension CVCalendarDayView {
                         let textLayer = CATextLayer()
                         textLayer.frame = CGRectMake( -5  , self.frame.height - 13  ,15, 15)
                         
-                        let num = self.date.convertedDate()!.daysFrom(self.addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(41*7)))/7
+                        let num = self.date.convertedDate()!.daysFrom(addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(41*7)))/7
                         
                         textLayer.name = "number"
                         for lay in self.layer.sublayers!
@@ -364,24 +352,25 @@ extension CVCalendarDayView {
     }
     
     public func setupDotMarker() {
-        for (index, dotMarker) in dotMarkers.enumerate() {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+        for (index, dotMarker) in self.dotMarkers.enumerate() {
             dotMarker?.removeFromSuperview()
-            dotMarkers[index] = nil
+            self.dotMarkers[index] = nil
         }
         
-        if let delegate = calendarView.delegate {
+        if let delegate = self.calendarView.delegate {
             if let shouldShow = delegate.dotMarker?(shouldShowOnDayView: self) where shouldShow {
                 
                 var (width, height): (CGFloat, CGFloat) = (13, 13)
                 if let size = delegate.dotMarker?(sizeOnDayView: self) {
                     (width, height) = (size,size)
                 }
-                let colors = isOut ? [.grayColor()] : delegate.dotMarker?(colorOnDayView: self)
-                var yOffset = bounds.height / 5
+                let colors = self.isOut ? [.grayColor()] : delegate.dotMarker?(colorOnDayView: self)
+                var yOffset = self.bounds.height / 5
                 if let y = delegate.dotMarker?(moveOffsetOnDayView: self) {
                     yOffset = y
                 }
-                let y = CGRectGetMidY(frame) + yOffset
+                let y = CGRectGetMidY(self.frame) + yOffset
                 let markerFrame = CGRectMake(0, 0, width, height)
                 
                 if (colors!.count > 3) {
@@ -392,11 +381,11 @@ extension CVCalendarDayView {
                     var x: CGFloat = 0
                     switch(colors!.count) {
                     case 1:
-                        x = frame.width / 2
+                        x = self.frame.width / 2
                     case 2:
-                        x = frame.width * CGFloat(2+index)/5.00 // frame.width * (2/5, 3/5)
+                        x = self.frame.width * CGFloat(2+index)/5.00 // frame.width * (2/5, 3/5)
                     case 3:
-                        x = frame.width * CGFloat(2+index)/6.00 // frame.width * (1/3, 1/2, 2/3)
+                        x = self.frame.width * CGFloat(2+index)/6.00 // frame.width * (1/3, 1/2, 2/3)
                     default:
                         break
                     }
@@ -427,18 +416,19 @@ extension CVCalendarDayView {
                     imageView.image = image
                     
                     dotMarker.addSubview(imageView)
-                    insertSubview(dotMarker, atIndex: 0)
+                    self.insertSubview(dotMarker, atIndex: 0)
                     
                     dotMarker.setNeedsDisplay()
-                    dotMarkers.append(dotMarker)
+                    self.dotMarkers.append(dotMarker)
                 }
                 
-                let coordinator = calendarView.coordinator
+                let coordinator = self.calendarView.coordinator
                 if self == coordinator.selectedDayView {
-                    moveDotMarkerBack(false, coloring: false)
+                    self.moveDotMarkerBack(false, coloring: false)
                 }
             }
         }
+    }
     }
 }
 

@@ -67,8 +67,6 @@ class VideosViewController: UICollectionViewController {
     
     
     @IBAction func reloadCollection(sender: AnyObject) {
-        print(choosedVideoSegment)
-        print("Pizda")
         imagesfirst.removeAll()
         videoTitlefirst.removeAll()
         imagessecond.removeAll()

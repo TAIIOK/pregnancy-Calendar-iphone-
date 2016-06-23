@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994251C8098AD00E3B816 /* ForumTableViewController.swift */; };
 		022994281C8459A400E3B816 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022994271C8459A400E3B816 /* userInfo.plist */; };
 		0229942A1C845B4D00E3B816 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022994291C845B4D00E3B816 /* Plist.swift */; };
 		023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */; };
@@ -26,9 +25,7 @@
 		02682D511C7F3D770088F21B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02682D501C7F3D770088F21B /* MenuTableViewController.swift */; };
 		027A28E31C99A07E000792E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A28E21C99A07E000792E8 /* CoreGraphics.framework */; };
 		027A28E51C99A3FA000792E8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */; };
-		02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */; };
 		02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DA72E31CA92F990011E9DF /* MapKit.framework */; };
-		02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */; };
 		02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
 		02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE546F1CA96F1E0094C055 /* BubbleView.swift */; };
 		02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE54711CA96F230094C055 /* CalloutAnnotation.swift */; };
@@ -113,6 +110,11 @@
 		8E1450BB1D19863900D234B2 /* pdfCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450BA1D19863900D234B2 /* pdfCreator.swift */; };
 		8E1450BD1D1986B100D234B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450BC1D1986B100D234B2 /* ShareViewController.swift */; };
 		8E1450BF1D1986F500D234B2 /* CreateAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */; };
+		8E1450C11D1BE99900D234B2 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C01D1BE99900D234B2 /* BuyViewController.swift */; };
+		8E1450C31D1BE9AB00D234B2 /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C21D1BE9AB00D234B2 /* loadJson.swift */; };
+		8E1450C71D1BEB2D00D234B2 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */; };
+		8E1450C91D1BEBB200D234B2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */; };
+		8E1450CB1D1BEBEF00D234B2 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */; };
 		8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */; };
 		8E4C43931CF8506200003AAB /* 0z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43871CF8506200003AAB /* 0z.jpg */; };
 		8E4C43941CF8506200003AAB /* 1z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C43881CF8506200003AAB /* 1z.jpg */; };
@@ -174,8 +176,9 @@
 		8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5787B51CFC7A650028CC3C /* OKSDK.m */; };
 		8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; };
 		8E5787CC1CFC7B8E0028CC3C /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
+		8E73556C1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */; };
+		8E7355781D1BFB75008B8444 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7355771D1BFB75008B8444 /* CalendarViewController.swift */; };
 		8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */; };
 		8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */; };
 		8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32861D18252300EA58A9 /* VideosViewController.swift */; };
@@ -209,7 +212,6 @@
 		A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022904C1CBFC70700C8B3B4 /* NoteCell.swift */; };
 		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
 		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
-		A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */; };
 		A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
 		A0C56DA41CA2E9A6004C36AF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E9CD7C1C96EC3400B6A036 /* Black_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E9CD741C96EC3400B6A036 /* Black_dot.png */; };
@@ -311,7 +313,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		022994251C8098AD00E3B816 /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
 		022994271C8459A400E3B816 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		022994291C845B4D00E3B816 /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		023A52741C8823B600DBFF76 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -334,9 +335,7 @@
 		02682D501C7F3D770088F21B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		027A28E21C99A07E000792E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
-		02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		02DA72E31CA92F990011E9DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildBerriesTableViewCell.swift; sourceTree = "<group>"; };
 		02E461691CA2A0EB00CC6E77 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		02FE546F1CA96F1E0094C055 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		02FE54711CA96F230094C055 /* CalloutAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutAnnotation.swift; sourceTree = "<group>"; };
@@ -421,6 +420,11 @@
 		8E1450BA1D19863900D234B2 /* pdfCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pdfCreator.swift; sourceTree = "<group>"; };
 		8E1450BC1D1986B100D234B2 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAlbum.swift; sourceTree = "<group>"; };
+		8E1450C01D1BE99900D234B2 /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		8E1450C21D1BE9AB00D234B2 /* loadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
+		8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
+		8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppendCell.swift; sourceTree = "<group>"; };
 		8E4C43871CF8506200003AAB /* 0z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0z.jpg; sourceTree = "<group>"; };
 		8E4C43881CF8506200003AAB /* 1z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1z.jpg; sourceTree = "<group>"; };
@@ -486,8 +490,9 @@
 		8E5787B41CFC7A650028CC3C /* OKSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKSDK.h; sourceTree = "<group>"; };
 		8E5787B51CFC7A650028CC3C /* OKSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKSDK.m; sourceTree = "<group>"; };
 		8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyVK.xcodeproj; path = "SwiftyVK-master/SwiftyVK.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFromCalendarViewController.swift; sourceTree = "<group>"; };
+		8E7355771D1BFB75008B8444 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8EDA32861D18252300EA58A9 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -521,7 +526,6 @@
 		A022904C1CBFC70700C8B3B4 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A0E9CD741C96EC3400B6A036 /* Black_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_dot.png; path = EPCalendarPicker/Black_dot.png; sourceTree = "<group>"; };
 		A0E9CD751C96EC3400B6A036 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPCalendarCell1.swift; path = EPCalendarPicker/EPCalendarCell1.swift; sourceTree = "<group>"; };
 		A0E9CD761C96EC3400B6A036 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCalendarCell1.xib; path = EPCalendarPicker/EPCalendarCell1.xib; sourceTree = "<group>"; };
@@ -606,18 +610,18 @@
 				02682D501C7F3D770088F21B /* MenuTableViewController.swift */,
 				8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */,
 				02682D441C7EFFA00088F21B /* BirthDateViewController.swift */,
-				8E5A6BEF1CDB5CAA0073B693 /* ShowZodiacViewController.swift */,
+				8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */,
-				A0B3FEE41C9EEECE003ABFBA /* CalendarViewController.swift */,
+				8E7355771D1BFB75008B8444 /* CalendarViewController.swift */,
+				8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */,
 				8E1450BC1D1986B100D234B2 /* ShareViewController.swift */,
-				022994251C8098AD00E3B816 /* ForumTableViewController.swift */,
 				8E1450761D19734E00D234B2 /* ExperienceViewController.swift */,
 				8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */,
 				8E1450851D19839900D234B2 /* webArticleViewController.swift */,
-				02DA72E11CA92E6A0011E9DF /* BuyViewController.swift */,
-				02DA72E51CA940610011E9DF /* WildBerriesTableViewCell.swift */,
+				8E1450C01D1BE99900D234B2 /* BuyViewController.swift */,
 				8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */,
+				8E1450C21D1BE9AB00D234B2 /* loadJson.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02FE546E1CA96F060094C055 /* Custom pins */,
@@ -719,6 +723,7 @@
 		8E14507F1D1975C900D234B2 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */,
 				8E1450871D1983A600D234B2 /* bondage.html */,
 				8E1450881D1983A600D234B2 /* bra.html */,
 				8E1450811D197BFD00D234B2 /* DatePickerViewController.swift */,
@@ -863,6 +868,7 @@
 		8E52982D1D182E6B00AD06E2 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */,
 				027A28E41C99A3FA000792E8 /* PhotoTableViewController.swift */,
 				8E5787A31CFC78900028CC3C /* PhotoCollectionViewCell.swift */,
 				8E2648E01CFF1A8400D8BF3B /* PhotoAppendCell.swift */,
@@ -1225,6 +1231,7 @@
 				A018A9801CB6733D0044830A /* CVCalendarMenuViewDelegate.swift in Sources */,
 				A018A9901CB6733D0044830A /* CVScrollDirection.swift in Sources */,
 				A018A9811CB6733D0044830A /* CVCalendarMonthContentViewController.swift in Sources */,
+				8E1450CB1D1BEBEF00D234B2 /* ShowZodiacViewController.swift in Sources */,
 				A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */,
 				8E1450731D19731000D234B2 /* NotifiCell.swift in Sources */,
 				0229942A1C845B4D00E3B816 /* Plist.swift in Sources */,
@@ -1233,14 +1240,17 @@
 				8E1450B71D19860800D234B2 /* ExportViewController.swift in Sources */,
 				023A52771C8825BC00DBFF76 /* NumberCollectionViewCell.swift in Sources */,
 				8E4C43E51CFC52E300003AAB /* R*Tree.swift in Sources */,
+				8E7355781D1BFB75008B8444 /* CalendarViewController.swift in Sources */,
 				8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */,
 				8E5787A61CFC78900028CC3C /* PhotosViewController.swift in Sources */,
 				8E1450861D19839900D234B2 /* webArticleViewController.swift in Sources */,
 				8E1450681D1972F900D234B2 /* DoctorHeader.swift in Sources */,
 				8E14506B1D1972F900D234B2 /* DoctorViewController.swift in Sources */,
 				02FE54721CA96F230094C055 /* CalloutAnnotation.swift in Sources */,
+				8E1450C91D1BEBB200D234B2 /* TableViewCell.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
 				8E5298341D194AC200AD06E2 /* TextNoteViewController.swift in Sources */,
+				8E1450C31D1BE9AB00D234B2 /* loadJson.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,
@@ -1257,7 +1267,6 @@
 				A018A9841CB6733D0044830A /* CVCalendarView.swift in Sources */,
 				02FE54701CA96F1E0094C055 /* BubbleView.swift in Sources */,
 				8E5787AF1CFC79CE0028CC3C /* OnePhotoViewController.swift in Sources */,
-				A0B3FEE51C9EEECE003ABFBA /* CalendarViewController.swift in Sources */,
 				8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */,
 				8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */,
 				8E52983D1D195CF000AD06E2 /* FoodTableViewCell.swift in Sources */,
@@ -1280,6 +1289,7 @@
 				A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */,
 				A018A98E1CB6733D0044830A /* CVDate.swift in Sources */,
 				8E1450791D1973A900D234B2 /* AdvertisingViewController.swift in Sources */,
+				8E73556C1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift in Sources */,
 				8E4C43EB1CFC52E300003AAB /* CoreFunctions.swift in Sources */,
 				8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */,
 				A018A98B1CB6733D0044830A /* CVCalendarWeekContentViewController.swift in Sources */,
@@ -1302,9 +1312,7 @@
 				8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */,
 				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
 				8E4C43C11CFC523000003AAB /* WeightDiagramViewController.swift in Sources */,
-				02DA72E21CA92E6A0011E9DF /* BuyViewController.swift in Sources */,
 				A0E9CD7D1C96EC3400B6A036 /* EPCalendarCell1.swift in Sources */,
-				02DA72E61CA940610011E9DF /* WildBerriesTableViewCell.swift in Sources */,
 				8E5787BA1CFC7A650028CC3C /* OKSDK.m in Sources */,
 				8E4C43EC1CFC52E300003AAB /* CustomFunctions.swift in Sources */,
 				02682D4B1C7F16BA0088F21B /* SpasmsViewController.swift in Sources */,
@@ -1313,6 +1321,7 @@
 				02682D411C7EFC420088F21B /* SWRevealViewController.m in Sources */,
 				8E2648E11CFF1A8400D8BF3B /* PhotoAppendCell.swift in Sources */,
 				A018A9871CB6733D0044830A /* CVCalendarViewAppearance.swift in Sources */,
+				8E1450C11D1BE99900D234B2 /* BuyViewController.swift in Sources */,
 				A0E9CD801C96EC3400B6A036 /* EPCalendarHeaderView.swift in Sources */,
 				8E14506F1D1972F900D234B2 /* DrugsViewController.swift in Sources */,
 				8E1450B31D1985F600D234B2 /* CalendarForExportViewController.swift in Sources */,
@@ -1329,8 +1338,6 @@
 				8E5787AC1CFC79BC0028CC3C /* SelectPhotosViewController.swift in Sources */,
 				A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */,
 				8E1450A11D1985B600D234B2 /* Rotatable.swift in Sources */,
-				8E5A6BF01CDB5CAA0073B693 /* ShowZodiacViewController.swift in Sources */,
-				022994261C8098AD00E3B816 /* ForumTableViewController.swift in Sources */,
 				8E5298391D195CBB00AD06E2 /* PreferencesTableViewCell.swift in Sources */,
 				8E1450BB1D19863900D234B2 /* pdfCreator.swift in Sources */,
 				A0E9CD821C96EC3400B6A036 /* EPCalendarPicker.swift in Sources */,
@@ -1338,6 +1345,7 @@
 				A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */,
 				8E4C43E71CFC52E300003AAB /* Helpers.swift in Sources */,
 				A018A9891CB6733D0044830A /* CVCalendarViewDelegate.swift in Sources */,
+				8E1450C71D1BEB2D00D234B2 /* ForumViewController.swift in Sources */,
 				8E52982F1D1940D000AD06E2 /* NotesViewController.swift in Sources */,
 				8E5298401D1962D600AD06E2 /* DesireListViewController.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,

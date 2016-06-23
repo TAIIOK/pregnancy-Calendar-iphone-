@@ -446,7 +446,9 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         if selectedExperienceDay != nil{
             date = selectedExperienceDay.date
         }
-        
+        if fromCalendar{
+            date = CVDate(date: selectedCalendarDate)
+        }
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
     }

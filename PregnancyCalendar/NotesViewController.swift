@@ -374,10 +374,13 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         var  date = CVDate(date: NSDate())
         if(selectedNoteDay != nil){
             date = selectedNoteDay.date
+        }
+        if fromCalendar{
+            date = CVDate(date: selectedCalendarDate)
+            fromCalendar = false
         }
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)

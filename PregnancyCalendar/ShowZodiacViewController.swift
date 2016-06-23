@@ -20,6 +20,8 @@ class Zodiac: NSObject {
     }
 }
 
+var zodiacs = [Zodiac]()
+
 
 class ShowZodiacViewController: UIViewController {
 
@@ -31,12 +33,12 @@ class ShowZodiacViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var zodiacs = [Zodiac]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        WorkWithJSON()
+
+    
         var date = BirthDate//selectedDay.date.convertedDate()!
         if dateType == 0{
             date = addDaystoGivenDate(date, NumberOfDaysToAdd: 7*38)
@@ -98,15 +100,7 @@ class ShowZodiacViewController: UIViewController {
         self.navigationItem.backBarButtonItem = btnBack
 
     }
-    @IBAction func editDate(sender: UIBarButtonItem) {
-        Back = true
-        self.pushFrontViewController("Birthdate")
-    }
-    private func pushFrontViewController(identifer: String) {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifer)
-        //self.revealViewController().pushFrontViewController(controller, animated: true)
-        self.navigationController?.pushViewController(controller!, animated: true)
-    }
+    
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
             self.revealViewController().rearViewRevealDisplacement = 0
@@ -189,7 +183,24 @@ class ShowZodiacViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func editDate(sender: UIBarButtonItem) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            cancelAllLocalNotification()
+        }
+        Back = true
+        self.pushFrontViewController("Birthdate")
+    }
+    private func pushFrontViewController(identifer: String) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifer)
+        //self.revealViewController().pushFrontViewController(controller, animated: true)
+        self.navigationController?.pushViewController(controller!, animated: true)
+    }
+    
     @IBAction func btnEditDate(sender: AnyObject) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            cancelAllLocalNotification()
+        }
+
         //Back = true
         //self.navigationController?.navigationBar.backItem?.backBarButtonItem?.enabled = true
         //let date = self.storyboard?.instantiateViewControllerWithIdentifier("BirthDate")
@@ -199,25 +210,5 @@ class ShowZodiacViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }*/
-    }
-
-    func WorkWithJSON(){
-        if let path = NSBundle.mainBundle().pathForResource("zodiacs", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                do {
-                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    if let zodiac : [NSDictionary] = jsonResult["Знаки"] as? [NSDictionary] {
-                        for Zodiacs: NSDictionary in zodiac {
-                            var name = Zodiacs.valueForKey("Знак")
-                            name!.dataUsingEncoding(NSUTF8StringEncoding)
-                            if let d = name {
-                                zodiacs.append(Zodiac(name: d as! String, element: "\(Zodiacs.valueForKey("Стихия")!)", about: "\(Zodiacs.valueForKey("Описание")!)"))
-                            }
-                        }
-                    }
-                } catch {}
-            } catch {}
-        }
     }
 }

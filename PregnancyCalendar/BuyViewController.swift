@@ -1,303 +1,377 @@
 //
-//  BuyViewController.swift
-//  PregnancyCalendar
+//  BuyTableViewController.swift
+//  rodicalc
 //
-//  Created by farestz on 28.03.16.
-//  Copyright © 2016 farestz. All rights reserved.
+//  Created by deck on 25.02.16.
+//  Copyright © 2016 deck. All rights reserved.
 //
 
 import UIKit
 import MapKit
 import CoreLocation
 
-class Point {
-    var tradePoint: String = ""
-    var city: String = ""
-    var address: String = ""
-    var phone: String = ""
-    var latitude: Double
+class Points: NSObject {
     var longitude: Double
+    var city: String
+    var address: String
+    var phone: String
+    var trade_point: String
+    var latitude: Double
+    var distance: CLLocationDistance = 0
     
-    init(tradePoint: String, city: String, address: String, phone: String, latitude: Double, longitude: Double) {
-        self.tradePoint = tradePoint
+    init(city: String, address: String, trade_point: String, phone: String, longitude: Double, latitude: Double) {
         self.city = city
         self.address = address
+        self.trade_point = trade_point
         self.phone = phone
-        self.latitude = latitude
         self.longitude = longitude
-    }
-    
-    internal func getFormattedString() -> NSMutableAttributedString {
-        let myMutableString = NSMutableAttributedString(string: tradePoint + "\nАдрес: " + address + "\n", attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 13.0)!])
-        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSRange(location: tradePoint.characters.count + 8,length: address.characters.count))
-        return myMutableString
+        self.latitude = latitude
+        super.init()
     }
 }
 
-class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
-    
-    let customAnnotationViewIdentifier = "MyAnnotation"
-    let calloutAnnotationViewIdentifier = "CalloutAnnotation"
-    
-    let locationManager = CLLocationManager()
-    let initialLocation = CLLocationCoordinate2D(latitude: 48.704360, longitude: 44.509449)
-    
-    var points: [Point] = []
-    var nearPoints: [Point] = []
-    var locate: [CLLocation] = []
+var points: [Points] = []
+var nearPoints: [Points] = []
 
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+
+class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            mapView.hidden = true
-            tableView.hidden = false
-        } else {
-            mapView.hidden = false
-            tableView.hidden = true
+    var locationManager = CLLocationManager()
+    var initialLocation = CLLocationCoordinate2D(latitude: 48.704360,
+                                                 longitude: 44.509449)
+    
+    var locate: [CLLocation] = []
+    
+    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var tbl: UITableView!
+    
+    @IBOutlet weak var noConnectionView: UIView!
+    @IBOutlet weak var noConnectionLabel: UILabel!
+    @IBOutlet weak var noConnectionImage: UIImageView!
+    @IBOutlet weak var noConnectionButton: UIButton!
+    
+    @IBAction func OpenSite(sender: UIButton) {
+        let string = "https://www.wildberries.ru/1.3266.ФЭСТ"
+        
+       // [NSURL URLWithString:[googlSearchString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+        if let url = NSURL(string: string.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!){
+            UIApplication.sharedApplication().openURL(url)
         }
+    }
+    @IBAction func segmentChanged(sender: UISegmentedControl) {
+        let status = Reach().connectionStatus()
+        switch status {
+        case .Unknown, .Offline:
+            noConnectionView.backgroundColor = .clearColor()
+            noConnectionImage.hidden = false
+            noConnectionView.hidden = false
+            map.hidden = true
+            tbl.hidden = true
+            noConnectionLabel.hidden=false
+            noConnectionButton.hidden=false
+            noConnectionButton.enabled=true
+            print("Not connected")
+        default:
+            if sender.selectedSegmentIndex == 0{
+                map.hidden = true
+                tbl.hidden = false
+            }else{
+                map.hidden = false
+                tbl.hidden = true
+            }
+            tbl.delegate = self
+            tbl.dataSource = self
+            map.delegate = self
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPoints:", name:"loadPoints", object: nil)
+            // Ask for Authorisation from the User.
+            if #available(iOS 8.0, *) {
+                self.locationManager.requestAlwaysAuthorization() //8
+                
+                
+                // For use in foreground
+                self.locationManager.requestWhenInUseAuthorization() //8
+                
+                if CLLocationManager.locationServicesEnabled() {
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                    self.map.showsUserLocation = true
+                    locationManager.startUpdatingLocation() //8
+                    
+                    let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                    let region = MKCoordinateRegion(center: initialLocation, span: span)
+                    map.setRegion(region, animated: true)
+                    
+                    //setCenterOfMapToLocation(initialLocation)
+                }
+                
+            } else {
+                // Fallback on earlier versions
+            }
+            //addPinToMapView()
+        }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSidebarMenu()
-        setupModifiedTitle()
-        getPointsFromJSON()
-        
-        mapView.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            mapView.showsUserLocation = true
-            locationManager.startUpdatingLocation()
+        tbl.backgroundColor = .clearColor()
+        self.setupSidebarMenu()
+        let img  = UIImage(named: "menu")
+        let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
+        self.navigationItem.leftBarButtonItem = btn
+        let status = Reach().connectionStatus()
+        switch status {
+        case .Unknown, .Offline:
+            noConnectionView.backgroundColor = .clearColor()
+            noConnectionImage.hidden = false
+            noConnectionView.hidden = false
+            map.hidden = true
+            tbl.hidden = true
+            noConnectionLabel.hidden=false
+            noConnectionButton.hidden=false
+            noConnectionButton.enabled=true
+            print("Not connected")
+        default:
+            map.hidden = true
+            tbl.hidden = false
+            tbl.delegate = self
+            tbl.dataSource = self
+            map.delegate = self
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPoints:", name:"loadPoints", object: nil)
+            // Ask for Authorisation from the User.
+            if #available(iOS 8.0, *) {
+                self.locationManager.requestAlwaysAuthorization() //8
             
-            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let region = MKCoordinateRegion(center: initialLocation, span: span)
-            mapView.setRegion(region, animated: true)
+            
+                // For use in foreground
+                self.locationManager.requestWhenInUseAuthorization() //8
+
+                if CLLocationManager.locationServicesEnabled() {
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                    self.map.showsUserLocation = true
+                    locationManager.startUpdatingLocation() //8
+                    
+                    let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                    let region = MKCoordinateRegion(center: initialLocation, span: span)
+                    map.setRegion(region, animated: true)
+                    
+                    //setCenterOfMapToLocation(initialLocation)
+                }
+                
+            } else {
+                // Fallback on earlier versions
+            }
+            //addPinToMapView()
         }
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.removeOverlays(mapView.overlays)
-        mapView.removeFromSuperview()
-        
-        points = []
-        locate = []
-        nearPoints = []
-        
-        super.viewDidDisappear(animated)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     private func setupSidebarMenu() {
-        if revealViewController() != nil {
-            revealViewController().rearViewRevealDisplacement = 0
-            revealViewController().rearViewRevealOverdraw = 0
-            revealViewController().rearViewRevealWidth = 275
-            revealViewController().frontViewShadowRadius = 0
-            menuButton.target = revealViewController()
-            menuButton.action = "revealToggle:"
-            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealDisplacement = 0
+            self.revealViewController().rearViewRevealOverdraw = 0
+            self.revealViewController().rearViewRevealWidth = 275
+            self.revealViewController().frontViewShadowRadius = 0
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
     
-    private func setupModifiedTitle () {
-        let segmentedControl = UISegmentedControl(items: ["Списком", "На карте"])
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.autoresizingMask = .FlexibleWidth
-        segmentedControl.tintColor = .whiteColor()
-        segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
-        navigationItem.titleView = segmentedControl
+    func loadPoints(notification: NSNotification){
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tbl.reloadData()
+            return
+        })
     }
     
-    // json
-    private func getPointsFromJSON() {
-        // добавить магазин
-        points.append(Point(tradePoint: "WILDBERRIES", city: "", address: "", phone: "", latitude: 0, longitude: 0))
-        nearPoints.append(points.first!)
-        
-        // торговые точки из файла
-        if let path = NSBundle.mainBundle().pathForResource("points", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
-                let jsonResult = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers) as! NSDictionary
-                
-                if let points: [NSDictionary] = jsonResult["points"] as? [NSDictionary] {
-                    for point: NSDictionary in points {
-                        let address = point.valueForKey("address")
-                        address!.dataUsingEncoding(NSUTF8StringEncoding)
-                        if let uncodingAddress = address {
-                            self.points.append(Point(tradePoint: "\(point.valueForKey("trade_point")!)", city: "\(point.valueForKey("city")!)", address: uncodingAddress as! String, phone: "\(point.valueForKey("phone")!)", latitude: point.valueForKey("coord_first_longitude") as! Double, longitude: point.valueForKey("coord_last_latitude") as! Double))
-                        }
-                    }
-                }
-            } catch {
-                
-            }
-        }
-    }
-    
-    // map
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         let location = locations.last
         locate = locations
         addPinToMapView()
-        
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
-        
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
-        locationManager.stopUpdatingLocation()
+        self.map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true
+        self.locationManager.stopUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    {
         print("Errors: " + error.localizedDescription)
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is CustomAnnotation {
-            var pin = mapView.dequeueReusableAnnotationViewWithIdentifier(customAnnotationViewIdentifier)
-            
-            if pin == nil {
-                pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: customAnnotationViewIdentifier)
-                pin?.canShowCallout = false
-            } else {
-                pin?.annotation = annotation
-            }
-            
-            return pin
-        } else if annotation is CalloutAnnotation {
-            var pin = mapView.dequeueReusableAnnotationViewWithIdentifier(calloutAnnotationViewIdentifier)
-            
-            if pin == nil {
-                pin = CalloutAnnotationView(annotation: annotation, reuseIdentifier: calloutAnnotationViewIdentifier)
-                pin?.canShowCallout = false
-            } else {
-                pin?.annotation = annotation
-            }
-            
-            return pin
-        } else {
-            return nil
-        }
-    }
-    
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if let annotation = view.annotation as? CustomAnnotation {
-            let calloutAnnotation = CalloutAnnotation(annotation: annotation)
-            mapView.addAnnotation(calloutAnnotation)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                mapView.selectAnnotation(calloutAnnotation, animated: false)
-            }
-        }
-    }
-    
-    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
-        if let annotation = view.annotation as? CalloutAnnotation {
-            mapView.removeAnnotation(annotation)
-        }
+    /* We have a pin on the map, now zoom into it and make that pin
+     the center of the map */
+    func setCenterOfMapToLocation(location: CLLocationCoordinate2D){
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: location, span: span)
+        map.setRegion(region, animated: true)
     }
     
     private func addPinToMapView() {
+      
         if locate.isEmpty {
+            
             nearPoints = points
-            reloadTable()
+            updateTable()
         } else {
             if nearPoints.count > 1 {
                 return
             }
-            
+     
             var isFind = false
             for point in points {
                 if point.latitude != 0 && point.longitude != 0 {
                     let location = CLLocationCoordinate2DMake(point.latitude, point.longitude)
                     
                     if locate.last?.distanceFromLocation(CLLocation(latitude: point.latitude, longitude: point.longitude)) < 100000 {
+                        point.distance = (locate.last?.distanceFromLocation(CLLocation(latitude: point.latitude, longitude: point.longitude)))!
                         let annotation = CustomAnnotation()
                         isFind = true
                         annotation.coordinate = location
-                        annotation.title = point.tradePoint + "\nАдрес: " + point.address
-                        mapView.addAnnotation(annotation)
+                        annotation.title = point.trade_point + "\nАдрес: " + "\(point.city) " + point.address
+                        map.addAnnotation(annotation)
+                        
                         nearPoints.append(point)
+                        nearPoints = nearPoints.sort({ $0.distance < $1.distance })
                     }
                 }
             }
             
-            reloadTable()
+            updateTable()
             
             if !isFind {
                 nearPoints = points
-                reloadTable()
+                updateTable()
                 
                 for point in nearPoints {
                     if point.latitude != 0 && point.longitude != 0 {
                         let location = CLLocationCoordinate2DMake(point.latitude, point.longitude)
                         let annotation = CustomAnnotation()
                         annotation.coordinate = location
-                        annotation.title = point.tradePoint + "\nАдрес: " + point.address
-                        mapView.addAnnotation(annotation)
+                        annotation.title = point.trade_point + "\nАдрес: " + "\(point.city) " + point.address
+                        map.addAnnotation(annotation)
                     }
                 }
             }
         }
     }
 
-    // table
+
+    func updateTable()
+    {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tbl.reloadData()
+        })
+    }
+    
+    
+    
+    // define annotation view identifiers
+    
+    let calloutAnnotationViewIdentifier = "CalloutAnnotation"
+    let customAnnotationViewIdentifier = "MyAnnotation"
+    
+    // If `CustomAnnotation`, show standard `MKPinAnnotationView`. If `CalloutAnnotation`, show `CalloutAnnotationView`.
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is CustomAnnotation {
+            var pin = mapView.dequeueReusableAnnotationViewWithIdentifier(customAnnotationViewIdentifier)
+            if pin == nil {
+                pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: customAnnotationViewIdentifier)
+                pin?.canShowCallout = false
+            } else {
+                pin?.annotation = annotation
+            }
+            return pin
+        } else if annotation is CalloutAnnotation {
+            var pin = mapView.dequeueReusableAnnotationViewWithIdentifier(calloutAnnotationViewIdentifier)
+            if pin == nil {
+                pin = CalloutAnnotationView(annotation: annotation, reuseIdentifier: calloutAnnotationViewIdentifier)
+                pin?.canShowCallout = false
+            } else {
+                pin?.annotation = annotation
+            }
+            return pin
+        }
+        
+        return nil
+    }
+    
+    // If user selects annotation view for `CustomAnnotation`, then show callout for it. Automatically select
+    // that new callout annotation, too.
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if let annotation = view.annotation as? CustomAnnotation {
+            let calloutAnnotation = CalloutAnnotation(annotation: annotation)
+            mapView.addAnnotation(calloutAnnotation)
+      
+            dispatch_async(dispatch_get_main_queue()) {
+                mapView.selectAnnotation(calloutAnnotation, animated: false)
+            }
+        }
+    }
+    
+    /// If user unselects callout annotation view, then remove it.
+    
+    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        if let annotation = view.annotation as? CalloutAnnotation {
+            mapView.removeAnnotation(annotation)
+            
+            //mapView.removeAnnotations(mapView.annotations)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+      //  map.removeAnnotations(map.annotations)
+      //  map.removeOverlays(map.overlays)
+      //  map.removeFromSuperview()
+        nearPoints.removeAll()
+        nearPoints.insert(Points(city: "",address: "",trade_point: "WILDBERRIES",phone: "",longitude: 0.0,latitude: 0.0), atIndex: 0)
+
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return nearPoints.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if nearPoints[indexPath.row].tradePoint == "WILDBERRIES" {
-            let cell = tableView.dequeueReusableCellWithIdentifier("wildBerriesCell", forIndexPath: indexPath) as! WildBerriesTableViewCell
-            cell.textLabel?.text = nearPoints[indexPath.row].tradePoint
-            cell.textLabel?.textColor = cell.button.backgroundColor
+    func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if nearPoints[indexPath.row].trade_point == "WILDBERRIES" {
+            let cell = tableView.dequeueReusableCellWithIdentifier("WildCell", forIndexPath: indexPath) as! TableViewCell
+            cell.textLabel?.text = "WILDBERRIES"
             cell.detailTextLabel?.text = "интернет-магазин"
+            cell.backgroundColor = .clearColor()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("pointsCell", forIndexPath: indexPath)
-            cell.textLabel?.attributedText = nearPoints[indexPath.row].getFormattedString()
+            let cell = tableView.dequeueReusableCellWithIdentifier("MagCell", forIndexPath: indexPath)
+            var myMutableString = NSMutableAttributedString()
+            var lenghtstring = nearPoints[indexPath.row].address.characters.count
+            lenghtstring += nearPoints[indexPath.row].city.characters.count
+            lenghtstring += 1
+            
+            
+            
+            myMutableString = NSMutableAttributedString(string: nearPoints[indexPath.row].trade_point + "\nАдрес: " + "\(nearPoints[indexPath.row].city)" + " " + nearPoints[indexPath.row].address, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 14.0)!])
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: NSRange(location:nearPoints[indexPath.row].trade_point.characters.count+8,length:lenghtstring ))
+            cell.textLabel?.attributedText = myMutableString
+            cell.backgroundColor = .clearColor()
             return cell
         }
     }
-    
-    func reloadTable() {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.tableView.reloadData()
-        })
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
