@@ -48,19 +48,28 @@ class CalendarForExportViewController: UIViewController, EPCalendarPickerDelegat
     //функция одиночных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectDate date : NSDate) {
         
-        print (date)
+        if selectionDateType == 0{
+            if !selectedExportDaysTemp.contains(date){
+                selectedExportDaysTemp.append(date)
+            }else{
+                for (var i = 0; i < selectedExportDaysTemp.count; i += 1){
+                    if selectedExportDaysTemp[i] == date{
+                        selectedExportDaysTemp.removeAtIndex(i)
+                    }
+                }
+            }
+        }
         
         //txtViewDetail.text = "User selected date: \n\(date)"
         
     }
     //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
-        if selectionDateType == 0{
-            selectedExportDaysTemp = dates}
+        
     }
     private func setupCalendar() {
         
-        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true , scroll: false , scrollDate: NSDate())
+        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: true, selectedDates: [],window: true , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true
@@ -82,7 +91,7 @@ class CalendarForExportViewController: UIViewController, EPCalendarPickerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCalendar()
-        let btn = UIBarButtonItem(title: "Готово", style: .Bordered, target: self.revealViewController(), action: "Done")
+        let btn = UIBarButtonItem(title: "Готово", style: .Bordered, target: self, action: "Done")
         self.navigationItem.rightBarButtonItem = btn
         // Do any additional setup after loading the view.
     }
@@ -93,7 +102,8 @@ class CalendarForExportViewController: UIViewController, EPCalendarPickerDelegat
         }else{
             //getWeek()
         }
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ExportNav") as? UINavigationController
+        self.revealViewController().pushFrontViewController(controller, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -108,6 +118,7 @@ class CalendarForExportViewController: UIViewController, EPCalendarPickerDelegat
     
     func getDays(){
         selectedExportDays.removeAll()
+        print(selectedExportDaysTemp)
         selectedExportDays = selectedExportDaysTemp
     }
     
