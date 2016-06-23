@@ -82,9 +82,9 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ForumCell", forIndexPath: indexPath)
         cell.textLabel?.text=items[indexPath.row]
-        cell.textLabel?.textColor=UIColor.blueColor()
-        cell.selectionStyle=UITableViewCellSelectionStyle.None
-        cell.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
+        cell.textLabel?.textColor = StrawBerryColor
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell.backgroundColor = .clearColor()
         return cell
     }

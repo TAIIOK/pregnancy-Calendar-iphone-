@@ -184,6 +184,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         checkConnectionAndUpdateView()
         if fromCalendar{
             fromCalendar = false
+            presentedDateUpdated(CVDate(date: selectedCalendarDate))
             changer.selectedSegmentIndex = 1
             choosedSegmentNotes = false
             self.tbl.reloadData()
@@ -303,7 +304,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             }else{
                 day = 300 - BirthDate.daysFrom(selectedExperienceDay.date.convertedDate()!)
             }
-        
+
             for  i in not{
                 let d = Int(i.day)
                 if d == day{

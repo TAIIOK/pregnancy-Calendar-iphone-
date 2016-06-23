@@ -36,11 +36,15 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let img  = UIImage(named: "menu")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
         self.navigationItem.leftBarButtonItem = btn
-        self.presentedDateUpdated(CVDate(date: NSDate()))
+        if fromCalendar{
+            self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
+        }else{
+            self.presentedDateUpdated(CVDate(date: NSDate()))}
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
-        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.loadNotes()})
+        /*dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.loadNotes()})*/
+        loadNotes()
         tbl.reloadData()
     }
     
@@ -290,6 +294,10 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if selectedNoteDay != nil{
             date = selectedNoteDay.date.convertedDate()!
         }
+        /*if fromCalendar{
+            date = selectedCalendarDate
+            fromCalendar = false
+        }*/
         texts[0] = returnTableText("TextNote", type: 0, date: date)
         texts[1] = returnTableText("TextNote", type: 1, date: date)
         texts[2] = returnTableText("DoctorVisit", type: 2, date: date)
@@ -380,7 +388,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         if fromCalendar{
             date = CVDate(date: selectedCalendarDate)
-            fromCalendar = false
         }
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)

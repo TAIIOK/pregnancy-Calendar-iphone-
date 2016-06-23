@@ -41,8 +41,9 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let date = selectedCalendarDayPhoto.date.convertedDate()
-        self.presentedDateUpdated(CVDate(date: date!))
+        
+        let date = selectedCalendarDate
+        self.presentedDateUpdated(CVDate(date: date))
 
         picker.delegate=self
         let a = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(PhotoFromCalendarViewController.openCamera))
@@ -50,7 +51,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         a.tintColor = UIColor.whiteColor()
         b.tintColor = UIColor.whiteColor()
         self.navigationItem.setRightBarButtonItems([a,b], animated: true)
-        loadPhoto(date!)
+        loadPhoto(date)
     }
     
     func openCamera(){
@@ -59,7 +60,6 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
             picker.sourceType = UIImagePickerControllerSourceType.Camera
             picker.cameraCaptureMode = .Photo
             picker.modalPresentationStyle = .FormSheet
-            
             presentViewController(picker, animated: true, completion: nil)
         }else{
             if #available(iOS 8.0, *) {

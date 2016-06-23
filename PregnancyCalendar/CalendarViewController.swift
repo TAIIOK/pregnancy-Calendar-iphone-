@@ -55,6 +55,14 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadNotification:", name:"loadNotification", object: nil)
+    }
+    
+    func loadNotification(notification: NSNotification){
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tbl.reloadData()
+            return
+        })
     }
     private func setupCalendar() {
         
@@ -69,9 +77,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         calendarPicker.monthTitleColor = UIColor.whiteColor()
         calendarPicker.weekdayTintColor = UIColor.lightGrayColor()
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
-        
         let navigationController = UINavigationController(rootViewController: calendarPicker)
-        
         testview.clipsToBounds = true
         
         testview.addSubview(navigationController.view)
@@ -146,9 +152,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             break
         case 2:
             cell.textLabel?.text = "Уведомления"
-            let count = 0
+            var count = 0
             if dateType != -1{
-                self.returnCount(2)
+                count = self.returnCount(2)
             }
             var txt = ""
             if count%10 == 1{
@@ -183,7 +189,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         var count = 0
         var Select = selectedCalendarDate
 
-        
         switch number {
         case 0: //заметки
             var table = Table("TextNote")
