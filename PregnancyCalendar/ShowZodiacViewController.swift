@@ -95,6 +95,7 @@ class ShowZodiacViewController: UIViewController {
         zodiacName.text = zodiacs[zodiac].name
         zodiacElement.text = zodiacs[zodiac].element
         zodiacAbout.text = zodiacs[zodiac].about
+        zodiacAbout.scrollRangeToVisible(NSRange(location:0, length:0))
         zodiacIcon.image = UIImage(named: "\(zodiac)z.jpg")
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
