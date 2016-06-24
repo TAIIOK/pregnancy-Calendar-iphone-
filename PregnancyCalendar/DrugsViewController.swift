@@ -548,9 +548,9 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 popover.sourceView = swipedCell.timebutton
                 
                 popover.sourceRect = CGRect(
-                    x: location.x,
-                    y: location.y,
-                    width: 1,
+                    x: 0,
+                    y: 0,
+                    width: UIScreen.mainScreen().bounds.size.height*0.8,
                     height: 1)
                 
                 currentRec = swipedIndexPath.section
@@ -579,9 +579,9 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 popover.sourceView = swipedCell.timebutton
                 
                 popover.sourceRect = CGRect(
-                    x: location.x,
-                    y: location.y,
-                    width: 1,
+                    x: 0,
+                    y: 0,
+                    width: UIScreen.mainScreen().bounds.size.height*0.8,
                     height: 1)
                 
                 currentRec = swipedIndexPath.section

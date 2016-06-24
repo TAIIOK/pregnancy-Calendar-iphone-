@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     var animationFinished = true
     var BirthDate = NSDate()
     var day: Int = 0
-    
+    let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true , scroll: false , scrollDate: NSDate())
     // функции календаря
     //функция отмены
     func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
@@ -33,7 +33,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         selectedCalendarDate = date
         tbl.reloadData()
         //txtViewDetail.text = "User selected date: \n\(date)"
-        
     }
     //функция множественных дат
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {
@@ -56,6 +55,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
          NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadNotification:", name:"loadNotification", object: nil)
+        
     }
     
     func loadNotification(notification: NSNotification){
@@ -66,7 +66,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     private func setupCalendar() {
         
-        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: true , scroll: false , scrollDate: NSDate())
+        
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
         calendarPicker.hightlightsToday = true

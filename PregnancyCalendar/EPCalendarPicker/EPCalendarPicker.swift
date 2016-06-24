@@ -555,6 +555,8 @@ public class EPCalendarPicker: UICollectionViewController {
             if  !arrSelectedDates.isEmpty && !multiSelectEnabled {
                 
                 if !arrSelectedIndexPath.isEmpty{
+                    print(arrSelectedIndexPath)
+                    print(arrSelectedDates)
                     let cell1 = collectionView.cellForItemAtIndexPath(arrSelectedIndexPath[arrSelectedDates[0]]!) as? EPCalendarCell1
                     
                     if cell1 != nil
