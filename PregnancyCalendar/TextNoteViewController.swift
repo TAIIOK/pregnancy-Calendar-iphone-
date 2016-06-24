@@ -77,7 +77,7 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
         }
 
         NoteTitle.text = notes[NoteType]
-
+        NoteTitle.textColor = NotesColor[NoteType]
         
         if NoteType == 3{
             NoteText.text = TextForWeight()

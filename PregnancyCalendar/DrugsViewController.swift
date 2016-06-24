@@ -88,6 +88,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //self.title = CVDate(date: NSDate()).globalDescription
         NoteTitle.text = notes[NoteType]
+        NoteTitle.textColor = NotesColor[NoteType]
         if selectedNoteDay != nil {
             self.calendarView.toggleViewWithDate(selectedNoteDay.date.convertedDate()!)
         }else{

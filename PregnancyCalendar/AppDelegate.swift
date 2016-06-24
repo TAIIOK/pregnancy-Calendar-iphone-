@@ -16,6 +16,9 @@ import FBSDKShareKit
 
 let StrawBerryColor = UIColor(red: 206/255.0, green: 15/255.0, blue: 105/255.0, alpha: 1.0)
 let BiruzaColor = UIColor(red: 0/255.0, green: 189/255.0, blue: 255/255.0, alpha: 1.0)
+let VioletColor = UIColor(red: 90/255.0, green: 0/255.0, blue: 157/255.0, alpha: 1.0)
+let RoseColor = UIColor(red: 255/255.0, green: 203/255.0, blue: 219/255.0, alpha: 1.0)
+let VioletRoseColor = UIColor(red: 251/255.0, green: 95/255.0, blue: 252/255.0, alpha: 1.0)
 let userGrowth = "userGrowth"
 var db = try! Connection()
 var currentyear = NSDate().year();

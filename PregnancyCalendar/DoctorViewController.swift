@@ -93,6 +93,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //self.title = CVDate(date: NSDate()).globalDescription
         NoteTitle.text = notes[NoteType]
+        NoteTitle.textColor = NotesColor[NoteType]
         if selectedNoteDay != nil {
             self.calendarView.toggleViewWithDate(selectedNoteDay.date.convertedDate()!)
         }else{

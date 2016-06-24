@@ -14,7 +14,15 @@ var selectedNoteDay:DayView!
 var DayForView = NSDate()
 var NoteType = Int()
 var notes = ["Мое самочувствие","Как ведет себя малыш","Посещения врачей","Мой вес","Принимаемые лекарства","Приятное воспоминание дня","Важные события","Моё меню на сегодня","Мой \"лист желаний\""]
-
+var NotesColor = [UIColor(red: 124/255.0, green: 252/255.0, blue: 0/255.0, alpha: 1.0),
+                  UIColor(red: 64/255.0, green: 224/255.0, blue: 208/255.0, alpha: 1.0),
+                  UIColor(red: 0/255.0, green: 191/255.0, blue: 255/255.0, alpha: 1.0),
+                  UIColor(red: 123/255.0, green: 104/255.0, blue: 238/255.0, alpha: 1.0),
+                  UIColor(red: 186/255.0, green: 85/255.0, blue: 211/255.0, alpha: 1.0) ,
+                  UIColor(red: 208/255.0, green: 32/255.0, blue: 144/255.0, alpha: 1.0),
+                  UIColor(red: 255/255.0, green: 99/255.0, blue: 71/255.0, alpha: 1.0),
+                  UIColor(red: 255/255.0, green: 165/255.0, blue: 0/255.0, alpha: 1.0),
+                  UIColor(red: 79/255.0, green: 79/255.0, blue: 79/255.0, alpha: 1.0)]
 
 class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
@@ -189,6 +197,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }else{
                 cell.detailTextLabel?.text = "Нет заметок"
             }
+            
             break
         case 1: //как ведет сеья малыш - текстовая
             text = self.texts[1]
@@ -281,8 +290,11 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             break
             default: break
         }
-        cell.backgroundColor = .clearColor()
-        cell.selectedBackgroundView?.backgroundColor = .clearColor()
+            cell.backgroundColor = .clearColor()
+            cell.selectedBackgroundView?.backgroundColor = .clearColor()
+            print(indexPath.row)
+            cell.textLabel?.textColor = NotesColor[indexPath.row]
+            cell.detailTextLabel?.textColor = NotesColor[indexPath.row]
             }
         )
         return cell

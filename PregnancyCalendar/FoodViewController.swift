@@ -62,8 +62,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.calendarView.toggleViewWithDate(date)
         }
         self.presentedDateUpdated(CVDate(date: NSDate()))
-        
-        
+        foodlbl.textColor = NotesColor[NoteType]
+        preferenceslbl.textColor = NotesColor[0]
+        restrictionslbl.textColor = NotesColor[6]
         FoodTable.delegate = self
         FoodTable.dataSource = self
         FoodTable.backgroundColor = .clearColor()

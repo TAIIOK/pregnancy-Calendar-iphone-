@@ -17,6 +17,7 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var pickerViewTextFieldGramm: UITextField!
     @IBOutlet var pickerViewGramm: UIPickerView!
+    @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var btnGR: UIButton!
     @IBOutlet weak var btnKG: UIButton!
@@ -45,7 +46,7 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
             let date = NSDate()
             self.calendarView.toggleViewWithDate(date)
         }
-
+        label.textColor = NotesColor[NoteType]
         shouldAutoSelect = false
         
         self.calendarView.delegate = self
