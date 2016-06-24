@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02682D231C7EFBA40088F21B"
-               BuildableName = "PregnancyCalendar.app"
-               BlueprintName = "PregnancyCalendar"
-               ReferencedContainer = "container:PregnancyCalendar.xcodeproj">
+               BuildableName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.app"
+               BlueprintName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;"
+               ReferencedContainer = "container:&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02682D231C7EFBA40088F21B"
-            BuildableName = "PregnancyCalendar.app"
-            BlueprintName = "PregnancyCalendar"
-            ReferencedContainer = "container:PregnancyCalendar.xcodeproj">
+            BuildableName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.app"
+            BlueprintName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;"
+            ReferencedContainer = "container:&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02682D231C7EFBA40088F21B"
-            BuildableName = "PregnancyCalendar.app"
-            BlueprintName = "PregnancyCalendar"
-            ReferencedContainer = "container:PregnancyCalendar.xcodeproj">
+            BuildableName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.app"
+            BlueprintName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;"
+            ReferencedContainer = "container:&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02682D231C7EFBA40088F21B"
-            BuildableName = "PregnancyCalendar.app"
-            BlueprintName = "PregnancyCalendar"
-            ReferencedContainer = "container:PregnancyCalendar.xcodeproj">
+            BuildableName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.app"
+            BlueprintName = "&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;"
+            ReferencedContainer = "container:&#x41a;&#x430;&#x43b;&#x435;&#x43d;&#x434;&#x430;&#x440;&#x44c; &#x431;&#x435;&#x440;&#x435;&#x43c;&#x435;&#x43d;&#x43d;&#x43e;&#x441;&#x442;&#x438;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
