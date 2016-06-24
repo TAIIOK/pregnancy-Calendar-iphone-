@@ -164,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    /*private func createEditableCopyOfDatabaseIfNeeded() -> Void
+    private func createEditableCopyOfDatabaseIfNeeded() -> Void
     {
         // First, test for existence.
         // Override point for customization after application launch.
@@ -180,27 +180,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         db = try! Connection(destinationPath)
-    }*/
-    
-    private func createEditableCopyOfDatabaseIfNeeded() -> Void
-    {
-        // First, test for existence.
-        // Override point for customization after application launch.
-        /*var sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
-        var doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
-        let destinationPath = (doumentDirectoryPath as NSString).stringByAppendingPathComponent("db.sqlite")
-        //print(destinationPath)
-        do {
-            try NSFileManager().copyItemAtPath(sourcePath!, toPath: destinationPath)
-        } catch _ {
-        }
-        db = try! Connection(destinationPath)*/
-        let path = NSSearchPathForDirectoriesInDomains(
-            .DocumentDirectory, .UserDomainMask, true
-            ).first!
-        print(path)
-        db = try! Connection("\(path)/db.sqlite")
     }
+    
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -210,6 +210,7 @@
 		A018A9931CB6733D0044830A /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9781CB6733D0044830A /* CVShape.swift */; };
 		A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */; };
 		A022904D1CBFC70700C8B3B4 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022904C1CBFC70700C8B3B4 /* NoteCell.swift */; };
+		A09CA8031D1D4AD20072CE73 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A09CA8021D1D4AD20072CE73 /* db.sqlite */; };
 		A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */; };
 		A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */; };
 		A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E461711CA2A0EB00CC6E77 /* Charts.framework */; };
@@ -465,7 +466,6 @@
 		8E4C43DD1CFC52E300003AAB /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		8E4C43DE1CFC52E300003AAB /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.dylib; sourceTree = "<group>"; };
-		8E4C43FD1CFC60B800003AAB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
 		8E5298241D1827A600AD06E2 /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 		8E5298271D1827C200AD06E2 /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
@@ -524,6 +524,7 @@
 		A018A9781CB6733D0044830A /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
 		A018A9791CB6733D0044830A /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
 		A022904C1CBFC70700C8B3B4 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		A09CA8021D1D4AD20072CE73 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A0E9CD741C96EC3400B6A036 /* Black_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_dot.png; path = EPCalendarPicker/Black_dot.png; sourceTree = "<group>"; };
@@ -616,6 +617,7 @@
 				8E7355771D1BFB75008B8444 /* CalendarViewController.swift */,
 				8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */,
 				8E1450BC1D1986B100D234B2 /* ShareViewController.swift */,
+				A09CA8021D1D4AD20072CE73 /* db.sqlite */,
 				8E1450761D19734E00D234B2 /* ExperienceViewController.swift */,
 				8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */,
 				8E1450851D19839900D234B2 /* webArticleViewController.swift */,
@@ -733,7 +735,6 @@
 				8E5298271D1827C200AD06E2 /* InternetConnection.swift */,
 				8E5298311D19427300AD06E2 /* ImageFromCalendar.swift */,
 				A022904C1CBFC70700C8B3B4 /* NoteCell.swift */,
-				8E4C43FD1CFC60B800003AAB /* db.sqlite */,
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
@@ -1138,6 +1139,7 @@
 				02682D321C7EFBA40088F21B /* Assets.xcassets in Resources */,
 				8E4C439D1CF8506200003AAB /* 10z.jpg in Resources */,
 				02682D2D1C7EFBA40088F21B /* Main.storyboard in Resources */,
+				A09CA8031D1D4AD20072CE73 /* db.sqlite in Resources */,
 				8E1450AB1D1985CB00D234B2 /* TextWithTwoPhotosPink.xib in Resources */,
 				8E14506A1D1972F900D234B2 /* DoctorViewCell.xib in Resources */,
 				8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */,
