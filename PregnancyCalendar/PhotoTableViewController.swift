@@ -18,13 +18,13 @@ class PhotoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
+        loadPhotos()
+        table.reloadData()
         table.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
         table.backgroundColor = .clearColor()
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
     }
-    
-    
     
     private func setupSidebarMenu() {
         if self.revealViewController() != nil {
@@ -55,10 +55,16 @@ class PhotoTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Мои фото"
-            cell.detailTextLabel!.text = "0"
+            cell.detailTextLabel!.text = "\(photos.count)"
+            if photos.count > 0 {
+                cell.imageView?.image = photos[0].image
+            }
         case 1:
             cell.textLabel?.text = "УЗИ"
-            cell.detailTextLabel!.text = "0"
+            cell.detailTextLabel!.text = "\(uzis.count)"
+            if uzis.count > 0 {
+                cell.imageView?.image = uzis[0].image
+            }
         default:
             break
         }
@@ -74,5 +80,34 @@ class PhotoTableViewController: UITableViewController {
         }
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("photo") as? UINavigationController
         self.revealViewController().pushFrontViewController(controller, animated: true)
+    }
+    
+    func loadPhotos(){
+        photos.removeAll()
+        uzis.removeAll()
+        var table = Table("Photo")
+        let date = Expression<String>("Date")
+        let image = Expression<Blob>("Image")
+        let type = Expression<Int64>("Type")
+        let text = Expression<String>("Text")
+        
+        for i in try! db.prepare(table.select(date,image,type,text)) {
+            let a = i[image] as! Blob
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            photos.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+        }
+        
+        table = Table("Uzi")
+        for i in try! db.prepare(table.select(date,image,type,text)) {
+            let a = i[image] as! Blob
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            uzis.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+        }
     }
 }

@@ -4066,6 +4066,22 @@
             </objects>
             <point key="canvasLocation" x="1765" y="5493"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UTl-Ul-vhF">
+            <objects>
+                <navigationController storyboardIdentifier="PhotoFromCalendarNavigation1" id="AHM-wQ-FqL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zzp-zn-js1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ud4-7N-qhh" kind="relationship" relationship="rootViewController" id="dOY-XJ-OJw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fp-hu-CbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3425" y="1425"/>
+        </scene>
         <!--Calendar Appearance Delegate-->
         <scene sceneID="dKp-cn-6XQ">
             <objects>
@@ -4082,26 +4098,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-U3-lst" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="82"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="iot-lu-Hpm"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="menuViewDelegate" destination="Ud4-7N-qhh" id="JWg-SO-QYX"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-mO-VU9" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="102" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="88" width="600" height="62"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="AZb-1B-IbJ"/>
                                     <constraint firstAttribute="height" constant="70" id="tAR-9D-FUk"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tAR-9D-FUk"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="calendarAppearanceDelegate" destination="Ud4-7N-qhh" id="gCe-qX-YvO"/>
                                     <outlet property="calendarDelegate" destination="Ud4-7N-qhh" id="LcP-zL-Vd2"/>
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-5t-8iE">
-                                <rect key="frame" x="0.0" y="180" width="600" height="412"/>
+                                <rect key="frame" x="0.0" y="150" width="600" height="442"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="412" id="gJT-L7-8j7"/>
+                                    <constraint firstAttribute="height" constant="442" id="gJT-L7-8j7"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="KZs-eS-QUV">
                                     <size key="itemSize" width="100" height="100"/>
@@ -4150,21 +4175,30 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hgz-n7-gTW" firstAttribute="bottom" secondItem="uZ9-hd-irX" secondAttribute="top" id="003-QI-Q7s"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="leading" secondItem="Hgz-n7-gTW" secondAttribute="leading" id="3vJ-jI-RvD"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="leading" secondItem="48Y-U3-lst" secondAttribute="leading" id="4FS-fq-IC4"/>
                             <constraint firstItem="hpX-mO-VU9" firstAttribute="top" secondItem="idS-QE-uvz" secondAttribute="top" constant="102" id="8EM-wZ-UGe"/>
-                            <constraint firstItem="48Y-U3-lst" firstAttribute="leading" secondItem="hpX-mO-VU9" secondAttribute="leading" id="G1Y-xZ-pdE"/>
+                            <constraint firstItem="hpX-mO-VU9" firstAttribute="top" secondItem="48Y-U3-lst" secondAttribute="bottom" id="AF1-a2-6hr"/>
                             <constraint firstItem="Hgz-n7-gTW" firstAttribute="top" secondItem="idS-QE-uvz" secondAttribute="top" id="HYD-71-fXG"/>
-                            <constraint firstItem="48Y-U3-lst" firstAttribute="trailing" secondItem="hpX-mO-VU9" secondAttribute="trailing" id="HeD-H7-txr"/>
-                            <constraint firstItem="hpX-mO-VU9" firstAttribute="trailing" secondItem="PhD-5t-8iE" secondAttribute="trailing" id="ISz-6a-cjL"/>
-                            <constraint firstItem="Hgz-n7-gTW" firstAttribute="trailing" secondItem="hpX-mO-VU9" secondAttribute="trailing" id="Ija-3S-3Db"/>
-                            <constraint firstItem="48Y-U3-lst" firstAttribute="top" secondItem="Oj9-Sc-E9M" secondAttribute="bottom" id="UXc-uq-vpD"/>
+                            <constraint firstItem="48Y-U3-lst" firstAttribute="top" secondItem="Oj9-Sc-E9M" secondAttribute="bottom" id="M5G-9g-XAO"/>
                             <constraint firstItem="Hgz-n7-gTW" firstAttribute="leading" secondItem="idS-QE-uvz" secondAttribute="leading" id="e0U-uX-hde"/>
-                            <constraint firstItem="PhD-5t-8iE" firstAttribute="top" secondItem="hpX-mO-VU9" secondAttribute="bottom" constant="8" symbolic="YES" id="kYV-wG-4po"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="top" secondItem="hpX-mO-VU9" secondAttribute="bottom" id="esK-ku-Gwe"/>
+                            <constraint firstItem="hpX-mO-VU9" firstAttribute="top" secondItem="48Y-U3-lst" secondAttribute="bottom" id="hPB-a2-tMh"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="trailing" secondItem="48Y-U3-lst" secondAttribute="trailing" id="hva-13-01q"/>
                             <constraint firstAttribute="trailing" secondItem="Hgz-n7-gTW" secondAttribute="trailing" id="oFd-7J-uQi"/>
                             <constraint firstItem="uZ9-hd-irX" firstAttribute="top" secondItem="PhD-5t-8iE" secondAttribute="bottom" constant="8" symbolic="YES" id="ogY-dG-oVw"/>
-                            <constraint firstItem="Hgz-n7-gTW" firstAttribute="leading" secondItem="48Y-U3-lst" secondAttribute="leading" id="uuA-SH-IaZ"/>
-                            <constraint firstItem="hpX-mO-VU9" firstAttribute="leading" secondItem="PhD-5t-8iE" secondAttribute="leading" id="v3v-x0-Pua"/>
-                            <constraint firstItem="hpX-mO-VU9" firstAttribute="top" secondItem="48Y-U3-lst" secondAttribute="bottom" id="v5u-8z-5vI"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="trailing" secondItem="Hgz-n7-gTW" secondAttribute="trailing" id="p39-B2-lc8"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="top" secondItem="hpX-mO-VU9" secondAttribute="bottom" id="pgW-hH-A7Z"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="leading" secondItem="hpX-mO-VU9" secondAttribute="leading" id="qgc-m4-i9t"/>
+                            <constraint firstItem="PhD-5t-8iE" firstAttribute="trailing" secondItem="hpX-mO-VU9" secondAttribute="trailing" id="tlu-0T-P6X"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8EM-wZ-UGe"/>
+                                <exclude reference="AF1-a2-6hr"/>
+                                <exclude reference="pgW-hH-A7Z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IKq-QL-agh"/>
                     <connections>

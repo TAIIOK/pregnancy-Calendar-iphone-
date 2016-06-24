@@ -11,13 +11,27 @@ import UIKit
 
 class OnePhotoViewController: UIViewController{
     
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y += keyboardSize.height
+        }
+    }
     
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         image.image = choosedSegmentImages ? photos[currentPhoto].image : uzis[currentPhoto].image
         
         commentField.text = choosedSegmentImages ? photos[currentPhoto].text : uzis[currentPhoto].text
@@ -100,7 +114,7 @@ class OnePhotoViewController: UIViewController{
                 choosedSegmentImages ? photos.removeAtIndex(currentPhoto) : uzis.removeAtIndex(currentPhoto)
                 choosedSegmentImages ? self.deleteImage(currentPhoto) : self.deleteImageUzi(currentPhoto)
                 let ph = self.storyboard?.instantiateViewControllerWithIdentifier("photo")
-                self.splitViewController?.showDetailViewController(ph!, sender: self)
+                self.revealViewController().pushFrontViewController(ph, animated: true)
             }
             actionSheetController.addAction(nextAction)
             

@@ -198,7 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let path = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory, .UserDomainMask, true
             ).first!
-        
+        print(path)
         db = try! Connection("\(path)/db.sqlite")
     }
 

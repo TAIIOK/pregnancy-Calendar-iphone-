@@ -49,7 +49,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         //self.navigationItem.setLeftBarButtonItems([a,b], animated: true)
         self.navigationItem.leftBarButtonItems?.append(a)
         self.navigationItem.leftBarButtonItems?.append(b)*/
-        loadPhotos()
+        
     }
     
     @IBAction func toselect(sender: UIBarButtonItem) {
@@ -131,7 +131,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
             return PhotoCell
         }else{
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
-            PhotoCell.photo.image = choosedSegmentImages ? photos[indexPath.row].image : uzis[indexPath.row].image
+            PhotoCell.photo.image = choosedSegmentImages ? photos[indexPath.row-1].image : uzis[indexPath.row-1].image
             return PhotoCell
         }
     }

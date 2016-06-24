@@ -48,10 +48,18 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         picker.delegate=self
         let a = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(PhotoFromCalendarViewController.openCamera))
         let b = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(PhotoFromCalendarViewController.addPhoto))
+        let img = UIImage(named: "Arrowhead-Left-01-48")
+        let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self, action: "Cancel")
+        self.navigationItem.setLeftBarButtonItem(btn, animated: false)
         a.tintColor = UIColor.whiteColor()
         b.tintColor = UIColor.whiteColor()
         self.navigationItem.setRightBarButtonItems([a,b], animated: true)
         loadPhoto(date)
+    }
+    
+    func Cancel(){
+        let zodiac = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarViewController")
+        self.revealViewController().pushFrontViewController(zodiac, animated: true)
     }
     
     func openCamera(){
