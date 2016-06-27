@@ -35,6 +35,20 @@ class SelectPhotosViewController: UICollectionViewController, UIImagePickerContr
     override func viewDidDisappear(animated: Bool) {
         selectedImages.removeAll()
     }
+    @IBAction func SelectAllPhoto(sender: UIBarButtonItem) {
+        selectedImages.removeAll()
+        for (var i = 0; i < PhotoCollectionView.numberOfSections(); i++)
+        {
+            for (var j = 0; j < PhotoCollectionView.numberOfItemsInSection(i); j++)
+            {
+                let cell =  PhotoCollectionView.cellForItemAtIndexPath(NSIndexPath(forRow: j,inSection: i)) as! PhotoCollectionViewCell
+                selectedImages.append(cell.photo.image!)
+                cell.ImgSelector.hidden = false
+            }
+        }
+        if(choosedSegmentImages) {selected = photos.count } else { selected = uzis.count}
+        self.title = "\(selected) выбрано"
+    }
     
     @IBAction func ShareSelected(sender: AnyObject) {
     }

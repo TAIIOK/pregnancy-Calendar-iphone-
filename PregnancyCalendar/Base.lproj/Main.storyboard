@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
@@ -51,7 +51,7 @@
         <!--Фотоальбом-->
         <scene sceneID="sx7-hZ-rwg">
             <objects>
-                <tableViewController id="YHe-lP-zXD" customClass="PhotoTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YHe-lP-zXD" customClass="PhotoTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gka-Az-WOz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
         <!--Видеотека-->
         <scene sceneID="DKv-wj-5F8">
             <objects>
-                <tableViewController id="e1F-j9-qVW" customClass="VideoViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="e1F-j9-qVW" customClass="VideoViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" id="0SL-Es-m3Z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +210,7 @@
         <!--Счетчик схваток-->
         <scene sceneID="N44-Wj-vjJ">
             <objects>
-                <viewController id="N9y-xQ-xuE" customClass="SpasmsViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N9y-xQ-xuE" customClass="SpasmsViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zTb-vV-TIa"/>
                         <viewControllerLayoutGuide type="bottom" id="Nka-69-wPP"/>
@@ -258,7 +258,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Gr-OOA">
                                 <rect key="frame" x="0.0" y="72" width="600" height="262"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="aiY-0s-bnX" customClass="CustomCollectionViewLayout" customModule="PregnancyCalendar" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="aiY-0s-bnX" customClass="CustomCollectionViewLayout" customModule="Календарь_беременности" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="N9y-xQ-xuE" id="2LS-T9-XGU"/>
@@ -313,7 +313,7 @@
         <!--Дата родов-->
         <scene sceneID="JaI-4t-SDB">
             <objects>
-                <viewController storyboardIdentifier="Birthdate" id="Pj3-YC-st5" customClass="BirthDateViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Birthdate" id="Pj3-YC-st5" customClass="BirthDateViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w1m-CF-F3w"/>
                         <viewControllerLayoutGuide type="bottom" id="IW9-Lh-6jL"/>
@@ -335,7 +335,7 @@
                                 <color key="sectionIndexColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateCell" textLabel="lN3-AV-bUK" detailTextLabel="eUH-Df-MA7" style="IBUITableViewCellStyleSubtitle" id="q4y-Qf-gor" customClass="DateTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateCell" textLabel="lN3-AV-bUK" detailTextLabel="eUH-Df-MA7" style="IBUITableViewCellStyleSubtitle" id="q4y-Qf-gor" customClass="DateTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q4y-Qf-gor" id="Rtw-37-sr2">
@@ -424,7 +424,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="Eri-qI-RJM">
             <objects>
-                <tableViewController id="F1z-on-BXr" customClass="MenuTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="F1z-on-BXr" customClass="MenuTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qa-Mg-GBC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +452,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="I3O-YH-5yS" customClass="MenuTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="I3O-YH-5yS" customClass="MenuTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3O-YH-5yS" id="hyl-Ms-oul">
@@ -511,7 +511,7 @@
         <!--Предполагаемая дата родов-->
         <scene sceneID="t4J-Rz-dKk">
             <objects>
-                <viewController storyboardIdentifier="Zodiacs" id="28Z-jN-gJ4" customClass="ShowZodiacViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Zodiacs" id="28Z-jN-gJ4" customClass="ShowZodiacViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ecw-Qi-Sgo"/>
                         <viewControllerLayoutGuide type="bottom" id="gPK-Av-ddL"/>
@@ -631,7 +631,7 @@
         <!--Names Table View Controller-->
         <scene sceneID="IPK-2c-JLh">
             <objects>
-                <tableViewController storyboardIdentifier="NamesViewController" id="rbm-Yl-LM6" customClass="NamesTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NamesViewController" id="rbm-Yl-LM6" customClass="NamesTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jsP-rH-tHi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -686,7 +686,7 @@
         <!--Name View Controller-->
         <scene sceneID="mvh-Ai-NZM">
             <objects>
-                <viewController storyboardIdentifier="NameViewController" id="2Ab-XK-DIW" customClass="NameViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NameViewController" id="2Ab-XK-DIW" customClass="NameViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jlf-QP-Gfa"/>
                         <viewControllerLayoutGuide type="bottom" id="iCo-AG-csV"/>
@@ -772,7 +772,7 @@
         <!--График набора веса-->
         <scene sceneID="wG8-m0-P9T">
             <objects>
-                <viewController id="cT9-wb-cJe" customClass="WeightDiagramViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cT9-wb-cJe" customClass="WeightDiagramViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vyE-qa-R4O"/>
                         <viewControllerLayoutGuide type="bottom" id="UFt-3i-Kf8"/>
@@ -890,7 +890,7 @@
         <!--Share View Controller-->
         <scene sceneID="L9L-iD-41N">
             <objects>
-                <viewController id="e3B-Jz-qX6" customClass="ShareViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e3B-Jz-qX6" customClass="ShareViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fm2-Db-SH9"/>
                         <viewControllerLayoutGuide type="bottom" id="HBl-cx-2Nu"/>
@@ -991,7 +991,7 @@
         <!--Photos View Controller-->
         <scene sceneID="18j-40-hPJ">
             <objects>
-                <collectionViewController id="Jxg-Go-f7N" customClass="PhotosViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Jxg-Go-f7N" customClass="PhotosViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lGX-Fj-S9b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1003,7 +1003,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppendCell" id="RQe-Zs-3iX" customClass="PhotoAppendCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppendCell" id="RQe-Zs-3iX" customClass="PhotoAppendCell" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="10" y="74" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1030,7 +1030,7 @@
                                     <outlet property="image" destination="Jny-tB-b2L" id="BE1-Ct-E3B"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCell" reuseIdentifier="PhotoCell" id="vcE-DL-Flb" customClass="PhotoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCell" reuseIdentifier="PhotoCell" id="vcE-DL-Flb" customClass="PhotoCollectionViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="93" y="74" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1108,7 +1108,7 @@
         <!--0 выбрано-->
         <scene sceneID="O7Y-Uv-rjx">
             <objects>
-                <collectionViewController id="8Ux-kJ-TYt" customClass="SelectPhotosViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="8Ux-kJ-TYt" customClass="SelectPhotosViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yK7-z7-Rcc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1120,7 +1120,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoSelCell" reuseIdentifier="PhotoSelCell" id="Wck-CF-Lqy" customClass="PhotoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoSelCell" reuseIdentifier="PhotoSelCell" id="Wck-CF-Lqy" customClass="PhotoCollectionViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="10" y="74" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1175,6 +1175,12 @@
                                     <action selector="DeleteSelected:" destination="8Ux-kJ-TYt" id="ldR-Wc-SKA"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Все" id="ISQ-zQ-hJU">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="SelectAllPhoto:" destination="8Ux-kJ-TYt" id="4hJ-1U-JNF"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1204,7 +1210,7 @@
         <!--Фото-->
         <scene sceneID="xJw-q1-Tou">
             <objects>
-                <viewController restorationIdentifier="OnePhotoViewController" storyboardIdentifier="OnePhotoViewController" id="eth-g3-tpN" customClass="OnePhotoViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OnePhotoViewController" storyboardIdentifier="OnePhotoViewController" id="eth-g3-tpN" customClass="OnePhotoViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8d3-zh-KEo"/>
                         <viewControllerLayoutGuide type="bottom" id="Ogt-PI-kbA"/>
@@ -1309,7 +1315,7 @@
         <!--Videos View Controller-->
         <scene sceneID="Oia-Qe-s5I">
             <objects>
-                <collectionViewController id="L4z-4N-Sqh" customClass="VideosViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="L4z-4N-Sqh" customClass="VideosViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="e2J-xu-BnG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1358,7 +1364,7 @@
                             </accessibility>
                         </view>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="VideoCell" reuseIdentifier="VideoCell" id="Lzr-1G-zJV" customClass="VideoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="VideoCell" reuseIdentifier="VideoCell" id="Lzr-1G-zJV" customClass="VideoCollectionViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="10" y="74" width="120" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1437,7 +1443,7 @@
         <!--Video Player View Controller-->
         <scene sceneID="bcd-gw-zo7">
             <objects>
-                <viewController id="fz8-Ch-G6L" customClass="VideoPlayerViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fz8-Ch-G6L" customClass="VideoPlayerViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fc6-hf-Qqh"/>
                         <viewControllerLayoutGuide type="bottom" id="tio-co-sD3"/>
@@ -1490,7 +1496,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="zhY-Q0-Wrd">
             <objects>
-                <viewController storyboardIdentifier="NotesTable" id="WCW-d1-pp9" customClass="NotesViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesTable" id="WCW-d1-pp9" customClass="NotesViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="APE-d8-Z0s"/>
                         <viewControllerLayoutGuide type="bottom" id="oaD-Ni-2mz"/>
@@ -1502,7 +1508,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Y6-zRd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Al-PXQ" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Al-PXQ" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="aJJ-ia-1qt"/>
@@ -1552,7 +1558,7 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Kq-kpL" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Kq-kpL" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="TEk-ss-Ye7"/>
@@ -1596,7 +1602,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="o9N-qr-zW2">
             <objects>
-                <viewController storyboardIdentifier="textNote" id="fBy-Ui-fNa" customClass="TextNoteViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textNote" id="fBy-Ui-fNa" customClass="TextNoteViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Agj-li-Oa2"/>
                         <viewControllerLayoutGuide type="bottom" id="fAA-Hv-8BE"/>
@@ -1608,7 +1614,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-lt-qch">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REs-YI-SV7" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REs-YI-SV7" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="f5J-H3-Zgj"/>
@@ -1640,7 +1646,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-zu-Rqm" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-zu-Rqm" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="36" width="600" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="awc-6H-dje"/>
@@ -1693,7 +1699,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="iRG-Fg-Gvg">
             <objects>
-                <viewController storyboardIdentifier="WeightNote" id="Fh4-ay-tUN" customClass="WeightNoteViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeightNote" id="Fh4-ay-tUN" customClass="WeightNoteViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nUc-et-dpi"/>
                         <viewControllerLayoutGuide type="bottom" id="kkJ-W8-aCh"/>
@@ -1705,7 +1711,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Vm3-6m-z6A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-D1-1s6" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-D1-1s6" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="on1-K8-l0R"/>
@@ -1714,7 +1720,7 @@
                                     <outlet property="menuViewDelegate" destination="Fh4-ay-tUN" id="gQO-fS-Bq0"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-aA-Yl1" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-aA-Yl1" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="y90-PP-vdB"/>
@@ -1809,7 +1815,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="B0P-Jr-i7j">
             <objects>
-                <viewController storyboardIdentifier="desireNote" id="9Dl-1j-w37" customClass="DesireListViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="desireNote" id="9Dl-1j-w37" customClass="DesireListViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pEO-Qy-0rC"/>
                         <viewControllerLayoutGuide type="bottom" id="Hjx-AI-QIZ"/>
@@ -1821,7 +1827,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H0r-1j-2iK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qe0-Ur-asS" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qe0-Ur-asS" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="fL2-b3-X9k"/>
@@ -1830,7 +1836,7 @@
                                     <outlet property="menuViewDelegate" destination="9Dl-1j-w37" id="iWA-b8-5jk"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0L-yb-qok" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0L-yb-qok" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="r1D-Vw-tRb"/>
@@ -1847,7 +1853,7 @@
                                     <constraint firstAttribute="height" constant="428" id="zBs-rB-6cs"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="WTH-hd-K5S" customClass="DesireTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="WTH-hd-K5S" customClass="DesireTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTH-hd-K5S" id="Po9-Om-ZIB">
@@ -1937,7 +1943,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="mji-5P-GEc">
             <objects>
-                <viewController storyboardIdentifier="FoodNote" id="Gei-Rr-x8k" customClass="FoodViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoodNote" id="Gei-Rr-x8k" customClass="FoodViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dds-ON-9g9"/>
                         <viewControllerLayoutGuide type="bottom" id="YVa-R9-2d3"/>
@@ -1949,7 +1955,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-sT-NSM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jz-II-8J7" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jz-II-8J7" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="11T-Hr-4Nc"/>
@@ -1958,7 +1964,7 @@
                                     <outlet property="menuViewDelegate" destination="Gei-Rr-x8k" id="o91-oW-5dJ"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-SC-cUa" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-SC-cUa" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="9kd-2F-59U"/>
@@ -1979,7 +1985,7 @@
                                             <constraint firstAttribute="height" constant="407" id="RSg-Gs-PSs"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FoodCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="Ufd-zr-yUE" customClass="FoodTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FoodCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="Ufd-zr-yUE" customClass="FoodTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="584" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ufd-zr-yUE" id="2a5-Xn-1Tg">
@@ -2043,7 +2049,7 @@
                                             <constraint firstAttribute="width" constant="150" id="vwq-r7-Nhv"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PreferencesCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreferencesCell" id="clq-ig-vwt" customClass="PreferencesTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PreferencesCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreferencesCell" id="clq-ig-vwt" customClass="PreferencesTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="150" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="clq-ig-vwt" id="PFe-ag-zlO">
@@ -2085,7 +2091,7 @@
                                             <constraint firstAttribute="width" constant="150" id="T6q-ka-pMH"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RestrictionsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestrictionsCell" id="E40-pv-S1X" customClass="RestrictionsTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RestrictionsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestrictionsCell" id="E40-pv-S1X" customClass="RestrictionsTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="150" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E40-pv-S1X" id="cMj-yr-e1H">
@@ -2210,7 +2216,7 @@
         <!--NotifiTable-->
         <scene sceneID="z00-cS-1Te">
             <objects>
-                <viewController storyboardIdentifier="NotifiTable" title="NotifiTable" id="07x-4P-ul1" customClass="NotifiListTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotifiTable" title="NotifiTable" id="07x-4P-ul1" customClass="NotifiListTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fqo-R9-0pV"/>
                         <viewControllerLayoutGuide type="bottom" id="ef0-9L-Uub"/>
@@ -2223,7 +2229,7 @@
                                 <rect key="frame" x="0.0" y="44" width="400" height="418"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notifiCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifiCell" id="HZ2-hV-72s" customClass="NotifiCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notifiCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifiCell" id="HZ2-hV-72s" customClass="NotifiCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZ2-hV-72s" id="wJp-ah-fiG">
@@ -2307,7 +2313,7 @@
         <!--TimeTable-->
         <scene sceneID="eOi-ql-UZY">
             <objects>
-                <viewController storyboardIdentifier="TimeTable" title="TimeTable" id="Nhr-B6-uqS" customClass="TimeListController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeTable" title="TimeTable" id="Nhr-B6-uqS" customClass="TimeListController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fxc-Z3-UNy"/>
                         <viewControllerLayoutGuide type="bottom" id="F59-TW-cHH"/>
@@ -2375,7 +2381,7 @@
         <!--DrugsTable-->
         <scene sceneID="QtT-yY-0MZ">
             <objects>
-                <viewController storyboardIdentifier="DrugsTable" title="DrugsTable" id="JEu-11-aFj" customClass="DrugsListTableViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrugsTable" title="DrugsTable" id="JEu-11-aFj" customClass="DrugsListTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fdl-im-thq"/>
                         <viewControllerLayoutGuide type="bottom" id="SD3-ZT-dAw"/>
@@ -2388,7 +2394,7 @@
                                 <rect key="frame" x="0.0" y="44" width="400" height="418"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="drugsCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drugsCell" id="16O-9M-3fG" customClass="NotifiCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="drugsCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drugsCell" id="16O-9M-3fG" customClass="NotifiCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16O-9M-3fG" id="iK1-De-Uph">
@@ -2473,7 +2479,7 @@
         <!--DatePickerView-->
         <scene sceneID="cWl-zO-zGE">
             <objects>
-                <viewController storyboardIdentifier="DatePickerView" title="DatePickerView" id="7js-yp-h8T" customClass="DatePickerViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerView" title="DatePickerView" id="7js-yp-h8T" customClass="DatePickerViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XVr-wG-YGT"/>
                         <viewControllerLayoutGuide type="bottom" id="Wmd-ob-Had"/>
@@ -2548,7 +2554,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="k7w-wy-JbT">
             <objects>
-                <viewController storyboardIdentifier="Doctor" title="Doctor" id="HIW-C5-SE9" customClass="DoctorViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Doctor" title="Doctor" id="HIW-C5-SE9" customClass="DoctorViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dj5-Of-nnW"/>
                         <viewControllerLayoutGuide type="bottom" id="ZOf-25-fgp"/>
@@ -2560,7 +2566,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="QBe-FT-p1M">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-0t-YK7" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-0t-YK7" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="zsb-M6-ztm"/>
@@ -2577,7 +2583,7 @@
                                     <constraint firstAttribute="height" constant="436" id="bCW-hz-xa7"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="PZx-V8-1vU" customClass="DesireTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="PZx-V8-1vU" customClass="DesireTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZx-V8-1vU" id="Xrz-hb-YeH">
@@ -2602,7 +2608,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5BK-D6-vGw" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5BK-D6-vGw" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="eNh-Vf-lmf"/>
@@ -2673,7 +2679,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="h8B-nP-p4g">
             <objects>
-                <viewController storyboardIdentifier="Drugs" title="Drugs" id="d7b-Ai-Caw" customClass="DrugsViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Drugs" title="Drugs" id="d7b-Ai-Caw" customClass="DrugsViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FiF-Go-tdi"/>
                         <viewControllerLayoutGuide type="bottom" id="bve-io-IOi"/>
@@ -2698,7 +2704,7 @@
                                 <rect key="frame" x="20" y="144" width="560" height="421"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="aEV-ho-Bji" customClass="DesireTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DesireCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DesireCell" id="aEV-ho-Bji" customClass="DesireTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aEV-ho-Bji" id="9Yw-GX-XWq">
@@ -2723,7 +2729,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-pI-iKx" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-pI-iKx" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="U7O-Sc-iIt"/>
@@ -2732,7 +2738,7 @@
                                     <outlet property="menuViewDelegate" destination="d7b-Ai-Caw" id="356-7w-qE6"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76L-aY-efh" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76L-aY-efh" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="zLN-Nf-lh8"/>
@@ -2811,7 +2817,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="XcI-a5-6tr">
             <objects>
-                <viewController storyboardIdentifier="ExperienceViewController" title="Полезный опыт" id="jf0-H2-OIV" customClass="ExperienceViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExperienceViewController" title="Полезный опыт" id="jf0-H2-OIV" customClass="ExperienceViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H8z-sH-fvo"/>
                         <viewControllerLayoutGuide type="bottom" id="EXp-ua-YD1"/>
@@ -2931,7 +2937,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFU-RR-w55" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFU-RR-w55" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Gtr-Oh-yXR"/>
@@ -2940,7 +2946,7 @@
                                     <outlet property="menuViewDelegate" destination="jf0-H2-OIV" id="ywo-dj-C4b"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-FL-hnT" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-FL-hnT" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="132" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="YHK-JZ-3W9"/>
@@ -3009,7 +3015,7 @@
         <!--Web Article View Controller-->
         <scene sceneID="b2T-HN-NAA">
             <objects>
-                <viewController storyboardIdentifier="webarticle" id="Gh5-pZ-KC1" customClass="webArticleViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webarticle" id="Gh5-pZ-KC1" customClass="webArticleViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4o2-TG-miZ"/>
                         <viewControllerLayoutGuide type="bottom" id="LqM-9e-bwq"/>
@@ -3042,7 +3048,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="Tws-Wx-lFp">
             <objects>
-                <viewController storyboardIdentifier="advertising" id="L3f-33-itP" customClass="AdvertisingViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="advertising" id="L3f-33-itP" customClass="AdvertisingViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cfk-ep-fXL"/>
                         <viewControllerLayoutGuide type="bottom" id="tzQ-x9-vc9"/>
@@ -3054,7 +3060,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TXj-oz-m6a">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-Pw-hLA" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-Pw-hLA" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9Y8-nO-h68"/>
@@ -3063,7 +3069,7 @@
                                     <outlet property="menuViewDelegate" destination="L3f-33-itP" id="iZH-7h-ImW"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-3i-dzv" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-3i-dzv" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="j1f-mY-MaT"/>
@@ -3151,7 +3157,7 @@
         <!--Экспорт-->
         <scene sceneID="MhO-ly-To5">
             <objects>
-                <viewController storyboardIdentifier="Export" id="ZBm-PS-0mp" customClass="ExportViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Export" id="ZBm-PS-0mp" customClass="ExportViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dqK-KT-EgN"/>
                         <viewControllerLayoutGuide type="bottom" id="h4S-w0-VH8"/>
@@ -3185,7 +3191,7 @@
                                         <color key="sectionIndexColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateExpCell" textLabel="Ql8-1K-sEM" detailTextLabel="KXQ-v2-JVH" style="IBUITableViewCellStyleSubtitle" id="5li-nI-iBz" customClass="DateTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateExpCell" textLabel="Ql8-1K-sEM" detailTextLabel="KXQ-v2-JVH" style="IBUITableViewCellStyleSubtitle" id="5li-nI-iBz" customClass="DateTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5li-nI-iBz" id="Wq4-7b-bri">
@@ -3246,7 +3252,7 @@
                                             <constraint firstAttribute="height" constant="175" id="MGZ-R8-yfl"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoteExpCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteExpCell" textLabel="e5u-w6-HPM" detailTextLabel="Ww2-KP-8h6" style="IBUITableViewCellStyleSubtitle" id="Hxl-qh-q0w" customClass="DateTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoteExpCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteExpCell" textLabel="e5u-w6-HPM" detailTextLabel="Ww2-KP-8h6" style="IBUITableViewCellStyleSubtitle" id="Hxl-qh-q0w" customClass="DateTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hxl-qh-q0w" id="gOf-hM-w8g">
@@ -3312,7 +3318,7 @@
                                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ExpPhotoSelCell" reuseIdentifier="ExpPhotoSelCell" id="mpB-vU-cNa" customClass="PhotoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ExpPhotoSelCell" reuseIdentifier="ExpPhotoSelCell" id="mpB-vU-cNa" customClass="PhotoCollectionViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3364,7 +3370,7 @@
                                             <constraint firstAttribute="height" constant="46" id="7JI-Z7-v7j"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotifiExpCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotifiExpCell" textLabel="b5z-V1-f2a" detailTextLabel="Z9t-DA-mfA" style="IBUITableViewCellStyleSubtitle" id="wUN-ha-h9b" customClass="DateTableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotifiExpCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotifiExpCell" textLabel="b5z-V1-f2a" detailTextLabel="Z9t-DA-mfA" style="IBUITableViewCellStyleSubtitle" id="wUN-ha-h9b" customClass="DateTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUN-ha-h9b" id="LZz-mB-Il4">
@@ -3493,7 +3499,7 @@
         <!--Calendar For Export View Controller-->
         <scene sceneID="2Ko-dw-S7d">
             <objects>
-                <viewController storyboardIdentifier="CalendarExport" id="PmF-EI-QHS" customClass="CalendarForExportViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarExport" id="PmF-EI-QHS" customClass="CalendarForExportViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6JV-xg-Rfa"/>
                         <viewControllerLayoutGuide type="bottom" id="0SN-rf-dxS"/>
@@ -3552,7 +3558,7 @@
         <!--Show Export View Controller-->
         <scene sceneID="xGu-ER-1jY">
             <objects>
-                <viewController storyboardIdentifier="ShowExport" id="12B-3Y-3O4" customClass="ShowExportViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowExport" id="12B-3Y-3O4" customClass="ShowExportViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyW-QJ-eoK"/>
                         <viewControllerLayoutGuide type="bottom" id="QQs-Xi-J5M"/>
@@ -3613,7 +3619,7 @@
         <!--Share View Controller-->
         <scene sceneID="Bmy-nV-tOO">
             <objects>
-                <viewController id="RaO-7c-7ic" customClass="ShareViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RaO-7c-7ic" customClass="ShareViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JkE-Te-jBK"/>
                         <viewControllerLayoutGuide type="bottom" id="YVt-kq-Klg"/>
@@ -3743,7 +3749,7 @@
         <!--Купить белье ФЭСТ-->
         <scene sceneID="8A8-p2-o1f">
             <objects>
-                <viewController id="Rh3-f9-7S0" customClass="BuyViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rh3-f9-7S0" customClass="BuyViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hef-NB-taX"/>
                         <viewControllerLayoutGuide type="bottom" id="sp9-7Y-nP1"/>
@@ -3759,7 +3765,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="528"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WildCell" textLabel="etY-cl-bDi" detailTextLabel="iIt-cD-B89" style="IBUITableViewCellStyleSubtitle" id="w13-zQ-sCA" customClass="TableViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WildCell" textLabel="etY-cl-bDi" detailTextLabel="iIt-cD-B89" style="IBUITableViewCellStyleSubtitle" id="w13-zQ-sCA" customClass="TableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w13-zQ-sCA" id="cjs-r9-NNz">
@@ -3965,7 +3971,7 @@
         <!--Форум-->
         <scene sceneID="VJc-Yd-OOA">
             <objects>
-                <viewController id="AuP-tx-ejP" customClass="ForumViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AuP-tx-ejP" customClass="ForumViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BX0-D7-pO6"/>
                         <viewControllerLayoutGuide type="bottom" id="6B2-Yr-Fai"/>
@@ -4098,7 +4104,7 @@
         <!--Calendar Appearance Delegate-->
         <scene sceneID="dKp-cn-6XQ">
             <objects>
-                <viewController storyboardIdentifier="PhotoFromCalendarNavigation" id="Ud4-7N-qhh" customClass="PhotoFromCalendarViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoFromCalendarNavigation" id="Ud4-7N-qhh" customClass="PhotoFromCalendarViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oj9-Sc-E9M"/>
                         <viewControllerLayoutGuide type="bottom" id="uZ9-hd-irX"/>
@@ -4110,7 +4116,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Hgz-n7-gTW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-U3-lst" customClass="CVCalendarMenuView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-U3-lst" customClass="CVCalendarMenuView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="iot-lu-Hpm"/>
@@ -4119,7 +4125,7 @@
                                     <outlet property="menuViewDelegate" destination="Ud4-7N-qhh" id="JWg-SO-QYX"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-mO-VU9" customClass="CVCalendarView" customModule="PregnancyCalendar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-mO-VU9" customClass="CVCalendarView" customModule="Календарь_беременности" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="AZb-1B-IbJ"/>
@@ -4148,7 +4154,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCalendarCell" reuseIdentifier="PhotoCalendarCell" id="qZf-H5-XGf" customClass="PhotoCollectionViewCell" customModule="PregnancyCalendar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCalendarCell" reuseIdentifier="PhotoCalendarCell" id="qZf-H5-XGf" customClass="PhotoCollectionViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4245,7 +4251,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="05f-d3-fG6">
             <objects>
-                <viewController id="jI6-IP-HQ6" customClass="CalendarViewController" customModule="PregnancyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jI6-IP-HQ6" customClass="CalendarViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g8h-ex-uUV"/>
                         <viewControllerLayoutGuide type="bottom" id="bsR-ah-4Sn"/>
