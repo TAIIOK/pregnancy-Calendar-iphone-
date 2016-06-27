@@ -81,7 +81,15 @@ func AddSect(names: [Names]) -> [(index: Int, length :Int, title: String)] {
 
 func NotificationJSON(){
     if not.count == 0{
-        if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
+        let table = Table("Notification")
+        let Day = Expression<Int64>("Day")
+        let Category = Expression<Int64>("CategoryId")
+        let Text = Expression<String>("Text")
+        for tmp in try! db.prepare(table.select(Day, Category, Text)){
+            not.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category])))
+            NSNotificationCenter.defaultCenter().postNotificationName("loadNotification", object: nil)
+        }
+        /*if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 do {
@@ -98,7 +106,7 @@ func NotificationJSON(){
                     }
                 } catch {}
             } catch {}
-        }
+        }*/
     }
 }
 

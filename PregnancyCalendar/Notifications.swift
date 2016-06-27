@@ -9,9 +9,9 @@
 import Foundation
 
 let lolnotifies = ["92","203","155","165","271","203","210","22","57","71","267","273","247","120"]
-var notifications = [notifi]()
+var notifications = [notification]()
 
-func WorkWithJSON(){
+/*func WorkWithJSON(){
     if notifications.count == 0{
         if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
             do {
@@ -31,7 +31,7 @@ func WorkWithJSON(){
             } catch {}
         }
     }
-}
+}*/
 
 func addDaystoGivenDate(baseDate: NSDate, NumberOfDaysToAdd: Int) -> NSDate
 {
@@ -69,13 +69,19 @@ func loadNotifi() {
     var Notificalendar = NSDate()
 
 
-    WorkWithJSON()
-   
+    //WorkWithJSON()
+    let table = Table("Notification")
+    let Day = Expression<Int64>("Day")
+    let Category = Expression<Int64>("CategoryId")
+    let Text = Expression<String>("Text")
+    for tmp in try! db.prepare(table.select(Day, Category, Text)){
+        notifications.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category])))
+    }
     for (var i = NSDate().daysFrom(num) ; i <  notifications.count; i += 1){
         let notifiday = notifications[i]
         var notification = [String]()
         
-        notification.append(notifiday.generalInformation)
+        /*notification.append(notifiday.generalInformation)
         notification.append(notifiday.healthMother)
         notification.append(notifiday.healthBaby)
         notification.append(notifiday.food)
@@ -83,11 +89,18 @@ func loadNotifi() {
         notification.append(notifiday.HidenAdvertisment)
         notification.append(notifiday.advertisment)
         notification.append(notifiday.reflectionsPregnant)
-        notification.append(notifiday.day)
+        notification.append(notifiday.day)*/
+        let day = notifiday.day
+        for i in notifications{
+            if i.day == day{
+                notification.append(i.text)
+            }
+        }
+        notification.append("\(day)")
 
         let components = calendar.components([.Day , .Month , .Year], fromDate: Notificalendar)
         
-        for (var j = 0 ; j < 8 ; j += 1){
+        for (var j = 0 ; j < notification.count-1 ; j += 1){
             let localNotification = UILocalNotification()
             //localNotification.category = "adolf"
             if (components.hour > 12 && i == NSDate().daysFrom(num)){
@@ -108,7 +121,7 @@ func loadNotifi() {
             localNotification.alertBody = notification[j]
             
 
-            if(lolnotifies.contains(notification[8]) && j == 5)
+            if(lolnotifies.contains(notification[notification.count-1]) && j == 5)
             {
                 let infoDict :  Dictionary<String,String!> = ["objectId" : notification[8]]
            // var infoDict = ["objectId" : notification[8]]

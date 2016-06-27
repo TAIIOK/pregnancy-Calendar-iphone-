@@ -9,12 +9,12 @@
 import UIKit
 import CoreData
 
-var not = [notifi]()
+var not = [notification]()
 var selectedExperienceDay:DayView!
 var fromCalendar = false
 var articles = ["Для чего нужен универсальный, до-и послеродовой бандаж","Для чего нужен до-и послеродовой бюстгальтер", "Другие статьи"]
 var artticlessub = ["По материалам многоцентрового проспективного наблюдательного исследования Российского общества акушеров-гинекологов","По материалам многоцентрового проспективного наблюдательного исследования Российского общества акушеров-гинекологов", ""]
-
+var notifiCategory = ["Общая информация", "Здоровье мамы","Здоровье малыша","Питание","Это важно!","Скрытая реклама","На заметку","Размышления ФЭСТ"]
 var articletype = 0
 
 var opennotifi = false
@@ -40,6 +40,19 @@ class notifi: NSObject {
         self.HidenAdvertisment = HidenAdvertisment
         self.advertisment = advertisment
         self.reflectionsPregnant = reflectionsPregnant
+        super.init()
+    }
+}
+
+class notification: NSObject {
+    var day: Int
+    var text: String
+    var category: Int
+    
+    init(day: Int, text: String, category: Int) {
+        self.day = day
+        self.text = text
+        self.category = category
         super.init()
     }
 }
@@ -304,36 +317,40 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             }else{
                 day = 300 - BirthDate.daysFrom(selectedExperienceDay.date.convertedDate()!)
             }
-
-            for  i in not{
-                let d = Int(i.day)
-                if d == day{
-                    if i.generalInformation != ""{
-                        mas.append(note(name: "Общая информация",  text: "\(i.generalInformation)"))
-                    }
-                    if i.healthMother != ""{
-                        mas.append(note(name: "Здоровье мамы", text: "\(i.healthMother)"))
-                    }
-                    if i.healthBaby != ""{
-                        mas.append(note(name: "Здоровье малыша", text: "\(i.healthBaby)"))
-                    }
-                    if i.food != ""{
-                        mas.append(note(name: "Питание", text: "\(i.food)"))
-                    }
-                    if i.important != ""{
-                        mas.append(note(name: "Это важно!", text: "\(i.important)"))
-                    }
-                    if i.HidenAdvertisment != ""{
-                        mas.append(note(name: "Полезно знать каждой", text: "\(i.HidenAdvertisment)"))
-                    }
-                    if i.advertisment != ""{
-                        mas.append(note(name: "Полезно знать каждой", text: "\(i.advertisment)"))
-                    }
-                    if i.reflectionsPregnant != ""{
-                        mas.append(note(name: "Размышление беременной", text: "\(i.reflectionsPregnant)"))
-                    }
+            for i in not{
+                if i.day == day{
+                    mas.append(note(name: notifiCategory[i.category], text: i.text))
                 }
             }
+            /*for  i in not{
+             let d = Int(i.day)
+             if d == day{
+             if i.generalInformation != ""{
+             mas.append(note(name: "Общая информация",  text: "\(i.generalInformation)"))
+             }
+             if i.healthMother != ""{
+             mas.append(note(name: "Здоровье мамы", text: "\(i.healthMother)"))
+             }
+             if i.healthBaby != ""{
+             mas.append(note(name: "Здоровье малыша", text: "\(i.healthBaby)"))
+             }
+             if i.food != ""{
+             mas.append(note(name: "Питание", text: "\(i.food)"))
+             }
+             if i.important != ""{
+             mas.append(note(name: "Это важно!", text: "\(i.important)"))
+             }
+             if i.HidenAdvertisment != ""{
+             mas.append(note(name: "Полезно знать каждой", text: "\(i.HidenAdvertisment)"))
+             }
+             if i.advertisment != ""{
+             mas.append(note(name: "Полезно знать каждой", text: "\(i.advertisment)"))
+             }
+             if i.reflectionsPregnant != ""{
+             mas.append(note(name: "Размышление беременной", text: "\(i.reflectionsPregnant)"))
+             }
+             }
+             }*/
         }
     }
     

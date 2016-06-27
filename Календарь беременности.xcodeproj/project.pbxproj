@@ -179,6 +179,7 @@
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
 		8E73556C1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */; };
 		8E7355781D1BFB75008B8444 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7355771D1BFB75008B8444 /* CalendarViewController.swift */; };
+		8E878E8F1D2151860090754C /* ExportPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E878E8E1D2151860090754C /* ExportPhotoCollectionViewCell.swift */; };
 		8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */; };
 		8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */; };
 		8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32861D18252300EA58A9 /* VideosViewController.swift */; };
@@ -493,6 +494,7 @@
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFromCalendarViewController.swift; sourceTree = "<group>"; };
 		8E7355771D1BFB75008B8444 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8E878E8E1D2151860090754C /* ExportPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8EDA32861D18252300EA58A9 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 		8E14508B1D19854100D234B2 /* Export */ = {
 			isa = PBXGroup;
 			children = (
+				8E878E8E1D2151860090754C /* ExportPhotoCollectionViewCell.swift */,
 				8E14509C1D1985A400D234B2 /* 2photo(blue).png */,
 				8E14509D1D1985A400D234B2 /* 2photo(pink).png */,
 				8E14508C1D19859D00D234B2 /* phototemplate.png */,
@@ -1311,6 +1314,7 @@
 				A018A9921CB6733D0044830A /* CVSet.swift in Sources */,
 				8E14506C1D1972F900D234B2 /* DrugsListTableViewController.swift in Sources */,
 				02682D301C7EFBA40088F21B /* PregnancyCalendar.xcdatamodeld in Sources */,
+				8E878E8F1D2151860090754C /* ExportPhotoCollectionViewCell.swift in Sources */,
 				8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */,
 				A018A98A1CB6733D0044830A /* CVCalendarViewPresentationMode.swift in Sources */,
 				8E4C43C11CFC523000003AAB /* WeightDiagramViewController.swift in Sources */,

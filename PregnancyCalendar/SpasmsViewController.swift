@@ -65,8 +65,8 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     @IBAction func buttonTrash(sender: AnyObject) {
         if self.dict.count > 0 {
-            let alert = UIAlertController(title: "", message: "Вы действительно хотите очистить счетчик схваток?", preferredStyle: .ActionSheet)
-            let cancelAction = UIAlertAction(title: "Отменить", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
+            let alert = UIAlertController(title: "", message: "Вы уверены, что хотите удалить данные?", preferredStyle: .ActionSheet)
+            let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
             let confirmAction = UIAlertAction(title: "Очистить", style: .Destructive, handler: { (alert) in self.confirmDelete() } )
             
             alert.addAction(confirmAction)
