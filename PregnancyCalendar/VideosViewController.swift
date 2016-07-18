@@ -279,7 +279,7 @@ class VideosViewController: UICollectionViewController {
         VideoCell.photo.image = choosedVideoSegment ? imagesfirst[indexPath.row] : imagessecond[indexPath.row]
         VideoCell.title.text = choosedVideoSegment ? videoTitlefirst[indexPath.row]: videoTitlesecond[indexPath.row]
         VideoCell.backgroundColor = .clearColor()
-        
+        VideoCell.title.font = .systemFontOfSize(14)
         let status = Reach().connectionStatus()
            
        // if(Reachability.isConnectedToNetwork()==false){

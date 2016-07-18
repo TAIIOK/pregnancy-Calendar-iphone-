@@ -13,7 +13,7 @@ import SwiftyVK
 var selectedNoteDay:DayView!
 var DayForView = NSDate()
 var NoteType = Int()
-var notes = ["Мое самочувствие","Как ведет себя малыш","Посещения врачей","Мой вес","Принимаемые лекарства","Приятное воспоминание дня","Важные события","Моё меню на сегодня","Мой \"лист желаний\""]
+var notes = ["Мое самочувствие","Как ведет себя малыш","Посещения врачей","Мой вес","Принимаемые лекарства","Приятное воспоминание дня","Важные события","Моё меню на сегодня","Мой лист желаний"]
 var NotesColor = [UIColor(red: 124/255.0, green: 252/255.0, blue: 0/255.0, alpha: 1.0),
                   UIColor(red: 64/255.0, green: 224/255.0, blue: 208/255.0, alpha: 1.0),
                   UIColor(red: 0/255.0, green: 191/255.0, blue: 255/255.0, alpha: 1.0),
@@ -72,6 +72,8 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("update notes table")
         loadNotes()
         tbl.reloadData()
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
     }
     
     

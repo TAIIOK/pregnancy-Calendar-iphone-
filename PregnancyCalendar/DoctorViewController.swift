@@ -59,7 +59,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height/2
+                self.view.frame.origin.y -= keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -68,7 +68,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height/2
+                self.view.frame.origin.y += keyboardSize.height
                 isKeyboard = false
             }
         }
@@ -326,6 +326,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func enablenotification(gesture:UIGestureRecognizer){
+        save()
         if let cellContentView = gesture.view {
             let tappedPoint = cellContentView.convertPoint(cellContentView.bounds.origin, toView: tbl)
             for i in 1..<tbl.numberOfSections  {
@@ -334,15 +335,16 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("tapped on section header:: \(i)")
                     
                     if(doctors[i-1].isRemind == true){
-                    doctors[i-1].isRemind = false
-                    cancelLocalNotification("\(doctors[i-1].date)")
+                        doctors[i-1].isRemind = false
+                        cancelLocalNotification("\(doctors[i-1].date)")
                     }
                     else if(doctors[i-1].isRemind == false){
-                        if(!doctors[currentRec-1].isRemind && doctors[currentRec-1].remindType != 0){
+                        if(doctors[i-1].remindType != 0){
                             doctors[i-1].isRemind = true
                             scheduleNotification(calculateDate(doctors[i-1].date, before: -1 , after: doctors[i-1].remindType), notificationTitle:"У вас посещение врача \(doctors[i-1].name)" , objectId: "\(doctors[i-1].date)")
                         }
                     }
+
                     
                     tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
                     break
@@ -642,11 +644,18 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillDisappear(animated: Bool) {
-        save()
-        saveNote()
+        //save()
+        //saveNote()
         self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
     }
     
+    @IBAction func btnSave(sender: UIButton) {
+        save()
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
+    }
     func saveNote(){
         let table = Table("DoctorVisit")
         let id = Expression<Int64>("_id")
@@ -749,7 +758,7 @@ extension DoctorViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelega
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        saveNote()
+        //saveNote()
         doctors.removeAll()
         arrayForBool.removeAllObjects()
         tbl.reloadData()

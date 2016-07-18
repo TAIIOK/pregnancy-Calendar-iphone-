@@ -61,6 +61,10 @@ private extension CVCalendarDayViewControlCoordinator {
         animator.animateSelectionOnDayView(dayView)
         //animator?.animateSelection(dayView, withControlCoordinator: self)
     }
+    func presentSelectionOnDayView_(dayView: DayView) {
+        animator.animateSelectionOnDayView_(dayView)
+        //animator?.animateSelection(dayView, withControlCoordinator: self)
+    }
     
     func presentDeselectionOnDayView(dayView: DayView) {
         animator.animateDeselectionOnDayView(dayView)
@@ -86,41 +90,63 @@ extension CVCalendarDayViewControlCoordinator {
         }
     }
     
+    public func select(days: [DayView])
+    {
+        for i in days{
+            if !selectionSet.contains(i){
+                selectionSet.insert(i)
+            }
+            presentSelectionOnDayView(i)
+        }
+    }
+    
     public func performDayViewSingleSelection(dayView: DayView) {
         
         if (selectionSet.contains(dayView) && selection)
         {
-        presentDeselectionOnDayView(dayView)
-        selectionSet.remove(dayView)
-        }
-            
-        else{
-        selectionSet.insert(dayView)
-        
-        if selectionSet.count > 1 {
-            for dayViewInQueue in selectionSet {
-                if dayView != dayViewInQueue {
-                    if dayView.calendarView != nil {
-                        if(!selection){
-                        presentDeselectionOnDayView(dayViewInQueue)
+            presentDeselectionOnDayView(dayView)
+            selectionSet.remove(dayView)
+        }else{
+            selectionSet.insert(dayView)
+            if selectionSet.count > 1 {
+                for dayViewInQueue in selectionSet {
+                    if dayView != dayViewInQueue {
+                        if dayView.calendarView != nil {
+                            if(!selection){
+                                presentDeselectionOnDayView(dayViewInQueue)
+                            }
                         }
-                       
-                        
                     }
-                    
                 }
-                
             }
-        }
         
-        if let _ = animator {
-            if selectedDayView != dayView {
-                selectedDayView = dayView
-                presentSelectionOnDayView(dayView)
+            if let _ = animator {
+                if selectedDayView != dayView {
+                    selectedDayView = dayView
+                    presentSelectionOnDayView(dayView)
+                }
             }
-        }
         }
     }
+    
+    public func performDayViewSingleSelection_(dayView: DayView) {
+        
+        if (selectionSet.contains(dayView) && selection)
+        {
+            presentDeselectionOnDayView(dayView)
+            selectionSet.remove(dayView)
+        }else{
+            selectionSet.insert(dayView)
+            
+            if let _ = animator {
+                if selectedDayView != dayView {
+                    selectedDayView = dayView
+                    presentSelectionOnDayView_(dayView)
+                }
+            }
+        }
+    }
+
     
     public func performDayViewRangeSelection(dayView: DayView) {
         print("Day view range selection found")

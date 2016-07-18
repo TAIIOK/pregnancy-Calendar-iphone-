@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate {
     
     var isKeyboard = false
     
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            self.view.frame.origin.y -= keyboardSize.height/2
+            self.view.frame.origin.y -= keyboardSize.height*0.8
             isKeyboard = true
             }
         }
@@ -24,7 +24,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            self.view.frame.origin.y += keyboardSize.height/2
+            self.view.frame.origin.y += keyboardSize.height*0.8
             isKeyboard = false
             }
         }
@@ -108,6 +108,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
+    
     func loadData(){
         Food.removeAll()
         var table = Table("Food")
@@ -159,6 +160,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.textField.hidden = false
                 cell.textField.text = Food[indexPath.row]}
             cell.backgroundColor = .clearColor()
+            cell.textField.layer.borderWidth = 0.5
+            cell.textField.layer.borderColor = StrawBerryColor.CGColor
+            cell.textField.delegate = self
             return cell
         }else if tableView == PreferencesTable{
             let cell = tableView.dequeueReusableCellWithIdentifier("PreferencesCell", forIndexPath: indexPath) as! PreferencesTableViewCell
@@ -168,6 +172,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.textField.hidden = false
                 cell.textField.text = Preferences[indexPath.row]}
             cell.backgroundColor = .clearColor()
+            cell.textField.layer.borderWidth = 0.5
+            cell.textField.layer.borderColor = StrawBerryColor.CGColor
+            cell.textField.delegate = self
             return cell
 
         }else{
@@ -178,10 +185,22 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.textField.hidden = false
                 cell.textField.text = Restrictions[indexPath.row]}
             cell.backgroundColor = .clearColor()
+            cell.textField.layer.borderWidth = 0.5
+            cell.textField.layer.borderColor = StrawBerryColor.CGColor
+            cell.textField.delegate = self
             return cell
         }
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        fromTableFoodInArray()
+        fromTablePreferencesInArray()
+        fromTableRestrictionsInArray()
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == FoodTable{
@@ -212,8 +231,15 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewWillDisappear(animated: Bool) {
-        saveNote()
+        //saveNote()
         self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
+    }
+    
+    @IBAction func btnSave(sender: UIButton) {
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
     }
     
     func saveNote(){
@@ -330,7 +356,7 @@ extension FoodViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate
     }
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        saveNote()
+        //saveNote()
         selectedNoteDay = dayView
         loadData()
         if Food.count == 0 {

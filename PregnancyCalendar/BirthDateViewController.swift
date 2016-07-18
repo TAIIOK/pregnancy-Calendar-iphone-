@@ -20,6 +20,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     @IBOutlet weak var lastMenstrualPeriod: UILabel!
     @IBOutlet weak var setManually: UILabel!
     
+    @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var tbl: UITableView!
     
     var DateisLoaded = false
@@ -47,7 +48,15 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
         loadDate()
-        
+        var date = NSDate()
+        if dateTypeTemp != -1{
+            if dateTypeTemp == 2{
+                btn.setTitle("ПОКАЗАТЬ", forState: UIControlState.Normal)
+            }else{
+                btn.setTitle("РАССЧИТАТЬ", forState: UIControlState.Normal)
+            }
+            date = BirthDate
+        }
         if !Back && DateisLoaded{
             Cancel()
         }else if dateType == -1 {
@@ -144,6 +153,11 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         dateTypeTemp = indexPath.row
+        if dateTypeTemp == 2{
+            btn.setTitle("ПОКАЗАТЬ", forState: UIControlState.Normal)
+        }else{
+            btn.setTitle("РАССЧИТАТЬ", forState: UIControlState.Normal)
+        }
         let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()

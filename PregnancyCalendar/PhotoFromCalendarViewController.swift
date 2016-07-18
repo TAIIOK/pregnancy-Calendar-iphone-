@@ -55,6 +55,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         b.tintColor = UIColor.whiteColor()
         self.navigationItem.setRightBarButtonItems([a,b], animated: true)
         loadPhoto(date)
+        self.calendarView.toggleViewWithDate(selectedCalendarDate)
     }
     
     func Cancel(){
@@ -205,6 +206,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         let date = CVDate(date: selectedCalendarDate)
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(selectedCalendarDate)
     }
 
 

@@ -14,10 +14,11 @@ var selectedExperienceDay:DayView!
 var fromCalendar = false
 var articles = ["Для чего нужен универсальный, до-и послеродовой бандаж","Для чего нужен до-и послеродовой бюстгальтер", "Другие статьи"]
 var artticlessub = ["По материалам многоцентрового проспективного наблюдательного исследования Российского общества акушеров-гинекологов","По материалам многоцентрового проспективного наблюдательного исследования Российского общества акушеров-гинекологов", ""]
-var notifiCategory = ["Общая информация", "Здоровье мамы","Здоровье малыша","Питание","Это важно!","Скрытая реклама","На заметку","Размышления ФЭСТ"]
+var notifiCategory = ["Общая информация", "Здоровье мамы","Здоровье малыша","Питание","Это важно!","На заметку","На заметку","Размышления ФЭСТ"]
 var articletype = 0
 
 var opennotifi = false
+var dateFromOpenNotifi = NSDate()
 
 class notifi: NSObject {
     var day: String
@@ -84,7 +85,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tbl: UITableView!
     
     @IBOutlet weak var changer: UISegmentedControl!
-    
+    var online = true
     var day: Int = 0
     var choosedSegmentNotes = true // true: статьи, false: уведомления
     var BirthDate = NSDate()
@@ -114,66 +115,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    /*func setupNavigation(date : CVDate){
-    
-    
-        let customView = UIView(frame: CGRectMake(0, 0, 100, 44))
-        customView.backgroundColor = StrawBerryColor
-        
-        
-        let label = UILabel(frame: CGRectMake(0, 0,100, 44))
-        
-        switch date.month {
-        case 1:
-            label.text = "Январь \(date.year)"
-            break
-        case 2:
-            label.text = "Февраль \(date.year)"
-            break
-        case 3:
-            label.text = "Март \(date.year)"
-            break
-        case 4:
-            label.text = "Апрель \(date.year)"
-            break
-        case 5:
-            label.text = "Май \(date.year)"
-            break
-        case 6:
-            label.text = "Июнь \(date.year)"
-            break
-        case 7:
-            label.text = "Июль \(date.year)"
-            break
-        case 8:
-            label.text =  "Август \(date.year)"
-            break
-        case 9:
-            label.text =  "Сентябрь \(date.year)"
-            break
-        case 10:
-            label.text =  "Октябрь \(date.year)"
-            break
-        case 11:
-            label.text = "Ноябрь \(date.year)"
-            break
-        case 12:
-            label.text = "Декабрь \(date.year)"
-            break
-        default:
-            break
-        }
 
-
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = NSTextAlignment.Right
-        label.backgroundColor = StrawBerryColor
-        customView.addSubview(label)
-        
-        let leftButton = UIBarButtonItem(customView: customView)
-        self.navigationItem.leftBarButtonItem = leftButton
-    }*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tbl.backgroundColor = .clearColor()
@@ -224,14 +166,25 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            noConnetionImage.hidden = false
-            noConnetionLabel.hidden = false
-            noConnetionButton.hidden = false
-            noConnetionView.hidden = false
-            noConnetionButton.enabled = true
+            online = false
+            /*if !choosedSegmentNotes
+             {
+             noConnetionImage.hidden = false
+             noConnetionLabel.hidden = false
+             noConnetionButton.hidden = false
+             noConnetionView.hidden = false
+             noConnetionButton.enabled = true
+             }else{
+             noConnetionImage.hidden = true
+             noConnetionLabel.hidden = true
+             noConnetionButton.hidden = true
+             noConnetionView.hidden = true
+             noConnetionButton.enabled = false
+             }*/
             print("no connection")
         case .Online(.WWAN):
             print("Connected via WWAN")
+            online = true
             noConnetionImage.hidden = true
             noConnetionLabel.hidden = true
             noConnetionButton.hidden = true
@@ -239,14 +192,15 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             noConnetionButton.enabled = false
         case .Online(.WiFi):
             print("Connected via WiFi")
+            online = true
             noConnetionImage.hidden = true
             noConnetionLabel.hidden = true
             noConnetionButton.hidden = true
             noConnetionView.hidden = true
             noConnetionButton.enabled = false
         }
-        
     }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -284,6 +238,9 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         if choosedSegmentNotes == false {
             notesperday()
         }
+        if !online{
+            return choosedSegmentNotes ? articles.count-1 : mas.count
+        }
         return choosedSegmentNotes ? articles.count : mas.count
     }
     
@@ -299,7 +256,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         cell.backgroundColor = .clearColor()
         cell.textLabel?.textColor = StrawBerryColor
-        cell.detailTextLabel?.textColor = BiruzaColor
+        cell.detailTextLabel?.textColor = BiruzaColor1
         return cell
     }
     
@@ -313,15 +270,18 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
                 components.minute = 00
                 components.second = 00
                 let NewDate = calendar.dateFromComponents(components)!
-                day = 300 - BirthDate.daysFrom(NewDate)
+                //day = 300 - BirthDate.daysFrom(NewDate)
+                day = calculateDay(NewDate)
             }else{
-                day = 300 - BirthDate.daysFrom(selectedExperienceDay.date.convertedDate()!)
+                //day = 300 - BirthDate.daysFrom(selectedExperienceDay.date.convertedDate()!)
+                day = calculateDay(selectedExperienceDay.date.convertedDate()!)
             }
             for i in not{
                 if i.day == day{
                     mas.append(note(name: notifiCategory[i.category], text: i.text))
                 }
             }
+
             /*for  i in not{
              let d = Int(i.day)
              if d == day{
@@ -383,7 +343,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }else{
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            if cell?.textLabel?.text == "Полезно знать каждой"{
+            if cell?.textLabel?.text == notifiCategory[5]{
                 isAdvertitsing = true
             }else{
                 noteText[0] = (cell?.textLabel?.text)!
@@ -459,14 +419,13 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        var date = CVDate(date: NSDate())
-        
-        if selectedExperienceDay != nil{
-            date = selectedExperienceDay.date
+        var tmp = NSDate()
+        if opennotifi{
+            tmp = dateFromOpenNotifi
+        }else if selectedExperienceDay != nil{
+            tmp = selectedExperienceDay.date.convertedDate()!
         }
-        if fromCalendar{
-            date = CVDate(date: selectedCalendarDate)
-        }
+        var date = CVDate(date: tmp)
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
     }

@@ -102,7 +102,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
             let b = i[date]
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            let week = Int((300 - BirthDate.daysFrom(dateFormatter.dateFromString(b)!))/7)
+            let week = Int((calculateDay(dateFormatter.dateFromString(b)!))/7)
             if week < 41 {
                 weights_.append(Weight(date: dateFormatter.dateFromString(b)!, kg: Int(i[kg]), gr: Int(i[gr]),week: week))
             }
@@ -121,7 +121,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         self.lineChartView.noDataText = "Для отображения графика"
         self.lineChartView.noDataTextDescription = "необходимо указать рост"
         self.lineChartView.infoFont = .systemFontOfSize(18)
-        self.lineChartView.infoTextColor = BiruzaColor
+        self.lineChartView.infoTextColor = BiruzaColor1
         self.lineChartView.scaleXEnabled = true
         self.lineChartView.scaleYEnabled = false
         self.lineChartView.pinchZoomEnabled = true
@@ -137,6 +137,9 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         self.lineChartView.xAxis.drawGridLinesEnabled = false
         self.lineChartView.leftAxis.drawAxisLineEnabled = false
         self.lineChartView.leftAxis.drawGridLinesEnabled = false
+        
+        self.lineChartView.leftAxis.gridLineWidth = 40
+        self.lineChartView.leftAxis.gridColor = UIColor(red: 97/255.0, green: 195/255.0, blue: 255/255.0, alpha: 0.3)
     }
     
     private func drawGraph(){
@@ -187,15 +190,46 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func getChartDataEntriesForRecommend(weight: Double) -> [ChartDataEntry] {
         let weeks = self.getWeeks()
         var dataEntries: [ChartDataEntry] = []
-        
-        let dataEntry = ChartDataEntry(value: weight, xIndex: weeks[0])
-        dataEntries.append(dataEntry)
-        
-        for i in 1..<weeks.count {
-            let dataEntry = ChartDataEntry(value: weight + self.IMT2[i-1], xIndex: weeks[i])
+        if weights.count > 0{
+            var week = weights[0].week
+            let growth_ = Double(growth)
+            var null_weight = Double(weights[0].kg + weights[0].gr/100)
+            let imt = Double( null_weight / (growth_/100 * growth_/100))
+            var IMT = [Double]()
+            if(imt < 18.5){
+                IMT = IMT0
+            }
+            else if (imt >= 25){
+                IMT = IMT2
+            }
+            else{
+                IMT = IMT1
+            }
+            if week%2 != 0{
+                week -= 1
+            }
+            /*for (var i = week/2-1; i >= 0; i -= 1){
+             print(null_weight)
+             null_weight -= IMT[i]
+             }*/
+            null_weight -= IMT[week/2-1]
+            
+            let dataEntry = ChartDataEntry(value: null_weight, xIndex: weeks[0])
             dataEntries.append(dataEntry)
+            
+            for i in 1..<weeks.count {
+                let dataEntry = ChartDataEntry(value: null_weight + IMT[i-1], xIndex: weeks[i])
+                dataEntries.append(dataEntry)
+            }
+        }else{
+            let dataEntry = ChartDataEntry(value: weight, xIndex: weeks[0])
+            dataEntries.append(dataEntry)
+            
+            for i in 1..<weeks.count {
+                let dataEntry = ChartDataEntry(value: weight + self.IMT2[i-1], xIndex: weeks[i])
+                dataEntries.append(dataEntry)
+            }
         }
-
         return dataEntries
     }
     private func getChartDataEntriesForFact(weight: Double, growth: Double) -> [ChartDataEntry] {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DesireListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class DesireListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate {
 
     func keyboardWillShow(notification: NSNotification) {
         
@@ -35,8 +35,8 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)*/
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
@@ -84,7 +84,18 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.textField.hidden = false
             cell.textField.text = Desires[indexPath.row]}
         cell.backgroundColor = .clearColor()
+        cell.textField.layer.borderWidth = 0.5
+        cell.textField.layer.borderColor = StrawBerryColor.CGColor
+        cell.textField.delegate = self
         return cell
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        fromTableInArray()
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
     }
 
     
@@ -96,6 +107,15 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     override func viewWillDisappear(animated: Bool) {
+        self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
+    }
+    
+    @IBAction func btnSave(sender: UIButton) {
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+    }
+    
+    func saveNote(){
         fromTableInArray()
         let table = Table("DesireList")
         let text = Expression<String>("Text")
@@ -109,8 +129,8 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
             if i.characters.count > 0{
                 try! db.run(table.insert(text <- "\(i)"))}
         }
-        self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
     }
+
     
     func fromTableInArray(){
         let int = self.tbl.numberOfRowsInSection(0)-1

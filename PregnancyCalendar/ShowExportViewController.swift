@@ -30,9 +30,15 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
         CurrentScrollView.delegate = self
         CurrentScrollView.userInteractionEnabled = true
         CurrentScrollView.scrollEnabled = true
-        loadExportImages()
+        //loadExportImages()
         sharingExportVk = true
-        // Do any additional setup after loading the view.
+        self.view.makeToastActivityWithMessage(message: "Пожалуйста, подождите.", addOverlay: true)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.loadExportImages()
+            self.view.hideToastActivity()
+            return
+        })
+
     }
     
     override func viewDidDisappear(animated: Bool) {

@@ -195,28 +195,24 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                 print("\tNotifi: \(n)")
             }
         }*/
+        var txt = ""
         var somanyphoto = false
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        
         for i in AllExportNotes{
             if i.photos.count > 2{
                 somanyphoto = true
+                txt.appendContentsOf("День \(dateFormatter.stringFromDate(i.date)) содержит \(i.photos.count) фотографий")
             }
         }
         if somanyphoto{
-            let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Выбрано более двух фотографий за один день, в экспорт будут добавлены только первые две!", preferredStyle: .Alert)
+            let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Слишком много фото! \(txt) Вы можете добавить не более 2 фотографий для одного дня.", preferredStyle: .Alert)
             //Create and add the Cancel action
-            let cancelAction: UIAlertAction = UIAlertAction(title: "Перевыбрать", style: .Cancel) { action -> Void in
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Ок", style: .Default) { action -> Void in
                 //Do some stuff
             }
             actionSheetController.addAction(cancelAction)
-            //Create and an option action
-            let nextAction: UIAlertAction = UIAlertAction(title: "Продолжить", style: .Default) { action -> Void in
-                //Do some other stuff
-                let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("ShowExport")
-                self.navigationController?.pushViewController(vc1!, animated: true)
-            }
-            actionSheetController.addAction(nextAction)
-            
-            //Present the AlertController
             self.presentViewController(actionSheetController, animated: true, completion: nil)
         }else{
             let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("ShowExport")
@@ -689,7 +685,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             components.second = 00
             let NewDate = calendar.dateFromComponents(components)!
             for i in days{
-                let a = 300-NewDate.daysFrom(i)
+                let a = calculateDay(i)
                 for j in try! db.prepare(table.select(text,type).filter(day == Int64(a))){
                     var str = ""
                     switch j[type] {

@@ -124,12 +124,12 @@ class CalendarForExportViewController: UIViewController, EPCalendarPickerDelegat
     
     func getWeek(){
         
-        let week = Int((300 - BirthDate.daysFrom(selectedExportCalendarDay.date.convertedDate()!))/7)
-        for i in selectedExportWeek{
+        let week = Int((calculateDay(selectedExportCalendarDay.date.convertedDate()!))/7)
+        /*for i in selectedExportWeek{
             if i.week == week{
                 return
             }
-        }
+        }*/
         let calendar = NSCalendar.currentCalendar()
         var MinDateWeek = NSDate()
         

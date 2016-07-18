@@ -183,6 +183,7 @@
 		8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */; };
 		8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */; };
 		8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32861D18252300EA58A9 /* VideosViewController.swift */; };
+		8EEC0FF51D3CCEDC007EE019 /* ToAstMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC0FF41D3CCEDC007EE019 /* ToAstMessage.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
 		A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */; };
 		A018A97C1CB6733D0044830A /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9611CB6733D0044830A /* CVCalendarDayView.swift */; };
@@ -498,6 +499,7 @@
 		8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8EDA32861D18252300EA58A9 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		8EEC0FF41D3CCEDC007EE019 /* ToAstMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToAstMessage.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		A018A9611CB6733D0044830A /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 		8E14507F1D1975C900D234B2 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				8EEC0FF41D3CCEDC007EE019 /* ToAstMessage.swift */,
 				8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */,
 				8E1450871D1983A600D234B2 /* bondage.html */,
 				8E1450881D1983A600D234B2 /* bra.html */,
@@ -1031,7 +1034,7 @@
 				TargetAttributes = {
 					02682D231C7EFBA40088F21B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Y6XF9JEXKG;
+						DevelopmentTeam = FBJJC74S38;
 					};
 				};
 			};
@@ -1224,7 +1227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 7f0d441a445b99ad9be96af08be5f9e0255de5f5 6f1c6d273d9d2d4f5e74dd780c4b86e441f769af139465503ee9d4a245096798";
+			shellScript = "./Fabric.framework/run 9a844091ae94e28725c4e32927eb6140ee563504 73929c2e1e6e378c73ed40d6b72bd861d88ec9885ed0293b5ff2830d9850ebba";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1354,6 +1357,7 @@
 				8E1450C71D1BEB2D00D234B2 /* ForumViewController.swift in Sources */,
 				8E52982F1D1940D000AD06E2 /* NotesViewController.swift in Sources */,
 				8E5298401D1962D600AD06E2 /* DesireListViewController.swift in Sources */,
+				8EEC0FF51D3CCEDC007EE019 /* ToAstMessage.swift in Sources */,
 				023A52751C8823B600DBFF76 /* CustomCollectionViewLayout.swift in Sources */,
 				02FE54761CA96F350094C055 /* CustomAnnotation.swift in Sources */,
 				A018A9941CB6733D0044830A /* CVWeekdaySymbolType.swift in Sources */,
@@ -1496,7 +1500,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -1525,7 +1529,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newapp.cal;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";

@@ -29,7 +29,7 @@ class AdvertisingViewController: UIViewController {
         
         if !isAdvertitsing{
             textView.text = noteText[1]
-            textView.textColor = BiruzaColor
+            textView.textColor = BiruzaColor1
             textView.font = .systemFontOfSize(16)
             label.text = noteText[0]
             label.textColor = StrawBerryColor
@@ -65,6 +65,36 @@ class AdvertisingViewController: UIViewController {
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
     }
     
+    func notifiFromDate(date: NSDate){
+        let day = calculateDay(date)
+        var cat = -1
+        for i in 0..<notifiCategory.count{
+            if notifiCategory[i] == noteText[0]{
+                cat = i
+            }
+        }
+        var find = false
+        let table = Table("Notification")
+        let Day = Expression<Int64>("Day")
+        let Category = Expression<Int64>("CategoryId")
+        let Text = Expression<String>("Text")
+        for tmp in try! db.prepare(table.select(Category, Text).filter(Category == Int64(cat+1) && Day == Int64(day))){
+            noteText[1] = tmp[Text]
+            find = true
+        }
+        if find{
+            textView.text = noteText[1]
+            label.text = noteText[0]
+        }else{
+            textView.text = "Нет уведомления на этот день"
+        }
+        textView.textColor = BiruzaColor1
+        textView.font = .systemFontOfSize(16)
+        label.textColor = StrawBerryColor
+        label.font = .systemFontOfSize(16)
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,8 +127,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedNoteDay = dayView
-
-        
+        notifiFromDate(selectedExperienceDay.date.convertedDate()!)
     }
     
     func shouldAutoSelectDayOnMonthChange() -> Bool

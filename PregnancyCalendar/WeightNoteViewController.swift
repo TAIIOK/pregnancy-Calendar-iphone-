@@ -58,6 +58,7 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
         setupWeightPickerViewGramm()
         setupWeightPickerViewToolbarGramm()
     }
+
     
     func loadWeight(){
         let table = Table("WeightNote")
@@ -253,10 +254,15 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     override func viewWillDisappear(animated: Bool) {
-        saveNote()
+        //saveNote()
         self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
     }
-    
+    @IBAction func btnSave(sender: UIButton) {
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
+    }
     func saveNote(){
         let table = Table("WeightNote")
         let Date = Expression<String>("Date")
@@ -307,7 +313,7 @@ extension WeightNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        saveNote()
+        //saveNote()
         selectedNoteDay = dayView
         weightKg = 0
         weightGramm = 0

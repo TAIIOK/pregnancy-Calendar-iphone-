@@ -257,7 +257,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             count += try db.scalar(table.filter(Date == "\(Select)").count)
             break
         case 2: //уведомления
-            day = 300 - BirthDate.daysFrom(Select)
+            day = calculateDay(Select)
             let table = Table("Notification")
             let Day = Expression<Int64>("Day")
             count = try db.scalar(table.filter(Day == Int64(day)).count)

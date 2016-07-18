@@ -170,6 +170,7 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
                         self.prepareTopMarkersOnMonthView(monthView, hidden: false)
                     }
                 }
+                self.calendarView.delegate?.didShowPreviousMonthView?(previous.date)
             }
         }
     }
@@ -200,6 +201,7 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
                         self.prepareTopMarkersOnMonthView(monthView, hidden: false)
                     }
                 }
+                self.calendarView.delegate?.didShowNextMonthView?(following.date)
             }
         }
     }
@@ -248,6 +250,48 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
             }
         }
     }
+    
+    public override func selectDate(date: NSDate) {
+        let presentedDate = Date(date: date)
+        if let presented = monthViews[Presented], let selectedDate = calendarView.coordinator.selectedDayView?.date {
+            if !matchedDays(selectedDate, presentedDate) && !togglingBlocked {
+                if !matchedMonths(presentedDate, selectedDate) {
+                    if let currentMonthView = monthViews[Presented] {
+                        selectDayViewWithDay_(presentedDate.day, inMonthView: currentMonthView)
+                    }
+                    /*togglingBlocked = true
+                    
+                    monthViews[Previous]?.removeFromSuperview()
+                    monthViews[Following]?.removeFromSuperview()
+                    insertMonthView(getPreviousMonth(date), withIdentifier: Previous)
+                    insertMonthView(getFollowingMonth(date), withIdentifier: Following)
+                    
+                    let currentMonthView = MonthView(calendarView: calendarView, date: date)
+                    currentMonthView.updateAppearance(scrollView.bounds)
+                    currentMonthView.alpha = 0
+                    
+                    insertMonthView(currentMonthView, withIdentifier: Presented)
+                    presentedMonthView = currentMonthView
+                    
+                    calendarView.presentedDate = Date(date: date)
+                    UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                        presented.alpha = 0
+                        currentMonthView.alpha = 1
+                    }) { _ in
+                        presented.removeFromSuperview()
+                        self.selectDayViewWithDay_(presentedDate.day, inMonthView: currentMonthView)
+                        self.togglingBlocked = false
+                        self.updateLayoutIfNeeded()
+                    }*/
+                } else {
+                    if let currentMonthView = monthViews[Presented] {
+                        selectDayViewWithDay_(presentedDate.day, inMonthView: currentMonthView)
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 // MARK: - Month management
@@ -360,35 +404,33 @@ extension CVCalendarMonthContentViewController {
                 if let selected = coordinator.selectedDayView where selected != dayView {
                     self.calendarView.didSelectDayView(dayView)
                 }
-                
                 coordinator.performDayViewSingleSelection(dayView)
             }
         }
     }
-    
+    public func selectDayViewWithDay_(day: Int, inMonthView monthView: CVCalendarMonthView) {
+        let coordinator = calendarView.coordinator
+        monthView.mapDayViews { dayView in
+            if dayView.date.day == day && !dayView.isOut {
+               /* if let selected = coordinator.selectedDayView where selected != dayView {
+                    self.calendarView.didSelectDayView(dayView)
+                }*/
+                coordinator.performDayViewSingleSelection_(dayView)
+            }
+        }
+    }
     
     public func getSelectedDates() -> Set<DayView>
     {
-        
         let coordinator = calendarView.coordinator
-    
         var dates =   coordinator.selectionSet
-        
-        
-        
         return dates
-   
     }
     
     public func deselectDayViews(days: [DayView]){
-        
         let coordinator = calendarView.coordinator
         coordinator.deselect(days)
-    }
-    
-    
-
-    
+    }    
 }
 
 

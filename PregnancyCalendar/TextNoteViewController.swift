@@ -42,26 +42,29 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
             if(range.location > 16 )
             {
                 return true
+            }else{
+                return false
             }
-        protectedRange = NSMakeRange(0, 17)
-        }
-        else if (NoteType == 0){
+            protectedRange = NSMakeRange(0, 17)
+        }else if (NoteType == 0){
             if(range.location > 22 )
             {
                 return true
+            }else{
+                return false
             }
-        protectedRange = NSMakeRange(0, 23)
+            protectedRange = NSMakeRange(0, 23)
         }
-
         
-        return false
+        return true
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NoteText.delegate = self
-    /*NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)*/
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         //self.navigationController?.navigationBar.backItem?.title = ""
         //self.title = CVDate(date: NSDate()).globalDescription
         
@@ -146,10 +149,15 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        saveNote()
+        //saveNote()
         self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
     }
-
+    @IBAction func btnSave(sender: UIButton) {
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
+    }
     func saveNote(){
         if(NoteText.text.characters.count == 17 && NoteType == 1)
         {
@@ -227,7 +235,7 @@ extension TextNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        saveNote()
+        //saveNote()
         selectedNoteDay = dayView
         NoteText.text = ""
         if NoteType == 3{

@@ -40,6 +40,17 @@ extension CVCalendarViewAnimator {
         }
     }
     
+    public func animateSelectionOnDayView_(dayView: DayView) {
+        
+        let selectionAnimation = delegate.selectionAnimation()
+        dayView.setSelectedWithType(.Single)
+        selectionAnimation(dayView) { [unowned dayView] completion in
+            if !self.coordinator.selection {
+                dayView.calendarView.delegate?.didSelectDayView_?(dayView, animationDidFinish: completion)
+            }
+        }
+    }
+    
     public func animateDeselectionOnDayView(dayView: DayView) {
         let deselectionAnimation = delegate.deselectionAnimation()
         deselectionAnimation(dayView) { [weak dayView] _ in

@@ -23,6 +23,7 @@ public protocol CVCalendarViewDelegate {
     optional func shouldAutoSelectDayOnMonthChange() -> Bool
     optional func shouldShowWeekdaysOut() -> Bool
     optional func didSelectDayView(dayView: DayView, animationDidFinish: Bool)
+    optional func didSelectDayView_(dayView: DayView, animationDidFinish: Bool)
     optional func presentedDateUpdated(date: Date)
     optional func topMarker(shouldDisplayOnDayView dayView: DayView) -> Bool
     optional func dotMarker(shouldMoveOnHighlightingOnDayView dayView: DayView) -> Bool

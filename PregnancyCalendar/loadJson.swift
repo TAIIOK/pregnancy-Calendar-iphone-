@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreData
 
 func NamesJSON(){
     if let path = NSBundle.mainBundle().pathForResource("names", ofType: "json") {
@@ -30,7 +30,7 @@ func NamesJSON(){
                         name!.dataUsingEncoding(NSUTF8StringEncoding)
                         if let d = name {
                             woman.append(Names(name: d as! String, value: "\(mans.valueForKey("значение")!)", about: "\(mans.valueForKey("описание")!)"))
-                             NSNotificationCenter.defaultCenter().postNotificationName("LoadNameTable", object: nil)  
+                            NSNotificationCenter.defaultCenter().postNotificationName("LoadNameTable", object: nil)
                         }
                     }
                 }
@@ -86,27 +86,27 @@ func NotificationJSON(){
         let Category = Expression<Int64>("CategoryId")
         let Text = Expression<String>("Text")
         for tmp in try! db.prepare(table.select(Day, Category, Text)){
-            not.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category])))
+            not.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category])-1))
             NSNotificationCenter.defaultCenter().postNotificationName("loadNotification", object: nil)
         }
         /*if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                do {
-                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    if let Man : [NSDictionary] = jsonResult["reminder"] as? [NSDictionary] {
-                        for mans: NSDictionary in Man {
-                            let day = mans.valueForKey("день")
-                            day!.dataUsingEncoding(NSUTF8StringEncoding)
-                            if let d = day {
-                                not.append(notifi(day: d as! String, generalInformation: "\(mans.valueForKey("Общая информация")!)", healthMother: "\(mans.valueForKey("Здоровье мамы")!)", healthBaby: "\(mans.valueForKey("Здоровье малыша")!)", food: "\(mans.valueForKey("питание")!)", important: "\(mans.valueForKey("Это важно!")!)", HidenAdvertisment: "\(mans.valueForKey("Скрытая реклама")!)", advertisment: "\(mans.valueForKey("реклама ФЭСТ")!)", reflectionsPregnant: "\(mans.valueForKey("размышления беременной")!)"))
-                                NSNotificationCenter.defaultCenter().postNotificationName("loadNotification", object: nil)
-                            }
-                        }
-                    }
-                } catch {}
-            } catch {}
-        }*/
+         do {
+         let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+         do {
+         let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+         if let Man : [NSDictionary] = jsonResult["reminder"] as? [NSDictionary] {
+         for mans: NSDictionary in Man {
+         let day = mans.valueForKey("день")
+         day!.dataUsingEncoding(NSUTF8StringEncoding)
+         if let d = day {
+         not.append(notifi(day: d as! String, generalInformation: "\(mans.valueForKey("Общая информация")!)", healthMother: "\(mans.valueForKey("Здоровье мамы")!)", healthBaby: "\(mans.valueForKey("Здоровье малыша")!)", food: "\(mans.valueForKey("питание")!)", important: "\(mans.valueForKey("Это важно!")!)", HidenAdvertisment: "\(mans.valueForKey("Скрытая реклама")!)", advertisment: "\(mans.valueForKey("реклама ФЭСТ")!)", reflectionsPregnant: "\(mans.valueForKey("размышления беременной")!)"))
+         NSNotificationCenter.defaultCenter().postNotificationName("loadNotification", object: nil)
+         }
+         }
+         }
+         } catch {}
+         } catch {}
+         }*/
     }
 }
 
@@ -157,4 +157,32 @@ func LoadZadiacJSON(){
     }
 }
 
+func loadBirthDate(){
+    let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let managedContext = appDelegate.managedObjectContext
+    
+    // Initialize Fetch Request
+    let fetchRequest = NSFetchRequest()
+    
+    // Create Entity Description
+    let entityDescription = NSEntityDescription.entityForName("BirthDate", inManagedObjectContext:managedContext)
+    
+    fetchRequest.entity = entityDescription
+    do {
+        let result = try managedContext.executeFetchRequest(fetchRequest)
+        
+        if (result.count > 0) {
+            for i in result {
+                let date = i as! NSManagedObject
+                BirthDate = date.valueForKey("date") as! NSDate
+                dateType = date.valueForKey("type") as! Int
+            }
+        }
+    } catch {
+        let fetchError = error as NSError
+        print(fetchError)
+    }
+}
 

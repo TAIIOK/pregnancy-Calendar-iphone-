@@ -43,7 +43,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height/2
+                self.view.frame.origin.y -= keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -52,7 +52,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height/2
+                self.view.frame.origin.y += keyboardSize.height
                 isKeyboard = false
             }
         }
@@ -386,6 +386,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func enablenotification(gesture:UIGestureRecognizer){
+        save()
         if let cellContentView = gesture.view {
             let tappedPoint = cellContentView.convertPoint(cellContentView.bounds.origin, toView: tbl)
             for i in 1..<tbl.numberOfSections  {
@@ -786,11 +787,18 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillDisappear(animated: Bool) {
-        save()
-        saveNote()
+        //save()
+        //saveNote()
         self.performSegueWithIdentifier("UpdateSectionTable", sender: self)
     }
     
+    @IBAction func btnSave(sender: UIButton) {
+        save()
+        saveNote()
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.reloadWeekViews()
+    }
     func saveNote(){
         print("save ",selectedNoteDay.date.convertedDate()!)
         let table = Table("MedicineTake")
@@ -903,7 +911,7 @@ extension DrugsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        saveNote()
+        //saveNote()
         drugs.removeAll()
         arrayForBool.removeAllObjects()
         tbl.reloadData()
