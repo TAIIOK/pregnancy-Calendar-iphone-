@@ -95,7 +95,6 @@ class ShowZodiacViewController: UIViewController {
         zodiacName.text = zodiacs[zodiac].name
         zodiacElement.text = zodiacs[zodiac].element
         zodiacAbout.text = zodiacs[zodiac].about
-        zodiacAbout.scrollRangeToVisible(NSRange(location:0, length:0))
         zodiacIcon.image = UIImage(named: "\(zodiac)z.jpg")
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
@@ -185,9 +184,9 @@ class ShowZodiacViewController: UIViewController {
     }
     
     @IBAction func editDate(sender: UIBarButtonItem) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+        /*dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             cancelAllLocalNotification()
-        }
+        }*/
         Back = true
         self.pushFrontViewController("Birthdate")
     }
@@ -211,5 +210,13 @@ class ShowZodiacViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }*/
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //info.scrollRangeToVisible(NSRange(location:0, length:0))
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.zodiacAbout.scrollRectToVisible(CGRectMake(0,0,1,1), animated: false)
+        })
     }
 }

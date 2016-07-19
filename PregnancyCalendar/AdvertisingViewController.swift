@@ -36,8 +36,8 @@ class AdvertisingViewController: UIViewController {
             label.font = .systemFontOfSize(16)
         }
 
-        if selectedDay != nil {
-            self.calendarView.toggleViewWithDate(selectedDay.date.convertedDate()!)
+        if selectedExperienceDay != nil {
+            self.calendarView.toggleViewWithDate(selectedExperienceDay.date.convertedDate()!)
         }else{
             let date = NSDate()
             self.calendarView.toggleViewWithDate(date)
@@ -126,7 +126,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
-        selectedNoteDay = dayView
+        selectedExperienceDay = dayView
         notifiFromDate(selectedExperienceDay.date.convertedDate()!)
     }
     

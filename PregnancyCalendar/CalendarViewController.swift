@@ -294,9 +294,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         case 1:
             //cell.textLabel?.text = "Фотографии"
             phincalc = true
-            let photo = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoFromCalendarNavigation1")
-            //self.splitViewController?.showDetailViewController(photo!, sender: self)
-            self.revealViewController()?.pushFrontViewController(photo!, animated: true)
+            let photo = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoFromCalendarNavigation")
+            self.navigationController?.pushViewController(photo!, animated: true)
+            //self.revealViewController()?.pushFrontViewController(photo!, animated: true)
             break
         case 2:
             //cell.textLabel?.text = "Уведомления"

@@ -50,7 +50,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         let b = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(PhotoFromCalendarViewController.addPhoto))
         let img = UIImage(named: "Arrowhead-Left-01-48")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self, action: "Cancel")
-        self.navigationItem.setLeftBarButtonItem(btn, animated: false)
+        //self.navigationItem.setLeftBarButtonItem(btn, animated: false)
         a.tintColor = UIColor.whiteColor()
         b.tintColor = UIColor.whiteColor()
         self.navigationItem.setRightBarButtonItems([a,b], animated: true)
@@ -389,7 +389,7 @@ extension PhotoFromCalendarViewController: CVCalendarViewDelegate, CVCalendarMen
     
     
     func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
-        return 13
+        return 10
     }
     
     

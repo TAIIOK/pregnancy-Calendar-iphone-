@@ -164,6 +164,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
+
         //calendarPicker.hightlightsToday = true
         //calendarPicker.showsTodaysButton = true
         

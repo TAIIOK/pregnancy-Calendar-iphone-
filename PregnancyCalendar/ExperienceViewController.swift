@@ -138,8 +138,9 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
                 //leftbutt![0] = leftButton
         checkConnectionAndUpdateView()
         if fromCalendar{
+            self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
+            calendarView.toggleViewWithDate(selectedCalendarDate)
             fromCalendar = false
-            presentedDateUpdated(CVDate(date: selectedCalendarDate))
             changer.selectedSegmentIndex = 1
             choosedSegmentNotes = false
             self.tbl.reloadData()

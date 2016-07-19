@@ -37,7 +37,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        phincalc = false
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
@@ -48,11 +47,12 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if fromCalendar{
             self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
             calendarView.toggleViewWithDate(selectedCalendarDate)
+            phincalc = true
         }else{
             self.presentedDateUpdated(CVDate(date: NSDate()))
             calendarView.toggleViewWithDate(NSDate())
+            phincalc = false
         }
-        print("1")
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         /*dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

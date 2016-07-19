@@ -621,13 +621,10 @@
 				8E7355771D1BFB75008B8444 /* CalendarViewController.swift */,
 				8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */,
 				8E1450BC1D1986B100D234B2 /* ShareViewController.swift */,
-				A09CA8021D1D4AD20072CE73 /* db.sqlite */,
 				8E1450761D19734E00D234B2 /* ExperienceViewController.swift */,
 				8E1450781D1973A900D234B2 /* AdvertisingViewController.swift */,
 				8E1450851D19839900D234B2 /* webArticleViewController.swift */,
 				8E1450C01D1BE99900D234B2 /* BuyViewController.swift */,
-				8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */,
-				8E1450C21D1BE9AB00D234B2 /* loadJson.swift */,
 				02682D311C7EFBA40088F21B /* Assets.xcassets */,
 				023A52731C88238200DBFF76 /* Custom Layouts */,
 				02FE546E1CA96F060094C055 /* Custom pins */,
@@ -743,6 +740,9 @@
 				022994291C845B4D00E3B816 /* Plist.swift */,
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
+				A09CA8021D1D4AD20072CE73 /* db.sqlite */,
+				8E1450C21D1BE9AB00D234B2 /* loadJson.swift */,
+				8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */,
 			);
 			name = other;
 			sourceTree = "<group>";
