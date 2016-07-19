@@ -425,7 +425,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="Eri-qI-RJM">
             <objects>
-                <tableViewController id="F1z-on-BXr" customClass="MenuTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MasterView" id="F1z-on-BXr" customClass="MenuTableViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qa-Mg-GBC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

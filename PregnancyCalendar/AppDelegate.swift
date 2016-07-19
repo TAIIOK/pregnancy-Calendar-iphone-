@@ -413,12 +413,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             noteText[1] = notification.alertBody!
                             let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                            let splitViewController = UISplitViewController()
                             let rootViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("MasterView") as UIViewController
                             let detailViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("ExperienceViewController") as UIViewController
-                            var rootNavigationController = UINavigationController(rootViewController:rootViewController)
+                            var rootNavigationController = UINavigationController(rootViewController:rootViewController) //ExperienceNavigationController ExperienceViewController
                             let detailNavigationController = UINavigationController(rootViewController:detailViewController)
-                            splitViewController.viewControllers = [rootViewController,detailNavigationController]
+                            let splitViewController = SWRevealViewController(rearViewController: rootViewController, frontViewController: detailNavigationController)
+                            //splitViewController.viewControllers = [rootViewController,detailNavigationController]
                             self.window!.rootViewController = splitViewController
                             self.window!.makeKeyAndVisible()
                         } )
