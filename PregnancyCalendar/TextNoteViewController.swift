@@ -10,17 +10,23 @@ import UIKit
 
 class TextNoteViewController: UIViewController, UITextViewDelegate {
     
+    var isKeyboard = false
+    
     func keyboardWillShow(notification: NSNotification) {
-        
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            self.view.frame.origin.y -= keyboardSize.height
+        if !isKeyboard{
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.view.frame.origin.y -= keyboardSize.height*0.5
+                isKeyboard = true
+            }
         }
-        
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            self.view.frame.origin.y += keyboardSize.height
+        if isKeyboard{
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.view.frame.origin.y += keyboardSize.height*0.5
+                isKeyboard = false
+            }
         }
     }
     
@@ -155,16 +161,26 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
     @IBAction func btnSave(sender: UIButton) {
         saveNote()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
-        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.reloadWeekViews()
+        let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.refreshPresentedMonth()
     }
     func saveNote(){
         if(NoteText.text.characters.count == 17 && NoteType == 1)
         {
+            let table = Table("TextNote")
+            let date = Expression<String>("Date")
+            let text = Expression<String>("NoteText")
+            let type = Expression<Int64>("Type")
+            try! db.run(table.filter(date == "\(selectedNoteDay.date.convertedDate()!)" && type == Int64(NoteType)).delete())
             return
         }
         if(NoteText.text.characters.count == 23 && NoteType == 0)
         {
+            let table = Table("TextNote")
+            let date = Expression<String>("Date")
+            let text = Expression<String>("NoteText")
+            let type = Expression<Int64>("Type")
+            try! db.run(table.filter(date == "\(selectedNoteDay.date.convertedDate()!)" && type == Int64(NoteType)).delete())
             return
         }
         if NoteText.text.characters.count > 0 && NoteType != 3{

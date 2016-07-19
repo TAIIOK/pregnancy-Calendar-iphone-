@@ -26,7 +26,7 @@ class PhotoWithType: NSObject {
 
 var selectedCalendarDayPhoto:DayView!
 var photoFromDate = [PhotoWithType]()
-
+var phincalc = false
 class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
     
     var picker = UIImagePickerController()
@@ -110,6 +110,8 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
             //Do some stuff
             type = 0
             self.JustDoIT(chosenImage, type: type)
+            let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+            controller.refreshPresentedMonth()
         }
         actionSheetController.addAction(cancelAction)
         //Create and an option action
@@ -117,6 +119,8 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
             //Do some other stuff
             type = 1
             self.JustDoIT(chosenImage, type: type)
+            let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+            controller.refreshPresentedMonth()
         }
         actionSheetController.addAction(nextAction)
         

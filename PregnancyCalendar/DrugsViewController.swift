@@ -43,7 +43,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height*0.5
                 isKeyboard = true
             }
         }
@@ -52,7 +52,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height*0.5
                 isKeyboard = false
             }
         }
@@ -796,8 +796,8 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         save()
         saveNote()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
-        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.reloadWeekViews()
+        let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.refreshPresentedMonth()
     }
     func saveNote(){
         print("save ",selectedNoteDay.date.convertedDate()!)

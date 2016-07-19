@@ -37,6 +37,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        phincalc = false
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
@@ -46,8 +47,12 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationItem.leftBarButtonItem = btn
         if fromCalendar{
             self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
+            calendarView.toggleViewWithDate(selectedCalendarDate)
         }else{
-            self.presentedDateUpdated(CVDate(date: NSDate()))}
+            self.presentedDateUpdated(CVDate(date: NSDate()))
+            calendarView.toggleViewWithDate(NSDate())
+        }
+        print("1")
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         /*dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -70,10 +75,11 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func UpdateSectionTable(segue:UIStoryboardSegue) {
         print("update notes table")
+        phincalc = false
         loadNotes()
         tbl.reloadData()
-        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.reloadWeekViews()
+        let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.refreshPresentedMonth()
     }
     
     
@@ -294,7 +300,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
             cell.backgroundColor = .clearColor()
             cell.selectedBackgroundView?.backgroundColor = .clearColor()
-            print(indexPath.row)
             cell.textLabel?.textColor = NotesColor[indexPath.row]
             cell.detailTextLabel?.textColor = NotesColor[indexPath.row]
             }
@@ -336,6 +341,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NoteType = indexPath.row
+        phincalc = true
         switch indexPath.row {
         case 0:
             let destinationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("textNote")
@@ -405,10 +411,12 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        calendarView.toggleViewWithDate(date.convertedDate()!)
     }
     
     override func viewWillDisappear(animated: Bool) {
         DayForView = NSDate()
+        print("destroy")
     }
     
     

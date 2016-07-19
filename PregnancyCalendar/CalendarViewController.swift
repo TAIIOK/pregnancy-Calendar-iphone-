@@ -97,6 +97,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     @IBAction func UpdateCalendar(segue:UIStoryboardSegue) {
         print("update calendar table")
+        phincalc = false
         tbl.reloadData()
     }
     
@@ -292,6 +293,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             break
         case 1:
             //cell.textLabel?.text = "Фотографии"
+            phincalc = true
             let photo = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoFromCalendarNavigation1")
             //self.splitViewController?.showDetailViewController(photo!, sender: self)
             self.revealViewController()?.pushFrontViewController(photo!, animated: true)

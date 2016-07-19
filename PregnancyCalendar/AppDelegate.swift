@@ -127,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().barStyle = .BlackOpaque
         createEditableCopyOfDatabaseIfNeeded()
         Fabric.with([Crashlytics.self])
-        
+        phincalc = true
         
         if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil))
@@ -173,7 +173,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // First, test for existence.
         // Override point for customization after application launch.
         let sourcePath = NSBundle.mainBundle().pathForResource("db", ofType: "sqlite")
-        print(sourcePath)
         let doumentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
         let destinationPath = (doumentDirectoryPath as NSString).stringByAppendingPathComponent("db1.sqlite")
         //print(destinationPath)

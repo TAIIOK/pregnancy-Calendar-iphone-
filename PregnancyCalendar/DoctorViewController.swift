@@ -53,13 +53,10 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var isKeyboard = false
     
-
-    
-    
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height*0.5
                 isKeyboard = true
             }
         }
@@ -68,7 +65,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height*0.5
                 isKeyboard = false
             }
         }
@@ -653,8 +650,8 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
         save()
         saveNote()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
-        let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.reloadWeekViews()
+        let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
+        controller.refreshPresentedMonth()
     }
     func saveNote(){
         let table = Table("DoctorVisit")
