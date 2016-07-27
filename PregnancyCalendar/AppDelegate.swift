@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         createEditableCopyOfDatabaseIfNeeded()
         Fabric.with([Crashlytics.self])
         phincalc = true
-        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil))
         }
@@ -304,7 +304,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do something serious in a real app.
         //print("Received Local Notification:")
         //print(notification.alertBody)
-        
+        if UIApplication.sharedApplication().applicationIconBadgeNumber > 0 {
+            UIApplication.sharedApplication().applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber - 1
+        }
         let  state = application.applicationState
         
         if (state == UIApplicationState.Active) {

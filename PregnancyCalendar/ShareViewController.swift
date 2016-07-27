@@ -20,7 +20,7 @@ import MessageUI
 var sharingExportVk = false
 var userID = ""
 class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewControllerDelegate {
-
+    
     @IBAction func SaveToGallery(sender: UIButton) {
         
         for (var i = 0 ; i < selectedImages.count ; i++){
@@ -30,7 +30,7 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
         let   alert =  UIAlertController(title: "Внимание", message: "Экспортируемые фотографии сохранены в память вашего устройства", preferredStyle: .Alert)
         let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
         alert.addAction(ok)
-    self.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -51,11 +51,12 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
     }
     
     func vkDidAutorize(parameters: Dictionary<String, String>) {
-      userID =  parameters["user_id"]! as String
+        userID =  parameters["user_id"]! as String
+        print("didit")
     }
-
+    
     func vkDidUnautorize() {
-        
+        print("didnotit")
     }
     
     func vkTokenPath() -> (useUserDefaults: Bool, alternativePath: String) {
@@ -63,70 +64,115 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
     }
     
     func vkWillPresentView() -> UIViewController {
-     
+        print("present")
         return self
     }
-
     
+    @IBAction func ShareVK(sender: AnyObject) {
+        self.view.makeToastActivityWithMessage(message: "Пожалуйста, подождите.", addOverlay: true)
+        /*dispatch_async(dispatch_get_main_queue(), {
+         VK.autorize()
+         self.Vk_sharing()
+         return
+         })*/
+        VK.autorize()
+        Vk_sharing()
+    }
     
     func Vk_sharing(){
-        
-        print(selectedImages.count)
-        
-        print(PDF.length)
-        
         if(sharingExportVk){
-            VK.API.Upload.document(Media(documentData: PDF, type: "pdf")).send(method: HTTPMethods.POST , success:{response in print(response)
-                let name = response.arrayObject![0] as! NSDictionary
-                
-                let string = "doc" + userID + "_" + String(name.valueForKey("id")!)
-                print(string)
-                let mass = [VK.Arg.userId : userID , VK.Arg.friendsOnly : "0" , VK.Arg.message : "Testing FEST share " , VK.Arg.attachments : string ]
-                
-                let req = VK.API.Wall.post(mass).send(method: HTTPMethods.GET , success: {response in print(response)}, error: {error in print(error)})
-                
-                },error: { error in print(error)})
-            
-        }
-        else {
-            
-            selectedImages = selectedImages.reverse()
-            var string = ""
-            var result = 0
-            dispatch_sync(dispatch_get_main_queue(),
-                          {
-                            for(var i=0;i<selectedImages.count;i++){
-                                
-                                let media = Media(imageData: UIImagePNGRepresentation(selectedImages[i])!, type: .PNG )
-                                
-                                print(media)
-                                
-                                VK.API.Upload.Photo.toWall.toUser(media, userId: userID).send(method: HTTPMethods.GET , success: {response in print(response)
-                                    
-                                    
-                                    let name = response.arrayObject![0] as! NSDictionary
-                                    
-                                    if(string.characters.count > 0)
-                                    {
-                                        string.appendContentsOf(",")
-                                    }
-                                    string.appendContentsOf("photo" + userID + "_" + String(name.valueForKey("id")!))
-                                    
-                                    print(string)
-                                    result += 1
-                                    }, error: {error in print(error)  ; result += 1})
-                            }
-                            
-            })
-            
-            while (result != selectedImages.count)
-            {
+            //VK.logOut()
+            let req = VK.API.Account.getInfo()
+            req.successBlock = {
+                response in print("succes login")
+                self.uploadpdf()
             }
-            
-            let mass = [VK.Arg.userId : userID , VK.Arg.friendsOnly : "0" , VK.Arg.message : "Testing FEST share " , VK.Arg.attachments : string ]
-            
-            let req = VK.API.Wall.post(mass).send(method: HTTPMethods.GET , success: {response in print(response)}, error: {error in print(error)})
+            req.errorBlock = {
+                error in print(error)
+                print("error login")
+                self.view.hideToastActivity()
+            }
+            req.send()
+        }else{
+            //VK.logOut()
+            let req = VK.API.Account.getInfo()
+            req.successBlock = {
+                response in print("succes login")
+                self.uploadphoto()
+            }
+            req.errorBlock = {
+                error in print(error)
+                print("error login")
+                self.view.hideToastActivity()
+                
+                
+            }
+            req.send()
         }
+        //self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func uploadpdf(){
+        let req = VK.API.Upload.document(Media(documentData: PDF, type: "pdf"))
+        req.isAsynchronous = false
+        req.httpMethod = HTTPMethods.GET
+        req.catchErrors = false
+        //req.progressBlock = { (done, total) -> () in print("SwiftyVK: uploadPhoto progress: \(done) of \(total))")}
+        req.successBlock = {
+            response in print(response)
+            let name = response.arrayObject![0] as! NSDictionary
+            let string = "doc" + userID + "_" + String(name.valueForKey("id")!)
+            self.postToWall(string)
+        }
+        req.errorBlock = {
+            error in print(error)
+            print("error")
+        }
+        req.send()
+    }
+    
+    func uploadphoto(){
+        selectedImages = selectedImages.reverse()
+        var string = ""
+        var result = 0
+        for img in selectedImages{
+            let media = Media(imageData: UIImagePNGRepresentation(img)!, type: .PNG )
+            let req = VK.API.Upload.Photo.toWall.toUser(media, userId: userID)
+            req.isAsynchronous = false
+            req.httpMethod = HTTPMethods.GET
+            req.catchErrors = false
+            //req.progressBlock = { (done, total) -> () in print("SwiftyVK: uploadPhoto progress: \(done) of \(total))")}
+            req.successBlock = {
+                response in print(response)
+                let name = response.arrayObject![0] as! NSDictionary
+                if(string.characters.count > 0)
+                {
+                    string.appendContentsOf(",")
+                }
+                string.appendContentsOf("photo" + userID + "_" + String(name.valueForKey("id")!))
+                result += 1
+            }
+            req.errorBlock = {
+                error in print(error)
+                result += 1
+                print("error")
+            }
+            req.send()
+        }
+        while(result < selectedImages.count){
+        }
+        postToWall(string)
+    }
+    
+    func postToWall(string: String){
+        let mass = [VK.Arg.userId : userID , VK.Arg.friendsOnly : "0" , VK.Arg.message : "Testing FEST share " , VK.Arg.attachments : string ]
+        let postreq = VK.API.Wall.post(mass)
+        postreq.successBlock = {
+            response in print("post success")
+            self.view.hideToastActivity()
+        }
+        postreq.errorBlock = {error in print("post error",error)}
+        postreq.send()
         
     }
     
@@ -135,11 +181,13 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
         let _ = CustomPhotoAlbum.sharedInstance
         VK.start(appID: "5437729", delegate: self)
         
-    //view.opaque = false
+        //view.opaque = false
         // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewWillDisappear(animated: Bool) {
+        //self.performSegueWithIdentifier("ShowToast", sender: self)
+    }
     
     @IBAction func Cancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -148,11 +196,11 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
     @IBAction func ShareMail(sender: AnyObject) {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self;
-
-                for (var i = 0 ; i < selectedImages.count ; i++){
-                mailComposerVC.addAttachmentData(UIImagePNGRepresentation(selectedImages[i])!, mimeType: "image/png", fileName: "\(i)")
-
-            }
+        
+        for (var i = 0 ; i < selectedImages.count ; i++){
+            mailComposerVC.addAttachmentData(UIImagePNGRepresentation(selectedImages[i])!, mimeType: "image/png", fileName: "\(i)")
+            
+        }
         
         
         if MFMailComposeViewController.canSendMail() {
@@ -160,15 +208,11 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
         } else {
             
         }
-        
-        print("шарю на мыло")
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         
         switch result {
-    
-            
         case MFMailComposeResultCancelled:
             print("Cancelled mail")
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -185,15 +229,9 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
         
     }
     
-    @IBAction func ShareVK(sender: AnyObject) {
-        
-            print("шарю во вконтактик")
-
-        VK.autorize()
-      
-        Vk_sharing()
-        
-
+    func  canAutorizeWithVkApp() -> Bool {
+        return UIApplication.sharedApplication().canOpenURL(NSURL(string: "vkauthorize://authorize?")!)
+            && UIApplication.sharedApplication().canOpenURL(NSURL(string: "vk\(VK.appID)://")!)
     }
     
     @IBAction func ShareOK(sender: AnyObject) {
@@ -221,135 +259,131 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
         }
         else{
             
-        let settings  = OKSDKInitSettings.init()
-        settings.appKey = "CBAFLEFLEBABABABA"
-        settings.appId = "1246999552"
-        settings.controllerHandler = {
-            return self;
-        }
-        
-        OKSDK.initWithSettings(settings)
-
-
-        
-        OKSDK.authorizeWithPermissions(["VALUABLE_ACCESS","LONG_ACCESS_TOKEN","PHOTO_CONTENT"], success: {id in print(id)
+            let settings  = OKSDKInitSettings.init()
+            settings.appKey = "CBAFLEFLEBABABABA"
+            settings.appId = "1246999552"
+            settings.controllerHandler = {
+                return self;
+            }
             
-          //  OKSDK.invokeMethod("users.getCurrentUser", arguments: [:], success: {data in print(data)}, error: {error in print(error)})
+            OKSDK.initWithSettings(settings)
             
             
-            for(var i = 0 ; i<selectedImages.count; i++){
-              let imageData = UIImagePNGRepresentation(selectedImages[i])
             
-        OKSDK.invokeMethod("photosV2.getUploadUrl", arguments: [:], success: {
-            data in print(data)
-        
-         let photoId = (data["photo_ids"]as! NSArray)[0] as! String
-         let boundary = "0xKhTmLbOuNdArY"
-         let kNewLine = "\r\n"
-         let urlPath = data["upload_url"] as! String
-         let url: NSURL = NSURL(string: urlPath)!
-         let request1: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-          let data = NSMutableData()
-            
-            request1.HTTPMethod = "POST"
-            request1.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-            data.appendData("--\(boundary)\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
-            data.appendData("Content-Disposition: form-data; name=\"0.png\"; filename=\"0.png\"\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
-            data.appendData("Content-Type: image/png".dataUsingEncoding(NSUTF8StringEncoding)!)
-            data.appendData("\(kNewLine)\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
-            data.appendData(imageData!)
-            data.appendData("\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
-            data.appendData("--\(boundary)--".dataUsingEncoding(NSUTF8StringEncoding)!)
-            request1.HTTPBody=data
-            request1.timeoutInterval = 60
-            request1.HTTPShouldHandleCookies=false
-               let queue:NSOperationQueue = NSOperationQueue()
-            
-            NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            OKSDK.authorizeWithPermissions(["VALUABLE_ACCESS","LONG_ACCESS_TOKEN","PHOTO_CONTENT"], success: {id in print(id)
                 
-                do {
-                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                        print("ASynchronous\(jsonResult)")
+                //  OKSDK.invokeMethod("users.getCurrentUser", arguments: [:], success: {data in print(data)}, error: {error in print(error)})
+                
+                
+                for(var i = 0 ; i<selectedImages.count; i++){
+                    let imageData = UIImagePNGRepresentation(selectedImages[i])
+                    
+                    OKSDK.invokeMethod("photosV2.getUploadUrl", arguments: [:], success: {
+                        data in print(data)
                         
-                        let token = jsonResult.valueForKeyPath("photos.\(photoId).token") // ["photos"][photoId]["token"]
-
-                        OKSDK.invokeMethod("photosV2.commit", arguments: ["photo_id":photoId,"token":token!,"comment":"Example Anon"], success:{ data in print(data)}, error: {error in print(error)})
+                        let photoId = (data["photo_ids"]as! NSArray)[0] as! String
+                        let boundary = "0xKhTmLbOuNdArY"
+                        let kNewLine = "\r\n"
+                        let urlPath = data["upload_url"] as! String
+                        let url: NSURL = NSURL(string: urlPath)!
+                        let request1: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+                        let data = NSMutableData()
                         
-                    }
-                } catch let error as NSError {
-                    print(error.localizedDescription)
+                        request1.HTTPMethod = "POST"
+                        request1.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                        data.appendData("--\(boundary)\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        data.appendData("Content-Disposition: form-data; name=\"0.png\"; filename=\"0.png\"\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        data.appendData("Content-Type: image/png".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        data.appendData("\(kNewLine)\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        data.appendData(imageData!)
+                        data.appendData("\(kNewLine)".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        data.appendData("--\(boundary)--".dataUsingEncoding(NSUTF8StringEncoding)!)
+                        request1.HTTPBody=data
+                        request1.timeoutInterval = 60
+                        request1.HTTPShouldHandleCookies=false
+                        let queue:NSOperationQueue = NSOperationQueue()
+                        
+                        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                            
+                            do {
+                                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                                    print("ASynchronous\(jsonResult)")
+                                    
+                                    let token = jsonResult.valueForKeyPath("photos.\(photoId).token") // ["photos"][photoId]["token"]
+                                    
+                                    OKSDK.invokeMethod("photosV2.commit", arguments: ["photo_id":photoId,"token":token!,"comment":"Example Anon"], success:{ data in print(data)}, error: {error in print(error)})
+                                    
+                                }
+                            } catch let error as NSError {
+                                print(error.localizedDescription)
+                            }
+                            
+                            
+                        })
+                        
+                        
+                        }
+                        , error: {error in print(error)})
                 }
                 
-                
+                }, error: {error in print(error)
             })
+            OKSDK.clearAuth()
             
-      
-            }
-            , error: {error in print(error)})
-            }
-        
-            }, error: {error in print(error)
-        })
-        OKSDK.clearAuth()
-    
         }
     }
     
     @IBAction func ShareFB(sender: AnyObject) {
-        print("шарю в фсб")
-        
-
-            if(sharingExportVk){
-        for (var i = 0 ; i < selectedImages.count ; i++){
-            CustomPhotoAlbum.sharedInstance.saveImage(selectedImages[i])
-        }
-    
-        let   alert =  UIAlertController(title: "Внимание", message: "Экспортируемые фотографии сохранены в фотоальбом. Для того что бы разместить фотографии перейдите в приложение facebook", preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
-        alert.addAction(ok)
-        let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in
+        if(sharingExportVk){
+            for (var i = 0 ; i < selectedImages.count ; i++){
+                CustomPhotoAlbum.sharedInstance.saveImage(selectedImages[i])
+            }
             
-            if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://profile/PageId")!)){
-                UIApplication.sharedApplication().openURL(NSURL(string: "fb://profile/PageId")!)
-            }
-            else {
-                alert.dismissViewControllerAnimated(true, completion: nil)
-            }
-             } )
-        alert.addAction(open)
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-            }
-            else{
-        
-
+            let   alert =  UIAlertController(title: "Внимание", message: "Экспортируемые фотографии сохранены в фотоальбом. Для того что бы разместить фотографии перейдите в приложение facebook", preferredStyle: .Alert)
+            let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
+            alert.addAction(ok)
+            let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in
                 
-                 if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://profile/PageId")!)){
-                    let dialog = FBSDKShareDialog()
-                    dialog.fromViewController = self
-                    dialog.mode = FBSDKShareDialogMode.Native
-                    let content = FBSDKSharePhotoContent()
-                    content.photos = selectedImages
-                    dialog.shareContent = content
-                    dialog.show()
+                if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://profile/PageId")!)){
+                    UIApplication.sharedApplication().openURL(NSURL(string: "fb://profile/PageId")!)
                 }
-                 else{
-                
-                    let shareToFacebook : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
- 
-                  shareToFacebook.setInitialText("")
+                else {
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                }
+            } )
+            alert.addAction(open)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }else{
+            if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://profile/PageId")!)){
+                let dialog = FBSDKShareDialog()
+                dialog.fromViewController = self
+                dialog.mode = FBSDKShareDialogMode.Native
+                let content = FBSDKSharePhotoContent()
+                content.photos = []
+                for i in selectedImages{
+                    let share = FBSDKSharePhoto()
+                    share.caption = "Test FEST share"
+                    share.image = i
+                    content.photos.append(share)
+                }
+                dialog.shareContent = content
+                dialog.fromViewController = self
+                dialog.show()
+            }else{
+                let shareToFacebook : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                shareToFacebook.setInitialText("")
                 for (var i = 0 ; i < selectedImages.count ; i++){
-                      shareToFacebook.addImage(selectedImages[i])
+                    shareToFacebook.addImage(selectedImages[i])
                 }
                 self.presentViewController(shareToFacebook, animated: true, completion: nil)
-            
-                }
+            }
         }
-     
+        
         
         // если использовать апи )) для верисии ios 7
         
-
+        
     }
     
     
@@ -360,15 +394,15 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
     }
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

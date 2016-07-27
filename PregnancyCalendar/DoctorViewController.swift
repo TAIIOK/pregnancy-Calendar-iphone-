@@ -513,17 +513,11 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
             scheduleNotification(calculateDate(doctors[currentRec-1].date, before: doctors[currentRec-1].remindType , after: changeRemindInCurRec), notificationTitle:"У вас посещение врача \(doctors[currentRec-1].name)" , objectId: "\(doctors[currentRec-1].date )")
         }
         }
-        
-        
-        let headerview = tbl.viewWithTag(currentRec-1) as? DoctorHeader
+        self.view.endEditing(true)
+        tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
+        let headerview = tbl.viewWithTag(currentRec) as? DoctorHeader
         headerview?.setopen(true)
         headerview?.changeFields()
-        
-        
-        
-        //tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
-        tbl.reloadData()
-   // self.view.addSubview(photo())
     }
     
     @IBAction func UpdateSection(segue:UIStoryboardSegue) {
@@ -546,12 +540,11 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         doctors[currentRec-1].remindType = changeRemindInCurRec
         
-        let headerview = tbl.viewWithTag(currentRec-1) as? DoctorHeader
+        self.view.endEditing(true)
+        tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
+        let headerview = tbl.viewWithTag(currentRec) as? DoctorHeader
         headerview?.setopen(true)
         headerview?.changeFields()
-        
-        //tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
-        tbl.reloadData()
     }
     
     
@@ -649,7 +642,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func btnSave(sender: UIButton) {
         save()
         saveNote()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }

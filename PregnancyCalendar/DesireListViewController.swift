@@ -118,7 +118,7 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func btnSave(sender: UIButton) {
         saveNote()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }
