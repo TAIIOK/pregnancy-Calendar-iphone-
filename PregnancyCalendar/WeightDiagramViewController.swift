@@ -23,9 +23,17 @@ class Weight: NSObject {
         self.week = week
         super.init()
     }
+    override init() {
+        self.date = NSDate()
+        self.kg = 0
+        self.gr = 0
+        self.week = 0
+        super.init()
+    }
 }
-
-class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+var RecWeight = Double(0)
+var editingRecWeight = false
+class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverPresentationControllerDelegate {
     
     var growth = 0
     var mass = 60
@@ -50,15 +58,29 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var growthButton: UIBarButtonItem!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var weekDescription: UILabel!
-    
+    @IBOutlet weak var weightButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
+    // выезжающее меню
+    private func setupSidebarMenu() {
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealDisplacement = 0
+            self.revealViewController().rearViewRevealOverdraw = 0
+            self.revealViewController().rearViewRevealWidth = 275
+            self.revealViewController().frontViewShadowRadius = 0
+            self.menuButton.target = self.revealViewController()
+            self.menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         growth = loadGrowthFromCoreData()
         loadDate()
         loadWeight()
+        loadRecWeight()
         self.navigationItem.rightBarButtonItem?.title = growth == 0 ? "Ваш рост" : "\(growth) см"
+        self.weightButton.title = RecWeight == 0 ? "Ваш вес" : "\(RecWeight) кг"
         setupGrowthPickerView()
         setupGrowthPickerViewToolbar()
         setupGraphSettings()
@@ -78,22 +100,25 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         }
     }
 
-    // выезжающее меню
-    private func setupSidebarMenu() {
-        if self.revealViewController() != nil {
-            self.revealViewController().rearViewRevealDisplacement = 0
-            self.revealViewController().rearViewRevealOverdraw = 0
-            self.revealViewController().rearViewRevealWidth = 275
-            self.revealViewController().frontViewShadowRadius = 0
-            self.menuButton.target = self.revealViewController()
-            self.menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    func loadRecWeight(){
+        let table = Table("RecWeight")
+        let weight = Expression<Double>("weight")
+        for i in try! db.prepare(table.select(weight)) {
+            RecWeight = i[weight]
         }
+        print("weight loaded",RecWeight)
     }
     
+    func updateRecWeight(){
+        let table = Table("RecWeight")
+        let weight = Expression<Double>("weight")
+        try! db.run(table.delete())
+        try! db.run(table.insert(weight <- RecWeight))
+    }
+    
+    
     func loadWeight(){
-        var table = Table("WeightNote")
+        let table = Table("WeightNote")
         let date = Expression<String>("Date")
         let kg = Expression<Int64>("WeightKg")
         let gr = Expression<Int64>("WeightGr")
@@ -116,7 +141,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func setupGraphSettings() {
         // общие настройки
         self.lineChartView.descriptionText = "кг"
-        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 25)
+        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 15)
         self.lineChartView.descriptionFont = .systemFontOfSize(11)
         self.lineChartView.noDataText = "Для отображения графика"
         self.lineChartView.noDataTextDescription = "необходимо указать рост"
@@ -148,7 +173,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         
         // графики
         // нарисовать условно-рекомендуемый график
-        let dataEntries = self.getChartDataEntriesForRecommend(Double(50))
+        let dataEntries = self.getChartDataEntriesForRecommend(RecWeight)
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Условно-рекомендуемая норма")
         self.setRecommendSetStyle(lineChartDataSet)
         // нарисовать график фактического веса
@@ -165,9 +190,9 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         }
         
         // готово
-        let dataSets = [lineChartDataSetSecond, lineChartDataSet]
+        let dataSets = [lineChartDataSet, lineChartDataSetSecond]
         self.lineChartView.data = LineChartData(xVals: dataPoints, dataSets: dataSets)
-      }
+    }
     
     private func setRecommendSetStyle(lineChartDataSet: LineChartDataSet) {
         lineChartDataSet.setColor(BiruzaColor)
@@ -187,13 +212,33 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         lineChartDataSet.circleRadius = 6
         lineChartDataSet.valueFont = .systemFontOfSize(0)
     }
+    
     private func getChartDataEntriesForRecommend(weight: Double) -> [ChartDataEntry] {
         let weeks = self.getWeeks()
         var dataEntries: [ChartDataEntry] = []
-        if weights.count > 0{
+        if weight != 0 {
+            let dataEntry = ChartDataEntry(value: weight, xIndex: weeks[0])
+            dataEntries.append(dataEntry)
+            let growth_ = Double(growth)
+            let imt = Double( weight / (growth_/100 * growth_/100))
+            var IMT = [Double]()
+            if(imt < 18.5){
+                IMT = IMT0
+            }
+            else if (imt >= 25){
+                IMT = IMT2
+            }
+            else{
+                IMT = IMT1
+            }
+            for i in 1..<weeks.count {
+                let dataEntry = ChartDataEntry(value: weight + IMT[i-1], xIndex: weeks[i])
+                dataEntries.append(dataEntry)
+            }
+        }else if weights.count > 0 {
             var week = weights[0].week
             let growth_ = Double(growth)
-            var null_weight = Double(weights[0].kg + weights[0].gr/100)
+            var null_weight = Double(weights[0].kg + weights[0].gr/1000)
             let imt = Double( null_weight / (growth_/100 * growth_/100))
             var IMT = [Double]()
             if(imt < 18.5){
@@ -213,20 +258,12 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
              null_weight -= IMT[i]
              }*/
             null_weight -= IMT[week/2-1]
-            
+            print(null_weight)
             let dataEntry = ChartDataEntry(value: null_weight, xIndex: weeks[0])
             dataEntries.append(dataEntry)
             
             for i in 1..<weeks.count {
                 let dataEntry = ChartDataEntry(value: null_weight + IMT[i-1], xIndex: weeks[i])
-                dataEntries.append(dataEntry)
-            }
-        }else{
-            let dataEntry = ChartDataEntry(value: weight, xIndex: weeks[0])
-            dataEntries.append(dataEntry)
-            
-            for i in 1..<weeks.count {
-                let dataEntry = ChartDataEntry(value: weight + self.IMT2[i-1], xIndex: weeks[i])
                 dataEntries.append(dataEntry)
             }
         }
@@ -235,9 +272,10 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func getChartDataEntriesForFact(weight: Double, growth: Double) -> [ChartDataEntry] {
         let weeks = self.getWeeks()
         var dataEntries: [ChartDataEntry] = []
+        
         if weights.count > 0{
             for i in weights{
-                let dataEntry = ChartDataEntry(value: Double(i.kg+i.gr/100), xIndex: i.week)
+                let dataEntry = ChartDataEntry(value: Double(i.kg+i.gr/1000), xIndex: i.week)
                 dataEntries.append(dataEntry)
             }
         }else{
@@ -261,7 +299,18 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         return weeks
     }
 
-    
+    @IBAction func setweightbtn(sender: UIBarButtonItem) {
+        editingRecWeight = true
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("setweight") as! SetWeightViewController
+        var nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+        var popover = nav.popoverPresentationController
+        vc.preferredContentSize = CGSizeMake(700,800)
+        popover!.delegate = self
+        popover!.sourceView = self.view
+        //popover!.sourceRect = CGRectMake(100,100,0,0)
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
     
     @IBAction func setHeight(sender: UIBarButtonItem) {
         self.pickerViewTextField.becomeFirstResponder()
@@ -303,6 +352,42 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         return firstComponent[self.pickerView.selectedRowInComponent(0)]*100 + secondComponent[self.pickerView.selectedRowInComponent(1)]*10 + thirdComponent[self.pickerView.selectedRowInComponent(2)]
     }
     
+    @IBAction func setweightWithSegue(segue:UIStoryboardSegue) {
+        self.weightButton.title = RecWeight == 0 ? "Ваш вес" : "\(RecWeight) кг"
+        if RecWeight > 0{
+            setweight = false
+            print("weight settend")
+            updateRecWeight()
+            if editingRecWeight{
+                editingRecWeight = false
+                let graph = self.storyboard?.instantiateViewControllerWithIdentifier("WeightGraphNavigationController")
+                self.revealViewController().setFrontViewController(graph!, animated: true)
+            }else{
+                self.showoldalert()
+            }
+        }else{
+            print("null weight")
+            updateRecWeight()
+            let actionSheetController: UIAlertController = UIAlertController(title: "Вес на момент зачатия не введен", message: "В качестве начального веса будет использован первый введенный в Заметках вес. Это может привести к тому, что рассчет рекомендуемой нормы веса будет необъективен. Рекоменуется ввести вес на момент зачатия.", preferredStyle: .Alert)
+            
+            //Create and an option action
+            let nextAction: UIAlertAction = UIAlertAction(title: "ОК", style: .Default) { action -> Void in
+                //Do some other stuff
+                if editingRecWeight{
+                    editingRecWeight = false
+                    let graph = self.storyboard?.instantiateViewControllerWithIdentifier("WeightGraphNavigationController")
+                    self.revealViewController().setFrontViewController(graph!, animated: true)
+                }else{
+                    self.showoldalert()
+                }
+            }
+            actionSheetController.addAction(nextAction)
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        }
+    }
+    
     func doneButtonTouched() {
         self.pickerViewTextField.resignFirstResponder()
         growth = getGrowthFromPickerView()
@@ -312,32 +397,44 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         setupPickerViewValues()
         if growth > 0{
         //Create the AlertController
-            if #available(iOS 8.0, *) {
-                let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набора веса и отслеживать отклонения", preferredStyle: .Alert)
-                
-                //Create and add the Cancel action
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Отмена", style: .Cancel) { action -> Void in
-                    //Do some stuff
-                    let graph = self.storyboard?.instantiateViewControllerWithIdentifier("WeightGraphNavigationController")
-                    self.revealViewController().setFrontViewController(graph!, animated: true)
-                }
-                actionSheetController.addAction(cancelAction)
-                //Create and an option action
-                let nextAction: UIAlertAction = UIAlertAction(title: "Заметки", style: .Default) { action -> Void in
-                    //Do some other stuff
-                    let notes = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigationController")
-                    self.revealViewController().setFrontViewController(notes!, animated: true)
-                }
-                actionSheetController.addAction(nextAction)
-                
-                //Present the AlertController
-                self.presentViewController(actionSheetController, animated: true, completion: nil)
-            } else {
-                // Fallback on earlier versions
-            }
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("setweight") as! SetWeightViewController
+            var nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+            var popover = nav.popoverPresentationController
+            vc.preferredContentSize = CGSizeMake(700,800)
+            popover!.delegate = self
+            popover!.sourceView = self.view
+            //popover!.sourceRect = CGRectMake(100,100,0,0)
+            self.presentViewController(nav, animated: true, completion: nil)
         }else{
             let graph = self.storyboard?.instantiateViewControllerWithIdentifier("WeightGraphNavigationController")
             self.revealViewController().setFrontViewController(graph!, animated: true)
+        }
+    }
+    
+    func showoldalert(){
+        if #available(iOS 8.0, *) {
+            let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Теперь укажите свой вес в заметках, чтобы построить фактический график набора веса и отслеживать отклонения", preferredStyle: .Alert)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Отмена", style: .Cancel) { action -> Void in
+                //Do some stuff
+                let graph = self.storyboard?.instantiateViewControllerWithIdentifier("WeightGraphNavigationController")
+                self.revealViewController().setFrontViewController(graph!, animated: true)
+            }
+            actionSheetController.addAction(cancelAction)
+            //Create and an option action
+            let nextAction: UIAlertAction = UIAlertAction(title: "Заметки", style: .Default) { action -> Void in
+                //Do some other stuff
+                let notes = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigator")
+                self.revealViewController().setFrontViewController(notes!, animated: true)
+            }
+            actionSheetController.addAction(nextAction)
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
         }
     }
     

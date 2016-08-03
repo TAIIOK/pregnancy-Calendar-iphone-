@@ -183,6 +183,7 @@
 		8EDA32871D18252300EA58A9 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */; };
 		8EDA32881D18252300EA58A9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */; };
 		8EDA32891D18252300EA58A9 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDA32861D18252300EA58A9 /* VideosViewController.swift */; };
+		8EE7143B1D5291F700F27412 /* SetWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE7143A1D5291F700F27412 /* SetWeightViewController.swift */; };
 		8EEC0FF51D3CCEDC007EE019 /* ToAstMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC0FF41D3CCEDC007EE019 /* ToAstMessage.swift */; };
 		A018A97A1CB6733D0044830A /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */; };
 		A018A97B1CB6733D0044830A /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */; };
@@ -499,6 +500,7 @@
 		8EDA32841D18252300EA58A9 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EDA32851D18252300EA58A9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8EDA32861D18252300EA58A9 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		8EE7143A1D5291F700F27412 /* SetWeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetWeightViewController.swift; sourceTree = "<group>"; };
 		8EEC0FF41D3CCEDC007EE019 /* ToAstMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToAstMessage.swift; sourceTree = "<group>"; };
 		A018A95F1CB6733D0044830A /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		A018A9601CB6733D0044830A /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */,
 				02682D4A1C7F16BA0088F21B /* SpasmsViewController.swift */,
 				8E4C43C01CFC523000003AAB /* WeightDiagramViewController.swift */,
+				8EE7143A1D5291F700F27412 /* SetWeightViewController.swift */,
 				8E7355771D1BFB75008B8444 /* CalendarViewController.swift */,
 				8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */,
 				8E1450BC1D1986B100D234B2 /* ShareViewController.swift */,
@@ -1341,6 +1344,7 @@
 				8E4C43E01CFC52E300003AAB /* Connection.swift in Sources */,
 				8E4C43E91CFC52E300003AAB /* AggregateFunctions.swift in Sources */,
 				8E4C43E11CFC52E300003AAB /* SQLite-Bridging.m in Sources */,
+				8EE7143B1D5291F700F27412 /* SetWeightViewController.swift in Sources */,
 				A018A9931CB6733D0044830A /* CVShape.swift in Sources */,
 				8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */,
 				8E1450BD1D1986B100D234B2 /* ShareViewController.swift in Sources */,

@@ -5,6 +5,7 @@
         <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -852,12 +853,20 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="nOc-1G-5Fj">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Ваш рост" id="f5O-UH-G4L">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="setHeight:" destination="cT9-wb-cJe" id="9Aw-f6-p2t"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Ваш рост" id="f5O-UH-G4L">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="setHeight:" destination="cT9-wb-cJe" id="9Aw-f6-p2t"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Ваш вес" id="gCG-iR-vph">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="setweightbtn:" destination="cT9-wb-cJe" id="1SD-IB-BzP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="arrow" destination="5Us-ku-l8K" id="Bk0-jf-UUc"/>
@@ -866,6 +875,7 @@
                         <outlet property="lineChartView" destination="Csp-6A-dAW" id="pbe-Hu-GCg"/>
                         <outlet property="menuButton" destination="nOc-1G-5Fj" id="UUy-Ee-fFy"/>
                         <outlet property="weekDescription" destination="INK-3E-Fyb" id="j7B-5l-g88"/>
+                        <outlet property="weightButton" destination="gCG-iR-vph" id="Oeg-4k-OYi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-YC-tZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4865,6 +4875,137 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGm-H2-izQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4640" y="4030"/>
+        </scene>
+        <!--Set Weight View Controller-->
+        <scene sceneID="cbB-mq-H8p">
+            <objects>
+                <viewController storyboardIdentifier="setweight" id="Oou-ME-MFz" customClass="SetWeightViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wgH-K2-mGp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pn2-7a-GTi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LKU-cZ-iCe">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Введите свой вес" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpW-51-Zo6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YDG-48-omh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3op-qc-Qng">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="H5X-2n-2vH"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Введите свой вес на момент зачатия, для того чтобы рассчитать рекомендуемую норму">
+                                        <attributes>
+                                            <color key="NSColor" red="0.20107507705688477" green="0.66890472173690796" blue="0.62281012535095215" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Килограммы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MZ-Ce-W6M">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7k-tK-FUN">
+                                <rect key="frame" x="20" y="150" width="660" height="219"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcX-nk-Q90">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="kN3-d4-3RV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ОК">
+                                    <color key="titleColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="OK:" destination="Oou-ME-MFz" eventType="touchUpInside" id="Zy4-lF-bht"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-Rl-qsM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="L6M-5Z-d5w"/>
+                                    <constraint firstAttribute="height" constant="30" id="zRO-Nq-71R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ОТМЕНА">
+                                    <color key="titleColor" red="0.74539679290000005" green="0.1278242171" blue="0.36125546689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Cancel:" destination="Oou-ME-MFz" eventType="touchUpInside" id="bdy-mh-VVq"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-Fr-Mpz">
+                                <rect key="frame" x="20" y="405" width="660" height="284"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Граммы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTF-WZ-DKi">
+                                <rect key="frame" x="20" y="374" width="660" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9hh-kf-16x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="6MZ-Ce-W6M" secondAttribute="bottom" constant="3" id="0KJ-bk-hGb"/>
+                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="leading" secondItem="aAw-Fr-Mpz" secondAttribute="leading" id="2nG-iT-LuJ"/>
+                            <constraint firstItem="6MZ-Ce-W6M" firstAttribute="leading" secondItem="P7k-tK-FUN" secondAttribute="leading" id="5K0-0Q-FfS"/>
+                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="top" secondItem="P7k-tK-FUN" secondAttribute="bottom" constant="8" id="8cC-gW-KOX"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="trailing" secondItem="xTF-WZ-DKi" secondAttribute="trailing" id="CJv-eO-VWR"/>
+                            <constraint firstItem="RpW-51-Zo6" firstAttribute="top" secondItem="wgH-K2-mGp" secondAttribute="bottom" constant="8" symbolic="YES" id="DBA-Qz-kTU"/>
+                            <constraint firstItem="6MZ-Ce-W6M" firstAttribute="trailing" secondItem="P7k-tK-FUN" secondAttribute="trailing" id="E4c-6d-ZRL"/>
+                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="top" secondItem="P7k-tK-FUN" secondAttribute="bottom" constant="5" id="G55-n4-mPV"/>
+                            <constraint firstItem="RpW-51-Zo6" firstAttribute="leading" secondItem="3op-qc-Qng" secondAttribute="leading" id="HoD-19-2Tf"/>
+                            <constraint firstItem="RpW-51-Zo6" firstAttribute="trailing" secondItem="LKU-cZ-iCe" secondAttribute="trailingMargin" id="I4N-Gd-LrY"/>
+                            <constraint firstItem="RpW-51-Zo6" firstAttribute="leading" secondItem="LKU-cZ-iCe" secondAttribute="leadingMargin" id="I9x-5e-cwq"/>
+                            <constraint firstItem="aAw-Fr-Mpz" firstAttribute="top" secondItem="xTF-WZ-DKi" secondAttribute="bottom" constant="10" id="IQ9-4k-z3y"/>
+                            <constraint firstItem="3op-qc-Qng" firstAttribute="leading" secondItem="6MZ-Ce-W6M" secondAttribute="leading" id="Ms7-16-dzP"/>
+                            <constraint firstItem="PRl-Rl-qsM" firstAttribute="baseline" secondItem="bcX-nk-Q90" secondAttribute="firstBaseline" id="QLx-9j-ADA"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="leading" secondItem="LKU-cZ-iCe" secondAttribute="leadingMargin" id="TOY-yR-RWk"/>
+                            <constraint firstItem="RpW-51-Zo6" firstAttribute="trailing" secondItem="3op-qc-Qng" secondAttribute="trailing" id="UZN-rq-vZx"/>
+                            <constraint firstAttribute="bottom" secondItem="PRl-Rl-qsM" secondAttribute="bottom" constant="20" symbolic="YES" id="X8c-kN-aZs"/>
+                            <constraint firstItem="PRl-Rl-qsM" firstAttribute="top" secondItem="bcX-nk-Q90" secondAttribute="top" id="XCk-MT-Dde"/>
+                            <constraint firstItem="3op-qc-Qng" firstAttribute="trailing" secondItem="6MZ-Ce-W6M" secondAttribute="trailing" id="Znh-Kt-DW0"/>
+                            <constraint firstItem="bcX-nk-Q90" firstAttribute="baseline" secondItem="PRl-Rl-qsM" secondAttribute="firstBaseline" id="cQ2-Qj-gp3"/>
+                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="trailing" secondItem="aAw-Fr-Mpz" secondAttribute="trailing" id="fOB-6l-c5T"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="leading" secondItem="xTF-WZ-DKi" secondAttribute="leading" id="mvH-y4-cXk"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="trailing" secondItem="LKU-cZ-iCe" secondAttribute="trailingMargin" id="q7M-fx-FiQ"/>
+                            <constraint firstItem="aAw-Fr-Mpz" firstAttribute="trailing" secondItem="bcX-nk-Q90" secondAttribute="trailing" id="qr6-0I-pv0"/>
+                            <constraint firstItem="3op-qc-Qng" firstAttribute="top" secondItem="RpW-51-Zo6" secondAttribute="bottom" constant="8" symbolic="YES" id="rxz-IB-0Eg"/>
+                            <constraint firstItem="aAw-Fr-Mpz" firstAttribute="centerX" secondItem="PRl-Rl-qsM" secondAttribute="centerX" id="sHL-m7-Czg"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="6MZ-Ce-W6M" secondAttribute="bottom" constant="3" id="wXl-cA-U5d"/>
+                            <constraint firstItem="PRl-Rl-qsM" firstAttribute="top" secondItem="aAw-Fr-Mpz" secondAttribute="bottom" constant="61" id="z5f-XR-ndM"/>
+                            <constraint firstItem="6MZ-Ce-W6M" firstAttribute="top" secondItem="3op-qc-Qng" secondAttribute="bottom" constant="8" symbolic="YES" id="znf-cq-Ad2"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="700" height="800"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="800"/>
+                    <connections>
+                        <outlet property="grammpicker" destination="aAw-Fr-Mpz" id="DqO-Bz-qHj"/>
+                        <outlet property="kgpicker" destination="P7k-tK-FUN" id="EsK-OF-xPo"/>
+                        <segue destination="JLI-Vx-w9u" kind="unwind" identifier="setweight" unwindAction="setweightWithSegue:" id="2Y2-5Q-dck"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SW2-bQ-v97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JLI-Vx-w9u" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3254" y="-305"/>
         </scene>
     </scenes>
     <resources>
