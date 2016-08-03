@@ -342,8 +342,11 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         }
                     }
 
-                    
+                    self.view.endEditing(true)
                     tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
+                    let headerview = tbl.viewWithTag(i) as? DoctorHeader
+                    headerview?.setopen(true)
+                    headerview?.changeFields()
                     break
                 }
             }
@@ -351,6 +354,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func sectionHeaderTapped(recognizer: UITapGestureRecognizer) {
+        
         print("Tapping working")
         print(recognizer.view?.tag)
         
@@ -386,7 +390,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func loadtime(recognizer: UITapGestureRecognizer){
-        
+        save()
         
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
@@ -424,6 +428,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func loadnotifilist(recognizer: UITapGestureRecognizer){
+        save()
         
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
@@ -517,8 +522,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
         let headerview = tbl.viewWithTag(currentRec) as? DoctorHeader
         headerview?.setopen(true)
-        headerview?.changeFields()
-    }
+        headerview?.changeFields()    }
     
     @IBAction func UpdateSection(segue:UIStoryboardSegue) {
         print("Update Notifi")

@@ -203,6 +203,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -304,9 +305,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do something serious in a real app.
         //print("Received Local Notification:")
         //print(notification.alertBody)
-        if UIApplication.sharedApplication().applicationIconBadgeNumber > 0 {
-            UIApplication.sharedApplication().applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber - 1
-        }
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         let  state = application.applicationState
         
         if (state == UIApplicationState.Active) {
@@ -326,52 +325,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             alert.addAction(open)
                         }
                     }
-                    /*switch key {
-                     case "92":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=54&TID=1947&TITLE_SEO=1947&MID=18262#message18262")!) } )
-                     alert.addAction(open)
-                     case "203":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=read&FID=8&TID=2873&TITLE_SEO=2873")!) } )
-                     alert.addAction(open)
-                     case "155":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=54&TID=2457&TITLE_SEO=2457&MID=22350#message22350")!) } )
-                     alert.addAction(open)
-                     case "165":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=54&TID=2457&TITLE_SEO=2457&MID=22350#message22350")!) } )
-                     alert.addAction(open)
-                     case "271":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=read&FID=8&TID=3686&TITLE_SEO=3686")!) } )
-                     alert.addAction(open)
-                     case "203":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=read&FID=8&TID=3686&TITLE_SEO=3686")!) } )
-                     alert.addAction(open)
-                     case "210":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=39&TID=1221&TITLE_SEO=1221&MID=12419#message12419")!) } )
-                     alert.addAction(open)
-                     case "22":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=42&TID=659&TITLE_SEO=659&MID=5299#message5299")!) } )
-                     alert.addAction(open)
-                     case "57":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=42&TID=659&TITLE_SEO=659&MID=5299#message5299")!) } )
-                     alert.addAction(open)
-                     case "71":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=42&TID=659&TITLE_SEO=659&MID=5299#message5299")!) } )
-                     alert.addAction(open)
-                     case "267":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=39&TID=1221&TITLE_SEO=1221&MID=12419#message12419")!) } )
-                     alert.addAction(open)
-                     case "273":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=read&FID=8&TID=3686&TITLE_SEO=3686")!) } )
-                     alert.addAction(open)
-                     case "247":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=read&FID=38&TID=603&TITLE_SEO=603&PAGEN_1=2")!) } )
-                     alert.addAction(open)
-                     case "120":
-                     let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.aist-k.com/forum/?PAGE_NAME=message&FID=31&TID=4325&TITLE_SEO=4325&MID=42669#message42669")!) } )
-                     alert.addAction(open)
-                     default:
-                     break
-                     }*/
+
                     let close = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
                     
                     alert.addAction(close)
@@ -425,6 +379,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             self.window!.makeKeyAndVisible()
                         } )
                         alert.addAction(read)
+                    } else if(key == "-2"){
+                        let read = UIAlertAction(title: "Читать далее", style: .Default, handler: { (_) in
+                            opennotifi = true
+                            fromCalendar = true
+                            loadBirthDate()
+                            var newBirthDate = BirthDate
+                            if dateType == 0{
+                                newBirthDate = addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*38)
+                            }
+                            else if dateType == 1{
+                                newBirthDate  = addDaystoGivenDate(BirthDate, NumberOfDaysToAdd: 7*40)
+                            }
+                            
+                            newBirthDate = (addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(40*7)))
+                            
+                            newBirthDate = (addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: 1))
+                            dateFromOpenNotifi = newBirthDate
+                            noteText[0] = "Общая информация"
+                            noteText[1] = notification.alertBody!
+                            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                            let rootViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("MasterView") as UIViewController
+                            let detailViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("ExperienceViewController") as UIViewController
+                            var rootNavigationController = UINavigationController(rootViewController:rootViewController) //ExperienceNavigationController ExperienceViewController
+                            let detailNavigationController = UINavigationController(rootViewController:detailViewController)
+                            let splitViewController = SWRevealViewController(rearViewController: rootViewController, frontViewController: detailNavigationController)
+                            //splitViewController.viewControllers = [rootViewController,detailNavigationController]
+                            self.window!.rootViewController = splitViewController
+                            self.window!.makeKeyAndVisible()
+                        } )
+                        alert.addAction(read)
                     }
                 }
                 
@@ -434,48 +419,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
                 
             }
-            
-            /*else if(notification.alertBody!.contains("http://www.mama-fest.com/issledovaniya_akusherov_ginekologov/")){
-             
-             let   alert =  UIAlertController(title: "", message: notification.alertBody, preferredStyle: .Alert)
-             let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
-             
-             alert.addAction(ok)
-             
-             let open = UIAlertAction(title: "Перейти", style: .Default, handler: { (_) in UIApplication.sharedApplication().openURL(NSURL(string: "http://www.mama-fest.com/issledovaniya_akusherov_ginekologov/")!) } )
-             alert.addAction(open)
-             
-             self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-             }
-             else
-             {
-             let   alert =  UIAlertController(title: "", message: notification.alertBody, preferredStyle: .Alert)
-             let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
-             
-             if(notification.userInfo?.first != nil)
-             {
-             let key = notification.userInfo?.first?.1 as! String
-             if(key == "-1"){
-             let read = UIAlertAction(title: "Читать далее", style: .Default, handler: { (_) in
-             MasterViewSelectedRow = 8
-             noteText[1] = notification.alertBody!
-             //let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-             let destinationViewController = self.window?.rootViewController?.storyboard!.instantiateViewControllerWithIdentifier("advertising")
-             //print(destinationViewController)
-             self.window?.rootViewController!.navigationController?.pushViewController(destinationViewController!, animated: true)
-             
-             } )
-             alert.addAction(read)
-             }
-             }
-             
-             
-             alert.addAction(ok)
-             
-             self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-             }*/
-            
-            
+           
         }
         
     }

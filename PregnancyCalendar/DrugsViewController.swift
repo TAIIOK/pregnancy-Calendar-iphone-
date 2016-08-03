@@ -418,7 +418,11 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
         
                     }
+                    self.view.endEditing(true)
                     tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
+                    let headerview = tbl.viewWithTag(i) as? DoctorHeader
+                    headerview?.setopen(true)
+                    headerview?.changeFields()
                     break
                 }
             }
@@ -466,7 +470,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func loadtime(recognizer: UITapGestureRecognizer){
-        
+        save()
         
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
@@ -500,6 +504,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func loadnotifilist(recognizer: UITapGestureRecognizer){
+        save()
         
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
@@ -531,6 +536,8 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func loadstartdate(recognizer: UITapGestureRecognizer){
+        save()
+        
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
             if let swipedCell = self.tbl.cellForRowAtIndexPath(swipedIndexPath) as? DrugsTableViewCell {
@@ -563,6 +570,8 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func loadenddate(recognizer: UITapGestureRecognizer){
+        save()
+        
         let swipeLocation = recognizer.locationInView(self.tbl)
         if let swipedIndexPath = tbl.indexPathForRowAtPoint(swipeLocation) {
             if let swipedCell = self.tbl.cellForRowAtIndexPath(swipedIndexPath) as? DrugsTableViewCell {
@@ -692,7 +701,6 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         */
         drugs[currentRec-1].interval = changeRemindInCurRec
-        //tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
         self.view.endEditing(true)
         tbl.reloadSections(NSIndexSet(index: currentRec), withRowAnimation: .None)
         let headerview = tbl.viewWithTag(currentRec) as? DoctorHeader

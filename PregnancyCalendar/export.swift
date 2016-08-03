@@ -11,15 +11,18 @@ import UIKit
 
 
 class PhotoTemp: UIView {
-
     @IBOutlet weak var CenterImageView: UIImageView!
     
     @IBOutlet weak var Title: UILabel!
     func setContent(Photo: UIImage, title: String)
     {
-    CenterImageView.image = Photo
-    Title.text = title
-        
+        CenterImageView.frame.size.width = Photo.size.width
+        CenterImageView.frame.size.height = Photo.size.height
+        CenterImageView.image = Photo
+        CenterImageView.backgroundColor = .whiteColor()
+        CenterImageView.center = (CenterImageView.superview?.center)!
+        CenterImageView.center.y -= 20
+        Title.text = title
     }
 
 }
@@ -42,9 +45,13 @@ class PhotoTemplate:UIView{
     
     
     func xibSetup(Photo: UIImage, title: String) {
+        //w 553 h 509
+        let x = Double(Photo.size.height)/Double(600)
+        let y = Double(Photo.size.width)/Double(550)
+        let scale = x > y ? x : y
+        let a = UIImage(CGImage: Photo.CGImage!, scale: CGFloat(scale), orientation: UIImageOrientation.Down)
         let view1 = loadViewFromNib("PhotoTemplate") as! PhotoTemp
-        
-        view1.setContent(Photo,title: title )
+        view1.setContent(a,title: title )
         
         frameSetup(view1)
         
@@ -54,7 +61,6 @@ class PhotoTemplate:UIView{
     func frameSetup(view : UIView)
     {
         view.frame = CGRectMake(0 , 0, self.frame.width, self.frame.height)
-        
         // use bounds not frame or it'll be offset
         view.frame = bounds
         

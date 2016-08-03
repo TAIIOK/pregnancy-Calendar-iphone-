@@ -35,7 +35,8 @@ class DoctorHeader: UIView {
         self.doctorname  = UILabel(frame: CGRect(x: 105, y: 10, width: 210, height: 30))
         self.doctornameText = UITextField(frame: CGRect(x: 105, y: 10, width: 210, height: 30))
         self.doctornameText.hidden = true
-        
+        self.doctornameText.layer.borderWidth = 0.5
+        self.doctornameText.layer.borderColor = StrawBerryColor.CGColor
         self.deletecross = UIImageView()
         self.deletecross.image = UIImage(named: "Delete-30 (1)")!
         self.deletecross.frame =  CGRectMake(10,15,20,20)

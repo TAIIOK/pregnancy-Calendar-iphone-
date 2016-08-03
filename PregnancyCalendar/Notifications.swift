@@ -29,26 +29,26 @@ let urlnotifies = ["http://www.aist-k.com/forum/?PAGE_NAME=message&FID=54&TID=19
 var notifications = [notification]()
 
 /*func WorkWithJSON(){
- if notifications.count == 0{
- if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
- do {
- let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
- do {
- let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
- if let Man : [NSDictionary] = jsonResult["reminder"] as? [NSDictionary] {
- for mans: NSDictionary in Man {
- let day = mans.valueForKey("день")
- day!.dataUsingEncoding(NSUTF8StringEncoding)
- if let d = day {
- notifications.append(notifi(day: d as! String, generalInformation: "\(mans.valueForKey("Общая информация")!)", healthMother: "\(mans.valueForKey("Здоровье мамы")!)", healthBaby: "\(mans.valueForKey("Здоровье малыша")!)", food: "\(mans.valueForKey("питание")!)", important: "\(mans.valueForKey("Это важно!")!)", HidenAdvertisment: "\(mans.valueForKey("Скрытая реклама")!)", advertisment: "\(mans.valueForKey("реклама ФЭСТ")!)", reflectionsPregnant: "\(mans.valueForKey("размышления беременной")!)"))
- }
- }
- }
- } catch {}
- } catch {}
- }
- }
- }*/
+    if notifications.count == 0{
+        if let path = NSBundle.mainBundle().pathForResource("notifi", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                do {
+                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    if let Man : [NSDictionary] = jsonResult["reminder"] as? [NSDictionary] {
+                        for mans: NSDictionary in Man {
+                            let day = mans.valueForKey("день")
+                            day!.dataUsingEncoding(NSUTF8StringEncoding)
+                            if let d = day {
+                                notifications.append(notifi(day: d as! String, generalInformation: "\(mans.valueForKey("Общая информация")!)", healthMother: "\(mans.valueForKey("Здоровье мамы")!)", healthBaby: "\(mans.valueForKey("Здоровье малыша")!)", food: "\(mans.valueForKey("питание")!)", important: "\(mans.valueForKey("Это важно!")!)", HidenAdvertisment: "\(mans.valueForKey("Скрытая реклама")!)", advertisment: "\(mans.valueForKey("реклама ФЭСТ")!)", reflectionsPregnant: "\(mans.valueForKey("размышления беременной")!)"))
+                            }
+                        }
+                    }
+                } catch {}
+            } catch {}
+        }
+    }
+}*/
 
 func addDaystoGivenDate(baseDate: NSDate, NumberOfDaysToAdd: Int) -> NSDate
 {
@@ -76,7 +76,8 @@ func calculateDay(date: NSDate) -> Int{
 }
 
 func loadNotifi() {
-    
+    print("-----------do-------")
+    allnotif()
     cancelAllLocalNotification()
     UIApplication.sharedApplication().applicationIconBadgeNumber = 1
     UIApplication.sharedApplication().applicationIconBadgeNumber = 0
@@ -95,15 +96,13 @@ func loadNotifi() {
     
     let num = (addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(40*7)))
     
-    
+
     let app: UIApplication = UIApplication.sharedApplication()
-    
-    
-    
+
+  
+   
     var Notificalendar = NSDate()
-    
-    
-    //WorkWithJSON()
+
     notifications.removeAll()
     let table = Table("Notification")
     let Day = Expression<Int64>("Day")
@@ -117,41 +116,36 @@ func loadNotifi() {
     if day < 0{
         day = 0
     }
-    
-    /*if day > 0{
-     var notification = ""
-     var titles = ""
-     notification = notifications[0].text
-     titles = notifiCategory[notifications[0].category]
-     
-     let components = calendar.components([.Day , .Month , .Year], fromDate: Notificalendar)
-     
-     let localNotification = UILocalNotification()
-     if components.hour > 12{
-     localNotification.fireDate = NSDate(timeIntervalSinceNow: 60) // время получения уведомления
-     }
-     else {
-     components.hour = 12
-     components.minute = 0
-     Notificalendar = calendar.dateFromComponents(components)!
-     localNotification.fireDate = Notificalendar // время получения уведомления
-     }
-     
-     localNotification.alertBody = notification
-     if #available(iOS 8.2, *) {
-     localNotification.alertTitle = titles
-     } else {
-     // Fallback on earlier versions
-     }
-     
-     let infoDict :  Dictionary<String,String!> = ["objectId" : "-1"]
-     localNotification.userInfo = infoDict
-     localNotification.alertAction = "View"
-     localNotification.timeZone = NSTimeZone.defaultTimeZone()
-     localNotification.soundName = UILocalNotificationDefaultSoundName;
-     // localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
-     UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-     }*/
+
+    if day == 0 || day > 1{
+        var notification = ""
+        var titles = ""
+        notification = notifications[0].text
+        titles = notifiCategory[notifications[0].category]
+        
+        let components = calendar.components([.Day , .Month , .Year], fromDate: Notificalendar)
+        
+        let localNotification = UILocalNotification()
+        if components.hour > 12{
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 30) // время получения уведомления
+        }
+        else {
+            components.hour = 12
+            components.minute = 0
+            Notificalendar = calendar.dateFromComponents(components)!
+            localNotification.fireDate = Notificalendar // время получения уведомления
+        }
+        
+        localNotification.alertBody = notification
+        
+        let infoDict :  Dictionary<String,String!> = ["objectId" : "-2"]
+        localNotification.userInfo = infoDict
+        localNotification.alertAction = "View"
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
     for (var i = day; i <=  300; i += 1){
         var notification = [String]()
         var titles = [Int]()
@@ -162,7 +156,7 @@ func loadNotifi() {
             }
         }
         notification.append("\(i)")
-        
+
         let components = calendar.components([.Day , .Month , .Year], fromDate: Notificalendar)
         
         for (var j = 0 ; j < notification.count-1 ; j += 1){
@@ -181,15 +175,10 @@ func loadNotifi() {
             {
                 continue
             }
-            
+
             
             localNotification.alertBody = notification[j]
-            if #available(iOS 8.2, *) {
-                //localNotification.alertTitle = titles[j]
-            } else {
-                // Fallback on earlier versions
-            }
-            
+
             if(lolnotifies.contains(notification[notification.count-1]) && (titles[j] == 5 || titles[j] == 6))
             {
                 let infoDict :  Dictionary<String,String!> = ["objectId" : notification[notification.count-1]]
@@ -210,21 +199,25 @@ func loadNotifi() {
         titles.removeAll()
         Notificalendar = addDaystoGivenDate(Notificalendar,NumberOfDaysToAdd: 1)
     }
+    print("-----------posle-------")
     allnotif()
 }
 
 func allnotif(){
+    var count = 0
     guard
         let app: UIApplication = UIApplication.sharedApplication(),
         let notifications = app.scheduledLocalNotifications else { return }
     for notification in notifications {
-        print(notification.userInfo as? [String: String],notification.alertBody!)
+        count += 1
+        //print(notification.userInfo as? [String: String],notification.alertBody!)
     }
+    print("count = \(count)")
 }
 
 
 func cancelAllLocalNotification(){
-    let list = ["-1","36","44","52","57","59","64","71","77","78","80","85","92","98","106","112","115","138","141","149","162","176","197","200","204","205","209","215","228","241","244","253","260","22","50","61","99","102","106","113","120","127","134","148","151","155","165","169","183","190","194","210","217","224","226","232","239","252","261","265","267"]
+    let list = ["-2","-1","36","44","52","57","59","64","71","77","78","80","85","92","98","106","112","115","138","141","149","162","176","197","200","204","205","209","215","228","241","244","253","260","22","50","61","99","102","106","113","120","127","134","148","151","155","165","169","183","190","194","210","217","224","226","232","239","252","261","265","267"]
     
     guard
         let app: UIApplication = UIApplication.sharedApplication(),
@@ -236,7 +229,7 @@ func cancelAllLocalNotification(){
             let uid: [String: String] = userInfo as? [String: String] where list.contains(uid["objectId"]!)
         {
             app.cancelLocalNotification(notification)
-            print("Deleted local notification for '\(uid["objectId"]!)'")
+            //print("Deleted local notification for '\(uid["objectId"]!)'")
         }
     }
     print("All local notification deleted")
@@ -244,20 +237,20 @@ func cancelAllLocalNotification(){
 
 
 func cancelLocalNotification(uniqueId: String){
-    
+
     guard
         let app: UIApplication = UIApplication.sharedApplication(),
         let notifications = app.scheduledLocalNotifications else { return }
     for notification in notifications {
-        
+
         if
             let userInfo = notification.userInfo,
             let uid: [String: String] = userInfo as? [String: String] where uid["objectId"] == uniqueId {
             app.cancelLocalNotification(notification)
             print("Deleted local notification for '\(uniqueId)'")
         }
-        
-        
+       
+
     }
 }
 
