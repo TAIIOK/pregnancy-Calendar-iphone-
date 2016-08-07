@@ -153,6 +153,9 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         }
     }
     
+    @IBAction func export(segue:UIStoryboardSegue) {
+        FallBack()
+    }
     func FallBack(){
         //let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ExportNav")
         //let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("MasterView")

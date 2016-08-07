@@ -46,10 +46,10 @@ class PhotoTemplate:UIView{
     
     func xibSetup(Photo: UIImage, title: String) {
         //w 553 h 509
-        let x = Double(Photo.size.height)/Double(600)
+        let x = Double(Photo.size.height)/Double(450)
         let y = Double(Photo.size.width)/Double(550)
         let scale = x > y ? x : y
-        let a = UIImage(CGImage: Photo.CGImage!, scale: CGFloat(scale), orientation: UIImageOrientation.Down)
+        let a = UIImage(CGImage: Photo.CGImage!, scale: CGFloat(scale), orientation: UIImageOrientation.Up)
         let view1 = loadViewFromNib("PhotoTemplate") as! PhotoTemp
         view1.setContent(a,title: title )
         
