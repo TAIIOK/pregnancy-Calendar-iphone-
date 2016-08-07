@@ -30,6 +30,9 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
         CurrentScrollView.delegate = self
         CurrentScrollView.userInteractionEnabled = true
         CurrentScrollView.scrollEnabled = true
+        CurrentScrollView.minimumZoomScale = 0.1
+        CurrentScrollView.maximumZoomScale = 2
+        CurrentScrollView.bouncesZoom = true
         //loadExportImages()
         sharingExportVk = true
         self.view.makeToastActivityWithMessage(message: "Пожалуйста, подождите.", addOverlay: true)
@@ -38,8 +41,17 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
             self.view.hideToastActivity()
             return
         })
-
+        
     }
+    
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+        print("zooming")
+    }
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        print("scroll zooming")
+        return nil
+    }
+    
     
     override func viewDidDisappear(animated: Bool) {
         sharingExportVk  = false
@@ -52,15 +64,24 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
         selectedImages.removeAll()
         CurrentScrollView.removeAllSubviews()
         let height =  CGFloat(integerLiteral:  620 * AllExportNotes.count + 620 )
-         CurrentScrollView.contentSize = CGSizeMake(700 , height)
-        
+         CurrentScrollView.contentSize = CGSizeMake(700 / 2 , height / 2)
         var y = CGFloat(integerLiteral: 0)
-        
         if(segmenttype){
-            CurrentScrollView.addSubview(CreateTitleBlue())
+            let a = CreateTitleBlue()
+            a.bounds.size.width = a.bounds.size.width / 2
+            a.bounds.size.height = a.bounds.size.height / 2
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: a.bounds.size.width, height: a.bounds.size.height))
+            imageView.image = a.image
+            CurrentScrollView.addSubview(imageView)
             selectedImages.append(CreateTitleBlue().image!)}
         else{
-            CurrentScrollView.addSubview(CreateTitlePink())
+            let a = CreateTitlePink()
+            a.bounds.size.width = a.bounds.size.width / 2
+            a.bounds.size.height = a.bounds.size.height / 2
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: a.bounds.size.width, height: a.bounds.size.height))
+            imageView.image = a.image
+            CurrentScrollView.addSubview(imageView)
+
             selectedImages.append(CreateTitlePink().image!)}
         
         y += 20
@@ -121,7 +142,12 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
                     image.frame.origin.y = image.frame.height + y
                     y += image.frame.height
                 }
-                CurrentScrollView.addSubview(image)
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 300))
+                imageView.frame.origin.y = 310 * CGFloat(CurrentScrollView.subviews.count)
+                imageView.image = image.image
+
+                CurrentScrollView.addSubview(imageView)
+                //CurrentScrollView.addSubview(image)
                 y += 20
                 selectedImages.append(image.image!)
 
@@ -166,7 +192,12 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
                             image.frame.origin.y = image.frame.height + y
                             y += image.frame.height
                         }
-                        CurrentScrollView.addSubview(image)
+                        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 300))
+                        imageView.frame.origin.y = 310 * CGFloat(CurrentScrollView.subviews.count)
+                        imageView.image = image.image
+                        
+                        CurrentScrollView.addSubview(imageView)
+                        //CurrentScrollView.addSubview(image)
                         selectedImages.append(image.image!)
                         y += 20
                     }
@@ -203,7 +234,12 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
                             image.frame.origin.y = image.frame.height + y
                              y += image.frame.height
                         }
-                        CurrentScrollView.addSubview(image)
+                        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 300))
+                        imageView.frame.origin.y = 310 * CGFloat(CurrentScrollView.subviews.count)
+                        imageView.image = image.image
+                        
+                        CurrentScrollView.addSubview(imageView)
+                        //CurrentScrollView.addSubview(image)
                         selectedImages.append(image.image!)
                         y += 20
                     }
@@ -244,7 +280,12 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
                             image.frame.origin.y = image.frame.height + y
                              y += image.frame.height
                         }
-                        CurrentScrollView.addSubview(image)
+                        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 300))
+                        imageView.frame.origin.y = 310 * CGFloat(CurrentScrollView.subviews.count)
+                        imageView.image = image.image
+                        
+                        CurrentScrollView.addSubview(imageView)
+                        //CurrentScrollView.addSubview(image)
                         selectedImages.append(image.image!)
                         y += 20
                         
@@ -287,7 +328,12 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
                         image.frame.origin.y = image.frame.height + y
                          y += image.frame.height
                     }
-                    CurrentScrollView.addSubview(image)
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 300))
+                imageView.frame.origin.y = 310 * CGFloat(CurrentScrollView.subviews.count)
+                imageView.image = image.image
+                
+                CurrentScrollView.addSubview(imageView)
+                //CurrentScrollView.addSubview(image)
                     selectedImages.append(image.image!)
                     y += 20
    
