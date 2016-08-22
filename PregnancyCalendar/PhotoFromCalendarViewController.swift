@@ -42,8 +42,8 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let date = selectedCalendarDate
-        self.presentedDateUpdated(CVDate(date: date))
+        let date = selectedCalendarDayPhoto.date.convertedDate()
+        self.presentedDateUpdated(CVDate(date: date!))
 
         picker.delegate=self
         let a = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(PhotoFromCalendarViewController.openCamera))
@@ -54,8 +54,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         a.tintColor = UIColor.whiteColor()
         b.tintColor = UIColor.whiteColor()
         self.navigationItem.setRightBarButtonItems([a,b], animated: true)
-        loadPhoto(date)
-        self.calendarView.toggleViewWithDate(selectedCalendarDate)
+        loadPhoto(date!)
     }
     
     func Cancel(){
@@ -209,9 +208,9 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let date = CVDate(date: selectedCalendarDate)
+        let  date = selectedCalendarDayPhoto.date
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
-        controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        //controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
         self.calendarView.toggleViewWithDate(selectedCalendarDayPhoto.date.convertedDate()!)
     }
 

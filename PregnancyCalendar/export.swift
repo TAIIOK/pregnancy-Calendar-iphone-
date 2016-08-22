@@ -24,7 +24,7 @@ class PhotoTemp: UIView {
         CenterImageView.center.y -= 20
         Title.text = title
     }
-
+    
 }
 
 
@@ -57,7 +57,7 @@ class PhotoTemplate:UIView{
         
     }
     
-  
+    
     func frameSetup(view : UIView)
     {
         view.frame = CGRectMake(0 , 0, self.frame.width, self.frame.height)
@@ -88,7 +88,7 @@ class TwoPhotoBlue: UIView{
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-
+    
     func setContent(left: UIImage,right: UIImage, title: String,leftText : String, rightText: String){
         rotateViews()
         
@@ -97,12 +97,12 @@ class TwoPhotoBlue: UIView{
         leftImage.image = LeftView.screenshot
         if(left != right)
         {
-        let RightView = PhotoTemplate(frame: CGRect(x: leftImage.frame.origin.x, y: leftImage.frame.origin.y, width: 600, height: 700))
-        RightView.xibSetup(right,title: rightText)
-        rightImage.image = RightView.screenshot
+            let RightView = PhotoTemplate(frame: CGRect(x: leftImage.frame.origin.x, y: leftImage.frame.origin.y, width: 600, height: 700))
+            RightView.xibSetup(right,title: rightText)
+            rightImage.image = RightView.screenshot
         }
         titleLabel.text = title
-
+        
     }
     
     func rotateViews(){
@@ -119,13 +119,13 @@ class TextWithTwoPhotoBlue: UIView{
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var CenterTextView: UITextView!
     
-    func setContent(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String ){
+    func setContent(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString ){
         
         rotateViews()
         if(UpPhoto != DownPhoto){
-        let PhotoUPView = PhotoTemplate(frame: CGRect(x: UpPhotoView.frame.origin.x, y: UpPhotoView.frame.origin.y, width: 600, height: 700))
-        PhotoUPView.xibSetup(UpPhoto,title: UpText)
-        UpPhotoView.image = PhotoUPView.screenshot
+            let PhotoUPView = PhotoTemplate(frame: CGRect(x: UpPhotoView.frame.origin.x, y: UpPhotoView.frame.origin.y, width: 600, height: 700))
+            PhotoUPView.xibSetup(UpPhoto,title: UpText)
+            UpPhotoView.image = PhotoUPView.screenshot
         }
         let PhotoDownView = PhotoTemplate(frame: CGRect(x: DownPhotoView.frame.origin.x, y: DownPhotoView.frame.origin.y, width: 600, height: 700))
         
@@ -133,15 +133,14 @@ class TextWithTwoPhotoBlue: UIView{
         DownPhotoView.image = PhotoDownView.screenshot
         
         TitleLabel.text = Title
-        CenterTextView.text = CenterText
-
+        CenterTextView.attributedText = CenterText
     }
     
     func rotateViews(){
         UpPhotoView.rotate(degrees: -11)
         DownPhotoView.rotate(degrees: 7)
     }
-
+    
 }
 
 
@@ -149,19 +148,19 @@ class TextOnlyBlue: UIView{
     
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var CenterTextView: UITextView!
-    func setContent(Title : String, CenterText: String){
+    func setContent(Title : String, CenterText: NSMutableAttributedString){
         TitleLabel.text = Title
-        CenterTextView.text = CenterText
+        CenterTextView.attributedText = CenterText
     }
     
 }
 
 class TwoPhotoPink: UIView{
- 
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var leftImage: UIImageView!
-
+    
     func setContent(left: UIImage,right: UIImage, title: String,leftText : String, rightText: String){
         rotateViews()
         
@@ -169,13 +168,13 @@ class TwoPhotoPink: UIView{
         LeftView.xibSetup(left,title: leftText)
         leftImage.image = LeftView.screenshot
         if(left != right){
-        let RightView = PhotoTemplate(frame: CGRect(x: leftImage.frame.origin.x, y: leftImage.frame.origin.y, width: 600, height: 700))
-        RightView.xibSetup(right,title: rightText)
-        rightImage.image = RightView.screenshot
+            let RightView = PhotoTemplate(frame: CGRect(x: leftImage.frame.origin.x, y: leftImage.frame.origin.y, width: 600, height: 700))
+            RightView.xibSetup(right,title: rightText)
+            rightImage.image = RightView.screenshot
         }
         
         titleLabel.text = title
-
+        
     }
     
     func rotateViews(){
@@ -193,23 +192,23 @@ class TextWithTwoPhotoPink: UIView{
     @IBOutlet weak var UpPhotoView: UIImageView!
     @IBOutlet weak var DownPhotoView: UIImageView!
     
-    func setContent(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String ){
+    func setContent(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString ){
         
         rotateViews()
         
         if(UpPhoto != DownPhoto){
-        let PhotoUPView = PhotoTemplate(frame: CGRect(x: UpPhotoView.frame.origin.x, y: UpPhotoView.frame.origin.y, width: 600, height: 700))
-        PhotoUPView.xibSetup(UpPhoto,title: UpText)
-        UpPhotoView.image = PhotoUPView.screenshot
+            let PhotoUPView = PhotoTemplate(frame: CGRect(x: UpPhotoView.frame.origin.x, y: UpPhotoView.frame.origin.y, width: 600, height: 700))
+            PhotoUPView.xibSetup(UpPhoto,title: UpText)
+            UpPhotoView.image = PhotoUPView.screenshot
         }
         let PhotoDownView = PhotoTemplate(frame: CGRect(x: DownPhotoView.frame.origin.x, y: DownPhotoView.frame.origin.y, width: 600, height: 700))
         
         PhotoDownView.xibSetup(DownPhoto,title: DownText)
         DownPhotoView.image = PhotoDownView.screenshot
         
-    
+        
         TitleLabel.text = Title
-        CenterTextView.text = CenterText
+        CenterTextView.attributedText = CenterText
         
     }
     
@@ -226,9 +225,9 @@ class TextOnlyPink: UIView{
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var CenterTextView: UITextView!
     
-    func setContent(Title : String, CenterText: String){
+    func setContent(Title : String, CenterText: NSMutableAttributedString){
         TitleLabel.text = Title
-        CenterTextView.text = CenterText
+        CenterTextView.attributedText = CenterText
     }
     
 }
@@ -239,28 +238,28 @@ class photo: UIView{
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-
+        
         super.init(coder: aDecoder)
         
     }
-            
-        
-        func xibFirstSetupBlue(left: UIImage,right: UIImage, title: String,leftText : String, rightText: String) {
-           let view1 = loadViewFromNib("TwoPhotoBlue") as! TwoPhotoBlue
-            
-
-                    
-            view1.setContent(left, right: right, title: title, leftText: leftText, rightText: rightText)
-            
-            frameSetup(view1)
-
-        }
     
-    func xibSecondSetupBlue(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String) {
+    
+    func xibFirstSetupBlue(left: UIImage,right: UIImage, title: String,leftText : String, rightText: String) {
+        let view1 = loadViewFromNib("TwoPhotoBlue") as! TwoPhotoBlue
+        
+        
+        
+        view1.setContent(left, right: right, title: title, leftText: leftText, rightText: rightText)
+        
+        frameSetup(view1)
+        
+    }
+    
+    func xibSecondSetupBlue(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString) {
         let view1 = loadViewFromNib("TextWithTwoPhotosBlue") as! TextWithTwoPhotoBlue
         
         view1.setContent(UpPhoto, UpText: UpText, DownPhoto: DownPhoto, DownText: DownText, Title: Title, CenterText: CenterText)
@@ -269,7 +268,7 @@ class photo: UIView{
         
     }
     
-    func xibThirdSetupBlue(Title : String, CenterText: String) {
+    func xibThirdSetupBlue(Title : String, CenterText: NSMutableAttributedString) {
         let view1 = loadViewFromNib("TextOnlyBlue") as! TextOnlyBlue
         
         view1.setContent(Title, CenterText: CenterText)
@@ -287,7 +286,7 @@ class photo: UIView{
         
     }
     
-    func xibSecondSetupPink(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String) {
+    func xibSecondSetupPink(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString) {
         let view1 = loadViewFromNib("TextWithTwoPhotosPink") as! TextWithTwoPhotoPink
         
         view1.setContent(UpPhoto, UpText: UpText, DownPhoto: DownPhoto, DownText: DownText, Title: Title, CenterText: CenterText)
@@ -296,7 +295,7 @@ class photo: UIView{
         
     }
     
-    func xibThirdSetupPink(Title : String, CenterText: String) {
+    func xibThirdSetupPink(Title : String, CenterText: NSMutableAttributedString) {
         let view1 = loadViewFromNib("TextOnlyPink") as! TextOnlyPink
         
         view1.setContent(Title, CenterText: CenterText)
@@ -317,17 +316,17 @@ class photo: UIView{
         
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
-
-    }
-
-    func loadViewFromNib(nibString : String) -> UIView {
-            let bundle = NSBundle(forClass: self.dynamicType)
-            let nib = UINib(nibName: nibString, bundle: bundle)
-            
-            // Assumes UIView is top level and only object in CustomView.xib file
-            let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
-            return view
-        }
         
+    }
+    
+    func loadViewFromNib(nibString : String) -> UIView {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibString, bundle: bundle)
+        
+        // Assumes UIView is top level and only object in CustomView.xib file
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        return view
+    }
+    
     
 }

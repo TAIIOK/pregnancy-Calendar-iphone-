@@ -137,10 +137,14 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         
                 //leftbutt![0] = leftButton
         checkConnectionAndUpdateView()
+        var tmp = NSDate()
+        if opennotifi{
+            tmp = dateFromOpenNotifi
+        }else if selectedExperienceDay != nil{
+            tmp = selectedExperienceDay.date.convertedDate()!
+        }
+        self.presentedDateUpdated(CVDate(date: tmp))
         if fromCalendar{
-            self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
-            calendarView.toggleViewWithDate(selectedCalendarDate)
-            fromCalendar = false
             changer.selectedSegmentIndex = 1
             choosedSegmentNotes = false
             self.tbl.reloadData()
@@ -148,6 +152,8 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
                 opennotifi = false
                 let destinationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("advertising")
                 self.navigationController?.pushViewController(destinationViewController!, animated: true)
+            }else{
+                fromCalendar = false
             }
         }
 
@@ -429,6 +435,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         var date = CVDate(date: tmp)
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(tmp)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -468,9 +475,7 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     
     
     func swipedetected(){
-        
-        
-        
+        print("swipe detected!!")
     }
     
     func presentedDateUpdated(date: CVDate) {

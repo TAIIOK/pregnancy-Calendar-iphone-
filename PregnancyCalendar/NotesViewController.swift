@@ -44,15 +44,6 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let img  = UIImage(named: "menu")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
         self.navigationItem.leftBarButtonItem = btn
-        if fromCalendar{
-            self.presentedDateUpdated(CVDate(date: selectedCalendarDate))
-            calendarView.toggleViewWithDate(selectedCalendarDate)
-            phincalc = true
-        }else{
-            self.presentedDateUpdated(CVDate(date: NSDate()))
-            calendarView.toggleViewWithDate(NSDate())
-            phincalc = false
-        }
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         loadNotes()
@@ -190,112 +181,111 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.text = notes[indexPath.row]
         //cell.detailTextLabel?.text = "нет заметок"
         var text = String()
-
+        
         dispatch_async(dispatch_get_main_queue(), {
-        switch indexPath.row {
-        case 0: //мое самочувствие - тестовая
-            
-            text = self.texts[0]
-            
-            if  text  != "" {
-                cell.detailTextLabel?.text?.appendContentsOf("Мое самочувствие ")
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            
-            break
-        case 1: //как ведет сеья малыш - текстовая
-            text = self.texts[1]
-            if  text  != "" {
-                cell.detailTextLabel?.text?.appendContentsOf("Как ведет себя малыш ")
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 2: //посещение врачей - список с напоминаниеями
-            text = self.texts[2]
-            if  text  != "" {
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 3: //мой вес - текстовая
-            text = self.texts[3]
-            if  text  != "" {
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 4: //принимаемые лекарства - список с напоминаниями
-            text = self.texts[4]
-            if  text  != "" {
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 5: //приятное воспоминание дня - тестовая
-            text = self.texts[5]
-            if  text  != "" {
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 6: //важные события - текстовая
-            text = self.texts[6]
-            if  text  != "" {
-                cell.detailTextLabel?.text = String(text)
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 7: //мое меню на сегодня - несколько списков
-            let count: Int = Int(self.texts[7])!
-            if count > 0 {
-                var txt = ""
-                if count%10 == 1{
-                    txt = "заметка"
-                }else if count%10 == 2 || count%10 == 3 || count%10 == 4 {
-                    txt = "заметки"
-                }else{
-                    txt = "заметок"
-                }
+            switch indexPath.row {
+            case 0: //мое самочувствие - тестовая
                 
-                if count > 10 && count < 15{
-                    txt = "заметок"
-                }
-                cell.detailTextLabel?.text = "\(count) \(txt)"
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
-        case 8: //мой "лист желаний" - список - не превязаны ко дню
-            let count: Int = Int(self.texts[8])!
-            if count > 0 {
-                var txt = ""
-                if count%10 == 1{
-                    txt = "заметка"
-                }else if count%10 == 2 || count%10 == 3 || count%10 == 4 {
-                    txt = "заметки"
-                }else{
-                    txt = "заметок"
-                }
+                text = self.texts[0]
                 
-                if count > 10 && count < 15{
-                    txt = "заметок"
+                if  text  != "" {
+                    cell.detailTextLabel?.text?.appendContentsOf("Мое самочувствие ")
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
                 }
-                cell.detailTextLabel?.text = "\(count) \(txt)"
-            }else{
-                cell.detailTextLabel?.text = "Нет заметок"
-            }
-            break
+                break
+            case 1: //как ведет сеья малыш - текстовая
+                text = self.texts[1]
+                if  text  != "" {
+                    cell.detailTextLabel?.text?.appendContentsOf("Как ведет себя малыш ")
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 2: //посещение врачей - список с напоминаниеями
+                text = self.texts[2]
+                if  text  != "" {
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 3: //мой вес - текстовая
+                text = self.texts[3]
+                if  text  != "" {
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 4: //принимаемые лекарства - список с напоминаниями
+                text = self.texts[4]
+                if  text  != "" {
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 5: //приятное воспоминание дня - тестовая
+                text = self.texts[5]
+                if  text  != "" {
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 6: //важные события - текстовая
+                text = self.texts[6]
+                if  text  != "" {
+                    cell.detailTextLabel?.text = String(text)
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 7: //мое меню на сегодня - несколько списков
+                let count: Int = Int(self.texts[7])!
+                if count > 0 {
+                    var txt = ""
+                    if count%10 == 1{
+                        txt = "заметка"
+                    }else if count%10 == 2 || count%10 == 3 || count%10 == 4 {
+                        txt = "заметки"
+                    }else{
+                        txt = "заметок"
+                    }
+                    
+                    if count > 10 && count < 15{
+                        txt = "заметок"
+                    }
+                    cell.detailTextLabel?.text = "\(count) \(txt)"
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
+            case 8: //мой "лист желаний" - список - не превязаны ко дню
+                let count: Int = Int(self.texts[8])!
+                if count > 0 {
+                    var txt = ""
+                    if count%10 == 1{
+                        txt = "заметка"
+                    }else if count%10 == 2 || count%10 == 3 || count%10 == 4 {
+                        txt = "заметки"
+                    }else{
+                        txt = "заметок"
+                    }
+                    
+                    if count > 10 && count < 15{
+                        txt = "заметок"
+                    }
+                    cell.detailTextLabel?.text = "\(count) \(txt)"
+                }else{
+                    cell.detailTextLabel?.text = "Нет заметок"
+                }
+                break
             default: break
-        }
+            }
             cell.backgroundColor = .clearColor()
             cell.selectedBackgroundView?.backgroundColor = .clearColor()
             cell.textLabel?.textColor = NotesColor[indexPath.row]
@@ -303,28 +293,28 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         )
         return cell
-
+        
     }
+
     
     func loadNotes(){
         var date = NSDate()
         if selectedNoteDay != nil{
             date = selectedNoteDay.date.convertedDate()!
         }
-        /*if fromCalendar{
-            date = selectedCalendarDate
-            fromCalendar = false
-        }*/
-        texts[0] = returnTableText("TextNote", type: 0, date: date)
-        texts[1] = returnTableText("TextNote", type: 1, date: date)
-        texts[2] = returnTableText("DoctorVisit", type: 2, date: date)
-        texts[3] = returnTableText("WeightNote", type: 3, date: date)
-        texts[4] = returnTableText("MedicineTake", type: 4, date: date)
-        texts[5] = returnTableText("TextNote", type: 5, date: date)
-        texts[6] = returnTableText("TextNote", type: 6, date: date)
-        texts[7] = String(returnFoodCount(date))
-        texts[8] = String(returnDesireCount())
+        dispatch_async(dispatch_get_main_queue(), {
+            self.texts[0] = self.returnTableText("TextNote", type: 0, date: date)
+            self.texts[1] = self.returnTableText("TextNote", type: 1, date: date)
+            self.texts[2] = self.returnTableText("DoctorVisit", type: 2, date: date)
+            self.texts[3] = self.returnTableText("WeightNote", type: 3, date: date)
+            self.texts[4] = self.returnTableText("MedicineTake", type: 4, date: date)
+            self.texts[5] = self.returnTableText("TextNote", type: 5, date: date)
+            self.texts[6] = self.returnTableText("TextNote", type: 6, date: date)
+            self.texts[7] = String(self.returnFoodCount(date))
+            self.texts[8] = String(self.returnDesireCount())
+        })
     }
+
     
     func returnDesireCount()->Int{
         let table = Table("DesireList")
@@ -400,16 +390,13 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        var  date = CVDate(date: NSDate())
+        var date = CVDate(date: NSDate())
         if(selectedNoteDay != nil){
             date = selectedNoteDay.date
         }
-        if fromCalendar{
-            date = CVDate(date: selectedCalendarDate)
-        }
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
-        calendarView.toggleViewWithDate(date.convertedDate()!)
+       self.calendarView.toggleViewWithDate(date.convertedDate()!)
     }
     
     override func viewWillDisappear(animated: Bool) {

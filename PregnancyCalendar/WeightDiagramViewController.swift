@@ -109,6 +109,12 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     }
 
     @IBAction func toDate(sender: UIButton) {
+        self.pushFrontViewController("Birthdate")
+    }
+    private func pushFrontViewController(identifer: String) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifer)
+        //self.revealViewController().pushFrontViewController(controller, animated: true)
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
     func loadRecWeight(){
         let table = Table("RecWeight")

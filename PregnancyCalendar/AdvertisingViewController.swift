@@ -36,13 +36,13 @@ class AdvertisingViewController: UIViewController {
             label.font = .systemFontOfSize(16)
         }
 
-        if selectedExperienceDay != nil {
+       /* if selectedExperienceDay != nil {
             self.calendarView.toggleViewWithDate(selectedExperienceDay.date.convertedDate()!)
         }else{
             let date = NSDate()
             self.calendarView.toggleViewWithDate(date)
         }
-        self.presentedDateUpdated(CVDate(date: NSDate()))        //WorkWithDB()
+        self.presentedDateUpdated(CVDate(date: NSDate())) */       //WorkWithDB()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,12 +57,17 @@ class AdvertisingViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        var date = CVDate(date: NSDate())
-        if selectedExperienceDay != nil{
-            date = selectedExperienceDay.date
+        var tmp = NSDate()
+        if opennotifi{
+            opennotifi = false
+            tmp = dateFromOpenNotifi
+        }else if selectedExperienceDay != nil{
+            tmp = selectedExperienceDay.date.convertedDate()!
         }
+        var date = CVDate(date: tmp)
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(tmp)
     }
     
     func notifiFromDate(date: NSDate){
@@ -94,13 +99,14 @@ class AdvertisingViewController: UIViewController {
         label.font = .systemFontOfSize(16)
     }
 
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    }
+}
 
 extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
