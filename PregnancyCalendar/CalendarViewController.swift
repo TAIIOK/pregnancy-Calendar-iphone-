@@ -317,6 +317,17 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        calendarView.backgroundColor = StrawBerryColor
+        menuView.backgroundColor = StrawBerryColor
+        
+        calendarView.commitCalendarViewUpdate()
+        menuView.commitMenuViewUpdate()
+        
+        // calendarView.changeMode(.WeekView)
+    }
+    
     func loadDate(){
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate

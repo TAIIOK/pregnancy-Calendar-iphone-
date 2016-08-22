@@ -466,6 +466,11 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         return true // Default value is true
     }
     
+    func shouldAutoSelectDayOnMonthChange() -> Bool
+    {
+        return true
+    }
+    
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedExperienceDay = dayView

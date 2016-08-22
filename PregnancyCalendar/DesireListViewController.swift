@@ -159,6 +159,7 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
         let date = selectedNoteDay.date
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(selectedNoteDay.date.convertedDate()!)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -195,7 +196,7 @@ extension DesireListViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     
     func shouldAutoSelectDayOnMonthChange() -> Bool
     {
-        return false
+        return true
     }
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {

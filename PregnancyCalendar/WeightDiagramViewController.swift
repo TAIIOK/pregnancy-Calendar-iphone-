@@ -331,8 +331,8 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         
         return weeks
     }
-
-    @IBAction func setweightbtn(sender: UIBarButtonItem) {
+    
+    @IBAction func setHeightbtn(sender: UIButton) {
         editingRecWeight = true
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("setweight") as! SetWeightViewController
         var nav = UINavigationController(rootViewController: vc)
@@ -345,10 +345,10 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         self.presentViewController(nav, animated: true, completion: nil)
     }
     
-    @IBAction func setHeight(sender: UIBarButtonItem) {
+    @IBAction func setGrowthbtn(sender: UIButton) {
         self.pickerViewTextField.becomeFirstResponder()
     }
-    
+
     private func setupGrowthPickerView()  {
         self.pickerViewTextField = UITextField(frame: CGRectZero)
         self.view.addSubview(self.pickerViewTextField)

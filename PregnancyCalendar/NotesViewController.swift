@@ -40,6 +40,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
+        self.presentedDateUpdated(CVDate(date: NSDate()))
         self.setupSidebarMenu()
         let img  = UIImage(named: "menu")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
@@ -457,7 +458,7 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     }
     func shouldAutoSelectDayOnMonthChange() -> Bool
     {
-        return false
+        return true
     }
     
     func shouldAnimateResizing() -> Bool {

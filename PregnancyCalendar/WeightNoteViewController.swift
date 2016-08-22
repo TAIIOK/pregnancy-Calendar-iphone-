@@ -251,6 +251,7 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
         let date = selectedNoteDay.date
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(selectedNoteDay.date.convertedDate()!)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -306,7 +307,7 @@ extension WeightNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     
     func shouldAutoSelectDayOnMonthChange() -> Bool
     {
-        return false
+        return true
     }
     
     func shouldAnimateResizing() -> Bool {

@@ -138,6 +138,7 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
         let date = selectedNoteDay.date
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
+        self.calendarView.toggleViewWithDate(selectedNoteDay.date.convertedDate()!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -340,7 +341,7 @@ extension TextNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func shouldAutoSelectDayOnMonthChange() -> Bool
     {
-        return false
+        return true
     }
     
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {

@@ -127,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().barStyle = .BlackOpaque
         createEditableCopyOfDatabaseIfNeeded()
         Fabric.with([Crashlytics.self])
-        phincalc = true
+        //phincalc = true
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil))

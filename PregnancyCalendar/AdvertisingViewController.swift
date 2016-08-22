@@ -138,7 +138,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     
     func shouldAutoSelectDayOnMonthChange() -> Bool
     {
-        return false
+        return true
     }
     
     func swipedetected(){
