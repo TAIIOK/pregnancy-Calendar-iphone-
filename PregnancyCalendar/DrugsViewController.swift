@@ -395,28 +395,26 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     print("tapped on section header:: \(i)")
                     
                     if(drugs[i-1].isRemind == true){
-                    drugs[i-1].isRemind = false
+                        drugs[i-1].isRemind = false
                         
-                        let notifiday = drugs[i-1].start
+                        /*let notifiday = drugs[i-1].start
+                         
+                         for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
+                         {
+                         cancelLocalNotification("\(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0))")
+                         }*/
                         
-                        for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
-                        {
-                        cancelLocalNotification("\(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0))")
-                        }
-
                         
                     }
                     else if(drugs[i-1].isRemind == false){
                         drugs[i-1].isRemind = true
                         
-                        let notifiday = drugs[i-1].start
-                        
-                        for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
-                        {
-                            scheduleNotification(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1 , after: drugs[i-1].cellType), notificationTitle:"Время приема лекарства \(drugs[i-1].name)" , objectId: "\(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: drugs[i-1].cellType))")
-                        }
-                        
-        
+                        /*let notifiday = drugs[i-1].start
+                         
+                         for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
+                         {
+                         scheduleNotification(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1 , after: drugs[i-1].cellType), notificationTitle:"Время приема лекарства \(drugs[i-1].name)" , objectId: "\(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: drugs[i-1].cellType))")
+                         }*/
                     }
                     self.view.endEditing(true)
                     tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
@@ -801,6 +799,10 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func btnSave(sender: UIButton) {
         save()
         saveNote()
+        calendars.removeAll()
+        bells.removeAll()
+        fillcalendar()
+        fillbells()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
@@ -846,10 +848,30 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         for i in drugs{
+            if(i.isRemind == false){
+                
+                let notifiday = i.start
+                
+                for(var j = 0 ;j <= notifiday.daysFrom(i.end); j++)
+                {
+                    //cancelLocalNotification("\(addDaystoGivenDate(i.start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0))")
+                    cancelLocalNotification("\(calculateDate(addDaystoGivenDate(i.start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: i.cellType))")
+                }
+            }
+            else if(i.isRemind == true){
+                
+                let notifiday = i.start
+                
+                for(var j = 0 ;j <= notifiday.daysFrom(i.end); j++)
+                {
+                    scheduleNotification(calculateDate(addDaystoGivenDate(i.start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1 , after: i.cellType), notificationTitle:"Время приема лекарства \(i.name)" , objectId: "\(calculateDate(addDaystoGivenDate(i.start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: i.cellType))")
+                }
+            }
+            
+            
             try! db.run(table.insert(name <- i.name, start <- String(i.start), end <- String(i.end), isRemind <- i.isRemind, hour_ <- i.hour, minute_ <- i.minute, interval_ <- i.interval))
         }
     }
-    
     func save()
     {
         for (var i = 0 ; i<drugs.count   ; i += 1  ){

@@ -259,6 +259,8 @@ class WeightNoteViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     @IBAction func btnSave(sender: UIButton) {
         saveNote()
+        calendars.removeAll()
+        fillcalendar()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()

@@ -333,15 +333,14 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     if(doctors[i-1].isRemind == true){
                         doctors[i-1].isRemind = false
-                        cancelLocalNotification("\(doctors[i-1].date)")
-                    }
-                    else if(doctors[i-1].isRemind == false){
+                        //cancelLocalNotification("\(doctors[i-1].date)")
+                    }else if(doctors[i-1].isRemind == false){
                         if(doctors[i-1].remindType != 0){
                             doctors[i-1].isRemind = true
-                            scheduleNotification(calculateDate(doctors[i-1].date, before: -1 , after: doctors[i-1].remindType), notificationTitle:"У вас посещение врача \(doctors[i-1].name)" , objectId: "\(doctors[i-1].date)")
+                            //scheduleNotification(calculateDate(doctors[i-1].date, before: -1 , after: doctors[i-1].remindType), notificationTitle:"У вас посещение врача \(doctors[i-1].name)" , objectId: "\(doctors[i-1].date)")
                         }
                     }
-
+                    
                     self.view.endEditing(true)
                     tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
                     let headerview = tbl.viewWithTag(i) as? DoctorHeader
@@ -646,6 +645,10 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func btnSave(sender: UIButton) {
         save()
         saveNote()
+        calendars.removeAll()
+        bells.removeAll()
+        fillcalendar()
+        fillbells()
         self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
@@ -671,11 +674,22 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
+        
+        
+        
         for i in doctors{
+            if(i.isRemind == false){
+                cancelLocalNotification("\(i.date)")
+            }
+            else if(i.isRemind == true){
+                if(i.remindType != 0){
+                    scheduleNotification(calculateDate(i.date, before: -1 , after: i.remindType), notificationTitle:"У вас посещение врача \(i.name)" , objectId: "\(i.date)")
+                }
+            }
+            
             try! db.run(table.insert(name <- i.name, date <- String(i.date), isRemind <- i.isRemind, remindType <- i.remindType))
         }
     }
-    
     func save()
     {
         for (var i = 0 ; i<doctors.count   ; i += 1  ){
