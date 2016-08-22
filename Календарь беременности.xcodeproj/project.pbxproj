@@ -111,7 +111,7 @@
 		8E1450BD1D1986B100D234B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450BC1D1986B100D234B2 /* ShareViewController.swift */; };
 		8E1450BF1D1986F500D234B2 /* CreateAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */; };
 		8E1450C11D1BE99900D234B2 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C01D1BE99900D234B2 /* BuyViewController.swift */; };
-		8E1450C31D1BE9AB00D234B2 /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C21D1BE9AB00D234B2 /* loadJson.swift */; };
+		8E1450C31D1BE9AB00D234B2 /* loadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C21D1BE9AB00D234B2 /* loadings.swift */; };
 		8E1450C71D1BEB2D00D234B2 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */; };
 		8E1450C91D1BEBB200D234B2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */; };
 		8E1450CB1D1BEBEF00D234B2 /* ShowZodiacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */; };
@@ -425,7 +425,7 @@
 		8E1450BC1D1986B100D234B2 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAlbum.swift; sourceTree = "<group>"; };
 		8E1450C01D1BE99900D234B2 /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
-		8E1450C21D1BE9AB00D234B2 /* loadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
+		8E1450C21D1BE9AB00D234B2 /* loadings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadings.swift; sourceTree = "<group>"; };
 		8E1450C61D1BEB2D00D234B2 /* ForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
 		8E1450C81D1BEBB200D234B2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8E1450CA1D1BEBEF00D234B2 /* ShowZodiacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowZodiacViewController.swift; sourceTree = "<group>"; };
@@ -744,7 +744,7 @@
 				02682D361C7EFBA40088F21B /* Info.plist */,
 				022994271C8459A400E3B816 /* userInfo.plist */,
 				A09CA8021D1D4AD20072CE73 /* db.sqlite */,
-				8E1450C21D1BE9AB00D234B2 /* loadJson.swift */,
+				8E1450C21D1BE9AB00D234B2 /* loadings.swift */,
 				8E1450BE1D1986F500D234B2 /* CreateAlbum.swift */,
 			);
 			name = other;
@@ -1261,7 +1261,7 @@
 				8E1450C91D1BEBB200D234B2 /* TableViewCell.swift in Sources */,
 				A018A97F1CB6733D0044830A /* CVCalendarMenuView.swift in Sources */,
 				8E5298341D194AC200AD06E2 /* TextNoteViewController.swift in Sources */,
-				8E1450C31D1BE9AB00D234B2 /* loadJson.swift in Sources */,
+				8E1450C31D1BE9AB00D234B2 /* loadings.swift in Sources */,
 				02682D451C7EFFA00088F21B /* BirthDateViewController.swift in Sources */,
 				A018A97D1CB6733D0044830A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				023A52791C8825CF00DBFF76 /* ContentCollectionViewCell.swift in Sources */,

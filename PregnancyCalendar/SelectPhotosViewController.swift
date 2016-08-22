@@ -80,6 +80,8 @@ class SelectPhotosViewController: UICollectionViewController, UIImagePickerContr
                         }
                         
                     }
+                    cameras.removeAll()
+                    fillcamera()
                     self.title =  "\(self.selected) выбрано"
                     self.PhotoCollectionView.reloadData()
                 }

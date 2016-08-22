@@ -260,9 +260,9 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
         for i in AllNotesCount{
             if i.selected == true{
-                if i.type == "Мое самочувствие" {
+                if i.type == "Моё самочувствие" {
                     for j in NotesExportText{
-                        if j.date == date && j.typeS == "Мое самочувствие"{
+                        if j.date == date && j.typeS == "Моё самочувствие"{
                             notemas.append(TextNoteE(typeS: j.typeS, text: j.text, date: date))
                         }
                     }
@@ -294,10 +294,10 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                             notemas.append(TextNoteE(typeS: "Мой вес", text: "\(j.kg) кг \(j.gr) г", date: date))
                         }
                     }
-
+                    
                 }else if i.type == "Принимаемые лекарства"{
                     for j in NotesExportDrugs{
- 
+                        
                         let componentsS = calendar.components([.Day , .Month , .Year], fromDate: j.start)
                         let componentsE = calendar.components([.Day , .Month , .Year], fromDate: j.end)
                         componentsS.hour = 00
@@ -310,22 +310,22 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                         let newDateE = calendar.dateFromComponents(componentsE)
                         let a = newcurDate?.compare(newDateS!)
                         let b = newcurDate?.compare(newDateE!)
-
+                        
                         if (a == NSComparisonResult.OrderedDescending || a == NSComparisonResult.OrderedSame) && (b == NSComparisonResult.OrderedAscending || b == NSComparisonResult.OrderedSame) {
                             notemas.append(TextNoteE(typeS: "Принимаемые лекарства", text: j.name, date: date))
                         }
                     }
-                }else if i.type == "Посещение врачей"{
+                }else if i.type == "Посещения врачей"{
                     for j in NotesExportDoctor{
                         let componentsCurrent = calendar.components([.Day , .Month , .Year], fromDate: j.date)
                         if components.day == componentsCurrent.day && components.month == componentsCurrent.month && components.year == componentsCurrent.year {
-                            notemas.append(TextNoteE(typeS: "Посещение врачей", text: j.name, date: date))
+                            notemas.append(TextNoteE(typeS: "Посещения врачей", text: j.name, date: date))
                         }
                     }
-                }else if i.type == "Мое меню на сегодня"{
+                }else if i.type == "Моё меню на сегодня"{
                     for j in NotesExportFood{
                         if j.date == date{
-                            notemas.append(TextNoteE(typeS: "Мое меню на сегодня", text: j.text, date: date))
+                            notemas.append(TextNoteE(typeS: "Моё меню на сегодня", text: j.text, date: date))
                         }
                     }
                 }
@@ -342,10 +342,11 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                 }
             }
         }
-   
+        
         
         AllExportNotes.append(ExportNote(date: date, photos: imgmas, notes: notemas, notifi: notifimas))
     }
+
     
     //TABLE
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -367,6 +368,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         return s1.compare(s2) == NSComparisonResult.OrderedAscending
     }
     
+    @IBOutlet weak var NotesTableHeightConstrait: NSLayoutConstraint!
     func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if tableView == DateTable{
@@ -414,6 +416,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             }
             
             cell.selectedBackgroundView?.backgroundColor = .clearColor()
+            NotesTableHeightConstrait.constant = tableView.contentSize.height
             cell.backgroundColor = .clearColor()
             return cell
         }else if tableView == NotesTable{
@@ -516,11 +519,12 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         }
         
         PhotoCell.title.text = "\(stringday).\(string).\(components.year)"
-
+        collectionviewHeightConstrait.constant = collectionView.contentSize.height
         //PhotoCell.ImgSelector.hidden = true
         return PhotoCell
     }
     
+    @IBOutlet weak var collectionviewHeightConstrait: NSLayoutConstraint!
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ExportPhotoCollectionViewCell
         if(cell.ImgSelector.hidden == true){
@@ -569,21 +573,21 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         if NotestExportWeight.count > 0{
             AllNotesCount.append(AllNotesForExport(type: "Мой вес", text: "", count: NotestExportWeight.count, selected: false))
         }
-
+        
         if NotesExportDrugs.count > 0{
             AllNotesCount.append(AllNotesForExport(type: "Принимаемые лекарства", text: "", count: NotesExportDrugs.count,selected: false))
         }
         if NotesExportDoctor.count > 0{
-            AllNotesCount.append(AllNotesForExport(type: "Посещение врачей", text: "", count: NotesExportDoctor.count,selected:
+            AllNotesCount.append(AllNotesForExport(type: "Посещения врачей", text: "", count: NotesExportDoctor.count,selected:
                 false))
         }
         if NotesExportFood.count > 0{
-            AllNotesCount.append(AllNotesForExport(type: "Мое меню на сегодня", text: "", count: NotesExportFood.count,selected: false))
+            AllNotesCount.append(AllNotesForExport(type: "Моё меню на сегодня", text: "", count: NotesExportFood.count,selected: false))
         }
     }
     
     func NotesFromDate(date: NSDate){
-    
+        
         var table = Table("TextNote")
         let Date = Expression<String>("Date")
         let type = Expression<Int64>("Type")
@@ -593,7 +597,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             var str = ""
             switch i[type] {
             case 0:
-                str = "Мое самочувствие"
+                str = "Моё самочувствие"
             case 1:
                 str = "Как ведет себя малыш"
             case 5:
@@ -671,7 +675,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             }
         }
     }
-
+    
     func loadNotifi(){
         if dateType != -1 {
             //300 - BirthDate.daysFrom(selectedDay.date.convertedDate()!)
@@ -690,27 +694,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             for i in days{
                 let a = calculateDay(i)
                 for j in try! db.prepare(table.select(text,type).filter(day == Int64(a))){
-                    var str = ""
-                    switch j[type] {
-                    case 1:
-                        str = "Общая информация"
-                    case 2:
-                        str = "Здоровье мамы"
-                    case 3:
-                        str = "Здоровье малыша"
-                    case 4:
-                        str = "Питание"
-                    case 5:
-                        str = "Это важно!"
-                    case 6:
-                        str = "Скрытая реклама"
-                    case 7:
-                        str = "Рекалама ФЭСТ"
-                    case 8:
-                        str = "Размышления ФЭСТ"
-                    default:
-                        str = ""
-                    }
+                    var str = notifiCategory[j[type]-1]
                     NotificationExport.append(TextNoteE(typeS: str, text: j[text], date: i))
                 }
             }
@@ -727,30 +711,40 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
     }
     
     func PhotoFromDate(Date: NSDate){
-        var table = Table("Photo")
-        let date = Expression<String>("Date")
-        let image = Expression<Blob>("Image")
-        let text = Expression<String>("Text")
-        let count = try db.scalar(table.filter(date == "\(Date)").count)
-        for i in try! db.prepare(table.filter(date == "\(Date)")) {
-            let a = i[image] 
-            let c = NSData(bytes: a.bytes, length: a.bytes.count)
-            let b = i[date]
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            ExpPhoto.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+        /*var table = Table("Photo")
+         let date = Expression<String>("Date")
+         let image = Expression<Blob>("Image")
+         let text = Expression<String>("Text")
+         let count = try db.scalar(table.filter(date == "\(Date)").count)
+         for i in try! db.prepare(table.filter(date == "\(Date)")) {
+         let a = i[image]
+         let c = NSData(bytes: a.bytes, length: a.bytes.count)
+         let b = i[date]
+         let dateFormatter = NSDateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+         ExpPhoto.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+         }
+         
+         table = Table("Uzi")
+         for i in try! db.prepare(table.filter(date == "\(Date)")) {
+         let a = i[image]
+         let c = NSData(bytes: a.bytes, length: a.bytes.count)
+         let b = i[date]
+         let dateFormatter = NSDateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+         ExpPhoto.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+         }*/
+        for i in photos{
+            print(i.date, Date)
+            if i.date == Date{
+                ExpPhoto.append(Photo(image: i.image, date: i.date, text: i.text))
+            }
         }
-        
-        table = Table("Uzi")
-        for i in try! db.prepare(table.filter(date == "\(Date)")) {
-            let a = i[image] 
-            let c = NSData(bytes: a.bytes, length: a.bytes.count)
-            let b = i[date]
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            ExpPhoto.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+        for i in uzis{
+            if i.date == Date{
+                ExpPhoto.append(Photo(image: i.image, date: i.date, text: i.text))
+            }
         }
-
     }
     
     func addDaystoGivenDate(baseDate: NSDate, NumberOfDaysToAdd: Int) -> NSDate

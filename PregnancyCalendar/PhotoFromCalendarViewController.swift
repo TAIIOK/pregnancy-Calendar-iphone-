@@ -139,6 +139,8 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         photoCollectionView.reloadData()
         
         savePhotos(chosenImage,Type: type)
+        cameras.removeAll()
+        fillcamera()
     }
     
     func savePhotos(img: UIImage, Type: Int){
@@ -210,7 +212,7 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         let date = CVDate(date: selectedCalendarDate)
         let controller = calendarView.contentController as! CVCalendarWeekContentViewController
         controller.selectDayViewWithDay(date.day, inWeekView: controller.getPresentedWeek()!)
-        self.calendarView.toggleViewWithDate(selectedCalendarDate)
+        self.calendarView.toggleViewWithDate(selectedCalendarDayPhoto.date.convertedDate()!)
     }
 
 

@@ -34,15 +34,32 @@ class OnePhotoViewController: UIViewController{
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var image: UIImageView!
     
+    @IBOutlet weak var imageheight: NSLayoutConstraint!
+    @IBOutlet weak var imagewidth: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-        image.image = choosedSegmentImages ? photos[currentPhoto].image : uzis[currentPhoto].image
+        let Photo_temp = choosedSegmentImages ? photos[currentPhoto].image : uzis[currentPhoto].image
+        let x = Double(Photo_temp.size.height)/Double(600)
+        let y = Double(Photo_temp.size.width)/Double(700)
+        let scale = x > y ? x : y
+        let Photo = UIImage(CGImage: Photo_temp.CGImage!, scale: CGFloat(scale), orientation: Photo_temp.imageOrientation)
+        image.frame.size.width = Photo.size.width
+        image.frame.size.height = Photo.size.height
+        imageheight.constant = Photo.size.height
+        imagewidth.constant = Photo.size.width
+        self.updateViewConstraints()
+        image.image = Photo
+        
+        image.backgroundColor = .whiteColor()
+        image.center = (image.superview?.center)!
         
         commentField.text = choosedSegmentImages ? photos[currentPhoto].text : uzis[currentPhoto].text
         
-        selectedImages.append(image.image!)
+        selectedImages.append(Photo_temp)
+
     }
     
     @IBAction func SaveButton(sender: AnyObject) {
@@ -120,6 +137,8 @@ class OnePhotoViewController: UIViewController{
                 //Do some other stuff
                 choosedSegmentImages ? photos.removeAtIndex(currentPhoto) : uzis.removeAtIndex(currentPhoto)
                 choosedSegmentImages ? self.deleteImage(currentPhoto) : self.deleteImageUzi(currentPhoto)
+                cameras.removeAll()
+                fillcamera()
                 let ph = self.storyboard?.instantiateViewControllerWithIdentifier("photo")
                 self.revealViewController().pushFrontViewController(ph, animated: true)
             }

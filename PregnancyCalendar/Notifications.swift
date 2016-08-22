@@ -99,25 +99,29 @@ func loadNotifi() {
 
     let app: UIApplication = UIApplication.sharedApplication()
 
-  
-   
-    var Notificalendar = NSDate()
-
-    notifications.removeAll()
-    let table = Table("Notification")
-    let Day = Expression<Int64>("Day")
-    let Category = Expression<Int64>("CategoryId")
-    let Text = Expression<String>("Text")
-    for tmp in try! db.prepare(table.select(Day, Category, Text)){
-        notifications.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category]-1)))
-    }
-    
     var day = NSDate().daysFrom(num)
     if day < 0{
         day = 0
     }
+   
+    var Notificalendar = NSDate()
 
-    if day == 0 || day > 1{
+    notifications.removeAll()
+    not.removeAll()
+    let table = Table("Notification")
+    let Day = Expression<Int64>("Day")
+    let Category = Expression<Int64>("CategoryId")
+    let id = Expression<Int64>("_id")
+    let Text = Expression<String>("Text")
+    
+    try! db.run(table.filter(id == 1).update(Day <- Int64(day)))
+    
+    for tmp in try! db.prepare(table.select(Day, Category, Text)){
+        notifications.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category]-1)))
+        not.append(notification(day: Int(tmp[Day]), text: tmp[Text], category: Int(tmp[Category])-1))
+    }
+
+    /*if day == 0 || day > 1{
         var notification = ""
         var titles = ""
         notification = notifications[0].text
@@ -145,7 +149,8 @@ func loadNotifi() {
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
+    }*/
+    
     for (var i = day; i <=  300; i += 1){
         var notification = [String]()
         var titles = [Int]()

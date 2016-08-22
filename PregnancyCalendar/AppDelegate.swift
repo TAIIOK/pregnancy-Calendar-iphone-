@@ -16,7 +16,7 @@ import FBSDKShareKit
 
 let StrawBerryColor = UIColor(red: 206/255.0, green: 15/255.0, blue: 105/255.0, alpha: 1.0)
 let BiruzaColor = UIColor(red: 0/255.0, green: 189/255.0, blue: 255/255.0, alpha: 1.0)
-let BiruzaColor1 = UIColor(red: 06/255.0, green: 228/255.0, blue: 134/255.0, alpha: 1.0)
+let BiruzaColor1 = UIColor(red: 25/255.0, green: 167/255.0, blue: 155/255.0, alpha: 1.0)
 let VioletColor = UIColor(red: 90/255.0, green: 0/255.0, blue: 157/255.0, alpha: 1.0)
 let RoseColor = UIColor(red: 255/255.0, green: 203/255.0, blue: 219/255.0, alpha: 1.0)
 let VioletRoseColor = UIColor(red: 251/255.0, green: 95/255.0, blue: 252/255.0, alpha: 1.0)
@@ -157,6 +157,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PointsJSON()
             }
         )
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            fillbells()
+            }
+        )
+        dispatch_async(dispatch_get_main_queue(), {
+            fillcalendar()
+            }
+        )
+        dispatch_async(dispatch_get_main_queue(), {
+            fillcamera()
+            }
+        )
+        dispatch_async(dispatch_get_main_queue(), {
+            loadPhotos()
+            }
+        )
+        
         
         /*
          dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
@@ -367,6 +385,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             dateFromOpenNotifi = newBirthDate
                             noteText[0] = notifiCategory[cat]
                             noteText[1] = notification.alertBody!
+
                             let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                             let rootViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("MasterView") as UIViewController

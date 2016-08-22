@@ -38,6 +38,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPhoto:", name:"LoadPhoto", object: nil)
         PhotoCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
         PhotoCollectionView.backgroundColor = .clearColor()
         picker.delegate=self
@@ -50,6 +51,13 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         self.navigationItem.leftBarButtonItems?.append(a)
         self.navigationItem.leftBarButtonItems?.append(b)*/
         
+    }
+    
+    func loadPhoto(notification: NSNotification){
+        dispatch_async(dispatch_get_main_queue(), {
+            self.PhotoCollectionView.reloadData()
+            return}
+        )
     }
     
     @IBAction func toselect(sender: UIBarButtonItem) {
@@ -99,9 +107,13 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         choosedSegmentImages ? (type=0) : (type=1)
         choosedSegmentImages ? photos.append(Photo(image: chosenImage, date: NSDate(), text: "")) : uzis.append(Photo(image: chosenImage, date: NSDate(), text: ""))
         dismissViewControllerAnimated(true, completion: nil)
-        PhotoCollectionView.reloadData()
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.PhotoCollectionView.reloadData()
+            return}
+        )
         savePhotos(chosenImage,Type: type)
+        cameras.removeAll()
+        fillcamera()
     }
 
     
@@ -193,31 +205,36 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
     }
  
     func loadPhotos(){
-        photos.removeAll()
-        uzis.removeAll()
-        var table = Table("Photo")
-        let date = Expression<String>("Date")
-        let image = Expression<Blob>("Image")
-        let type = Expression<Int64>("Type")
-        let text = Expression<String>("Text")
-        
-        for i in try! db.prepare(table.select(date,image,type,text)) {
-            let a = i[image] as! Blob
-            let c = NSData(bytes: a.bytes, length: a.bytes.count)
-            let b = i[date]
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            photos.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
-        }
-        
-        table = Table("Uzi")
-        for i in try! db.prepare(table.select(date,image,type,text)) {
-            let a = i[image] as! Blob
-            let c = NSData(bytes: a.bytes, length: a.bytes.count)
-            let b = i[date]
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            uzis.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            photos.removeAll()
+            uzis.removeAll()
+            var table = Table("Photo")
+            let date = Expression<String>("Date")
+            let image = Expression<Blob>("Image")
+            let type = Expression<Int64>("Type")
+            let text = Expression<String>("Text")
+            
+            for i in try! db.prepare(table.select(date,image,type,text)) {
+                let a = i[image]
+                let c = NSData(bytes: a.bytes, length: a.bytes.count)
+                let b = i[date]
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+                print(dateFormatter.dateFromString(b)!)
+                photos.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+                NSNotificationCenter.defaultCenter().postNotificationName("LoadPhoto", object: nil)
+            }
+            
+            table = Table("Uzi")
+            for i in try! db.prepare(table.select(date,image,type,text)) {
+                let a = i[image]
+                let c = NSData(bytes: a.bytes, length: a.bytes.count)
+                let b = i[date]
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+                uzis.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+                NSNotificationCenter.defaultCenter().postNotificationName("LoadPhoto", object: nil)
+            }
         }
     }
     

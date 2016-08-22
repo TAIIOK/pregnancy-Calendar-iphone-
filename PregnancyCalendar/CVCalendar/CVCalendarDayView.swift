@@ -118,12 +118,12 @@ public final class CVCalendarDayView: UIView {
                 
                 layer.borderColor = UIColor.whiteColor().CGColor
                 layer.borderWidth = self.frame.width + 10
-                layer.frame = CGRectMake(self.frame.width ,self.frame.height - 4, height, -(self.frame.height) / 2 )
+                layer.frame = CGRectMake(self.frame.width ,self.frame.height - 4, 0.5, -(self.frame.height) / 2 )
                 
                 let textLayer = CATextLayer()
-                textLayer.frame = CGRectMake( -5  , self.frame.height - 13  ,15, 15)
+                textLayer.frame = CGRectMake( -5  , self.frame.height - 13 ,self.frame.width, -self.frame.height)
                 
-                let num = self.date.convertedDate()!.daysFrom(addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(42*7)))/7
+                let num = self.date.convertedDate()!.daysFrom(addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(41*7)))/7
                 textLayer.foregroundColor = UIColor(red:  40/255.0 , green: 160/255.0, blue: 143/255.0, alpha: 1.0).CGColor
                 
                 textLayer.name = "number"
@@ -288,17 +288,17 @@ extension CVCalendarDayView {
 
                         if((newBirthDate.daysFrom(self.date.convertedDate()!)-1) % 7 == 0 ){
                         //if a/100 == 0{
-                            let height = CGFloat(0.5)
+                            let height = CGFloat(0.3)
                             let layer = CALayer()
                             
                             layer.borderColor = UIColor.whiteColor().CGColor
                             layer.borderWidth = self.frame.width + 10
-                            layer.frame = CGRectMake(self.frame.width ,self.frame.height - 4, height, -(self.frame.height) / 2 )
+                            layer.frame = CGRectMake(self.frame.width ,self.frame.height - 4, 0.5, -(self.frame.height) / 2 )
                             
                             let textLayer = CATextLayer()
-                            textLayer.frame = CGRectMake( -5  , self.frame.height - 13  ,15, 15)
+                            textLayer.frame = CGRectMake( -5  , self.frame.height - 13 ,self.frame.width, -self.frame.height)//CGRectMake( -5  , self.frame.height - 13  ,15, 15)
                             
-                            let num = self.date.convertedDate()!.daysFrom(addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(42*7)))/7
+                            let num = self.date.convertedDate()!.daysFrom(addDaystoGivenDate(newBirthDate, NumberOfDaysToAdd: -(41*7)))/7
                             
                             textLayer.name = "number"
                             for lay in self.layer.sublayers!

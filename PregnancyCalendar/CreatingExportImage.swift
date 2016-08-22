@@ -22,7 +22,7 @@ extension UIView{
     }
 }
 func CreateTitleBlue() -> UIImageView {
-   let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 700, height: 600))
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 700, height: 600))
     imageView.image = UIImage(named: "title(blue).png")
     return imageView
 }
@@ -42,7 +42,7 @@ func CreateTwoPhotosBlue(left: UIImage,right: UIImage, title: String,leftText : 
     return exportView.screenshot
 }
 
-func CreateTextWithTwoPhotosBlue(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String) -> UIImage{
+func CreateTextWithTwoPhotosBlue(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString) -> UIImage{
     
     let exportView = photo(frame: CGRect(x: 0, y: 0, width: 1000, height: 700))
     
@@ -51,7 +51,7 @@ func CreateTextWithTwoPhotosBlue(UpPhoto:UIImage,UpText :String, DownPhoto : UII
     return exportView.screenshot
 }
 
-func CreateTextOnlyBlue(Title : String, CenterText: String) -> UIImage{
+func CreateTextOnlyBlue(Title : String, CenterText: NSMutableAttributedString) -> UIImage{
     
     let exportView = photo(frame: CGRect(x: 0, y: 0, width: 1000, height: 700))
     
@@ -69,7 +69,7 @@ func CreateTwoPhotosPink(left: UIImage,right: UIImage, title: String,leftText : 
     return exportView.screenshot
 }
 
-func CreateTextWithTwoPhotosPink(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :String) -> UIImage{
+func CreateTextWithTwoPhotosPink(UpPhoto:UIImage,UpText :String, DownPhoto : UIImage,DownText : String, Title: String,CenterText :NSMutableAttributedString) -> UIImage{
     
     let exportView = photo(frame: CGRect(x: 0, y: 0, width: 1000, height: 700))
     
@@ -78,7 +78,7 @@ func CreateTextWithTwoPhotosPink(UpPhoto:UIImage,UpText :String, DownPhoto : UII
     return exportView.screenshot
 }
 
-func CreateTextOnlyPink(Title : String, CenterText: String) -> UIImage{
+func CreateTextOnlyPink(Title : String, CenterText: NSMutableAttributedString) -> UIImage{
     
     let exportView = photo(frame: CGRect(x: 0, y: 0, width: 1000, height: 700))
     

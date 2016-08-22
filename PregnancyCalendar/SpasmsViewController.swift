@@ -245,7 +245,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.labelSeconds.text = self.getSecondsWord(isStopTime)
         
         // остановка таймера в случае, если его забыли -_-
-        if isStopTime == 119 {
+        /*if isStopTime == 119 {
             self.state = .Stop
             self.timer.invalidate()
             self.label.text = ""
@@ -256,7 +256,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             let okAction = UIAlertAction(title: "ОК", style: .Default, handler: { (alert) in self.dismissViewControllerAnimated(true, completion: nil)} )
             alert.addAction(okAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        }
+        }*/
     }
     func scrollToBottom() {
         let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 5) - 1

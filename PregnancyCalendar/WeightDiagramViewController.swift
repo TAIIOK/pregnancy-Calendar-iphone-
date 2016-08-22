@@ -53,12 +53,13 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     let IMT2: [Double] = [0.5,0.5,0.6,0.7,0.8,0.9,1.0,1.4,2.3,2.9,3.4,3.9,5.0,5.4,5.9,6.4,7.3,7.9,8.6,9.1]
     var weights: [Weight] = []
     
+    @IBOutlet weak var growthButton: UIButton!
+    @IBOutlet weak var weightButton: UIButton!
+    @IBOutlet weak var dateBtn: UIButton!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var pickerViewTextField: UITextField!
-    @IBOutlet weak var growthButton: UIBarButtonItem!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var weekDescription: UILabel!
-    @IBOutlet weak var weightButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     // выезжающее меню
     private func setupSidebarMenu() {
@@ -79,19 +80,26 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         loadDate()
         loadWeight()
         loadRecWeight()
-        self.navigationItem.rightBarButtonItem?.title = growth == 0 ? "Ваш рост" : "\(growth) см"
-        self.weightButton.title = RecWeight == 0 ? "Ваш вес" : "\(RecWeight) кг"
+        let txt = RecWeight == 0 ? "Не выбрано" : "\(RecWeight) кг"
+        let txt_ = growth == 0 ? "Ваш рост" : "\(growth) см"
+        self.weightButton.setTitle(txt, forState: UIControlState.Normal)
+        self.growthButton.setTitle(txt_, forState: UIControlState.Normal)
         setupGrowthPickerView()
         setupGrowthPickerViewToolbar()
         setupGraphSettings()
         setupSidebarMenu()
+        dateBtn.hidden = true
         if (growth > 0){
             //lbl.hidden = true
-            drawGraph()
-            weekDescription.hidden = false
-            //drawDataDots(StrawBerryColor, X: 80 ,Y: 100)
-            //drawDataDots(UIColor.blueColor(), X: 280 ,Y: 100)
-            arrow.hidden = true
+            if dateType != -1{
+                drawGraph()
+                weekDescription.hidden = false
+                //drawDataDots(StrawBerryColor, X: 80 ,Y: 100)
+                //drawDataDots(UIColor.blueColor(), X: 280 ,Y: 100)
+                arrow.hidden = true
+            }else{
+                dateBtn.hidden = false
+            }
         }
         else{
             weekDescription.hidden = true
@@ -100,6 +108,8 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         }
     }
 
+    @IBAction func toDate(sender: UIButton) {
+    }
     func loadRecWeight(){
         let table = Table("RecWeight")
         let weight = Expression<Double>("weight")
@@ -127,12 +137,22 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
             let b = i[date]
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-            let week = Int((calculateDay(dateFormatter.dateFromString(b)!))/7)
+            let week = Int((calculateDay(dateFormatter.dateFromString(b)!))/7) + 1
             if week < 41 {
                 weights_.append(Weight(date: dateFormatter.dateFromString(b)!, kg: Int(i[kg]), gr: Int(i[gr]),week: week))
             }
         }
-        weights = weights_.sort(self.fronkwards)
+        let tmp = weights_.sort(self.fronkwards)
+        if tmp.count > 0{
+            var temp_week = tmp[0].week
+            for var i = 0; i < tmp.count; i += 1{
+                if temp_week != tmp[i].week{
+                    weights.append(tmp[i-1])
+                }
+                temp_week = tmp[i].week
+            }
+            weights.append(tmp[tmp.count-1])
+        }
     }
     
     func fronkwards(s1: Weight, _ s2: Weight) -> Bool {
@@ -143,8 +163,15 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         self.lineChartView.descriptionText = "кг"
         self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 15)
         self.lineChartView.descriptionFont = .systemFontOfSize(11)
-        self.lineChartView.noDataText = "Для отображения графика"
-        self.lineChartView.noDataTextDescription = "необходимо указать рост"
+        if dateType == -1 && growth > 0{
+            self.lineChartView.noDataText = "Пожалуйста, введите"
+            self.lineChartView.noDataTextDescription = "дату родов"
+            dateBtn.hidden = false
+            arrow.hidden = true
+        }else{
+            self.lineChartView.noDataText = "Для отображения графика"
+            self.lineChartView.noDataTextDescription = "необходимо указать рост"
+        }
         self.lineChartView.infoFont = .systemFontOfSize(18)
         self.lineChartView.infoTextColor = BiruzaColor1
         self.lineChartView.scaleXEnabled = true
@@ -353,7 +380,8 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     @IBAction func setweightWithSegue(segue:UIStoryboardSegue) {
-        self.weightButton.title = RecWeight == 0 ? "Ваш вес" : "\(RecWeight) кг"
+        let txt = RecWeight == 0 ? "Не выбрано" : "\(RecWeight) кг"
+        self.weightButton.setTitle(txt, forState: UIControlState.Normal)
         if RecWeight > 0{
             setweight = false
             print("weight settend")
@@ -391,8 +419,8 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     func doneButtonTouched() {
         self.pickerViewTextField.resignFirstResponder()
         growth = getGrowthFromPickerView()
-        
-        self.navigationItem.rightBarButtonItem?.title = "\(growth) см"
+        let txt_ = growth == 0 ? "Ваш рост" : "\(growth) см"
+        self.growthButton.setTitle(txt_, forState: UIControlState.Normal)
         saveGrowthToPlist(growth)
         setupPickerViewValues()
         if growth > 0{

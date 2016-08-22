@@ -79,6 +79,40 @@ func AddSect(names: [Names]) -> [(index: Int, length :Int, title: String)] {
     return sect
 }
 
+func loadPhotos(){
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+        photos.removeAll()
+        uzis.removeAll()
+        var table = Table("Photo")
+        let date = Expression<String>("Date")
+        let image = Expression<Blob>("Image")
+        let type = Expression<Int64>("Type")
+        let text = Expression<String>("Text")
+        
+        for i in try! db.prepare(table.select(date,image,type,text)) {
+            let a = i[image]
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            print(dateFormatter.dateFromString(b)!)
+            photos.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+            NSNotificationCenter.defaultCenter().postNotificationName("LoadPhoto", object: nil)
+        }
+        
+        table = Table("Uzi")
+        for i in try! db.prepare(table.select(date,image,type,text)) {
+            let a = i[image]
+            let c = NSData(bytes: a.bytes, length: a.bytes.count)
+            let b = i[date]
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            uzis.append(Photo(image: UIImage(data: c)!, date: dateFormatter.dateFromString(b)!, text: i[text]))
+            NSNotificationCenter.defaultCenter().postNotificationName("LoadPhoto", object: nil)
+        }
+    }
+}
+
 func NotificationJSON(){
     if not.count == 0{
         let table = Table("Notification")
