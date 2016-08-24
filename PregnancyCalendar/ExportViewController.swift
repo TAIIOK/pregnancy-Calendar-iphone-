@@ -161,15 +161,18 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         //let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("MasterView")
         //self.splitViewController?.showDetailViewController(vc!, sender: self)
         //self.splitViewController?.viewControllers[0] = vc1!
-        if selectionDateType == 1{
-            WeekToDays()
+        if exportdatestate == 1{
+            if selectionDateType == 1{
+                WeekToDays()
+            }
+            DateTable.reloadData()
+            loadPhotos()
+            PhotoCollectionVIew.reloadData()
+            loadNotifi()
+            NotifiTable.reloadData()
+            loadNotes()
+            NotesTable.reloadData()
         }
-        loadPhotos()
-        PhotoCollectionVIew.reloadData()
-        loadNotifi()
-        NotifiTable.reloadData()
-        loadNotes()
-        NotesTable.reloadData()
     }
 
     @IBAction func Show(sender: UIButton) {
@@ -467,7 +470,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         if tableView == DateTable{
             
             selectionDateType = indexPath.row
-            selectedExportDays.removeAll()
+            //selectedExportDays.removeAll()
             if selectionDateType == 0 {
                 let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarExport")
                 self.navigationController?.pushViewController(vc1!, animated: true)

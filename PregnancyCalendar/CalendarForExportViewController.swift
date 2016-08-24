@@ -31,24 +31,34 @@ class Weeek: NSObject {
     }
 }
 
+var exportdatestate = 0 //0 - back 1 - done
+
 class CalendarForExportViewController: UIViewController {
     
     var shouldShowDaysOut = true
     var animationFinished = true
     var needupdate = false
     var days_week = [Weeek]()
-    
+    var selectedExportDaystemp = [NSDate]()
     
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        exportdatestate = 0
         self.presentedDateUpdated(CVDate(date: NSDate()))
+        let btn = UIBarButtonItem(title: "ОК", style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(CalendarForExportViewController.pressdone))
+        self.navigationItem.rightBarButtonItem = btn
         // Do any additional setup after loading the view.
     }
     
-    
+    func pressdone(){
+        exportdatestate = 1
+        selectedExportDays.removeAll()
+        selectedExportDays = selectedExportDaystemp
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -202,7 +212,7 @@ class CalendarForExportViewController: UIViewController {
              self.calendarView.selectDate(day)
              }
              }*/
-            selectDays(selectedExportDays)
+            selectDays(selectedExportDaystemp)
         }else{
             for i in selectedExportWeek{
                 selectDays(i.days)
@@ -260,12 +270,12 @@ extension CalendarForExportViewController: CVCalendarViewDelegate, CVCalendarMen
         curMonth = selectedExportCalendarDay.date.month
         if selectionDateType == 0{
             print("\(dayView.date.commonDescription) is selected!")
-            if !selectedExportDays.contains(dayView.date.convertedDate()!){
-                selectedExportDays.append(dayView.date.convertedDate()!)
+            if !selectedExportDaystemp.contains(dayView.date.convertedDate()!){
+                selectedExportDaystemp.append(dayView.date.convertedDate()!)
             }else{
-                for var i = 0; i < selectedExportDays.count; i += 1{
-                    if selectedExportDays[i] == dayView.date.convertedDate()!{
-                        selectedExportDays.removeAtIndex(i)
+                for var i = 0; i < selectedExportDaystemp.count; i += 1{
+                    if selectedExportDaystemp[i] == dayView.date.convertedDate()!{
+                        selectedExportDaystemp.removeAtIndex(i)
                         break
                     }
                 }
