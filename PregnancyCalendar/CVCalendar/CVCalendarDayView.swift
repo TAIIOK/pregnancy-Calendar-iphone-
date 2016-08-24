@@ -385,9 +385,9 @@ extension CVCalendarDayView {
                     case 1:
                         x = self.frame.width / 2
                     case 2:
-                        x = self.frame.width * CGFloat(2+index)/5.00 // frame.width * (2/5, 3/5)
+                        x = self.frame.width * CGFloat(2+index*2)/6.00 // frame.width * (2/5, 3/5)
                     case 3:
-                        x = self.frame.width * CGFloat(2+index)/6.00 // frame.width * (1/3, 1/2, 2/3)
+                        x = self.frame.width * CGFloat(2+index*3)/10.00 // frame.width * (1/3, 1/2, 2/3)
                     default:
                         break
                     }
@@ -396,7 +396,7 @@ extension CVCalendarDayView {
                     dotMarker.fillColor = StrawBerryColor
                     dotMarker.center = CGPointMake(x, y)
                     
-                    let imageView = UIImageView(frame: CGRectMake(0, 2 , 12, 12));
+                    let imageView = UIImageView(frame: CGRectMake(0, 4 , 14, 12));
                     
                     var image = UIImage(named: "White_Bell-50.png");
                     
