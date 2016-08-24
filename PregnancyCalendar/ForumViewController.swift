@@ -23,6 +23,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var table: UITableView!
 
+    @IBOutlet weak var background: UIImageView!
  
     
     override func viewDidLoad() {
@@ -34,6 +35,11 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
         self.navigationItem.leftBarButtonItem = btn
 
+        noConnectionButton.layer.borderWidth = 2
+        noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
+        noConnectionButton.layer.cornerRadius = 5
+        noConnetionLabel.textColor = UIColor.grayColor()
+        
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
@@ -43,17 +49,19 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
             noConnectionButton.hidden = false
             noConnetionView.hidden = false
             noConnectionButton.enabled = true
-            
+            background.image = UIImage(named: "no_connection_background.png")
         case .Online(.WWAN):
             self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ForumCell")
             table.delegate = self
             table.dataSource = self
             table.hidden = false
+            background.image = UIImage(named: "background.png")
         case .Online(.WiFi):
             self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ForumCell")
             table.delegate = self
             table.dataSource = self
             table.hidden = false
+            background.image = UIImage(named: "background.png")
         }
     
     }

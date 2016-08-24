@@ -22,12 +22,12 @@ extension UIView{
     }
 }
 func CreateTitleBlue() -> UIImageView {
-    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 700, height: 600))
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 245))
     imageView.image = UIImage(named: "title(blue).png")
     return imageView
 }
 func CreateTitlePink() -> UIImageView{
-    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 700, height: 600))
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 245))
     imageView.image = UIImage(named: "title(pink).png")
     return imageView
 }

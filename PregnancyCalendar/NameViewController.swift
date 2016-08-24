@@ -17,7 +17,20 @@ class NameViewController: UIViewController{
         super.viewDidLoad()
         self.title = "Значение имени"
         info.scrollsToTop = true
-        info.text = choosedSegmentNames ? (man[sections[choosedName.section].index + choosedName.row].name + "\n\n" + man[sections[choosedName.section].index + choosedName.row].value + "\n\n" + man[sections[choosedName.section].index + choosedName.row].about) : (woman[sectionsGirl[choosedName.section].index + choosedName.row].name + "\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].value + "\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].about)
+        /*info.text = choosedSegmentNames ? (man[sections[choosedName.section].index + choosedName.row].name + "\n\n" + man[sections[choosedName.section].index + choosedName.row].value + "\n\n" + man[sections[choosedName.section].index + choosedName.row].about) : (woman[sectionsGirl[choosedName.section].index + choosedName.row].name + "\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].value + "\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].about)*/
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .Center
+        var text = NSMutableAttributedString()
+        var tmp = NSMutableAttributedString(string: choosedSegmentNames ? (man[sections[choosedName.section].index + choosedName.row].name + "\n\n") : (woman[sectionsGirl[choosedName.section].index + choosedName.row].name + "\n\n"), attributes: [NSParagraphStyleAttributeName: paragraphStyle])
+        tmp.addAttributes([NSFontAttributeName : UIFont.boldSystemFontOfSize(18)], range: NSRange(location: 0,length: tmp.length))
+        text.appendAttributedString(tmp)
+        tmp = NSMutableAttributedString(string: choosedSegmentNames ? (man[sections[choosedName.section].index + choosedName.row].value) : (woman[sectionsGirl[choosedName.section].index + choosedName.row].value), attributes: [NSParagraphStyleAttributeName: paragraphStyle])
+        tmp.addAttributes([NSFontAttributeName : UIFont.italicSystemFontOfSize(18)], range: NSRange(location: 0,length: tmp.length))
+        text.appendAttributedString(tmp)
+        text.appendAttributedString(NSMutableAttributedString(string: choosedSegmentNames ? ("\n\n" + man[sections[choosedName.section].index + choosedName.row].about) : ("\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].about), attributes: [NSFontAttributeName : UIFont.systemFontOfSize(18)]))
+        //text.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: text.length))
+        info.attributedText = text
     }
 
     override func didReceiveMemoryWarning() {

@@ -42,8 +42,8 @@ class OnePhotoViewController: UIViewController{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         let Photo_temp = choosedSegmentImages ? photos[currentPhoto].image : uzis[currentPhoto].image
-        let x = Double(Photo_temp.size.height)/Double(600)
-        let y = Double(Photo_temp.size.width)/Double(700)
+        let x = Double(Photo_temp.size.height)/Double(500)
+        let y = Double(Photo_temp.size.width)/Double(400)
         let scale = x > y ? x : y
         let Photo = UIImage(CGImage: Photo_temp.CGImage!, scale: CGFloat(scale), orientation: Photo_temp.imageOrientation)
         image.frame.size.width = Photo.size.width

@@ -45,6 +45,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var tbl: UITableView!
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var noConnectionView: UIView!
     @IBOutlet weak var noConnectionLabel: UILabel!
     @IBOutlet weak var noConnectionImage: UIImageView!
@@ -71,6 +72,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             noConnectionButton.hidden=false
             noConnectionButton.enabled=true
             print("Not connected")
+            background.image = UIImage(named: "no_connection_background.png")
         default:
             if sender.selectedSegmentIndex == 0{
                 map.hidden = true
@@ -82,6 +84,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             tbl.delegate = self
             tbl.dataSource = self
             map.delegate = self
+            background.image = UIImage(named: "background.png")
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPoints:", name:"loadPoints", object: nil)
             // Ask for Authorisation from the User.
             if #available(iOS 8.0, *) {
@@ -119,6 +122,11 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let img  = UIImage(named: "menu")
         let btn = UIBarButtonItem(image: img , style: UIBarButtonItemStyle.Bordered, target: self.revealViewController(), action: "revealToggle:")
         self.navigationItem.leftBarButtonItem = btn
+        noConnectionButton.layer.borderWidth = 2
+        noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
+        noConnectionButton.layer.cornerRadius = 5
+        noConnectionLabel.textColor = UIColor.grayColor()
+        
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
@@ -131,12 +139,14 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             noConnectionButton.hidden=false
             noConnectionButton.enabled=true
             print("Not connected")
+            background.image = UIImage(named: "no_connection_background.png")
         default:
             map.hidden = true
             tbl.hidden = false
             tbl.delegate = self
             tbl.dataSource = self
             map.delegate = self
+            background.image = UIImage(named: "background.png")
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPoints:", name:"loadPoints", object: nil)
             // Ask for Authorisation from the User.
             if #available(iOS 8.0, *) {

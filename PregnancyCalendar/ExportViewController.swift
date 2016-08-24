@@ -416,7 +416,6 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             }
             
             cell.selectedBackgroundView?.backgroundColor = .clearColor()
-            NotesTableHeightConstrait.constant = tableView.contentSize.height
             cell.backgroundColor = .clearColor()
             return cell
         }else if tableView == NotesTable{
@@ -439,6 +438,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             cell.detailTextLabel?.text = "\(count) \(txt)"
             cell.backgroundColor = .clearColor()
             cell.selectedBackgroundView?.backgroundColor = .clearColor()
+            NotesTableHeightConstrait.constant = tableView.contentSize.height
             return cell
             
         }else{

@@ -18,7 +18,7 @@ class PhotoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        loadPhotos()
+        //loadPhotos()
         table.reloadData()
         table.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
         table.backgroundColor = .clearColor()
@@ -38,7 +38,7 @@ class PhotoTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

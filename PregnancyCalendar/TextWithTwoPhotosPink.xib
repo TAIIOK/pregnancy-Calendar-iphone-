@@ -37,12 +37,12 @@
                     <color key="textColor" red="0.74539679288864136" green="0.12782421708106995" blue="0.3612554669380188" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baf-bf-V35">
-                    <rect key="frame" x="176" y="285" width="248" height="277"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nba-Z1-YGj">
+                    <rect key="frame" x="163" y="366" width="248" height="260"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA1-9z-Ofs">
-                    <rect key="frame" x="101" y="61" width="252" height="285"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgC-Ah-jPu">
+                    <rect key="frame" x="126" y="88" width="252" height="260"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -50,9 +50,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="CenterTextView" destination="JpG-te-8XZ" id="oKb-NM-WEF"/>
-                <outlet property="DownPhotoView" destination="baf-bf-V35" id="wCz-zS-Wcx"/>
+                <outlet property="DownPhotoView" destination="nba-Z1-YGj" id="EHb-b4-7ic"/>
                 <outlet property="TitleLabel" destination="1eR-QT-dCs" id="DWf-R3-nIu"/>
-                <outlet property="UpPhotoView" destination="DA1-9z-Ofs" id="k54-fK-GxJ"/>
+                <outlet property="UpPhotoView" destination="GgC-Ah-jPu" id="y23-oh-6EG"/>
             </connections>
             <point key="canvasLocation" x="444" y="58"/>
         </view>

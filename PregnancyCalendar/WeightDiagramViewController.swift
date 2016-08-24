@@ -81,7 +81,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         loadWeight()
         loadRecWeight()
         let txt = RecWeight == 0 ? "Не выбрано" : "\(RecWeight) кг"
-        let txt_ = growth == 0 ? "Ваш рост" : "\(growth) см"
+        let txt_ = growth == 0 ? "Не выбрано" : "\(growth) см"
         self.weightButton.setTitle(txt, forState: UIControlState.Normal)
         self.growthButton.setTitle(txt_, forState: UIControlState.Normal)
         setupGrowthPickerView()
@@ -402,7 +402,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
         }else{
             print("null weight")
             updateRecWeight()
-            let actionSheetController: UIAlertController = UIAlertController(title: "Вес на момент зачатия не введен", message: "В качестве начального веса будет использован первый введенный в Заметках вес. Это может привести к тому, что рассчет рекомендуемой нормы веса будет необъективен. Рекоменуется ввести вес на момент зачатия.", preferredStyle: .Alert)
+            let actionSheetController: UIAlertController = UIAlertController(title: "Вес на момент зачатия не введен", message: "В качестве начального веса будет использован первый введенный в Заметках вес. Это может привести к тому, что расчет рекомендуемой нормы веса будет необъективен. Рекоменуется ввести вес на момент зачатия.", preferredStyle: .Alert)
             
             //Create and an option action
             let nextAction: UIAlertAction = UIAlertAction(title: "ОК", style: .Default) { action -> Void in
@@ -425,7 +425,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     func doneButtonTouched() {
         self.pickerViewTextField.resignFirstResponder()
         growth = getGrowthFromPickerView()
-        let txt_ = growth == 0 ? "Ваш рост" : "\(growth) см"
+        let txt_ = growth == 0 ? "Не выбрано" : "\(growth) см"
         self.growthButton.setTitle(txt_, forState: UIControlState.Normal)
         saveGrowthToPlist(growth)
         setupPickerViewValues()
