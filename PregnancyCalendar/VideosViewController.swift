@@ -72,11 +72,6 @@ class VideosViewController: UICollectionViewController {
         imagessecond.removeAll()
         videoTitlesecond.removeAll()
         
-        noConnectionButton.layer.borderWidth = 2
-        noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
-        noConnectionButton.layer.cornerRadius = 5
-        noConnectionLable.textColor = UIColor.grayColor()
-        
         let statusfirst = Reach().connectionStatus()
         switch statusfirst {
         case .Unknown, .Offline:
@@ -213,7 +208,10 @@ class VideosViewController: UICollectionViewController {
         
         VideoCollectionView.delegate = self
         VideoCollectionView.dataSource = self
-        
+        noConnectionButton.layer.borderWidth = 2
+        noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
+        noConnectionButton.layer.cornerRadius = 5
+        noConnectionLable.textColor = UIColor.grayColor()
         if choosedVideoSegment{
             self.title = "Белье для беременных"
         }else{

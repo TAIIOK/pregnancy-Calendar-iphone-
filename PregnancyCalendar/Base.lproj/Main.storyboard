@@ -1403,6 +1403,10 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLW-LM-JVH">
                                     <rect key="frame" x="155" y="322" width="318" height="63"/>
                                     <color key="tintColor" red="0.0" green="0.74117647060000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="318" id="1VB-oQ-CxF"/>
+                                        <constraint firstAttribute="height" constant="63" id="HRa-wN-Tax"/>
+                                    </constraints>
                                     <attributedString key="attributedText">
                                         <fragment content="Интернет-соединение недоступно Повторите попытку подключения">
                                             <attributes>
@@ -1416,9 +1420,17 @@
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="img_sad_smile" translatesAutoresizingMaskIntoConstraints="NO" id="d1F-G7-mtz">
                                     <rect key="frame" x="254" y="171" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="Dep-xH-5ld"/>
+                                        <constraint firstAttribute="height" constant="120" id="mGu-8d-Nmx"/>
+                                    </constraints>
                                 </imageView>
                                 <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-ov-iDS" userLabel="Подключиться">
                                     <rect key="frame" x="244" y="400" width="141" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="FLX-2Y-HIK"/>
+                                        <constraint firstAttribute="width" constant="141" id="ayL-uu-hkM"/>
+                                    </constraints>
                                     <state key="normal" title="Повторить">
                                         <color key="titleColor" red="0.80784313730000001" green="0.058823529409999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" red="0.80784313730000001" green="0.058823529409999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1434,9 +1446,15 @@
                             </accessibility>
                             <constraints>
                                 <constraint firstItem="NnX-0D-kTu" firstAttribute="top" secondItem="OeR-bj-W0U" secondAttribute="top" id="8F2-Pd-xQW"/>
+                                <constraint firstItem="UiB-ov-iDS" firstAttribute="top" secondItem="BLW-LM-JVH" secondAttribute="bottom" constant="15" id="8fE-o1-eaD"/>
+                                <constraint firstItem="BLW-LM-JVH" firstAttribute="centerX" secondItem="OeR-bj-W0U" secondAttribute="centerX" id="DBz-Ae-kAA"/>
+                                <constraint firstItem="d1F-G7-mtz" firstAttribute="centerX" secondItem="OeR-bj-W0U" secondAttribute="centerX" id="Dci-fQ-uwI"/>
+                                <constraint firstItem="UiB-ov-iDS" firstAttribute="centerX" secondItem="OeR-bj-W0U" secondAttribute="centerX" id="U84-hO-lBK"/>
                                 <constraint firstAttribute="bottom" secondItem="NnX-0D-kTu" secondAttribute="bottom" id="dSb-jv-i9V"/>
                                 <constraint firstAttribute="trailing" secondItem="NnX-0D-kTu" secondAttribute="trailing" id="otb-gd-fK9"/>
                                 <constraint firstItem="NnX-0D-kTu" firstAttribute="leading" secondItem="OeR-bj-W0U" secondAttribute="leading" id="tNt-zQ-494"/>
+                                <constraint firstItem="d1F-G7-mtz" firstAttribute="top" secondItem="OeR-bj-W0U" secondAttribute="top" constant="171" id="vT7-19-arV"/>
+                                <constraint firstItem="BLW-LM-JVH" firstAttribute="top" secondItem="d1F-G7-mtz" secondAttribute="bottom" constant="31" id="zxh-1Z-aDM"/>
                             </constraints>
                         </view>
                         <cells>
@@ -3994,9 +4012,7 @@
                                             <color key="titleShadowColor" red="0.80784313730000001" green="0.058823529409999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vgP-E4-c7f" kind="showDetail" id="CFo-2c-e8X">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <action selector="reconnect:" destination="Rh3-f9-7S0" eventType="touchUpInside" id="f16-kq-zPR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -4162,9 +4178,7 @@
                                             <color key="titleShadowColor" red="0.80784313730000001" green="0.058823529409999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="IM4-aW-LyI" kind="showDetail" id="wGh-Hv-VEg">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <action selector="press:" destination="AuP-tx-ejP" eventType="touchUpInside" id="d59-I3-bvk"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -39,7 +39,13 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
         noConnectionButton.layer.cornerRadius = 5
         noConnetionLabel.textColor = UIColor.grayColor()
-        
+        check()
+    }
+    @IBAction func press(sender: UIButton) {
+        check()
+    }
+    
+    func check(){
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
@@ -63,7 +69,6 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
             table.hidden = false
             background.image = UIImage(named: "background.png")
         }
-    
     }
     
     private func setupSidebarMenu() {

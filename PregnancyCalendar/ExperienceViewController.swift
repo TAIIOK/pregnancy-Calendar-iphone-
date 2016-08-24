@@ -143,7 +143,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         }else if selectedExperienceDay != nil{
             tmp = selectedExperienceDay.date.convertedDate()!
         }
-        self.presentedDateUpdated(CVDate(date: tmp))
+        setupNavigation(CVDate(date: tmp))
         if fromCalendar{
             changer.selectedSegmentIndex = 1
             choosedSegmentNotes = false
@@ -161,6 +161,67 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    func setupNavigation(date : CVDate){
+        
+        
+        let customView = UIView(frame: CGRectMake(0, 0, 150, 44))
+        customView.backgroundColor = StrawBerryColor
+        
+        
+        let label = UILabel(frame: CGRectMake(0, 0,150, 44))
+        
+        switch date.month {
+        case 1:
+            label.text = "Январь \(date.year)"
+            break
+        case 2:
+            label.text = "Февраль \(date.year)"
+            break
+        case 3:
+            label.text = "Март \(date.year)"
+            break
+        case 4:
+            label.text = "Апрель \(date.year)"
+            break
+        case 5:
+            label.text = "Май \(date.year)"
+            break
+        case 6:
+            label.text = "Июнь \(date.year)"
+            break
+        case 7:
+            label.text = "Июль \(date.year)"
+            break
+        case 8:
+            label.text =  "Август \(date.year)"
+            break
+        case 9:
+            label.text =  "Сентябрь \(date.year)"
+            break
+        case 10:
+            label.text =  "Октябрь \(date.year)"
+            break
+        case 11:
+            label.text = "Ноябрь \(date.year)"
+            break
+        case 12:
+            label.text = "Декабрь \(date.year)"
+            break
+        default:
+            break
+        }
+        
+        
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Right
+        label.backgroundColor = StrawBerryColor
+        customView.addSubview(label)
+        
+        let Button = UIBarButtonItem(customView: customView)
+        self.navigationItem.rightBarButtonItem = Button
+    }
+
+    
     func loadNotification(notification: NSNotification){
         dispatch_async(dispatch_get_main_queue(), {
             self.tbl.reloadData()
@@ -350,12 +411,8 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }else{
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            if cell?.textLabel?.text == notifiCategory[5]{
-                isAdvertitsing = true
-            }else{
-                noteText[0] = (cell?.textLabel?.text)!
-                noteText[1] = (cell?.detailTextLabel?.text)!
-            }
+            noteText[0] = (cell?.textLabel?.text)!
+            noteText[1] = (cell?.detailTextLabel?.text)!
             let destinationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("advertising")
             self.navigationController?.pushViewController(destinationViewController!, animated: true)
         }
@@ -439,6 +496,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewWillDisappear(animated: Bool) {
+        phincalc = false
         mas.removeAll()
         tbl.reloadData()
     }

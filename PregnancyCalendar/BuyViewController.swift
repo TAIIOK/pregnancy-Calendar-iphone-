@@ -60,60 +60,13 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     @IBAction func segmentChanged(sender: UISegmentedControl) {
-        let status = Reach().connectionStatus()
-        switch status {
-        case .Unknown, .Offline:
-            noConnectionView.backgroundColor = .clearColor()
-            noConnectionImage.hidden = false
-            noConnectionView.hidden = false
-            map.hidden = true
-            tbl.hidden = true
-            noConnectionLabel.hidden=false
-            noConnectionButton.hidden=false
-            noConnectionButton.enabled=true
-            print("Not connected")
-            background.image = UIImage(named: "no_connection_background.png")
-        default:
-            if sender.selectedSegmentIndex == 0{
-                map.hidden = true
-                tbl.hidden = false
-            }else{
-                map.hidden = false
-                tbl.hidden = true
-            }
-            tbl.delegate = self
-            tbl.dataSource = self
-            map.delegate = self
-            background.image = UIImage(named: "background.png")
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPoints:", name:"loadPoints", object: nil)
-            // Ask for Authorisation from the User.
-            if #available(iOS 8.0, *) {
-                self.locationManager.requestAlwaysAuthorization() //8
-                
-                
-                // For use in foreground
-                self.locationManager.requestWhenInUseAuthorization() //8
-                
-                if CLLocationManager.locationServicesEnabled() {
-                    locationManager.delegate = self
-                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                    self.map.showsUserLocation = true
-                    locationManager.startUpdatingLocation() //8
-                    
-                    let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-                    let region = MKCoordinateRegion(center: initialLocation, span: span)
-                    map.setRegion(region, animated: true)
-                    
-                    //setCenterOfMapToLocation(initialLocation)
-                }
-                
-            } else {
-                // Fallback on earlier versions
-            }
-            //addPinToMapView()
-        }
-
+        check()
     }
+    
+    @IBAction func reconnect(sender: UIButton) {
+        check()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +79,10 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
         noConnectionButton.layer.cornerRadius = 5
         noConnectionLabel.textColor = UIColor.grayColor()
-        
+        check()
+    }
+    
+    func check(){
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
@@ -151,11 +107,11 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             // Ask for Authorisation from the User.
             if #available(iOS 8.0, *) {
                 self.locationManager.requestAlwaysAuthorization() //8
-            
-            
+                
+                
                 // For use in foreground
                 self.locationManager.requestWhenInUseAuthorization() //8
-
+                
                 if CLLocationManager.locationServicesEnabled() {
                     locationManager.delegate = self
                     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -174,6 +130,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             //addPinToMapView()
         }
+
     }
     
     private func setupSidebarMenu() {

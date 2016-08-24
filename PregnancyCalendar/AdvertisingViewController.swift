@@ -99,7 +99,8 @@ class AdvertisingViewController: UIViewController {
         label.font = .systemFontOfSize(16)
     }
 
-
+    override func viewDidDisappear(animated: Bool) {
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -130,15 +131,15 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
         return true // Default value is true
     }
     
+    func shouldAutoSelectDayOnWeekChange() -> Bool
+    {
+        return false
+    }
+    
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedExperienceDay = dayView
         notifiFromDate(selectedExperienceDay.date.convertedDate()!)
-    }
-    
-    func shouldAutoSelectDayOnMonthChange() -> Bool
-    {
-        return false
     }
     
     func swipedetected(){
