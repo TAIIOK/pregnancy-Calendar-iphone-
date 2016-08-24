@@ -14,7 +14,7 @@ var dateType = -1
 var dateTypeTemp = -1
 var Back = false
 
-class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class BirthDateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var conceptionDateLabel: UILabel!
     @IBOutlet weak var lastMenstrualPeriod: UILabel!
@@ -28,7 +28,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     let txt = ["По дате зачатия","По дате последней менструации","По дате, указанной врачем"]
  
 
-    // КАЛЕНДАРЬ
+    /*// КАЛЕНДАРЬ
     func epCalendarPicker(_: EPCalendarPicker, didCancel error : NSError) {
         
         
@@ -41,12 +41,14 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     }
     
     func epCalendarPicker(_: EPCalendarPicker, didSelectMultipleDate dates : [NSDate]) {    }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
+        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = btnBack
         loadDate()
         var date = NSDate()
         if dateTypeTemp != -1{
@@ -73,6 +75,13 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
     func Cancel(){
         let zodiac = self.storyboard?.instantiateViewControllerWithIdentifier("ShowZodiac")
         self.revealViewController().pushFrontViewController(zodiac, animated: true)
+    }
+    
+    @IBAction func dateupd(segue:UIStoryboardSegue) {
+        print("upd")
+        if selectionBDstate == 1{
+            tbl.reloadData()
+        }
     }
     
     @IBAction func OK(sender: UIButton) {
@@ -161,7 +170,9 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         }else{
             btn.setTitle("РАССЧИТАТЬ", forState: UIControlState.Normal)
         }
-        let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
+        let calendar = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarSelDate")
+        self.navigationController?.pushViewController(calendar!, animated: true)
+        /*let calendarPicker = EPCalendarPicker(startYear: currentyear - 1  , endYear: currentyear + 10, multiSelection: false, selectedDates: [],window: false , scroll: false , scrollDate: NSDate())
         calendarPicker.calendarDelegate = self
         calendarPicker.startDate = NSDate()
 
@@ -174,7 +185,7 @@ class BirthDateViewController: UIViewController, EPCalendarPickerDelegate, UITab
         calendarPicker.weekendTintColor = UIColor.lightGrayColor()
         
         let navigationController = UINavigationController(rootViewController: calendarPicker)
-        self.presentViewController(navigationController, animated: true, completion: nil)
+        self.presentViewController(navigationController, animated: true, completion: nil)*/
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
