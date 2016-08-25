@@ -1342,7 +1342,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="e3B-Jz-qX6" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorBarButtonItem="zKr-oI-lZh" id="B2f-EZ-qOh">
-                                        <popoverArrowDirection key="popoverArrowDirection"/>
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </barButtonItem>
@@ -5047,6 +5047,6 @@
         <image name="vk_icon" width="445" height="445"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GcQ-V8-bjP"/>
+        <segue reference="B2f-EZ-qOh"/>
     </inferredMetricsTieBreakers>
 </document>
