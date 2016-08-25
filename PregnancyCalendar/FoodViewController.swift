@@ -353,7 +353,7 @@ extension FoodViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate
         return true // Default value is true
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

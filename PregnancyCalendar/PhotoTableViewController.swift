@@ -18,8 +18,14 @@ class PhotoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        //loadPhotos()
-        table.reloadData()
+        /*self.view.makeToastActivityWithMessage(message: "Пожалуйста, подождите.", addOverlay: true)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.loadPhotos()
+            self.table.reloadData()
+            self.view.hideToastActivity()
+            return
+        })*/
+        
         table.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
         table.backgroundColor = .clearColor()
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)

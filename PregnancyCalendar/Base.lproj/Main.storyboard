@@ -950,7 +950,7 @@
         <!--Share View Controller-->
         <scene sceneID="L9L-iD-41N">
             <objects>
-                <viewController id="e3B-Jz-qX6" customClass="ShareViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shared" id="e3B-Jz-qX6" customClass="ShareViewController" customModule="Календарь_беременности" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fm2-Db-SH9"/>
                         <viewControllerLayoutGuide type="bottom" id="HBl-cx-2Nu"/>
@@ -1041,12 +1041,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="300"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blz-Bw-HXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4832" y="2973"/>
+            <point key="canvasLocation" x="4808" y="2847"/>
         </scene>
         <!--Photos View Controller-->
         <scene sceneID="18j-40-hPJ">
@@ -1224,8 +1225,8 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="ShareSelected:" destination="8Ux-kJ-TYt" id="Gkr-XG-q7G"/>
-                                    <segue destination="e3B-Jz-qX6" kind="popoverPresentation" popoverAnchorBarButtonItem="xvo-Pu-Uvy" id="VCl-UK-2sr">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                    <segue destination="e3B-Jz-qX6" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorBarButtonItem="xvo-Pu-Uvy" id="GcQ-V8-bjP">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </barButtonItem>
@@ -1245,6 +1246,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="PhotoCollectionView" destination="yK7-z7-Rcc" id="cg2-fG-tVL"/>
+                        <outlet property="sharebutton" destination="xvo-Pu-Uvy" id="9MH-Zr-Hkv"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvv-9i-SJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1339,7 +1341,7 @@
                             <barButtonItem image="Share-30" id="zKr-oI-lZh">
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="e3B-Jz-qX6" kind="popoverPresentation" popoverAnchorBarButtonItem="zKr-oI-lZh" id="B2f-EZ-qOh">
+                                    <segue destination="e3B-Jz-qX6" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorBarButtonItem="zKr-oI-lZh" id="B2f-EZ-qOh">
                                         <popoverArrowDirection key="popoverArrowDirection"/>
                                     </segue>
                                 </connections>
@@ -1801,13 +1803,13 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой вес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dm-4d-gVZ">
-                                <rect key="frame" x="25" y="200" width="555" height="21"/>
+                                <rect key="frame" x="23" y="121" width="555" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvZ-N7-Qt6">
-                                <rect key="frame" x="165" y="251" width="100" height="30"/>
+                                <rect key="frame" x="163" y="172" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="C2M-oz-VcD"/>
                                 </constraints>
@@ -1819,7 +1821,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-8m-Xw0">
-                                <rect key="frame" x="57" y="251" width="100" height="30"/>
+                                <rect key="frame" x="55" y="172" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bpo-dr-dUk"/>
                                 </constraints>
@@ -1833,19 +1835,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="leading" secondItem="hCc-uD-MPf" secondAttribute="leadingMargin" constant="5" id="65O-t4-8bL"/>
+                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="leading" secondItem="hCc-uD-MPf" secondAttribute="leadingMargin" constant="3" id="65O-t4-8bL"/>
                             <constraint firstItem="xSt-XR-EXK" firstAttribute="centerX" secondItem="pLM-aA-Yl1" secondAttribute="centerX" id="6N6-Ej-RCQ"/>
                             <constraint firstItem="kkJ-W8-aCh" firstAttribute="top" secondItem="xSt-XR-EXK" secondAttribute="bottom" constant="8" symbolic="YES" id="6nN-Oc-wbx"/>
                             <constraint firstItem="ny6-D1-1s6" firstAttribute="leading" secondItem="hCc-uD-MPf" secondAttribute="leading" id="7gB-ht-1ON"/>
                             <constraint firstItem="ny6-D1-1s6" firstAttribute="trailing" secondItem="pLM-aA-Yl1" secondAttribute="trailing" id="98q-xv-8eh"/>
                             <constraint firstItem="ny6-D1-1s6" firstAttribute="leading" secondItem="pLM-aA-Yl1" secondAttribute="leading" id="9PN-cy-fv9"/>
-                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="trailing" secondItem="hCc-uD-MPf" secondAttribute="trailingMargin" id="Aje-4g-0ZC"/>
-                            <constraint firstItem="7Ri-8m-Xw0" firstAttribute="leading" secondItem="hCc-uD-MPf" secondAttribute="leadingMargin" constant="37" id="G98-eA-3po"/>
+                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="trailing" secondItem="hCc-uD-MPf" secondAttribute="trailingMargin" constant="-2" id="Aje-4g-0ZC"/>
+                            <constraint firstItem="7Ri-8m-Xw0" firstAttribute="leading" secondItem="hCc-uD-MPf" secondAttribute="leadingMargin" constant="35" id="G98-eA-3po"/>
                             <constraint firstItem="pLM-aA-Yl1" firstAttribute="top" secondItem="ny6-D1-1s6" secondAttribute="bottom" id="JC4-tf-3NT"/>
                             <constraint firstItem="Vm3-6m-z6A" firstAttribute="trailing" secondItem="ny6-D1-1s6" secondAttribute="trailing" id="JG8-GQ-98s"/>
-                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="top" secondItem="pLM-aA-Yl1" secondAttribute="bottom" constant="94" id="Leh-uf-CJi"/>
+                            <constraint firstItem="7dm-4d-gVZ" firstAttribute="top" secondItem="pLM-aA-Yl1" secondAttribute="bottom" constant="15" id="Leh-uf-CJi"/>
                             <constraint firstItem="pLM-aA-Yl1" firstAttribute="top" secondItem="ny6-D1-1s6" secondAttribute="bottom" id="Qsh-De-AX5"/>
-                            <constraint firstItem="xSt-XR-EXK" firstAttribute="trailing" secondItem="7dm-4d-gVZ" secondAttribute="trailing" id="Scx-50-sba"/>
+                            <constraint firstItem="xSt-XR-EXK" firstAttribute="trailing" secondItem="7dm-4d-gVZ" secondAttribute="trailing" constant="2" id="Scx-50-sba"/>
                             <constraint firstItem="7Ri-8m-Xw0" firstAttribute="baseline" secondItem="OvZ-N7-Qt6" secondAttribute="baseline" id="c7f-SS-PzL"/>
                             <constraint firstItem="ny6-D1-1s6" firstAttribute="top" secondItem="nUc-et-dpi" secondAttribute="bottom" id="cwr-eg-Y1a"/>
                             <constraint firstItem="7dm-4d-gVZ" firstAttribute="top" secondItem="pLM-aA-Yl1" secondAttribute="bottom" constant="94" id="fZ5-rF-TiI"/>
@@ -1876,6 +1878,7 @@
                         <outlet property="btnGR" destination="OvZ-N7-Qt6" id="a04-vR-Oyw"/>
                         <outlet property="btnKG" destination="7Ri-8m-Xw0" id="jYA-ML-lco"/>
                         <outlet property="calendarView" destination="pLM-aA-Yl1" id="SZM-3B-lnc"/>
+                        <outlet property="label" destination="7dm-4d-gVZ" id="uG7-T5-RU3"/>
                         <outlet property="menuView" destination="ny6-D1-1s6" id="wBn-0c-LjJ"/>
                         <segue destination="CGD-R8-pSH" kind="unwind" identifier="UpdateSectionTable" unwindAction="UpdateSectionTable:" id="bsJ-L7-1Gl"/>
                     </connections>
@@ -3740,8 +3743,8 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="Share-30" id="elO-3c-PqG">
                             <connections>
-                                <segue destination="RaO-7c-7ic" kind="popoverPresentation" popoverAnchorBarButtonItem="elO-3c-PqG" id="P3J-Vm-RZe">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" right="YES"/>
+                                <segue destination="RaO-7c-7ic" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorBarButtonItem="elO-3c-PqG" id="P3J-Vm-RZe">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
                         </barButtonItem>
@@ -3862,6 +3865,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="350"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="350"/>
                 </viewController>
@@ -5043,6 +5047,6 @@
         <image name="vk_icon" width="445" height="445"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VCl-UK-2sr"/>
+        <segue reference="GcQ-V8-bjP"/>
     </inferredMetricsTieBreakers>
 </document>

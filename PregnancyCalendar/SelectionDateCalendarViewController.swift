@@ -23,7 +23,7 @@ class SelectionDateCalendarViewController: UIViewController {
         super.viewDidLoad()
         selectionBDstate = 0
         self.presentedDateUpdated(CVDate(date: NSDate()))
-        let btn = UIBarButtonItem(title: "ОК", style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(CalendarForExportViewController.pressdone))
+        let btn = UIBarButtonItem(title: "Готово", style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(CalendarForExportViewController.pressdone))
         self.navigationItem.rightBarButtonItem = btn
         // Do any additional setup after loading the view.
     }

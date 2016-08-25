@@ -9,7 +9,7 @@
 import UIKit
 
 
-class OnePhotoViewController: UIViewController{
+class OnePhotoViewController: UIViewController, UIPopoverPresentationControllerDelegate{
     
     var isKeyboard = false
     
@@ -60,6 +60,18 @@ class OnePhotoViewController: UIViewController{
         
         selectedImages.append(Photo_temp)
 
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popoverSegue"{
+            let popoverVC = segue.destinationViewController as! ShareViewController
+            popoverVC.modalPresentationStyle = .Popover
+            popoverVC.popoverPresentationController?.delegate = self
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
     }
     
     @IBAction func SaveButton(sender: AnyObject) {

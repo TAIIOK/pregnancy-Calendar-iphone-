@@ -339,7 +339,7 @@ extension TextNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
 
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

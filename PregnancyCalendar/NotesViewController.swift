@@ -456,7 +456,7 @@ extension NotesViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
     func shouldShowWeekdaysOut() -> Bool {
         return shouldShowDaysOut
     }
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

@@ -305,7 +305,7 @@ extension WeightNoteViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         return shouldShowDaysOut
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

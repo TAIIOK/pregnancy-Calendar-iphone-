@@ -10,7 +10,7 @@ import UIKit
 
 var segmenttype = true
 var PDF = NSData()
-class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
+class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var Segment: UISegmentedControl!
     @IBOutlet weak var CurrentScrollView: UIScrollView!
@@ -58,6 +58,17 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate  {
         return nil
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popoverSegue"{
+            let popoverVC = segue.destinationViewController as! ShareViewController
+            popoverVC.modalPresentationStyle = .Popover
+            popoverVC.popoverPresentationController?.delegate = self
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
     
     override func viewDidDisappear(animated: Bool) {
         sharingExportVk  = false

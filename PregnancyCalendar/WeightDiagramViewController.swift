@@ -167,7 +167,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func setupGraphSettings() {
         // общие настройки
         self.lineChartView.descriptionText = "кг"
-        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 15)
+        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 10)
         self.lineChartView.descriptionFont = .systemFontOfSize(11)
         if dateType == -1 && growth > 0{
             self.lineChartView.noDataText = "Пожалуйста, введите"

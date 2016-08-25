@@ -12,8 +12,9 @@ import CoreData
 
 var selectedImages = [UIImage]()
 
-class SelectPhotosViewController: UICollectionViewController, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
+class SelectPhotosViewController: UICollectionViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
 
+    @IBOutlet weak var sharebutton: UIBarButtonItem!
     @IBOutlet var PhotoCollectionView: UICollectionView!
     var selected = 0
     override func viewDidLoad() {
@@ -50,7 +51,37 @@ class SelectPhotosViewController: UICollectionViewController, UIImagePickerContr
         self.title = "\(selected) выбрано"
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popoverSegue"{
+            let popoverVC = segue.destinationViewController as! ShareViewController
+            popoverVC.modalPresentationStyle = .Popover
+            popoverVC.popoverPresentationController?.delegate = self
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
     @IBAction func ShareSelected(sender: AnyObject) {
+        /*let vc = self.storyboard!.instantiateViewControllerWithIdentifier("shared") as! ShareViewController
+        //var nav = UINavigationController(rootViewController: vc)
+        //nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+    
+        vc.preferredContentSize =  CGSizeMake(200,200)
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        popover.delegate = self
+        popover.sourceView = self.view
+        popover.permittedArrowDirections = UIPopoverArrowDirection.Down
+    
+        popover.sourceRect = CGRect(
+            x: 0,
+            y: 0,
+            width: 100,
+            height: 100)
+        //popover!.sourceRect = CGRectMake(100,100,0,0)
+        self.presentViewController(vc, animated: true, completion: nil)*/
     }
 
     @IBAction func DeleteSelected(sender: AnyObject) {

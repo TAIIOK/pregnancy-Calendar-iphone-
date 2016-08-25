@@ -38,7 +38,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPhoto:", name:"LoadPhoto", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPhoto:", name:"LoadPhoto", object: nil)
         PhotoCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
         PhotoCollectionView.backgroundColor = .clearColor()
         picker.delegate=self
@@ -53,12 +53,12 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         
     }
     
-    func loadPhoto(notification: NSNotification){
+    /*func loadPhoto(notification: NSNotification){
         dispatch_async(dispatch_get_main_queue(), {
             self.PhotoCollectionView.reloadData()
             return}
         )
-    }
+    }*/
     
     @IBAction func toselect(sender: UIBarButtonItem) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("selectPhoto") as? UINavigationController
@@ -139,7 +139,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         if indexPath.row == 0 {
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("AppendCell", forIndexPath: indexPath) as! PhotoAppendCell
             PhotoCell.image.image = UIImage(named: "Cross Filled-50")
-            PhotoCell.backgroundColor = .grayColor()
+            PhotoCell.backgroundColor = UIColor.lightGrayColor()
             return PhotoCell
         }else{
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell

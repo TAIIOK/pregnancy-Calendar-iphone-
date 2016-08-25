@@ -929,7 +929,7 @@ extension DrugsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegat
         return shouldShowDaysOut
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

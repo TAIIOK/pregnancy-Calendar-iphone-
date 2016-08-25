@@ -194,7 +194,7 @@ extension DesireListViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         return true // Default value is true
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }

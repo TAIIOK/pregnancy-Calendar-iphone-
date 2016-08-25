@@ -780,7 +780,7 @@ extension DoctorViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelega
         tbl.reloadData()
     }
     
-    func shouldAutoSelectDayOnMonthChange() -> Bool
+    func shouldAutoSelectDayOnWeekChange() -> Bool
     {
         return true
     }
