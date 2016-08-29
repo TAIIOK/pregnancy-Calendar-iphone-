@@ -80,8 +80,8 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
     {
         selectedImages.removeAll()
         CurrentScrollView.removeAllSubviews()
-        let height =  CGFloat(integerLiteral:  291 * AllExportNotes.count + 291 )
-        CurrentScrollView.contentSize = CGSizeMake(415 , height)
+        let height =  CGFloat(integerLiteral:  490 * AllExportNotes.count + 490 )
+        CurrentScrollView.contentSize = CGSizeMake(700 , height)
         
         var y = CGFloat(integerLiteral: 0)
         
@@ -125,9 +125,8 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
             
             if(!AllExportNotes[i].photos.isEmpty && AllExportNotes[i].notes.isEmpty && AllExportNotes[i].notifi.isEmpty)
             {
-                print("1")
                 var photos = AllExportNotes[i].photos
-                let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 415, height: 291))
+                let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
                 if(photos.count >= 2 ){
                     if(segmenttype){
                         image.image = CreateTwoPhotosBlue(photos[0].image, right: photos[1].image, title: dateString , leftText: photos[0].text, rightText: photos[1].text)
@@ -153,121 +152,170 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
                 selectedImages.append(image.image!)
                 
             }else if(!AllExportNotes[i].photos.isEmpty && !AllExportNotes[i].notes.isEmpty || !AllExportNotes[i].notifi.isEmpty){
-                print("2")
                 var photos = AllExportNotes[i].photos
                 
                 if(photos.count >= 2 )
                 {
-                    let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 3)
-                    for var i = 0; i < text.count; i += 1{
-                        let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 415, height: 291))
-                        if i == 0{
-                            if(segmenttype){
+                    if(segmenttype){
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 2)
+                        for var i = 0; i < text.count; i += 1{
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
+                            if i == 0{
                                 image.image = CreateTextWithTwoPhotosBlue(photos[0].image, UpText: photos[0].text, DownPhoto: photos[1].image, DownText: photos[1].text, Title: dateString, CenterText: text[i])
-                            }
-                            else{
-                                image.image = CreateTextWithTwoPhotosPink(photos[0].image, UpText: photos[0].text, DownPhoto: photos[1].image, DownText: photos[1].text, Title: dateString, CenterText: text[i])
-                            }
-                        }else{
-                            CurrentScrollView.contentSize.height += 291
-                            if(segmenttype){
+                            }else{
+                                CurrentScrollView.contentSize.height += 490
                                 image.image = CreateTextOnlyBlue(dateString , CenterText: text[i])
                             }
-                            else{
-                                image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
                             }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
                         }
                         
-                        if(CurrentScrollView.subviews.count > 0)
-                        {
-                            image.frame.origin.y = image.frame.height + y
-                            y += image.frame.height
+                    }else{
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 3)
+                        for var i = 0; i < text.count; i += 1{
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
+                            if i == 0{
+                                image.image = CreateTextWithTwoPhotosPink(photos[0].image, UpText: photos[0].text, DownPhoto: photos[1].image, DownText: photos[1].text, Title: dateString, CenterText: text[i])
+                            }else{
+                                CurrentScrollView.contentSize.height += 490
+                                image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
+                            }
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
+                            }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
                         }
-                        CurrentScrollView.addSubview(image)
-                        selectedImages.append(image.image!)
-                        //y += 10
                     }
                     
                 }else if (photos.count < 2  && photos.count != 0)  {
-                    let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 3)
-                    for var i = 0; i < text.count; i += 1{
-                        let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 415, height: 291))
-                        if i == 0{
-                            if(segmenttype){
+                    if(segmenttype){
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 2)
+                        for var i = 0; i < text.count; i += 1{
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
+                            if i == 0{
                                 image.image = CreateTextWithTwoPhotosBlue(photos[0].image, UpText: photos[0].text, DownPhoto: photos[0].image, DownText: photos[0].text, Title: dateString, CenterText: text[i])
-                            }
-                            else{
-                                image.image = CreateTextWithTwoPhotosPink(photos[0].image, UpText: photos[0].text, DownPhoto: photos[0].image, DownText: photos[0].text, Title: dateString, CenterText: text[i])
-                            }
-                        }else{
-                            CurrentScrollView.contentSize.height += 291
-                            if(segmenttype){
+                            }else{
+                                CurrentScrollView.contentSize.height += 490
                                 image.image = CreateTextOnlyBlue(dateString , CenterText: text[i])
                             }
-                            else{
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
+                            }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
+                        }
+                        
+                    }else{
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 3)
+                        for var i = 0; i < text.count; i += 1{
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
+                            if i == 0{
+                                image.image = CreateTextWithTwoPhotosPink(photos[0].image, UpText: photos[0].text, DownPhoto: photos[0].image, DownText: photos[0].text, Title: dateString, CenterText: text[i])
+                            }else{
+                                CurrentScrollView.contentSize.height += 490
                                 image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
                             }
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
+                            }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
                         }
-                        
-                        if(CurrentScrollView.subviews.count > 0)
-                        {
-                            image.frame.origin.y = image.frame.height + y
-                            y += image.frame.height
-                        }
-                        CurrentScrollView.addSubview(image)
-                        selectedImages.append(image.image!)
-                        //y += 10
                     }
                 }else{
-                    let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 0)
-                    for var i = 0; i < text.count; i += 1{
-                        let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 415, height: 291))
-                        if(segmenttype){
+                    if(segmenttype){
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 0)
+                        for var i = 0; i < text.count; i += 1{
+                            if i > 0{
+                                CurrentScrollView.contentSize.height += 490
+                            }
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
                             image.image = CreateTextOnlyBlue(dateString , CenterText: text[i])
-                        }
-                        else{
-                            image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
-                        }
-                        if i > 0{
-                            CurrentScrollView.contentSize.height += 291
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
+                            }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
                         }
                         
-                        if(CurrentScrollView.subviews.count > 0)
-                        {
-                            image.frame.origin.y = image.frame.height + y
-                            y += image.frame.height
+                    }else{
+                        let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 1)
+                        for var i = 0; i < text.count; i += 1{
+                            if i > 0{
+                                CurrentScrollView.contentSize.height += 490
+                            }
+                            let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
+                            image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
+                            
+                            if(CurrentScrollView.subviews.count > 0)
+                            {
+                                image.frame.origin.y = image.frame.height + y
+                                y += image.frame.height
+                            }
+                            CurrentScrollView.addSubview(image)
+                            selectedImages.append(image.image!)
                         }
-                        CurrentScrollView.addSubview(image)
-                        selectedImages.append(image.image!)
-                        //y += 10
                     }
                     
                 }
             }else if(AllExportNotes[i].photos.isEmpty && !AllExportNotes[i].notes.isEmpty || !AllExportNotes[i].notifi.isEmpty){
-                print("3")
-                let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 0)
-                for var i = 0; i < text.count; i += 1{
-                    let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 415, height: 291))
-                    if(segmenttype){
+                if(segmenttype){
+                    let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 0)
+                    for var i = 0; i < text.count; i += 1{
+                        if i > 0{
+                            CurrentScrollView.contentSize.height += 490
+                        }
+                        let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
                         image.image = CreateTextOnlyBlue(dateString , CenterText: text[i])
+                        
+                        if(CurrentScrollView.subviews.count > 0)
+                        {
+                            image.frame.origin.y = image.frame.height + y
+                            y += image.frame.height
+                        }
+                        CurrentScrollView.addSubview(image)
+                        selectedImages.append(image.image!)
                     }
-                    else{
+                    
+                }else{
+                    let text = create_text(AllExportNotes[i].notes, notifi: AllExportNotes[i].notifi, type: 1)
+                    for var i = 0; i < text.count; i += 1{
+                        if i > 0{
+                            CurrentScrollView.contentSize.height += 490
+                        }
+                        let image = UIImageView(frame: CGRect(x: 0, y: 0 , width: 700, height: 490))
                         image.image = CreateTextOnlyPink(dateString , CenterText: text[i])
+                        
+                        if(CurrentScrollView.subviews.count > 0)
+                        {
+                            image.frame.origin.y = image.frame.height + y
+                            y += image.frame.height
+                        }
+                        CurrentScrollView.addSubview(image)
+                        selectedImages.append(image.image!)
                     }
-                    if i > 0{
-                        CurrentScrollView.contentSize.height += 291
-                    }
-                    if(CurrentScrollView.subviews.count > 0)
-                    {
-                        image.frame.origin.y = image.frame.height + y
-                        y += image.frame.height
-                    }
-                    CurrentScrollView.addSubview(image)
-                    selectedImages.append(image.image!)
-                    //y += 10
                 }
             }else {
-                CurrentScrollView.contentSize = CGSizeMake(415 , CurrentScrollView.contentSize.height -  291)
+                CurrentScrollView.contentSize = CGSizeMake(700 , CurrentScrollView.contentSize.height -  490)
             }
             PDF = toPDF(CurrentScrollView.subviews)!
         }
@@ -302,29 +350,40 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
             }
             
             characters += notes[n].text.characters.count
+            var val = 0
             switch type {
             case 0:
-                count += Int(lroundf(Float(Float(characters)/85)))
+                count += Int(lroundf(Float(Float(characters)/143)))
+                val = 22
             case 1:
-                count += characters/60
+                count += Int(lroundf(Float(Float(characters)/86)))
+                val = 20
             case 2:
-                count += characters/143
+                count += Int(lroundf(Float(Float(characters)/87)))
+                val = 21
             case 3:
-                count += Int(lroundf(Float(Float(characters)/70)))
+                count += Int(lroundf(Float(Float(characters)/60)))
+                val = 21
             default:
                 break
             }
+            print(count)
             
-            
-            
-            if count > 17{
+            if count > val{
                 print("append")
-                attrText.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: attrText.length))
-                returnedText.append(attrText)
+                print("lenght", attrText.length)
+                if attrText.length > 0 {
+                    attrText.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: attrText.length))
+                    returnedText.append(attrText)
+                }else{
+                    print("type",type)
+                    if type != 0 && type != 1{
+                        returnedText.append(NSMutableAttributedString(string: ""))
+                    }
+                }
                 attrText.deleteCharactersInRange(NSRange(location: 0,length: attrText.length))
                 count = 0
             }
-            
             if notes[n].typeS == "Посещения врачей" && !mas.contains(0){
                 mas.append(0)
                 if n > 0{
@@ -382,20 +441,27 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
             var characters = 0
             characters += notifi[n].typeS.characters.count + 2
             characters += notifi[n].text.characters.count
+            var val = 0
             switch type {
             case 0:
-                count += Int(lroundf(Float(Float(characters)/85)))
+                count += Int(lroundf(Float(Float(characters)/143)))
+                val = 22
             case 1:
-                count += characters/60
+                count += Int(lroundf(Float(Float(characters)/86)))
+                val = 20
             case 2:
-                count += characters/143
+                count += Int(lroundf(Float(Float(characters)/87)))
+                val = 21
             case 3:
-                count += Int(lroundf(Float(Float(characters)/70)))
+                count += Int(lroundf(Float(Float(characters)/60)))
+                val = 21
             default:
                 break
             }
             
-            if count > 17{
+            print (count)
+            
+            if count > val{
                 print("append")
                 var centertext = NSMutableAttributedString()
                 attrText.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: attrText.length))
@@ -427,7 +493,6 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
             attrTextnotifi.appendAttributedString(NSMutableAttributedString(string: "\n\n"))
         }
         
-        
         var centertext = NSMutableAttributedString()
         if attrText.length > 0 || attrTextnotifi.length > 0{
             attrText.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: attrText.length))
@@ -446,11 +511,9 @@ class ShowExportViewController: UIViewController , UIScrollViewDelegate, UIPopov
             }
             returnedText.append(centertext)
         }
-        
         return returnedText
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

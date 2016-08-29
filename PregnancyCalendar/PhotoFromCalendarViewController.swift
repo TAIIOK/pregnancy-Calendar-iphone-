@@ -136,7 +136,11 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         }
         photoFromDate.append(PhotoWithType(image: chosenImage, date: selectedCalendarDayPhoto.date.convertedDate()!, text: "", isMyPhoto: isMyPhoto, id: 0))
         photoCollectionView.reloadData()
-        
+        if(type == 0){
+            photos.append(Photo(image: chosenImage, date: selectedCalendarDayPhoto.date.convertedDate()!, text: ""))
+        }else{
+            photos.append(Photo(image: chosenImage, date: selectedCalendarDayPhoto.date.convertedDate()!, text: ""))
+        }
         savePhotos(chosenImage,Type: type)
         cameras.removeAll()
         fillcamera()

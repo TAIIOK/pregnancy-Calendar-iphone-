@@ -387,7 +387,8 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             
             myMutableString = NSMutableAttributedString(string: nearPoints[indexPath.row].trade_point + "\nАдрес: " + "\(nearPoints[indexPath.row].city)" + " " + nearPoints[indexPath.row].address, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 14.0)!])
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: NSRange(location:nearPoints[indexPath.row].trade_point.characters.count+8,length:lenghtstring ))
+            myMutableString.addAttributes([NSFontAttributeName : UIFont.boldSystemFontOfSize(14)], range: NSRange(location: 0,length: nearPoints[indexPath.row].trade_point.characters.count))
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: BiruzaColor1, range: NSRange(location:nearPoints[indexPath.row].trade_point.characters.count+8,length:lenghtstring ))
             cell.textLabel?.attributedText = myMutableString
             cell.backgroundColor = .clearColor()
             return cell
