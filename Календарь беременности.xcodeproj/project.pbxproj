@@ -151,7 +151,7 @@
 		8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DC1CFC52E300003AAB /* Query.swift */; };
 		8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DD1CFC52E300003AAB /* Schema.swift */; };
 		8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DE1CFC52E300003AAB /* Setter.swift */; };
-		8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
+		8E4CF79D1D817EA2002E831B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
 		8E5298251D1827A600AD06E2 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */; };
 		8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E5298241D1827A600AD06E2 /* YTPlayer.html */; };
 		8E5298281D1827C200AD06E2 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298271D1827C200AD06E2 /* InternetConnection.swift */; };
@@ -552,6 +552,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4CF79D1D817EA2002E831B /* libsqlite3.dylib in Frameworks */,
 				02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */,
 				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
 				8E5787B81CFC7A650028CC3C /* FBSDKShareKit.framework in Frameworks */,
@@ -561,7 +562,6 @@
 				A0B0ECBF1C9EBD2E005E44F4 /* Crashlytics.framework in Frameworks */,
 				A0C56DA31CA2E9A6004C36AF /* Charts.framework in Frameworks */,
 				8E5787B61CFC7A650028CC3C /* FBSDKCoreKit.framework in Frameworks */,
-				8E4C43FC1CFC57DC00003AAB /* libsqlite3.dylib in Frameworks */,
 				A0B0ECC01C9EBD2E005E44F4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1512,7 +1512,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendariphone;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -1541,7 +1541,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendariphone;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
