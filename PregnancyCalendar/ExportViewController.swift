@@ -209,7 +209,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         for i in AllExportNotes{
             if i.photos.count > 2{
                 somanyphoto = true
-                txt.appendContentsOf("День \(dateFormatter.stringFromDate(i.date)) содержит \(i.photos.count) фотографий")
+                txt.appendContentsOf("День \(dateFormatter.stringFromDate(i.date)) содержит \(i.photos.count) фото")
             }
         }
         if somanyphoto{

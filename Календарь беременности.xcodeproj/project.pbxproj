@@ -151,7 +151,6 @@
 		8E4C43EF1CFC52E300003AAB /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DC1CFC52E300003AAB /* Query.swift */; };
 		8E4C43F01CFC52E300003AAB /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DD1CFC52E300003AAB /* Schema.swift */; };
 		8E4C43F11CFC52E300003AAB /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43DE1CFC52E300003AAB /* Setter.swift */; };
-		8E4CF79D1D817EA2002E831B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */; };
 		8E5298251D1827A600AD06E2 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */; };
 		8E5298261D1827A600AD06E2 /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E5298241D1827A600AD06E2 /* YTPlayer.html */; };
 		8E5298281D1827C200AD06E2 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298271D1827C200AD06E2 /* InternetConnection.swift */; };
@@ -177,6 +176,7 @@
 		8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; };
 		8E5787CC1CFC7B8E0028CC3C /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5787C61CFC7B810028CC3C /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E5A6BFC1CDB680C0073B693 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */; };
+		8E5BB11A1D81945300F5F734 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5BB1191D81945300F5F734 /* libsqlite3.dylib */; };
 		8E73556C1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */; };
 		8E7355781D1BFB75008B8444 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7355771D1BFB75008B8444 /* CalendarViewController.swift */; };
 		8E878E8F1D2151860090754C /* ExportPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E878E8E1D2151860090754C /* ExportPhotoCollectionViewCell.swift */; };
@@ -470,7 +470,6 @@
 		8E4C43DC1CFC52E300003AAB /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		8E4C43DD1CFC52E300003AAB /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		8E4C43DE1CFC52E300003AAB /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
-		8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.dylib; sourceTree = "<group>"; };
 		8E5298231D1827A600AD06E2 /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
 		8E5298241D1827A600AD06E2 /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 		8E5298271D1827C200AD06E2 /* InternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
@@ -496,6 +495,7 @@
 		8E5787B51CFC7A650028CC3C /* OKSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKSDK.m; sourceTree = "<group>"; };
 		8E5787BC1CFC7B810028CC3C /* SwiftyVK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyVK.xcodeproj; path = "SwiftyVK-master/SwiftyVK.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8E5A6BFB1CDB680C0073B693 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		8E5BB1191D81945300F5F734 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		8E73556B1D1BF89E008B8444 /* PhotoFromCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFromCalendarViewController.swift; sourceTree = "<group>"; };
 		8E7355771D1BFB75008B8444 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8E878E8E1D2151860090754C /* ExportPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -552,9 +552,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E4CF79D1D817EA2002E831B /* libsqlite3.dylib in Frameworks */,
 				02DA72E41CA92F990011E9DF /* MapKit.framework in Frameworks */,
 				02E461781CA2A12C00CC6E77 /* Charts.framework in Frameworks */,
+				8E5BB11A1D81945300F5F734 /* libsqlite3.dylib in Frameworks */,
 				8E5787B81CFC7A650028CC3C /* FBSDKShareKit.framework in Frameworks */,
 				8E5787CB1CFC7B8E0028CC3C /* SwiftyVK.framework in Frameworks */,
 				8E5787B71CFC7A650028CC3C /* FBSDKLoginKit.framework in Frameworks */,
@@ -584,7 +584,7 @@
 		02682D1B1C7EFBA40088F21B = {
 			isa = PBXGroup;
 			children = (
-				8E4C43FB1CFC57DC00003AAB /* libsqlite3.dylib */,
+				8E5BB1191D81945300F5F734 /* libsqlite3.dylib */,
 				027A28E21C99A07E000792E8 /* CoreGraphics.framework */,
 				A0B0ECBD1C9EBD2E005E44F4 /* Crashlytics.framework */,
 				A0B0ECBE1C9EBD2E005E44F4 /* Fabric.framework */,
