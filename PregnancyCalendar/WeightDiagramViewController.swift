@@ -436,7 +436,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
             var nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = UIModalPresentationStyle.Popover
             var popover = nav.popoverPresentationController
-            vc.preferredContentSize = CGSizeMake(700,800)
+            vc.preferredContentSize = CGSizeMake(300,500)
             popover!.delegate = self
             popover!.sourceView = self.view
             //popover!.sourceRect = CGRectMake(100,100,0,0)

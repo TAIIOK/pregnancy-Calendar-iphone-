@@ -4662,29 +4662,29 @@
                         <viewControllerLayoutGuide type="bottom" id="Pn2-7a-GTi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LKU-cZ-iCe">
-                        <rect key="frame" x="0.0" y="0.0" width="700" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите свой вес" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpW-51-Zo6">
-                                <rect key="frame" x="20" y="28" width="660" height="21"/>
+                                <rect key="frame" x="0.0" y="28" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZaB-aY-Yqz"/>
-                                    <constraint firstAttribute="width" constant="660" id="vej-vg-TYQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="vej-vg-TYQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3op-qc-Qng">
-                                <rect key="frame" x="127" y="57" width="447" height="72"/>
+                                <rect key="frame" x="0.0" y="50" width="300" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="447" id="8On-Sh-kMv"/>
+                                    <constraint firstAttribute="width" constant="300" id="8On-Sh-kMv"/>
                                     <constraint firstAttribute="height" constant="72" id="J5Z-uX-FHH"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Введите свой вес на момент зачатия для того, чтобы рассчитать рекомендуемую норму">
                                         <attributes>
                                             <color key="NSColor" red="0.20107507705688477" green="0.66890472173690796" blue="0.62281012535095215" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -4692,24 +4692,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Килограммы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MZ-Ce-W6M">
-                                <rect key="frame" x="20" y="123" width="660" height="24"/>
+                                <rect key="frame" x="0.0" y="107" width="300" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="A9F-IX-YdL"/>
-                                    <constraint firstAttribute="width" constant="660" id="w4Q-39-qeG"/>
+                                    <constraint firstAttribute="width" constant="300" id="w4Q-39-qeG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.2010750771" green="0.66890472170000004" blue="0.62281012540000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7k-tK-FUN">
-                                <rect key="frame" x="127" y="150" width="447" height="216"/>
+                                <rect key="frame" x="0.0" y="130" width="300" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="S4r-ew-dXV"/>
-                                    <constraint firstAttribute="width" constant="447" id="mmx-uj-R6R"/>
+                                    <constraint firstAttribute="height" constant="140" id="S4r-ew-dXV"/>
+                                    <constraint firstAttribute="width" constant="300" id="mmx-uj-R6R"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcX-nk-Q90">
-                                <rect key="frame" x="582" y="750" width="98" height="30"/>
+                                <rect key="frame" x="186" y="450" width="98" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="6ke-b1-ieP"/>
@@ -4724,17 +4724,10 @@
                                     <action selector="OK:" destination="Oou-ME-MFz" eventType="touchUpInside" id="Zy4-lF-bht"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-Fr-Mpz">
-                                <rect key="frame" x="127" y="402" width="447" height="287"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="447" id="WE2-5T-GPG"/>
-                                    <constraint firstAttribute="height" constant="287" id="gKx-gs-dPQ"/>
-                                </constraints>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Граммы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTF-WZ-DKi">
-                                <rect key="frame" x="20" y="371" width="660" height="21"/>
+                                <rect key="frame" x="0.0" y="278" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="660" id="ccW-op-iKL"/>
+                                    <constraint firstAttribute="width" constant="300" id="ccW-op-iKL"/>
                                     <constraint firstAttribute="height" constant="21" id="t4X-ah-z7N"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -4742,7 +4735,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-Rl-qsM">
-                                <rect key="frame" x="20" y="750" width="98" height="30"/>
+                                <rect key="frame" x="16" y="450" width="98" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="0Ll-4o-FHV"/>
@@ -4757,30 +4750,37 @@
                                     <action selector="Cancel:" destination="Oou-ME-MFz" eventType="touchUpInside" id="bdy-mh-VVq"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-Fr-Mpz">
+                                <rect key="frame" x="0.0" y="307" width="300" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WE2-5T-GPG"/>
+                                    <constraint firstAttribute="height" constant="140" id="gKx-gs-dPQ"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aAw-Fr-Mpz" firstAttribute="top" secondItem="xTF-WZ-DKi" secondAttribute="bottom" constant="10" id="0It-ak-Yuh"/>
+                            <constraint firstItem="aAw-Fr-Mpz" firstAttribute="top" secondItem="xTF-WZ-DKi" secondAttribute="bottom" constant="8" id="0It-ak-Yuh"/>
                             <constraint firstItem="PRl-Rl-qsM" firstAttribute="leading" secondItem="LKU-cZ-iCe" secondAttribute="leadingMargin" id="3jP-Do-GT3"/>
                             <constraint firstItem="aAw-Fr-Mpz" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="3xo-ch-tdL"/>
                             <constraint firstItem="xTF-WZ-DKi" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="4G1-gc-uci"/>
                             <constraint firstItem="Pn2-7a-GTi" firstAttribute="top" secondItem="PRl-Rl-qsM" secondAttribute="bottom" constant="20" id="CHO-pD-tHP"/>
                             <constraint firstItem="bcX-nk-Q90" firstAttribute="trailing" secondItem="LKU-cZ-iCe" secondAttribute="trailingMargin" id="CWi-b0-1Af"/>
                             <constraint firstItem="RpW-51-Zo6" firstAttribute="top" secondItem="wgH-K2-mGp" secondAttribute="bottom" constant="8" id="HEb-tQ-R7Z"/>
-                            <constraint firstItem="3op-qc-Qng" firstAttribute="top" secondItem="RpW-51-Zo6" secondAttribute="bottom" constant="8" id="QAg-V9-FN6"/>
+                            <constraint firstItem="3op-qc-Qng" firstAttribute="top" secondItem="RpW-51-Zo6" secondAttribute="bottom" constant="1" id="QAg-V9-FN6"/>
                             <constraint firstItem="Pn2-7a-GTi" firstAttribute="top" secondItem="bcX-nk-Q90" secondAttribute="bottom" constant="20" id="VMa-RN-nIy"/>
                             <constraint firstItem="P7k-tK-FUN" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="ZZ5-Vu-ed4"/>
                             <constraint firstItem="RpW-51-Zo6" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="e1X-Qc-dTb"/>
-                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="3op-qc-Qng" secondAttribute="bottom" constant="21" id="hvH-8h-08J"/>
-                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="6MZ-Ce-W6M" secondAttribute="bottom" constant="3" id="lkl-yZ-gH0"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="3op-qc-Qng" secondAttribute="bottom" constant="8" id="hvH-8h-08J"/>
+                            <constraint firstItem="P7k-tK-FUN" firstAttribute="top" secondItem="6MZ-Ce-W6M" secondAttribute="bottom" constant="-1" id="lkl-yZ-gH0"/>
                             <constraint firstItem="3op-qc-Qng" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="snB-pX-EBf"/>
-                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="top" secondItem="P7k-tK-FUN" secondAttribute="bottom" constant="5" id="uKd-no-FD0"/>
+                            <constraint firstItem="xTF-WZ-DKi" firstAttribute="top" secondItem="P7k-tK-FUN" secondAttribute="bottom" constant="8" id="uKd-no-FD0"/>
                             <constraint firstItem="6MZ-Ce-W6M" firstAttribute="centerX" secondItem="LKU-cZ-iCe" secondAttribute="centerX" id="yWU-Ee-nTf"/>
                         </constraints>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="700" height="800"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="500"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="700" height="800"/>
+                    <size key="freeformSize" width="300" height="500"/>
                     <connections>
                         <outlet property="grammpicker" destination="aAw-Fr-Mpz" id="DqO-Bz-qHj"/>
                         <outlet property="kgpicker" destination="P7k-tK-FUN" id="EsK-OF-xPo"/>
