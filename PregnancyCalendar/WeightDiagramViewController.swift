@@ -53,6 +53,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     let IMT2: [Double] = [0.5,0.5,0.6,0.7,0.8,0.9,1.0,1.4,2.3,2.9,3.4,3.9,5.0,5.4,5.9,6.4,7.3,7.9,8.6,9.1]
     var weights: [Weight] = []
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var growthButton: UIButton!
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var dateBtn: UIButton!
@@ -167,7 +168,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func setupGraphSettings() {
         // общие настройки
         self.lineChartView.descriptionText = "кг"
-        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 10)
+        self.lineChartView.descriptionTextPosition = CGPoint(x: 20, y: 5)
         self.lineChartView.descriptionFont = .systemFontOfSize(11)
         if dateType == -1 && growth > 0{
             self.lineChartView.noDataText = "Пожалуйста, введите"
@@ -203,7 +204,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
     private func drawGraph(){
         // сначала очистить график
         self.lineChartView.clear()
-        
+        background.image = UIImage(named: "background.png")
         // графики
         // нарисовать условно-рекомендуемый график
         let dataEntries = self.getChartDataEntriesForRecommend(RecWeight)
@@ -460,7 +461,7 @@ class WeightDiagramViewController: UIViewController, UIPickerViewDataSource, UIP
             //Create and an option action
             let nextAction: UIAlertAction = UIAlertAction(title: "Заметки", style: .Default) { action -> Void in
                 //Do some other stuff
-                let notes = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigator")
+                let notes = self.storyboard?.instantiateViewControllerWithIdentifier("NotesNavigationController")
                 self.revealViewController().setFrontViewController(notes!, animated: true)
             }
             actionSheetController.addAction(nextAction)

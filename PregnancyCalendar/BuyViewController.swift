@@ -45,6 +45,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var tbl: UITableView!
     
+    @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var noConnectionView: UIView!
     @IBOutlet weak var noConnectionLabel: UILabel!
@@ -129,7 +130,7 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.navigationItem.leftBarButtonItem = btn
         noConnectionButton.layer.borderWidth = 2
         noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
-        noConnectionButton.layer.cornerRadius = 5
+        noConnectionButton.layer.cornerRadius = 4
         noConnectionLabel.textColor = UIColor.grayColor()
         check()
     }
@@ -376,6 +377,8 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.textLabel?.text = "WILDBERRIES"
             cell.detailTextLabel?.text = "интернет-магазин"
             cell.backgroundColor = .clearColor()
+            //cell.button.clipsToBounds = true
+            //cell.button.layer.cornerRadius = 4
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("MagCell", forIndexPath: indexPath)

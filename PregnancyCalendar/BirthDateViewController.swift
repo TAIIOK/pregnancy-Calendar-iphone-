@@ -47,6 +47,8 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
         tbl.delegate = self
         tbl.dataSource = self
         tbl.backgroundColor = .clearColor()
+        self.btn.clipsToBounds = true
+        self.btn.layer.cornerRadius = 4
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         loadDate()
