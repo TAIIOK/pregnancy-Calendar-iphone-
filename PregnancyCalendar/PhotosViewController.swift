@@ -105,7 +105,14 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let type: Int
         choosedSegmentImages ? (type=0) : (type=1)
-        choosedSegmentImages ? photos.append(Photo(image: chosenImage, date: NSDate(), text: "")) : uzis.append(Photo(image: chosenImage, date: NSDate(), text: ""))
+        let Date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
+        components.hour = 00
+        components.minute = 00
+        components.second = 00
+        let newDate = calendar.dateFromComponents(components)
+        choosedSegmentImages ? photos.append(Photo(image: chosenImage, date: newDate!, text: "")) : uzis.append(Photo(image: chosenImage, date: newDate!, text: ""))
         dismissViewControllerAnimated(true, completion: nil)
         dispatch_async(dispatch_get_main_queue(), {
             self.PhotoCollectionView.reloadData()
