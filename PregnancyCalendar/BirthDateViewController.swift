@@ -25,7 +25,7 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var DateisLoaded = false
 
-    let txt = ["По дате зачатия","По дате последней менструации","По дате, указанной врачем"]
+    let txt = ["По дате зачатия","По дате начала последней менструации","Установить вручную"]
  
 
     /*// КАЛЕНДАРЬ
@@ -96,6 +96,8 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
             
             alert.addAction(ok)
             self.presentViewController(alert, animated: true, completion: nil)
+            let zodiac = self.storyboard?.instantiateViewControllerWithIdentifier("ShowZodiac")
+            self.revealViewController().pushFrontViewController(zodiac, animated: true)
         }else{
             let   alert =  UIAlertController(title: "", message: "Внимание! Вы не выбрали пункт для определения даты родов. Пожалуйста выберете пункт из перечня.", preferredStyle: .Alert)
             let ok = UIAlertAction(title: "Закрыть", style: .Default, handler: { (_) in alert.dismissViewControllerAnimated(true, completion: nil)  } )
@@ -154,6 +156,7 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.backgroundColor = .clearColor()
         cell.tintColor = UIColor.lightGrayColor()
         cell.detailTextLabel?.tintColor = UIColor.lightGrayColor()
+        //cell.textLabel?.font = .systemFontOfSize(12)
         return cell
     }
     

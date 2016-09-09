@@ -289,31 +289,31 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
             if indexPath.row == 0 {
                 let numberCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(numberCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
                 numberCell.numberLabel.text = "№"
-                numberCell.numberLabel.font = .boldSystemFontOfSize(12)
+                numberCell.numberLabel.font = .boldSystemFontOfSize(10)
                 numberCell.backgroundColor = .lightGrayColor()
                 return numberCell
             } else if indexPath.row == 1 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "НАЧАЛО"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(12)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(10)
                 contentCell.backgroundColor = .lightGrayColor()
                 return contentCell
             } else if indexPath.row == 2 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ДЛИТЕЛЬНОСТЬ"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(12)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(10)
                 contentCell.backgroundColor = .lightGrayColor()
                 return contentCell
             } else if indexPath.row == 3 {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "КОНЕЦ"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(12)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(10)
                 contentCell.backgroundColor = .lightGrayColor()
                 return contentCell
             } else {
                 let contentCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.text = "ПРОМЕЖУТОК"
-                contentCell.contentLabel.font = .boldSystemFontOfSize(12)
+                contentCell.contentLabel.font = .boldSystemFontOfSize(10)
                 contentCell.backgroundColor = .lightGrayColor()
                 return contentCell
             }

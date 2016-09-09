@@ -326,7 +326,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cMT-JB-1Ix">
-                                <rect key="frame" x="20" y="72" width="560" height="212"/>
+                                <rect key="frame" x="20" y="132" width="560" height="212"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -343,18 +343,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="По дате зачатия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lN3-AV-bUK">
-                                                    <rect key="frame" x="15" y="5" width="103" height="16"/>
+                                                    <rect key="frame" x="15" y="7" width="89" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="не выбрано" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUH-Df-MA7">
-                                                    <rect key="frame" x="15" y="21" width="64" height="14"/>
+                                                    <rect key="frame" x="15" y="21" width="59" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
@@ -381,11 +381,11 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFZ-fU-lJL">
-                                <rect key="frame" x="135" y="328" width="330" height="42"/>
+                                <rect key="frame" x="190" y="388" width="220" height="42"/>
                                 <color key="backgroundColor" cyan="0.71999999999999997" magenta="0.040000000000000001" yellow="0.37" black="0.01" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="jXy-Ux-zie"/>
-                                    <constraint firstAttribute="width" constant="330" id="ulS-7M-be0"/>
+                                    <constraint firstAttribute="width" constant="220" id="ulS-7M-be0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="ПОКАЗАТЬ">
@@ -396,17 +396,27 @@
                                     <segue destination="kbc-JV-zld" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="goZ-rC-rub"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Определение предполагаемой даты родов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-vg-bJu">
+                                <rect key="frame" x="20" y="89" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cMT-JB-1Ix" firstAttribute="leading" secondItem="YMx-QD-leI" secondAttribute="leadingMargin" id="8Ze-E9-1ja"/>
+                            <constraint firstItem="m5w-vg-bJu" firstAttribute="top" secondItem="w1m-CF-F3w" secondAttribute="bottom" constant="25" id="CgK-Lo-SuR"/>
                             <constraint firstItem="4ms-IS-rIa" firstAttribute="centerX" secondItem="cMT-JB-1Ix" secondAttribute="centerX" id="IaT-2i-mHZ"/>
                             <constraint firstItem="cMT-JB-1Ix" firstAttribute="trailing" secondItem="YMx-QD-leI" secondAttribute="trailingMargin" id="N95-yi-ZrC"/>
                             <constraint firstItem="4ms-IS-rIa" firstAttribute="top" secondItem="YMx-QD-leI" secondAttribute="top" id="RFT-jK-aAz"/>
                             <constraint firstItem="4ms-IS-rIa" firstAttribute="leading" secondItem="YMx-QD-leI" secondAttribute="leading" id="SbM-Mf-WdT"/>
-                            <constraint firstItem="cMT-JB-1Ix" firstAttribute="top" secondItem="w1m-CF-F3w" secondAttribute="bottom" constant="8" symbolic="YES" id="YWY-ZJ-Yjx"/>
+                            <constraint firstItem="m5w-vg-bJu" firstAttribute="leading" secondItem="cMT-JB-1Ix" secondAttribute="leading" id="YNp-nr-e1H"/>
+                            <constraint firstItem="cMT-JB-1Ix" firstAttribute="top" secondItem="w1m-CF-F3w" secondAttribute="bottom" constant="68" id="YWY-ZJ-Yjx"/>
                             <constraint firstItem="cMT-JB-1Ix" firstAttribute="centerX" secondItem="LFZ-fU-lJL" secondAttribute="centerX" id="aFI-OZ-sl0"/>
-                            <constraint firstItem="IW9-Lh-6jL" firstAttribute="top" secondItem="LFZ-fU-lJL" secondAttribute="bottom" constant="186" id="apB-kP-xGL"/>
+                            <constraint firstItem="IW9-Lh-6jL" firstAttribute="top" secondItem="LFZ-fU-lJL" secondAttribute="bottom" constant="126" id="apB-kP-xGL"/>
+                            <constraint firstItem="cMT-JB-1Ix" firstAttribute="top" secondItem="m5w-vg-bJu" secondAttribute="bottom" constant="22" id="hyc-rg-psz"/>
+                            <constraint firstItem="m5w-vg-bJu" firstAttribute="trailing" secondItem="cMT-JB-1Ix" secondAttribute="trailing" id="jyG-oF-FGY"/>
                             <constraint firstAttribute="bottom" secondItem="4ms-IS-rIa" secondAttribute="bottom" id="psy-oj-sw2"/>
                         </constraints>
                     </view>
