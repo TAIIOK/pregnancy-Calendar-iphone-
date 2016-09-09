@@ -133,7 +133,7 @@ extension AdvertisingViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
     
     func shouldAutoSelectDayOnWeekChange() -> Bool
     {
-        return false
+        return true
     }
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {

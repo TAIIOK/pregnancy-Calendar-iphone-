@@ -542,51 +542,7 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     }
     
     func presentedDateUpdated(date: CVDate) {
-        
-        if self.title != date.globalDescription && self.animationFinished {
-            let updatedMonthLabel = UILabel()
-            // updatedMonthLabel.textColor = monthLabel.textColor
-            //updatedMonthLabel.font = monthLabel.font
-            updatedMonthLabel.textAlignment = .Center
-            updatedMonthLabel.text = date.globalDescription
-            updatedMonthLabel.sizeToFit()
-            updatedMonthLabel.alpha = 0
-            
-            //setupNavigation(date)
-            
-            
-            //updatedMonthLabel.center = self.monthLabel.center
-            // self.title = updatedMonthLabel.text
-            /*
-             let offset = CGFloat(48)
-             updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
-             updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-             
-             UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-             //self.animationFinished = false
-             // self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
-             //  self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-             //  self.monthLabel.alpha = 0
-             
-             updatedMonthLabel.alpha = 1
-             updatedMonthLabel.transform = CGAffineTransformIdentity
-             
-             }) { _ in
-             
-             // self.animationFinished = true
-             // self.monthLabel.frame = updatedMonthLabel.frame
-             //  self.monthLabel.text = updatedMonthLabel.text
-             //  self.monthLabel.transform = CGAffineTransformIdentity
-             //  self.monthLabel.alpha = 1
-             self.title = updatedMonthLabel.text
-             updatedMonthLabel.removeFromSuperview()
-             }
-             
-             
-             
-             // self.view.insertSubview(updatedMonthLabel, aboveSubview: self.title)
-             */
-        }
+        setupNavigation(date)
     }
     
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
