@@ -410,6 +410,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         default: break
             }
         }else{
+            phincalc = true
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             noteText[0] = (cell?.textLabel?.text)!
             noteText[1] = (cell?.detailTextLabel?.text)!

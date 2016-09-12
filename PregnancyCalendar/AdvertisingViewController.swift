@@ -100,6 +100,7 @@ class AdvertisingViewController: UIViewController {
     }
 
     override func viewDidDisappear(animated: Bool) {
+        phincalc = false
     }
     
     override func didReceiveMemoryWarning() {

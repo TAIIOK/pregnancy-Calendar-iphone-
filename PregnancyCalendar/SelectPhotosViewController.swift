@@ -147,7 +147,20 @@ class SelectPhotosViewController: UICollectionViewController, UIImagePickerContr
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoSelCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
-        PhotoCell.photo.image = choosedSegmentImages ? photos[indexPath.row].image : uzis[indexPath.row].image
+        let  Photo_temp = choosedSegmentImages ? photos[indexPath.row].image : uzis[indexPath.row].image
+        let x = Double(Photo_temp.size.height)/Double(100)
+        let y = Double(Photo_temp.size.width)/Double(100)
+        let scale = x > y ? x : y
+        let Photo = UIImage(CGImage: Photo_temp.CGImage!, scale: CGFloat(scale), orientation: Photo_temp.imageOrientation)
+        PhotoCell.photo.frame.size.width = Photo.size.width
+        PhotoCell.photo.frame.size.height = Photo.size.height
+        PhotoCell.photo.constraints[1].constant = Photo.size.height
+        PhotoCell.photo.constraints[0].constant = Photo.size.width
+        self.updateViewConstraints()
+        
+        PhotoCell.photo.backgroundColor = .whiteColor()
+        PhotoCell.photo.center = (PhotoCell.photo.superview?.center)!
+        PhotoCell.photo.image = Photo
         PhotoCell.ImgSelector.hidden = true
         return PhotoCell
     }

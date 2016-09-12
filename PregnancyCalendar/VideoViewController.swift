@@ -11,11 +11,13 @@ import UIKit
 class VideoViewController: UITableViewController{
    
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet var table: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
-        
+        table.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
+        table.backgroundColor = .clearColor()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     

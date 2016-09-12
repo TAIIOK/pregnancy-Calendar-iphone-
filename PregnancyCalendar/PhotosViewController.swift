@@ -35,7 +35,7 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
     var picker = UIImagePickerController()
    
     @IBOutlet var PhotoCollectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPhoto:", name:"LoadPhoto", object: nil)
@@ -146,11 +146,27 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         if indexPath.row == 0 {
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("AppendCell", forIndexPath: indexPath) as! PhotoAppendCell
             PhotoCell.image.image = UIImage(named: "Cross Filled-50")
-            PhotoCell.backgroundColor = UIColor.lightGrayColor()
+            PhotoCell.image.frame.size.width = 50
+            PhotoCell.image.frame.size.height = 50
+            
+            PhotoCell.backgroundColor = UIColor.clearColor()
             return PhotoCell
         }else{
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
-            PhotoCell.photo.image = choosedSegmentImages ? photos[indexPath.row-1].image : uzis[indexPath.row-1].image
+            let Photo_temp = choosedSegmentImages ? photos[indexPath.row-1].image : uzis[indexPath.row-1].image
+            let x = Double(Photo_temp.size.height)/Double(100)
+            let y = Double(Photo_temp.size.width)/Double(100)
+            let scale = x > y ? x : y
+            let Photo = UIImage(CGImage: Photo_temp.CGImage!, scale: CGFloat(scale), orientation: Photo_temp.imageOrientation)
+            PhotoCell.photo.frame.size.width = Photo.size.width
+            PhotoCell.photo.frame.size.height = Photo.size.height
+            PhotoCell.photo.constraints[1].constant = Photo.size.height
+            PhotoCell.photo.constraints[0].constant = Photo.size.width
+            self.updateViewConstraints()
+            
+            PhotoCell.photo.backgroundColor = .whiteColor()
+            PhotoCell.photo.center = (PhotoCell.photo.superview?.center)!
+            PhotoCell.photo.image = Photo
             return PhotoCell
         }
     }
