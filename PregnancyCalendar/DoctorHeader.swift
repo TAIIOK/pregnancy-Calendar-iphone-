@@ -32,8 +32,8 @@ class DoctorHeader: UIView {
         self.open = false
         self.timestring = UILabel(frame: CGRect(x: 50, y: 10, width: 85, height: 30))
         //self.timestring.font = .systemFontOfSize(9)
-        self.doctorname  = UILabel(frame: CGRect(x: 105, y: 10, width: 210, height: 30))
-        self.doctornameText = UITextField(frame: CGRect(x: 105, y: 10, width: 210, height: 30))
+        self.doctorname  = UILabel(frame: CGRect(x: 105, y: 10, width: 130, height: 30))
+        self.doctornameText = UITextField(frame: CGRect(x: 105, y: 10, width: 130, height: 30))
         self.doctornameText.hidden = true
         self.doctornameText.layer.borderWidth = 0.5
         self.doctornameText.layer.borderColor = StrawBerryColor.CGColor

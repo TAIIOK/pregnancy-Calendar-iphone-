@@ -15,7 +15,8 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height*0.5
+                //self.view.frame.origin.y -= keyboardSize.height
+                bottom.constant += keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -24,7 +25,8 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height*0.5
+                //self.view.frame.origin.y += keyboardSize.height
+                bottom.constant -= keyboardSize.height
                 isKeyboard = false
             }
         }
@@ -36,6 +38,7 @@ class DesireListViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tbl: UITableView!
     var shouldShowDaysOut = true
     var animationFinished = true
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     
     var Desires = [String()]
     

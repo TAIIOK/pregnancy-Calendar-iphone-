@@ -56,7 +56,8 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height*0.5
+                //self.view.frame.origin.y -= keyboardSize.height
+                bottom.constant += keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -65,11 +66,13 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height*0.5
+                //self.view.frame.origin.y += keyboardSize.height
+                bottom.constant -= keyboardSize.height
                 isKeyboard = false
             }
         }
     }
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

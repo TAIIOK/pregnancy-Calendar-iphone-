@@ -15,7 +15,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height*0.5
+                //self.view.frame.origin.y -= keyboardSize.height
+                bottom.constant += keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -24,7 +25,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height*0.5
+                //self.view.frame.origin.y += keyboardSize.height
+                bottom.constant -= keyboardSize.height
                 isKeyboard = false
             }
         }
@@ -47,6 +49,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     var Food = [String]()
     var Preferences = [String]()
     var Restrictions = [String]()
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

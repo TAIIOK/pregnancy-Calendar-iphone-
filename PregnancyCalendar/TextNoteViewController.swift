@@ -15,7 +15,8 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height*0.5
+                //self.view.frame.origin.y -= keyboardSize.height
+                bottom.constant += keyboardSize.height
                 isKeyboard = true
             }
         }
@@ -24,7 +25,8 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height*0.5
+                //self.view.frame.origin.y += keyboardSize.height
+                bottom.constant -= keyboardSize.height
                 isKeyboard = false
             }
         }
@@ -34,6 +36,7 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var NoteTitle: UILabel!
     @IBOutlet weak var NoteText: UITextView!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     
     var shouldShowDaysOut = true
     var animationFinished = true
@@ -73,7 +76,6 @@ class TextNoteViewController: UIViewController, UITextViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         //self.navigationController?.navigationBar.backItem?.title = ""
         //self.title = CVDate(date: NSDate()).globalDescription
-        
         NoteText.layer.borderColor = StrawBerryColor.CGColor
         NoteText.layer.borderWidth = 1.0;
         NoteText.layer.cornerRadius = 5.0;
