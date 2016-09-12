@@ -497,7 +497,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewWillDisappear(animated: Bool) {
-        phincalc = false
+        //phincalc = false
         mas.removeAll()
         tbl.reloadData()
     }
