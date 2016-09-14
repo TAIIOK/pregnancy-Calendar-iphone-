@@ -475,9 +475,17 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                 let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarExport")
                 self.navigationController?.pushViewController(vc1!, animated: true)
             }else{
-                if dateType != -1 {
+                if dateType != -1{
                 let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarExport")
                 self.navigationController?.pushViewController(vc1!, animated: true)
+                }else{
+                    let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Сначала выберите дату родов!", preferredStyle: .Alert)
+                    //Create and add the Cancel action
+                    let cancelAction: UIAlertAction = UIAlertAction(title: "Ок", style: .Default) { action -> Void in
+                        //Do some stuff
+                    }
+                    actionSheetController.addAction(cancelAction)
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
                 }
             }
         }else if tableView == NotesTable{
