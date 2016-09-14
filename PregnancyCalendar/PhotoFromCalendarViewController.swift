@@ -27,6 +27,7 @@ class PhotoWithType: NSObject {
 var selectedCalendarDayPhoto:DayView!
 var photoFromDate = [PhotoWithType]()
 var phincalc = false
+var fromPhotoCal = false
 class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
     
     var picker = UIImagePickerController()
@@ -190,6 +191,10 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
         }
     }
     
+    @IBAction func back(sender: UIBarButtonItem) {
+        let calendar = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarViewController")
+        self.revealViewController()?.pushFrontViewController(calendar!, animated: true)
+    }
     //collectionView
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -223,6 +228,9 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         currentPhoto = indexPath.row
+        fromPhotoCal = true
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("onePhoto") as? UINavigationController
+        self.revealViewController().pushFrontViewController(controller, animated: true)
     }
 
     override func viewWillAppear(animated: Bool) {

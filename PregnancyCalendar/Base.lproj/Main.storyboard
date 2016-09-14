@@ -4510,7 +4510,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="IKq-QL-agh"/>
+                    <navigationItem key="navigationItem" id="IKq-QL-agh">
+                        <barButtonItem key="leftBarButtonItem" image="Arrowhead-Left-01-48" id="dFX-ey-YCV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="Ud4-7N-qhh" id="uST-l3-y8D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="hpX-mO-VU9" id="3O6-se-iJZ"/>
                         <outlet property="menuView" destination="48Y-U3-lst" id="2J2-gn-UsH"/>

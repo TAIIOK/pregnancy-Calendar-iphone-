@@ -91,9 +91,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func UpdateCalendar(segue:UIStoryboardSegue) {
         print("update calendar table")
         phincalc = false
-        tbl.reloadData()
+        /*tbl.reloadData()
         let controller = self.calendarView.contentController as! CVCalendarMonthContentViewController
-        controller.refreshPresentedMonth()
+        controller.refreshPresentedMonth()*/
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -295,9 +295,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             //cell.textLabel?.text = "Фотографии"
             selectedCalendarDayPhoto = selectedCalendarDay!
             phincalc = true
-            let photo = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoFromCalendarNavigation")
-            self.navigationController?.pushViewController(photo!, animated: true)
-            //self.revealViewController()?.pushFrontViewController(photo!, animated: true)
+            let photo = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoFromCalendarNavigation1")
+            //self.navigationController?.pushViewController(photo!, animated: true)
+            self.revealViewController()?.pushFrontViewController(photo!, animated: true)
             break
         case 2:
             //cell.textLabel?.text = "Уведомления"

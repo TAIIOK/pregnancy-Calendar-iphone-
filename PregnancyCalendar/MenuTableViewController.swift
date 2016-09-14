@@ -16,8 +16,8 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.backgroundView = UIImageView(image: UIImage(named: "background_left.png"))
-        table.backgroundColor = .clearColor()
+        //table.backgroundView = UIImageView(image: UIImage(named: "background_left.png"))
+        table.backgroundColor = .whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
