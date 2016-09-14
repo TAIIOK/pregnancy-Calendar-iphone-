@@ -806,7 +806,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         bells.removeAll()
         fillcalendar()
         fillbells()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionTop)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }

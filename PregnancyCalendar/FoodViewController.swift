@@ -243,7 +243,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         saveNote()
         calendars.removeAll()
         fillcalendar()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionDefault)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionTop)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }

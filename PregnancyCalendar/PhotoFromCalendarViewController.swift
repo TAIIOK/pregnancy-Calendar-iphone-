@@ -202,6 +202,22 @@ class PhotoFromCalendarViewController: UIViewController, UICollectionViewDelegat
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCalendarCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
         PhotoCell.photo.image = photoFromDate[indexPath.row].image
+        /*
+         let  Photo_temp = photoFromDate[indexPath.row].image
+         let x = Double(Photo_temp.size.height)/Double(100)
+         let y = Double(Photo_temp.size.width)/Double(100)
+         let scale = x > y ? x : y
+         let Photo = UIImage(CGImage: Photo_temp.CGImage!, scale: CGFloat(scale), orientation: Photo_temp.imageOrientation)
+         PhotoCell.photo.frame.size.width = Photo.size.width
+         PhotoCell.photo.frame.size.height = Photo.size.height
+         PhotoCell.photo.constraints[1].constant = Photo.size.height
+         PhotoCell.photo.constraints[0].constant = Photo.size.width
+         self.updateViewConstraints()
+         
+         PhotoCell.photo.backgroundColor = .whiteColor()
+         PhotoCell.photo.center = (PhotoCell.photo.superview?.center)!
+         PhotoCell.photo.image = Photo
+ */
         return PhotoCell
     }
     

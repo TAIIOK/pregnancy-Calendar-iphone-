@@ -88,6 +88,10 @@ class PhotoTableViewController: UITableViewController {
         self.revealViewController().pushFrontViewController(controller, animated: true)
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    
     func loadPhotos(){
         photos.removeAll()
         uzis.removeAll()
