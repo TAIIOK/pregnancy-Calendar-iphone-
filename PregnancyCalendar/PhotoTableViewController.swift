@@ -74,7 +74,7 @@ class PhotoTableViewController: UITableViewController {
         default:
             break
         }
-       
+        cell.backgroundColor = .clearColor()
         return cell
     }
     

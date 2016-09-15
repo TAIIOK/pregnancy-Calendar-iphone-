@@ -47,6 +47,7 @@ class VideoViewController: UITableViewController{
         cell.imageView?.image = indexPath.row == 0 ? UIImage(named: "7.jpg") : UIImage(named: "0.png")//scaleImage(UIImage(named: "7.jpg")!,toSize: CGSize(width: 100,height: 100)) : scaleImage(UIImage(named: "1.png")!,toSize: CGSize(width: 100,height: 100))
         cell.textLabel?.text =  indexPath.row == 0 ? "Белье для беременных" : "Гимнастика для беременных"
         cell.detailTextLabel?.text = indexPath.row == 0 ? "25" : "5"
+        cell.backgroundColor = .clearColor()
         return cell
     }
     

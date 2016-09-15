@@ -164,7 +164,7 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private func getCustomBackgroundView() -> UIView{
         let BackgroundView = UIView()
-        BackgroundView.backgroundColor = UIColor.whiteColor()
+        BackgroundView.backgroundColor = UIColor.clearColor()
         return BackgroundView
     }
     

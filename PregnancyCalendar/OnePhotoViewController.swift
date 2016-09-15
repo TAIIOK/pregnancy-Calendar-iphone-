@@ -58,7 +58,7 @@ class OnePhotoViewController: UIViewController, UIPopoverPresentationControllerD
         self.updateViewConstraints()
         image.image = Photo
         
-        image.backgroundColor = .whiteColor()
+        image.backgroundColor = .clearColor()
         image.center = (image.superview?.center)!
         if fromPhotoCal{
             commentField.text = photoFromDate[currentPhoto].text
