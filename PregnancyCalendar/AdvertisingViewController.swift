@@ -97,10 +97,20 @@ class AdvertisingViewController: UIViewController {
         textView.font = .systemFontOfSize(16)
         label.textColor = StrawBerryColor
         label.font = .systemFontOfSize(16)
+        //dispatch_async(dispatch_get_main_queue(), {
+        textView.scrollRectToVisible(CGRectMake(0,0,1,1), animated: false)
+        //})
+        textView.scrollRangeToVisible(NSRange(location:0, length:0))
     }
 
     override func viewDidDisappear(animated: Bool) {
         phincalc = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //info.scrollRangeToVisible(NSRange(location:0, length:0))
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

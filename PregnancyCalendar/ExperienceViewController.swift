@@ -140,6 +140,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
         var tmp = NSDate()
         if opennotifi{
             tmp = dateFromOpenNotifi
+            print(dateFromOpenNotifi)
         }else if selectedExperienceDay != nil{
             tmp = selectedExperienceDay.date.convertedDate()!
         }
@@ -149,7 +150,8 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
             choosedSegmentNotes = false
             self.tbl.reloadData()
             if opennotifi{
-                opennotifi = false
+                //opennotifi = false
+                phincalc = true
                 let destinationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("advertising")
                 self.navigationController?.pushViewController(destinationViewController!, animated: true)
             }else{
@@ -498,6 +500,7 @@ class ExperienceViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewWillDisappear(animated: Bool) {
         //phincalc = false
+        //opennotifi = false
         mas.removeAll()
         tbl.reloadData()
     }
@@ -525,7 +528,7 @@ extension ExperienceViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         return true // Default value is true
     }
     
-    func shouldAutoSelectDayOnWeekChange() -> Bool
+    func shouldAutoSelectDayOnMonthChange() -> Bool
     {
         return true
     }
