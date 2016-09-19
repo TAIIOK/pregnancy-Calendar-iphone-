@@ -85,6 +85,7 @@ class SpasmsViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSidebarMenu()
+        self.collectionView.backgroundColor = .clearColor()
         self.buttonSpasm.clipsToBounds = true
         self.buttonSpasm.layer.cornerRadius = 4
         self.collectionView.registerNib(UINib(nibName: self.numberCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: self.numberCellIdentifier)

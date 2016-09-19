@@ -146,8 +146,8 @@ class PhotosViewController: UICollectionViewController, UIImagePickerControllerD
         if indexPath.row == 0 {
             let PhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("AppendCell", forIndexPath: indexPath) as! PhotoAppendCell
             PhotoCell.image.image = UIImage(named: "Cross Filled-50")
-            PhotoCell.image.frame.size.width = 50
-            PhotoCell.image.frame.size.height = 50
+            PhotoCell.image.frame.size.width = 30
+            PhotoCell.image.frame.size.height = 30
             
             PhotoCell.backgroundColor = UIColor.clearColor()
             return PhotoCell
