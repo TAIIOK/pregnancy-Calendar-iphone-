@@ -28,6 +28,7 @@ class NameViewController: UIViewController{
         tmp = NSMutableAttributedString(string: choosedSegmentNames ? (man[sections[choosedName.section].index + choosedName.row].value) : (woman[sectionsGirl[choosedName.section].index + choosedName.row].value), attributes: [NSParagraphStyleAttributeName: paragraphStyle])
         tmp.addAttributes([NSFontAttributeName : UIFont.italicSystemFontOfSize(18)], range: NSRange(location: 0,length: tmp.length))
         text.appendAttributedString(tmp)
+        text.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: text.length))
         text.appendAttributedString(NSMutableAttributedString(string: choosedSegmentNames ? ("\n\n" + man[sections[choosedName.section].index + choosedName.row].about) : ("\n\n" + woman[sectionsGirl[choosedName.section].index + choosedName.row].about), attributes: [NSFontAttributeName : UIFont.systemFontOfSize(18)]))
         //text.addAttributes([NSForegroundColorAttributeName: BiruzaColor1], range: NSRange(location: 0,length: text.length))
         info.attributedText = text

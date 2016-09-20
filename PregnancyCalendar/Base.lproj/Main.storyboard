@@ -735,7 +735,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-Aa-j1X">
-                                <rect key="frame" x="0.0" y="-536" width="600" height="1136"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-2F-mDI">
                                 <rect key="frame" x="20" y="28" width="560" height="552"/>
@@ -754,13 +754,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="bottom" secondItem="iCo-AG-csV" secondAttribute="top" id="3FJ-Fh-9O9"/>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="centerX" secondItem="1aJ-2F-mDI" secondAttribute="centerX" id="Asz-lD-SYh"/>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="leading" secondItem="C3N-gt-Sfq" secondAttribute="leading" id="EQM-pl-MKo"/>
                             <constraint firstAttribute="trailing" secondItem="1aJ-2F-mDI" secondAttribute="trailing" constant="20" id="Hq7-eG-3nw"/>
                             <constraint firstItem="1aJ-2F-mDI" firstAttribute="top" secondItem="jlf-QP-Gfa" secondAttribute="bottom" constant="8" id="HyG-zu-eU0"/>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="bottom" secondItem="iCo-AG-csV" secondAttribute="top" id="jU0-2D-FLi"/>
                             <constraint firstItem="1aJ-2F-mDI" firstAttribute="bottom" secondItem="iCo-AG-csV" secondAttribute="top" constant="-20" id="k21-GS-38G"/>
-                            <constraint firstItem="1aJ-2F-mDI" firstAttribute="leading" secondItem="h0o-Aa-j1X" secondAttribute="leading" constant="20" id="q1t-7e-blO"/>
+                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="top" secondItem="C3N-gt-Sfq" secondAttribute="top" id="obK-TW-0yb"/>
                             <constraint firstItem="1aJ-2F-mDI" firstAttribute="leading" secondItem="C3N-gt-Sfq" secondAttribute="leading" constant="20" id="sSI-TV-2eo"/>
-                            <constraint firstItem="h0o-Aa-j1X" firstAttribute="trailing" secondItem="1aJ-2F-mDI" secondAttribute="trailing" constant="20" id="wpf-KA-Opg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dGJ-fg-SqY">
@@ -3440,13 +3441,14 @@
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateExpTable" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-tL-sA0">
                                         <rect key="frame" x="8" y="37" width="560" height="88"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="88" id="PwF-ji-pOj"/>
                                         </constraints>
-                                        <color key="sectionIndexColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateExpCell" textLabel="Ql8-1K-sEM" detailTextLabel="KXQ-v2-JVH" style="IBUITableViewCellStyleSubtitle" id="5li-nI-iBz" customClass="DateTableViewCell" customModule="Календарь_беременности" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="40"/>
@@ -3485,7 +3487,8 @@
                                                         <constraint firstAttribute="bottom" secondItem="sZR-ex-8aX" secondAttribute="bottom" id="xTU-12-JdK"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <outlet property="selImg" destination="sZR-ex-8aX" id="EGE-pg-OPU"/>
                                                 </connections>

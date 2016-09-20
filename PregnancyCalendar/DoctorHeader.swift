@@ -25,7 +25,7 @@ class DoctorHeader: UIView {
         self.time = "10:10"
         self.imageView = UIImageView()
         self.imageView.image = UIImage(named: "Bell-30_1")!
-        self.imageView.highlightedImage = UIImage(named: "Bell-30")!
+        self.imageView.highlightedImage = UIImage(named: "Bell-104")!
         self.imageView.frame =  CGRectMake(frame.width - 40,10,30,30)
         self.imageView.userInteractionEnabled = true
         self.imageView.tag = 99

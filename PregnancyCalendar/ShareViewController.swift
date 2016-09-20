@@ -165,7 +165,7 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
     }
     
     func postToWall(string: String){
-        let mass = [VK.Arg.userId : userID , VK.Arg.friendsOnly : "0" , VK.Arg.message : "Testing FEST share " , VK.Arg.attachments : string ]
+        let mass = [VK.Arg.userId : userID , VK.Arg.friendsOnly : "0" , VK.Arg.message : "Мой дневник, созданный в приложении \"Календарь беременности ФЭСТ\"" , VK.Arg.attachments : string ]
         let postreq = VK.API.Wall.post(mass)
         postreq.successBlock = {
             response in print("post success")
@@ -363,7 +363,7 @@ class ShareViewController: UIViewController ,VKDelegate, MFMailComposeViewContro
                 content.photos = []
                 for i in selectedImages{
                     let share = FBSDKSharePhoto()
-                    share.caption = "Test FEST share"
+                    share.caption = "Мой дневник, созданный в приложении \"Календарь беременности ФЭСТ\""
                     share.image = i
                     content.photos.append(share)
                 }
