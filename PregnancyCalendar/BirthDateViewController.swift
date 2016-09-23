@@ -123,7 +123,8 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
     func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DateCell", forIndexPath: indexPath) as! DateTableViewCell
         cell.textLabel?.text = txt[indexPath.row]
-        
+        cell.textLabel?.backgroundColor = .clearColor()
+        cell.detailTextLabel?.backgroundColor = .clearColor()
         if indexPath.row == dateTypeTemp {
             let date = BirthDate
             let calendar = NSCalendar.currentCalendar()
@@ -147,8 +148,8 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
             {
                 stringday = "\(components.day)"
             }
-            
             cell.detailTextLabel?.text = "\(stringday).\(string).\(components.year)"
+            cell.selectedBackgroundView=getCustomBackgroundView()
             cell.setHighlighted(true, animated: false)
             tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
         }
@@ -156,8 +157,8 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.detailTextLabel?.text = "не выбрано"
         }
         cell.backgroundColor = .clearColor()
-        cell.tintColor = UIColor.lightGrayColor()
-        cell.detailTextLabel?.tintColor = UIColor.lightGrayColor()
+        //cell.tintColor = UIColor.lightGrayColor()
+        //cell.detailTextLabel?.tintColor = UIColor.lightGrayColor()
         //cell.textLabel?.font = .systemFontOfSize(12)
         return cell
     }
@@ -195,9 +196,12 @@ class BirthDateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! DateTableViewCell
+        print("willselect")
         cell.selectedBackgroundView=getCustomBackgroundView()
         cell.textLabel?.highlightedTextColor = StrawBerryColor
         cell.detailTextLabel?.highlightedTextColor = StrawBerryColor
+        cell.textLabel?.backgroundColor = .clearColor()
+        cell.detailTextLabel?.backgroundColor = .clearColor()
         return indexPath
     }
     

@@ -376,6 +376,8 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
         
         if tableView == DateTable{
             let cell = tableView.dequeueReusableCellWithIdentifier("DateExpCell", forIndexPath: indexPath) as! DateTableViewCell
+            cell.textLabel?.backgroundColor = .clearColor()
+            cell.detailTextLabel?.backgroundColor = .clearColor()
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "Выбранные дни"
@@ -413,6 +415,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             default:
                 cell.textLabel?.text = ""
             }
+            cell.selectedBackgroundView=getCustomBackgroundView()
             if indexPath.row == selectionDateType{
                 cell.setHighlighted(true, animated: false)
                 tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
@@ -471,6 +474,7 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
             if selectionDateType != indexPath.row{
                 selectedExportWeek.removeAll()
                 selectedExportDays.removeAll()
+                tableView.reloadData()
             }
             selectionDateType = indexPath.row
             //selectedExportDays.removeAll()
@@ -501,6 +505,8 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! DateTableViewCell
         cell.selectedBackgroundView=getCustomBackgroundView()
+        cell.textLabel?.backgroundColor = .clearColor()
+        cell.detailTextLabel?.backgroundColor = .clearColor()
         return indexPath
     }
     
