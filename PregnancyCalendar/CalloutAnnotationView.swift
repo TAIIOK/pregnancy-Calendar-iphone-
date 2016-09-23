@@ -72,7 +72,7 @@ class CalloutAnnotationView : MKAnnotationView {
         if size.width < 30 {
             size.width = 30
         }
-        size.height = 40
+        size.height = 50
         bubbleView.setContentViewSize(size)
         frame = bubbleView.bounds
         centerOffset = CGPoint(x: 0, y: -50)
@@ -90,7 +90,7 @@ class CalloutAnnotationView : MKAnnotationView {
         label.textAlignment = .Left
         label.font = font
         label.textColor = UIColor.blackColor()
-        label.numberOfLines = 3
+        label.numberOfLines = 5
         bubbleView.contentView.addSubview(label)
         
         updateCallout()

@@ -514,7 +514,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("DrugsTable") 
                 vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-                vc.preferredContentSize =  CGSizeMake(340,300)
+                vc.preferredContentSize =  CGSizeMake(400,400)
                 let popover: UIPopoverPresentationController = vc.popoverPresentationController!
                 
                 let location = recognizer.locationInView(recognizer.view)
@@ -524,7 +524,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 popover.sourceView = swipedCell.notifibutton
                 
                 popover.sourceRect = CGRect(
-                    x: location.x,
+                    x: 100,
                     y: location.y,
                     width: 1,
                     height: 1)
@@ -557,9 +557,9 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 popover.sourceView = swipedCell.timebutton
                 
                 popover.sourceRect = CGRect(
-                    x: 0,
+                    x: 150,
                     y: 0,
-                    width: UIScreen.mainScreen().bounds.size.height*0.8,
+                    width: 1,
                     height: 1)
                 
                 currentRec = swipedIndexPath.section
@@ -590,9 +590,9 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 popover.sourceView = swipedCell.timebutton
                 
                 popover.sourceRect = CGRect(
-                    x: 0,
+                    x: 150,
                     y: 0,
-                    width: UIScreen.mainScreen().bounds.size.height*0.8,
+                    width: 1,
                     height: 1)
                 
                 currentRec = swipedIndexPath.section

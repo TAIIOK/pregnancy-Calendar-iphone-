@@ -393,8 +393,13 @@ class BuyViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             myMutableString.addAttributes([NSFontAttributeName : UIFont.boldSystemFontOfSize(14)], range: NSRange(location: 0,length: nearPoints[indexPath.row].trade_point.characters.count))
             myMutableString.addAttribute(NSForegroundColorAttributeName, value: BiruzaColor1, range: NSRange(location:nearPoints[indexPath.row].trade_point.characters.count+8,length:lenghtstring ))
             cell.textLabel?.attributedText = myMutableString
+            cell.textLabel?.numberOfLines = 5
             cell.backgroundColor = .clearColor()
             return cell
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
     }
 }

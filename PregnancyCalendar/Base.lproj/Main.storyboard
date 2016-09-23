@@ -341,7 +341,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cMT-JB-1Ix">
                                 <rect key="frame" x="20" y="132" width="560" height="212"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="U1n-ve-vue"/>
@@ -386,7 +386,8 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="8bl-NS-5e7" secondAttribute="trailing" constant="5" id="hRc-Lm-n4c"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="selImg" destination="8bl-NS-5e7" id="0Qx-Eh-Vol"/>
                                         </connections>
@@ -2449,11 +2450,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ef0-9L-Uub"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E1I-Xn-lRQ">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="468"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cQR-yx-foc">
-                                <rect key="frame" x="0.0" y="44" width="400" height="418"/>
+                                <rect key="frame" x="0.0" y="44" width="400" height="450"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notifiCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifiCell" id="HZ2-hV-72s" customClass="NotifiCell" customModule="Календарь_беременности" customModuleProvider="target">
@@ -2471,7 +2472,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Thin-48" highlightedImage="Checked-50" translatesAutoresizingMaskIntoConstraints="NO" id="j5h-J2-lMK">
-                                                    <rect key="frame" x="315" y="0.0" width="46" height="44"/>
+                                                    <rect key="frame" x="346" y="0.0" width="46" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="tbG-vL-0m6"/>
                                                     </constraints>
@@ -2482,7 +2483,7 @@
                                                 <constraint firstItem="3Dq-MI-oeF" firstAttribute="leading" secondItem="wJp-ah-fiG" secondAttribute="leadingMargin" constant="31" id="GVn-wB-gsq"/>
                                                 <constraint firstItem="3Dq-MI-oeF" firstAttribute="centerY" secondItem="j5h-J2-lMK" secondAttribute="centerY" id="OSE-7x-3sZ"/>
                                                 <constraint firstItem="j5h-J2-lMK" firstAttribute="top" secondItem="wJp-ah-fiG" secondAttribute="top" id="Vrg-ug-2HE"/>
-                                                <constraint firstAttribute="trailing" secondItem="j5h-J2-lMK" secondAttribute="trailing" constant="39" id="pqj-bc-JV7"/>
+                                                <constraint firstAttribute="trailing" secondItem="j5h-J2-lMK" secondAttribute="trailing" constant="8" id="pqj-bc-JV7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2525,9 +2526,9 @@
                             <constraint firstItem="ef0-9L-Uub" firstAttribute="top" secondItem="cQR-yx-foc" secondAttribute="bottom" constant="6" id="nFt-nF-K12"/>
                         </constraints>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="150" height="200"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="200"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="468"/>
+                    <size key="freeformSize" width="400" height="500"/>
                     <connections>
                         <outlet property="navbar" destination="c0A-ud-4kZ" id="fW9-ip-TlW"/>
                         <outlet property="table" destination="cQR-yx-foc" id="bs3-LY-xEH"/>

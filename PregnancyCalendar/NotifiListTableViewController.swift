@@ -51,18 +51,23 @@ class NotifiListTableViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("notifiCell", forIndexPath: indexPath) as! NotifiCell
         cell.textLbl.text = Notification[indexPath.row]
-        
+        cell.selectedBackgroundView?.backgroundColor = .whiteColor()
         if firstStart && indexPath.row == curRemindType{
             cell.setHighlighted(true, animated: false)
             tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
             firstStart = false
         }
-        cell.selectedBackgroundView?.backgroundColor = .whiteColor()
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         changeRemindInCurRec = indexPath.row
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("notifiCell", forIndexPath: indexPath) as! NotifiCell
+        cell.selectedBackgroundView?.backgroundColor = .whiteColor()
+        return indexPath
     }
     
     @IBAction func Cancel(sender: UIBarButtonItem) {

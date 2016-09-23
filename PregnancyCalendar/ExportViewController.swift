@@ -468,7 +468,10 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == DateTable{
-            
+            if selectionDateType != indexPath.row{
+                selectedExportWeek.removeAll()
+                selectedExportDays.removeAll()
+            }
             selectionDateType = indexPath.row
             //selectedExportDays.removeAll()
             if selectionDateType == 0 {

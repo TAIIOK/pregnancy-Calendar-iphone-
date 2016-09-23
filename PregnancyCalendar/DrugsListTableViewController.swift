@@ -58,6 +58,12 @@ class DrugsListTableViewController: UIViewController, UITableViewDelegate, UITab
         changeRemindInCurRec = indexPath.row
     }
     
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("drugsCell", forIndexPath: indexPath) as! NotifiCell
+        cell.selectedBackgroundView?.backgroundColor = .whiteColor()
+        return indexPath
+    }
+    
     @IBAction func Cancel(sender: UIBarButtonItem) {
          self.dismissViewControllerAnimated(true, completion: nil)
     }

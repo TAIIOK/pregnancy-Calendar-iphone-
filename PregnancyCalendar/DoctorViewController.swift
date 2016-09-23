@@ -439,7 +439,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("NotifiTable") 
                 vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-                vc.preferredContentSize =  CGSizeMake(340,300)
+                vc.preferredContentSize =  CGSizeMake(400,400)
                 let popover: UIPopoverPresentationController = vc.popoverPresentationController!
                 
                 let location = recognizer.locationInView(recognizer.view)
@@ -449,7 +449,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 popover.sourceView = swipedCell.notifibutton
                 
                 popover.sourceRect = CGRect(
-                    x: location.x,
+                    x: 100,
                     y: location.y,
                     width: 1,
                     height: 1)
