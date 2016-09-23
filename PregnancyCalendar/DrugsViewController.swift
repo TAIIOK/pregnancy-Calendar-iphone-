@@ -43,8 +43,8 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                //self.view.frame.origin.y -= keyboardSize.height
-                bottom.constant += keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height/2
+                bottom.constant += keyboardSize.height/2
                 isKeyboard = true
             }
         }
@@ -53,8 +53,8 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                //self.view.frame.origin.y += keyboardSize.height
-                bottom.constant -= keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height/2
+                bottom.constant -= keyboardSize.height/2
                 isKeyboard = false
             }
         }
@@ -396,34 +396,36 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let sectionHeaderArea = tbl.rectForHeaderInSection(i)
                 if CGRectContainsPoint(sectionHeaderArea, tappedPoint) {
                     print("tapped on section header:: \(i)")
-                    
-                    if(drugs[i-1].isRemind == true){
-                        drugs[i-1].isRemind = false
-                        
-                        /*let notifiday = drugs[i-1].start
-                         
-                         for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
-                         {
-                         cancelLocalNotification("\(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0))")
-                         }*/
-                        
-                        
+                    let collapsed = arrayForBool .objectAtIndex(i).boolValue
+                    if  collapsed != nil && collapsed == true{
+                        if(drugs[i-1].isRemind == true){
+                            drugs[i-1].isRemind = false
+                            
+                            /*let notifiday = drugs[i-1].start
+                             
+                             for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
+                             {
+                             cancelLocalNotification("\(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0))")
+                             }*/
+                            
+                            
+                        }
+                        else if(drugs[i-1].isRemind == false){
+                            drugs[i-1].isRemind = true
+                            
+                            /*let notifiday = drugs[i-1].start
+                             
+                             for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
+                             {
+                             scheduleNotification(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1 , after: drugs[i-1].cellType), notificationTitle:"Время приема лекарства \(drugs[i-1].name)" , objectId: "\(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: drugs[i-1].cellType))")
+                             }*/
+                        }
+                        self.view.endEditing(true)
+                        tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
+                        let headerview = tbl.viewWithTag(i) as? DoctorHeader
+                        headerview?.setopen(true)
+                        headerview?.changeFields()
                     }
-                    else if(drugs[i-1].isRemind == false){
-                        drugs[i-1].isRemind = true
-                        
-                        /*let notifiday = drugs[i-1].start
-                         
-                         for(var j = 0 ;j <= notifiday.daysFrom(drugs[i-1].end); j++)
-                         {
-                         scheduleNotification(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1 , after: drugs[i-1].cellType), notificationTitle:"Время приема лекарства \(drugs[i-1].name)" , objectId: "\(calculateDate(addDaystoGivenDate(drugs[i-1].start, NumberOfDaysToAdd: j, NumberOfHoursToAdd: 0, NumberOfMinuteToAdd: 0), before: -1, after: drugs[i-1].cellType))")
-                         }*/
-                    }
-                    self.view.endEditing(true)
-                    tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
-                    let headerview = tbl.viewWithTag(i) as? DoctorHeader
-                    headerview?.setopen(true)
-                    headerview?.changeFields()
                     break
                 }
             }
@@ -806,7 +808,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         bells.removeAll()
         fillcalendar()
         fillbells()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionTop)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }
@@ -882,7 +884,7 @@ class DrugsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let index = NSIndexPath(forItem: 0, inSection: i+1)
             
             let header = tbl?.viewWithTag(index.section) as? DoctorHeader
-            if(header!.doctornameText.text?.isEmpty == false){
+            if(header != nil && header!.doctornameText.text?.isEmpty == false){
                 drugs[i].name = (header!.doctornameText.text)!
             }
             

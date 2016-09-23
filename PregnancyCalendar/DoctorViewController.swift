@@ -56,8 +56,8 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillShow(notification: NSNotification) {
         if !isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                //self.view.frame.origin.y -= keyboardSize.height
-                bottom.constant += keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height/2
+                bottom.constant += keyboardSize.height/2
                 isKeyboard = true
             }
         }
@@ -66,8 +66,8 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func keyboardWillHide(notification: NSNotification) {
         if isKeyboard{
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                //self.view.frame.origin.y += keyboardSize.height
-                bottom.constant -= keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height/2
+                bottom.constant -= keyboardSize.height/2
                 isKeyboard = false
             }
         }
@@ -333,22 +333,24 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let sectionHeaderArea = tbl.rectForHeaderInSection(i)
                 if CGRectContainsPoint(sectionHeaderArea, tappedPoint) {
                     print("tapped on section header:: \(i)")
-                    
-                    if(doctors[i-1].isRemind == true){
-                        doctors[i-1].isRemind = false
-                        //cancelLocalNotification("\(doctors[i-1].date)")
-                    }else if(doctors[i-1].isRemind == false){
-                        if(doctors[i-1].remindType != 0){
-                            doctors[i-1].isRemind = true
-                            //scheduleNotification(calculateDate(doctors[i-1].date, before: -1 , after: doctors[i-1].remindType), notificationTitle:"У вас посещение врача \(doctors[i-1].name)" , objectId: "\(doctors[i-1].date)")
+                    let collapsed = arrayForBool .objectAtIndex(i).boolValue
+                    if  collapsed != nil && collapsed == true{
+                        if(doctors[i-1].isRemind == true){
+                            doctors[i-1].isRemind = false
+                            //cancelLocalNotification("\(doctors[i-1].date)")
+                        }else if(doctors[i-1].isRemind == false){
+                            if(doctors[i-1].remindType != 0){
+                                doctors[i-1].isRemind = true
+                                //scheduleNotification(calculateDate(doctors[i-1].date, before: -1 , after: doctors[i-1].remindType), notificationTitle:"У вас посещение врача \(doctors[i-1].name)" , objectId: "\(doctors[i-1].date)")
+                            }
                         }
+                        
+                        self.view.endEditing(true)
+                        tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
+                        let headerview = tbl.viewWithTag(i) as? DoctorHeader
+                        headerview?.setopen(true)
+                        headerview?.changeFields()
                     }
-                    
-                    self.view.endEditing(true)
-                    tbl.reloadSections(NSIndexSet(index: i), withRowAnimation: .None)
-                    let headerview = tbl.viewWithTag(i) as? DoctorHeader
-                    headerview?.setopen(true)
-                    headerview?.changeFields()
                     break
                 }
             }
@@ -652,7 +654,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
         bells.removeAll()
         fillcalendar()
         fillbells()
-        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionTop)
+        self.view.makeToast(message: "Cохранено!", duration: 2.0, position:HRToastPositionCenter)
         let controller = self.calendarView.contentController as! CVCalendarWeekContentViewController
         controller.refreshPresentedMonth()
     }
@@ -702,7 +704,7 @@ class DoctorViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let header = tbl?.viewWithTag(index.section) as? DoctorHeader
             
 
-            if(header!.doctornameText.text?.isEmpty == false){
+            if(header != nil && header!.doctornameText.text?.isEmpty == false){
                 let curDate = doctors[i].date
                 let calendar = NSCalendar.currentCalendar()
                 let componentsCurrent = calendar.components([.Hour , .Minute , .Second], fromDate: curDate)
