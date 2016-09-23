@@ -397,6 +397,9 @@ class ExportViewController: UIViewController, UIWebViewDelegate, UITableViewDele
                 }else{
                     cell.detailTextLabel?.text = str
                 }
+                cell.frame.size.width = 100
+                cell.sizeToFit()
+                cell.layoutIfNeeded()
             case 1:
                 cell.textLabel?.text = "Недели беременности"
                 var str = ""

@@ -203,7 +203,6 @@ class VideosViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
         
         VideoCollectionView.delegate = self
@@ -377,6 +376,8 @@ class VideosViewController: UICollectionViewController {
   */
         
     }
- 
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
 
 }
