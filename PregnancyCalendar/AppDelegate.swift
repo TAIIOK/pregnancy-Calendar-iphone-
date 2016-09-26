@@ -112,7 +112,18 @@ func getVideoDetails() {
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    public var shouldRotate = false
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        print("ROTATION!", shouldRotate)
+        if shouldRotate {
+            return .AllButUpsideDown
+        }
+        else {
+            return .Portrait
+        }
+    }
+    
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

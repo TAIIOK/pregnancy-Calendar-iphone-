@@ -18,13 +18,13 @@ class VideoPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+                let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         noConnectionButton.layer.borderWidth = 2
         noConnectionButton.layer.borderColor = StrawBerryColor.CGColor
         noConnectionButton.layer.cornerRadius = 5
         noConnectionLabel.textColor = UIColor.grayColor()
-        check()
+        //check()
         
         // Do any additional setup after loading the view.
     }
@@ -45,7 +45,9 @@ class VideoPlayerViewController: UIViewController {
             noConnectionButton.enabled = true
             background.image = UIImage(named: "no_connection_background.png")
         case .Online(.WWAN):
-            let videoPlayer = YouTubePlayerView(frame: self.view.frame)
+            var frame = self.view.frame
+            frame.origin.y -= 32
+            let videoPlayer = YouTubePlayerView(frame: frame)
             videoPlayer.backgroundColor = .whiteColor()
             self.view.addSubview(videoPlayer)
             self.view.bringSubviewToFront(videoPlayer)
@@ -53,7 +55,9 @@ class VideoPlayerViewController: UIViewController {
             videoPlayer.loadVideoID(id)
             background.image = UIImage(named: "background.png")
         case .Online(.WiFi):
-            let videoPlayer = YouTubePlayerView(frame: self.view.frame)
+            var frame = self.view.frame
+            frame.origin.y -= 32
+            let videoPlayer = YouTubePlayerView(frame: frame)
             videoPlayer.backgroundColor = .whiteColor()
             self.view.addSubview(videoPlayer)
             self.view.bringSubviewToFront(videoPlayer)
@@ -64,6 +68,28 @@ class VideoPlayerViewController: UIViewController {
     }
     @IBAction func reconnect(sender: UIButton) {
         check()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.shouldRotate = true // or false to disable rotation
+        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        check()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.shouldRotate = false // or false to disable rotation
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
     }
 
     override func didReceiveMemoryWarning() {

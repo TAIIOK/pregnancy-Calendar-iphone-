@@ -253,7 +253,7 @@ class VideosViewController: UICollectionViewController {
             VideoCollectionView.backgroundColor = .clearColor()
         }
         
-}
+    }
     
     @IBAction func back(sender: UIBarButtonItem) {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("VideoNavigationController") as? UINavigationController
@@ -375,9 +375,6 @@ class VideosViewController: UICollectionViewController {
         
   */
         
-    }
-    override func shouldAutorotate() -> Bool {
-        return true
     }
 
 }
