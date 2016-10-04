@@ -1064,7 +1064,7 @@
 				TargetAttributes = {
 					02682D231C7EFBA40088F21B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = FBJJC74S38;
+						DevelopmentTeam = 3JN9UXS4CJ;
 					};
 				};
 			};
@@ -1526,7 +1526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Mihailov (S68624ESA3)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1540,7 +1540,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendariphone;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar.;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
@@ -1555,7 +1555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PREDPRIYATIE AIST OOO (3JN9UXS4CJ)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1569,7 +1569,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendariphone;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mamafest.pregnancycalendar.;
 				PRODUCT_NAME = "Календарь беременности";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PregnancyCalendar/PregnancyCalendar-Bridging-Header.h";
