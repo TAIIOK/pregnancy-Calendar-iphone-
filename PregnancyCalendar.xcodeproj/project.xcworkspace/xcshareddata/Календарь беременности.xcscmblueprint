@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4C0C0E6F157CC288F20752EF2A653AD59B498A38",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "186C7A8CB005C29D8923263C105C0FDF1A1D1B60" : 0,
+    "4C0C0E6F157CC288F20752EF2A653AD59B498A38" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3B785C91-A55B-4DED-A78D-70303B34DC5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "186C7A8CB005C29D8923263C105C0FDF1A1D1B60" : "BirthCalendar_iPad\/",
+    "4C0C0E6F157CC288F20752EF2A653AD59B498A38" : "BirthCalendar_iPhone\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Календарь беременности",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Календарь беременности.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TAIIOK\/pregnancy-Calendar-ipad-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "186C7A8CB005C29D8923263C105C0FDF1A1D1B60"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TAIIOK\/pregnancy-Calendar-iphone-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4C0C0E6F157CC288F20752EF2A653AD59B498A38"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+
+/* Class = "UIViewController"; title = "NotifiTable"; ObjectID = "07x-4P-ul1"; */
+"07x-4P-ul1.title" = "NotifiTable";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Dq-MI-oeF"; */
+"3Dq-MI-oeF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "4Sq-wg-3oo"; */
+"4Sq-wg-3oo.normalTitle" = "Повторить";
+
+/* Class = "UINavigationItem"; title = "Купить белье ФЭСТ"; ObjectID = "5X6-S9-h8R"; */
+"5X6-S9-h8R.title" = "Купить белье ФЭСТ";
+
+/* Class = "UILabel"; text = "Килограммы"; ObjectID = "6MZ-Ce-W6M"; */
+"6MZ-Ce-W6M.text" = "Килограммы";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "6ai-eH-kP2"; */
+"6ai-eH-kP2.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Фото"; ObjectID = "7LW-l9-2ks"; */
+"7LW-l9-2ks.title" = "Фото";
+
+/* Class = "UIButton"; normalTitle = "0 кг"; ObjectID = "7Ri-8m-Xw0"; */
+"7Ri-8m-Xw0.normalTitle" = "0 кг";
+
+/* Class = "UILabel"; text = "Мой вес"; ObjectID = "7dm-4d-gVZ"; */
+"7dm-4d-gVZ.text" = "Мой вес";
+
+/* Class = "UIViewController"; title = "DatePickerView"; ObjectID = "7js-yp-h8T"; */
+"7js-yp-h8T.title" = "DatePickerView";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9D7-uK-vjQ"; */
+"9D7-uK-vjQ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Не выбрано"; ObjectID = "AmO-oM-J4o"; */
+"AmO-oM-J4o.normalTitle" = "Не выбрано";
+
+/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "CTj-Dq-NGl"; */
+"CTj-Dq-NGl.normalTitle" = "Повторить";
+
+/* Class = "UIViewController"; title = "Полезный опыт"; ObjectID = "E31-fg-Yt4"; */
+"E31-fg-Yt4.title" = "Полезный опыт";
+
+/* Class = "UILabel"; text = "Заметки"; ObjectID = "E3C-Vy-iEl"; */
+"E3C-Vy-iEl.text" = "Заметки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Eh9-BZ-x6B"; */
+"Eh9-BZ-x6B.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "0 выбрано"; ObjectID = "Esh-5A-8da"; */
+"Esh-5A-8da.title" = "0 выбрано";
+
+/* Class = "UILabel"; text = "Facebook"; ObjectID = "F1V-q9-Mkn"; */
+"F1V-q9-Mkn.text" = "Facebook";
+
+/* Class = "UILabel"; text = "Поделиться"; ObjectID = "FSa-72-XXf"; */
+"FSa-72-XXf.text" = "Поделиться";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FpC-T6-blK"; */
+"FpC-T6-blK.text" = "Label";
+
+/* Class = "UIViewController"; title = "Doctor"; ObjectID = "HIW-C5-SE9"; */
+"HIW-C5-SE9.title" = "Doctor";
+
+/* Class = "UILabel"; text = "VK"; ObjectID = "Hau-D7-qYt"; */
+"Hau-D7-qYt.text" = "VK";
+
+/* Class = "UILabel"; text = "недели"; ObjectID = "INK-3E-Fyb"; */
+"INK-3E-Fyb.text" = "недели";
+
+/* Class = "UIBarButtonItem"; title = "Все"; ObjectID = "ISQ-zQ-hJU"; */
+"ISQ-zQ-hJU.title" = "Все";
+
+/* Class = "UIViewController"; title = "DrugsTable"; ObjectID = "JEu-11-aFj"; */
+"JEu-11-aFj.title" = "DrugsTable";
+
+/* Class = "UINavigationItem"; title = "Напоминание"; ObjectID = "JLV-2S-s4z"; */
+"JLV-2S-s4z.title" = "Напоминание";
+
+/* Class = "UITextView"; accessibilityLabel = "tt"; ObjectID = "K7E-VO-i7G"; */
+"K7E-VO-i7G.accessibilityLabel" = "tt";
+
+/* Class = "UITextView"; text = "Спасибо за установку нашего приложения! Предлагаем вам рассказать немного о себе: введите в наш календарь свой вес, рост, дату начала месячных. С какого дня считать срок беременноси? В акушерстве принято брать за точку отсчета первый день последней менструации, так как определить с точностью дату овуляции может быть весьма затруднительно, если только Вы не делали специальных тестов, не отслеживали этот процесс."; ObjectID = "K7E-VO-i7G"; */
+"K7E-VO-i7G.text" = "Спасибо за установку нашего приложения! Предлагаем вам рассказать немного о себе: введите в наш календарь свой вес, рост, дату начала месячных. С какого дня считать срок беременноси? В акушерстве принято брать за точку отсчета первый день последней менструации, так как определить с точностью дату овуляции может быть весьма затруднительно, если только Вы не делали специальных тестов, не отслеживали этот процесс.";
+
+/* Class = "UILabel"; text = "не выбрано"; ObjectID = "KXQ-v2-JVH"; */
+"KXQ-v2-JVH.text" = "не выбрано";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Kkv-7z-pd4"; */
+"Kkv-7z-pd4.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "LAb-ps-w81"; */
+"LAb-ps-w81.title" = "Сохранить";
+
+/* Class = "UIButton"; normalTitle = "ПОКАЗАТЬ"; ObjectID = "LFZ-fU-lJL"; */
+"LFZ-fU-lJL.normalTitle" = "ПОКАЗАТЬ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LPk-e1-Al1"; */
+"LPk-e1-Al1.text" = "Label";
+
+/* Class = "UILabel"; text = "Ваш вес на момент зачатия"; ObjectID = "Ls2-2p-aW8"; */
+"Ls2-2p-aW8.text" = "Ваш вес на момент зачатия";
+
+/* Class = "UIViewController"; title = "TimeTable"; ObjectID = "Nhr-B6-uqS"; */
+"Nhr-B6-uqS.title" = "TimeTable";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "NkY-Ah-SNd"; */
+"NkY-Ah-SNd.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Не выбрано"; ObjectID = "Or9-Z9-kNI"; */
+"Or9-Z9-kNI.normalTitle" = "Не выбрано";
+
+/* Class = "UIButton"; normalTitle = "0 г"; ObjectID = "OvZ-N7-Qt6"; */
+"OvZ-N7-Qt6.normalTitle" = "0 г";
+
+/* Class = "UIButton"; normalTitle = "ОТМЕНА"; ObjectID = "PRl-Rl-qsM"; */
+"PRl-Rl-qsM.normalTitle" = "ОТМЕНА";
+
+/* Class = "UIButton"; normalTitle = "ПРЕДПРОСМОТР"; ObjectID = "PqB-ER-v2f"; */
+"PqB-ER-v2f.normalTitle" = "ПРЕДПРОСМОТР";
+
+/* Class = "UILabel"; text = "Выбранные дни"; ObjectID = "Ql8-1K-sEM"; */
+"Ql8-1K-sEM.text" = "Выбранные дни";
+
+/* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "R5j-2B-YEc"; */
+"R5j-2B-YEc.title" = "Отмена";
+
+/* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "R6q-gw-a5p"; */
+"R6q-gw-a5p.title" = "Отмена";
+
+/* Class = "UILabel"; text = "Введите свой вес"; ObjectID = "RpW-51-Zo6"; */
+"RpW-51-Zo6.text" = "Введите свой вес";
+
+/* Class = "UILabel"; text = "не выбрано"; ObjectID = "Seh-uP-A34"; */
+"Seh-uP-A34.text" = "не выбрано";
+
+/* Class = "UIBarButtonItem"; title = "Выбрать"; ObjectID = "SkL-lM-jsy"; */
+"SkL-lM-jsy.title" = "Выбрать";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Twr-4P-aVj"; */
+"Twr-4P-aVj.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UIs-Fb-y83"; */
+"UIs-Fb-y83.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "UiB-ov-iDS"; */
+"UiB-ov-iDS.normalTitle" = "Повторить";
+
+/* Class = "UINavigationItem"; title = "Дата родов"; ObjectID = "VAf-F5-aOn"; */
+"VAf-F5-aOn.title" = "Дата родов";
+
+/* Class = "UISegmentedControl"; W6H-Zx-TNd.segmentTitles[0] = "Списком"; ObjectID = "W6H-Zx-TNd"; */
+"W6H-Zx-TNd.segmentTitles[0]" = "Списком";
+
+/* Class = "UISegmentedControl"; W6H-Zx-TNd.segmentTitles[1] = "На карте"; ObjectID = "W6H-Zx-TNd"; */
+"W6H-Zx-TNd.segmentTitles[1]" = "На карте";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "WZ2-7T-6D0"; */
+"WZ2-7T-6D0.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "Wu5-cW-qg5"; */
+"Wu5-cW-qg5.normalTitle" = "Повторить";
+
+/* Class = "UILabel"; text = "0 заметок"; ObjectID = "Ww2-KP-8h6"; */
+"Ww2-KP-8h6.text" = "0 заметок";
+
+/* Class = "UILabel"; text = "VK"; ObjectID = "XAs-18-6Vl"; */
+"XAs-18-6Vl.text" = "VK";
+
+/* Class = "UILabel"; text = "Одноклассники"; ObjectID = "XNy-Ug-okr"; */
+"XNy-Ug-okr.text" = "Одноклассники";
+
+/* Class = "UILabel"; text = "Поделиться"; ObjectID = "XZY-lB-evA"; */
+"XZY-lB-evA.text" = "Поделиться";
+
+/* Class = "UINavigationItem"; title = "График набора веса"; ObjectID = "Xd7-RR-aFx"; */
+"Xd7-RR-aFx.title" = "График набора веса";
+
+/* Class = "UILabel"; text = "0 уведомлений"; ObjectID = "Z9t-DA-mfA"; */
+"Z9t-DA-mfA.text" = "0 уведомлений";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZEl-5b-RYx"; */
+"ZEl-5b-RYx.text" = "Label";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "aD6-UO-xsq"; */
+"aD6-UO-xsq.text" = "Дата";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "aOj-9S-7fS"; */
+"aOj-9S-7fS.title" = "Сохранить";
+
+/* Class = "UILabel"; text = "Уведомление"; ObjectID = "b5z-V1-f2a"; */
+"b5z-V1-f2a.text" = "Уведомление";
+
+/* Class = "UIButton"; normalTitle = "ОК"; ObjectID = "bcX-nk-Q90"; */
+"bcX-nk-Q90.normalTitle" = "ОК";
+
+/* Class = "UINavigationItem"; title = "Форум"; ObjectID = "bl2-fB-Q4N"; */
+"bl2-fB-Q4N.title" = "Форум";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "cFb-3Q-SPr"; */
+"cFb-3Q-SPr.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "ck9-dG-4NC"; */
+"ck9-dG-4NC.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Mail"; ObjectID = "d10-2s-Vup"; */
+"d10-2s-Vup.text" = "Mail";
+
+/* Class = "UIViewController"; title = "Drugs"; ObjectID = "d7b-Ai-Caw"; */
+"d7b-Ai-Caw.title" = "Drugs";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "dY3-tw-NJv"; */
+"dY3-tw-NJv.normalTitle" = "Сохранить";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dgf-u6-xT3"; */
+"dgf-u6-xT3.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "dhT-KQ-Rxt"; */
+"dhT-KQ-Rxt.normalTitle" = "Сохранить";
+
+/* Class = "UINavigationItem"; title = "Дата"; ObjectID = "dmM-dZ-ERb"; */
+"dmM-dZ-ERb.title" = "Дата";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "dze-uD-j1a"; */
+"dze-uD-j1a.title" = "Сохранить";
+
+/* Class = "UILabel"; text = "Заметка"; ObjectID = "e5u-w6-HPM"; */
+"e5u-w6-HPM.text" = "Заметка";
+
+/* Class = "UILabel"; text = "Facebook"; ObjectID = "eOr-eC-XpC"; */
+"eOr-eC-XpC.text" = "Facebook";
+
+/* Class = "UILabel"; text = "не выбрано"; ObjectID = "eUH-Df-MA7"; */
+"eUH-Df-MA7.text" = "не выбрано";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eWX-W5-taV"; */
+"eWX-W5-taV.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "ecZ-Qh-qcL"; */
+"ecZ-Qh-qcL.title" = "Сохранить";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "etY-cl-bDi"; */
+"etY-cl-bDi.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "giK-IN-f3w"; */
+"giK-IN-f3w.normalTitle" = "Сохранить";
+
+/* Class = "UINavigationItem"; title = "Видеотека"; ObjectID = "gwi-SF-tIC"; */
+"gwi-SF-tIC.title" = "Видеотека";
+
+/* Class = "UINavigationItem"; title = "Экспорт"; ObjectID = "h3F-Gy-xYr"; */
+"h3F-Gy-xYr.title" = "Экспорт";
+
+/* Class = "UISegmentedControl"; hir-Eb-fub.segmentTitles[0] = "Мальчики"; ObjectID = "hir-Eb-fub"; */
+"hir-Eb-fub.segmentTitles[0]" = "Мальчики";
+
+/* Class = "UISegmentedControl"; hir-Eb-fub.segmentTitles[1] = "Девочки"; ObjectID = "hir-Eb-fub"; */
+"hir-Eb-fub.segmentTitles[1]" = "Девочки";
+
+/* Class = "UILabel"; text = "Mail"; ObjectID = "hsS-TS-OfC"; */
+"hsS-TS-OfC.text" = "Mail";
+
+/* Class = "UILabel"; text = "Уведомления"; ObjectID = "hzG-nl-Xwe"; */
+"hzG-nl-Xwe.text" = "Уведомления";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "iIt-cD-B89"; */
+"iIt-cD-B89.text" = "Subtitle";
+
+/* Class = "UIViewController"; title = "Полезный опыт"; ObjectID = "jf0-H2-OIV"; */
+"jf0-H2-OIV.title" = "Полезный опыт";
+
+/* Class = "UINavigationItem"; title = "Фотоальбом"; ObjectID = "jkC-CD-Els"; */
+"jkC-CD-Els.title" = "Фотоальбом";
+
+/* Class = "UILabel"; text = " Меню на сегодня"; ObjectID = "kUt-Os-6uv"; */
+"kUt-Os-6uv.text" = " Меню на сегодня";
+
+/* Class = "UILabel"; text = "Ограничения"; ObjectID = "lIG-fh-PRn"; */
+"lIG-fh-PRn.text" = "Ограничения";
+
+/* Class = "UILabel"; text = "По дате зачатия"; ObjectID = "lN3-AV-bUK"; */
+"lN3-AV-bUK.text" = "По дате зачатия";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "log-Le-s1z"; */
+"log-Le-s1z.text" = "Subtitle";
+
+/* Class = "UIButton"; normalTitle = "Отмена"; ObjectID = "lpq-ea-XTk"; */
+"lpq-ea-XTk.normalTitle" = "Отмена";
+
+/* Class = "UILabel"; text = "Определение предполагаемой даты родов"; ObjectID = "m5w-vg-bJu"; */
+"m5w-vg-bJu.text" = "Определение предполагаемой даты родов";
+
+/* Class = "UILabel"; text = "Фотоальбом"; ObjectID = "mnl-9l-GmP"; */
+"mnl-9l-GmP.text" = "Фотоальбом";
+
+/* Class = "UIViewController"; title = "Полезный опыт"; ObjectID = "n4H-xl-8VL"; */
+"n4H-xl-8VL.title" = "Полезный опыт";
+
+/* Class = "UILabel"; text = "Знак зодиака ребенка"; ObjectID = "nDx-YF-W4C"; */
+"nDx-YF-W4C.text" = "Знак зодиака ребенка";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ndT-By-LmU"; */
+"ndT-By-LmU.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "nvf-U4-IOJ"; */
+"nvf-U4-IOJ.title" = "Отмена";
+
+/* Class = "UIButton"; normalTitle = "ОЙ, СХВАТКА"; ObjectID = "ogh-mz-XaG"; */
+"ogh-mz-XaG.normalTitle" = "ОЙ, СХВАТКА";
+
+/* Class = "UILabel"; text = "Сохранить в память"; ObjectID = "q0J-vV-gSI"; */
+"q0J-vV-gSI.text" = "Сохранить в память";
+
+/* Class = "UISegmentedControl"; qJa-6P-yCh.segmentTitles[0] = "Мое меню"; ObjectID = "qJa-6P-yCh"; */
+"qJa-6P-yCh.segmentTitles[0]" = "Мое меню";
+
+/* Class = "UISegmentedControl"; qJa-6P-yCh.segmentTitles[1] = "Предпочтения и ограничения"; ObjectID = "qJa-6P-yCh"; */
+"qJa-6P-yCh.segmentTitles[1]" = "Предпочтения и ограничения";
+
+/* Class = "UIButton"; normalTitle = "ПЕРЕЙТИ НА САЙТ"; ObjectID = "qc9-FE-SVb"; */
+"qc9-FE-SVb.normalTitle" = "ПЕРЕЙТИ НА САЙТ";
+
+/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "r9y-Aj-K6D"; */
+"r9y-Aj-K6D.normalTitle" = "Повторить";
+
+/* Class = "UIButton"; normalTitle = "ВВЕСТИ ДАТУ РОДОВ"; ObjectID = "rP5-xW-2G7"; */
+"rP5-xW-2G7.normalTitle" = "ВВЕСТИ ДАТУ РОДОВ";
+
+/* Class = "UILabel"; text = "Ваш рост"; ObjectID = "rt7-l4-PUq"; */
+"rt7-l4-PUq.text" = "Ваш рост";
+
+/* Class = "UIButton"; normalTitle = "Отмена"; ObjectID = "s6W-Vd-OFN"; */
+"s6W-Vd-OFN.normalTitle" = "Отмена";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "sCR-xd-pdu"; */
+"sCR-xd-pdu.normalTitle" = "Сохранить";
+
+/* Class = "UILabel"; text = "По дате зачатия"; ObjectID = "sX1-gA-Y3S"; */
+"sX1-gA-Y3S.text" = "По дате зачатия";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "sea-bM-OIN"; */
+"sea-bM-OIN.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "tSy-dO-LQq"; */
+"tSy-dO-LQq.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Предполагаемая дата родов"; ObjectID = "tgf-CB-oZf"; */
+"tgf-CB-oZf.title" = "Предполагаемая дата родов";
+
+/* Class = "UITextView"; accessibilityLabel = "tt"; ObjectID = "uPa-lW-gm8"; */
+"uPa-lW-gm8.accessibilityLabel" = "tt";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "uPa-lW-gm8"; */
+"uPa-lW-gm8.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UINavigationItem"; title = "Повтор"; ObjectID = "v4a-Cg-ki8"; */
+"v4a-Cg-ki8.title" = "Повтор";
+
+/* Class = "UISegmentedControl"; vOc-NZ-rcf.segmentTitles[0] = "Статьи"; ObjectID = "vOc-NZ-rcf"; */
+"vOc-NZ-rcf.segmentTitles[0]" = "Статьи";
+
+/* Class = "UISegmentedControl"; vOc-NZ-rcf.segmentTitles[1] = "Уведомления"; ObjectID = "vOc-NZ-rcf"; */
+"vOc-NZ-rcf.segmentTitles[1]" = "Уведомления";
+
+/* Class = "UINavigationItem"; title = "Счетчик схваток"; ObjectID = "vZG-or-307"; */
+"vZG-or-307.title" = "Счетчик схваток";
+
+/* Class = "UINavigationItem"; title = "Напоминание"; ObjectID = "vjU-Bf-TfV"; */
+"vjU-Bf-TfV.title" = "Напоминание";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "w5W-PS-Qlq"; */
+"w5W-PS-Qlq.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "wZZ-fI-tcO"; */
+"wZZ-fI-tcO.text" = "Title";
+
+/* Class = "UILabel"; text = "Одноклассники"; ObjectID = "wr6-OA-Aq9"; */
+"wr6-OA-Aq9.text" = "Одноклассники";
+
+/* Class = "UISegmentedControl"; x5J-23-CUM.segmentTitles[0] = "Голубой"; ObjectID = "x5J-23-CUM"; */
+"x5J-23-CUM.segmentTitles[0]" = "Голубой";
+
+/* Class = "UISegmentedControl"; x5J-23-CUM.segmentTitles[1] = "Розовый"; ObjectID = "x5J-23-CUM"; */
+"x5J-23-CUM.segmentTitles[1]" = "Розовый";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "xSt-XR-EXK"; */
+"xSt-XR-EXK.normalTitle" = "Сохранить";
+
+/* Class = "UILabel"; text = "Граммы"; ObjectID = "xTF-WZ-DKi"; */
+"xTF-WZ-DKi.text" = "Граммы";
+
+/* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "xot-wS-jza"; */
+"xot-wS-jza.title" = "Отмена";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "z83-vN-G8n"; */
+"z83-vN-G8n.normalTitle" = "Сохранить";
+
+/* Class = "UILabel"; text = "Предпочтения"; ObjectID = "zUY-N6-BhL"; */
+"zUY-N6-BhL.text" = "Предпочтения";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "zdR-TA-wo3"; */
+"zdR-TA-wo3.normalTitle" = "Сохранить";
