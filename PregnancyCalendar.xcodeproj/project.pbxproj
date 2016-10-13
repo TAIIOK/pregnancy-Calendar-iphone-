@@ -107,6 +107,7 @@
 		8E30028B1DAE7536003B428D /* 9z.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E30027F1DAE7536003B428D /* 9z.png */; };
 		8E30028C1DAE7536003B428D /* 10z.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3002801DAE7536003B428D /* 10z.png */; };
 		8E30028D1DAE7536003B428D /* 11z.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3002811DAE7536003B428D /* 11z.png */; };
+		8E30028F1DAE7FF6003B428D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E30028E1DAE7FF6003B428D /* Info.plist */; };
 		8E4C43A01CF8680400003AAB /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */; };
 		8E4C43A31CF871B200003AAB /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A11CF871B200003AAB /* NamesViewController.swift */; };
 		8E4C43A41CF871B200003AAB /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C43A21CF871B200003AAB /* NameViewController.swift */; };
@@ -375,6 +376,7 @@
 		8E30027F1DAE7536003B428D /* 9z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9z.png; sourceTree = "<group>"; };
 		8E3002801DAE7536003B428D /* 10z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10z.png; sourceTree = "<group>"; };
 		8E3002811DAE7536003B428D /* 11z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11z.png; sourceTree = "<group>"; };
+		8E30028E1DAE7FF6003B428D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E4C439F1CF8680400003AAB /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		8E4C43A11CF871B200003AAB /* NamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		8E4C43A21CF871B200003AAB /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		02682D261C7EFBA40088F21B /* PregnancyCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				8E30028E1DAE7FF6003B428D /* Info.plist */,
 				8E5787BB1CFC7A9C0028CC3C /* socialNetwork */,
 				8E4C43861CF8504300003AAB /* zodiacs */,
 				8E4C437E1CF84F4900003AAB /* json files */,
@@ -926,9 +929,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02682D231C7EFBA40088F21B /* PregnancyCalendar */ = {
+		02682D231C7EFBA40088F21B /* Календарь беременности */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */;
+			buildConfigurationList = 02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "Календарь беременности" */;
 			buildPhases = (
 				321DBBE0D90AB570A933C5A2 /* [CP] Check Pods Manifest.lock */,
 				02682D201C7EFBA40088F21B /* Sources */,
@@ -943,7 +946,7 @@
 			);
 			dependencies = (
 			);
-			name = PregnancyCalendar;
+			name = "Календарь беременности";
 			productName = PregnancyCalendar;
 			productReference = 02682D241C7EFBA40088F21B /* PregnancyCalendar.app */;
 			productType = "com.apple.product-type.application";
@@ -986,7 +989,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				02682D231C7EFBA40088F21B /* PregnancyCalendar */,
+				02682D231C7EFBA40088F21B /* Календарь беременности */,
 			);
 		};
 /* End PBXProject section */
@@ -1090,6 +1093,7 @@
 				8E14506E1D1972F900D234B2 /* DrugsViewCell.xib in Resources */,
 				A0E9CD7E1C96EC3400B6A036 /* EPCalendarCell1.xib in Resources */,
 				8E2208191D82CCC600F19593 /* i_a6a4e51b6778b3a0_html_e70a7969.jpg in Resources */,
+				8E30028F1DAE7FF6003B428D /* Info.plist in Resources */,
 				8E2208231D82CCEB00F19593 /* bra.jpg in Resources */,
 				8E3002821DAE7536003B428D /* 0z.png in Resources */,
 				8E2208171D82CCC600F19593 /* i_6eeb0e92aa2e7186_html_7926d373.jpg in Resources */,
@@ -1480,7 +1484,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "PregnancyCalendar" */ = {
+		02682D391C7EFBA40088F21B /* Build configuration list for PBXNativeTarget "Календарь беременности" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02682D3A1C7EFBA40088F21B /* Debug */,
